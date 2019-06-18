@@ -1,0 +1,95 @@
+!Input file for the IMPACT-Z beam dynamics code:
+!Here, all lines starting with "!" are comment lines.
+!The 1st 11 lines (excluding comment lines) define the numerical
+!parameters and beam parameters.
+!The remaining lines define the accelerator elements line by line.
+!-------------------------------------------------------------
+!"1" # of procs in Y direction, "1" # of procs in Z direction
+!NOTE WELL: the product of these numbers must equal the number of
+!            processors that you run on!
+!--------------
+1 1
+!--------------
+!"6" - 6D, "2000" - # of particles for each charge state, "2" - nonlinear
+!Lorentz integrator "1" for map integrator, "0" - no error study, "1" - standard output
+!--------------
+!6 95322 1 0 2
+! 2 includes 99% emmitance error output
+! 1 includes standard output; 9 95322 2 0 1 is for lorentz map integrator
+!6 95322 2 0 1
+6 200 2 0 1
+!--------------
+!32x32x32 mesh grid, "1" - 3D open BC for space-charge solver,
+!"0.03" - x pipe half width (m), y pipe half width (m) and period length (m).
+!those width are used to set up the external boundary in the case of
+!finite transverse boundary condition. They are NOT used to check particle
+!loss.
+!--------------
+32 32 64 1 0.02 0.02 0.1
+!--------------
+!"3" - input distribution type 3 (6D Waterbag), "0" - no restart, "0" - Flagsubsteps
+!0 means no sub-cycle, 1 with sub-cycle,
+!"1" - # of charge states
+!--------------
+! 19 0 0 1 stands for starting from srcatch
+! 19 1 0 1 stands for restarting from line "0. 0 1 -7 /"
+19 0 0 1
+!--------------
+!# of particle list for each charge state
+!--------------
+200
+!--------------
+!current for each charge state (A)
+!--------------
+0.03
+!--------------
+!q_i/m_i for each charge state. Here, we normalize each charge state
+!by the mass of reference particle so that the reference particle has 1 AMU mass,
+!but less charge.
+!--------------
+-1.064629e-9
+!--------------
+!Parameters for initial distribution. see IMPACTlayer.doc for more information.
+!Those parameters can be generated from the initial Twiss parameters and
+!emittances using the utility function, Tr2Impact.
+!--------------
+2.002944e-03  3.085231e-04  -9.035956e-01  1.0  1.0  0.0  0.0
+2.149990e-03  3.507020e-04  8.517159e-01  1.0  1.0  0.0  0.0
+1.435722e-01  1.174531e-05  1.225590e-01  1.0  1.0  0.0  0.0
+!--------------
+! beam current (in A), ini beam kin en (in eV), particle mass (in eV), q in units of prot charge,
+!                             reference freq in Hz, n/u
+!"0.0" - bunched beam current I = Q*freq_ref, "2.5e6" - initial kinetic energy, "931.5016e6" -
+!mass of particle (eV/c^2), "-1" - charge of reference particle,
+!"402.5e6.." reference RF frequency, "0.0" - initial phase of the reference particle.
+!--------------
+0.03 3.35176e6 939.29432e6 -1.0 324.0e6 0.271973E+03
+!--------------
+!
+! =======================*** ACC. LATTICE ***=======================
+!
+! ==================================================================
+!7.886300e-02 - leng., 110 - steps across the element, 20 - every 20 steps for 1 SC cal.
+!if Flagsubstep=1, otherwise 20 steps to calculate
+!transfer map in map integrator, 101 - DTL type code,
+!2503370.0 - field amplitdue scale, 3.240000e+08 - cavity frequency,
+!222 - RF driven phase (degree), 8.520000e+02 - rf data file number (rfdata852),
+!6.500000e-03 - pipe radius, 2.049580e-02 - 1st quad length, 6.804960e+01 -
+!1st quad gradient (T/m), 2.049580e-02 - 2nd quad length, -6.720420e+01 - 2nd quad gradient.
+!
+7.886300e-02 110 20 101 2503370.0 3.240000e+08 222 8.520000e+02 6.500000e-03 2.049580e-02 6.804960e+01 2.049580e-02 -6.720420e+01/
+8.034760e-02 110 20 101 2503370.0 3.240000e+08 222 8.680000e+02 6.500000e-03 2.049580e-02 -6.720420e+01 2.049580e-02 6.635880e+01/
+8.183570e-02 110 20 101 2503370.0 3.240000e+08 222 8.840000e+02 6.500000e-03 2.049580e-02 6.635880e+01 2.141160e-02 -6.347630e+01/
+8.332720e-02 110 20 101 2503370.0 3.240000e+08 222 9.000000e+02 6.500000e-03 2.141160e-02 -6.347630e+01 2.141160e-02 6.269390e+01/
+8.482240e-02 110 20 101 2503370.0 3.240000e+08 222 9.160000e+02 6.500000e-03 2.141160e-02 6.269390e+01 2.141160e-02 -6.195370e+01/
+8.631960e-02 110 20 101 2503370.0 3.240000e+08 222 9.320000e+02 6.500000e-03 2.141160e-02 -6.195370e+01 2.141160e-02 6.121340e+01/
+8.781910e-02 110 20 101 2503370.0 3.240000e+08 222 9.490000e+02 6.500000e-03 2.141160e-02 6.121340e+01 2.141160e-02 -6.051670e+01/
+8.932100e-02 110 20 101 2503370.0 3.240000e+08 222 9.650000e+02 6.500000e-03 2.141160e-02 -6.051670e+01 2.141160e-02 5.982000e+01/
+9.082460e-02 110 20 101 2503370.0 3.240000e+08 222 9.810000e+02 6.500000e-03 2.141160e-02 5.982000e+01 2.141160e-02 -5.916420e+01/
+!0.0175 - leng., 200 - steps across the element, 10 - every 10 steps for 1 SC cal.
+!if Flagsubstep=1, otherwise 10 steps to calculate transfer map in map integrator,
+!1 - quadrupole type code, 0.0 - no fringe field, 0.125e-1 - pipe radius (m)
+!
+4.500710e-02  3  20  1  -1.915230e+01  0.000000e+00  9.000000e-03/
+9.584260e-02  6  20  0  9.000000e-03 /
+4.585030e-02  3  20  1  1.890260e+01  0.000000e+00  1.100000e-02/
