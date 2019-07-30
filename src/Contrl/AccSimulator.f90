@@ -17,8 +17,7 @@
 !              particle distribution, field information, computational
 !              domain, beam line element lattice and run the dynamics
 !              simulation through the system.
-! Comments: 07/29/19 J.Q. fixed the array size problem of the BPM and
-!           Dipole elements
+! Comments: 
 !----------------------------------------------------------------
       module AccSimulatorclass
         use Pgrid2dclass
