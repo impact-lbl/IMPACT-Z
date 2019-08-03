@@ -266,6 +266,7 @@
         real*8 :: vtmp,vtmpgrad,phi0lc,phi,gam,gambet,gambeto,&
                   gambetz,invfocus,dgam,fact,harm,dgambet,cosphi
         real*8, dimension(12) :: drange
+        real*8 :: gami_1,gambeti_1,gambetzi_1,dgami,gami_2,gambeti_2
 
 
         call starttime_Timer(t0)
@@ -358,18 +359,43 @@
               enddo
             endif
             !drift under constant acceleration
+!            gam0 = -this%refptcl(6)
+!
+!            dgam = tau*vtmp*cos(phi0lc)
+!            gambet = sqrt(gam0**2-1.0d0)
+!            gam = gam0 + dgam
+!            gambeto = sqrt(gam**2-1.0d0)
+!            dgambet = gambeto-gambet
+!
+!            fact = (tau/dgam/Scxl)*dlog(gambeto/gambet)
+!            do i = 1, this%Nptlocal
+!              this%Pts1(1,i) = this%Pts1(1,i) + fact*this%Pts1(2,i)
+!              this%Pts1(3,i) = this%Pts1(3,i) + fact*this%Pts1(4,i)
+!              this%Pts1(5,i) = this%Pts1(5,i) + (tau/Scxl)/gambet**3*&
+!                                                this%Pts1(6,i)
+!            enddo
+
+            !drift under constant acceleration, using individual
+            !particle momentum to propagate particles
             gam0 = -this%refptcl(6)
-
-            dgam = tau*vtmp*cos(phi0lc)
             gambet = sqrt(gam0**2-1.0d0)
-            gam = gam0 + dgam
-            gambeto = sqrt(gam**2-1.0d0)
-            dgambet = gambeto-gambet
-
-            fact = (tau/dgam/Scxl)*dlog(gambeto/gambet)
             do i = 1, this%Nptlocal
-              this%Pts1(1,i) = this%Pts1(1,i) + fact*this%Pts1(2,i)
-              this%Pts1(3,i) = this%Pts1(3,i) + fact*this%Pts1(4,i)
+              !entrance momentum of individual particle
+              gami_1 = gam0 - this%Pts1(6,i)
+              gambeti_1 = sqrt(gami_1**2-1.0d0)
+              gambetzi_1 = sqrt(gami_1**2-1.0d0-this%Pts1(2,i)**2-this%Pts1(4,i)**2)
+              !exit momentum of individual particle
+              phi = this%Pts1(5,i)*harm+phi0lc
+              dgami = tau*vtmp*cos(phi)
+              gami_2 = gami_1+dgami
+              gambeti_2 = sqrt(gami_2**2-1.0d0)
+
+              fact = gambeti_1/dgami*dlog(gambeti_2/gambeti_1)*tau/Scxl
+
+              this%Pts1(1,i) = this%Pts1(1,i) + fact*&
+                               this%Pts1(2,i)/gambetzi_1
+              this%Pts1(3,i) = this%Pts1(3,i) + fact*&
+                               this%Pts1(4,i)/gambetzi_1
               this%Pts1(5,i) = this%Pts1(5,i) + (tau/Scxl)/gambet**3*&
                                                 this%Pts1(6,i)
             enddo
