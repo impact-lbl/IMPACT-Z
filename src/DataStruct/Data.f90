@@ -1,63 +1,116 @@
 !----------------------------------------------------------------
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Dataclass: Field data class in DATA STRUCTURE layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class stores the rf cavity data Ez, Ez', Ez'' on the 
-!              axis; Fourier coefficients of Ez on the axis; Ez(r,z),
-!              Er(r,z), Htheta(r,z) on the r-z grid plane; and Ex(x,y,z),
-!              Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) on
-!              uniform x, y, z grid.
+!
+! MODULE  : ... Dataclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class stores the rf cavity data Ez, Ez', Ez'' on the 
+!> axis; Fourier coefficients of Ez on the axis; Ez(r,z),
+!> Er(r,z), Htheta(r,z) on the r-z grid plane; and Ex(x,y,z),
+!> Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) on
+!> uniform x, y, z grid.
 ! Comments: 
 !----------------------------------------------------------------
       module Dataclass
         use mpistub
         save
 !-----------------------------------------------------------------------
-! using the x-y-z field data (Ex,Ey,Ez,Bx,By,Bz) directly.
-        !number of grid points along x, y, and z direction.
+!> @name {
+
+!> @{
+!> using the x-y-z field data (Ex,Ey,Ez,Bx,By,Bz) directly.
+        !> @name
+
+        !> @{
+        !> number of grid points along x, y, and z direction.
         integer :: NxIntvRfg = 1
         integer :: NyIntvRfg = 1
         integer :: NzIntvRfg = 1
-        !range in x, y, and zdirections.
+        !> @}
+        !> @name
+
+        !> @{ 
+        !> range in x, y, and z directions.
         double precision :: XmaxRfg,XminRfg,YmaxRfg,YminRfg,ZmaxRfg,ZminRfg
-        ! discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and 
-        ! Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z.
+        !> @}
+        !> @name
+
+        !> @{
+        !> discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and 
+        !> Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z.
         double precision,allocatable,dimension(:,:,:) :: &
                Exgrid,Eygrid,Ezgrid,Bxgrid,Bygrid,Bzgrid
+        !> @}
+!> @}
 !-----------------------------------------------------------------------
-! using the r-z field data (Er,Ez,Htheta) directly.
-        !number of grid points along r direction.
+!> @name
+
+!> @{
+!> using the r-z field data (Er,Ez,Htheta) directly.
+        !> number of grid points along r direction.
         integer :: NrIntvRf = 1
-        !number of grid points along z direction.
+        !> number of grid points along z direction.
         integer :: NzIntvRf = 1
-        !range in r and z directions.
+        !> @name 
+
+        !> @{
+        !> range in r and z directions.
         double precision :: RmaxRf,RminRf,ZmaxRf,ZminRf
-        ! discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid
-        ! is uniform in r and z.
+        !> @}
+        !> @name
+
+        !> @{
+        !> discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid
+        !> is uniform in r and z.
         double precision,allocatable,dimension(:,:) :: &
                ezdata,erdata,btdata
+        !> @}
+!> @}
 !-----------------------------------------------------------------------
-! using only on-axis field data and its derivities.
-        !initial number of grid points on the axis.
+!> @name
+
+!> @{
+!> using only on-axis field data and its derivities.
+        !> initial number of grid points on the axis.
         integer, parameter :: Ndataini = 5000
-        ! discrete Ez(0,z), Ez'(0,z), Ez''(0,z) rf data.
+        !> @name
+
+        !> @{
+        !> discrete Ez(0,z), Ez'(0,z), Ez''(0,z) rf data.
         double precision,dimension(Ndataini) :: zdat,edat,epdat,eppdat
-        ! discrete wake function, z, longitudinal, x and y wake function
+        !> @}
+        !> @name
+
+        !> @{
+        !> discrete wake function, z, longitudinal, x and y wake function
         double precision,dimension(Ndataini) :: zdatwk,edatwk,epdatwk,eppdatwk
+        !> @}
+!> @}
 !----------------------------------------------------------------------
-! using the Fourier coefficients
-        !number of Fourier expansion coefficients.
+!> @name
+  
+!> @{
+!> using the Fourier coefficients
+        !> number of Fourier expansion coefficients.
         integer, parameter :: NcoefF = 401
         double precision,dimension(NcoefF) :: Fcoef
-        !Fcoef(1): constant
-        !Fcoef(2k): cosine term
-        !Fcoef(2k+1): sine term
+        !< Fcoef(1): constant \n
+        !< Fcoef(2k): cosine term \n
+        !< Fcoef(2k+1): sine term \n
+!> @}
 !----------------------------------------------------------------------
-        ! practical number of grid data on the axis or Fourier coefficients.
+        !> @name
+
+        !> @{
+        !> practical number of grid data on the axis or Fourier coefficients.
         integer :: Ndata,Ndatawk
+        !> @}
       contains
-        !Initialize the data storage arrays.
+        !> Initialize the data storage arrays.
         subroutine init_Data()
         implicit none
         include 'mpif.h' 
@@ -131,9 +184,9 @@
          
         end subroutine destruct_Data
 
-        !read in the discrete field data Ez(0,z), Ez'(0,z), Ez''(0,z) 
-        !distribution along axis zdat from files "rfdatax or rfdataxx 
-        !or rfdataxxx".
+        !> read in the discrete field data Ez(0,z), Ez'(0,z), Ez''(0,z) 
+        !> distribution along axis zdat from files "rfdatax or rfdataxx 
+        !> or rfdataxxx".
         subroutine read1_Data(ifile)
         implicit none
         include 'mpif.h'
@@ -212,9 +265,9 @@
         !print*,"Ndata: ",Ndata
         end subroutine read1_Data
 
-        ! read in discrete Ez(r,z), Er(r,z) and Btheta(r,z) rf data from
-        ! files "rfdatax.in or rfdataxx.in or rfdataxxx.in. Here, the grid
-        ! is uniform in r and z.
+        !> read in discrete Ez(r,z), Er(r,z) and Btheta(r,z) rf data from
+        !> files "rfdatax.in or rfdataxx.in or rfdataxxx.in. Here, the grid
+        !> is uniform in r and z.
         subroutine read2_Data(ifile)
         implicit none
         include 'mpif.h' 
@@ -341,8 +394,8 @@
         !print*,"Ndata: ",Ndatalc
         end subroutine read2_Data
 
-        !readin the Fourier coefficients of the RF field from files 
-        !"rfdatax or rfdataxx or rfdataxxx".
+        !> readin the Fourier coefficients of the RF field from files 
+        !> "rfdatax or rfdataxx or rfdataxxx".
         subroutine read3_Data(ifile)
         implicit none
         include 'mpif.h'
@@ -406,10 +459,10 @@
         !print*,"Ndata: ",Ndata
         end subroutine read3_Data
 
-        ! read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z),
-        ! Bz(x,y,z) rf data from
-        ! files "rfdatax.in or rfdataxx.in or rfdataxxx.in. Here, the grid
-        ! is uniform in x, y and z.
+        !> read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z),
+        !> Bz(x,y,z) rf data from
+        !> files "rfdatax.in or rfdataxx.in or rfdataxxx.in. Here, the grid
+        !> is uniform in x, y and z.
         subroutine read4_Data(ifile)
         implicit none
         include 'mpif.h' 
@@ -551,9 +604,9 @@
         !print*,"Ndata: ",Ndata
         end subroutine read4_Data
 
-        !read in the discrete wake field data in z, x, y.
-        !distribution along axis zdat from files "rfdatax or rfdataxx 
-        !or rfdataxxx".
+        !> read in the discrete wake field data in z, x, y.
+        !> distribution along axis zdat from files "rfdatax or rfdataxx 
+        !> or rfdataxxx".
         subroutine read1wk_Data(ifile)
         implicit none
         include 'mpif.h'

@@ -1,0 +1,84 @@
+\hypertarget{_const_foc_8f90}{}\section{src/\+Appl/\+Const\+Foc.f90 File Reference}
+\label{_const_foc_8f90}\index{src/Appl/ConstFoc.f90@{src/Appl/ConstFoc.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespaceconstfocclass_structconstfocclass_1_1constfoc}{constfocclass\+::constfoc}}
+\item 
+interface \mbox{\hyperlink{interfaceconstfocclass_1_1getparam__constfoc}{constfocclass\+::getparam\+\_\+constfoc}}
+\item 
+interface \mbox{\hyperlink{interfaceconstfocclass_1_1setparam__constfoc}{constfocclass\+::setparam\+\_\+constfoc}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespaceconstfocclass}{constfocclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and field for the 3d constant focusing beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_a36197970c1524c85aeaea51d39f0ede7}{constfocclass\+::construct\+\_\+constfoc}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_a14001bee7b5f9c4138d8042dcc94955c}{constfocclass\+::setparam1\+\_\+constfoc}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_a36ac221c9fb8e90f23b97b10cc272775}{constfocclass\+::setparam2\+\_\+constfoc}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_a9d02ddbf03689cdd653805ca5a56856e}{constfocclass\+::setparam3\+\_\+constfoc}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_ab906b8830f5fb2cec09297d5004494e9}{constfocclass\+::getparam1\+\_\+constfoc}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_a59ea6cb7198ad0bf8446abe6978a9069}{constfocclass\+::getparam2\+\_\+constfoc}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_ae1fe9fc46cca742a797c388465086489}{constfocclass\+::getparam3\+\_\+constfoc}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_af393c0fed039b82c7eb2aa347bc12bd8}{constfocclass\+::maplinear\+\_\+constfoc}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_a25aa498c0852e2952880172b61f0f034}{constfocclass\+::rk6i\+\_\+constfoc}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_a6cedac4005af8166900c4d4b1afd707b}{constfocclass\+::intfunc1\+\_\+constfoc}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceconstfocclass_a34425bf98b4a4cff016108f25a629dff}{constfocclass\+::getfld\+\_\+constfoc}} (pos, extfld, this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespaceconstfocclass_a4a04b85ebc26340b40e7c38cfad62bc1}{constfocclass\+::nparam}} = 5
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{constfocclass::constfoc@{constfocclass::constfoc}}\label{structconstfocclass_1_1constfoc}
+\Hypertarget{namespaceconstfocclass_structconstfocclass_1_1constfoc}
+\subsubsection{type constfocclass\+::constfoc}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespaceconstfocclass_a6805e237c322783df518e8f2c3e1feec}\label{namespaceconstfocclass_a6805e237c322783df518e8f2c3e1feec}} 
+integer&
+itype&
+Itype = 2. \\
+\hline
+
+\mbox{\Hypertarget{namespaceconstfocclass_a20a95ee3a0c6fd8f128d4fbe911077db}\label{namespaceconstfocclass_a20a95ee3a0c6fd8f128d4fbe911077db}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceconstfocclass_a7211bb49a75643cd5898f13851eb852e}\label{namespaceconstfocclass_a7211bb49a75643cd5898f13851eb852e}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceconstfocclass_ad5d129a88d9e84629813d001b6379bf5}\label{namespaceconstfocclass_ad5d129a88d9e84629813d001b6379bf5}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceconstfocclass_a91cddf45b9010e35e24ae6cd063a9ee7}\label{namespaceconstfocclass_a91cddf45b9010e35e24ae6cd063a9ee7}} 
+double precision, dimension(\mbox{\hyperlink{namespaceconstfocclass_a4a04b85ebc26340b40e7c38cfad62bc1}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}

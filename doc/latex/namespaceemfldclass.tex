@@ -1,0 +1,304 @@
+\hypertarget{namespaceemfldclass}{}\section{emfldclass Module Reference}
+\label{namespaceemfldclass}\index{emfldclass@{emfldclass}}
+
+
+This class contains discrete EM field data (as a function of x,y,z) or (r,z) and analytical representation of EM field data (user can supply the function form). The linear transfer map is also computed base on the field on the axis.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}
+\item 
+interface \mbox{\hyperlink{interfaceemfldclass_1_1getparam__emfld}{getparam\+\_\+emfld}}
+\item 
+interface \mbox{\hyperlink{interfaceemfldclass_1_1setparam__emfld}{setparam\+\_\+emfld}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a2a7e6a32e149f3dc82fbbc59d5c6ec2d}{construct\+\_\+emfld}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a89c21ffdad41e63e575b3bc21899f600}{setparam1\+\_\+emfld}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_ad425987a9a6e1cb7b0b2b7b1724dc961}{setparam2\+\_\+emfld}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a3f40c1b18d4a7a28ceea11a3a6b350ad}{setparam3\+\_\+emfld}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_ae0e0b406ff0837e878753ad73fc1862d}{getparam1\+\_\+emfld}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_af928aa17c18a7ebd339aece97387154b}{getparam2\+\_\+emfld}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a07a0d1aa7a4dc67bcec915f0d5d0945e}{getparam3\+\_\+emfld}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_ab283b339abd3df592d8200c244652131}{maplinear\+\_\+emfld}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_ae4bfa1325df7cec4a3facbe8ebc66845}{rk6i\+\_\+emfld}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_af90bd5467acb5c62a2d93f6eb1738097}{intfunc1\+\_\+emfld}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a2b0b3e7b6537f3a6ea857f99288186ef}{getaxflde\+\_\+emfld}} (z, this, ez1, ezp1, ezpp1)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_ae77f42a7f667c3dd902df1d26480e602}{getaxfldefc\+\_\+emfld}} (z, this, ez1, ezp1, ezpp1)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_aa0023b4b2c7a17c75becc20eeb9be23c}{getfld\+\_\+emfld}} (pos, extfld, this)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a828e010a02ef4b8d9806f8d4c3053126}{getflderrold\+\_\+emfld}} (pos, extfld, this)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_ad7628b9fdaf5e839e55f71c3f8678c11}{getflderr\+\_\+emfld}} (pos, extfld, this, dx, dy, anglex, angley,
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a7eb67a0a1ce6ea3f37b4c55e40048f4a}{getfld6\+\_\+emfld}} (this, z, extfld6)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_ab5c872006557986fafd6080666ca68f1}{getfld6err\+\_\+emfld}} (this, pos, extfld, dx, dy, anglex, angley,
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a6a4833c66a8430fe7d7c3e005dd34c6e}{getfld6xyz\+\_\+emfld}} (this, z, extfld6xyz)
+\item 
+subroutine \mbox{\hyperlink{namespaceemfldclass_a53a2dd6514711afd20442dab5686c5a4}{getfld6xyzerr\+\_\+emfld}} (this, pos, extfld, dx, dy, anglex, angl
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespaceemfldclass_ad6fed90f4153b92a9a9ff35a6ef146c3}{nparam}} = 14
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class contains discrete EM field data (as a function of x,y,z) or (r,z) and analytical representation of EM field data (user can supply the function form). The linear transfer map is also computed base on the field on the axis. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{emfldclass::emfld@{emfldclass::emfld}}\label{structemfldclass_1_1emfld}
+\Hypertarget{namespaceemfldclass_structemfldclass_1_1emfld}
+\subsubsection{type emfldclass\+::emfld}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespaceemfldclass_aa9a88075072a030b64fd3878793b499b}\label{namespaceemfldclass_aa9a88075072a030b64fd3878793b499b}} 
+integer&
+itype&
+Itype = 110. \\
+\hline
+
+\mbox{\Hypertarget{namespaceemfldclass_a4938896636fb9fa907f15b621831cf97}\label{namespaceemfldclass_a4938896636fb9fa907f15b621831cf97}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceemfldclass_ac18dfbe320fc1dc13393780eb0ae2613}\label{namespaceemfldclass_ac18dfbe320fc1dc13393780eb0ae2613}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceemfldclass_a35f0c51ff70d545cef92bbbfa9546006}\label{namespaceemfldclass_a35f0c51ff70d545cef92bbbfa9546006}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceemfldclass_ac4480d690e4e4d88d88ba939af8213cd}\label{namespaceemfldclass_ac4480d690e4e4d88d88ba939af8213cd}} 
+double precision, dimension(\mbox{\hyperlink{namespaceemfldclass_ad6fed90f4153b92a9a9ff35a6ef146c3}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceemfldclass_a2a7e6a32e149f3dc82fbbc59d5c6ec2d}\label{namespaceemfldclass_a2a7e6a32e149f3dc82fbbc59d5c6ec2d}} 
+\index{emfldclass@{emfldclass}!construct\_emfld@{construct\_emfld}}
+\index{construct\_emfld@{construct\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{construct\_emfld()}{construct\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::construct\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_a2b0b3e7b6537f3a6ea857f99288186ef}\label{namespaceemfldclass_a2b0b3e7b6537f3a6ea857f99288186ef}} 
+\index{emfldclass@{emfldclass}!getaxflde\_emfld@{getaxflde\_emfld}}
+\index{getaxflde\_emfld@{getaxflde\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getaxflde\_emfld()}{getaxflde\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getaxflde\+\_\+emfld (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{ez1,  }\item[{double precision, intent(out)}]{ezp1,  }\item[{double precision, intent(out)}]{ezpp1 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_a2b0b3e7b6537f3a6ea857f99288186ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceemfldclass_ae77f42a7f667c3dd902df1d26480e602}\label{namespaceemfldclass_ae77f42a7f667c3dd902df1d26480e602}} 
+\index{emfldclass@{emfldclass}!getaxfldefc\_emfld@{getaxfldefc\_emfld}}
+\index{getaxfldefc\_emfld@{getaxfldefc\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getaxfldefc\_emfld()}{getaxfldefc\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getaxfldefc\+\_\+emfld (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{ez1,  }\item[{double precision, intent(out)}]{ezp1,  }\item[{double precision, intent(out)}]{ezpp1 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_ae77f42a7f667c3dd902df1d26480e602_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceemfldclass_a7eb67a0a1ce6ea3f37b4c55e40048f4a}\label{namespaceemfldclass_a7eb67a0a1ce6ea3f37b4c55e40048f4a}} 
+\index{emfldclass@{emfldclass}!getfld6\_emfld@{getfld6\_emfld}}
+\index{getfld6\_emfld@{getfld6\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getfld6\_emfld()}{getfld6\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getfld6\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{z,  }\item[{}]{extfld6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_ab5c872006557986fafd6080666ca68f1}\label{namespaceemfldclass_ab5c872006557986fafd6080666ca68f1}} 
+\index{emfldclass@{emfldclass}!getfld6err\_emfld@{getfld6err\_emfld}}
+\index{getfld6err\_emfld@{getfld6err\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getfld6err\_emfld()}{getfld6err\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getfld6err\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_a6a4833c66a8430fe7d7c3e005dd34c6e}\label{namespaceemfldclass_a6a4833c66a8430fe7d7c3e005dd34c6e}} 
+\index{emfldclass@{emfldclass}!getfld6xyz\_emfld@{getfld6xyz\_emfld}}
+\index{getfld6xyz\_emfld@{getfld6xyz\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getfld6xyz\_emfld()}{getfld6xyz\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getfld6xyz\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{z,  }\item[{double precision, dimension(6,nxintvrfg+1,nyintvrfg+1), intent(out)}]{extfld6xyz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_a53a2dd6514711afd20442dab5686c5a4}\label{namespaceemfldclass_a53a2dd6514711afd20442dab5686c5a4}} 
+\index{emfldclass@{emfldclass}!getfld6xyzerr\_emfld@{getfld6xyzerr\_emfld}}
+\index{getfld6xyzerr\_emfld@{getfld6xyzerr\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getfld6xyzerr\_emfld()}{getfld6xyzerr\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getfld6xyzerr\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{}]{angl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_aa0023b4b2c7a17c75becc20eeb9be23c}\label{namespaceemfldclass_aa0023b4b2c7a17c75becc20eeb9be23c}} 
+\index{emfldclass@{emfldclass}!getfld\_emfld@{getfld\_emfld}}
+\index{getfld\_emfld@{getfld\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getfld\_emfld()}{getfld\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getfld\+\_\+emfld (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_aa0023b4b2c7a17c75becc20eeb9be23c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceemfldclass_ad7628b9fdaf5e839e55f71c3f8678c11}\label{namespaceemfldclass_ad7628b9fdaf5e839e55f71c3f8678c11}} 
+\index{emfldclass@{emfldclass}!getflderr\_emfld@{getflderr\_emfld}}
+\index{getflderr\_emfld@{getflderr\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getflderr\_emfld()}{getflderr\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getflderr\+\_\+emfld (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_ad7628b9fdaf5e839e55f71c3f8678c11_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceemfldclass_a828e010a02ef4b8d9806f8d4c3053126}\label{namespaceemfldclass_a828e010a02ef4b8d9806f8d4c3053126}} 
+\index{emfldclass@{emfldclass}!getflderrold\_emfld@{getflderrold\_emfld}}
+\index{getflderrold\_emfld@{getflderrold\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getflderrold\_emfld()}{getflderrold\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getflderrold\+\_\+emfld (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_ae0e0b406ff0837e878753ad73fc1862d}\label{namespaceemfldclass_ae0e0b406ff0837e878753ad73fc1862d}} 
+\index{emfldclass@{emfldclass}!getparam1\_emfld@{getparam1\_emfld}}
+\index{getparam1\_emfld@{getparam1\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getparam1\_emfld()}{getparam1\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getparam1\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_af928aa17c18a7ebd339aece97387154b}\label{namespaceemfldclass_af928aa17c18a7ebd339aece97387154b}} 
+\index{emfldclass@{emfldclass}!getparam2\_emfld@{getparam2\_emfld}}
+\index{getparam2\_emfld@{getparam2\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getparam2\_emfld()}{getparam2\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getparam2\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_a07a0d1aa7a4dc67bcec915f0d5d0945e}\label{namespaceemfldclass_a07a0d1aa7a4dc67bcec915f0d5d0945e}} 
+\index{emfldclass@{emfldclass}!getparam3\_emfld@{getparam3\_emfld}}
+\index{getparam3\_emfld@{getparam3\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{getparam3\_emfld()}{getparam3\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::getparam3\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_af90bd5467acb5c62a2d93f6eb1738097}\label{namespaceemfldclass_af90bd5467acb5c62a2d93f6eb1738097}} 
+\index{emfldclass@{emfldclass}!intfunc1\_emfld@{intfunc1\_emfld}}
+\index{intfunc1\_emfld@{intfunc1\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{intfunc1\_emfld()}{intfunc1\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::intfunc1\+\_\+emfld (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{namespaceemfldclass_af90bd5467acb5c62a2d93f6eb1738097_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_af90bd5467acb5c62a2d93f6eb1738097_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceemfldclass_ab283b339abd3df592d8200c244652131}\label{namespaceemfldclass_ab283b339abd3df592d8200c244652131}} 
+\index{emfldclass@{emfldclass}!maplinear\_emfld@{maplinear\_emfld}}
+\index{maplinear\_emfld@{maplinear\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{maplinear\_emfld()}{maplinear\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::maplinear\+\_\+emfld (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_ab283b339abd3df592d8200c244652131_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_ab283b339abd3df592d8200c244652131_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceemfldclass_ae4bfa1325df7cec4a3facbe8ebc66845}\label{namespaceemfldclass_ae4bfa1325df7cec4a3facbe8ebc66845}} 
+\index{emfldclass@{emfldclass}!rk6i\_emfld@{rk6i\_emfld}}
+\index{rk6i\_emfld@{rk6i\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{rk6i\_emfld()}{rk6i\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::rk6i\+\_\+emfld (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_ae4bfa1325df7cec4a3facbe8ebc66845_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceemfldclass_ae4bfa1325df7cec4a3facbe8ebc66845_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceemfldclass_a89c21ffdad41e63e575b3bc21899f600}\label{namespaceemfldclass_a89c21ffdad41e63e575b3bc21899f600}} 
+\index{emfldclass@{emfldclass}!setparam1\_emfld@{setparam1\_emfld}}
+\index{setparam1\_emfld@{setparam1\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{setparam1\_emfld()}{setparam1\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::setparam1\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_ad425987a9a6e1cb7b0b2b7b1724dc961}\label{namespaceemfldclass_ad425987a9a6e1cb7b0b2b7b1724dc961}} 
+\index{emfldclass@{emfldclass}!setparam2\_emfld@{setparam2\_emfld}}
+\index{setparam2\_emfld@{setparam2\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{setparam2\_emfld()}{setparam2\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::setparam2\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceemfldclass_a3f40c1b18d4a7a28ceea11a3a6b350ad}\label{namespaceemfldclass_a3f40c1b18d4a7a28ceea11a3a6b350ad}} 
+\index{emfldclass@{emfldclass}!setparam3\_emfld@{setparam3\_emfld}}
+\index{setparam3\_emfld@{setparam3\_emfld}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{setparam3\_emfld()}{setparam3\_emfld()}}
+{\footnotesize\ttfamily subroutine emfldclass\+::setparam3\+\_\+emfld (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceemfldclass_structemfldclass_1_1emfld}{emfld}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceemfldclass_ad6fed90f4153b92a9a9ff35a6ef146c3}\label{namespaceemfldclass_ad6fed90f4153b92a9a9ff35a6ef146c3}} 
+\index{emfldclass@{emfldclass}!nparam@{nparam}}
+\index{nparam@{nparam}!emfldclass@{emfldclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private emfldclass\+::nparam = 14\hspace{0.3cm}{\ttfamily [private]}}
+

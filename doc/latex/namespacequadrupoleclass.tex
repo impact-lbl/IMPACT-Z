@@ -1,0 +1,313 @@
+\hypertarget{namespacequadrupoleclass}{}\section{quadrupoleclass Module Reference}
+\label{namespacequadrupoleclass}\index{quadrupoleclass@{quadrupoleclass}}
+
+
+This class defines the linear transfer map and field for the quadrupole beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacequadrupoleclass_1_1getparam__quadrupole}{getparam\+\_\+quadrupole}}
+\item 
+type \mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}
+\item 
+interface \mbox{\hyperlink{interfacequadrupoleclass_1_1setparam__quadrupole}{setparam\+\_\+quadrupole}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_afebabbf596b8330dcdbc2741bb939b5c}{construct\+\_\+quadrupole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a34d611929c447e03e1c12c2f72888ca5}{setparam1\+\_\+quadrupole}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a400dc2305f0aca6ab6d6b5475a91363a}{setparam2\+\_\+quadrupole}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a6e3465265973203b8452b1b2463a2e4b}{setparam3\+\_\+quadrupole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a48e1ded5cfc486c78a47d556fd008e29}{getparam1\+\_\+quadrupole}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a8991350fe610b73bca6787f4c528753c}{getparam2\+\_\+quadrupole}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_ae5c8a42ae81e07dcb9eb91681d28f04e}{getparam3\+\_\+quadrupole}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_adcdf5386d19cfb0a90cbc42426cf0d44}{maplinear\+\_\+quadrupole}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a156f69f00644d8511e9f1ee150504b83}{rk6i\+\_\+quadrupole}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a3cbe01df676294387d1293468425aa70}{intfunc1\+\_\+quadrupole}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a41791f03ec33f0255e54ebc7b9519170}{getflderr\+\_\+quadrupole}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a1d1bf0b4ea88a1cd0c0832a178fc80e5}{getfld\+\_\+quadrupole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a28a961157d94669d59f8c6f024995899}{getfldfrg\+\_\+quadrupole}} (zz, this, bgrad)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the SC rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_aac2c756ddd587ca842555670b0ad16b3}{getfldfrgana\+\_\+quadrupole}} (zz, this, bgrad)
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_ab1abe8916ad3dace3e5d1373da4688ac}{getfldfrgana2\+\_\+quadrupole}} (zz, this, bgrad, bgradp, bgradpp
+\item 
+subroutine \mbox{\hyperlink{namespacequadrupoleclass_a0a62a19a637c00cb1d985698e111b415}{transfmapk\+\_\+quadrupole}} (tt, tau, this, refpt, Nplc, pts, qmas
+\begin{DoxyCompactList}\small\item\em quad strength using K \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacequadrupoleclass_a8eba81bd9796e431c21d0f46260b0c6c}{nparam}} = 9
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and field for the quadrupole beam line elment. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016 
+\end{DoxyDate}
+
+
+\subsection{Data Type Documentation}
+\index{quadrupoleclass::quadrupole@{quadrupoleclass::quadrupole}}\label{structquadrupoleclass_1_1quadrupole}
+\Hypertarget{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}
+\subsubsection{type quadrupoleclass\+::quadrupole}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacequadrupoleclass_addaf50b0cff1aec9fc452925c7819bdb}\label{namespacequadrupoleclass_addaf50b0cff1aec9fc452925c7819bdb}} 
+integer&
+itype&
+Itype = 1. \\
+\hline
+
+\mbox{\Hypertarget{namespacequadrupoleclass_ac84e0debf991be5cd71ee964781dd7af}\label{namespacequadrupoleclass_ac84e0debf991be5cd71ee964781dd7af}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacequadrupoleclass_a283a967adb1fb9dd7c742b5ce97ef3a0}\label{namespacequadrupoleclass_a283a967adb1fb9dd7c742b5ce97ef3a0}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacequadrupoleclass_afece7d333f73554720932318f413f11b}\label{namespacequadrupoleclass_afece7d333f73554720932318f413f11b}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacequadrupoleclass_ab9bcd11b6a6e1b6d7242eb243029393f}\label{namespacequadrupoleclass_ab9bcd11b6a6e1b6d7242eb243029393f}} 
+double precision, dimension(\mbox{\hyperlink{namespacequadrupoleclass_a8eba81bd9796e431c21d0f46260b0c6c}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacequadrupoleclass_afebabbf596b8330dcdbc2741bb939b5c}\label{namespacequadrupoleclass_afebabbf596b8330dcdbc2741bb939b5c}} 
+\index{quadrupoleclass@{quadrupoleclass}!construct\_quadrupole@{construct\_quadrupole}}
+\index{construct\_quadrupole@{construct\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{construct\_quadrupole()}{construct\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::construct\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacequadrupoleclass_a1d1bf0b4ea88a1cd0c0832a178fc80e5}\label{namespacequadrupoleclass_a1d1bf0b4ea88a1cd0c0832a178fc80e5}} 
+\index{quadrupoleclass@{quadrupoleclass}!getfld\_quadrupole@{getfld\_quadrupole}}
+\index{getfld\_quadrupole@{getfld\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{getfld\_quadrupole()}{getfld\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::getfld\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a1d1bf0b4ea88a1cd0c0832a178fc80e5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a1d1bf0b4ea88a1cd0c0832a178fc80e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequadrupoleclass_a41791f03ec33f0255e54ebc7b9519170}\label{namespacequadrupoleclass_a41791f03ec33f0255e54ebc7b9519170}} 
+\index{quadrupoleclass@{quadrupoleclass}!getflderr\_quadrupole@{getflderr\_quadrupole}}
+\index{getflderr\_quadrupole@{getflderr\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{getflderr\_quadrupole()}{getflderr\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::getflderr\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley,  }\item[{double precision, intent(in)}]{anglez }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a41791f03ec33f0255e54ebc7b9519170_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a41791f03ec33f0255e54ebc7b9519170_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequadrupoleclass_a28a961157d94669d59f8c6f024995899}\label{namespacequadrupoleclass_a28a961157d94669d59f8c6f024995899}} 
+\index{quadrupoleclass@{quadrupoleclass}!getfldfrg\_quadrupole@{getfldfrg\_quadrupole}}
+\index{getfldfrg\_quadrupole@{getfldfrg\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{getfldfrg\_quadrupole()}{getfldfrg\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::getfldfrg\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{zz,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{bgrad }\end{DoxyParamCaption})}
+
+
+
+interpolate the field from the SC rf cavity onto bunch location. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a28a961157d94669d59f8c6f024995899_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequadrupoleclass_ab1abe8916ad3dace3e5d1373da4688ac}\label{namespacequadrupoleclass_ab1abe8916ad3dace3e5d1373da4688ac}} 
+\index{quadrupoleclass@{quadrupoleclass}!getfldfrgana2\_quadrupole@{getfldfrgana2\_quadrupole}}
+\index{getfldfrgana2\_quadrupole@{getfldfrgana2\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{getfldfrgana2\_quadrupole()}{getfldfrgana2\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::getfldfrgana2\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{zz,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{bgrad,  }\item[{double precision}]{bgradp,  }\item[{double precision}]{bgradpp }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_ab1abe8916ad3dace3e5d1373da4688ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequadrupoleclass_aac2c756ddd587ca842555670b0ad16b3}\label{namespacequadrupoleclass_aac2c756ddd587ca842555670b0ad16b3}} 
+\index{quadrupoleclass@{quadrupoleclass}!getfldfrgana\_quadrupole@{getfldfrgana\_quadrupole}}
+\index{getfldfrgana\_quadrupole@{getfldfrgana\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{getfldfrgana\_quadrupole()}{getfldfrgana\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::getfldfrgana\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{zz,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{bgrad }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacequadrupoleclass_a48e1ded5cfc486c78a47d556fd008e29}\label{namespacequadrupoleclass_a48e1ded5cfc486c78a47d556fd008e29}} 
+\index{quadrupoleclass@{quadrupoleclass}!getparam1\_quadrupole@{getparam1\_quadrupole}}
+\index{getparam1\_quadrupole@{getparam1\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{getparam1\_quadrupole()}{getparam1\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::getparam1\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacequadrupoleclass_a8991350fe610b73bca6787f4c528753c}\label{namespacequadrupoleclass_a8991350fe610b73bca6787f4c528753c}} 
+\index{quadrupoleclass@{quadrupoleclass}!getparam2\_quadrupole@{getparam2\_quadrupole}}
+\index{getparam2\_quadrupole@{getparam2\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{getparam2\_quadrupole()}{getparam2\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::getparam2\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacequadrupoleclass_ae5c8a42ae81e07dcb9eb91681d28f04e}\label{namespacequadrupoleclass_ae5c8a42ae81e07dcb9eb91681d28f04e}} 
+\index{quadrupoleclass@{quadrupoleclass}!getparam3\_quadrupole@{getparam3\_quadrupole}}
+\index{getparam3\_quadrupole@{getparam3\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{getparam3\_quadrupole()}{getparam3\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::getparam3\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacequadrupoleclass_a3cbe01df676294387d1293468425aa70}\label{namespacequadrupoleclass_a3cbe01df676294387d1293468425aa70}} 
+\index{quadrupoleclass@{quadrupoleclass}!intfunc1\_quadrupole@{intfunc1\_quadrupole}}
+\index{intfunc1\_quadrupole@{intfunc1\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{intfunc1\_quadrupole()}{intfunc1\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::intfunc1\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a3cbe01df676294387d1293468425aa70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a3cbe01df676294387d1293468425aa70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequadrupoleclass_adcdf5386d19cfb0a90cbc42426cf0d44}\label{namespacequadrupoleclass_adcdf5386d19cfb0a90cbc42426cf0d44}} 
+\index{quadrupoleclass@{quadrupoleclass}!maplinear\_quadrupole@{maplinear\_quadrupole}}
+\index{maplinear\_quadrupole@{maplinear\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{maplinear\_quadrupole()}{maplinear\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::maplinear\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_adcdf5386d19cfb0a90cbc42426cf0d44_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_adcdf5386d19cfb0a90cbc42426cf0d44_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequadrupoleclass_a156f69f00644d8511e9f1ee150504b83}\label{namespacequadrupoleclass_a156f69f00644d8511e9f1ee150504b83}} 
+\index{quadrupoleclass@{quadrupoleclass}!rk6i\_quadrupole@{rk6i\_quadrupole}}
+\index{rk6i\_quadrupole@{rk6i\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{rk6i\_quadrupole()}{rk6i\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::rk6i\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a156f69f00644d8511e9f1ee150504b83_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacequadrupoleclass_a156f69f00644d8511e9f1ee150504b83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacequadrupoleclass_a34d611929c447e03e1c12c2f72888ca5}\label{namespacequadrupoleclass_a34d611929c447e03e1c12c2f72888ca5}} 
+\index{quadrupoleclass@{quadrupoleclass}!setparam1\_quadrupole@{setparam1\_quadrupole}}
+\index{setparam1\_quadrupole@{setparam1\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{setparam1\_quadrupole()}{setparam1\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::setparam1\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacequadrupoleclass_a400dc2305f0aca6ab6d6b5475a91363a}\label{namespacequadrupoleclass_a400dc2305f0aca6ab6d6b5475a91363a}} 
+\index{quadrupoleclass@{quadrupoleclass}!setparam2\_quadrupole@{setparam2\_quadrupole}}
+\index{setparam2\_quadrupole@{setparam2\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{setparam2\_quadrupole()}{setparam2\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::setparam2\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(out)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacequadrupoleclass_a6e3465265973203b8452b1b2463a2e4b}\label{namespacequadrupoleclass_a6e3465265973203b8452b1b2463a2e4b}} 
+\index{quadrupoleclass@{quadrupoleclass}!setparam3\_quadrupole@{setparam3\_quadrupole}}
+\index{setparam3\_quadrupole@{setparam3\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{setparam3\_quadrupole()}{setparam3\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::setparam3\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacequadrupoleclass_a0a62a19a637c00cb1d985698e111b415}\label{namespacequadrupoleclass_a0a62a19a637c00cb1d985698e111b415}} 
+\index{quadrupoleclass@{quadrupoleclass}!transfmapk\_quadrupole@{transfmapk\_quadrupole}}
+\index{transfmapk\_quadrupole@{transfmapk\_quadrupole}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{transfmapk\_quadrupole()}{transfmapk\_quadrupole()}}
+{\footnotesize\ttfamily subroutine quadrupoleclass\+::transfmapk\+\_\+quadrupole (\begin{DoxyParamCaption}\item[{double precision, intent(inout)}]{tt,  }\item[{double precision, intent(in)}]{tau,  }\item[{type (\mbox{\hyperlink{namespacequadrupoleclass_structquadrupoleclass_1_1quadrupole}{quadrupole}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{integer, intent(in)}]{Nplc,  }\item[{double precision, dimension(\+:,\+:), pointer}]{pts,  }\item[{}]{qmas }\end{DoxyParamCaption})}
+
+
+
+quad strength using K 
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacequadrupoleclass_a8eba81bd9796e431c21d0f46260b0c6c}\label{namespacequadrupoleclass_a8eba81bd9796e431c21d0f46260b0c6c}} 
+\index{quadrupoleclass@{quadrupoleclass}!nparam@{nparam}}
+\index{nparam@{nparam}!quadrupoleclass@{quadrupoleclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private quadrupoleclass\+::nparam = 9\hspace{0.3cm}{\ttfamily [private]}}
+

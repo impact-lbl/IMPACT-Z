@@ -1,0 +1,102 @@
+\hypertarget{_comp_dom_8f90}{}\section{src/\+Appl/\+Comp\+Dom.f90 File Reference}
+\label{_comp_dom_8f90}\index{src/Appl/CompDom.f90@{src/Appl/CompDom.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacecompdomclass_1_1setlctab__compdom}{compdomclass\+::setlctab\+\_\+compdom}}
+\item 
+type \mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdomclass\+::compdom}}
+\item 
+interface \mbox{\hyperlink{interfacecompdomclass_1_1construct__compdom}{compdomclass\+::construct\+\_\+compdom}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacecompdomclass}{compdomclass}}
+\begin{DoxyCompactList}\small\item\em This class defines 3-\/D global and local computational domain in the parallel simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_acdfdc48f4091ad70b76c1c7ed66c10b0}{compdomclass\+::init\+\_\+compdom}} (this, distparam, nparam, flg, nx, ny, nz, grid2d, nprocrow, nproccol, Flagbc, xrad, yrad, pe
+\begin{DoxyCompactList}\small\item\em calculate the initial computational geometry parameters and double precision parameters. Here, computational domain is mapped onto a one dimension processor array in y direction. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a0e7d562b378f77e0d3a14b33168cb46b}{compdomclass\+::update\+\_\+compdom}} (this, ptrange, grid2d, Flagbc)
+\begin{DoxyCompactList}\small\item\em update geometry parameters using new particle positions. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_abf3eab7526c06e30b574ddf8be378826}{compdomclass\+::updateold\+\_\+compdom}} (this, inrange, grid2d, nplc)
+\begin{DoxyCompactList}\small\item\em update geometry parameters using new particle positions. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a024b1cbd7d29d1bd2ac4285c45b25cb1}{compdomclass\+::balance\+\_\+compdom}} (source, lctabnmz, lctabnmy, lctabrgz, lctabrgy, npz, npy, commrow, commcol, innx, inny, innz, inyglb,
+\begin{DoxyCompactList}\small\item\em find the balanced local domain geometry so that the number of particles on this domain about equal. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a460a22916802ee9041aa66d1922cb812}{compdomclass\+::getmsize\+\_\+compdom}} (this, msize)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a4742fe5698151e1e31e2261798a433c8}{compdomclass\+::getmnum\+\_\+compdom}} (this, mnum)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a545b0a4e8dce9ec9c326806ed1b36598}{compdomclass\+::getlcmnum\+\_\+compdom}} (this, mnum)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_acba710aa1017492e05a537273742cc16}{compdomclass\+::getrange\+\_\+compdom}} (this, range)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_ad0a907860c5bf17c263d8ad957c7ed1d}{compdomclass\+::getlcrange\+\_\+compdom}} (this, range)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_ab679e7ac8218e1580f1a45a53d1fe9f1}{compdomclass\+::getlctabrg\+\_\+compdom}} (this, lctable)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a7c7c1450a459bb1753ef8230ab0d7651}{compdomclass\+::getlctabnm\+\_\+compdom}} (this, lctable)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a60f5ad087b624e541fe9c0872e1c4b90}{compdomclass\+::setlctab1\+\_\+compdom}} (this, lctabnmz, lctabnmy, lctabrgz, lctabrgy, npx, npy, myidx, myidy)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a4bc32865e40fe6b277898a429caff3ca}{compdomclass\+::setlctab2\+\_\+compdom}} (this, lctabnmz, lctabrgz, npx, npy, myidx, myidy)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_ae220a1544909bd8851faed61ce9ad7b8}{compdomclass\+::destruct\+\_\+compdom}} (this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{compdomclass\+::ndim}} = 3
+\begin{DoxyCompactList}\small\item\em spatial dimension \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{compdomclass::compdom@{compdomclass::compdom}}\label{structcompdomclass_1_1compdom}
+\Hypertarget{namespacecompdomclass_structcompdomclass_1_1compdom}
+\subsubsection{type compdomclass\+::compdom}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacecompdomclass_aebcef97b10bb06dc69848b22acaffe70}\label{namespacecompdomclass_aebcef97b10bb06dc69848b22acaffe70}} 
+integer, dimension(:,:,:), pointer&
+lctabnm&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a339ff58ad4edb52e01cf217b9a7f081c}\label{namespacecompdomclass_a339ff58ad4edb52e01cf217b9a7f081c}} 
+double precision, dimension(:,:,:), pointer&
+lctabrg&
+ymin, ymax, \# of y grids on local processor. \\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a80b917ff817964bc120175119768f93e}\label{namespacecompdomclass_a80b917ff817964bc120175119768f93e}} 
+integer, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+meshnum&
+\# of mesh points in each dimension. \\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a13c6277e9ca60fa6a80081b2a0bc91ff}\label{namespacecompdomclass_a13c6277e9ca60fa6a80081b2a0bc91ff}} 
+double precision, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+meshsize&
+mesh size in each dimension. \\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a21d05738eabd33f56f26879055af6343}\label{namespacecompdomclass_a21d05738eabd33f56f26879055af6343}} 
+integer, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+mshlocal&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a55068267999d67699122c91b366a0682}\label{namespacecompdomclass_a55068267999d67699122c91b366a0682}} 
+double precision, dimension(2 $\ast$\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+spatrange&
+spatial range in each dimenion. \\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a2a2654ff7dd41dbb57b11a089e568123}\label{namespacecompdomclass_a2a2654ff7dd41dbb57b11a089e568123}} 
+double precision, dimension(2 $\ast$\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+sptrnglocal&
+\\
+\hline
+
+\end{DoxyFields}

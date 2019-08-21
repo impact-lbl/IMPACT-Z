@@ -1,0 +1,16 @@
+\hypertarget{_fldmger_8f90}{}\section{src/\+Func/\+Fldmger.f90 File Reference}
+\label{_fldmger_8f90}\index{src/Func/Fldmger.f90@{src/Func/Fldmger.f90}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacefldmgerclass}{fldmgerclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the functions to sum up the particle contribution from neighboring processor domain, exchange the potential, exchange the field for interpolation between neighboring processors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefldmgerclass_a54886b0763b8458a0560ccf7087b07f1}{fldmgerclass\+::guardsum1\+\_\+fldmger}} (x, innx, inny, innz, grid)
+\begin{DoxyCompactList}\small\item\em sum up the contributions from neighboring guard cells. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefldmgerclass_a028236bf0d8419b6f75a7fb28eb7226b}{fldmgerclass\+::guardexch1\+\_\+fldmger}} (x, innx, inny, innz, grid)
+\begin{DoxyCompactList}\small\item\em exchange grid information between neighboring guard cell to calculate E from phi. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefldmgerclass_a490fceb1792fb1664488b1394dcff5f0}{fldmgerclass\+::boundint4\+\_\+fldmger}} (x1, x2, x3, innx, inny, innz, grid)
+\begin{DoxyCompactList}\small\item\em exchange the information for interpolation from neighboring guard cells. \end{DoxyCompactList}\end{DoxyCompactItemize}

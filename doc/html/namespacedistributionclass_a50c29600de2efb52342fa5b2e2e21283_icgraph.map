@@ -1,0 +1,5 @@
+<map id="distributionclass::waterbagmc_dist" name="distributionclass::waterbagmc_dist">
+<area shape="rect" id="node1" title="sample the particles with intial distribution using rejection method for multi&#45;charge state." alt="" coords="359,5,482,44"/>
+<area shape="rect" id="node2" href="$namespacedistributionclass.html#a90036cb4aa43f5e3f9844bc412d2a766" title="sample the particles with intial distribution." alt="" coords="187,5,311,44"/>
+<area shape="rect" id="node3" href="$namespaceaccsimulatorclass.html#a6a90186281758191cfa3ef4fc9c54078" title="set up objects and parameters." alt="" coords="5,5,139,44"/>
+</map>

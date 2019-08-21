@@ -1,0 +1,275 @@
+\hypertarget{namespacemultipoleclass}{}\section{multipoleclass Module Reference}
+\label{namespacemultipoleclass}\index{multipoleclass@{multipoleclass}}
+
+
+This class defines the linear transfer map and field for the multipole (sextupole, octupole, decapole) beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacemultipoleclass_1_1getparam__multipole}{getparam\+\_\+multipole}}
+\item 
+type \mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}
+\item 
+interface \mbox{\hyperlink{interfacemultipoleclass_1_1setparam__multipole}{setparam\+\_\+multipole}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_acce84c33b6ef25e4e2ee0572faa92b60}{construct\+\_\+multipole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_a85869614f5049e8bb17c4f195011fca5}{setparam1\+\_\+multipole}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_ac9e1b3b044ae69816a92317bcfd1bc05}{setparam2\+\_\+multipole}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_ad752ec84fa7145abc1b9130eb8654867}{setparam3\+\_\+multipole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_afc5919c9854c17e95241242284635eaf}{getparam1\+\_\+multipole}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_a4ee9aad22a430e9de1e1abb8ea21b058}{getparam2\+\_\+multipole}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_a75142a086a96c998e2ce878857d50179}{getparam3\+\_\+multipole}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_ab9ed6db5fa3b4ea0f6e1a07cd6d57431}{maplinear\+\_\+multipole}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_aebbed53759ae97dc55df35264c89274c}{rk6i\+\_\+multipole}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_adba27354e821268f6cb786c415a5bc91}{intfunc1\+\_\+multipole}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_ade719df1a7d0e47f6495032cb64b1450}{getflderr\+\_\+multipole}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_af4fb9d3cfd9db2d92930fcda605fbe26}{getfld\+\_\+multipole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_a8712b7622d8ed7c0e71cdc18204dcf46}{getfldfrg\+\_\+multipole}} (zz, this, bgrad)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the SC rf cavity onto bunch location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacemultipoleclass_a67bb1a71461cf39cdd365adab7fec8b9}{nparam}} = 10
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and field for the multipole (sextupole, octupole, decapole) beam line elment. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{multipoleclass::multipole@{multipoleclass::multipole}}\label{structmultipoleclass_1_1multipole}
+\Hypertarget{namespacemultipoleclass_structmultipoleclass_1_1multipole}
+\subsubsection{type multipoleclass\+::multipole}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacemultipoleclass_a0819a9c738ccf5ddd0aa69c2a7befd2a}\label{namespacemultipoleclass_a0819a9c738ccf5ddd0aa69c2a7befd2a}} 
+integer&
+itype&
+Itype = 5. \\
+\hline
+
+\mbox{\Hypertarget{namespacemultipoleclass_aa096a41e77f2a963837b3ec8d5b3324b}\label{namespacemultipoleclass_aa096a41e77f2a963837b3ec8d5b3324b}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacemultipoleclass_a4d8dd9ec28f1f2396c1fe8634b1ffb81}\label{namespacemultipoleclass_a4d8dd9ec28f1f2396c1fe8634b1ffb81}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacemultipoleclass_a7e808e5433de77a1defc9a21691400dc}\label{namespacemultipoleclass_a7e808e5433de77a1defc9a21691400dc}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacemultipoleclass_ab06c87e37bb85347c808f7e43bd9bd1f}\label{namespacemultipoleclass_ab06c87e37bb85347c808f7e43bd9bd1f}} 
+double precision, dimension(\mbox{\hyperlink{namespacemultipoleclass_a67bb1a71461cf39cdd365adab7fec8b9}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacemultipoleclass_acce84c33b6ef25e4e2ee0572faa92b60}\label{namespacemultipoleclass_acce84c33b6ef25e4e2ee0572faa92b60}} 
+\index{multipoleclass@{multipoleclass}!construct\_multipole@{construct\_multipole}}
+\index{construct\_multipole@{construct\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{construct\_multipole()}{construct\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::construct\+\_\+multipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemultipoleclass_af4fb9d3cfd9db2d92930fcda605fbe26}\label{namespacemultipoleclass_af4fb9d3cfd9db2d92930fcda605fbe26}} 
+\index{multipoleclass@{multipoleclass}!getfld\_multipole@{getfld\_multipole}}
+\index{getfld\_multipole@{getfld\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{getfld\_multipole()}{getfld\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::getfld\+\_\+multipole (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{namespacemultipoleclass_af4fb9d3cfd9db2d92930fcda605fbe26_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_af4fb9d3cfd9db2d92930fcda605fbe26_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemultipoleclass_ade719df1a7d0e47f6495032cb64b1450}\label{namespacemultipoleclass_ade719df1a7d0e47f6495032cb64b1450}} 
+\index{multipoleclass@{multipoleclass}!getflderr\_multipole@{getflderr\_multipole}}
+\index{getflderr\_multipole@{getflderr\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{getflderr\_multipole()}{getflderr\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::getflderr\+\_\+multipole (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley,  }\item[{double precision, intent(in)}]{anglez }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_ade719df1a7d0e47f6495032cb64b1450_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_ade719df1a7d0e47f6495032cb64b1450_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemultipoleclass_a8712b7622d8ed7c0e71cdc18204dcf46}\label{namespacemultipoleclass_a8712b7622d8ed7c0e71cdc18204dcf46}} 
+\index{multipoleclass@{multipoleclass}!getfldfrg\_multipole@{getfldfrg\_multipole}}
+\index{getfldfrg\_multipole@{getfldfrg\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{getfldfrg\_multipole()}{getfldfrg\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::getfldfrg\+\_\+multipole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{zz,  }\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{bgrad }\end{DoxyParamCaption})}
+
+
+
+interpolate the field from the SC rf cavity onto bunch location. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_a8712b7622d8ed7c0e71cdc18204dcf46_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemultipoleclass_afc5919c9854c17e95241242284635eaf}\label{namespacemultipoleclass_afc5919c9854c17e95241242284635eaf}} 
+\index{multipoleclass@{multipoleclass}!getparam1\_multipole@{getparam1\_multipole}}
+\index{getparam1\_multipole@{getparam1\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{getparam1\_multipole()}{getparam1\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::getparam1\+\_\+multipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemultipoleclass_a4ee9aad22a430e9de1e1abb8ea21b058}\label{namespacemultipoleclass_a4ee9aad22a430e9de1e1abb8ea21b058}} 
+\index{multipoleclass@{multipoleclass}!getparam2\_multipole@{getparam2\_multipole}}
+\index{getparam2\_multipole@{getparam2\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{getparam2\_multipole()}{getparam2\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::getparam2\+\_\+multipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemultipoleclass_a75142a086a96c998e2ce878857d50179}\label{namespacemultipoleclass_a75142a086a96c998e2ce878857d50179}} 
+\index{multipoleclass@{multipoleclass}!getparam3\_multipole@{getparam3\_multipole}}
+\index{getparam3\_multipole@{getparam3\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{getparam3\_multipole()}{getparam3\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::getparam3\+\_\+multipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemultipoleclass_adba27354e821268f6cb786c415a5bc91}\label{namespacemultipoleclass_adba27354e821268f6cb786c415a5bc91}} 
+\index{multipoleclass@{multipoleclass}!intfunc1\_multipole@{intfunc1\_multipole}}
+\index{intfunc1\_multipole@{intfunc1\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{intfunc1\_multipole()}{intfunc1\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::intfunc1\+\_\+multipole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_adba27354e821268f6cb786c415a5bc91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_adba27354e821268f6cb786c415a5bc91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemultipoleclass_ab9ed6db5fa3b4ea0f6e1a07cd6d57431}\label{namespacemultipoleclass_ab9ed6db5fa3b4ea0f6e1a07cd6d57431}} 
+\index{multipoleclass@{multipoleclass}!maplinear\_multipole@{maplinear\_multipole}}
+\index{maplinear\_multipole@{maplinear\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{maplinear\_multipole()}{maplinear\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::maplinear\+\_\+multipole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_ab9ed6db5fa3b4ea0f6e1a07cd6d57431_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_ab9ed6db5fa3b4ea0f6e1a07cd6d57431_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemultipoleclass_aebbed53759ae97dc55df35264c89274c}\label{namespacemultipoleclass_aebbed53759ae97dc55df35264c89274c}} 
+\index{multipoleclass@{multipoleclass}!rk6i\_multipole@{rk6i\_multipole}}
+\index{rk6i\_multipole@{rk6i\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{rk6i\_multipole()}{rk6i\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::rk6i\+\_\+multipole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_aebbed53759ae97dc55df35264c89274c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemultipoleclass_aebbed53759ae97dc55df35264c89274c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacemultipoleclass_a85869614f5049e8bb17c4f195011fca5}\label{namespacemultipoleclass_a85869614f5049e8bb17c4f195011fca5}} 
+\index{multipoleclass@{multipoleclass}!setparam1\_multipole@{setparam1\_multipole}}
+\index{setparam1\_multipole@{setparam1\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{setparam1\_multipole()}{setparam1\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::setparam1\+\_\+multipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemultipoleclass_ac9e1b3b044ae69816a92317bcfd1bc05}\label{namespacemultipoleclass_ac9e1b3b044ae69816a92317bcfd1bc05}} 
+\index{multipoleclass@{multipoleclass}!setparam2\_multipole@{setparam2\_multipole}}
+\index{setparam2\_multipole@{setparam2\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{setparam2\_multipole()}{setparam2\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::setparam2\+\_\+multipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemultipoleclass_ad752ec84fa7145abc1b9130eb8654867}\label{namespacemultipoleclass_ad752ec84fa7145abc1b9130eb8654867}} 
+\index{multipoleclass@{multipoleclass}!setparam3\_multipole@{setparam3\_multipole}}
+\index{setparam3\_multipole@{setparam3\_multipole}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{setparam3\_multipole()}{setparam3\_multipole()}}
+{\footnotesize\ttfamily subroutine multipoleclass\+::setparam3\+\_\+multipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipole}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemultipoleclass_a67bb1a71461cf39cdd365adab7fec8b9}\label{namespacemultipoleclass_a67bb1a71461cf39cdd365adab7fec8b9}} 
+\index{multipoleclass@{multipoleclass}!nparam@{nparam}}
+\index{nparam@{nparam}!multipoleclass@{multipoleclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private multipoleclass\+::nparam = 10\hspace{0.3cm}{\ttfamily [private]}}
+

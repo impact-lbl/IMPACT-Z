@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! SCclass: Superconducting cavity beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the linear transfer map and RF field
-!              for the SC beam line elment.
+! 
+! MODULE        : ... SCclass
+! VERSION       : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the linear transfer map and RF field
+!> for the SC beam line elment.
 ! Comments:
 !----------------------------------------------------------------
       module SCclass
@@ -14,7 +19,7 @@
         integer, private, parameter :: Nparam = 11
         type SC
           !Itype = 104
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 104
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -327,7 +332,7 @@
 
         end subroutine intfunc1_SC
 
-        !interpolate the field from the SC rf cavity onto bunch location.
+        !> interpolate the field from the SC rf cavity onto bunch location.
         subroutine getaxfldE_SC(z,this,ez1,ezp1,ezpp1)
         implicit none
         include 'mpif.h'
@@ -372,7 +377,7 @@
 
         end subroutine getaxfldE_SC
 
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderr_SC(pos,extfld,this,dx,dy,anglex,angley,&
                                  anglez)
         implicit none
@@ -479,7 +484,7 @@
 
         end subroutine getflderr_SC
         
-        !get external field without displacement and rotation errors
+        !> get external field without displacement and rotation errors
         subroutine  getfld_SC(pos,extfld,this)
         implicit none
         include 'mpif.h'

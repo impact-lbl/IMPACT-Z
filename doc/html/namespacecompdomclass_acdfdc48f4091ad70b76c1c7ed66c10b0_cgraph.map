@@ -1,0 +1,6 @@
+<map id="compdomclass::init_compdom" name="compdomclass::init_compdom">
+<area shape="rect" id="node1" title="calculate the initial computational geometry parameters and double precision parameters...." alt="" coords="5,68,140,107"/>
+<area shape="rect" id="node2" href="$namespacepgrid2dclass.html#ac088657db5b1deb05bb1ec732579ba53" title="get the total number of PEs, PEs in column and row communicators." alt="" coords="194,5,340,44"/>
+<area shape="rect" id="node3" href="$namespacepgrid2dclass.html#a559d4550356f88440ae55fceda480de2" title="get my rank position in 2d, column, and row communicators." alt="" coords="194,68,341,107"/>
+<area shape="rect" id="node4" href="$namespacepgrid2dclass.html#a550cb1b5c94a9e168c3e0108bb8a6d5b" title="get 2D, column, and row communicators." alt="" coords="188,131,346,169"/>
+</map>

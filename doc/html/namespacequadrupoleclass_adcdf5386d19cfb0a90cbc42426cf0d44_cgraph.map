@@ -1,0 +1,6 @@
+<map id="quadrupoleclass::maplinear_quadrupole" name="quadrupoleclass::maplinear_quadrupole">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,190,44"/>
+<area shape="rect" id="node2" href="$namespacequadrupoleclass.html#a156f69f00644d8511e9f1ee150504b83" title=" " alt="" coords="238,5,385,44"/>
+<area shape="rect" id="node3" href="$namespacequadrupoleclass.html#a3cbe01df676294387d1293468425aa70" title=" " alt="" coords="433,5,606,44"/>
+<area shape="rect" id="node4" href="$namespacequadrupoleclass.html#a28a961157d94669d59f8c6f024995899" title="interpolate the field from the SC rf cavity onto bunch location." alt="" coords="654,5,828,44"/>
+</map>

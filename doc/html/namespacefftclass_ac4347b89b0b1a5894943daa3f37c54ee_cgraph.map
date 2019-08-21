@@ -1,0 +1,18 @@
+<map id="fftclass::cosft1_fftpack" name="fftclass::cosft1_fftpack">
+<area shape="rect" id="node1" title="fast discrete cosine transform" alt="" coords="5,107,157,132"/>
+<area shape="rect" id="node2" href="$namespacefftclass.html#aa0605a45256c5ff2bfcd9229dd8854e4" title=" " alt="" coords="429,31,534,56"/>
+<area shape="rect" id="node6" href="$namespacefftclass.html#a2c47e8aa546c8ea9f5f23219be52d57e" title="transfer real vector from nr style to fftpack style generally" alt="" coords="205,81,381,107"/>
+<area shape="rect" id="node7" href="$namespacefftclass.html#ae01eaac3c675ef6c95b60a480bda63ba" title=" " alt="" coords="240,131,346,156"/>
+<area shape="rect" id="node16" href="$namespacefftclass.html#a8f3b38a9f0433b6b847b670b98acab99" title="transfer real vector from fftpack style to nr style for (forward) cost1D" alt="" coords="218,180,368,219"/>
+<area shape="rect" id="node3" href="$namespacefftclass.html#a3e1884f0fa20142f45f2d3efe3246adc" title=" " alt="" coords="727,107,826,132"/>
+<area shape="rect" id="node4" href="$namespacefftclass.html#abb3d8b6f0166090db98de3e7d627434f" title=" " alt="" coords="583,5,678,31"/>
+<area shape="rect" id="node5" href="$namespacefftclass.html#a122822a405cd96e5df936acaad731746" title=" " alt="" coords="728,5,824,31"/>
+<area shape="rect" id="node8" href="$namespacefftclass.html#af419be9c656e387f89facc1033cf4f55" title=" " alt="" coords="429,157,534,183"/>
+<area shape="rect" id="node9" href="$namespacefftclass.html#ad5aa2059236e01ea65aecda114c3f45f" title=" " alt="" coords="582,208,679,233"/>
+<area shape="rect" id="node10" href="$namespacefftclass.html#af9f24f143ca02395c91f7757343e8003" title=" " alt="" coords="728,208,825,233"/>
+<area shape="rect" id="node11" href="$namespacefftclass.html#ac2e28efef69b7ac5c599c51dc9be973d" title=" " alt="" coords="874,109,977,135"/>
+<area shape="rect" id="node12" href="$namespacefftclass.html#a9d3bdd521a616fe934704cb38ac074f4" title=" " alt="" coords="874,159,977,184"/>
+<area shape="rect" id="node13" href="$namespacefftclass.html#a382f39146e7d8e1450810efdc6f4cd79" title=" " alt="" coords="874,208,977,233"/>
+<area shape="rect" id="node14" href="$namespacefftclass.html#acc419931cfa3ec3e19e6264b35e83aae" title=" " alt="" coords="874,257,977,283"/>
+<area shape="rect" id="node15" href="$namespacefftclass.html#adb327056327448d0a605271d57091578" title=" " alt="" coords="874,307,977,332"/>
+</map>

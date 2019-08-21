@@ -1,0 +1,90 @@
+\hypertarget{namespaceinputclass}{}\section{inputclass Module Reference}
+\label{namespaceinputclass}\index{inputclass@{inputclass}}
+
+
+This class defines functions to input the global beam and computational parameters and the lattice input parameters in the accelerator.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfaceinputclass_1_1in__input}{in\+\_\+input}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceinputclass_ae7866a50f5576b1fea0aa1b10f98690b}{init\+\_\+input}} (time)
+\begin{DoxyCompactList}\small\item\em Start M\+PI. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceinputclass_a907319f6e5d34930fbc63f5af426e9bd}{in1\+\_\+input}} (odim, onp, onx, ony, onz, oflagbc, oflagdist, orstartflg, oflagmap, distparam, nparam, obcurr, obkenergy, obmass, obcharge, obfreq, oxrad, oyrad, operdlen, onblem, onpcol, onprow, oflage
+\begin{DoxyCompactList}\small\item\em Input all parameters except beam line element parameters. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceinputclass_af94bb0662dc4e95990a7b13c1110d831}{in2\+\_\+input}} (onblem, oblength, obnseg, obmpstp, obtype, value1, value2, value3, value4, value5, value6, value7, value8, value9, value10, value11, value12, value13, value14, value15, value16, value17, value18, value19, value20, value21, value22, value23, value24)
+\begin{DoxyCompactList}\small\item\em Input beam line element parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines functions to input the global beam and computational parameters and the lattice input parameters in the accelerator. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceinputclass_a907319f6e5d34930fbc63f5af426e9bd}\label{namespaceinputclass_a907319f6e5d34930fbc63f5af426e9bd}} 
+\index{inputclass@{inputclass}!in1\_input@{in1\_input}}
+\index{in1\_input@{in1\_input}!inputclass@{inputclass}}
+\subsubsection{\texorpdfstring{in1\_input()}{in1\_input()}}
+{\footnotesize\ttfamily subroutine inputclass\+::in1\+\_\+input (\begin{DoxyParamCaption}\item[{integer, intent(out)}]{odim,  }\item[{integer, intent(out)}]{onp,  }\item[{integer, intent(out)}]{onx,  }\item[{integer, intent(out)}]{ony,  }\item[{integer, intent(out)}]{onz,  }\item[{integer, intent(out)}]{oflagbc,  }\item[{integer, intent(out)}]{oflagdist,  }\item[{integer, intent(out)}]{orstartflg,  }\item[{integer, intent(out)}]{oflagmap,  }\item[{double precision, dimension(nparam), intent(out)}]{distparam,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, intent(out)}]{obcurr,  }\item[{double precision, intent(out)}]{obkenergy,  }\item[{double precision, intent(out)}]{obmass,  }\item[{double precision, intent(out)}]{obcharge,  }\item[{double precision, intent(out)}]{obfreq,  }\item[{double precision, intent(out)}]{oxrad,  }\item[{double precision, intent(out)}]{oyrad,  }\item[{double precision, intent(out)}]{operdlen,  }\item[{integer, intent(out)}]{onblem,  }\item[{integer, intent(out)}]{onpcol,  }\item[{integer, intent(out)}]{onprow,  }\item[{}]{oflage }\end{DoxyParamCaption})}
+
+
+
+Input all parameters except beam line element parameters. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceinputclass_a907319f6e5d34930fbc63f5af426e9bd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceinputclass_af94bb0662dc4e95990a7b13c1110d831}\label{namespaceinputclass_af94bb0662dc4e95990a7b13c1110d831}} 
+\index{inputclass@{inputclass}!in2\_input@{in2\_input}}
+\index{in2\_input@{in2\_input}!inputclass@{inputclass}}
+\subsubsection{\texorpdfstring{in2\_input()}{in2\_input()}}
+{\footnotesize\ttfamily subroutine inputclass\+::in2\+\_\+input (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{onblem,  }\item[{double precision, dimension(onblem), intent(out)}]{oblength,  }\item[{integer, dimension(onblem), intent(out)}]{obnseg,  }\item[{integer, dimension(onblem), intent(out)}]{obmpstp,  }\item[{integer, dimension(onblem), intent(out)}]{obtype,  }\item[{double precision, dimension(onblem), intent(out)}]{value1,  }\item[{double precision, dimension(onblem), intent(out)}]{value2,  }\item[{}]{value3,  }\item[{}]{value4,  }\item[{}]{value5,  }\item[{}]{value6,  }\item[{}]{value7,  }\item[{}]{value8,  }\item[{}]{value9,  }\item[{}]{value10,  }\item[{}]{value11,  }\item[{}]{value12,  }\item[{}]{value13,  }\item[{}]{value14,  }\item[{}]{value15,  }\item[{}]{value16,  }\item[{}]{value17,  }\item[{}]{value18,  }\item[{}]{value19,  }\item[{}]{value20,  }\item[{}]{value21,  }\item[{}]{value22,  }\item[{}]{value23,  }\item[{}]{value24 }\end{DoxyParamCaption})}
+
+
+
+Input beam line element parameters. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceinputclass_af94bb0662dc4e95990a7b13c1110d831_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceinputclass_ae7866a50f5576b1fea0aa1b10f98690b}\label{namespaceinputclass_ae7866a50f5576b1fea0aa1b10f98690b}} 
+\index{inputclass@{inputclass}!init\_input@{init\_input}}
+\index{init\_input@{init\_input}!inputclass@{inputclass}}
+\subsubsection{\texorpdfstring{init\_input()}{init\_input()}}
+{\footnotesize\ttfamily subroutine inputclass\+::init\+\_\+input (\begin{DoxyParamCaption}\item[{double precision, intent(out)}]{time }\end{DoxyParamCaption})}
+
+
+
+Start M\+PI. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{namespaceinputclass_ae7866a50f5576b1fea0aa1b10f98690b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{namespaceinputclass_ae7866a50f5576b1fea0aa1b10f98690b_icgraph}
+\end{center}
+\end{figure}

@@ -2,27 +2,32 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Pgrid2dclass: logical 2D Cartesian processor grid class in DATA 
 !               STRUCTURE layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class construct a logical 2-D Cartesian processor grid.
+! 
+! MODULE  : ... Pgrid2dclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class construct a logical 2-D Cartesian processor grid.
 ! Comments:
 !----------------------------------------------------------------
       module Pgrid2dclass
         use mpistub
         type Pgrid2d
           private
-          integer comm_2d      ! comunicator for entire grid
-          integer col_comm     ! comunicator for my col
-          integer row_comm     ! comunicator for my row
-          integer np           ! total number of processors
-          integer npcol        ! number of processors in my col
-          integer nprow        ! number of processors in my row
-          integer myrank       ! my rank in the grid comm
-          integer my_col       ! my column number
-          integer my_row       ! my row number
+          integer comm_2d      !< comunicator for entire grid
+          integer col_comm     !< comunicator for my col
+          integer row_comm     !< comunicator for my row
+          integer np           !< total number of processors
+          integer npcol        !< number of processors in my col
+          integer nprow        !< number of processors in my row
+          integer myrank       !< my rank in the grid comm
+          integer my_col       !< my column number
+          integer my_row       !< my row number
         end type Pgrid2d
       contains
-        ! set up 2-D Cartisian grid.
+        !> set up 2-D Cartisian grid.
         subroutine construct_Pgrid2d(this,comm,nrow,ncol)
         implicit none
         include 'mpif.h'
@@ -66,7 +71,7 @@
 
         end subroutine construct_Pgrid2d
 
-        ! get 2D, column, and row communicators.
+        !> get 2D, column, and row communicators.
         subroutine getcomm_Pgrid2d(this,comm2d,commcol,commrow)
         implicit none
         type (Pgrid2d),intent(in) :: this
@@ -78,7 +83,7 @@
 
         end subroutine getcomm_Pgrid2d
 
-        !get my rank position in 2d, column, and row communicators.
+        !> get my rank position in 2d, column, and row communicators.
         subroutine getpost_Pgrid2d(this,mypos,mycolpos,myrowpos)
         implicit none
         type (Pgrid2d),intent(in) :: this
@@ -90,7 +95,7 @@
 
         end subroutine getpost_Pgrid2d
 
-        !get the total number of PEs, PEs in column and row communicators.
+        !> get the total number of PEs, PEs in column and row communicators.
         subroutine getsize_Pgrid2d(this,totsize,colsize,rowsize)
         implicit none
         type (Pgrid2d),intent(in) :: this

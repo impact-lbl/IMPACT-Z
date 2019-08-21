@@ -1,0 +1,5 @@
+<map id="dataclass::read4_data" name="dataclass::read4_data">
+<area shape="rect" id="node1" title="read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) rf data from files ..." alt="" coords="286,12,438,37"/>
+<area shape="rect" id="node2" href="$namespaceaccsimulatorclass.html#acbe26eeaf1cb4076384b90e1016785f0" title="Run beam dynamics simulation through accelerator." alt="" coords="104,5,238,44"/>
+<area shape="rect" id="node3" href="$main_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="v.1.0" alt="" coords="5,12,56,37"/>
+</map>

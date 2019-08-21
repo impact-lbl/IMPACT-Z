@@ -1,0 +1,163 @@
+\hypertarget{mpistub_8f90}{}\section{src/mpistub.f90 File Reference}
+\label{mpistub_8f90}\index{src/mpistub.f90@{src/mpistub.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__allgatherv}{mpistub\+::mpi\+\_\+allgatherv}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__alltoallv}{mpistub\+::mpi\+\_\+alltoallv}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__allgather}{mpistub\+::mpi\+\_\+allgather}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__gather}{mpistub\+::mpi\+\_\+gather}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__isend}{mpistub\+::mpi\+\_\+isend}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__send}{mpistub\+::mpi\+\_\+send}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__irecv}{mpistub\+::mpi\+\_\+irecv}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__recv}{mpistub\+::mpi\+\_\+recv}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__reduce}{mpistub\+::mpi\+\_\+reduce}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__allreduce}{mpistub\+::mpi\+\_\+allreduce}}
+\item 
+interface \mbox{\hyperlink{interfacempistub_1_1mpi__bcast}{mpistub\+::mpi\+\_\+bcast}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacempistub}{mpistub}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_af6819ee02570b8c8bef94e79e67a4af9}{mpistub\+::mpi\+\_\+init}} (ierr)
+\begin{DoxyCompactList}\small\item\em mpi initialization \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_aa720efd8024be5bb417f89dfd1b02c9d}{mpistub\+::mpi\+\_\+initialized}} (ierr, ierr2)
+\begin{DoxyCompactList}\small\item\em mpi initialization \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a6a6bc8ca0a832b3f53660407ed51302d}{mpistub\+::mpi\+\_\+finalize}} (ierr)
+\begin{DoxyCompactList}\small\item\em mpi end \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a500688889ac1b249a828fab59a1f8b5e}{mpistub\+::mpi\+\_\+allreduce1}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON,
+\begin{DoxyCompactList}\small\item\em global sum \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a8d115cae5e65c2a2bc7679f25da7b08a}{mpistub\+::mpi\+\_\+allreduce2}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON,
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a4193e72879e62788a983d1c7e73ff08c}{mpistub\+::mpi\+\_\+allreduce3}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON,
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ad0b3b8a56320b07ec24fdf1a6d012614}{mpistub\+::mpi\+\_\+allreduce4}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON,
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a1d326fcb72261d5c91c9f31bfdeae961}{mpistub\+::mpi\+\_\+allreduce5}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON,
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a3a34d1b95074e43d0c79295326059ef2}{mpistub\+::mpi\+\_\+allreduce6}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON,
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a0d84064615f696d4877ad9f912d4cbef}{mpistub\+::mpi\+\_\+barrier}} (comm2d, ierr)
+\begin{DoxyCompactList}\small\item\em synchronize communication \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a3085e38e0e5d38df633afc7b2d92cebb}{mpistub\+::mpi\+\_\+comm\+\_\+rank}} (M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, my\+\_\+rank, ierr)
+\begin{DoxyCompactList}\small\item\em processor ID \end{DoxyCompactList}\item 
+double precision function \mbox{\hyperlink{namespacempistub_a2456432a60801629e19273ebe4114bc9}{mpistub\+::mpi\+\_\+wtime}} ()
+\begin{DoxyCompactList}\small\item\em mpi timing \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a28c2930a0c38a6318865ef760b6e87c0}{mpistub\+::mpi\+\_\+bcast1}} (rffile, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num2, comm2d, ierr)
+\begin{DoxyCompactList}\small\item\em mpi broadcast \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a0d3b09e89256fef8bc0a4f71f7ff73c0}{mpistub\+::mpi\+\_\+bcast2}} (rffile, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num2, comm2d, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ae8d4cdea848159c537f06677e1d7b712}{mpistub\+::mpi\+\_\+bcast3}} (rffile, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num2, comm2d, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_abe276f0cf456de80ee888e6b335a4b7d}{mpistub\+::mpi\+\_\+bcast4}} (rffile, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num2, comm2d, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a79437cd731fca94bcf720d8abd6cec77}{mpistub\+::mpi\+\_\+bcast5}} (rffile, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num2, comm2d, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_aca21309e40e0374a92a5e2a163110d1c}{mpistub\+::mpi\+\_\+bcast6}} (rffile, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num2, comm2d, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a188b67a76569dcb918a27f48018e6baf}{mpistub\+::mpi\+\_\+comm\+\_\+size}} (M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, np, ierr)
+\begin{DoxyCompactList}\small\item\em total number of processors \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a6ba478c1e620c237eb85776943b327ad}{mpistub\+::mpi\+\_\+reduce1}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, M\+P\+I\+\_\+\+S\+UM, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\begin{DoxyCompactList}\small\item\em sum to local processor \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a1b64afd5481e729d54724f7427b4a32f}{mpistub\+::mpi\+\_\+reduce2}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, M\+P\+I\+\_\+\+S\+UM, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a781c5f26f7ee9bdffdc195be7eaa07ef}{mpistub\+::mpi\+\_\+reduce3}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, M\+P\+I\+\_\+\+S\+UM, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ad1156be68f1c3c3dd3d844d6d4cee160}{mpistub\+::mpi\+\_\+reduce4}} (tmplc, tmpgl, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, M\+P\+I\+\_\+\+S\+UM, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_aa276a91b8fd09a5bf247b20692731dd8}{mpistub\+::mpi\+\_\+send1}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\begin{DoxyCompactList}\small\item\em mpi send command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a6c4e68898245f7cb86fa2854a852a0e4}{mpistub\+::mpi\+\_\+send2}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_aa2236bd3615856981e15e75fd85bce13}{mpistub\+::mpi\+\_\+send3}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a1c957856f9f59c126b5a38101eb016b2}{mpistub\+::mpi\+\_\+send4}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a46c983917eca3492fa5ad9eadbb25b2e}{mpistub\+::mpi\+\_\+send5}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+C\+O\+M\+P\+L\+EX, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a1a0436836f0028c31fba295fbbe17859}{mpistub\+::mpi\+\_\+send6}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+C\+O\+M\+P\+L\+EX, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a572c98a51712ea28686e837f62e0a660}{mpistub\+::mpi\+\_\+send7}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+C\+O\+M\+P\+L\+EX, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a2aebc613876246484fb3daea092c2abe}{mpistub\+::mpi\+\_\+isend1}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, num3, ierr)
+\begin{DoxyCompactList}\small\item\em mpi isend command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_ac35bd42a69c258e2cc6e8db36212b3aa}{mpistub\+::mpi\+\_\+isend2}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, num3, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a47d130d2122c960528cefcdd0295e596}{mpistub\+::mpi\+\_\+isend3}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, num3, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a4afba16e08f9475afade41e36b28333c}{mpistub\+::mpi\+\_\+isend4}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, num3, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_abc6e6b54dd8f86227143dffe19e34fa4}{mpistub\+::mpi\+\_\+wait}} (num3, status, ierr)
+\begin{DoxyCompactList}\small\item\em mpi wait command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_ae67c78bda40eb1d1e4dbd6c69afc6201}{mpistub\+::mpi\+\_\+waitall}} (num3, req, status, ierr)
+\begin{DoxyCompactList}\small\item\em mpi wait all command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a43bcd6e1779da1802197e44427742c2b}{mpistub\+::mpi\+\_\+recv1}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, status, ierr)
+\begin{DoxyCompactList}\small\item\em mpi recv command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a9936e4610ebb0c4c17e99d8a6d39e562}{mpistub\+::mpi\+\_\+recv2}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, status, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a86129a6bb6e924778df9e0c578f838d2}{mpistub\+::mpi\+\_\+recv3}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, status, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ab6b89c7d5ec60b643e3c939f926430c1}{mpistub\+::mpi\+\_\+recv4}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, status, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ada728226719e1870c85e45f6594cccbd}{mpistub\+::mpi\+\_\+irecv1}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, msid, ierr)
+\begin{DoxyCompactList}\small\item\em mpi irecv command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a3f6d6a1e356cf0bed0327c5b9df47498}{mpistub\+::mpi\+\_\+irecv2}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, msid, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ad39ca4d74dbf2a6bc63895fa2503e945}{mpistub\+::mpi\+\_\+irecv3}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+C\+O\+M\+P\+L\+EX, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, msid, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a99d8cacbf221fe5a3829f6dbc22159a6}{mpistub\+::mpi\+\_\+irecv4}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+C\+O\+M\+P\+L\+EX, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, msid, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a42635e07cedd999352dec8ee45a378f5}{mpistub\+::mpi\+\_\+irecv5}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, msid, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a38d4bf89b91c8dac22d310c6e73ced41}{mpistub\+::mpi\+\_\+irecv6}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, num1, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, msid, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a3e61dfb24d3caebd2c2983a9e4ab3dfd}{mpistub\+::mpi\+\_\+gather1}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, tmpgl, num1, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+O\+N2, num2, M\+PI
+\begin{DoxyCompactList}\small\item\em mpi gather command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a9be56b07b004daadf8c9baeb3f79a9eb}{mpistub\+::mpi\+\_\+gather2}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, tmpgl, num1, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+O\+N2, num2, M\+PI
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a4a5262ac6eca022843c0cd39b508e35f}{mpistub\+::mpi\+\_\+gather3}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, tmpgl, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+E\+R2, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+OR
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a6c7b2f5337f97885b72a76ec35729075}{mpistub\+::mpi\+\_\+gather4}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, tmpgl, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+E\+R2, num2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+OR
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a61c97c834a766b0372d758a4158ae7da}{mpistub\+::mpi\+\_\+allgather1}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, tmpgl, num1, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+O\+N2, M\+P\+I\+\_\+\+C\+O\+MM
+\begin{DoxyCompactList}\small\item\em mpi allgather command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a4af9ae68605228fa295ff15192cad31c}{mpistub\+::mpi\+\_\+allgather2}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, tmpgl, num1, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+O\+N2, M\+P\+I\+\_\+\+C\+O\+MM
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a60f773685d2ab6f25d3d674acd53d941}{mpistub\+::mpi\+\_\+allgather3}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, tmpgl, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+E\+R2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ie
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a2b8f9c4bef9676116ba1eeb6b4e72af5}{mpistub\+::mpi\+\_\+allgather4}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, tmpgl, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+E\+R2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ie
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_afa6d7737a2157021051c7c4e7c159079}{mpistub\+::mpi\+\_\+allgather5}} (tmplc, num, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, tmpgl, num1, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+O\+N2, M\+P\+I\+\_\+\+C\+O\+MM
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ace33f6f5c0cff4120ef8d624a20adf59}{mpistub\+::mpi\+\_\+allgather6}} (tmplc, num, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, tmpgl, num1, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+E\+R2, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+W\+O\+R\+LD, ie
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ae0b8402fe840a321a5e4eabbda8ecb43}{mpistub\+::mpi\+\_\+cart\+\_\+create}} (comm, num1, dims, period, tt, comm\+\_\+2d, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a599bb38fd4a9f405ced50d48c09116ca}{mpistub\+::mpi\+\_\+cart\+\_\+coords}} (comm\+\_\+2d, myrank, num, local, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_ab9ac48f74bbcdf05669e63852a220c09}{mpistub\+::mpi\+\_\+cart\+\_\+sub}} (comm\+\_\+2d, remaindims, col\+\_\+comm, ierr)
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_aa93ced1f07150fe7c8d11a35a0b77b1f}{mpistub\+::mpi\+\_\+alltoallv1}} (sendbuf, sendcount, senddisp, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+
+\begin{DoxyCompactList}\small\item\em mpi alltoallv1 command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_ac85c372d1990a0cfd2b6cb31a0be0b47}{mpistub\+::mpi\+\_\+alltoallv2}} (sendbuf, sendcount, senddisp, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a9e2b2b4a1d6bda704e33a2acfcfb9cfd}{mpistub\+::mpi\+\_\+alltoallv3}} (sendbuf, sendcount, senddisp, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+
+\item 
+subroutine \mbox{\hyperlink{namespacempistub_a35fa927935bbf54e76460692ed2ae189}{mpistub\+::mpi\+\_\+allgatherv1}} (rhoz, innz, M\+P\+I\+\_\+\+D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON, recvrh
+\begin{DoxyCompactList}\small\item\em mpi allgatherv command \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacempistub_a107fe42e9088982af86dbfe11fe0ac33}{mpistub\+::mpi\+\_\+allgatherv2}} (rhoz, innz, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+ER, recvrhoz, ztable, zdisp, M\+P\+I\+\_\+\+I\+N\+T\+E\+G\+E\+R2, commrow, ierr)
+\end{DoxyCompactItemize}

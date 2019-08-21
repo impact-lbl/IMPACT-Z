@@ -1,0 +1,2035 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  1 AUG 2019 14:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**refman
+(./refman.tex
+LaTeX2e <2018-12-01>
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
+Applying: [2015/01/01] Old fixltx2e package on input line 46.
+
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+Already applied: [0000/00/00] Old fixltx2e package on input line 53.
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count89
+\calc@Bcount=\count90
+\calc@Adimen=\dimen103
+\calc@Bdimen=\dimen104
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count91
+\calc@Cskip=\skip45
+) (./doxygen.sty
+Package: doxygen 
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen105
+\ar@mcellbox=\box27
+\extrarowheight=\dimen106
+\NC@list=\toks14
+\extratabsurround=\skip46
+\backup@length=\skip47
+\ar@cellbox=\box28
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count92
+\float@exts=\toks15
+\float@box=\box29
+\@float@everytoks=\toks16
+\@floatcapt=\box30
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks17
+\verbatim@line=\toks18
+\verbatim@in@stream=\read1
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+\everycr=\toks19
+\minrowclearance=\skip48
+)
+\rownum=\count93
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+\LTleft=\skip49
+\LTright=\skip50
+\LTpre=\skip51
+\LTpost=\skip52
+\LTchunksize=\count94
+\LTcapwidth=\dimen107
+\LT@head=\box31
+\LT@firsthead=\box32
+\LT@foot=\box33
+\LT@lastfoot=\box34
+\LT@cols=\count95
+\LT@rows=\count96
+\c@LT@tables=\count97
+\c@LT@chunks=\count98
+\LT@p@ftn=\toks20
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box35
+\sift@deathcycles=\count99
+\@vwid@loff=\dimen108
+\@vwid@roff=\dimen109
+)
+\c@taburow=\count100
+\tabu@nbcols=\count101
+\tabu@cnt=\count102
+\tabu@Xcol=\count103
+\tabu@alloc=\count104
+\tabu@nested=\count105
+\tabu@target=\dimen110
+\tabu@spreadtarget=\dimen111
+\tabu@naturalX=\dimen112
+\tabucolX=\dimen113
+\tabu@Xsum=\dimen114
+\extrarowdepth=\dimen115
+\abovetabulinesep=\dimen116
+\belowtabulinesep=\dimen117
+\tabustrutrule=\dimen118
+\tabu@thebody=\toks21
+\tabu@footnotes=\toks22
+\tabu@box=\box36
+\tabu@arstrutbox=\box37
+\tabu@hleads=\box38
+\tabu@vleads=\box39
+\tabu@cellskip=\skip53
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2019/01/15
+
+Style option: `fancyvrb' v3.2a <2019/01/15> (tvz)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+\FV@CodeLineNo=\count106
+\FV@InFile=\read2
+\FV@TabBox=\box40
+\c@FancyVerbLine=\count107
+\FV@StepNumber=\count108
+\FV@OutFile=\write3
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+\TX@col@width=\dimen119
+\TX@old@table=\dimen120
+\TX@old@col=\dimen121
+\TX@target=\dimen122
+\TX@delta=\dimen123
+\TX@cols=\count109
+\TX@ftn=\toks24
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
+\multirow@colwidth=\skip54
+\multirow@cntb=\count110
+\multirow@dima=\skip55
+\bigstrutjot=\dimen124
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hanging/hanging.sty
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip56
+\h@ngfstopwd=\skip57
+\h@ngquotewd=\skip58
+\h@ngdquotewd=\skip59
+\h@ngquerywd=\skip60
+\h@ngexclwd=\skip61
+\h@ngcolonwd=\skip62
+\h@ngscolonwd=\skip63
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks25
+\XKV@tempa@toks=\toks26
+)
+\XKV@depth=\count111
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box41
+)
+\tc@llx=\dimen127
+\tc@lly=\dimen128
+\tc@urx=\dimen129
+\tc@ury=\dimen130
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen131
+\adjbox@Height=\dimen132
+\adjbox@Depth=\dimen133
+\adjbox@Totalheight=\dimen134
+\adjbox@pwidth=\dimen135
+\adjbox@pheight=\dimen136
+\adjbox@pdepth=\dimen137
+\adjbox@ptotalheight=\dimen138
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count112
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks27
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/stackengine/stackengine.sty
+Package: stackengine 2017/02/13 v4.01\ Stacking text and objects in convenient 
+ways
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count113
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/listofitems/listofitems.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/listofitems/listofitems.tex
+\loi_cnt_foreach_nest=\count114
+\loi_nestcnt=\count115
+)
+Package: listofitems 2019/03/03 v1.61 Grab items in lists using user-specified 
+sep char (CT)
+)
+\c@@stackindex=\count116
+\@boxshift=\skip64
+\stack@tmplength=\skip65
+\temp@stkl=\skip66
+\@stackedboxwidth=\skip67
+\@addedbox=\box42
+\@anchorbox=\box43
+\stackedbox=\box44
+\@centerbox=\box45
+\c@ROWcellindex@=\count117
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box46
+\UL@hyphenbox=\box47
+\UL@skip=\skip68
+\UL@hook=\toks28
+\UL@height=\dimen139
+\UL@pe=\count118
+\UL@pixel=\dimen140
+\ULC@box=\box48
+Package: ulem 2012/05/18
+\ULdepth=\dimen141
+)
+\xrefbox=\box49
+\xreflength=\skip69
+\CodeWidthChar=\skip70
+\CodeHeightChar=\skip71
+\DoxyCodeWidth=\skip72
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks29
+\inpenc@posthook=\toks30
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
+\c@tracingmulticols=\count119
+\mult@box=\box50
+\multicol@leftmargin=\dimen142
+\c@unbalance=\count120
+\c@collectmore=\count121
+\doublecol@number=\count122
+\multicoltolerance=\count123
+\multicolpretolerance=\count124
+\full@width=\dimen143
+\page@free=\dimen144
+\premulticols=\dimen145
+\postmulticols=\dimen146
+\multicolsep=\skip73
+\multicolbaselineskip=\skip74
+\partial@page=\box51
+\last@line=\box52
+\maxbalancingoverflow=\dimen147
+\mult@rightbox=\box53
+\mult@grightbox=\box54
+\mult@gfirstbox=\box55
+\mult@firstbox=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\c@columnbadness=\count125
+\c@finalcolumnbadness=\count126
+\last@try=\dimen148
+\multicolovershoot=\dimen149
+\multicolundershoot=\dimen150
+\mult@nat@firstbox=\box74
+\colbreak@box=\box75
+\mc@col@check@num=\count127
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count128
+\Gm@cntv=\count129
+\c@Gm@tempcnt=\count130
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks31
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip75
+\f@nch@O@elh=\skip76
+\f@nch@O@erh=\skip77
+\f@nch@O@olh=\skip78
+\f@nch@O@orh=\skip79
+\f@nch@O@elf=\skip80
+\f@nch@O@erf=\skip81
+\f@nch@O@olf=\skip82
+\f@nch@O@orf=\skip83
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip84
+\bibsep=\skip85
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count131
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip86
+\cftbeforetoctitleskip=\skip87
+\cftaftertoctitleskip=\skip88
+\cftbeforepartskip=\skip89
+\cftpartnumwidth=\skip90
+\cftpartindent=\skip91
+\cftbeforechapskip=\skip92
+\cftchapindent=\skip93
+\cftchapnumwidth=\skip94
+\cftbeforesecskip=\skip95
+\cftsecindent=\skip96
+\cftsecnumwidth=\skip97
+\cftbeforesubsecskip=\skip98
+\cftsubsecindent=\skip99
+\cftsubsecnumwidth=\skip100
+\cftbeforesubsubsecskip=\skip101
+\cftsubsubsecindent=\skip102
+\cftsubsubsecnumwidth=\skip103
+\cftbeforeparaskip=\skip104
+\cftparaindent=\skip105
+\cftparanumwidth=\skip106
+\cftbeforesubparaskip=\skip107
+\cftsubparaindent=\skip108
+\cftsubparanumwidth=\skip109
+\cftbeforeloftitleskip=\skip110
+\cftafterloftitleskip=\skip111
+\cftbeforefigskip=\skip112
+\cftfigindent=\skip113
+\cftfignumwidth=\skip114
+\c@lofdepth=\count132
+\c@lotdepth=\count133
+\cftbeforelottitleskip=\skip115
+\cftafterlottitleskip=\skip116
+\cftbeforetabskip=\skip117
+\cfttabindent=\skip118
+\cfttabnumwidth=\skip119
+)
+\@indexfile=\write4
+\openout4 = `refman.idx'.
+
+
+Writing index file refman.idx
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+)
+
+Package newunicodechar Warning: Redefining Unicode character on input line 104.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 105.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen159
+\Hy@linkcounter=\count134
+\Hy@pagecounter=\count135
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count136
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing ON on input line 4537.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4772.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/backref.sty
+Package: backref 2016/05/21 v1.39 Bibliographical back referencing
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+))
+\c@Hy@tempcnt=\count137
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen160
+\Fld@menulength=\count138
+\Field@Width=\dimen161
+\Fld@charsize=\dimen162
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing ON on input line 6393.
+Package hyperref Info: Link coloring OFF on input line 6400.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count139
+\c@Item=\count140
+\c@Hfootnote=\count141
+)
+Package hyperref Info: Driver: hpdftex.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/11/30 v6.88e Hyperref driver for pdfTeX
+\Fld@listcount=\count142
+\c@bookmark@seq@number=\count143
+\Hy@SectionHShift=\skip120
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 123.
+Package hyperref Info: Option `unicode' set `true' on input line 123.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen163
+\captionmargin@=\dimen164
+\captionwidth=\dimen165
+\caption@tempdima=\dimen166
+\caption@indent=\dimen167
+\caption@parindent=\dimen168
+\caption@hangindent=\dimen169
+)
+\c@caption@flags=\count144
+\c@ContinuedFloat=\count145
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/etoc/etoc.sty
+Package: etoc 2019/03/09 v1.09 Completely customisable TOCs (JFB)
+\Etoc@toctoks=\toks32
+\c@etoc@tocid=\count146
+\c@etoc@tocdepth=\count147
+\etoc@framed@titlebox=\box76
+\etoc@framed@contentsbox=\box77
+)
+No file refman.aux.
+\openout1 = `refman.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 138.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 138.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 138.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 138.
+
+(/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count148
+\scratchdimen=\dimen170
+\scratchbox=\box78
+\nofMPsegments=\count149
+\nofMParguments=\count150
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count151
+\MPscratchDim=\dimen171
+\MPnumerator=\count152
+\makeMPintoPDFobject=\count153
+\everyMPtoPDFconversion=\toks34
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-31.2056pt
+* \headheight=12.0pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=25.29494pt
+* \marginparwidth=125.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\AtBeginShipoutBox=\box79
+Package backref Info: ** backref set up for natbib ** on input line 138.
+Package hyperref Info: Link coloring ON on input line 138.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count154
+)
+LaTeX Info: Redefining \ref on input line 138.
+LaTeX Info: Redefining \pageref on input line 138.
+LaTeX Info: Redefining \nameref on input line 138.
+\@outlinefile=\write5
+\openout5 = `refman.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+No file refman.toc.
+Package hyperref Info: Option `pageanchor' set `false' on input line 144.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 144.
+
+Package hyperref Info: Option `unicode' set `true' on input line 144.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 149.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 149.
+LaTeX Font Info:    Try loading font information for U+msa on input line 149.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 149.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 149.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 151.
+ [1
+
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+]
+\tf@toc=\write6
+\openout6 = `refman.toc'.
+
+Package hyperref Info: Option `pageanchor' set `true' on input line 159.
+
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 18.66588pt on input line 162.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 162.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 18.66588pt on input line 162.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 18.66588pt on input line 162.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 22.39185pt on input line 162.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 162.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 22.39185pt on input line 162.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 22.39185pt on input line 162.
+(./namespaces.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 3.
+
+
+LaTeX Warning: Reference `namespaceaccsimulatorclass' on page 1 undefined on in
+put line 3.
+
+
+LaTeX Warning: Reference `namespacebeambunchclass' on page 1 undefined on input
+ line 4.
+
+
+LaTeX Warning: Reference `namespacebeamlineelemclass' on page 1 undefined on in
+put line 5.
+
+
+LaTeX Warning: Reference `namespacebpmclass' on page 1 undefined on input line 
+6.
+
+
+LaTeX Warning: Reference `namespaceccdtlclass' on page 1 undefined on input lin
+e 7.
+
+
+LaTeX Warning: Reference `namespacecclclass' on page 1 undefined on input line 
+8.
+
+
+LaTeX Warning: Reference `namespacecompdomclass' on page 1 undefined on input l
+ine 9.
+
+
+LaTeX Warning: Reference `namespaceconstfocclass' on page 1 undefined on input 
+line 10.
+
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 11.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 11.
+
+
+LaTeX Warning: Reference `namespacedataclass' on page 1 undefined on input line
+ 11.
+
+
+LaTeX Warning: Reference `namespacedipoleclass' on page 1 undefined on input li
+ne 12.
+
+
+LaTeX Warning: Reference `namespacedistributionclass' on page 1 undefined on in
+put line 13.
+
+
+LaTeX Warning: Reference `namespacedrifttubeclass' on page 1 undefined on input
+ line 14.
+
+
+LaTeX Warning: Reference `namespacedtlclass' on page 1 undefined on input line 
+15.
+
+
+LaTeX Warning: Reference `namespaceemfldclass' on page 1 undefined on input lin
+e 16.
+
+
+LaTeX Warning: Reference `namespacefftclass' on page 1 undefined on input line 
+17.
+
+
+LaTeX Warning: Reference `namespacefldmgerclass' on page 1 undefined on input l
+ine 18.
+
+[1
+
+
+]
+
+LaTeX Warning: Reference `namespaceinputclass' on page 2 undefined on input lin
+e 19.
+
+
+LaTeX Warning: Reference `namespacempistub' on page 2 undefined on input line 2
+0.
+
+
+LaTeX Warning: Reference `namespacemultipoleclass' on page 2 undefined on input
+ line 21.
+
+
+LaTeX Warning: Reference `namespacenumconstclass' on page 2 undefined on input 
+line 22.
+
+
+LaTeX Warning: Reference `namespaceoutputclass' on page 2 undefined on input li
+ne 23.
+
+
+LaTeX Warning: Reference `namespacepgrid2dclass' on page 2 undefined on input l
+ine 24.
+
+
+LaTeX Warning: Reference `namespacephysconstclass' on page 2 undefined on input
+ line 25.
+
+
+LaTeX Warning: Reference `namespaceptclmgerclass' on page 2 undefined on input 
+line 26.
+
+
+LaTeX Warning: Reference `namespacequadrupoleclass' on page 2 undefined on inpu
+t line 27.
+
+
+LaTeX Warning: Reference `namespacescclass' on page 2 undefined on input line 2
+8.
+
+
+LaTeX Warning: Reference `namespacesolclass' on page 2 undefined on input line 
+29.
+
+
+LaTeX Warning: Reference `namespacesolrfclass' on page 2 undefined on input lin
+e 30.
+
+
+LaTeX Warning: Reference `namespacetimerclass' on page 2 undefined on input lin
+e 31.
+
+
+LaTeX Warning: Reference `namespacetransposeclass' on page 2 undefined on input
+ line 32.
+
+
+LaTeX Warning: Reference `namespacetwsclass' on page 2 undefined on input line 
+33.
+
+)
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 164.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 164.
+ [2]
+Chapter 2.
+(./annotated.tex
+
+LaTeX Warning: Reference `interfacebeamlineelemclass_1_1assign__beamlineelem' o
+n page 3 undefined on input line 3.
+
+
+LaTeX Warning: Reference `interfaceaccsimulatorclass_1_1construct__accsimulator
+' on page 3 undefined on input line 4.
+
+
+LaTeX Warning: Reference `interfacecompdomclass_1_1construct__compdom' on page 
+3 undefined on input line 5.
+
+
+LaTeX Warning: Reference `interfacefftclass_1_1fftcrlocal__fft' on page 3 undef
+ined on input line 6.
+
+
+LaTeX Warning: Reference `interfacefftclass_1_1fftrclocal__fft' on page 3 undef
+ined on input line 7.
+
+
+LaTeX Warning: Reference `interfacebeamlineelemclass_1_1getparam__beamlineelem'
+ on page 3 undefined on input line 8.
+
+
+LaTeX Warning: Reference `interfacebpmclass_1_1getparam__bpm' on page 3 undefin
+ed on input line 9.
+
+
+LaTeX Warning: Reference `interfaceccdtlclass_1_1getparam__ccdtl' on page 3 und
+efined on input line 10.
+
+
+LaTeX Warning: Reference `interfacecclclass_1_1getparam__ccl' on page 3 undefin
+ed on input line 11.
+
+
+LaTeX Warning: Reference `interfaceconstfocclass_1_1getparam__constfoc' on page
+ 3 undefined on input line 12.
+
+
+LaTeX Warning: Reference `interfacedipoleclass_1_1getparam__dipole' on page 3 u
+ndefined on input line 13.
+
+
+LaTeX Warning: Reference `interfacedrifttubeclass_1_1getparam__drifttube' on pa
+ge 3 undefined on input line 14.
+
+
+LaTeX Warning: Reference `interfacedtlclass_1_1getparam__dtl' on page 3 undefin
+ed on input line 15.
+
+
+LaTeX Warning: Reference `interfaceemfldclass_1_1getparam__emfld' on page 3 und
+efined on input line 16.
+
+
+LaTeX Warning: Reference `interfacemultipoleclass_1_1getparam__multipole' on pa
+ge 3 undefined on input line 17.
+
+
+LaTeX Warning: Reference `interfacequadrupoleclass_1_1getparam__quadrupole' on 
+page 3 undefined on input line 18.
+
+
+LaTeX Warning: Reference `interfacescclass_1_1getparam__sc' on page 3 undefined
+ on input line 19.
+
+
+LaTeX Warning: Reference `interfacesolclass_1_1getparam__sol' on page 3 undefin
+ed on input line 20.
+
+
+LaTeX Warning: Reference `interfacesolrfclass_1_1getparam__solrf' on page 3 und
+efined on input line 21.
+
+
+LaTeX Warning: Reference `interfacetwsclass_1_1getparam__tws' on page 3 undefin
+ed on input line 22.
+
+
+LaTeX Warning: Reference `interfaceinputclass_1_1in__input' on page 3 undefined
+ on input line 23.
+
+
+LaTeX Warning: Reference `interfacebeambunchclass_1_1map1__beambunch' on page 3
+ undefined on input line 24.
+
+
+LaTeX Warning: Reference `interfacebeambunchclass_1_1map2__beambunch' on page 3
+ undefined on input line 25.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__allgather' on page 3 undefin
+ed on input line 26.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__allgatherv' on page 3 undefi
+ned on input line 27.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__allreduce' on page 3 undefin
+ed on input line 28.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__alltoallv' on page 3 undefin
+ed on input line 29.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__bcast' on page 3 undefined o
+n input line 30.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__gather' on page 3 undefined 
+on input line 31.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__irecv' on page 3 undefined o
+n input line 32.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__isend' on page 3 undefined o
+n input line 33.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__recv' on page 3 undefined on
+ input line 34.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__reduce' on page 3 undefined 
+on input line 35.
+
+
+LaTeX Warning: Reference `interfacempistub_1_1mpi__send' on page 3 undefined on
+ input line 36.
+
+
+LaTeX Warning: Reference `interfacecompdomclass_1_1setlctab__compdom' on page 3
+ undefined on input line 37.
+
+
+LaTeX Warning: Reference `interfacebeamlineelemclass_1_1setparam__beamlineelem'
+ on page 3 undefined on input line 38.
+
+
+LaTeX Warning: Reference `interfacebpmclass_1_1setparam__bpm' on page 3 undefin
+ed on input line 39.
+
+
+LaTeX Warning: Reference `interfaceccdtlclass_1_1setparam__ccdtl' on page 3 und
+efined on input line 40.
+
+[3
+
+]
+
+LaTeX Warning: Reference `interfacecclclass_1_1setparam__ccl' on page 4 undefin
+ed on input line 41.
+
+
+LaTeX Warning: Reference `interfaceconstfocclass_1_1setparam__constfoc' on page
+ 4 undefined on input line 42.
+
+
+LaTeX Warning: Reference `interfacedipoleclass_1_1setparam__dipole' on page 4 u
+ndefined on input line 43.
+
+
+LaTeX Warning: Reference `interfacedrifttubeclass_1_1setparam__drifttube' on pa
+ge 4 undefined on input line 44.
+
+
+LaTeX Warning: Reference `interfacedtlclass_1_1setparam__dtl' on page 4 undefin
+ed on input line 45.
+
+
+LaTeX Warning: Reference `interfaceemfldclass_1_1setparam__emfld' on page 4 und
+efined on input line 46.
+
+
+LaTeX Warning: Reference `interfacemultipoleclass_1_1setparam__multipole' on pa
+ge 4 undefined on input line 47.
+
+
+LaTeX Warning: Reference `interfacequadrupoleclass_1_1setparam__quadrupole' on 
+page 4 undefined on input line 48.
+
+
+LaTeX Warning: Reference `interfacescclass_1_1setparam__sc' on page 4 undefined
+ on input line 49.
+
+
+LaTeX Warning: Reference `interfacesolclass_1_1setparam__sol' on page 4 undefin
+ed on input line 50.
+
+
+LaTeX Warning: Reference `interfacesolrfclass_1_1setparam__solrf' on page 4 und
+efined on input line 51.
+
+
+LaTeX Warning: Reference `interfacetwsclass_1_1setparam__tws' on page 4 undefin
+ed on input line 52.
+
+) [4]
+Chapter 3.
+(./files.tex
+
+LaTeX Warning: Reference `mpif_8h' on page 5 undefined on input line 3.
+
+
+LaTeX Warning: Reference `mpistub_8f90' on page 5 undefined on input line 4.
+
+
+LaTeX Warning: Reference `_beam_bunch_8f90' on page 5 undefined on input line 5
+.
+
+
+LaTeX Warning: Reference `_beam_line_elem_8f90' on page 5 undefined on input li
+ne 6.
+
+
+LaTeX Warning: Reference `_b_p_m_8f90' on page 5 undefined on input line 7.
+
+
+LaTeX Warning: Reference `_c_c_d_t_l_8f90' on page 5 undefined on input line 8.
+
+
+
+LaTeX Warning: Reference `_c_c_l_8f90' on page 5 undefined on input line 9.
+
+
+LaTeX Warning: Reference `_comp_dom_8f90' on page 5 undefined on input line 10.
+
+
+
+LaTeX Warning: Reference `_const_foc_8f90' on page 5 undefined on input line 11
+.
+
+
+LaTeX Warning: Reference `_dipole_8f90' on page 5 undefined on input line 12.
+
+
+LaTeX Warning: Reference `_distribution_8f90' on page 5 undefined on input line
+ 13.
+
+
+LaTeX Warning: Reference `_drift_tube_8f90' on page 5 undefined on input line 1
+4.
+
+
+LaTeX Warning: Reference `_d_t_l_8f90' on page 5 undefined on input line 15.
+
+
+LaTeX Warning: Reference `_e_mfld_8f90' on page 5 undefined on input line 16.
+
+
+LaTeX Warning: Reference `_field_8f90' on page 5 undefined on input line 17.
+
+
+LaTeX Warning: Reference `_appl_2mpif_8h' on page 5 undefined on input line 18.
+
+
+
+LaTeX Warning: Reference `_multipole_8f90' on page 5 undefined on input line 19
+.
+
+
+LaTeX Warning: Reference `_quadrupole_8f90' on page 5 undefined on input line 2
+0.
+
+
+LaTeX Warning: Reference `_s_c_8f90' on page 5 undefined on input line 21.
+
+
+LaTeX Warning: Reference `_sol_8f90' on page 5 undefined on input line 22.
+
+
+LaTeX Warning: Reference `_sol_r_f_8f90' on page 5 undefined on input line 23.
+
+
+LaTeX Warning: Reference `_t_w_s_8f90' on page 5 undefined on input line 24.
+
+
+LaTeX Warning: Reference `_acc_simulator_8f90' on page 5 undefined on input lin
+e 25.
+
+
+LaTeX Warning: Reference `_input_8f90' on page 5 undefined on input line 26.
+
+
+LaTeX Warning: Reference `main_8f90' on page 5 undefined on input line 27.
+
+
+LaTeX Warning: Reference `_contrl_2mpif_8h' on page 5 undefined on input line 2
+8.
+
+
+LaTeX Warning: Reference `_output_8f90' on page 5 undefined on input line 29.
+
+
+LaTeX Warning: Reference `_data_8f90' on page 5 undefined on input line 30.
+
+
+LaTeX Warning: Reference `_data_struct_2mpif_8h' on page 5 undefined on input l
+ine 31.
+
+
+LaTeX Warning: Reference `_num_const_8f90' on page 5 undefined on input line 32
+.
+
+
+LaTeX Warning: Reference `_pgrid_8f90' on page 5 undefined on input line 33.
+
+
+LaTeX Warning: Reference `_phys_const_8f90' on page 5 undefined on input line 3
+4.
+
+
+LaTeX Warning: Reference `_f_f_t_8f90' on page 5 undefined on input line 35.
+
+
+LaTeX Warning: Reference `_fldmger_8f90' on page 5 undefined on input line 36.
+
+
+LaTeX Warning: Reference `_func_2mpif_8h' on page 5 undefined on input line 37.
+
+
+
+LaTeX Warning: Reference `_ptclmger_8f90' on page 5 undefined on input line 38.
+
+
+
+LaTeX Warning: Reference `_timer_8f90' on page 5 undefined on input line 39.
+
+
+LaTeX Warning: Reference `_transpose_8f90' on page 5 undefined on input line 40
+.
+
+) [5
+
+] [6
+
+]
+Chapter 4.
+(./namespaceaccsimulatorclass.tex
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 8.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 10.79993pt on input line 8.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 12.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 6.29996pt on input line 13.
+ [7] [8]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 122.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 122.
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 8.99994pt on input line 160.
+
+Underfull \hbox (badness 10000) detected at line 160
+[][][]
+ []
+
+[9]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 170.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 170.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 170.
+ <./namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_cgraph.pdf>
+<namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_cgraph.pdf, id=42
+2, 362.35374pt x 230.8625pt>
+File: namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_cgraph.pdf G
+raphic file (type pdf)
+<use namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_cgraph.pdf>
+Package pdftex.def Info: namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46
+aade2a_cgraph.pdf  used on input line 176.
+(pdftex.def)             Requested size: 350.0pt x 222.99579pt.
+ <./namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_icgraph.pdf>
+<namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_icgraph.pdf, id=4
+35, 268.00125pt x 109.40875pt>
+File: namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_icgraph.pdf 
+Graphic file (type pdf)
+<use namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_icgraph.pdf>
+Package pdftex.def Info: namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46
+aade2a_icgraph.pdf  used on input line 183.
+(pdftex.def)             Requested size: 267.0pt x 108.99944pt.
+ [10] <./namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078_cgraph.pd
+f>
+<namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078_cgraph.pdf, id=45
+9, 834.11626pt x 1021.8175pt>
+File: namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078_cgraph.pdf G
+raphic file (type pdf)
+<use namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078_cgraph.pdf>
+Package pdftex.def Info: namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9
+c54078_cgraph.pdf  used on input line 200.
+(pdftex.def)             Requested size: 350.0pt x 428.77063pt.
+ <./namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_cgraph.pdf>
+<namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_cgraph.pdf, id=47
+2, 1079.03125pt x 2391.93625pt>
+File: namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_cgraph.pdf G
+raphic file (type pdf)
+<use namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_cgraph.pdf>
+Package pdftex.def Info: namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e101
+6785f0_cgraph.pdf  used on input line 217.
+(pdftex.def)             Requested size: 248.10611pt x 550.0pt.
+ [11] <./namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_icgraph.p
+df>
+<namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_icgraph.pdf, id=4
+93, 254.9525pt x 109.40875pt>
+File: namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_icgraph.pdf 
+Graphic file (type pdf)
+<use namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_icgraph.pdf>
+Package pdftex.def Info: namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e101
+6785f0_icgraph.pdf  used on input line 224.
+(pdftex.def)             Requested size: 254.0pt x 109.00446pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+[13] [14] [15] [16] [17] [18] [19] [20]) (./namespacebeambunchclass.tex
+[21] [22]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 91.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 91.
+
+Underfull \hbox (badness 10000) detected at line 115
+[][][]
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.167 \end{DoxyFields}
+                      
+
+? x
+ 
+Here is how much of TeX's memory you used:
+ 16843 strings out of 492616
+ 251200 string characters out of 6129482
+ 349253 words of memory out of 5000000
+ 20185 multiletter control sequences out of 15000+600000
+ 66591 words of font info for 89 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 53i,12n,92p,938b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{namespacebeambunchclass_add3fe05fd157f9a0d3f0944566
+0f038e} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a8a96c99996275cf03ceec41dc0
+11695e} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_ad2054e6e5714a86db0112c5eb3
+978abb} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a398a8735bfae34f0d7a9337c8e
+5ec621} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a023a12f9279f0764fc57deda1b
+cb852f} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_abf23fdc1e8ca69fe7fe8f2995f
+bc1bcc} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_acacb775484bda2729c3da9adbb
+effc53} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a0b46fd8b4c41577688761ad621
+75772b} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_ad456951b863b3dfab6eb7fa018
+e17230} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a374fdc0e530a8835113fcd6742
+83a150} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a704068cca17e98c6568c1e6056
+d1c4d6} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_ad12625a90fb4a096ff15ba55f6
+55b148} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a35f6511340579ba6bb5f07bebf
+6d09d5} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a030c80c97cd3523478e56fdaff
+0e7560} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_ac5b1c15c02703f7339b67283bc
+9816bd} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a54a4d80405bb8fbde341ea9e46
+a224e4} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a618f97b46c83d8ca29a7cb0534
+5d655e} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a3f5a86fb4b3ff5b33efdfa76b1
+c52ce4} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a6e3aecf1a2cf3d54950c09c603
+c2f11c} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a212c0d38a812d95f238d7da7f2
+9ac17c} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a3be2b49f0fef567493258758c4
+4fffd6} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_ab2f6f9e95d5786dab15c1b73f3
+05e349} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_aea8cfefa2f70ade95202cc40f0
+15f7bf} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_a1605e527eb41043dc5962da1e3
+bb5159} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeambunchclass_structbeambunchclass_1_1bea
+mbunch} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_transpose_8f90} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_timer_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_ptclmger_8f90} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_func_2mpif_8h} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_fldmger_8f90} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{_f_f_t_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_phys_const_8f90} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_pgrid_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_num_const_8f90} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_data_struct_2mpif_8h} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_data_8f90} has been referenced but does not exist,
+ replaced by a fixed one
+
+pdfTeX warning (dest): name{_output_8f90} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{_contrl_2mpif_8h} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{main_8f90} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{_input_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_acc_simulator_8f90} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_t_w_s_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_sol_r_f_8f90} has been referenced but does not exi
+st, replaced by a fixed one
+
+pdfTeX warning (dest): name{_sol_8f90} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{_s_c_8f90} has been referenced but does not exist, 
+replaced by a fixed one
+
+pdfTeX warning (dest): name{_quadrupole_8f90} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_multipole_8f90} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_appl_2mpif_8h} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_field_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_e_mfld_8f90} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{_d_t_l_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_drift_tube_8f90} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_distribution_8f90} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_dipole_8f90} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{_const_foc_8f90} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_comp_dom_8f90} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_c_c_l_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_c_c_d_t_l_8f90} has been referenced but does not e
+xist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_b_p_m_8f90} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{_beam_line_elem_8f90} has been referenced but does 
+not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{_beam_bunch_8f90} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{mpistub_8f90} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{mpif_8h} has been referenced but does not exist, re
+placed by a fixed one
+
+pdfTeX warning (dest): name{interfacetwsclass_1_1setparam__tws} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacesolrfclass_1_1setparam__solrf} has been re
+ferenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacesolclass_1_1setparam__sol} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacescclass_1_1setparam__sc} has been referenc
+ed but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacequadrupoleclass_1_1setparam__quadrupole} h
+as been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacemultipoleclass_1_1setparam__multipole} has
+ been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfaceemfldclass_1_1setparam__emfld} has been re
+ferenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacedtlclass_1_1setparam__dtl} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacedrifttubeclass_1_1setparam__drifttube} has
+ been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacedipoleclass_1_1setparam__dipole} has been 
+referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfaceconstfocclass_1_1setparam__constfoc} has b
+een referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacecclclass_1_1setparam__ccl} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfaceccdtlclass_1_1setparam__ccdtl} has been re
+ferenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacebpmclass_1_1setparam__bpm} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacebeamlineelemclass_1_1setparam__beamlineele
+m} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacecompdomclass_1_1setlctab__compdom} has bee
+n referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__send} has been referenced 
+but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__reduce} has been reference
+d but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__recv} has been referenced 
+but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__isend} has been referenced
+ but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__irecv} has been referenced
+ but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__gather} has been reference
+d but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__bcast} has been referenced
+ but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__alltoallv} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__allreduce} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__allgatherv} has been refer
+enced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacempistub_1_1mpi__allgather} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacebeambunchclass_1_1map2__beambunch} has bee
+n referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacebeambunchclass_1_1map1__beambunch} has bee
+n referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfaceinputclass_1_1in__input} has been referenc
+ed but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacetwsclass_1_1getparam__tws} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacesolrfclass_1_1getparam__solrf} has been re
+ferenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacesolclass_1_1getparam__sol} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacescclass_1_1getparam__sc} has been referenc
+ed but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacequadrupoleclass_1_1getparam__quadrupole} h
+as been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacemultipoleclass_1_1getparam__multipole} has
+ been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfaceemfldclass_1_1getparam__emfld} has been re
+ferenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacedtlclass_1_1getparam__dtl} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacedrifttubeclass_1_1getparam__drifttube} has
+ been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacedipoleclass_1_1getparam__dipole} has been 
+referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfaceconstfocclass_1_1getparam__constfoc} has b
+een referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacecclclass_1_1getparam__ccl} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfaceccdtlclass_1_1getparam__ccdtl} has been re
+ferenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacebpmclass_1_1getparam__bpm} has been refere
+nced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacebeamlineelemclass_1_1getparam__beamlineele
+m} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacefftclass_1_1fftrclocal__fft} has been refe
+renced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacefftclass_1_1fftcrlocal__fft} has been refe
+renced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacecompdomclass_1_1construct__compdom} has be
+en referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfaceaccsimulatorclass_1_1construct__accsimulat
+or} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{interfacebeamlineelemclass_1_1assign__beamlineelem}
+ has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacetwsclass} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacetransposeclass} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacetimerclass} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacesolrfclass} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacesolclass} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacescclass} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacequadrupoleclass} has been referenced but d
+oes not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespaceptclmgerclass} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacephysconstclass} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacepgrid2dclass} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespaceoutputclass} has been referenced but does 
+not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacenumconstclass} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacemultipoleclass} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacempistub} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespaceinputclass} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacefldmgerclass} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacefftclass} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespaceemfldclass} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacedtlclass} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacedrifttubeclass} has been referenced but do
+es not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacedistributionclass} has been referenced but
+ does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacedipoleclass} has been referenced but does 
+not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacedataclass} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespaceconstfocclass} has been referenced but doe
+s not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacecompdomclass} has been referenced but does
+ not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacecclclass} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespaceccdtlclass} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebpmclass} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{namespacebeamlineelemclass} has been referenced but
+ does not exist, replaced by a fixed one
+
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/urw/helvetic/uhvb8ac.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/h
+elvetic/uhvro8a.pfb>
+Output written on refman.pdf (24 pages, 196503 bytes).
+PDF statistics:
+ 783 PDF objects out of 1000 (max. 8388607)
+ 705 compressed objects within 8 object streams
+ 306 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+

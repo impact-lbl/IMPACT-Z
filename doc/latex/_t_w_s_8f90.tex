@@ -1,0 +1,88 @@
+\hypertarget{_t_w_s_8f90}{}\section{src/\+Appl/\+T\+WS.f90 File Reference}
+\label{_t_w_s_8f90}\index{src/Appl/TWS.f90@{src/Appl/TWS.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{twsclass\+::tws}}
+\item 
+interface \mbox{\hyperlink{interfacetwsclass_1_1getparam__tws}{twsclass\+::getparam\+\_\+tws}}
+\item 
+interface \mbox{\hyperlink{interfacetwsclass_1_1setparam__tws}{twsclass\+::setparam\+\_\+tws}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacetwsclass}{twsclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and RF field for the T\+WS beam line elment. Here, the T\+WS does not include input and output cells. The T\+WS is simulated using the superposition of two standing wave structure. (G. A. Loew, et al. S\+L\+A\+C-\/\+P\+U\+B-\/2295, 1979.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a6528e082bfe1d870e027de8353b312c7}{twsclass\+::construct\+\_\+tws}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a15770a288893203a1f18bde3f1ab190c}{twsclass\+::setparam1\+\_\+tws}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a24b51ee452bd448a84120562cb38c085}{twsclass\+::setparam2\+\_\+tws}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_acdc918f464e4b8dbf86ea0e00b0d7335}{twsclass\+::setparam3\+\_\+tws}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_ac410f8e4606b3fdf3303f0976a2115dc}{twsclass\+::getparam1\+\_\+tws}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a82176cb7e562eb7a78fffed55cbac554}{twsclass\+::getparam2\+\_\+tws}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a07f751992638ce181255eef670d54c50}{twsclass\+::getparam3\+\_\+tws}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_ab57cbdca9514adc28eb62c6bbb8633b6}{twsclass\+::maplinear\+\_\+tws}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a2d527684d5c9fd42e3217ac03914bd90}{twsclass\+::rk6i\+\_\+tws}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a1681f57f6e70160ddb0f6e59f4cd5349}{twsclass\+::intfunc1\+\_\+tws}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a9c88e1753c1d3faff3af95cf8c071d4f}{twsclass\+::getaxflde\+\_\+tws}} (z, this, ez1, ezp1, ezpp1, ez12, ezp12, ezpp12
+\begin{DoxyCompactList}\small\item\em get the E field on the axis \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a30d73a1ffc1ce8ce728e8fdf7caa6002}{twsclass\+::getfld\+\_\+tws}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_aaf9be4899e2515903618d2a1ab1dfbbc}{twsclass\+::getflderr\+\_\+tws}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacetwsclass_ae92106a92b2952cbb34ae48df4c6b375}{twsclass\+::nparam}} = 15
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{twsclass::tws@{twsclass::tws}}\label{structtwsclass_1_1tws}
+\Hypertarget{namespacetwsclass_structtwsclass_1_1tws}
+\subsubsection{type twsclass\+::tws}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacetwsclass_a2dcf113402de09fb0cbb7a7779dd11f2}\label{namespacetwsclass_a2dcf113402de09fb0cbb7a7779dd11f2}} 
+integer&
+itype&
+Itype = 106. \\
+\hline
+
+\mbox{\Hypertarget{namespacetwsclass_a21f6cc9104c13b52b03da5b9e283f07b}\label{namespacetwsclass_a21f6cc9104c13b52b03da5b9e283f07b}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacetwsclass_a023933666722b8509103d43f82f3c251}\label{namespacetwsclass_a023933666722b8509103d43f82f3c251}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacetwsclass_a9977eae9217b979dc25554e7f3453339}\label{namespacetwsclass_a9977eae9217b979dc25554e7f3453339}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacetwsclass_ada2bbea749395b11dbf0f9d8b27b5fcf}\label{namespacetwsclass_ada2bbea749395b11dbf0f9d8b27b5fcf}} 
+double precision, dimension(\mbox{\hyperlink{namespacetwsclass_ae92106a92b2952cbb34ae48df4c6b375}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}

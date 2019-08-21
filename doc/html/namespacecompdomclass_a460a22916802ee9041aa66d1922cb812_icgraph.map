@@ -1,0 +1,17 @@
+<map id="compdomclass::getmsize_compdom" name="compdomclass::getmsize_compdom">
+<area shape="rect" id="node1" title=" " alt="" coords="795,306,966,344"/>
+<area shape="rect" id="node2" href="$namespacebeambunchclass.html#abf23fdc1e8ca69fe7fe8f2995fbc1bcc" title="Here, all indices of potential are local to processor. Advance the particles in the velocity space us..." alt="" coords="301,23,460,62"/>
+<area shape="rect" id="node3" href="$namespacebeambunchclass.html#a023a12f9279f0764fc57deda1bcb852f" title="scatter grid quantity onto particles using linear map." alt="" coords="548,58,724,96"/>
+<area shape="rect" id="node4" href="$namespacebeambunchclass.html#a02f7f46438747a0fb811de64b1ed95aa" title=" " alt="" coords="286,108,476,147"/>
+<area shape="rect" id="node5" href="$namespaceaccsimulatorclass.html#acbe26eeaf1cb4076384b90e1016785f0" title="Run beam dynamics simulation through accelerator." alt="" coords="104,239,238,278"/>
+<area shape="rect" id="node7" href="$namespacebeambunchclass.html#a398a8735bfae34f0d7a9337c8e5ec621" title="Here, all indices of potential are local to processor. Advance the particles in the velocity space us..." alt="" coords="301,248,460,287"/>
+<area shape="rect" id="node8" href="$namespacebeambunchclass.html#ad2054e6e5714a86db0112c5eb3978abb" title=" " alt="" coords="548,274,724,312"/>
+<area shape="rect" id="node9" href="$namespacebeambunchclass.html#aa0438cba132ce3b2fdc8e053375c0097" title="deposit particles onto grid." alt="" coords="550,336,722,375"/>
+<area shape="rect" id="node11" href="$namespacebeambunchclass.html#a119b1d68c4a2a790014a9408c2db1575" title=" " alt="" coords="303,410,458,448"/>
+<area shape="rect" id="node12" href="$namespacebeambunchclass.html#a3da6bfdf683e278c6005fddbceac16db" title="Here, the update of the momentum is in the rotated coordinates since the boost direction is not along..." alt="" coords="549,451,722,490"/>
+<area shape="rect" id="node13" href="$namespacebeambunchclass.html#a530cca8371b8decda64389ce29d10bcd" title=" " alt="" coords="286,508,476,547"/>
+<area shape="rect" id="node14" href="$namespacebeambunchclass.html#aa17d706a08d23a054bf547514e796e6a" title=" " alt="" coords="532,566,739,604"/>
+<area shape="rect" id="node15" href="$namespacebeambunchclass.html#a2395bc91f4fc52175d8a5cc92890bb83" title=" " alt="" coords="524,628,747,667"/>
+<area shape="rect" id="node6" href="$main_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="v.1.0" alt="" coords="5,246,56,271"/>
+<area shape="rect" id="node10" href="$namespacebeambunchclass.html#a91563d467d36ccca8231ee2c62483246" title="All indices here are local to the processor. find charge density on grid from particles." alt="" coords="296,324,465,363"/>
+</map>

@@ -1,0 +1,687 @@
+\hypertarget{namespaceaccsimulatorclass}{}\section{accsimulatorclass Module Reference}
+\label{namespaceaccsimulatorclass}\index{accsimulatorclass@{accsimulatorclass}}
+
+
+This class defines functions to set up the initial beam particle distribution, field information, computational domain, beam line element lattice and run the dynamics simulation through the system.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfaceaccsimulatorclass_1_1construct__accsimulator}{construct\+\_\+accsimulator}}
+\begin{DoxyCompactList}\small\item\em beam line element period. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078}{init\+\_\+accsimulator}} (time)
+\begin{DoxyCompactList}\small\item\em set up objects and parameters. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0}{run\+\_\+accsimulator}} ()
+\begin{DoxyCompactList}\small\item\em Run beam dynamics simulation through accelerator. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a}{destruct\+\_\+accsimulator}} (time)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(21), private \mbox{\hyperlink{namespaceaccsimulatorclass_a1b6defb6bd9b1c4ddada0b30c99f4dd5}{distparam}}
+\begin{DoxyCompactList}\small\item\em conts. in init. dist. \end{DoxyCompactList}\item 
+type(pgrid2d), private \mbox{\hyperlink{namespaceaccsimulatorclass_a7fbad7f6e18df1ec95d1f76620a8bd80}{grid2d}}
+\begin{DoxyCompactList}\small\item\em 1d logical processor array. \end{DoxyCompactList}\item 
+type(beambunch), private \mbox{\hyperlink{namespaceaccsimulatorclass_a4d06760340147c29a3ce5ba4f4ba9066}{bpts}}
+\begin{DoxyCompactList}\small\item\em beam particle object and array. \end{DoxyCompactList}\item 
+type(fieldquant), private \mbox{\hyperlink{namespaceaccsimulatorclass_a2d7cf949e4c05edf370cfbb6ee936951}{potential}}
+\begin{DoxyCompactList}\small\item\em beam charge density and field potential arrays. \end{DoxyCompactList}\item 
+type(compdom), private \mbox{\hyperlink{namespaceaccsimulatorclass_ac6dafc4c6322db3e6507ece8c3ff9e37}{ageom}}
+\begin{DoxyCompactList}\small\item\em geometry object. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_ac4f089e8c954990197b1d251b800692f}{nchrg}}
+\begin{DoxyCompactList}\small\item\em total \# of charge state \end{DoxyCompactList}\item 
+double precision, dimension(100) \mbox{\hyperlink{namespaceaccsimulatorclass_a8c7c321579304f645389a08a8725f241}{currlist}}
+\begin{DoxyCompactList}\small\item\em current list of charge state. \end{DoxyCompactList}\item 
+double precision, dimension(100) \mbox{\hyperlink{namespaceaccsimulatorclass_a41077f15e4eaaf833944e89b231a9df9}{qmcclist}}
+\begin{DoxyCompactList}\small\item\em charge/mass list of charge state. \end{DoxyCompactList}\item 
+integer, dimension(100) \mbox{\hyperlink{namespaceaccsimulatorclass_a891a5868a86440d94c4eb40df9f3b8b9}{nptlist}}
+\begin{DoxyCompactList}\small\item\em number of particles of charge state. \end{DoxyCompactList}\item 
+integer, dimension(\+:), allocatable \mbox{\hyperlink{namespaceaccsimulatorclass_a9fa9911cc9d2b1442c2d6a945394fc7a}{nptlist0}}
+\item 
+double precision, dimension(\+:), allocatable \mbox{\hyperlink{namespaceaccsimulatorclass_accc2494fdb269aeeba10e0f6eea90690}{currlist0}}
+\item 
+double precision, dimension(\+:), allocatable \mbox{\hyperlink{namespaceaccsimulatorclass_a6dce29a29cf7312e80b95b700300e37d}{qmcclis}}
+\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_aa5a33a2f7563789fd061ef4e28d010a5}{iend}}
+\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_aaf128f52875dead988078d4645537192}{jend}}
+\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_a9b454cb233fe47004ba9388d9c495805}{ibalend}}
+\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_a3efdd317f3f447eb0e9af6118c312cb5}{nstepend}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespaceaccsimulatorclass_a36e211bc045925eb053915a15d72ea4f}{zend}}
+\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a26217a3bed78a53045dc70c1ac59207a}{dim}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a1149425f2a1942ae90449ee7a0a06fe0}{np}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a673e05862dc992db1e5f59ae966a1bc6}{nplocal}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a487e5f5861f9d6613a37837a38e8a2c0}{flagdist}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_af704d398708fe866be2cd6b2f2705267}{rstartflg}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_aeed14cf632798f53deb7a49d73f7d09f}{flagerr}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_af61920248f0078da76332ba7c03691f2}{nx}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a51134373ee457cfeffdc9a5041a4d01c}{ny}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a56a2e4504ed5d475f38307ecc7360ede}{nz}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a7f23c64ad80c114ef62069aaede70561}{nxlocal}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a48f766f48eeb1fb22aeff17c6c81e776}{nylocal}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_af547860c8c8685ee94f4cca4da117acc}{nzlocal}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a1ba011ab9980a00689505f8cbbd05732}{flagbc}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a99e7feb0e1e3adf9ad845a7425a1b9f7}{nblem}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_aeb76c7474e39b4748e1f18d5c44b63ce}{flagmap}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_af61313c9e48dba34ab064f69f8d43183}{flagdiag}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_ac427142c8239a7c9d4d571de0516f6d0}{npcol}}
+\begin{DoxyCompactList}\small\item\em \# of processors in column and row direction. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_ae4ec48c98f1d184540a67f262b362b9c}{nprow}}
+\begin{DoxyCompactList}\small\item\em \# of processors in column and row direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_a23e215553c71a45286be97992358dd87}{bcurr}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_af510330940fc024c5092b4fd361c736e}{bkenergy}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_a3f5beb7f11359c926cdc41f78c84334d}{bmass}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_acc8e97a5abe7b5feb49058c5e9a8a5f5}{bcharge}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_a770319e9213788860e586df0ffacd465}{bfreq}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+{\em beam line element array. }\begin{DoxyCompactItemize}
+\item 
+type(bpm), dimension(nbpmmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a3c3a1b96070f5f9b755af7dc8502b457}{beamln0}}
+\item 
+type(drifttube), dimension(ndriftmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a4afbfe5b21f1ef4f6ed80b26919a5b65}{beamln1}}
+\item 
+type(quadrupole), dimension(nquadmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a84f0e00a948fce129634ef213a1e6146}{beamln2}}
+\item 
+type(dtl), dimension(ndtlmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a676f0e0a8d52bb85779983a23300d307}{beamln3}}
+\item 
+type(ccdtl), dimension(nccdtlmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_aecdd8f634a42325f08705c6733739f5e}{beamln4}}
+\item 
+type(ccl), dimension(ncclmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a1fe5a7819dc79e966a915ac7109a5921}{beamln5}}
+\item 
+type(sc), dimension(nscmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_aecb8568d8a048be9dd3f8ebf18c48e72}{beamln6}}
+\item 
+type(constfoc), dimension(ncfmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_aee9caad06453a0e66c229bf239519041}{beamln7}}
+\item 
+type(solrf), dimension(nslrfmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a85003b545c7adc9e597e5fd6be9828c5}{beamln8}}
+\item 
+type(sol), dimension(nslmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a7685c672080dfc1af30f91257a832844}{beamln9}}
+\item 
+type(dipole), dimension(ndipolemax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a62ff8549366c26dee5a585c8d900ebac}{beamln10}}
+\item 
+type(emfld), dimension(ncclmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a016c645050aaca47150651536833a42d}{beamln11}}
+\item 
+type(multipole), dimension(nquadmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a813aa983dff443b4b11bfcca3870d81a}{beamln12}}
+\item 
+type(tws), dimension(nscmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_aebf4a32dfb6382e980bd128f28575547}{beamln13}}
+\item 
+type(beamlineelem), dimension(nblemtmax), private \mbox{\hyperlink{namespaceaccsimulatorclass_a2ca359e2c23c27bfccd5341fec0e7207}{blnelem}}
+\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+This class defines functions to set up the initial beam particle distribution, field information, computational domain, beam line element lattice and run the dynamics simulation through the system. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a}\label{namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a}} 
+\index{accsimulatorclass@{accsimulatorclass}!destruct\_accsimulator@{destruct\_accsimulator}}
+\index{destruct\_accsimulator@{destruct\_accsimulator}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{destruct\_accsimulator()}{destruct\_accsimulator()}}
+{\footnotesize\ttfamily subroutine accsimulatorclass\+::destruct\+\_\+accsimulator (\begin{DoxyParamCaption}\item[{double precision}]{time }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078}\label{namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078}} 
+\index{accsimulatorclass@{accsimulatorclass}!init\_accsimulator@{init\_accsimulator}}
+\index{init\_accsimulator@{init\_accsimulator}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{init\_accsimulator()}{init\_accsimulator()}}
+{\footnotesize\ttfamily subroutine accsimulatorclass\+::init\+\_\+accsimulator (\begin{DoxyParamCaption}\item[{double precision}]{time }\end{DoxyParamCaption})}
+
+
+
+set up objects and parameters. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0}\label{namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0}} 
+\index{accsimulatorclass@{accsimulatorclass}!run\_accsimulator@{run\_accsimulator}}
+\index{run\_accsimulator@{run\_accsimulator}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{run\_accsimulator()}{run\_accsimulator()}}
+{\footnotesize\ttfamily subroutine accsimulatorclass\+::run\+\_\+accsimulator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run beam dynamics simulation through accelerator. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceaccsimulatorclass_ac6dafc4c6322db3e6507ece8c3ff9e37}\label{namespaceaccsimulatorclass_ac6dafc4c6322db3e6507ece8c3ff9e37}} 
+\index{accsimulatorclass@{accsimulatorclass}!ageom@{ageom}}
+\index{ageom@{ageom}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{ageom}{ageom}}
+{\footnotesize\ttfamily type (compdom), private accsimulatorclass\+::ageom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+geometry object. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_acc8e97a5abe7b5feb49058c5e9a8a5f5}\label{namespaceaccsimulatorclass_acc8e97a5abe7b5feb49058c5e9a8a5f5}} 
+\index{accsimulatorclass@{accsimulatorclass}!bcharge@{bcharge}}
+\index{bcharge@{bcharge}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{bcharge}{bcharge}}
+{\footnotesize\ttfamily double precision, private accsimulatorclass\+::bcharge\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+beam current, kin. energy, part. mass, and charge. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a23e215553c71a45286be97992358dd87}\label{namespaceaccsimulatorclass_a23e215553c71a45286be97992358dd87}} 
+\index{accsimulatorclass@{accsimulatorclass}!bcurr@{bcurr}}
+\index{bcurr@{bcurr}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{bcurr}{bcurr}}
+{\footnotesize\ttfamily double precision, private accsimulatorclass\+::bcurr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+beam current, kin. energy, part. mass, and charge. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a3c3a1b96070f5f9b755af7dc8502b457}\label{namespaceaccsimulatorclass_a3c3a1b96070f5f9b755af7dc8502b457}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln0@{beamln0}}
+\index{beamln0@{beamln0}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln0}{beamln0}}
+{\footnotesize\ttfamily type (bpm), dimension(nbpmmax), target accsimulatorclass\+::beamln0}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a4afbfe5b21f1ef4f6ed80b26919a5b65}\label{namespaceaccsimulatorclass_a4afbfe5b21f1ef4f6ed80b26919a5b65}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln1@{beamln1}}
+\index{beamln1@{beamln1}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln1}{beamln1}}
+{\footnotesize\ttfamily type (drifttube), dimension(ndriftmax), target accsimulatorclass\+::beamln1}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a62ff8549366c26dee5a585c8d900ebac}\label{namespaceaccsimulatorclass_a62ff8549366c26dee5a585c8d900ebac}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln10@{beamln10}}
+\index{beamln10@{beamln10}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln10}{beamln10}}
+{\footnotesize\ttfamily type (dipole), dimension(ndipolemax), target accsimulatorclass\+::beamln10}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a016c645050aaca47150651536833a42d}\label{namespaceaccsimulatorclass_a016c645050aaca47150651536833a42d}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln11@{beamln11}}
+\index{beamln11@{beamln11}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln11}{beamln11}}
+{\footnotesize\ttfamily type (emfld), dimension(ncclmax), target accsimulatorclass\+::beamln11}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a813aa983dff443b4b11bfcca3870d81a}\label{namespaceaccsimulatorclass_a813aa983dff443b4b11bfcca3870d81a}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln12@{beamln12}}
+\index{beamln12@{beamln12}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln12}{beamln12}}
+{\footnotesize\ttfamily type (multipole), dimension(nquadmax), target accsimulatorclass\+::beamln12}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_aebf4a32dfb6382e980bd128f28575547}\label{namespaceaccsimulatorclass_aebf4a32dfb6382e980bd128f28575547}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln13@{beamln13}}
+\index{beamln13@{beamln13}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln13}{beamln13}}
+{\footnotesize\ttfamily type (tws), dimension(nscmax), target accsimulatorclass\+::beamln13}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a84f0e00a948fce129634ef213a1e6146}\label{namespaceaccsimulatorclass_a84f0e00a948fce129634ef213a1e6146}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln2@{beamln2}}
+\index{beamln2@{beamln2}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln2}{beamln2}}
+{\footnotesize\ttfamily type (quadrupole), dimension(nquadmax), target accsimulatorclass\+::beamln2}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a676f0e0a8d52bb85779983a23300d307}\label{namespaceaccsimulatorclass_a676f0e0a8d52bb85779983a23300d307}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln3@{beamln3}}
+\index{beamln3@{beamln3}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln3}{beamln3}}
+{\footnotesize\ttfamily type (dtl), dimension(ndtlmax), target accsimulatorclass\+::beamln3}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_aecdd8f634a42325f08705c6733739f5e}\label{namespaceaccsimulatorclass_aecdd8f634a42325f08705c6733739f5e}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln4@{beamln4}}
+\index{beamln4@{beamln4}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln4}{beamln4}}
+{\footnotesize\ttfamily type (ccdtl), dimension(nccdtlmax), target accsimulatorclass\+::beamln4}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a1fe5a7819dc79e966a915ac7109a5921}\label{namespaceaccsimulatorclass_a1fe5a7819dc79e966a915ac7109a5921}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln5@{beamln5}}
+\index{beamln5@{beamln5}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln5}{beamln5}}
+{\footnotesize\ttfamily type (ccl), dimension(ncclmax), target accsimulatorclass\+::beamln5}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_aecb8568d8a048be9dd3f8ebf18c48e72}\label{namespaceaccsimulatorclass_aecb8568d8a048be9dd3f8ebf18c48e72}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln6@{beamln6}}
+\index{beamln6@{beamln6}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln6}{beamln6}}
+{\footnotesize\ttfamily type (sc), dimension(nscmax), target accsimulatorclass\+::beamln6}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_aee9caad06453a0e66c229bf239519041}\label{namespaceaccsimulatorclass_aee9caad06453a0e66c229bf239519041}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln7@{beamln7}}
+\index{beamln7@{beamln7}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln7}{beamln7}}
+{\footnotesize\ttfamily type (constfoc), dimension(ncfmax), target accsimulatorclass\+::beamln7}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a85003b545c7adc9e597e5fd6be9828c5}\label{namespaceaccsimulatorclass_a85003b545c7adc9e597e5fd6be9828c5}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln8@{beamln8}}
+\index{beamln8@{beamln8}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln8}{beamln8}}
+{\footnotesize\ttfamily type (solrf), dimension(nslrfmax), target accsimulatorclass\+::beamln8}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a7685c672080dfc1af30f91257a832844}\label{namespaceaccsimulatorclass_a7685c672080dfc1af30f91257a832844}} 
+\index{accsimulatorclass@{accsimulatorclass}!beamln9@{beamln9}}
+\index{beamln9@{beamln9}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{beamln9}{beamln9}}
+{\footnotesize\ttfamily type (sol), dimension(nslmax), target accsimulatorclass\+::beamln9}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a770319e9213788860e586df0ffacd465}\label{namespaceaccsimulatorclass_a770319e9213788860e586df0ffacd465}} 
+\index{accsimulatorclass@{accsimulatorclass}!bfreq@{bfreq}}
+\index{bfreq@{bfreq}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{bfreq}{bfreq}}
+{\footnotesize\ttfamily double precision, private accsimulatorclass\+::bfreq\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+beam current, kin. energy, part. mass, and charge. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_af510330940fc024c5092b4fd361c736e}\label{namespaceaccsimulatorclass_af510330940fc024c5092b4fd361c736e}} 
+\index{accsimulatorclass@{accsimulatorclass}!bkenergy@{bkenergy}}
+\index{bkenergy@{bkenergy}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{bkenergy}{bkenergy}}
+{\footnotesize\ttfamily double precision, private accsimulatorclass\+::bkenergy\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+beam current, kin. energy, part. mass, and charge. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a2ca359e2c23c27bfccd5341fec0e7207}\label{namespaceaccsimulatorclass_a2ca359e2c23c27bfccd5341fec0e7207}} 
+\index{accsimulatorclass@{accsimulatorclass}!blnelem@{blnelem}}
+\index{blnelem@{blnelem}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{blnelem}{blnelem}}
+{\footnotesize\ttfamily type (beamlineelem), dimension(nblemtmax), private accsimulatorclass\+::blnelem\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a3f5beb7f11359c926cdc41f78c84334d}\label{namespaceaccsimulatorclass_a3f5beb7f11359c926cdc41f78c84334d}} 
+\index{accsimulatorclass@{accsimulatorclass}!bmass@{bmass}}
+\index{bmass@{bmass}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{bmass}{bmass}}
+{\footnotesize\ttfamily double precision, private accsimulatorclass\+::bmass\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+beam current, kin. energy, part. mass, and charge. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a4d06760340147c29a3ce5ba4f4ba9066}\label{namespaceaccsimulatorclass_a4d06760340147c29a3ce5ba4f4ba9066}} 
+\index{accsimulatorclass@{accsimulatorclass}!bpts@{bpts}}
+\index{bpts@{bpts}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{bpts}{bpts}}
+{\footnotesize\ttfamily type (beambunch), private accsimulatorclass\+::bpts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+beam particle object and array. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a8c7c321579304f645389a08a8725f241}\label{namespaceaccsimulatorclass_a8c7c321579304f645389a08a8725f241}} 
+\index{accsimulatorclass@{accsimulatorclass}!currlist@{currlist}}
+\index{currlist@{currlist}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{currlist}{currlist}}
+{\footnotesize\ttfamily double precision, dimension(100) accsimulatorclass\+::currlist}
+
+
+
+current list of charge state. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_accc2494fdb269aeeba10e0f6eea90690}\label{namespaceaccsimulatorclass_accc2494fdb269aeeba10e0f6eea90690}} 
+\index{accsimulatorclass@{accsimulatorclass}!currlist0@{currlist0}}
+\index{currlist0@{currlist0}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{currlist0}{currlist0}}
+{\footnotesize\ttfamily double precision, dimension(\+:), allocatable accsimulatorclass\+::currlist0}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a26217a3bed78a53045dc70c1ac59207a}\label{namespaceaccsimulatorclass_a26217a3bed78a53045dc70c1ac59207a}} 
+\index{accsimulatorclass@{accsimulatorclass}!dim@{dim}}
+\index{dim@{dim}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::dim\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a1b6defb6bd9b1c4ddada0b30c99f4dd5}\label{namespaceaccsimulatorclass_a1b6defb6bd9b1c4ddada0b30c99f4dd5}} 
+\index{accsimulatorclass@{accsimulatorclass}!distparam@{distparam}}
+\index{distparam@{distparam}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{distparam}{distparam}}
+{\footnotesize\ttfamily double precision, dimension(21), private accsimulatorclass\+::distparam\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+conts. in init. dist. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a1ba011ab9980a00689505f8cbbd05732}\label{namespaceaccsimulatorclass_a1ba011ab9980a00689505f8cbbd05732}} 
+\index{accsimulatorclass@{accsimulatorclass}!flagbc@{flagbc}}
+\index{flagbc@{flagbc}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{flagbc}{flagbc}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::flagbc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_af61313c9e48dba34ab064f69f8d43183}\label{namespaceaccsimulatorclass_af61313c9e48dba34ab064f69f8d43183}} 
+\index{accsimulatorclass@{accsimulatorclass}!flagdiag@{flagdiag}}
+\index{flagdiag@{flagdiag}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{flagdiag}{flagdiag}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::flagdiag\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a487e5f5861f9d6613a37837a38e8a2c0}\label{namespaceaccsimulatorclass_a487e5f5861f9d6613a37837a38e8a2c0}} 
+\index{accsimulatorclass@{accsimulatorclass}!flagdist@{flagdist}}
+\index{flagdist@{flagdist}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{flagdist}{flagdist}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::flagdist\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_aeed14cf632798f53deb7a49d73f7d09f}\label{namespaceaccsimulatorclass_aeed14cf632798f53deb7a49d73f7d09f}} 
+\index{accsimulatorclass@{accsimulatorclass}!flagerr@{flagerr}}
+\index{flagerr@{flagerr}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{flagerr}{flagerr}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::flagerr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_aeb76c7474e39b4748e1f18d5c44b63ce}\label{namespaceaccsimulatorclass_aeb76c7474e39b4748e1f18d5c44b63ce}} 
+\index{accsimulatorclass@{accsimulatorclass}!flagmap@{flagmap}}
+\index{flagmap@{flagmap}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{flagmap}{flagmap}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::flagmap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a7fbad7f6e18df1ec95d1f76620a8bd80}\label{namespaceaccsimulatorclass_a7fbad7f6e18df1ec95d1f76620a8bd80}} 
+\index{accsimulatorclass@{accsimulatorclass}!grid2d@{grid2d}}
+\index{grid2d@{grid2d}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{grid2d}{grid2d}}
+{\footnotesize\ttfamily type (pgrid2d), private accsimulatorclass\+::grid2d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+1d logical processor array. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a9b454cb233fe47004ba9388d9c495805}\label{namespaceaccsimulatorclass_a9b454cb233fe47004ba9388d9c495805}} 
+\index{accsimulatorclass@{accsimulatorclass}!ibalend@{ibalend}}
+\index{ibalend@{ibalend}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{ibalend}{ibalend}}
+{\footnotesize\ttfamily integer accsimulatorclass\+::ibalend}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_aa5a33a2f7563789fd061ef4e28d010a5}\label{namespaceaccsimulatorclass_aa5a33a2f7563789fd061ef4e28d010a5}} 
+\index{accsimulatorclass@{accsimulatorclass}!iend@{iend}}
+\index{iend@{iend}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{iend}{iend}}
+{\footnotesize\ttfamily integer accsimulatorclass\+::iend}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_aaf128f52875dead988078d4645537192}\label{namespaceaccsimulatorclass_aaf128f52875dead988078d4645537192}} 
+\index{accsimulatorclass@{accsimulatorclass}!jend@{jend}}
+\index{jend@{jend}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{jend}{jend}}
+{\footnotesize\ttfamily integer accsimulatorclass\+::jend}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a99e7feb0e1e3adf9ad845a7425a1b9f7}\label{namespaceaccsimulatorclass_a99e7feb0e1e3adf9ad845a7425a1b9f7}} 
+\index{accsimulatorclass@{accsimulatorclass}!nblem@{nblem}}
+\index{nblem@{nblem}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nblem}{nblem}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::nblem\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_ac4f089e8c954990197b1d251b800692f}\label{namespaceaccsimulatorclass_ac4f089e8c954990197b1d251b800692f}} 
+\index{accsimulatorclass@{accsimulatorclass}!nchrg@{nchrg}}
+\index{nchrg@{nchrg}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nchrg}{nchrg}}
+{\footnotesize\ttfamily integer accsimulatorclass\+::nchrg}
+
+
+
+total \# of charge state 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a1149425f2a1942ae90449ee7a0a06fe0}\label{namespaceaccsimulatorclass_a1149425f2a1942ae90449ee7a0a06fe0}} 
+\index{accsimulatorclass@{accsimulatorclass}!np@{np}}
+\index{np@{np}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{np}{np}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::np\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_ac427142c8239a7c9d4d571de0516f6d0}\label{namespaceaccsimulatorclass_ac427142c8239a7c9d4d571de0516f6d0}} 
+\index{accsimulatorclass@{accsimulatorclass}!npcol@{npcol}}
+\index{npcol@{npcol}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{npcol}{npcol}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::npcol\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of processors in column and row direction. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a673e05862dc992db1e5f59ae966a1bc6}\label{namespaceaccsimulatorclass_a673e05862dc992db1e5f59ae966a1bc6}} 
+\index{accsimulatorclass@{accsimulatorclass}!nplocal@{nplocal}}
+\index{nplocal@{nplocal}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nplocal}{nplocal}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::nplocal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_ae4ec48c98f1d184540a67f262b362b9c}\label{namespaceaccsimulatorclass_ae4ec48c98f1d184540a67f262b362b9c}} 
+\index{accsimulatorclass@{accsimulatorclass}!nprow@{nprow}}
+\index{nprow@{nprow}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nprow}{nprow}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::nprow\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of processors in column and row direction. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a891a5868a86440d94c4eb40df9f3b8b9}\label{namespaceaccsimulatorclass_a891a5868a86440d94c4eb40df9f3b8b9}} 
+\index{accsimulatorclass@{accsimulatorclass}!nptlist@{nptlist}}
+\index{nptlist@{nptlist}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nptlist}{nptlist}}
+{\footnotesize\ttfamily integer, dimension(100) accsimulatorclass\+::nptlist}
+
+
+
+number of particles of charge state. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a9fa9911cc9d2b1442c2d6a945394fc7a}\label{namespaceaccsimulatorclass_a9fa9911cc9d2b1442c2d6a945394fc7a}} 
+\index{accsimulatorclass@{accsimulatorclass}!nptlist0@{nptlist0}}
+\index{nptlist0@{nptlist0}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nptlist0}{nptlist0}}
+{\footnotesize\ttfamily integer, dimension(\+:), allocatable accsimulatorclass\+::nptlist0}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a3efdd317f3f447eb0e9af6118c312cb5}\label{namespaceaccsimulatorclass_a3efdd317f3f447eb0e9af6118c312cb5}} 
+\index{accsimulatorclass@{accsimulatorclass}!nstepend@{nstepend}}
+\index{nstepend@{nstepend}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nstepend}{nstepend}}
+{\footnotesize\ttfamily integer accsimulatorclass\+::nstepend}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_af61920248f0078da76332ba7c03691f2}\label{namespaceaccsimulatorclass_af61920248f0078da76332ba7c03691f2}} 
+\index{accsimulatorclass@{accsimulatorclass}!nx@{nx}}
+\index{nx@{nx}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nx}{nx}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::nx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a7f23c64ad80c114ef62069aaede70561}\label{namespaceaccsimulatorclass_a7f23c64ad80c114ef62069aaede70561}} 
+\index{accsimulatorclass@{accsimulatorclass}!nxlocal@{nxlocal}}
+\index{nxlocal@{nxlocal}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nxlocal}{nxlocal}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::nxlocal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a51134373ee457cfeffdc9a5041a4d01c}\label{namespaceaccsimulatorclass_a51134373ee457cfeffdc9a5041a4d01c}} 
+\index{accsimulatorclass@{accsimulatorclass}!ny@{ny}}
+\index{ny@{ny}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{ny}{ny}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::ny\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a48f766f48eeb1fb22aeff17c6c81e776}\label{namespaceaccsimulatorclass_a48f766f48eeb1fb22aeff17c6c81e776}} 
+\index{accsimulatorclass@{accsimulatorclass}!nylocal@{nylocal}}
+\index{nylocal@{nylocal}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nylocal}{nylocal}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::nylocal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a56a2e4504ed5d475f38307ecc7360ede}\label{namespaceaccsimulatorclass_a56a2e4504ed5d475f38307ecc7360ede}} 
+\index{accsimulatorclass@{accsimulatorclass}!nz@{nz}}
+\index{nz@{nz}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nz}{nz}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::nz\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_af547860c8c8685ee94f4cca4da117acc}\label{namespaceaccsimulatorclass_af547860c8c8685ee94f4cca4da117acc}} 
+\index{accsimulatorclass@{accsimulatorclass}!nzlocal@{nzlocal}}
+\index{nzlocal@{nzlocal}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{nzlocal}{nzlocal}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::nzlocal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a2d7cf949e4c05edf370cfbb6ee936951}\label{namespaceaccsimulatorclass_a2d7cf949e4c05edf370cfbb6ee936951}} 
+\index{accsimulatorclass@{accsimulatorclass}!potential@{potential}}
+\index{potential@{potential}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{potential}{potential}}
+{\footnotesize\ttfamily type (fieldquant), private accsimulatorclass\+::potential\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+beam charge density and field potential arrays. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a6dce29a29cf7312e80b95b700300e37d}\label{namespaceaccsimulatorclass_a6dce29a29cf7312e80b95b700300e37d}} 
+\index{accsimulatorclass@{accsimulatorclass}!qmcclis@{qmcclis}}
+\index{qmcclis@{qmcclis}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{qmcclis}{qmcclis}}
+{\footnotesize\ttfamily double precision, dimension(\+:), allocatable accsimulatorclass\+::qmcclis}
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a41077f15e4eaaf833944e89b231a9df9}\label{namespaceaccsimulatorclass_a41077f15e4eaaf833944e89b231a9df9}} 
+\index{accsimulatorclass@{accsimulatorclass}!qmcclist@{qmcclist}}
+\index{qmcclist@{qmcclist}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{qmcclist}{qmcclist}}
+{\footnotesize\ttfamily double precision, dimension(100) accsimulatorclass\+::qmcclist}
+
+
+
+charge/mass list of charge state. 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_af704d398708fe866be2cd6b2f2705267}\label{namespaceaccsimulatorclass_af704d398708fe866be2cd6b2f2705267}} 
+\index{accsimulatorclass@{accsimulatorclass}!rstartflg@{rstartflg}}
+\index{rstartflg@{rstartflg}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{rstartflg}{rstartflg}}
+{\footnotesize\ttfamily integer, private accsimulatorclass\+::rstartflg\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch 
+
+\mbox{\Hypertarget{namespaceaccsimulatorclass_a36e211bc045925eb053915a15d72ea4f}\label{namespaceaccsimulatorclass_a36e211bc045925eb053915a15d72ea4f}} 
+\index{accsimulatorclass@{accsimulatorclass}!zend@{zend}}
+\index{zend@{zend}!accsimulatorclass@{accsimulatorclass}}
+\subsubsection{\texorpdfstring{zend}{zend}}
+{\footnotesize\ttfamily real$\ast$8 accsimulatorclass\+::zend}
+

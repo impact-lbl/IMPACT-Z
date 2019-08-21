@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! PhysConstclass: physical constants class in CONSTANTS module of 
 !                 DATA STRUCTURE layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the physical constant parameters used
-!              in the simulation.
+!
+! MODULE  : ... PhysConstclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION:
+!> This class defines the physical constant parameters used
+!> in the simulation.
 ! Comments:
 !----------------------------------------------------------------
       module PhysConstclass
@@ -14,11 +19,11 @@
       
         !physical parameters and constants ---------------------
         double precision :: Pi
-        double precision :: Clight !speed of light in vaccum
-        double precision :: Scxl !length scale
-        double precision :: Rad2deg !conversion factor from radian to degree
-        double precision :: Epsilon0 !permittivity of vacuum
-        double precision :: Scfreq !time scale
+        double precision :: Clight !< speed of light in vaccum
+        double precision :: Scxl !< length scale
+        double precision :: Rad2deg !< conversion factor from radian to degree
+        double precision :: Epsilon0 !< permittivity of vacuum
+        double precision :: Scfreq !< time scale
       contains
         subroutine construct_PhysConst(freq)
         double precision, intent(in) :: freq

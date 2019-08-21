@@ -1,0 +1,261 @@
+\hypertarget{namespacetwsclass}{}\section{twsclass Module Reference}
+\label{namespacetwsclass}\index{twsclass@{twsclass}}
+
+
+This class defines the linear transfer map and RF field for the T\+WS beam line elment. Here, the T\+WS does not include input and output cells. The T\+WS is simulated using the superposition of two standing wave structure. (G. A. Loew, et al. S\+L\+A\+C-\/\+P\+U\+B-\/2295, 1979.)  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacetwsclass_1_1getparam__tws}{getparam\+\_\+tws}}
+\item 
+interface \mbox{\hyperlink{interfacetwsclass_1_1setparam__tws}{setparam\+\_\+tws}}
+\item 
+type \mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a6528e082bfe1d870e027de8353b312c7}{construct\+\_\+tws}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a15770a288893203a1f18bde3f1ab190c}{setparam1\+\_\+tws}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a24b51ee452bd448a84120562cb38c085}{setparam2\+\_\+tws}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_acdc918f464e4b8dbf86ea0e00b0d7335}{setparam3\+\_\+tws}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_ac410f8e4606b3fdf3303f0976a2115dc}{getparam1\+\_\+tws}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a82176cb7e562eb7a78fffed55cbac554}{getparam2\+\_\+tws}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a07f751992638ce181255eef670d54c50}{getparam3\+\_\+tws}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_ab57cbdca9514adc28eb62c6bbb8633b6}{maplinear\+\_\+tws}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a2d527684d5c9fd42e3217ac03914bd90}{rk6i\+\_\+tws}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a1681f57f6e70160ddb0f6e59f4cd5349}{intfunc1\+\_\+tws}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a9c88e1753c1d3faff3af95cf8c071d4f}{getaxflde\+\_\+tws}} (z, this, ez1, ezp1, ezpp1, ez12, ezp12, ezpp12
+\begin{DoxyCompactList}\small\item\em get the E field on the axis \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_a30d73a1ffc1ce8ce728e8fdf7caa6002}{getfld\+\_\+tws}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacetwsclass_aaf9be4899e2515903618d2a1ab1dfbbc}{getflderr\+\_\+tws}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacetwsclass_ae92106a92b2952cbb34ae48df4c6b375}{nparam}} = 15
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and RF field for the T\+WS beam line elment. Here, the T\+WS does not include input and output cells. The T\+WS is simulated using the superposition of two standing wave structure. (G. A. Loew, et al. S\+L\+A\+C-\/\+P\+U\+B-\/2295, 1979.) 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{twsclass::tws@{twsclass::tws}}\label{structtwsclass_1_1tws}
+\Hypertarget{namespacetwsclass_structtwsclass_1_1tws}
+\subsubsection{type twsclass\+::tws}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacetwsclass_a2dcf113402de09fb0cbb7a7779dd11f2}\label{namespacetwsclass_a2dcf113402de09fb0cbb7a7779dd11f2}} 
+integer&
+itype&
+Itype = 106. \\
+\hline
+
+\mbox{\Hypertarget{namespacetwsclass_a21f6cc9104c13b52b03da5b9e283f07b}\label{namespacetwsclass_a21f6cc9104c13b52b03da5b9e283f07b}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacetwsclass_a023933666722b8509103d43f82f3c251}\label{namespacetwsclass_a023933666722b8509103d43f82f3c251}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacetwsclass_a9977eae9217b979dc25554e7f3453339}\label{namespacetwsclass_a9977eae9217b979dc25554e7f3453339}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacetwsclass_ada2bbea749395b11dbf0f9d8b27b5fcf}\label{namespacetwsclass_ada2bbea749395b11dbf0f9d8b27b5fcf}} 
+double precision, dimension(\mbox{\hyperlink{namespacetwsclass_ae92106a92b2952cbb34ae48df4c6b375}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacetwsclass_a6528e082bfe1d870e027de8353b312c7}\label{namespacetwsclass_a6528e082bfe1d870e027de8353b312c7}} 
+\index{twsclass@{twsclass}!construct\_tws@{construct\_tws}}
+\index{construct\_tws@{construct\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{construct\_tws()}{construct\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::construct\+\_\+tws (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetwsclass_a9c88e1753c1d3faff3af95cf8c071d4f}\label{namespacetwsclass_a9c88e1753c1d3faff3af95cf8c071d4f}} 
+\index{twsclass@{twsclass}!getaxflde\_tws@{getaxflde\_tws}}
+\index{getaxflde\_tws@{getaxflde\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{getaxflde\_tws()}{getaxflde\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::getaxflde\+\_\+tws (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{ez1,  }\item[{double precision, intent(out)}]{ezp1,  }\item[{double precision, intent(out)}]{ezpp1,  }\item[{double precision, intent(out)}]{ez12,  }\item[{double precision, intent(out)}]{ezp12,  }\item[{double precision, intent(out)}]{ezpp12 }\end{DoxyParamCaption})}
+
+
+
+get the E field on the axis 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_a9c88e1753c1d3faff3af95cf8c071d4f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetwsclass_a30d73a1ffc1ce8ce728e8fdf7caa6002}\label{namespacetwsclass_a30d73a1ffc1ce8ce728e8fdf7caa6002}} 
+\index{twsclass@{twsclass}!getfld\_tws@{getfld\_tws}}
+\index{getfld\_tws@{getfld\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{getfld\_tws()}{getfld\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::getfld\+\_\+tws (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_a30d73a1ffc1ce8ce728e8fdf7caa6002_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetwsclass_aaf9be4899e2515903618d2a1ab1dfbbc}\label{namespacetwsclass_aaf9be4899e2515903618d2a1ab1dfbbc}} 
+\index{twsclass@{twsclass}!getflderr\_tws@{getflderr\_tws}}
+\index{getflderr\_tws@{getflderr\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{getflderr\_tws()}{getflderr\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::getflderr\+\_\+tws (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this,  }\item[{double precision}]{dx,  }\item[{double precision}]{dy,  }\item[{double precision}]{anglex,  }\item[{double precision}]{angley,  }\item[{double precision}]{anglez }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_aaf9be4899e2515903618d2a1ab1dfbbc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetwsclass_ac410f8e4606b3fdf3303f0976a2115dc}\label{namespacetwsclass_ac410f8e4606b3fdf3303f0976a2115dc}} 
+\index{twsclass@{twsclass}!getparam1\_tws@{getparam1\_tws}}
+\index{getparam1\_tws@{getparam1\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{getparam1\_tws()}{getparam1\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::getparam1\+\_\+tws (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetwsclass_a82176cb7e562eb7a78fffed55cbac554}\label{namespacetwsclass_a82176cb7e562eb7a78fffed55cbac554}} 
+\index{twsclass@{twsclass}!getparam2\_tws@{getparam2\_tws}}
+\index{getparam2\_tws@{getparam2\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{getparam2\_tws()}{getparam2\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::getparam2\+\_\+tws (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetwsclass_a07f751992638ce181255eef670d54c50}\label{namespacetwsclass_a07f751992638ce181255eef670d54c50}} 
+\index{twsclass@{twsclass}!getparam3\_tws@{getparam3\_tws}}
+\index{getparam3\_tws@{getparam3\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{getparam3\_tws()}{getparam3\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::getparam3\+\_\+tws (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetwsclass_a1681f57f6e70160ddb0f6e59f4cd5349}\label{namespacetwsclass_a1681f57f6e70160ddb0f6e59f4cd5349}} 
+\index{twsclass@{twsclass}!intfunc1\_tws@{intfunc1\_tws}}
+\index{intfunc1\_tws@{intfunc1\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{intfunc1\_tws()}{intfunc1\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::intfunc1\+\_\+tws (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_a1681f57f6e70160ddb0f6e59f4cd5349_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_a1681f57f6e70160ddb0f6e59f4cd5349_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetwsclass_ab57cbdca9514adc28eb62c6bbb8633b6}\label{namespacetwsclass_ab57cbdca9514adc28eb62c6bbb8633b6}} 
+\index{twsclass@{twsclass}!maplinear\_tws@{maplinear\_tws}}
+\index{maplinear\_tws@{maplinear\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{maplinear\_tws()}{maplinear\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::maplinear\+\_\+tws (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_ab57cbdca9514adc28eb62c6bbb8633b6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_ab57cbdca9514adc28eb62c6bbb8633b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetwsclass_a2d527684d5c9fd42e3217ac03914bd90}\label{namespacetwsclass_a2d527684d5c9fd42e3217ac03914bd90}} 
+\index{twsclass@{twsclass}!rk6i\_tws@{rk6i\_tws}}
+\index{rk6i\_tws@{rk6i\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{rk6i\_tws()}{rk6i\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::rk6i\+\_\+tws (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_a2d527684d5c9fd42e3217ac03914bd90_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetwsclass_a2d527684d5c9fd42e3217ac03914bd90_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetwsclass_a15770a288893203a1f18bde3f1ab190c}\label{namespacetwsclass_a15770a288893203a1f18bde3f1ab190c}} 
+\index{twsclass@{twsclass}!setparam1\_tws@{setparam1\_tws}}
+\index{setparam1\_tws@{setparam1\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{setparam1\_tws()}{setparam1\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::setparam1\+\_\+tws (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetwsclass_a24b51ee452bd448a84120562cb38c085}\label{namespacetwsclass_a24b51ee452bd448a84120562cb38c085}} 
+\index{twsclass@{twsclass}!setparam2\_tws@{setparam2\_tws}}
+\index{setparam2\_tws@{setparam2\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{setparam2\_tws()}{setparam2\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::setparam2\+\_\+tws (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacetwsclass_acdc918f464e4b8dbf86ea0e00b0d7335}\label{namespacetwsclass_acdc918f464e4b8dbf86ea0e00b0d7335}} 
+\index{twsclass@{twsclass}!setparam3\_tws@{setparam3\_tws}}
+\index{setparam3\_tws@{setparam3\_tws}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{setparam3\_tws()}{setparam3\_tws()}}
+{\footnotesize\ttfamily subroutine twsclass\+::setparam3\+\_\+tws (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacetwsclass_structtwsclass_1_1tws}{tws}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetwsclass_ae92106a92b2952cbb34ae48df4c6b375}\label{namespacetwsclass_ae92106a92b2952cbb34ae48df4c6b375}} 
+\index{twsclass@{twsclass}!nparam@{nparam}}
+\index{nparam@{nparam}!twsclass@{twsclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private twsclass\+::nparam = 15\hspace{0.3cm}{\ttfamily [private]}}
+

@@ -1,0 +1,81 @@
+\hypertarget{_timer_8f90}{}\section{src/\+Func/\+Timer.f90 File Reference}
+\label{_timer_8f90}\index{src/Func/Timer.f90@{src/Func/Timer.f90}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacetimerclass}{timerclass}}
+\begin{DoxyCompactList}\small\item\em This module is to record time spent in different subroutines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacetimerclass_a162c9c59b952268a3b7b544cff4f4295}{timerclass\+::construct\+\_\+timer}} (values)
+\item 
+subroutine \mbox{\hyperlink{namespacetimerclass_afb272bcdcff72d225c2df5862630025c}{timerclass\+::starttime\+\_\+timer}} (sec0)
+\item 
+double precision function \mbox{\hyperlink{namespacetimerclass_a3378d323d442f85aff95ab73cd13376d}{timerclass\+::elapsedtime\+\_\+timer}} (sec0)
+\item 
+subroutine \mbox{\hyperlink{namespacetimerclass_aa34d67fa57ad546ab7e1a7fb1643e9b0}{timerclass\+::showtime\+\_\+timer}} ()
+\item 
+subroutine \mbox{\hyperlink{namespacetimerclass_a3535b11970327778ddd27cee93c2288b}{timerclass\+::showtime\+\_\+aux}} (routine, sec)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a27a1612019724dba83c6282789acd438}{timerclass\+::t\+\_\+integ}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_add1e5cdff404cd8526ae448ac2fb7f04}{timerclass\+::t\+\_\+map1}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_afedfbbf4bbafaa50343cdc8c6aa10f81}{timerclass\+::t\+\_\+map2}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a46c757a554e9df6d4b0afaa3705277be}{timerclass\+::t\+\_\+prnt}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a9b6b0481b5c71629a787a1e558afa8b0}{timerclass\+::t\+\_\+dist}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ab4a25c76f5337ddbe92d696962d74b8f}{timerclass\+::t\+\_\+kvdist}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a22ac90d37e89e2e290014ff2942f201d}{timerclass\+::t\+\_\+gaussn}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a5540a93d3b5aaa9f4e565dcb6d9d51ca}{timerclass\+::t\+\_\+normdv}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a6b31e88ecf075c6a84871dac40764766}{timerclass\+::t\+\_\+correct}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a999480c13b7174ab484db8ca3b22e8c1}{timerclass\+::t\+\_\+spch2d}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_aa77a1d30c4b660cf6b3b63114d193793}{timerclass\+::t\+\_\+boundgeom}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_aa38ad4042a025f6277353cc66f212a87}{timerclass\+::t\+\_\+greenf}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a90dda0e43d26c34adab1c014bf769b9a}{timerclass\+::t\+\_\+rhofas}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_add80bbd91dff017ed09673ec91b01b61}{timerclass\+::t\+\_\+ntrslo}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a853c2d6920418548ad54bd15e9f822a1}{timerclass\+::t\+\_\+fft2dhpf}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ab7ead1f16d3ab25623889ad5459d9ce1}{timerclass\+::t\+\_\+mfft\+\_\+local1}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a17175fbcc799b0ea8174c970b128e1b5}{timerclass\+::t\+\_\+field}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_accf4dcea0dd48030e848ec7af2f1e30c}{timerclass\+::t\+\_\+force}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a3c92f057232df785c821c8340801e508}{timerclass\+::t\+\_\+charge}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a3dea6c858addd80b0f3ffa23635e58ee}{timerclass\+::t\+\_\+beamln}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a014cdbd0d72a928c7d6307b246671522}{timerclass\+::t\+\_\+diag}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ad87bfd792cca542e63e5888518d15f74}{timerclass\+::t\+\_\+ptsmv}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ac02821c26e6c5b8fe3ce7df142bedd47}{timerclass\+::t\+\_\+init}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a6ada82fea692f0dbd703888ffbd44214}{timerclass\+::t\+\_\+transp}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a95e3a3f478de91de1ebd380edef137ae}{timerclass\+::t\+\_\+enlarge}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a78620c6678e30a2cd4796a31b2f718ff}{timerclass\+::t\+\_\+shrink}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_abfb4952ad8c64a2985930df8e27025de}{timerclass\+::t\+\_\+guardsum}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ad0e0d8ccf1da4567018453934b6c5795}{timerclass\+::t\+\_\+boundint}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a555d18ed5df532a56a58498c3915a778}{timerclass\+::t\+\_\+guardexch}}
+\end{DoxyCompactItemize}

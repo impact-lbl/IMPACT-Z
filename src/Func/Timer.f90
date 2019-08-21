@@ -2,9 +2,14 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Timerclass: Clock for individual subroutine class in Utility module
 !             of FUNCTION layer.
-! Version: 1.0
-! Author: Ji Qiang
-! Description: This module is to record time spent in different subroutines.
+! 
+! MODULE  : ... Timerclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang
+!
+! DESCRIPTION: 
+!> This module is to record time spent in different subroutines.
 ! Comments:
 !----------------------------------------------------------------
       module Timerclass

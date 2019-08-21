@@ -1,0 +1,96 @@
+\hypertarget{_d_t_l_8f90}{}\section{src/\+Appl/\+D\+TL.f90 File Reference}
+\label{_d_t_l_8f90}\index{src/Appl/DTL.f90@{src/Appl/DTL.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtlclass\+::dtl}}
+\item 
+interface \mbox{\hyperlink{interfacedtlclass_1_1getparam__dtl}{dtlclass\+::getparam\+\_\+dtl}}
+\item 
+interface \mbox{\hyperlink{interfacedtlclass_1_1setparam__dtl}{dtlclass\+::setparam\+\_\+dtl}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacedtlclass}{dtlclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and RF field for the D\+TL beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a5f65e89a18b2765e966ea8c1db85aa0c}{dtlclass\+::construct\+\_\+dtl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aa8af784d85ac535b6238e9dd4d844be9}{dtlclass\+::setparam1\+\_\+dtl}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a267abecac3bfad96fd1ce717ba50c8b4}{dtlclass\+::setparam2\+\_\+dtl}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aaccb0362c1862fd4f4e34a23f1bb25b9}{dtlclass\+::setparam3\+\_\+dtl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_abd0fd1a590b8e198a5b7081e105f11e8}{dtlclass\+::getparam1\+\_\+dtl}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aac10b9bb174a986cd15c1f0a11369c57}{dtlclass\+::getparam2\+\_\+dtl}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_adb7337b9d81c5d4fef24ba72ad107cbe}{dtlclass\+::getparam3\+\_\+dtl}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_afcf262e9f63f2008931d898ff6d9973a}{dtlclass\+::maplinear\+\_\+dtl}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aa1988f1526102adea7683c31ce2164d9}{dtlclass\+::rk6i\+\_\+dtl}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a913997c12a39f072f1a2be1576dc59d2}{dtlclass\+::intfunc1\+\_\+dtl}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a1fb756446dfd217cc32e4a9088e7f4c7}{dtlclass\+::getaxflde\+\_\+dtl}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the D\+TL rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a79f0618eb609338c97470f6f8f05a848}{dtlclass\+::getbgradfld\+\_\+dtl}} (z, this, bgrad)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aa42e9d402234d9be025275b620c42326}{dtlclass\+::getflderrold\+\_\+dtl}} (pos, extfld, this, dx, dy, anglex, angley
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_ab866f108c00b307f9e7a55731eadafa4}{dtlclass\+::getflderr\+\_\+dtl}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with different field and Quad displacement and rotation errors. Here, there 2 displacement errors and rotation errors for Quad \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a9e97d93c8f7ec49afee134e3ffd3f900}{dtlclass\+::getfld\+\_\+dtl}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_ad87e70265bf1286abf4b2976d8ac37ac}{dtlclass\+::getfldpts\+\_\+dtl}} (pos, extfld, this, nplc)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a34e4fef41e0eab9b94f596f73059c2b7}{dtlclass\+::getflderrpts\+\_\+dtl}} (pos, extfld, this, dx, dy, anglex, angley
+\begin{DoxyCompactList}\small\item\em get external field with different field and Quad displacement and rotation errors. Here, there 2 displacement errors and rotation errors for Quad \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacedtlclass_adf04761c96168c3dc492c89c72194cea}{dtlclass\+::nparam}} = 25
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{dtlclass::dtl@{dtlclass::dtl}}\label{structdtlclass_1_1dtl}
+\Hypertarget{namespacedtlclass_structdtlclass_1_1dtl}
+\subsubsection{type dtlclass\+::dtl}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacedtlclass_a75f1d8c2908cb2ac40cd24dc45a122ff}\label{namespacedtlclass_a75f1d8c2908cb2ac40cd24dc45a122ff}} 
+integer&
+itype&
+Itype = 101. \\
+\hline
+
+\mbox{\Hypertarget{namespacedtlclass_ac3b7a490164af376dab82d59957bcdd3}\label{namespacedtlclass_ac3b7a490164af376dab82d59957bcdd3}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedtlclass_ad89c7805074fee80c05af3ae3861cb87}\label{namespacedtlclass_ad89c7805074fee80c05af3ae3861cb87}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedtlclass_ab0c5195ab0993ee3107484257b94cfe5}\label{namespacedtlclass_ab0c5195ab0993ee3107484257b94cfe5}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedtlclass_a95bc1c81e12444e39d8ea61b6e67ae34}\label{namespacedtlclass_a95bc1c81e12444e39d8ea61b6e67ae34}} 
+double precision, dimension(\mbox{\hyperlink{namespacedtlclass_adf04761c96168c3dc492c89c72194cea}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}

@@ -1,0 +1,94 @@
+\hypertarget{_c_c_l_8f90}{}\section{src/\+Appl/\+C\+CL.f90 File Reference}
+\label{_c_c_l_8f90}\index{src/Appl/CCL.f90@{src/Appl/CCL.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{cclclass\+::ccl}}
+\item 
+interface \mbox{\hyperlink{interfacecclclass_1_1getparam__ccl}{cclclass\+::getparam\+\_\+ccl}}
+\item 
+interface \mbox{\hyperlink{interfacecclclass_1_1setparam__ccl}{cclclass\+::setparam\+\_\+ccl}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacecclclass}{cclclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and RF field for the C\+CL beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_af38d062f04c18827d1d2a76c17039c58}{cclclass\+::construct\+\_\+ccl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_adf1829da601e1090ce5f5e5046c4d62c}{cclclass\+::setparam1\+\_\+ccl}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a7bc5a807438db526489d8773fa168375}{cclclass\+::setparam2\+\_\+ccl}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a5a90756fe0684d2f29121a368dbef489}{cclclass\+::setparam3\+\_\+ccl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a3cb17684a6eef64dd3c35cbb03bcb8b3}{cclclass\+::getparam1\+\_\+ccl}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_ad1c56a9447d1ff854afdc5502ae0fe18}{cclclass\+::getparam2\+\_\+ccl}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_ad223096667fbe2e53bae56b52b2350fa}{cclclass\+::getparam3\+\_\+ccl}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a2efbf5186624893a0f213ca40968c198}{cclclass\+::maplinear\+\_\+ccl}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a6dd4075592b69b308b61e3ee2f065517}{cclclass\+::rk6i\+\_\+ccl}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a09adb3ba980646f12eb22fddbd4c962d}{cclclass\+::intfunc1\+\_\+ccl}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a881db4a51cdc73a6c489b2814565a243}{cclclass\+::getaxflde\+\_\+ccl}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the C\+CL rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a06d52f7ecb50e977ef5e2330506180d2}{cclclass\+::getaxfldefc\+\_\+ccl}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em get external RF field on axis from analytical Fourier coefficients \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a4d8386891ff89c7352f001b01d5f84b5}{cclclass\+::getflderr\+\_\+ccl}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a6c8d8825e6d50c30ba91c90892619a5b}{cclclass\+::getfld\+\_\+ccl}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a22dde155eb6d5e19ccedbe59cd955580}{cclclass\+::getflderrpts\+\_\+ccl}} (pos, extfld, this, dx, dy, anglex, angley
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_aa98c971191ca605d023e7c03c447566a}{cclclass\+::getfldpts\+\_\+ccl}} (pos, extfld, this, nplc)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacecclclass_adeb399ff41e54cda7bdefa51063c0de6}{cclclass\+::nparam}} = 11
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{cclclass::ccl@{cclclass::ccl}}\label{structcclclass_1_1ccl}
+\Hypertarget{namespacecclclass_structcclclass_1_1ccl}
+\subsubsection{type cclclass\+::ccl}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacecclclass_ac0907eebcd93b9aa41c33858f394496d}\label{namespacecclclass_ac0907eebcd93b9aa41c33858f394496d}} 
+integer&
+itype&
+Itype = 103. \\
+\hline
+
+\mbox{\Hypertarget{namespacecclclass_a128d51138685ec33b8c0c7f6bd89dc81}\label{namespacecclclass_a128d51138685ec33b8c0c7f6bd89dc81}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecclclass_a5d663b5eeafc5a924cfe6383143f9b0a}\label{namespacecclclass_a5d663b5eeafc5a924cfe6383143f9b0a}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecclclass_a37e0a279ff69258948ddecf0a4c78045}\label{namespacecclclass_a37e0a279ff69258948ddecf0a4c78045}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecclclass_a4b800d069f005c436b2295924f8f7bb9}\label{namespacecclclass_a4b800d069f005c436b2295924f8f7bb9}} 
+double precision, dimension(\mbox{\hyperlink{namespacecclclass_adeb399ff41e54cda7bdefa51063c0de6}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}

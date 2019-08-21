@@ -38,19 +38,19 @@
           MPI_BCAST5,MPI_BCAST6    
         end interface
       contains
-        !mpi initialization
+        !> mpi initialization
         subroutine MPI_INIT(ierr)
         end subroutine MPI_INIT
 
-        !mpi initialization
+        !> mpi initialization
         subroutine MPI_INITIALIZED(ierr,ierr2)
         end subroutine MPI_INITIALIZED
 
-        !mpi end
+        !> mpi end
         subroutine MPI_Finalize(ierr)
         end subroutine MPI_Finalize
 
-        !global sum
+        !> global sum
         subroutine  MPI_ALLREDUCE1(tmplc,tmpgl,num,MPI_DOUBLE_PRECISION,&
                                   MPI_SUM,MPI_COMM_WORLD,ierr)
           double precision, dimension(:) :: tmplc,tmpgl
@@ -87,22 +87,22 @@
           tmpgl = tmplc
         end subroutine MPI_ALLREDUCE6
 
-        !synchronize communication 
+        !> synchronize communication 
         subroutine MPI_BARRIER(comm2d,ierr)
           integer :: comm2d
         end subroutine MPI_BARRIER
 
-        !processor ID
+        !> processor ID
         subroutine MPI_COMM_RANK(MPI_COMM_WORLD,my_rank,ierr)
           my_rank = 0
         end subroutine MPI_COMM_RANK
 
-        !mpi timing
+        !> mpi timing
         double precision function MPI_WTIME()
           MPI_WTIME = 0.0
         end function MPI_WTIME
 
-        !mpi broadcast
+        !> mpi broadcast
         subroutine MPI_BCAST1(rffile,num1,MPI_INTEGER,num2,comm2d,ierr)
           double precision, dimension(:) :: rffile
           integer :: comm2d
@@ -133,12 +133,12 @@
           integer :: comm2d
         end subroutine MPI_BCAST6
 
-        !total number of processors
+        !> total number of processors
         subroutine MPI_COMM_SIZE(MPI_COMM_WORLD,np,ierr)
           np = 1
         end subroutine MPI_COMM_SIZE
 
-        !sum to local processor
+        !> sum to local processor
         subroutine  MPI_REDUCE1(tmplc,tmpgl,num,MPI_DOUBLE_PRECISION,&
                                   MPI_SUM,num2,MPI_COMM_WORLD,ierr)
           double precision, dimension(:) :: tmplc,tmpgl
@@ -163,7 +163,7 @@
           tmpgl = tmplc
         end subroutine MPI_REDUCE4
 
-        !mpi send command
+        !> mpi send command
         subroutine  MPI_SEND1(tmplc,num,MPI_DOUBLE_PRECISION,&
                                   num1,num2,MPI_COMM_WORLD,ierr)
           double precision, dimension(:) :: tmplc
@@ -199,7 +199,7 @@
           double precision, dimension(:,:,:) :: tmplc
         end subroutine MPI_SEND7
 
-        !mpi isend command
+        !> mpi isend command
         subroutine  MPI_ISEND1(tmplc,num,MPI_DOUBLE_PRECISION,&
                                   num1,num2,MPI_COMM_WORLD,num3,ierr)
           double precision, dimension(:) :: tmplc
@@ -220,18 +220,18 @@
           integer :: tmplc
         end subroutine MPI_ISEND4
 
-        !mpi wait command
+        !> mpi wait command
         subroutine MPI_WAIT(num3,status,ierr)
           integer, dimension(:) :: status
         end subroutine MPI_WAIT
 
-        !mpi wait all command
+        !> mpi wait all command
         subroutine MPI_WAITALL(num3,req,status,ierr)
           integer, dimension(:) :: req
           integer, dimension(:,:) :: status
         end subroutine MPI_WAITALL
 
-        !mpi recv command
+        !> mpi recv command
         subroutine  MPI_RECV1(tmplc,num,MPI_DOUBLE_PRECISION,&
                                   num1,num2,MPI_COMM_WORLD,status,ierr)
           double precision :: tmplc
@@ -256,7 +256,7 @@
           integer, dimension(:) :: status
         end subroutine MPI_RECV4
  
-        !mpi irecv command
+        !> mpi irecv command
         subroutine  MPI_IRECV1(tmplc,num,MPI_DOUBLE_PRECISION,&
                                   num1,num2,MPI_COMM_WORLD,msid,ierr)
           double precision :: tmplc
@@ -287,7 +287,7 @@
           integer, dimension(:) :: tmplc
         end subroutine MPI_IRECV6
 
-        !mpi gather command
+        !> mpi gather command
         subroutine  MPI_GATHER1(tmplc,num,MPI_DOUBLE_PRECISION,&
                                tmpgl,num1,MPI_DOUBLE_PRECISION2,num2,MPI_COMM_WORLD,ierr)
           double precision, dimension(:) :: tmplc,tmpgl
@@ -314,7 +314,7 @@
           tmpgl = tmplc
         end subroutine MPI_GATHER4
 
-        !mpi allgather command
+        !> mpi allgather command
         subroutine  MPI_ALLGATHER1(tmplc,num,MPI_DOUBLE_PRECISION,&
                                tmpgl,num1,MPI_DOUBLE_PRECISION2,MPI_COMM_WORLD,ierr)
           double precision, dimension(:) :: tmplc,tmpgl
@@ -378,7 +378,7 @@
           col_comm = 1
         end subroutine MPI_CART_SUB
 
-        !mpi alltoallv1 command
+        !> mpi alltoallv1 command
         subroutine MPI_ALLTOALLV1(sendbuf,sendcount,senddisp,MPI_DOUBLE_COMPLEX,&
            recvbuf,recvcount,recvdisp,MPI_DOUBLE_COMPLEX2,comm,ierr)
           double complex, dimension(:) :: sendbuf,recvbuf 
@@ -400,7 +400,7 @@
           integer :: comm
         end subroutine MPI_ALLTOALLV3
 
-        !mpi allgatherv command
+        !> mpi allgatherv command
         subroutine MPI_ALLGATHERV1(rhoz,innz,MPI_DOUBLE_PRECISION,recvrhoz,&
                             ztable,zdisp,MPI_DOUBLE_PRECISION2,commrow,ierr)
           double precision, dimension(:) :: rhoz,recvrhoz

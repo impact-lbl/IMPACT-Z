@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! CCLclass: Coupled-cavity-linac beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the linear transfer map and RF field
-!              for the CCL beam line elment.
+!
+! MODULE        : ... CCLclass
+! VERSION       : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the linear transfer map and RF field
+!> for the CCL beam line elment.
 ! Comments:
 !----------------------------------------------------------------
       module CCLclass
@@ -14,7 +19,7 @@
         integer, private, parameter :: Nparam = 11
         type CCL
           !Itype = 103
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 103
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -327,7 +332,7 @@
 
         end subroutine intfunc1_CCL
 
-        !interpolate the field from the CCL rf cavity onto bunch location.
+        !> interpolate the field from the CCL rf cavity onto bunch location.
         subroutine getaxfldE_CCL(z,this,ez1,ezp1,ezpp1)
         implicit none
         include 'mpif.h'
@@ -374,8 +379,8 @@
 
         end subroutine getaxfldE_CCL
 
-!-----------------------------------------------------------------
-! get external RF field on axis from analytical Fourier coefficients
+        !-----------------------------------------------------------------
+        !> get external RF field on axis from analytical Fourier coefficients
         subroutine  getaxfldEfc_CCL(z,this,ez1,ezp1,ezpp1)
         implicit none
         include 'mpif.h'
@@ -413,7 +418,7 @@
 
         end subroutine getaxfldEfc_CCL
         
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderr_CCL(pos,extfld,this,dx,dy,anglex,angley,&
                                   anglez)
         implicit none
@@ -521,7 +526,7 @@
 
         end subroutine getflderr_CCL
 
-        !get external field without displacement and rotation errors.
+        !> get external field without displacement and rotation errors.
         subroutine  getfld_CCL(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -605,7 +610,7 @@
 
         end subroutine getfld_CCL
 
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderrpts_CCL(pos,extfld,this,dx,dy,anglex,angley,&
                                   anglez,nplc)
         implicit none
@@ -718,7 +723,7 @@
 
         end subroutine getflderrpts_CCL
 
-        !get external field without displacement and rotation errors.
+        !> get external field without displacement and rotation errors.
         subroutine  getfldpts_CCL(pos,extfld,this,nplc)
         implicit none
         include 'mpif.h'

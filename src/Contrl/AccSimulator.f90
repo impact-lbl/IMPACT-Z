@@ -12,11 +12,16 @@
 !derivative works, and perform publicly and display publicly, and to permit other to do so.
 !-------------------------
 ! AccSimulatorclass: Linear accelerator simulator class in CONTROL layer.
-! Author: Ji Qiang, LBNL
-! Description: This class defines functions to set up the initial beam 
-!              particle distribution, field information, computational
-!              domain, beam line element lattice and run the dynamics
-!              simulation through the system.
+! 
+! MODULE  : ... AccSimulatorclass
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines functions to set up the initial beam 
+!> particle distribution, field information, computational
+!> domain, beam line element lattice and run the dynamics
+!> simulation through the system.
 ! Comments:
 !----------------------------------------------------------------
       module AccSimulatorclass
@@ -34,40 +39,55 @@
         use NumConstclass
         use Distributionclass
         implicit none
-        !# of phase dim., num. total and local particles, int. dist. 
-        !and restart switch, error study switch, substep for space-charge
-        !switch
+        !> @name 
+
+        !> @{
+        !> \# of phase dim., num. total and local particles, int. dist. 
+        !> and restart switch, error study switch, substep for space-charge
+        !> switch
         integer, private :: Dim, Np, Nplocal,Flagdist,Rstartflg,Flagerr,&
                             Flagsubstep 
+        !> @}
+        !> @name
 
-        !# of num. total x, total and local y mesh pts., type of BC, 
-        !# of beam elems, type of integrator.
+        !> @{
+        !> \# of num. total x, total and local y mesh pts., type of BC, 
+        !> \# of beam elems, type of integrator.
         integer, private :: Nx,Ny,Nz,Nxlocal,Nylocal,Nzlocal,Flagbc,&
                             Nblem,Flagmap,Flagdiag
-
-        !# of processors in column and row direction.
+        !> @}
+        !> @name 
+         
+        !> @{                  
+        !> \# of processors in column and row direction.
         integer, private :: npcol, nprow
+        !> @}
+        !> @name
 
-        !beam current, kin. energy, part. mass, and charge.
+        !> @{
+        !> beam current, kin. energy, part. mass, and charge.
         double precision, private :: Bcurr,Bkenergy,Bmass,Bcharge,Bfreq,&
                                      Perdlen
+        !> @}
 
-        !conts. in init. dist.
+        !> conts. in init. dist.
         double precision, private, dimension(21) :: distparam
 
-        !1d logical processor array.
+        !> 1d logical processor array.
         type (Pgrid2d), private :: grid2d
 
-        !beam particle object and array.
+        !> beam particle object and array.
         type (BeamBunch), private :: Bpts
 
-        !beam charge density and field potential arrays.
+        !> beam charge density and field potential arrays.
         type (FieldQuant), private :: Potential
 
-        !geometry object.
+        !> geometry object.
         type (CompDom), private :: Ageom
 
-        !beam line element array.
+        !> @name
+        !! beam line element array.
+        !> @{
         type (BPM),target,dimension(Nbpmmax) :: beamln0
         type (DriftTube),target,dimension(Ndriftmax) :: beamln1
         type (Quadrupole),target,dimension(Nquadmax) :: beamln2
@@ -83,24 +103,27 @@
         type (Multipole),target,dimension(Nquadmax) :: beamln12
         type (TWS),target,dimension(Nscmax) :: beamln13
         type (BeamLineElem),private,dimension(Nblemtmax)::Blnelem
-        !beam line element period.
+        !> @}
+        !> beam line element period.
         interface construct_AccSimulator
           module procedure init_AccSimulator
         end interface
 
-        !//total # of charge state
+        !> total \# of charge state
         integer :: nchrg
-        !//current list of charge state.
-        !//charge/mass list of charge state.
+
+        !> current list of charge state.
         double precision, dimension(100) :: currlist,qmcclist
-        !//number of particles of charge state.
+        !< charge/mass list of charge state.
+
+        !> number of particles of charge state.
         integer, dimension(100) :: nptlist
         integer, allocatable, dimension(:) :: Nptlist0
         double precision, allocatable, dimension(:) :: currlist0,qmcclist0
         integer :: iend,jend,ibalend,nstepend
         real*8 :: zend
       contains
-        !set up objects and parameters.
+        !> set up objects and parameters.
         subroutine init_AccSimulator(time)
         implicit none
         include 'mpif.h'
@@ -505,7 +528,7 @@
 
         end subroutine init_AccSimulator
 
-        !Run beam dynamics simulation through accelerator.
+        !> Run beam dynamics simulation through accelerator.
         subroutine run_AccSimulator()
         implicit none
         include 'mpif.h'

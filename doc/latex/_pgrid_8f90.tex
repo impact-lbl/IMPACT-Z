@@ -1,0 +1,85 @@
+\hypertarget{_pgrid_8f90}{}\section{src/\+Data\+Struct/\+Pgrid.f90 File Reference}
+\label{_pgrid_8f90}\index{src/DataStruct/Pgrid.f90@{src/DataStruct/Pgrid.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacepgrid2dclass_structpgrid2dclass_1_1pgrid2d}{pgrid2dclass\+::pgrid2d}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacepgrid2dclass}{pgrid2dclass}}
+\begin{DoxyCompactList}\small\item\em This class construct a logical 2-\/D Cartesian processor grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacepgrid2dclass_a93b626c7a473ab28463a29b9661dcefb}{pgrid2dclass\+::construct\+\_\+pgrid2d}} (this, comm, nrow, ncol)
+\begin{DoxyCompactList}\small\item\em set up 2-\/D Cartisian grid. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacepgrid2dclass_a550cb1b5c94a9e168c3e0108bb8a6d5b}{pgrid2dclass\+::getcomm\+\_\+pgrid2d}} (this, comm2d, commcol, commrow)
+\begin{DoxyCompactList}\small\item\em get 2D, column, and row communicators. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacepgrid2dclass_a559d4550356f88440ae55fceda480de2}{pgrid2dclass\+::getpost\+\_\+pgrid2d}} (this, mypos, mycolpos, myrowpos)
+\begin{DoxyCompactList}\small\item\em get my rank position in 2d, column, and row communicators. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacepgrid2dclass_ac088657db5b1deb05bb1ec732579ba53}{pgrid2dclass\+::getsize\+\_\+pgrid2d}} (this, totsize, colsize, rowsize)
+\begin{DoxyCompactList}\small\item\em get the total number of P\+Es, P\+Es in column and row communicators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{pgrid2dclass::pgrid2d@{pgrid2dclass::pgrid2d}}\label{structpgrid2dclass_1_1pgrid2d}
+\Hypertarget{namespacepgrid2dclass_structpgrid2dclass_1_1pgrid2d}
+\subsubsection{type pgrid2dclass\+::pgrid2d}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacepgrid2dclass_ab131ddd73cd143b1ba32af178309485d}\label{namespacepgrid2dclass_ab131ddd73cd143b1ba32af178309485d}} 
+integer&
+col\_comm&
+comunicator for my col \\
+\hline
+
+\mbox{\Hypertarget{namespacepgrid2dclass_ae763e51a65cd215ff76ea16e829e8bf0}\label{namespacepgrid2dclass_ae763e51a65cd215ff76ea16e829e8bf0}} 
+integer&
+comm\_2d&
+comunicator for entire grid \\
+\hline
+
+\mbox{\Hypertarget{namespacepgrid2dclass_a912f6614074dde9e6f2c6d6f34d7cb99}\label{namespacepgrid2dclass_a912f6614074dde9e6f2c6d6f34d7cb99}} 
+integer&
+my\_col&
+my column number \\
+\hline
+
+\mbox{\Hypertarget{namespacepgrid2dclass_a722de079e498f0585f76a3d2680a6fbe}\label{namespacepgrid2dclass_a722de079e498f0585f76a3d2680a6fbe}} 
+integer&
+my\_row&
+my row number \\
+\hline
+
+\mbox{\Hypertarget{namespacepgrid2dclass_ae8fc69fae700a32ac9003f8d4c414ee9}\label{namespacepgrid2dclass_ae8fc69fae700a32ac9003f8d4c414ee9}} 
+integer&
+myrank&
+my rank in the grid comm \\
+\hline
+
+\mbox{\Hypertarget{namespacepgrid2dclass_a058fc00a4851927b9f36da91b8188b49}\label{namespacepgrid2dclass_a058fc00a4851927b9f36da91b8188b49}} 
+integer&
+np&
+total number of processors \\
+\hline
+
+\mbox{\Hypertarget{namespacepgrid2dclass_a11d5de618bb0089e48647343ac855183}\label{namespacepgrid2dclass_a11d5de618bb0089e48647343ac855183}} 
+integer&
+npcol&
+number of processors in my col \\
+\hline
+
+\mbox{\Hypertarget{namespacepgrid2dclass_a5c94f44dfc943c9d0ffe88a6316999e8}\label{namespacepgrid2dclass_a5c94f44dfc943c9d0ffe88a6316999e8}} 
+integer&
+nprow&
+number of processors in my row \\
+\hline
+
+\mbox{\Hypertarget{namespacepgrid2dclass_a69b25ed31a7249c8940100a8977dc1b9}\label{namespacepgrid2dclass_a69b25ed31a7249c8940100a8977dc1b9}} 
+integer&
+row\_comm&
+comunicator for my row \\
+\hline
+
+\end{DoxyFields}

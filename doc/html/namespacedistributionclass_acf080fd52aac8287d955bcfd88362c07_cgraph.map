@@ -1,0 +1,7 @@
+<map id="distributionclass::readelegant_dist" name="distributionclass::readelegant_dist">
+<area shape="rect" id="node1" title=" " alt="" coords="5,100,129,139"/>
+<area shape="rect" id="node2" href="$namespacepgrid2dclass.html#a559d4550356f88440ae55fceda480de2" title="get my rank position in 2d, column, and row communicators." alt="" coords="193,5,341,44"/>
+<area shape="rect" id="node3" href="$namespacepgrid2dclass.html#ac088657db5b1deb05bb1ec732579ba53" title="get the total number of PEs, PEs in column and row communicators." alt="" coords="194,68,340,107"/>
+<area shape="rect" id="node4" href="$namespacepgrid2dclass.html#a550cb1b5c94a9e168c3e0108bb8a6d5b" title="get 2D, column, and row communicators." alt="" coords="188,131,346,169"/>
+<area shape="rect" id="node5" href="$namespacecompdomclass.html#ad0a907860c5bf17c263d8ad957c7ed1d" title=" " alt="" coords="177,193,357,232"/>
+</map>

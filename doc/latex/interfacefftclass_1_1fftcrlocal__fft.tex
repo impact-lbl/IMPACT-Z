@@ -1,0 +1,33 @@
+\hypertarget{interfacefftclass_1_1fftcrlocal__fft}{}\section{fftclass\+::fftcrlocal\+\_\+fft Interface Reference}
+\label{interfacefftclass_1_1fftcrlocal__fft}\index{fftclass::fftcrlocal\_fft@{fftclass::fftcrlocal\_fft}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{interfacefftclass_1_1fftcrlocal__fft_ae458f5a2de29f771c763c56da7d84c09}{fftcrlocal1\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\begin{DoxyCompactList}\small\item\em Subroutine to perform 1D complex to real F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{interfacefftclass_1_1fftcrlocal__fft_a61c3b16caab87c9a268ae178f67aea26}{fftcrlocal2\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacefftclass_1_1fftcrlocal__fft_ae458f5a2de29f771c763c56da7d84c09}\label{interfacefftclass_1_1fftcrlocal__fft_ae458f5a2de29f771c763c56da7d84c09}} 
+\index{fftclass::fftcrlocal\_fft@{fftclass::fftcrlocal\_fft}!fftcrlocal1\_fft@{fftcrlocal1\_fft}}
+\index{fftcrlocal1\_fft@{fftcrlocal1\_fft}!fftclass::fftcrlocal\_fft@{fftclass::fftcrlocal\_fft}}
+\subsubsection{\texorpdfstring{fftcrlocal1\_fft()}{fftcrlocal1\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fftcrlocal\+\_\+fft\+::fftcrlocal1\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scale,  }\item[{double complex, dimension(ny/2+1,nsizex), intent(in)}]{x,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nsizex,  }\item[{double precision, dimension(ny,nsizex), intent(out)}]{y }\end{DoxyParamCaption})}
+
+
+
+Subroutine to perform 1D complex to real F\+FT along y in 2D array. Here y is local to each processor. 
+
+\mbox{\Hypertarget{interfacefftclass_1_1fftcrlocal__fft_a61c3b16caab87c9a268ae178f67aea26}\label{interfacefftclass_1_1fftcrlocal__fft_a61c3b16caab87c9a268ae178f67aea26}} 
+\index{fftclass::fftcrlocal\_fft@{fftclass::fftcrlocal\_fft}!fftcrlocal2\_fft@{fftcrlocal2\_fft}}
+\index{fftcrlocal2\_fft@{fftcrlocal2\_fft}!fftclass::fftcrlocal\_fft@{fftclass::fftcrlocal\_fft}}
+\subsubsection{\texorpdfstring{fftcrlocal2\_fft()}{fftcrlocal2\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fftcrlocal\+\_\+fft\+::fftcrlocal2\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scale,  }\item[{double precision, dimension(ny,nsizex), intent(in)}]{x,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nsizex,  }\item[{double precision, dimension(ny,nsizex), intent(out)}]{y }\end{DoxyParamCaption})}
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Func/\mbox{\hyperlink{_f_f_t_8f90}{F\+F\+T.\+f90}}\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\hypertarget{_c_c_d_t_l_8f90}{}\section{src/\+Appl/\+C\+C\+D\+TL.f90 File Reference}
+\label{_c_c_d_t_l_8f90}\index{src/Appl/CCDTL.f90@{src/Appl/CCDTL.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtlclass\+::ccdtl}}
+\item 
+interface \mbox{\hyperlink{interfaceccdtlclass_1_1getparam__ccdtl}{ccdtlclass\+::getparam\+\_\+ccdtl}}
+\item 
+interface \mbox{\hyperlink{interfaceccdtlclass_1_1setparam__ccdtl}{ccdtlclass\+::setparam\+\_\+ccdtl}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespaceccdtlclass}{ccdtlclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and RF field for the C\+C\+D\+TL beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_aaa94d8179c6d59c2d3e81b64e8237962}{ccdtlclass\+::construct\+\_\+ccdtl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_adedaabef796136ab3b22dcc923243cfd}{ccdtlclass\+::setparam1\+\_\+ccdtl}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_aa32b5665906eac3911db6712a5710f97}{ccdtlclass\+::setparam2\+\_\+ccdtl}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a3632b0f42925964cedb7778792da563f}{ccdtlclass\+::setparam3\+\_\+ccdtl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a027b988ab66d8b89dabf46f5e45d82f5}{ccdtlclass\+::getparam1\+\_\+ccdtl}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a8455f87d9ac20671adf737902c8b90d8}{ccdtlclass\+::getparam2\+\_\+ccdtl}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a529631343d4306c6c486d72e2a6696a3}{ccdtlclass\+::getparam3\+\_\+ccdtl}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a520796b320588e1f31ce8587301b571b}{ccdtlclass\+::maplinear\+\_\+ccdtl}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_aca1c6ac6cdbd554820ab2c213a987647}{ccdtlclass\+::rk6i\+\_\+ccdtl}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_afad7c4471295ba39993a4a180d6a4d54}{ccdtlclass\+::intfunc1\+\_\+ccdtl}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_adb7b1c30d3fcb087a5064911ccd4fd1d}{ccdtlclass\+::getaxflde\+\_\+ccdtl}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the C\+C\+D\+TL rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_ab81d1b262943e405eebe3bfef401bb97}{ccdtlclass\+::getflderr\+\_\+ccdtl}} (pos, extfld, this, dx, dy, anglex, angley,
+\begin{DoxyCompactList}\small\item\em get the external field with misalignment and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a62eb43f6a732d52951d468e91a2312cb}{ccdtlclass\+::getfld\+\_\+ccdtl}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get the external field without misalignment and rotation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespaceccdtlclass_a0e8e95c86f2dab6639fc79f05859b6ea}{ccdtlclass\+::nparam}} = 11
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{ccdtlclass::ccdtl@{ccdtlclass::ccdtl}}\label{structccdtlclass_1_1ccdtl}
+\Hypertarget{namespaceccdtlclass_structccdtlclass_1_1ccdtl}
+\subsubsection{type ccdtlclass\+::ccdtl}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespaceccdtlclass_aea542f9975283b5fd43c8f15a0d2762f}\label{namespaceccdtlclass_aea542f9975283b5fd43c8f15a0d2762f}} 
+integer&
+itype&
+Itype = 102. \\
+\hline
+
+\mbox{\Hypertarget{namespaceccdtlclass_a367acb3cd3326d78cf47fe5c8891b80c}\label{namespaceccdtlclass_a367acb3cd3326d78cf47fe5c8891b80c}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceccdtlclass_a646c337f17e8c188638d58449ea92b99}\label{namespaceccdtlclass_a646c337f17e8c188638d58449ea92b99}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceccdtlclass_a56759205b010998a69c2716e35e0d6d6}\label{namespaceccdtlclass_a56759205b010998a69c2716e35e0d6d6}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceccdtlclass_a6b125e6ca6440736ab2272ad373cc24d}\label{namespaceccdtlclass_a6b125e6ca6440736ab2272ad373cc24d}} 
+double precision, dimension(\mbox{\hyperlink{namespaceccdtlclass_a0e8e95c86f2dab6639fc79f05859b6ea}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}

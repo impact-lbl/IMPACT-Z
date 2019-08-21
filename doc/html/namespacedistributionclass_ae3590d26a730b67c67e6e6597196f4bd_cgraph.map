@@ -1,0 +1,9 @@
+<map id="distributionclass::gaussmc_dist" name="distributionclass::gaussmc_dist">
+<area shape="rect" id="node1" title=" " alt="" coords="5,131,129,169"/>
+<area shape="rect" id="node2" href="$namespacetimerclass.html#afb272bcdcff72d225c2df5862630025c" title=" " alt="" coords="187,5,327,44"/>
+<area shape="rect" id="node4" href="$namespacepgrid2dclass.html#ac088657db5b1deb05bb1ec732579ba53" title="get the total number of PEs, PEs in column and row communicators." alt="" coords="184,68,330,107"/>
+<area shape="rect" id="node5" href="$namespacepgrid2dclass.html#a559d4550356f88440ae55fceda480de2" title="get my rank position in 2d, column, and row communicators." alt="" coords="184,131,331,169"/>
+<area shape="rect" id="node6" href="$namespacedistributionclass.html#acfc04ca0c8be3e0f3e73779c5e88693b" title=" " alt="" coords="195,193,319,232"/>
+<area shape="rect" id="node7" href="$namespacetimerclass.html#a3378d323d442f85aff95ab73cd13376d" title=" " alt="" coords="177,256,338,295"/>
+<area shape="rect" id="node3" href="$namespacempistub.html#a2456432a60801629e19273ebe4114bc9" title="mpi timing" alt="" coords="386,137,525,163"/>
+</map>

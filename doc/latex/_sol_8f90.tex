@@ -1,0 +1,90 @@
+\hypertarget{_sol_8f90}{}\section{src/\+Appl/\+Sol.f90 File Reference}
+\label{_sol_8f90}\index{src/Appl/Sol.f90@{src/Appl/Sol.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{solclass\+::sol}}
+\item 
+interface \mbox{\hyperlink{interfacesolclass_1_1getparam__sol}{solclass\+::getparam\+\_\+sol}}
+\item 
+interface \mbox{\hyperlink{interfacesolclass_1_1setparam__sol}{solclass\+::setparam\+\_\+sol}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacesolclass}{solclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and field for the Solenoid beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a2307b36cefac8604240e62757dd08cb9}{solclass\+::construct\+\_\+sol}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_aaec011d4f25d3b03a7e0b42beaa7c9db}{solclass\+::setparam1\+\_\+sol}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a8f2eac99c954759e1b3b6094d8f502fb}{solclass\+::setparam2\+\_\+sol}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a05dc05d4a94a2e1a71280ff983e62c3e}{solclass\+::setparam3\+\_\+sol}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a68e03415e9802b36da3ec9bae72f41b7}{solclass\+::getparam1\+\_\+sol}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_aab6c073c4b20670742987b17bcb8366d}{solclass\+::getparam2\+\_\+sol}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a11962a787b8bed31dd906ac4a5e2853e}{solclass\+::getparam3\+\_\+sol}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_ac1f4d73224d7585c1be1bb6f24f125df}{solclass\+::maplinear\+\_\+sol}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_ae384372c54c045759b9bb9e1eb0886a1}{solclass\+::rk6i\+\_\+sol}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a195ad6d94c20d0ac4d6ed1c8063a8a3b}{solclass\+::intfunc1\+\_\+sol}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_ad89ee3db004c00d4f2e128ddbf03ce32}{solclass\+::getbgradfld\+\_\+sol}} (z, this, b0, bgrad)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a571ab7b6c8ce4dd9e7eaa2489b874682}{solclass\+::getflderr\+\_\+sol}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a7a865f7ab4470f9bff328ed98aacd7c8}{solclass\+::getfld\+\_\+sol}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors and with fringe field of Solenoid. (f(z) = b0 + bb$\ast$z) here, the length of the solenoid has to the effective hard-\/edge length + 2$\ast$aperature \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a592dd58600b2d6df21aab781e8faebac}{solclass\+::getfldold\+\_\+sol}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors and with fringe field of Solenoid. (f(z) = b0 + bb$\ast$z$^\wedge$2 + cc$\ast$z$^\wedge$4,f(x0)=0,f\textquotesingle{}(x0)=0) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacesolclass_abb5af39a08a5ff2cbe713621b2727eaf}{solclass\+::nparam}} = 9
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{solclass::sol@{solclass::sol}}\label{structsolclass_1_1sol}
+\Hypertarget{namespacesolclass_structsolclass_1_1sol}
+\subsubsection{type solclass\+::sol}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacesolclass_ae34e01b972a2658f3ff55fccc3f6b99a}\label{namespacesolclass_ae34e01b972a2658f3ff55fccc3f6b99a}} 
+integer&
+itype&
+Itype = 3. \\
+\hline
+
+\mbox{\Hypertarget{namespacesolclass_a66fe4253293f305d51d6d7db753bb2c2}\label{namespacesolclass_a66fe4253293f305d51d6d7db753bb2c2}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolclass_a3821a5713cb3e0e9ae5359b42644b860}\label{namespacesolclass_a3821a5713cb3e0e9ae5359b42644b860}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolclass_a4e0b71eae9d2072fd83b1a4e524da7fc}\label{namespacesolclass_a4e0b71eae9d2072fd83b1a4e524da7fc}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolclass_a70efaac352dbf744000a92effd3d814b}\label{namespacesolclass_a70efaac352dbf744000a92effd3d814b}} 
+double precision, dimension(\mbox{\hyperlink{namespacesolclass_abb5af39a08a5ff2cbe713621b2727eaf}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}

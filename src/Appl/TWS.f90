@@ -2,13 +2,18 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! TWSclass: Traveling wave structure beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the linear transfer map and RF field
-!              for the TWS beam line elment. Here, the TWS does not include
-!              input and output cells. The TWS is simulated using the
-!              superposition of two standing wave structure.
-!              (G. A. Loew, et al. SLAC-PUB-2295, 1979.)
+!
+! MODULE  : ... TWSclass
+! VERSION : ... 1.0
+!> @author 
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the linear transfer map and RF field
+!> for the TWS beam line elment. Here, the TWS does not include
+!> input and output cells. The TWS is simulated using the
+!> superposition of two standing wave structure.
+!> (G. A. Loew, et al. SLAC-PUB-2295, 1979.)
 ! Comments:
 !----------------------------------------------------------------
       module TWSclass
@@ -17,7 +22,7 @@
         integer, private, parameter :: Nparam = 15
         type TWS
           !Itype = 106
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 106
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -346,7 +351,7 @@
 
         end subroutine intfunc1_TWS
 
-        !get the E field on the axis
+        !> get the E field on the axis
         subroutine getaxfldE_TWS(z,this,ez1,ezp1,ezpp1,ez12,ezp12,ezpp12)
         implicit none
         include 'mpif.h'
@@ -465,7 +470,7 @@
 
         end subroutine getaxfldE_TWS
 
-        !get external field without displacement and rotation errors.
+        !> get external field without displacement and rotation errors.
         subroutine  getfld_TWS(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -630,7 +635,7 @@
 
         end subroutine getfld_TWS
 
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderr_TWS(pos,extfld,this,dx,dy,anglex,angley,&
                                     anglez)
         implicit none

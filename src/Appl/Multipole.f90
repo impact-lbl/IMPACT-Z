@@ -2,11 +2,16 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Multipoleclass: Multipole beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the linear transfer map and field
-!              for the multipole (sextupole, octupole, decapole)
-!              beam line elment.
+!
+! MODULE  : ... Multipoleclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the linear transfer map and field
+!> for the multipole (sextupole, octupole, decapole)
+!> beam line elment.
 ! Comments:
 !----------------------------------------------------------------
       module Multipoleclass
@@ -15,7 +20,7 @@
         integer, private, parameter :: Nparam = 10
         type Multipole
           !Itype = 5
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 5
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -310,7 +315,7 @@
         end subroutine intfunc1_Multipole
 !------------------------------------------------------------------------
 
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderr_Multipole(pos,extfld,this,dx,dy,anglex,&
                                          angley,anglez)
         implicit none
@@ -400,7 +405,7 @@
 
         end subroutine getflderr_Multipole
         
-        !get external field without displacement and rotation errors.
+        !> get external field without displacement and rotation errors.
         subroutine  getfld_Multipole(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -451,7 +456,7 @@
 
         end subroutine getfld_Multipole
 
-        !interpolate the field from the SC rf cavity onto bunch location.
+        !> interpolate the field from the SC rf cavity onto bunch location.
         subroutine getfldfrg_Multipole(zz,this,bgrad)
         implicit none
         include 'mpif.h'

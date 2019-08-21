@@ -2,12 +2,17 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! EMfldclass: ElectroMagnetic field data container class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class contains discrete EM field data (as a function of
-!              x,y,z) or (r,z) and analytical representation of EM field data (user can
-!              supply the function form). The linear transfer map is also
-!              computed base on the field on the axis. 
+! 
+! MODULE  : ... EMfldclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class contains discrete EM field data (as a function of
+!> x,y,z) or (r,z) and analytical representation of EM field data (user can
+!> supply the function form). The linear transfer map is also
+!> computed base on the field on the axis. 
 ! Comments:
 !----------------------------------------------------------------
       module EMfldclass
@@ -16,7 +21,7 @@
         integer, private, parameter :: Nparam = 14
         type EMfld
           !Itype = 110
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 110
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge

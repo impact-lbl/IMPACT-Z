@@ -1,0 +1,248 @@
+\hypertarget{namespacebpmclass}{}\section{bpmclass Module Reference}
+\label{namespacebpmclass}\index{bpmclass@{bpmclass}}
+
+
+This class defines the different beam diagnostics at given beam position.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacebpmclass_structbpmclass_1_1bpm}{bpm}}
+\item 
+interface \mbox{\hyperlink{interfacebpmclass_1_1getparam__bpm}{getparam\+\_\+bpm}}
+\item 
+interface \mbox{\hyperlink{interfacebpmclass_1_1setparam__bpm}{setparam\+\_\+bpm}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a777700e03d6422437747b159baf8ac47}{construct\+\_\+bpm}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_ac6cf17939baa6ee32b20af627036c73e}{setparam1\+\_\+bpm}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a37f4e426713e3624ee853c1343294cab}{setparam2\+\_\+bpm}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a75a67023bf7f429ccd2ef12a435077a7}{setparam3\+\_\+bpm}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_ac5588f058f6a85c7c6c131ca7172065d}{getparam1\+\_\+bpm}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_ae88ec9feb4f283a3914a0859b14dc8dc}{getparam2\+\_\+bpm}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a290f2f59ee0b68d7f56e678b87f43393}{getparam3\+\_\+bpm}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_af08cf75c879f797ae8f03ba69e95d628}{shift\+\_\+bpm}} (Pts1, itype, innp, nptot)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a2260a4affb3b3dc90db1d734a5e73b11}{scale\+\_\+bpm}} (Pts1, innp, xmis, pxmis, ymis, pymis, zmis, pzmis)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a5c6269e3b899045a35e2bda31ac57c9b}{kick\+\_\+bpm}} (Pts1, innp, xshift, pxshift, yshift, pyshift, zshi
+\begin{DoxyCompactList}\small\item\em shift the beam centroid in the 6D phase space. This element can be used to model steering magnet etc. Here, the storage Param(3\+:8) is used to store the amount of shift. drange(3); shift in x (m) drange(4); shift in Px (rad) drange(5); shift in y (m) drange(6); shift in Py (rad) drange(7); shift in z (deg) drange(8); shift in Pz (MeV) gam; relativistic gamma factor for design particle mass; mass in e\+V/c$^\wedge$2 \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_aee456e0f63daad3cb6eaba1bc99c948f}{kickrf\+\_\+bpm}} (Pts1, innp, vmax, phi0, horm, mass)
+\begin{DoxyCompactList}\small\item\em kick the beam longitudinally by the rf nonlinearity (the linear part has been included in the map integrator and substracted.) drange(3); vmax (V) drange(4); phi0 (degree) drange(5); horm number of rf \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_ac8a2c78d2492dbd541f495bb0fd4840a}{srot\+\_\+bpm}} (Pts1, innp, phi)
+\begin{DoxyCompactList}\small\item\em rotate the beam along longitudinal s-\/axis at given location using the M\+A\+D8 notation. btype = -\/18 \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a3103b28e39ab8412e237df545aca9a71}{shiftlong\+\_\+bpm}} (Pts1, itype, innp, nptot, tc, ptc)
+\begin{DoxyCompactList}\small\item\em shift the centroid of the longitudinal phase space \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a8dac48fd52502e9f007f96a30003e1c8}{engheater\+\_\+bpm}} (Pts1, innp, b0, qmass)
+\begin{DoxyCompactList}\small\item\em The following subroutine increases the uncorrelated energy spread by heating. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_ab4b58d389b1b0c7169a20e75f2f32389}{normvec1}} (y, num)
+\item 
+subroutine \mbox{\hyperlink{namespacebpmclass_a53e45bf561ab6326ac3af0941f0a9ab4}{thinmultipole\+\_\+bpm}} (Pts1in, innp, k0, k1, k2, k3, k4, k5, gam0,
+\begin{DoxyCompactList}\small\item\em k0 = thisParam(3) !dipole k1 = thisParam(4) !quad k2 = thisParam(5) !sext k3 = thisParam(6) !oct k4 = thisParam(7) !dec k5 = thisParam(8) !dodec \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacebpmclass_ac2f2f373976236d08c9c68de895950eb}{nparam}} = 10
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the different beam diagnostics at given beam position. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{bpmclass::bpm@{bpmclass::bpm}}\label{structbpmclass_1_1bpm}
+\Hypertarget{namespacebpmclass_structbpmclass_1_1bpm}
+\subsubsection{type bpmclass\+::bpm}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacebpmclass_a8759ea53c8b66bbdb08055405fff79a0}\label{namespacebpmclass_a8759ea53c8b66bbdb08055405fff79a0}} 
+integer&
+itype&
+Itype $<$ 0. \\
+\hline
+
+\mbox{\Hypertarget{namespacebpmclass_a91bf471e42c1c733f27253fe367c02e1}\label{namespacebpmclass_a91bf471e42c1c733f27253fe367c02e1}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebpmclass_a57b5d567476a69c20de780f6fb8d0a2e}\label{namespacebpmclass_a57b5d567476a69c20de780f6fb8d0a2e}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebpmclass_af47828f23a39ecfbef81048d780c4107}\label{namespacebpmclass_af47828f23a39ecfbef81048d780c4107}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebpmclass_ab4cbff356dd68d8a0563cb3b1d4ae235}\label{namespacebpmclass_ab4cbff356dd68d8a0563cb3b1d4ae235}} 
+double precision, dimension(\mbox{\hyperlink{namespacebpmclass_ac2f2f373976236d08c9c68de895950eb}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacebpmclass_a777700e03d6422437747b159baf8ac47}\label{namespacebpmclass_a777700e03d6422437747b159baf8ac47}} 
+\index{bpmclass@{bpmclass}!construct\_bpm@{construct\_bpm}}
+\index{construct\_bpm@{construct\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{construct\_bpm()}{construct\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::construct\+\_\+bpm (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebpmclass_structbpmclass_1_1bpm}{bpm}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_a8dac48fd52502e9f007f96a30003e1c8}\label{namespacebpmclass_a8dac48fd52502e9f007f96a30003e1c8}} 
+\index{bpmclass@{bpmclass}!engheater\_bpm@{engheater\_bpm}}
+\index{engheater\_bpm@{engheater\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{engheater\_bpm()}{engheater\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::engheater\+\_\+bpm (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:), pointer}]{Pts1,  }\item[{integer, intent(in)}]{innp,  }\item[{real$\ast$8}]{b0,  }\item[{real$\ast$8}]{qmass }\end{DoxyParamCaption})}
+
+
+
+The following subroutine increases the uncorrelated energy spread by heating. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebpmclass_a8dac48fd52502e9f007f96a30003e1c8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebpmclass_ac5588f058f6a85c7c6c131ca7172065d}\label{namespacebpmclass_ac5588f058f6a85c7c6c131ca7172065d}} 
+\index{bpmclass@{bpmclass}!getparam1\_bpm@{getparam1\_bpm}}
+\index{getparam1\_bpm@{getparam1\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{getparam1\_bpm()}{getparam1\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::getparam1\+\_\+bpm (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebpmclass_structbpmclass_1_1bpm}{bpm}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_ae88ec9feb4f283a3914a0859b14dc8dc}\label{namespacebpmclass_ae88ec9feb4f283a3914a0859b14dc8dc}} 
+\index{bpmclass@{bpmclass}!getparam2\_bpm@{getparam2\_bpm}}
+\index{getparam2\_bpm@{getparam2\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{getparam2\_bpm()}{getparam2\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::getparam2\+\_\+bpm (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebpmclass_structbpmclass_1_1bpm}{bpm}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_a290f2f59ee0b68d7f56e678b87f43393}\label{namespacebpmclass_a290f2f59ee0b68d7f56e678b87f43393}} 
+\index{bpmclass@{bpmclass}!getparam3\_bpm@{getparam3\_bpm}}
+\index{getparam3\_bpm@{getparam3\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{getparam3\_bpm()}{getparam3\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::getparam3\+\_\+bpm (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebpmclass_structbpmclass_1_1bpm}{bpm}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_a5c6269e3b899045a35e2bda31ac57c9b}\label{namespacebpmclass_a5c6269e3b899045a35e2bda31ac57c9b}} 
+\index{bpmclass@{bpmclass}!kick\_bpm@{kick\_bpm}}
+\index{kick\_bpm@{kick\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{kick\_bpm()}{kick\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::kick\+\_\+bpm (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:), pointer}]{Pts1,  }\item[{integer, intent(in)}]{innp,  }\item[{double precision, intent(in)}]{xshift,  }\item[{double precision, intent(in)}]{pxshift,  }\item[{double precision, intent(in)}]{yshift,  }\item[{double precision, intent(in)}]{pyshift,  }\item[{}]{zshi }\end{DoxyParamCaption})}
+
+
+
+shift the beam centroid in the 6D phase space. This element can be used to model steering magnet etc. Here, the storage Param(3\+:8) is used to store the amount of shift. drange(3); shift in x (m) drange(4); shift in Px (rad) drange(5); shift in y (m) drange(6); shift in Py (rad) drange(7); shift in z (deg) drange(8); shift in Pz (MeV) gam; relativistic gamma factor for design particle mass; mass in e\+V/c$^\wedge$2 
+
+\mbox{\Hypertarget{namespacebpmclass_aee456e0f63daad3cb6eaba1bc99c948f}\label{namespacebpmclass_aee456e0f63daad3cb6eaba1bc99c948f}} 
+\index{bpmclass@{bpmclass}!kickrf\_bpm@{kickrf\_bpm}}
+\index{kickrf\_bpm@{kickrf\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{kickrf\_bpm()}{kickrf\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::kickrf\+\_\+bpm (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:), pointer}]{Pts1,  }\item[{integer, intent(in)}]{innp,  }\item[{double precision, intent(in)}]{vmax,  }\item[{double precision, intent(in)}]{phi0,  }\item[{double precision, intent(in)}]{horm,  }\item[{double precision, intent(in)}]{mass }\end{DoxyParamCaption})}
+
+
+
+kick the beam longitudinally by the rf nonlinearity (the linear part has been included in the map integrator and substracted.) drange(3); vmax (V) drange(4); phi0 (degree) drange(5); horm number of rf 
+
+\mbox{\Hypertarget{namespacebpmclass_ab4b58d389b1b0c7169a20e75f2f32389}\label{namespacebpmclass_ab4b58d389b1b0c7169a20e75f2f32389}} 
+\index{bpmclass@{bpmclass}!normvec1@{normvec1}}
+\index{normvec1@{normvec1}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{normvec1()}{normvec1()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::normvec1 (\begin{DoxyParamCaption}\item[{double precision, dimension(num), intent(out)}]{y,  }\item[{integer, intent(in)}]{num }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebpmclass_ab4b58d389b1b0c7169a20e75f2f32389_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebpmclass_a2260a4affb3b3dc90db1d734a5e73b11}\label{namespacebpmclass_a2260a4affb3b3dc90db1d734a5e73b11}} 
+\index{bpmclass@{bpmclass}!scale\_bpm@{scale\_bpm}}
+\index{scale\_bpm@{scale\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{scale\_bpm()}{scale\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::scale\+\_\+bpm (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:), pointer}]{Pts1,  }\item[{integer, intent(in)}]{innp,  }\item[{double precision, intent(in)}]{xmis,  }\item[{double precision, intent(in)}]{pxmis,  }\item[{double precision, intent(in)}]{ymis,  }\item[{double precision, intent(in)}]{pymis,  }\item[{double precision, intent(in)}]{zmis,  }\item[{double precision, intent(in)}]{pzmis }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_ac6cf17939baa6ee32b20af627036c73e}\label{namespacebpmclass_ac6cf17939baa6ee32b20af627036c73e}} 
+\index{bpmclass@{bpmclass}!setparam1\_bpm@{setparam1\_bpm}}
+\index{setparam1\_bpm@{setparam1\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{setparam1\_bpm()}{setparam1\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::setparam1\+\_\+bpm (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebpmclass_structbpmclass_1_1bpm}{bpm}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_a37f4e426713e3624ee853c1343294cab}\label{namespacebpmclass_a37f4e426713e3624ee853c1343294cab}} 
+\index{bpmclass@{bpmclass}!setparam2\_bpm@{setparam2\_bpm}}
+\index{setparam2\_bpm@{setparam2\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{setparam2\_bpm()}{setparam2\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::setparam2\+\_\+bpm (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebpmclass_structbpmclass_1_1bpm}{bpm}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_a75a67023bf7f429ccd2ef12a435077a7}\label{namespacebpmclass_a75a67023bf7f429ccd2ef12a435077a7}} 
+\index{bpmclass@{bpmclass}!setparam3\_bpm@{setparam3\_bpm}}
+\index{setparam3\_bpm@{setparam3\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{setparam3\_bpm()}{setparam3\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::setparam3\+\_\+bpm (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebpmclass_structbpmclass_1_1bpm}{bpm}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_af08cf75c879f797ae8f03ba69e95d628}\label{namespacebpmclass_af08cf75c879f797ae8f03ba69e95d628}} 
+\index{bpmclass@{bpmclass}!shift\_bpm@{shift\_bpm}}
+\index{shift\_bpm@{shift\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{shift\_bpm()}{shift\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::shift\+\_\+bpm (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:), pointer}]{Pts1,  }\item[{integer, intent(in)}]{itype,  }\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{nptot }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebpmclass_a3103b28e39ab8412e237df545aca9a71}\label{namespacebpmclass_a3103b28e39ab8412e237df545aca9a71}} 
+\index{bpmclass@{bpmclass}!shiftlong\_bpm@{shiftlong\_bpm}}
+\index{shiftlong\_bpm@{shiftlong\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{shiftlong\_bpm()}{shiftlong\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::shiftlong\+\_\+bpm (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:), pointer}]{Pts1,  }\item[{integer, intent(in)}]{itype,  }\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{nptot,  }\item[{real$\ast$8, intent(inout)}]{tc,  }\item[{real$\ast$8, intent(inout)}]{ptc }\end{DoxyParamCaption})}
+
+
+
+shift the centroid of the longitudinal phase space 
+
+\mbox{\Hypertarget{namespacebpmclass_ac8a2c78d2492dbd541f495bb0fd4840a}\label{namespacebpmclass_ac8a2c78d2492dbd541f495bb0fd4840a}} 
+\index{bpmclass@{bpmclass}!srot\_bpm@{srot\_bpm}}
+\index{srot\_bpm@{srot\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{srot\_bpm()}{srot\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::srot\+\_\+bpm (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:), pointer}]{Pts1,  }\item[{integer, intent(in)}]{innp,  }\item[{double precision, intent(in)}]{phi }\end{DoxyParamCaption})}
+
+
+
+rotate the beam along longitudinal s-\/axis at given location using the M\+A\+D8 notation. btype = -\/18 
+
+\mbox{\Hypertarget{namespacebpmclass_a53e45bf561ab6326ac3af0941f0a9ab4}\label{namespacebpmclass_a53e45bf561ab6326ac3af0941f0a9ab4}} 
+\index{bpmclass@{bpmclass}!thinmultipole\_bpm@{thinmultipole\_bpm}}
+\index{thinmultipole\_bpm@{thinmultipole\_bpm}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{thinmultipole\_bpm()}{thinmultipole\_bpm()}}
+{\footnotesize\ttfamily subroutine bpmclass\+::thinmultipole\+\_\+bpm (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:), pointer}]{Pts1in,  }\item[{integer, intent(in)}]{innp,  }\item[{double precision, intent(in)}]{k0,  }\item[{double precision, intent(in)}]{k1,  }\item[{double precision, intent(in)}]{k2,  }\item[{double precision, intent(in)}]{k3,  }\item[{double precision, intent(in)}]{k4,  }\item[{double precision, intent(in)}]{k5,  }\item[{double precision, intent(in)}]{gam0 }\end{DoxyParamCaption})}
+
+
+
+k0 = thisParam(3) !dipole k1 = thisParam(4) !quad k2 = thisParam(5) !sext k3 = thisParam(6) !oct k4 = thisParam(7) !dec k5 = thisParam(8) !dodec 
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacebpmclass_ac2f2f373976236d08c9c68de895950eb}\label{namespacebpmclass_ac2f2f373976236d08c9c68de895950eb}} 
+\index{bpmclass@{bpmclass}!nparam@{nparam}}
+\index{nparam@{nparam}!bpmclass@{bpmclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private bpmclass\+::nparam = 10\hspace{0.3cm}{\ttfamily [private]}}
+

@@ -1,0 +1,862 @@
+\hypertarget{namespacebeambunchclass}{}\section{beambunchclass Module Reference}
+\label{namespacebeambunchclass}\index{beambunchclass@{beambunchclass}}
+
+
+This class defines the charged particle beam bunch information in the accelerator.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}
+\item 
+interface \mbox{\hyperlink{interfacebeambunchclass_1_1map1__beambunch}{map1\+\_\+beambunch}}
+\item 
+interface \mbox{\hyperlink{interfacebeambunchclass_1_1map2__beambunch}{map2\+\_\+beambunch}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a1605e527eb41043dc5962da1e3bb5159}{construct\+\_\+beambunch}} (this, incurr, inkin, inmass, incharge
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aea8cfefa2f70ade95202cc40f015f7bf}{geomerrl\+\_\+beambunch}} (this, beamln)
+\begin{DoxyCompactList}\small\item\em shift and rotate the beam at the leading edge of the element \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ab2f6f9e95d5786dab15c1b73f305e349}{geomerrt\+\_\+beambunch}} (this, beamln)
+\begin{DoxyCompactList}\small\item\em shift and rotate the beam at the tail edge of the element \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a3be2b49f0fef567493258758c44fffd6}{drift1org\+\_\+beambunch}} (this, beamln, z, tau)
+\begin{DoxyCompactList}\small\item\em Drift beam half step using linear map for external field. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a212c0d38a812d95f238d7da7f29ac17c}{drift1\+\_\+beambunch}} (this, beamln, z, tau, bitype, nseg, nst, ih
+\begin{DoxyCompactList}\small\item\em Drift beam half step using linear map for external field. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a6e3aecf1a2cf3d54950c09c603c2f11c}{drift2\+\_\+beambunch}} (this, z, tau)
+\begin{DoxyCompactList}\small\item\em drift half step using nonlinear Lorentz integrator \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a3f5a86fb4b3ff5b33efdfa76b1c52ce4}{drift2halo\+\_\+beambunch}} (this, z, tau)
+\begin{DoxyCompactList}\small\item\em drift half step using nonlinear Lorentz integrator for halo study \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a618f97b46c83d8ca29a7cb05345d655e}{lostcount\+\_\+beambunch}} (this, nplc, nptot, xrad, yrad)
+\begin{DoxyCompactList}\small\item\em counter the particles get lost outside the xrad and yrad. we have not put the lost through rf bucket yet. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a54a4d80405bb8fbde341ea9e46a224e4}{lostcountxy\+\_\+beambunch}} (this, nplc, nptot, x1, x2, y1, y2)
+\begin{DoxyCompactList}\small\item\em counter the particles get lost outside the xrad and yrad. we have not put the lost through rf bucket yet. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ac5b1c15c02703f7339b67283bc9816bd}{chgupdate\+\_\+beambunch}} (this, nchge, idchgold, qmcclist)
+\begin{DoxyCompactList}\small\item\em update the total current fraction of each charge state update total \# of ptcl for each charge state \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a030c80c97cd3523478e56fdaff0e7560}{convforth0th\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em 0th order algorithm to transfer from z to t frame. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a35f6511340579ba6bb5f07bebf6d09d5}{convforth1st\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em Linear(1st order) algorithm to transfer from z to t frame. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ad12625a90fb4a096ff15ba55f655b148}{convback0th\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em 0th order algorithm to transfer from t to z frame. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a704068cca17e98c6568c1e6056d1c4d6}{convback1st\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em Linear algorithm to transfer from t to z frame. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a374fdc0e530a8835113fcd674283a150}{conv0thold\+\_\+beambunch}} (this, tau, rad, nplc, nptot)
+\begin{DoxyCompactList}\small\item\em from z to t beam frame 0th order approximation. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ad456951b863b3dfab6eb7fa018e17230}{conv0th\+\_\+beambunch}} (this, tau, nplc, nptot, ptrange, Flagbc, perd, xrad, yrad)
+\begin{DoxyCompactList}\small\item\em from z to t beam frame 0th order transformation. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a0b46fd8b4c41577688761ad62175772b}{conv1st\+\_\+beambunch}} (this, tau, nplc, nptot, ptrange, Flagbc, perd, xrad, yrad)
+\begin{DoxyCompactList}\small\item\em from z to t beam frame 1st order transformation. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_acacb775484bda2729c3da9adbbeffc53}{cvbkforth1st\+\_\+beambunch}} (this)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_abf23fdc1e8ca69fe7fe8f2995fbc1bcc}{kick1\+\_\+beambunch}} (this, tau, innx, inny, innz, temppotent, ptsgeom, grid, Flagbc, perdlen)
+\begin{DoxyCompactList}\small\item\em Here, all indices of potential are local to processor. Advance the particles in the velocity space using the force from the external field and the self space charge force interpolated from the grid to particles. (linear map) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a023a12f9279f0764fc57deda1bcb852f}{scatter1\+\_\+beambunch}} (innp, innx, inny, innz, rays, exg, eyg, ezg, ptsgeom, npx, npy, myidx, myidy, gam, curr, tau, mass
+\begin{DoxyCompactList}\small\item\em scatter grid quantity onto particles using linear map. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a398a8735bfae34f0d7a9337c8e5ec621}{kick2\+\_\+beambunch}} (this, beamelem, z, tau, innx, inny, innz, temppotent, ptsgeom, grid, Flagbc, flagerr)
+\begin{DoxyCompactList}\small\item\em Here, all indices of potential are local to processor. Advance the particles in the velocity space using the force from the external field and the self space charge force interpolated from the grid to particles. (Lorentz force) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ad2054e6e5714a86db0112c5eb3978abb}{scatter2\+\_\+beambunch}} (innp, innx, inny, innz, rays, exg, eyg, ezg, ptsgeom, npx, npy, myidx, myidy, tg, gam, curr, chge, mass, tau, z,
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a8a96c99996275cf03ceec41dc011695e}{scatter20\+\_\+beambunch}} (innp, rays, tg, gam, chge, mass, tau, z, beamelem)
+\begin{DoxyCompactList}\small\item\em scatter grid quantity onto particles. only external fields are included \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_add3fe05fd157f9a0d3f09445660f038e}{scatter20err\+\_\+beambunch}} (innp, rays, tg, gam, chge, mass, tau, z, beamelem)
+\begin{DoxyCompactList}\small\item\em scatter grid quantity onto particles. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a91563d467d36ccca8231ee2c62483246}{charge\+\_\+beambunch}} (this, innp, innx, inny, innz, ptsgeom, grid, chgdens, Flagbc, perdlen)
+\begin{DoxyCompactList}\small\item\em All indices here are local to the processor. find charge density on grid from particles. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a2cf9a1a04b69a4b2509d80522112a3bd}{setpts\+\_\+beambunch}} (this, inparticles, nptsin)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_af1b14b706bd1283ff6c5a7cec4b06c48}{setnpt\+\_\+beambunch}} (this, innpt)
+\begin{DoxyCompactList}\small\item\em set local \# of particles. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aec332b229b76111b68db82b20ab2846e}{getnpt\+\_\+beambunch}} (this, outnpt)
+\begin{DoxyCompactList}\small\item\em get local \# of particles. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_abc601844eaf85727173ebd3ef6d2b256}{getpts\+\_\+beambunch}} (this, outparticles)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aa0438cba132ce3b2fdc8e053375c0097}{deposit\+\_\+beambunch}} (innp, innx, inny, innz, rays, rho, ptsgeom, npx, npy, myidx, myidy)
+\begin{DoxyCompactList}\small\item\em deposit particles onto grid. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a0fe1e4d236f209b18f75b272bf07782d}{destruct\+\_\+beambunch}} (this)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aef2d76ba15a23896de0838b2001d72b1}{transfto\+\_\+beambunch}} (this, ptref)
+\begin{DoxyCompactList}\small\item\em transform the particle coordinates to local coordinate of \char`\"{}ptref\char`\"{}. Here, \char`\"{}ptref\char`\"{} coordinate has a rotation \char`\"{}theta\char`\"{} in y-\/z plane with respect to the orginal coordinate. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a89d32b2a56cd1eb84867e95897af307a}{transfback\+\_\+beambunch}} (this, ptref)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a05e93a990ca0c8071c035d078ffb7bb0}{rotto\+\_\+beambunch}} (this, ptref, ptrange)
+\begin{DoxyCompactList}\small\item\em rotate to the particle coordinates to local beam coordinate of \char`\"{}ptref\char`\"{}. Here, the local \char`\"{}z\char`\"{} direction has been enlarged by \char`\"{}gamma\char`\"{} for the space-\/charge calculation. Here, \char`\"{}ptref\char`\"{} coordinate has a rotation \char`\"{}theta\char`\"{} in x-\/z plane with respect to the orginal coordinate. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a3b4334f47908375d6a6dc12f1509397c}{rotback\+\_\+beambunch}} (this, ptref)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a82f485cba1b5e039b1a25b4b4bd9d81f}{convzt\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em convert from z coordinates (x,px,y,py,phase,pt0-\/pt) to t frame coordinates (x,px,y,py,z,pz). Here, x normalized by xl, px = gamma beta\+\_\+x. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a9d14e9a28575e2d4d173669b8e0356a7}{convtz\+\_\+beambunch}} (this, tout)
+\begin{DoxyCompactList}\small\item\em Linear algorithm to transfer from t to z frame after bend. The Cartesian coordinate has been rotated following the exit direction of the reference particle. The exit angle of the reference particle should correspond to the bend angle. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a8970622c75fe29b57d31607d71692976}{drifthalft\+\_\+beambunch}} (this, t, tau)
+\begin{DoxyCompactList}\small\item\em drift half step in positions. Here, x, y, z are normalized by C $\ast$ Dt tau -\/ normalized step size (by Dt). the time \char`\"{}t\char`\"{} is normalized by the scaling frequency. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a119b1d68c4a2a790014a9408c2db1575}{kickt\+\_\+beambunch}} (this, beamelem, z, tau, innx, inny, innz, temppotent, ptsgeom, grid, Flagbc, flagerr)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a3da6bfdf683e278c6005fddbceac16db}{scattert\+\_\+beambunch}} (innp, innx, inny, innz, rays, refpt, exg
+\begin{DoxyCompactList}\small\item\em Here, the update of the momentum is in the rotated coordinates since the boost direction is not along z but in the x-\/z plane ue to the bend magnet. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a80dd0ce0010992cda1f2ba4d873371e0}{scattert0\+\_\+beambunch}} (innp, rays, refpt, tg, chge, mass, dt, z, beamelem)
+\begin{DoxyCompactList}\small\item\em Here, the update of the momentum is in the rotated coordinates since the boost direction is not along z but in the x-\/z plane due to the bend magnet. (Without Current) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a02f7f46438747a0fb811de64b1ed95aa}{kick1wake\+\_\+beambunch}} (this, tau, innx, inny, innz, temppoten
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a530cca8371b8decda64389ce29d10bcd}{kick2wake\+\_\+beambunch}} (this, beamelem, z, tau, innx, inny, inn
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aa17d706a08d23a054bf547514e796e6a}{scatter2wake\+\_\+beambunch}} (innp, innx, inny, innz, rays, exg, eyg, ezg, ptsgeom, npx, npy, myidx, myidy, tg, gam, curr, chge, mass, tau, z,
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a2395bc91f4fc52175d8a5cc92890bb83}{scatter2errwake\+\_\+beambunch}} (innp, innx, inny, innz, rays, ex
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the charged particle beam bunch information in the accelerator. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{beambunchclass::beambunch@{beambunchclass::beambunch}}\label{structbeambunchclass_1_1beambunch}
+\Hypertarget{namespacebeambunchclass_structbeambunchclass_1_1beambunch}
+\subsubsection{type beambunchclass\+::beambunch}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacebeambunchclass_a555bb0dc53871a3f69755125598c8938}\label{namespacebeambunchclass_a555bb0dc53871a3f69755125598c8938}} 
+double precision&
+charge&
+beam freq, current, part. mass and charge. \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_a0611d8fb67f60eb1ea7a3df79c5de915}\label{namespacebeambunchclass_a0611d8fb67f60eb1ea7a3df79c5de915}} 
+double precision&
+current&
+beam freq, current, part. mass and charge. \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_abeaad3b1ce823a9c49cab5a8b96f5ff0}\label{namespacebeambunchclass_abeaad3b1ce823a9c49cab5a8b96f5ff0}} 
+double precision&
+mass&
+beam freq, current, part. mass and charge. \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_a20f5303645e1b7fa0cbfa88f81cda947}\label{namespacebeambunchclass_a20f5303645e1b7fa0cbfa88f81cda947}} 
+integer&
+npt&
+\# of total global macroparticles and local particles \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_a71a8687235fdc19d862fb13092b714a3}\label{namespacebeambunchclass_a71a8687235fdc19d862fb13092b714a3}} 
+integer&
+nptlocal&
+\# of total global macroparticles and local particles \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_af0d19c1e3e537ade010af8554783c8d7}\label{namespacebeambunchclass_af0d19c1e3e537ade010af8554783c8d7}} 
+double precision, dimension(:,:), pointer&
+pts1&
+particles type one. \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_a973e0e4ee1b24185bac1d727d2c074f5}\label{namespacebeambunchclass_a973e0e4ee1b24185bac1d727d2c074f5}} 
+double precision, dimension(6)&
+refptcl&
+reference particle \\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacebeambunchclass_a91563d467d36ccca8231ee2c62483246}\label{namespacebeambunchclass_a91563d467d36ccca8231ee2c62483246}} 
+\index{beambunchclass@{beambunchclass}!charge\_beambunch@{charge\_beambunch}}
+\index{charge\_beambunch@{charge\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{charge\_beambunch()}{charge\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::charge\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{type (compdom), intent(in)}]{ptsgeom,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{}]{chgdens,  }\item[{integer, intent(in)}]{Flagbc,  }\item[{double precision, intent(in)}]{perdlen }\end{DoxyParamCaption})}
+
+
+
+All indices here are local to the processor. find charge density on grid from particles. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a91563d467d36ccca8231ee2c62483246_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a91563d467d36ccca8231ee2c62483246_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_ac5b1c15c02703f7339b67283bc9816bd}\label{namespacebeambunchclass_ac5b1c15c02703f7339b67283bc9816bd}} 
+\index{beambunchclass@{beambunchclass}!chgupdate\_beambunch@{chgupdate\_beambunch}}
+\index{chgupdate\_beambunch@{chgupdate\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{chgupdate\_beambunch()}{chgupdate\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::chgupdate\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nchge,  }\item[{integer, dimension(\+:), intent(inout)}]{idchgold,  }\item[{double precision, dimension(\+:), intent(in)}]{qmcclist }\end{DoxyParamCaption})}
+
+
+
+update the total current fraction of each charge state update total \# of ptcl for each charge state 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_ac5b1c15c02703f7339b67283bc9816bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a1605e527eb41043dc5962da1e3bb5159}\label{namespacebeambunchclass_a1605e527eb41043dc5962da1e3bb5159}} 
+\index{beambunchclass@{beambunchclass}!construct\_beambunch@{construct\_beambunch}}
+\index{construct\_beambunch@{construct\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{construct\_beambunch()}{construct\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::construct\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(in)}]{incurr,  }\item[{double precision, intent(in)}]{inkin,  }\item[{double precision, intent(in)}]{inmass,  }\item[{double precision, intent(in)}]{incharge }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a1605e527eb41043dc5962da1e3bb5159_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_ad456951b863b3dfab6eb7fa018e17230}\label{namespacebeambunchclass_ad456951b863b3dfab6eb7fa018e17230}} 
+\index{beambunchclass@{beambunchclass}!conv0th\_beambunch@{conv0th\_beambunch}}
+\index{conv0th\_beambunch@{conv0th\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{conv0th\_beambunch()}{conv0th\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::conv0th\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(out)}]{nplc,  }\item[{integer, intent(out)}]{nptot,  }\item[{double precision, dimension(6), intent(out)}]{ptrange,  }\item[{integer, intent(in)}]{Flagbc,  }\item[{double precision, intent(in)}]{perd,  }\item[{double precision, intent(in)}]{xrad,  }\item[{double precision, intent(in)}]{yrad }\end{DoxyParamCaption})}
+
+
+
+from z to t beam frame 0th order transformation. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a374fdc0e530a8835113fcd674283a150}\label{namespacebeambunchclass_a374fdc0e530a8835113fcd674283a150}} 
+\index{beambunchclass@{beambunchclass}!conv0thold\_beambunch@{conv0thold\_beambunch}}
+\index{conv0thold\_beambunch@{conv0thold\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{conv0thold\_beambunch()}{conv0thold\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::conv0thold\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, intent(in)}]{rad,  }\item[{integer, intent(out)}]{nplc,  }\item[{integer, intent(out)}]{nptot }\end{DoxyParamCaption})}
+
+
+
+from z to t beam frame 0th order approximation. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a0b46fd8b4c41577688761ad62175772b}\label{namespacebeambunchclass_a0b46fd8b4c41577688761ad62175772b}} 
+\index{beambunchclass@{beambunchclass}!conv1st\_beambunch@{conv1st\_beambunch}}
+\index{conv1st\_beambunch@{conv1st\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{conv1st\_beambunch()}{conv1st\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::conv1st\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(out)}]{nplc,  }\item[{integer, intent(out)}]{nptot,  }\item[{double precision, dimension(6), intent(out)}]{ptrange,  }\item[{integer, intent(in)}]{Flagbc,  }\item[{double precision, intent(in)}]{perd,  }\item[{double precision, intent(in)}]{xrad,  }\item[{double precision, intent(in)}]{yrad }\end{DoxyParamCaption})}
+
+
+
+from z to t beam frame 1st order transformation. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a0b46fd8b4c41577688761ad62175772b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_ad12625a90fb4a096ff15ba55f655b148}\label{namespacebeambunchclass_ad12625a90fb4a096ff15ba55f655b148}} 
+\index{beambunchclass@{beambunchclass}!convback0th\_beambunch@{convback0th\_beambunch}}
+\index{convback0th\_beambunch@{convback0th\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{convback0th\_beambunch()}{convback0th\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::convback0th\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this }\end{DoxyParamCaption})}
+
+
+
+0th order algorithm to transfer from t to z frame. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a704068cca17e98c6568c1e6056d1c4d6}\label{namespacebeambunchclass_a704068cca17e98c6568c1e6056d1c4d6}} 
+\index{beambunchclass@{beambunchclass}!convback1st\_beambunch@{convback1st\_beambunch}}
+\index{convback1st\_beambunch@{convback1st\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{convback1st\_beambunch()}{convback1st\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::convback1st\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this }\end{DoxyParamCaption})}
+
+
+
+Linear algorithm to transfer from t to z frame. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a030c80c97cd3523478e56fdaff0e7560}\label{namespacebeambunchclass_a030c80c97cd3523478e56fdaff0e7560}} 
+\index{beambunchclass@{beambunchclass}!convforth0th\_beambunch@{convforth0th\_beambunch}}
+\index{convforth0th\_beambunch@{convforth0th\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{convforth0th\_beambunch()}{convforth0th\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::convforth0th\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this }\end{DoxyParamCaption})}
+
+
+
+0th order algorithm to transfer from z to t frame. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a35f6511340579ba6bb5f07bebf6d09d5}\label{namespacebeambunchclass_a35f6511340579ba6bb5f07bebf6d09d5}} 
+\index{beambunchclass@{beambunchclass}!convforth1st\_beambunch@{convforth1st\_beambunch}}
+\index{convforth1st\_beambunch@{convforth1st\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{convforth1st\_beambunch()}{convforth1st\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::convforth1st\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this }\end{DoxyParamCaption})}
+
+
+
+Linear(1st order) algorithm to transfer from z to t frame. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a9d14e9a28575e2d4d173669b8e0356a7}\label{namespacebeambunchclass_a9d14e9a28575e2d4d173669b8e0356a7}} 
+\index{beambunchclass@{beambunchclass}!convtz\_beambunch@{convtz\_beambunch}}
+\index{convtz\_beambunch@{convtz\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{convtz\_beambunch()}{convtz\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::convtz\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision}]{tout }\end{DoxyParamCaption})}
+
+
+
+Linear algorithm to transfer from t to z frame after bend. The Cartesian coordinate has been rotated following the exit direction of the reference particle. The exit angle of the reference particle should correspond to the bend angle. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a82f485cba1b5e039b1a25b4b4bd9d81f}\label{namespacebeambunchclass_a82f485cba1b5e039b1a25b4b4bd9d81f}} 
+\index{beambunchclass@{beambunchclass}!convzt\_beambunch@{convzt\_beambunch}}
+\index{convzt\_beambunch@{convzt\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{convzt\_beambunch()}{convzt\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::convzt\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this }\end{DoxyParamCaption})}
+
+
+
+convert from z coordinates (x,px,y,py,phase,pt0-\/pt) to t frame coordinates (x,px,y,py,z,pz). Here, x normalized by xl, px = gamma beta\+\_\+x. 
+
+The following steps go from z to t frame. 2) Linear algorithm to transfer from z to t frame. \mbox{\Hypertarget{namespacebeambunchclass_acacb775484bda2729c3da9adbbeffc53}\label{namespacebeambunchclass_acacb775484bda2729c3da9adbbeffc53}} 
+\index{beambunchclass@{beambunchclass}!cvbkforth1st\_beambunch@{cvbkforth1st\_beambunch}}
+\index{cvbkforth1st\_beambunch@{cvbkforth1st\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{cvbkforth1st\_beambunch()}{cvbkforth1st\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::cvbkforth1st\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_acacb775484bda2729c3da9adbbeffc53_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_aa0438cba132ce3b2fdc8e053375c0097}\label{namespacebeambunchclass_aa0438cba132ce3b2fdc8e053375c0097}} 
+\index{beambunchclass@{beambunchclass}!deposit\_beambunch@{deposit\_beambunch}}
+\index{deposit\_beambunch@{deposit\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{deposit\_beambunch()}{deposit\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::deposit\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{double precision, dimension (9, innp), intent(in)}]{rays,  }\item[{}]{rho,  }\item[{type (compdom)}]{ptsgeom,  }\item[{integer, intent(in)}]{npx,  }\item[{integer, intent(in)}]{npy,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy }\end{DoxyParamCaption})}
+
+
+
+deposit particles onto grid. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_aa0438cba132ce3b2fdc8e053375c0097_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_aa0438cba132ce3b2fdc8e053375c0097_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a0fe1e4d236f209b18f75b272bf07782d}\label{namespacebeambunchclass_a0fe1e4d236f209b18f75b272bf07782d}} 
+\index{beambunchclass@{beambunchclass}!destruct\_beambunch@{destruct\_beambunch}}
+\index{destruct\_beambunch@{destruct\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{destruct\_beambunch()}{destruct\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::destruct\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(out)}]{this }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a0fe1e4d236f209b18f75b272bf07782d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a212c0d38a812d95f238d7da7f29ac17c}\label{namespacebeambunchclass_a212c0d38a812d95f238d7da7f29ac17c}} 
+\index{beambunchclass@{beambunchclass}!drift1\_beambunch@{drift1\_beambunch}}
+\index{drift1\_beambunch@{drift1\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{drift1\_beambunch()}{drift1\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::drift1\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{type (beamlineelem), intent(inout)}]{beamln,  }\item[{double precision, intent(inout)}]{z,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(in)}]{bitype,  }\item[{integer, intent(in)}]{nseg,  }\item[{integer, intent(in)}]{nst,  }\item[{}]{ih }\end{DoxyParamCaption})}
+
+
+
+Drift beam half step using linear map for external field. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a212c0d38a812d95f238d7da7f29ac17c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a3be2b49f0fef567493258758c44fffd6}\label{namespacebeambunchclass_a3be2b49f0fef567493258758c44fffd6}} 
+\index{beambunchclass@{beambunchclass}!drift1org\_beambunch@{drift1org\_beambunch}}
+\index{drift1org\_beambunch@{drift1org\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{drift1org\_beambunch()}{drift1org\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::drift1org\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{type (beamlineelem), intent(inout)}]{beamln,  }\item[{double precision, intent(inout)}]{z,  }\item[{double precision, intent(in)}]{tau }\end{DoxyParamCaption})}
+
+
+
+Drift beam half step using linear map for external field. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a3be2b49f0fef567493258758c44fffd6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a6e3aecf1a2cf3d54950c09c603c2f11c}\label{namespacebeambunchclass_a6e3aecf1a2cf3d54950c09c603c2f11c}} 
+\index{beambunchclass@{beambunchclass}!drift2\_beambunch@{drift2\_beambunch}}
+\index{drift2\_beambunch@{drift2\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{drift2\_beambunch()}{drift2\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::drift2\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(inout)}]{z,  }\item[{double precision, intent(in)}]{tau }\end{DoxyParamCaption})}
+
+
+
+drift half step using nonlinear Lorentz integrator 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a6e3aecf1a2cf3d54950c09c603c2f11c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a3f5a86fb4b3ff5b33efdfa76b1c52ce4}\label{namespacebeambunchclass_a3f5a86fb4b3ff5b33efdfa76b1c52ce4}} 
+\index{beambunchclass@{beambunchclass}!drift2halo\_beambunch@{drift2halo\_beambunch}}
+\index{drift2halo\_beambunch@{drift2halo\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{drift2halo\_beambunch()}{drift2halo\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::drift2halo\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(inout)}]{z,  }\item[{double precision, intent(in)}]{tau }\end{DoxyParamCaption})}
+
+
+
+drift half step using nonlinear Lorentz integrator for halo study 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a3f5a86fb4b3ff5b33efdfa76b1c52ce4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a8970622c75fe29b57d31607d71692976}\label{namespacebeambunchclass_a8970622c75fe29b57d31607d71692976}} 
+\index{beambunchclass@{beambunchclass}!drifthalft\_beambunch@{drifthalft\_beambunch}}
+\index{drifthalft\_beambunch@{drifthalft\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{drifthalft\_beambunch()}{drifthalft\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::drifthalft\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, intent(in)}]{tau }\end{DoxyParamCaption})}
+
+
+
+drift half step in positions. Here, x, y, z are normalized by C $\ast$ Dt tau -\/ normalized step size (by Dt). the time \char`\"{}t\char`\"{} is normalized by the scaling frequency. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a8970622c75fe29b57d31607d71692976_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_aea8cfefa2f70ade95202cc40f015f7bf}\label{namespacebeambunchclass_aea8cfefa2f70ade95202cc40f015f7bf}} 
+\index{beambunchclass@{beambunchclass}!geomerrl\_beambunch@{geomerrl\_beambunch}}
+\index{geomerrl\_beambunch@{geomerrl\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{geomerrl\_beambunch()}{geomerrl\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::geomerrl\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{type (beamlineelem), intent(in)}]{beamln }\end{DoxyParamCaption})}
+
+
+
+shift and rotate the beam at the leading edge of the element 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_aea8cfefa2f70ade95202cc40f015f7bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_aea8cfefa2f70ade95202cc40f015f7bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_ab2f6f9e95d5786dab15c1b73f305e349}\label{namespacebeambunchclass_ab2f6f9e95d5786dab15c1b73f305e349}} 
+\index{beambunchclass@{beambunchclass}!geomerrt\_beambunch@{geomerrt\_beambunch}}
+\index{geomerrt\_beambunch@{geomerrt\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{geomerrt\_beambunch()}{geomerrt\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::geomerrt\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{type (beamlineelem), intent(in)}]{beamln }\end{DoxyParamCaption})}
+
+
+
+shift and rotate the beam at the tail edge of the element 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_ab2f6f9e95d5786dab15c1b73f305e349_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_ab2f6f9e95d5786dab15c1b73f305e349_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_aec332b229b76111b68db82b20ab2846e}\label{namespacebeambunchclass_aec332b229b76111b68db82b20ab2846e}} 
+\index{beambunchclass@{beambunchclass}!getnpt\_beambunch@{getnpt\_beambunch}}
+\index{getnpt\_beambunch@{getnpt\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{getnpt\_beambunch()}{getnpt\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::getnpt\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(in)}]{this,  }\item[{integer, intent(out)}]{outnpt }\end{DoxyParamCaption})}
+
+
+
+get local \# of particles. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{namespacebeambunchclass_aec332b229b76111b68db82b20ab2846e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_abc601844eaf85727173ebd3ef6d2b256}\label{namespacebeambunchclass_abc601844eaf85727173ebd3ef6d2b256}} 
+\index{beambunchclass@{beambunchclass}!getpts\_beambunch@{getpts\_beambunch}}
+\index{getpts\_beambunch@{getpts\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{getpts\_beambunch()}{getpts\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::getpts\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:,\+:), intent(out)}]{outparticles }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebeambunchclass_abf23fdc1e8ca69fe7fe8f2995fbc1bcc}\label{namespacebeambunchclass_abf23fdc1e8ca69fe7fe8f2995fbc1bcc}} 
+\index{beambunchclass@{beambunchclass}!kick1\_beambunch@{kick1\_beambunch}}
+\index{kick1\_beambunch@{kick1\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{kick1\_beambunch()}{kick1\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::kick1\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{}]{temppotent,  }\item[{type (compdom), intent(in)}]{ptsgeom,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{integer, intent(in)}]{Flagbc,  }\item[{double precision, intent(in)}]{perdlen }\end{DoxyParamCaption})}
+
+
+
+Here, all indices of potential are local to processor. Advance the particles in the velocity space using the force from the external field and the self space charge force interpolated from the grid to particles. (linear map) 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_abf23fdc1e8ca69fe7fe8f2995fbc1bcc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a02f7f46438747a0fb811de64b1ed95aa}\label{namespacebeambunchclass_a02f7f46438747a0fb811de64b1ed95aa}} 
+\index{beambunchclass@{beambunchclass}!kick1wake\_beambunch@{kick1wake\_beambunch}}
+\index{kick1wake\_beambunch@{kick1wake\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{kick1wake\_beambunch()}{kick1wake\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::kick1wake\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{}]{temppoten }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a02f7f46438747a0fb811de64b1ed95aa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a02f7f46438747a0fb811de64b1ed95aa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a398a8735bfae34f0d7a9337c8e5ec621}\label{namespacebeambunchclass_a398a8735bfae34f0d7a9337c8e5ec621}} 
+\index{beambunchclass@{beambunchclass}!kick2\_beambunch@{kick2\_beambunch}}
+\index{kick2\_beambunch@{kick2\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{kick2\_beambunch()}{kick2\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::kick2\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{type (beamlineelem), intent(in)}]{beamelem,  }\item[{double precision, intent(in)}]{z,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{}]{temppotent,  }\item[{type (compdom), intent(in)}]{ptsgeom,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{integer, intent(in)}]{Flagbc,  }\item[{integer, intent(in)}]{flagerr }\end{DoxyParamCaption})}
+
+
+
+Here, all indices of potential are local to processor. Advance the particles in the velocity space using the force from the external field and the self space charge force interpolated from the grid to particles. (Lorentz force) 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a398a8735bfae34f0d7a9337c8e5ec621_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a530cca8371b8decda64389ce29d10bcd}\label{namespacebeambunchclass_a530cca8371b8decda64389ce29d10bcd}} 
+\index{beambunchclass@{beambunchclass}!kick2wake\_beambunch@{kick2wake\_beambunch}}
+\index{kick2wake\_beambunch@{kick2wake\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{kick2wake\_beambunch()}{kick2wake\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::kick2wake\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{type (beamlineelem), intent(in)}]{beamelem,  }\item[{double precision, intent(in)}]{z,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{}]{inn }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a530cca8371b8decda64389ce29d10bcd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a530cca8371b8decda64389ce29d10bcd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a119b1d68c4a2a790014a9408c2db1575}\label{namespacebeambunchclass_a119b1d68c4a2a790014a9408c2db1575}} 
+\index{beambunchclass@{beambunchclass}!kickt\_beambunch@{kickt\_beambunch}}
+\index{kickt\_beambunch@{kickt\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{kickt\_beambunch()}{kickt\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::kickt\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{type (beamlineelem), intent(in)}]{beamelem,  }\item[{double precision, intent(in)}]{z,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{}]{temppotent,  }\item[{type (compdom), intent(in)}]{ptsgeom,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{integer, intent(in)}]{Flagbc,  }\item[{integer, intent(in)}]{flagerr }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a119b1d68c4a2a790014a9408c2db1575_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a618f97b46c83d8ca29a7cb05345d655e}\label{namespacebeambunchclass_a618f97b46c83d8ca29a7cb05345d655e}} 
+\index{beambunchclass@{beambunchclass}!lostcount\_beambunch@{lostcount\_beambunch}}
+\index{lostcount\_beambunch@{lostcount\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{lostcount\_beambunch()}{lostcount\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::lostcount\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{integer, intent(out)}]{nplc,  }\item[{integer, intent(out)}]{nptot,  }\item[{double precision, intent(in)}]{xrad,  }\item[{double precision, intent(in)}]{yrad }\end{DoxyParamCaption})}
+
+
+
+counter the particles get lost outside the xrad and yrad. we have not put the lost through rf bucket yet. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a54a4d80405bb8fbde341ea9e46a224e4}\label{namespacebeambunchclass_a54a4d80405bb8fbde341ea9e46a224e4}} 
+\index{beambunchclass@{beambunchclass}!lostcountxy\_beambunch@{lostcountxy\_beambunch}}
+\index{lostcountxy\_beambunch@{lostcountxy\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{lostcountxy\_beambunch()}{lostcountxy\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::lostcountxy\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{integer, intent(out)}]{nplc,  }\item[{integer, intent(out)}]{nptot,  }\item[{double precision, intent(inout)}]{x1,  }\item[{double precision, intent(inout)}]{x2,  }\item[{double precision, intent(inout)}]{y1,  }\item[{double precision, intent(inout)}]{y2 }\end{DoxyParamCaption})}
+
+
+
+counter the particles get lost outside the xrad and yrad. we have not put the lost through rf bucket yet. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a54a4d80405bb8fbde341ea9e46a224e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a3b4334f47908375d6a6dc12f1509397c}\label{namespacebeambunchclass_a3b4334f47908375d6a6dc12f1509397c}} 
+\index{beambunchclass@{beambunchclass}!rotback\_beambunch@{rotback\_beambunch}}
+\index{rotback\_beambunch@{rotback\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{rotback\_beambunch()}{rotback\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::rotback\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, dimension(6)}]{ptref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebeambunchclass_a05e93a990ca0c8071c035d078ffb7bb0}\label{namespacebeambunchclass_a05e93a990ca0c8071c035d078ffb7bb0}} 
+\index{beambunchclass@{beambunchclass}!rotto\_beambunch@{rotto\_beambunch}}
+\index{rotto\_beambunch@{rotto\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{rotto\_beambunch()}{rotto\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::rotto\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, dimension(6)}]{ptref,  }\item[{double precision, dimension(6), intent(out)}]{ptrange }\end{DoxyParamCaption})}
+
+
+
+rotate to the particle coordinates to local beam coordinate of \char`\"{}ptref\char`\"{}. Here, the local \char`\"{}z\char`\"{} direction has been enlarged by \char`\"{}gamma\char`\"{} for the space-\/charge calculation. Here, \char`\"{}ptref\char`\"{} coordinate has a rotation \char`\"{}theta\char`\"{} in x-\/z plane with respect to the orginal coordinate. 
+
+\mbox{\Hypertarget{namespacebeambunchclass_a023a12f9279f0764fc57deda1bcb852f}\label{namespacebeambunchclass_a023a12f9279f0764fc57deda1bcb852f}} 
+\index{beambunchclass@{beambunchclass}!scatter1\_beambunch@{scatter1\_beambunch}}
+\index{scatter1\_beambunch@{scatter1\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{scatter1\_beambunch()}{scatter1\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::scatter1\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{double precision, dimension (9,innp), intent(inout)}]{rays,  }\item[{double precision, dimension (innx,inny,innz), intent(in)}]{exg,  }\item[{}]{eyg,  }\item[{}]{ezg,  }\item[{type (compdom)}]{ptsgeom,  }\item[{integer, intent(in)}]{npx,  }\item[{integer, intent(in)}]{npy,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy,  }\item[{double precision, intent(in)}]{gam,  }\item[{double precision, intent(in)}]{curr,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, intent(in)}]{mass }\end{DoxyParamCaption})}
+
+
+
+scatter grid quantity onto particles using linear map. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a023a12f9279f0764fc57deda1bcb852f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a023a12f9279f0764fc57deda1bcb852f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a8a96c99996275cf03ceec41dc011695e}\label{namespacebeambunchclass_a8a96c99996275cf03ceec41dc011695e}} 
+\index{beambunchclass@{beambunchclass}!scatter20\_beambunch@{scatter20\_beambunch}}
+\index{scatter20\_beambunch@{scatter20\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{scatter20\_beambunch()}{scatter20\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::scatter20\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{double precision, dimension (9,innp), intent(inout)}]{rays,  }\item[{double precision, intent(in)}]{tg,  }\item[{double precision, intent(inout)}]{gam,  }\item[{double precision, intent(in)}]{chge,  }\item[{double precision, intent(in)}]{mass,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, intent(in)}]{z,  }\item[{type (beamlineelem), intent(in)}]{beamelem }\end{DoxyParamCaption})}
+
+
+
+scatter grid quantity onto particles. only external fields are included 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a8a96c99996275cf03ceec41dc011695e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a8a96c99996275cf03ceec41dc011695e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_add3fe05fd157f9a0d3f09445660f038e}\label{namespacebeambunchclass_add3fe05fd157f9a0d3f09445660f038e}} 
+\index{beambunchclass@{beambunchclass}!scatter20err\_beambunch@{scatter20err\_beambunch}}
+\index{scatter20err\_beambunch@{scatter20err\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{scatter20err\_beambunch()}{scatter20err\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::scatter20err\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{double precision, dimension (9,innp), intent(inout)}]{rays,  }\item[{double precision, intent(in)}]{tg,  }\item[{double precision, intent(inout)}]{gam,  }\item[{double precision, intent(in)}]{chge,  }\item[{double precision, intent(in)}]{mass,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, intent(in)}]{z,  }\item[{type (beamlineelem), intent(in)}]{beamelem }\end{DoxyParamCaption})}
+
+
+
+scatter grid quantity onto particles. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_add3fe05fd157f9a0d3f09445660f038e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_ad2054e6e5714a86db0112c5eb3978abb}\label{namespacebeambunchclass_ad2054e6e5714a86db0112c5eb3978abb}} 
+\index{beambunchclass@{beambunchclass}!scatter2\_beambunch@{scatter2\_beambunch}}
+\index{scatter2\_beambunch@{scatter2\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{scatter2\_beambunch()}{scatter2\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::scatter2\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{double precision, dimension (9,innp), intent(inout)}]{rays,  }\item[{double precision, dimension (innx,inny,innz), intent(in)}]{exg,  }\item[{}]{eyg,  }\item[{}]{ezg,  }\item[{type (compdom)}]{ptsgeom,  }\item[{integer, intent(in)}]{npx,  }\item[{integer, intent(in)}]{npy,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy,  }\item[{double precision, intent(in)}]{tg,  }\item[{double precision, intent(inout)}]{gam,  }\item[{double precision, intent(in)}]{curr,  }\item[{double precision, intent(in)}]{chge,  }\item[{double precision, intent(in)}]{mass,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, intent(in)}]{z }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_ad2054e6e5714a86db0112c5eb3978abb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_ad2054e6e5714a86db0112c5eb3978abb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a2395bc91f4fc52175d8a5cc92890bb83}\label{namespacebeambunchclass_a2395bc91f4fc52175d8a5cc92890bb83}} 
+\index{beambunchclass@{beambunchclass}!scatter2errwake\_beambunch@{scatter2errwake\_beambunch}}
+\index{scatter2errwake\_beambunch@{scatter2errwake\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{scatter2errwake\_beambunch()}{scatter2errwake\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::scatter2errwake\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{double precision, dimension (9,innp), intent(inout)}]{rays,  }\item[{}]{ex }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a2395bc91f4fc52175d8a5cc92890bb83_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_aa17d706a08d23a054bf547514e796e6a}\label{namespacebeambunchclass_aa17d706a08d23a054bf547514e796e6a}} 
+\index{beambunchclass@{beambunchclass}!scatter2wake\_beambunch@{scatter2wake\_beambunch}}
+\index{scatter2wake\_beambunch@{scatter2wake\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{scatter2wake\_beambunch()}{scatter2wake\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::scatter2wake\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{double precision, dimension (9,innp), intent(inout)}]{rays,  }\item[{double precision, dimension (innx,inny,innz), intent(in)}]{exg,  }\item[{}]{eyg,  }\item[{}]{ezg,  }\item[{type (compdom)}]{ptsgeom,  }\item[{integer, intent(in)}]{npx,  }\item[{integer, intent(in)}]{npy,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy,  }\item[{double precision, intent(in)}]{tg,  }\item[{double precision, intent(inout)}]{gam,  }\item[{double precision, intent(in)}]{curr,  }\item[{double precision, intent(in)}]{chge,  }\item[{double precision, intent(in)}]{mass,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, intent(in)}]{z }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_aa17d706a08d23a054bf547514e796e6a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_aa17d706a08d23a054bf547514e796e6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a80dd0ce0010992cda1f2ba4d873371e0}\label{namespacebeambunchclass_a80dd0ce0010992cda1f2ba4d873371e0}} 
+\index{beambunchclass@{beambunchclass}!scattert0\_beambunch@{scattert0\_beambunch}}
+\index{scattert0\_beambunch@{scattert0\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{scattert0\_beambunch()}{scattert0\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::scattert0\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{double precision, dimension (9,innp), intent(inout)}]{rays,  }\item[{double precision, dimension (6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{tg,  }\item[{double precision, intent(in)}]{chge,  }\item[{double precision, intent(in)}]{mass,  }\item[{double precision, intent(in)}]{dt,  }\item[{double precision, intent(in)}]{z,  }\item[{type (beamlineelem), intent(in)}]{beamelem }\end{DoxyParamCaption})}
+
+
+
+Here, the update of the momentum is in the rotated coordinates since the boost direction is not along z but in the x-\/z plane due to the bend magnet. (Without Current) 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a80dd0ce0010992cda1f2ba4d873371e0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a80dd0ce0010992cda1f2ba4d873371e0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a3da6bfdf683e278c6005fddbceac16db}\label{namespacebeambunchclass_a3da6bfdf683e278c6005fddbceac16db}} 
+\index{beambunchclass@{beambunchclass}!scattert\_beambunch@{scattert\_beambunch}}
+\index{scattert\_beambunch@{scattert\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{scattert\_beambunch()}{scattert\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::scattert\+\_\+beambunch (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{innp,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{double precision, dimension (9,innp), intent(inout)}]{rays,  }\item[{double precision, dimension (6), intent(inout)}]{refpt,  }\item[{double precision, dimension (innx,inny,innz), intent(in)}]{exg }\end{DoxyParamCaption})}
+
+
+
+Here, the update of the momentum is in the rotated coordinates since the boost direction is not along z but in the x-\/z plane ue to the bend magnet. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a3da6bfdf683e278c6005fddbceac16db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_a3da6bfdf683e278c6005fddbceac16db_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_af1b14b706bd1283ff6c5a7cec4b06c48}\label{namespacebeambunchclass_af1b14b706bd1283ff6c5a7cec4b06c48}} 
+\index{beambunchclass@{beambunchclass}!setnpt\_beambunch@{setnpt\_beambunch}}
+\index{setnpt\_beambunch@{setnpt\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{setnpt\_beambunch()}{setnpt\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::setnpt\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{innpt }\end{DoxyParamCaption})}
+
+
+
+set local \# of particles. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacebeambunchclass_af1b14b706bd1283ff6c5a7cec4b06c48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacebeambunchclass_a2cf9a1a04b69a4b2509d80522112a3bd}\label{namespacebeambunchclass_a2cf9a1a04b69a4b2509d80522112a3bd}} 
+\index{beambunchclass@{beambunchclass}!setpts\_beambunch@{setpts\_beambunch}}
+\index{setpts\_beambunch@{setpts\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{setpts\_beambunch()}{setpts\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::setpts\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:,\+:), intent(in)}]{inparticles,  }\item[{integer, intent(in)}]{nptsin }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebeambunchclass_a89d32b2a56cd1eb84867e95897af307a}\label{namespacebeambunchclass_a89d32b2a56cd1eb84867e95897af307a}} 
+\index{beambunchclass@{beambunchclass}!transfback\_beambunch@{transfback\_beambunch}}
+\index{transfback\_beambunch@{transfback\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{transfback\_beambunch()}{transfback\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::transfback\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, dimension(6)}]{ptref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacebeambunchclass_aef2d76ba15a23896de0838b2001d72b1}\label{namespacebeambunchclass_aef2d76ba15a23896de0838b2001d72b1}} 
+\index{beambunchclass@{beambunchclass}!transfto\_beambunch@{transfto\_beambunch}}
+\index{transfto\_beambunch@{transfto\_beambunch}!beambunchclass@{beambunchclass}}
+\subsubsection{\texorpdfstring{transfto\_beambunch()}{transfto\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::transfto\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, dimension(6)}]{ptref }\end{DoxyParamCaption})}
+
+
+
+transform the particle coordinates to local coordinate of \char`\"{}ptref\char`\"{}. Here, \char`\"{}ptref\char`\"{} coordinate has a rotation \char`\"{}theta\char`\"{} in y-\/z plane with respect to the orginal coordinate. 
+

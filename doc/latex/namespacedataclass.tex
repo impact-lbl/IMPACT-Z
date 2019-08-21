@@ -1,0 +1,680 @@
+\hypertarget{namespacedataclass}{}\section{dataclass Module Reference}
+\label{namespacedataclass}\index{dataclass@{dataclass}}
+
+
+This class stores the rf cavity data Ez, Ez\textquotesingle{}, Ez\textquotesingle{}\textquotesingle{} on the axis; Fourier coefficients of Ez on the axis; Ez(r,z), Er(r,z), Htheta(r,z) on the r-\/z grid plane; and Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) on uniform x, y, z grid.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a474ffe5e76484d63015aaf6255c27294}{init\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the data storage arrays. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_ac5b255034c2a115b6740378b4d1e630e}{destruct\+\_\+data}} ()
+\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a6733af7e3067d69140c61e2b4580a70b}{read1\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em read in the discrete field data Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) distribution along axis zdat from files \char`\"{}rfdatax or rfdataxx 
+ or rfdataxxx\char`\"{}. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_abf0c8413e040d7ea8c0bc5df73c9ef96}{read2\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em read in discrete Ez(r,z), Er(r,z) and Btheta(r,z) rf data from files "rfdatax.\+in or rfdataxx.\+in or rfdataxxx.\+in. Here, the grid is uniform in r and z. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a39afae6095340e01362de7d4876aee60}{read3\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em readin the Fourier coefficients of the RF field from files \char`\"{}rfdatax or rfdataxx or rfdataxxx\char`\"{}. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a2ef1f00ff4295094270a70c5d3763019}{read4\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) rf data from files "rfdatax.\+in or rfdataxx.\+in or rfdataxxx.\+in. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a2fed396f3daf5a5c465b01235d98c776}{read1wk\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em read in the discrete wake field data in z, x, y. distribution along axis zdat from files \char`\"{}rfdatax or rfdataxx 
+ or rfdataxxx\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\textbf{ }\par
+{\em using the x-\/y-\/z field data (Ex,Ey,Ez,Bx,By,Bz) directly. }\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacedataclass_a6302bc97206196f7003db67abd75507e}{nxintvrfg}} = 1
+\begin{DoxyCompactList}\small\item\em number of grid points along x, y, and z direction. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedataclass_a32c01f4c7d58343edc8d318b2e5f4760}{nyintvrfg}} = 1
+\begin{DoxyCompactList}\small\item\em number of grid points along x, y, and z direction. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedataclass_a53f757bd562f34f7e8e6bb58606fc289}{nzintvrfg}} = 1
+\begin{DoxyCompactList}\small\item\em number of grid points along x, y, and z direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision \mbox{\hyperlink{namespacedataclass_a32b5b26da65d1b3507a36c17029a18ae}{xmaxrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_ab5b5b652fce1e93de12accd3514958a0}{xminrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a79212aa125148748cc4bd5a11fff492f}{ymaxrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a5393ad3032e6f0311c62d03d468a6cf0}{yminrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a52b6a1ee39c205fce4ef2be72ab153aa}{zmaxrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a9c2398fd87701d5c0de37ff6b3357a0c}{zmin}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a3379b2d98107a6908aabb71e53031c00}{exgrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a85c21f161fb74970fc84639092c193dd}{eygrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_aff9491f2e1258faccd2530eace979c78}{ezgrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_ad10657f6c8e764ba3c355bd0e2c98a01}{bxgrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_aa12722da71ea440ed769b715936c87a3}{bygrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_aabd84b55c65371356291620ee4dceb06}{bzgrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacedataclass_a3b9a2feb5ab8139d532626cad00a9769}{nrintvrf}} = 1
+\begin{DoxyCompactList}\small\item\em using the r-\/z field data (Er,Ez,Htheta) directly. number of grid points along r direction. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedataclass_a7dee8b652907c73253c32891a2a08514}{nzintvrf}} = 1
+\begin{DoxyCompactList}\small\item\em number of grid points along z direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision \mbox{\hyperlink{namespacedataclass_a8ea08da279b20aa500095cba377a2de2}{rmaxrf}}
+\begin{DoxyCompactList}\small\item\em range in r and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_aae1944e971e5c71db5d8f21afceb0935}{rminrf}}
+\begin{DoxyCompactList}\small\item\em range in r and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a4646788256b1b461413c546d6df8ee88}{zmaxrf}}
+\begin{DoxyCompactList}\small\item\em range in r and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a24985c63a3d2c04ccb2cf299eff0c626}{zminrf}}
+\begin{DoxyCompactList}\small\item\em range in r and z directions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a2f3f7950dbca31f394856d31781256f3}{ezdata}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a4f3abc6db52a89363b184d4bec9ebff8}{erdata}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a09d27eeab42c3e3369268d8ce133a2c0}{btdata}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}} = 5000
+\begin{DoxyCompactList}\small\item\em using only on-\/axis field data and its derivities. initial number of grid points on the axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) \mbox{\hyperlink{namespacedataclass_aeed47a37719b1f84d885a1cb8a962081}{zdat}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. \end{DoxyCompactList}\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) \mbox{\hyperlink{namespacedataclass_a67357b933079ed021a94705c576fead0}{edat}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. \end{DoxyCompactList}\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) \mbox{\hyperlink{namespacedataclass_a2f77b697b14f3e0d557f044ea69402d8}{epdat}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. \end{DoxyCompactList}\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) \mbox{\hyperlink{namespacedataclass_a1c9d30100962693c922470368987ec8a}{eppdat}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) \mbox{\hyperlink{namespacedataclass_aedbb605bbae521fa94b55a592eaf5802}{zdatwk}}
+\begin{DoxyCompactList}\small\item\em discrete wake function, z, longitudinal, x and y wake function \end{DoxyCompactList}\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) \mbox{\hyperlink{namespacedataclass_aa19cbc20e7c55cc7625fe414eb6283d7}{edatwk}}
+\begin{DoxyCompactList}\small\item\em discrete wake function, z, longitudinal, x and y wake function \end{DoxyCompactList}\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) \mbox{\hyperlink{namespacedataclass_a0efc01b23a17c274db7c427517e41e22}{epdatwk}}
+\begin{DoxyCompactList}\small\item\em discrete wake function, z, longitudinal, x and y wake function \end{DoxyCompactList}\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) \mbox{\hyperlink{namespacedataclass_ab79752b3c2a7160b76ff3430350e23e3}{ep}}
+\begin{DoxyCompactList}\small\item\em discrete wake function, z, longitudinal, x and y wake function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacedataclass_aea44837b0eb59e9b5a864f3a59c7facc}{ncoeff}} = 401
+\begin{DoxyCompactList}\small\item\em using the Fourier coefficients number of Fourier expansion coefficients. \end{DoxyCompactList}\item 
+double precision, dimension(\mbox{\hyperlink{namespacedataclass_aea44837b0eb59e9b5a864f3a59c7facc}{ncoeff}}) \mbox{\hyperlink{namespacedataclass_ac8605e11e3fc14fbebbc843cc36c2836}{fcoef}}
+\begin{DoxyCompactList}\small\item\em Fcoef(1)\+: constant ~\newline
+ Fcoef(2k)\+: cosine term ~\newline
+ Fcoef(2k+1)\+: sine term ~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacedataclass_a72f075bdeedd35dc0962289e6f3461ba}{ndata}}
+\begin{DoxyCompactList}\small\item\em practical number of grid data on the axis or Fourier coefficients. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedataclass_ae1faef34fdc08790ab0a4d85650d797f}{ndatawk}}
+\begin{DoxyCompactList}\small\item\em practical number of grid data on the axis or Fourier coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+
+\subsection{Detailed Description}
+This class stores the rf cavity data Ez, Ez\textquotesingle{}, Ez\textquotesingle{}\textquotesingle{} on the axis; Fourier coefficients of Ez on the axis; Ez(r,z), Er(r,z), Htheta(r,z) on the r-\/z grid plane; and Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) on uniform x, y, z grid. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacedataclass_ac5b255034c2a115b6740378b4d1e630e}\label{namespacedataclass_ac5b255034c2a115b6740378b4d1e630e}} 
+\index{dataclass@{dataclass}!destruct\_data@{destruct\_data}}
+\index{destruct\_data@{destruct\_data}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{destruct\_data()}{destruct\_data()}}
+{\footnotesize\ttfamily subroutine dataclass\+::destruct\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_ac5b255034c2a115b6740378b4d1e630e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedataclass_a474ffe5e76484d63015aaf6255c27294}\label{namespacedataclass_a474ffe5e76484d63015aaf6255c27294}} 
+\index{dataclass@{dataclass}!init\_data@{init\_data}}
+\index{init\_data@{init\_data}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{init\_data()}{init\_data()}}
+{\footnotesize\ttfamily subroutine dataclass\+::init\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the data storage arrays. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{namespacedataclass_a474ffe5e76484d63015aaf6255c27294_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedataclass_a6733af7e3067d69140c61e2b4580a70b}\label{namespacedataclass_a6733af7e3067d69140c61e2b4580a70b}} 
+\index{dataclass@{dataclass}!read1\_data@{read1\_data}}
+\index{read1\_data@{read1\_data}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{read1\_data()}{read1\_data()}}
+{\footnotesize\ttfamily subroutine dataclass\+::read1\+\_\+data (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ifile }\end{DoxyParamCaption})}
+
+
+
+read in the discrete field data Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) distribution along axis zdat from files \char`\"{}rfdatax or rfdataxx 
+ or rfdataxxx\char`\"{}. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_a6733af7e3067d69140c61e2b4580a70b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_a6733af7e3067d69140c61e2b4580a70b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedataclass_a2fed396f3daf5a5c465b01235d98c776}\label{namespacedataclass_a2fed396f3daf5a5c465b01235d98c776}} 
+\index{dataclass@{dataclass}!read1wk\_data@{read1wk\_data}}
+\index{read1wk\_data@{read1wk\_data}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{read1wk\_data()}{read1wk\_data()}}
+{\footnotesize\ttfamily subroutine dataclass\+::read1wk\+\_\+data (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ifile }\end{DoxyParamCaption})}
+
+
+
+read in the discrete wake field data in z, x, y. distribution along axis zdat from files \char`\"{}rfdatax or rfdataxx 
+ or rfdataxxx\char`\"{}. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_a2fed396f3daf5a5c465b01235d98c776_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_a2fed396f3daf5a5c465b01235d98c776_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedataclass_abf0c8413e040d7ea8c0bc5df73c9ef96}\label{namespacedataclass_abf0c8413e040d7ea8c0bc5df73c9ef96}} 
+\index{dataclass@{dataclass}!read2\_data@{read2\_data}}
+\index{read2\_data@{read2\_data}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{read2\_data()}{read2\_data()}}
+{\footnotesize\ttfamily subroutine dataclass\+::read2\+\_\+data (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ifile }\end{DoxyParamCaption})}
+
+
+
+read in discrete Ez(r,z), Er(r,z) and Btheta(r,z) rf data from files "rfdatax.\+in or rfdataxx.\+in or rfdataxxx.\+in. Here, the grid is uniform in r and z. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_abf0c8413e040d7ea8c0bc5df73c9ef96_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedataclass_a39afae6095340e01362de7d4876aee60}\label{namespacedataclass_a39afae6095340e01362de7d4876aee60}} 
+\index{dataclass@{dataclass}!read3\_data@{read3\_data}}
+\index{read3\_data@{read3\_data}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{read3\_data()}{read3\_data()}}
+{\footnotesize\ttfamily subroutine dataclass\+::read3\+\_\+data (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ifile }\end{DoxyParamCaption})}
+
+
+
+readin the Fourier coefficients of the RF field from files \char`\"{}rfdatax or rfdataxx or rfdataxxx\char`\"{}. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_a39afae6095340e01362de7d4876aee60_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_a39afae6095340e01362de7d4876aee60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedataclass_a2ef1f00ff4295094270a70c5d3763019}\label{namespacedataclass_a2ef1f00ff4295094270a70c5d3763019}} 
+\index{dataclass@{dataclass}!read4\_data@{read4\_data}}
+\index{read4\_data@{read4\_data}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{read4\_data()}{read4\_data()}}
+{\footnotesize\ttfamily subroutine dataclass\+::read4\+\_\+data (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ifile }\end{DoxyParamCaption})}
+
+
+
+read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) rf data from files "rfdatax.\+in or rfdataxx.\+in or rfdataxxx.\+in. Here, the grid is uniform in x, y and z. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_a2ef1f00ff4295094270a70c5d3763019_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedataclass_a2ef1f00ff4295094270a70c5d3763019_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedataclass_a09d27eeab42c3e3369268d8ce133a2c0}\label{namespacedataclass_a09d27eeab42c3e3369268d8ce133a2c0}} 
+\index{dataclass@{dataclass}!btdata@{btdata}}
+\index{btdata@{btdata}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{btdata}{btdata}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:), allocatable dataclass\+::btdata}
+
+
+
+discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. 
+
+\mbox{\Hypertarget{namespacedataclass_ad10657f6c8e764ba3c355bd0e2c98a01}\label{namespacedataclass_ad10657f6c8e764ba3c355bd0e2c98a01}} 
+\index{dataclass@{dataclass}!bxgrid@{bxgrid}}
+\index{bxgrid@{bxgrid}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{bxgrid}{bxgrid}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:,\+:), allocatable dataclass\+::bxgrid}
+
+
+
+discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. 
+
+\mbox{\Hypertarget{namespacedataclass_aa12722da71ea440ed769b715936c87a3}\label{namespacedataclass_aa12722da71ea440ed769b715936c87a3}} 
+\index{dataclass@{dataclass}!bygrid@{bygrid}}
+\index{bygrid@{bygrid}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{bygrid}{bygrid}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:,\+:), allocatable dataclass\+::bygrid}
+
+
+
+discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. 
+
+\mbox{\Hypertarget{namespacedataclass_aabd84b55c65371356291620ee4dceb06}\label{namespacedataclass_aabd84b55c65371356291620ee4dceb06}} 
+\index{dataclass@{dataclass}!bzgrid@{bzgrid}}
+\index{bzgrid@{bzgrid}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{bzgrid}{bzgrid}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:,\+:), allocatable dataclass\+::bzgrid}
+
+
+
+discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. 
+
+\mbox{\Hypertarget{namespacedataclass_a67357b933079ed021a94705c576fead0}\label{namespacedataclass_a67357b933079ed021a94705c576fead0}} 
+\index{dataclass@{dataclass}!edat@{edat}}
+\index{edat@{edat}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{edat}{edat}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) dataclass\+::edat}
+
+
+
+discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. 
+
+\mbox{\Hypertarget{namespacedataclass_aa19cbc20e7c55cc7625fe414eb6283d7}\label{namespacedataclass_aa19cbc20e7c55cc7625fe414eb6283d7}} 
+\index{dataclass@{dataclass}!edatwk@{edatwk}}
+\index{edatwk@{edatwk}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{edatwk}{edatwk}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) dataclass\+::edatwk}
+
+
+
+discrete wake function, z, longitudinal, x and y wake function 
+
+\mbox{\Hypertarget{namespacedataclass_ab79752b3c2a7160b76ff3430350e23e3}\label{namespacedataclass_ab79752b3c2a7160b76ff3430350e23e3}} 
+\index{dataclass@{dataclass}!ep@{ep}}
+\index{ep@{ep}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{ep}{ep}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) dataclass\+::ep}
+
+
+
+discrete wake function, z, longitudinal, x and y wake function 
+
+\mbox{\Hypertarget{namespacedataclass_a2f77b697b14f3e0d557f044ea69402d8}\label{namespacedataclass_a2f77b697b14f3e0d557f044ea69402d8}} 
+\index{dataclass@{dataclass}!epdat@{epdat}}
+\index{epdat@{epdat}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{epdat}{epdat}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) dataclass\+::epdat}
+
+
+
+discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. 
+
+\mbox{\Hypertarget{namespacedataclass_a0efc01b23a17c274db7c427517e41e22}\label{namespacedataclass_a0efc01b23a17c274db7c427517e41e22}} 
+\index{dataclass@{dataclass}!epdatwk@{epdatwk}}
+\index{epdatwk@{epdatwk}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{epdatwk}{epdatwk}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) dataclass\+::epdatwk}
+
+
+
+discrete wake function, z, longitudinal, x and y wake function 
+
+\mbox{\Hypertarget{namespacedataclass_a1c9d30100962693c922470368987ec8a}\label{namespacedataclass_a1c9d30100962693c922470368987ec8a}} 
+\index{dataclass@{dataclass}!eppdat@{eppdat}}
+\index{eppdat@{eppdat}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{eppdat}{eppdat}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) dataclass\+::eppdat}
+
+
+
+discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. 
+
+\mbox{\Hypertarget{namespacedataclass_a4f3abc6db52a89363b184d4bec9ebff8}\label{namespacedataclass_a4f3abc6db52a89363b184d4bec9ebff8}} 
+\index{dataclass@{dataclass}!erdata@{erdata}}
+\index{erdata@{erdata}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{erdata}{erdata}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:), allocatable dataclass\+::erdata}
+
+
+
+discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. 
+
+\mbox{\Hypertarget{namespacedataclass_a3379b2d98107a6908aabb71e53031c00}\label{namespacedataclass_a3379b2d98107a6908aabb71e53031c00}} 
+\index{dataclass@{dataclass}!exgrid@{exgrid}}
+\index{exgrid@{exgrid}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{exgrid}{exgrid}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:,\+:), allocatable dataclass\+::exgrid}
+
+
+
+discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. 
+
+\mbox{\Hypertarget{namespacedataclass_a85c21f161fb74970fc84639092c193dd}\label{namespacedataclass_a85c21f161fb74970fc84639092c193dd}} 
+\index{dataclass@{dataclass}!eygrid@{eygrid}}
+\index{eygrid@{eygrid}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{eygrid}{eygrid}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:,\+:), allocatable dataclass\+::eygrid}
+
+
+
+discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. 
+
+\mbox{\Hypertarget{namespacedataclass_a2f3f7950dbca31f394856d31781256f3}\label{namespacedataclass_a2f3f7950dbca31f394856d31781256f3}} 
+\index{dataclass@{dataclass}!ezdata@{ezdata}}
+\index{ezdata@{ezdata}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{ezdata}{ezdata}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:), allocatable dataclass\+::ezdata}
+
+
+
+discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. 
+
+\mbox{\Hypertarget{namespacedataclass_aff9491f2e1258faccd2530eace979c78}\label{namespacedataclass_aff9491f2e1258faccd2530eace979c78}} 
+\index{dataclass@{dataclass}!ezgrid@{ezgrid}}
+\index{ezgrid@{ezgrid}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{ezgrid}{ezgrid}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:,\+:), allocatable dataclass\+::ezgrid}
+
+
+
+discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. 
+
+\mbox{\Hypertarget{namespacedataclass_ac8605e11e3fc14fbebbc843cc36c2836}\label{namespacedataclass_ac8605e11e3fc14fbebbc843cc36c2836}} 
+\index{dataclass@{dataclass}!fcoef@{fcoef}}
+\index{fcoef@{fcoef}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{fcoef}{fcoef}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_aea44837b0eb59e9b5a864f3a59c7facc}{ncoeff}}) dataclass\+::fcoef}
+
+
+
+Fcoef(1)\+: constant ~\newline
+ Fcoef(2k)\+: cosine term ~\newline
+ Fcoef(2k+1)\+: sine term ~\newline
+. 
+
+\mbox{\Hypertarget{namespacedataclass_aea44837b0eb59e9b5a864f3a59c7facc}\label{namespacedataclass_aea44837b0eb59e9b5a864f3a59c7facc}} 
+\index{dataclass@{dataclass}!ncoeff@{ncoeff}}
+\index{ncoeff@{ncoeff}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{ncoeff}{ncoeff}}
+{\footnotesize\ttfamily integer, parameter dataclass\+::ncoeff = 401}
+
+
+
+using the Fourier coefficients number of Fourier expansion coefficients. 
+
+\mbox{\Hypertarget{namespacedataclass_a72f075bdeedd35dc0962289e6f3461ba}\label{namespacedataclass_a72f075bdeedd35dc0962289e6f3461ba}} 
+\index{dataclass@{dataclass}!ndata@{ndata}}
+\index{ndata@{ndata}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{ndata}{ndata}}
+{\footnotesize\ttfamily integer dataclass\+::ndata}
+
+
+
+practical number of grid data on the axis or Fourier coefficients. 
+
+\mbox{\Hypertarget{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}\label{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}} 
+\index{dataclass@{dataclass}!ndataini@{ndataini}}
+\index{ndataini@{ndataini}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{ndataini}{ndataini}}
+{\footnotesize\ttfamily integer, parameter dataclass\+::ndataini = 5000}
+
+
+
+using only on-\/axis field data and its derivities. initial number of grid points on the axis. 
+
+\mbox{\Hypertarget{namespacedataclass_ae1faef34fdc08790ab0a4d85650d797f}\label{namespacedataclass_ae1faef34fdc08790ab0a4d85650d797f}} 
+\index{dataclass@{dataclass}!ndatawk@{ndatawk}}
+\index{ndatawk@{ndatawk}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{ndatawk}{ndatawk}}
+{\footnotesize\ttfamily integer dataclass\+::ndatawk}
+
+
+
+practical number of grid data on the axis or Fourier coefficients. 
+
+\mbox{\Hypertarget{namespacedataclass_a3b9a2feb5ab8139d532626cad00a9769}\label{namespacedataclass_a3b9a2feb5ab8139d532626cad00a9769}} 
+\index{dataclass@{dataclass}!nrintvrf@{nrintvrf}}
+\index{nrintvrf@{nrintvrf}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{nrintvrf}{nrintvrf}}
+{\footnotesize\ttfamily integer dataclass\+::nrintvrf = 1}
+
+
+
+using the r-\/z field data (Er,Ez,Htheta) directly. number of grid points along r direction. 
+
+\mbox{\Hypertarget{namespacedataclass_a6302bc97206196f7003db67abd75507e}\label{namespacedataclass_a6302bc97206196f7003db67abd75507e}} 
+\index{dataclass@{dataclass}!nxintvrfg@{nxintvrfg}}
+\index{nxintvrfg@{nxintvrfg}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{nxintvrfg}{nxintvrfg}}
+{\footnotesize\ttfamily integer dataclass\+::nxintvrfg = 1}
+
+
+
+number of grid points along x, y, and z direction. 
+
+\mbox{\Hypertarget{namespacedataclass_a32c01f4c7d58343edc8d318b2e5f4760}\label{namespacedataclass_a32c01f4c7d58343edc8d318b2e5f4760}} 
+\index{dataclass@{dataclass}!nyintvrfg@{nyintvrfg}}
+\index{nyintvrfg@{nyintvrfg}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{nyintvrfg}{nyintvrfg}}
+{\footnotesize\ttfamily integer dataclass\+::nyintvrfg = 1}
+
+
+
+number of grid points along x, y, and z direction. 
+
+\mbox{\Hypertarget{namespacedataclass_a7dee8b652907c73253c32891a2a08514}\label{namespacedataclass_a7dee8b652907c73253c32891a2a08514}} 
+\index{dataclass@{dataclass}!nzintvrf@{nzintvrf}}
+\index{nzintvrf@{nzintvrf}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{nzintvrf}{nzintvrf}}
+{\footnotesize\ttfamily integer dataclass\+::nzintvrf = 1}
+
+
+
+number of grid points along z direction. 
+
+\mbox{\Hypertarget{namespacedataclass_a53f757bd562f34f7e8e6bb58606fc289}\label{namespacedataclass_a53f757bd562f34f7e8e6bb58606fc289}} 
+\index{dataclass@{dataclass}!nzintvrfg@{nzintvrfg}}
+\index{nzintvrfg@{nzintvrfg}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{nzintvrfg}{nzintvrfg}}
+{\footnotesize\ttfamily integer dataclass\+::nzintvrfg = 1}
+
+
+
+number of grid points along x, y, and z direction. 
+
+\mbox{\Hypertarget{namespacedataclass_a8ea08da279b20aa500095cba377a2de2}\label{namespacedataclass_a8ea08da279b20aa500095cba377a2de2}} 
+\index{dataclass@{dataclass}!rmaxrf@{rmaxrf}}
+\index{rmaxrf@{rmaxrf}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{rmaxrf}{rmaxrf}}
+{\footnotesize\ttfamily double precision dataclass\+::rmaxrf}
+
+
+
+range in r and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_aae1944e971e5c71db5d8f21afceb0935}\label{namespacedataclass_aae1944e971e5c71db5d8f21afceb0935}} 
+\index{dataclass@{dataclass}!rminrf@{rminrf}}
+\index{rminrf@{rminrf}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{rminrf}{rminrf}}
+{\footnotesize\ttfamily double precision dataclass\+::rminrf}
+
+
+
+range in r and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_a32b5b26da65d1b3507a36c17029a18ae}\label{namespacedataclass_a32b5b26da65d1b3507a36c17029a18ae}} 
+\index{dataclass@{dataclass}!xmaxrfg@{xmaxrfg}}
+\index{xmaxrfg@{xmaxrfg}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{xmaxrfg}{xmaxrfg}}
+{\footnotesize\ttfamily double precision dataclass\+::xmaxrfg}
+
+
+
+range in x, y, and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_ab5b5b652fce1e93de12accd3514958a0}\label{namespacedataclass_ab5b5b652fce1e93de12accd3514958a0}} 
+\index{dataclass@{dataclass}!xminrfg@{xminrfg}}
+\index{xminrfg@{xminrfg}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{xminrfg}{xminrfg}}
+{\footnotesize\ttfamily double precision dataclass\+::xminrfg}
+
+
+
+range in x, y, and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_a79212aa125148748cc4bd5a11fff492f}\label{namespacedataclass_a79212aa125148748cc4bd5a11fff492f}} 
+\index{dataclass@{dataclass}!ymaxrfg@{ymaxrfg}}
+\index{ymaxrfg@{ymaxrfg}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{ymaxrfg}{ymaxrfg}}
+{\footnotesize\ttfamily double precision dataclass\+::ymaxrfg}
+
+
+
+range in x, y, and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_a5393ad3032e6f0311c62d03d468a6cf0}\label{namespacedataclass_a5393ad3032e6f0311c62d03d468a6cf0}} 
+\index{dataclass@{dataclass}!yminrfg@{yminrfg}}
+\index{yminrfg@{yminrfg}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{yminrfg}{yminrfg}}
+{\footnotesize\ttfamily double precision dataclass\+::yminrfg}
+
+
+
+range in x, y, and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_aeed47a37719b1f84d885a1cb8a962081}\label{namespacedataclass_aeed47a37719b1f84d885a1cb8a962081}} 
+\index{dataclass@{dataclass}!zdat@{zdat}}
+\index{zdat@{zdat}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{zdat}{zdat}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) dataclass\+::zdat}
+
+
+
+discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. 
+
+\mbox{\Hypertarget{namespacedataclass_aedbb605bbae521fa94b55a592eaf5802}\label{namespacedataclass_aedbb605bbae521fa94b55a592eaf5802}} 
+\index{dataclass@{dataclass}!zdatwk@{zdatwk}}
+\index{zdatwk@{zdatwk}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{zdatwk}{zdatwk}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{ndataini}}) dataclass\+::zdatwk}
+
+
+
+discrete wake function, z, longitudinal, x and y wake function 
+
+\mbox{\Hypertarget{namespacedataclass_a4646788256b1b461413c546d6df8ee88}\label{namespacedataclass_a4646788256b1b461413c546d6df8ee88}} 
+\index{dataclass@{dataclass}!zmaxrf@{zmaxrf}}
+\index{zmaxrf@{zmaxrf}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{zmaxrf}{zmaxrf}}
+{\footnotesize\ttfamily double precision dataclass\+::zmaxrf}
+
+
+
+range in r and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_a52b6a1ee39c205fce4ef2be72ab153aa}\label{namespacedataclass_a52b6a1ee39c205fce4ef2be72ab153aa}} 
+\index{dataclass@{dataclass}!zmaxrfg@{zmaxrfg}}
+\index{zmaxrfg@{zmaxrfg}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{zmaxrfg}{zmaxrfg}}
+{\footnotesize\ttfamily double precision dataclass\+::zmaxrfg}
+
+
+
+range in x, y, and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_a9c2398fd87701d5c0de37ff6b3357a0c}\label{namespacedataclass_a9c2398fd87701d5c0de37ff6b3357a0c}} 
+\index{dataclass@{dataclass}!zmin@{zmin}}
+\index{zmin@{zmin}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{zmin}{zmin}}
+{\footnotesize\ttfamily double precision dataclass\+::zmin}
+
+
+
+range in x, y, and z directions. 
+
+\mbox{\Hypertarget{namespacedataclass_a24985c63a3d2c04ccb2cf299eff0c626}\label{namespacedataclass_a24985c63a3d2c04ccb2cf299eff0c626}} 
+\index{dataclass@{dataclass}!zminrf@{zminrf}}
+\index{zminrf@{zminrf}!dataclass@{dataclass}}
+\subsubsection{\texorpdfstring{zminrf}{zminrf}}
+{\footnotesize\ttfamily double precision dataclass\+::zminrf}
+
+
+
+range in r and z directions. 
+

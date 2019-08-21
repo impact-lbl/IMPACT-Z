@@ -1,0 +1,240 @@
+\hypertarget{namespaceoutputclass}{}\section{outputclass Module Reference}
+\label{namespaceoutputclass}\index{outputclass@{outputclass}}
+
+
+This class defines functions to print out the charged particle beam information in the accelerator.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_aa94732fb01ea05e3a65d2cb9aa5a0402}{diagnostic1\+\_\+output}} (z, this, nchrg, nptlist)
+\begin{DoxyCompactList}\small\item\em calculate $<$x$^\wedge$2$>$,$<$xp$>$,$<$px$^\wedge$2$>$,x emittance, $<$y$^\wedge$2$>$,$<$ypy$>$, $<$py$^\wedge$2$>$ and y emittance, $<$z$^\wedge$2$>$,$<$zp$>$,$<$pz$^\wedge$2$>$,z emittance. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_a678b3c4ce8356d742c32eb555ee16f08}{diagnostic2\+\_\+output}} (this, z, nchrg, nptlist)
+\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_a4df9d27795de9f5c2d2a8827e2cb7adf}{diagnostict\+\_\+output}} (z, this)
+\begin{DoxyCompactList}\small\item\em calculate $<$x$^\wedge$2$>$,$<$xp$>$,$<$px$^\wedge$2$>$,x emittance, $<$y$^\wedge$2$>$,$<$ypy$>$, $<$py$^\wedge$2$>$ and y emittance, $<$z$^\wedge$2$>$,$<$zp$>$,$<$pz$^\wedge$2$>$,z emittance. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_a4ad23aaddd82d8307416875d28e5c512}{inpoint\+\_\+output}} (nfile, this, z, inb, jstp, ibal, nstep, nproc
+\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_a92eb6a8aec3f143754010f6e417e8ac2}{phaseout\+\_\+output}} (nfile, this)
+\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_a15a58393664c8a9ded7a8e259fc511e8}{outpoint\+\_\+output}} (nfile, this, z, inb, jstp, ibal, nstep, nprocrow, nproccol, geom)
+\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_a86742b646a584647da7837ee6fc09c89}{phase\+\_\+output}} (nfile, this, sample\+Period)
+\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_a49102c15c2635cf9b329a9ccb56a8db2}{dens3d\+\_\+output}} (nstep, nfile, this, totnptcls, xmni, xmxi, ym
+\begin{DoxyCompactList}\small\item\em output the 3D particle number density \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_ab7f55098e75e7410bbbb6ffa50148508}{dens2d\+\_\+output}} (nstep, nfile, this, totnptcls, xmnin, xmxin,
+\begin{DoxyCompactList}\small\item\em output 2D particle number density. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_ac66061da2efec314c456fc5e7ed4fc8b}{accdens1d\+\_\+output}} (nstep, nfile, this, nptot, rmxi, xmni, xmx
+\begin{DoxyCompactList}\small\item\em output the 1D accumulated particle density \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_acc8a8c481be8eb7a7ebb49852db14185}{dens1d\+\_\+output}} (nstep, nfile, this, nptot, rmxi, xmni, xmxi, ymni, ymxi)
+\begin{DoxyCompactList}\small\item\em output 1d particle density \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_af40e04d104fbdb28b9cae7fb5fcba121}{end\+\_\+output}} (time)
+\begin{DoxyCompactList}\small\item\em Terminate M\+PI. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceoutputclass_aaba51e45761070d95883093a25e402c4}{sliceprocdep\+\_\+output}} (pts, innp, npt, nslice, qchg, pmass, nfil
+\begin{DoxyCompactList}\small\item\em This program calculate the current profile, slice emittance and uncorrelated energy spread using linear deposition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines functions to print out the charged particle beam information in the accelerator. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceoutputclass_ac66061da2efec314c456fc5e7ed4fc8b}\label{namespaceoutputclass_ac66061da2efec314c456fc5e7ed4fc8b}} 
+\index{outputclass@{outputclass}!accdens1d\_output@{accdens1d\_output}}
+\index{accdens1d\_output@{accdens1d\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{accdens1d\_output()}{accdens1d\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::accdens1d\+\_\+output (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nstep,  }\item[{integer, intent(in)}]{nfile,  }\item[{type (beambunch), intent(in)}]{this,  }\item[{integer, intent(in)}]{nptot,  }\item[{double precision, intent(in)}]{rmxi,  }\item[{double precision, intent(in)}]{xmni,  }\item[{}]{xmx }\end{DoxyParamCaption})}
+
+
+
+output the 1D accumulated particle density 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_ac66061da2efec314c456fc5e7ed4fc8b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_acc8a8c481be8eb7a7ebb49852db14185}\label{namespaceoutputclass_acc8a8c481be8eb7a7ebb49852db14185}} 
+\index{outputclass@{outputclass}!dens1d\_output@{dens1d\_output}}
+\index{dens1d\_output@{dens1d\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{dens1d\_output()}{dens1d\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::dens1d\+\_\+output (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nstep,  }\item[{integer, intent(in)}]{nfile,  }\item[{type (beambunch), intent(in)}]{this,  }\item[{integer, intent(in)}]{nptot,  }\item[{double precision, intent(in)}]{rmxi,  }\item[{double precision, intent(in)}]{xmni,  }\item[{double precision, intent(in)}]{xmxi,  }\item[{double precision, intent(in)}]{ymni,  }\item[{double precision, intent(in)}]{ymxi }\end{DoxyParamCaption})}
+
+
+
+output 1d particle density 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_acc8a8c481be8eb7a7ebb49852db14185_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_ab7f55098e75e7410bbbb6ffa50148508}\label{namespaceoutputclass_ab7f55098e75e7410bbbb6ffa50148508}} 
+\index{outputclass@{outputclass}!dens2d\_output@{dens2d\_output}}
+\index{dens2d\_output@{dens2d\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{dens2d\_output()}{dens2d\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::dens2d\+\_\+output (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nstep,  }\item[{integer, intent(in)}]{nfile,  }\item[{type (beambunch), intent(in)}]{this,  }\item[{integer, intent(in)}]{totnptcls,  }\item[{double precision, intent(in)}]{xmnin,  }\item[{double precision, intent(in)}]{xmxin }\end{DoxyParamCaption})}
+
+
+
+output 2D particle number density. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_ab7f55098e75e7410bbbb6ffa50148508_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_a49102c15c2635cf9b329a9ccb56a8db2}\label{namespaceoutputclass_a49102c15c2635cf9b329a9ccb56a8db2}} 
+\index{outputclass@{outputclass}!dens3d\_output@{dens3d\_output}}
+\index{dens3d\_output@{dens3d\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{dens3d\_output()}{dens3d\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::dens3d\+\_\+output (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nstep,  }\item[{integer, intent(in)}]{nfile,  }\item[{type (beambunch), intent(in)}]{this,  }\item[{integer, intent(in)}]{totnptcls,  }\item[{double precision, intent(in)}]{xmni,  }\item[{double precision, intent(in)}]{xmxi,  }\item[{}]{ym }\end{DoxyParamCaption})}
+
+
+
+output the 3D particle number density 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_a49102c15c2635cf9b329a9ccb56a8db2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_aa94732fb01ea05e3a65d2cb9aa5a0402}\label{namespaceoutputclass_aa94732fb01ea05e3a65d2cb9aa5a0402}} 
+\index{outputclass@{outputclass}!diagnostic1\_output@{diagnostic1\_output}}
+\index{diagnostic1\_output@{diagnostic1\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{diagnostic1\_output()}{diagnostic1\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::diagnostic1\+\_\+output (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (beambunch), intent(in)}]{this,  }\item[{integer, intent(in)}]{nchrg,  }\item[{integer, dimension(nchrg), intent(in)}]{nptlist }\end{DoxyParamCaption})}
+
+
+
+calculate $<$x$^\wedge$2$>$,$<$xp$>$,$<$px$^\wedge$2$>$,x emittance, $<$y$^\wedge$2$>$,$<$ypy$>$, $<$py$^\wedge$2$>$ and y emittance, $<$z$^\wedge$2$>$,$<$zp$>$,$<$pz$^\wedge$2$>$,z emittance. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_aa94732fb01ea05e3a65d2cb9aa5a0402_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_a678b3c4ce8356d742c32eb555ee16f08}\label{namespaceoutputclass_a678b3c4ce8356d742c32eb555ee16f08}} 
+\index{outputclass@{outputclass}!diagnostic2\_output@{diagnostic2\_output}}
+\index{diagnostic2\_output@{diagnostic2\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{diagnostic2\_output()}{diagnostic2\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::diagnostic2\+\_\+output (\begin{DoxyParamCaption}\item[{type (beambunch), intent(in)}]{this,  }\item[{double precision, intent(in)}]{z,  }\item[{integer, intent(in)}]{nchrg,  }\item[{integer, dimension(nchrg), intent(in)}]{nptlist }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_a678b3c4ce8356d742c32eb555ee16f08_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_a4df9d27795de9f5c2d2a8827e2cb7adf}\label{namespaceoutputclass_a4df9d27795de9f5c2d2a8827e2cb7adf}} 
+\index{outputclass@{outputclass}!diagnostict\_output@{diagnostict\_output}}
+\index{diagnostict\_output@{diagnostict\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{diagnostict\_output()}{diagnostict\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::diagnostict\+\_\+output (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (beambunch), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+calculate $<$x$^\wedge$2$>$,$<$xp$>$,$<$px$^\wedge$2$>$,x emittance, $<$y$^\wedge$2$>$,$<$ypy$>$, $<$py$^\wedge$2$>$ and y emittance, $<$z$^\wedge$2$>$,$<$zp$>$,$<$pz$^\wedge$2$>$,z emittance. 
+
+\mbox{\Hypertarget{namespaceoutputclass_af40e04d104fbdb28b9cae7fb5fcba121}\label{namespaceoutputclass_af40e04d104fbdb28b9cae7fb5fcba121}} 
+\index{outputclass@{outputclass}!end\_output@{end\_output}}
+\index{end\_output@{end\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{end\_output()}{end\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::end\+\_\+output (\begin{DoxyParamCaption}\item[{double precision, intent(inout)}]{time }\end{DoxyParamCaption})}
+
+
+
+Terminate M\+PI. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_af40e04d104fbdb28b9cae7fb5fcba121_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_a4ad23aaddd82d8307416875d28e5c512}\label{namespaceoutputclass_a4ad23aaddd82d8307416875d28e5c512}} 
+\index{outputclass@{outputclass}!inpoint\_output@{inpoint\_output}}
+\index{inpoint\_output@{inpoint\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{inpoint\_output()}{inpoint\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::inpoint\+\_\+output (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nfile,  }\item[{type (beambunch), intent(out)}]{this,  }\item[{double precision, intent(out)}]{z,  }\item[{integer, intent(out)}]{inb,  }\item[{integer, intent(out)}]{jstp,  }\item[{integer, intent(out)}]{ibal,  }\item[{integer, intent(out)}]{nstep,  }\item[{}]{nproc }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{namespaceoutputclass_a4ad23aaddd82d8307416875d28e5c512_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_a15a58393664c8a9ded7a8e259fc511e8}\label{namespaceoutputclass_a15a58393664c8a9ded7a8e259fc511e8}} 
+\index{outputclass@{outputclass}!outpoint\_output@{outpoint\_output}}
+\index{outpoint\_output@{outpoint\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{outpoint\_output()}{outpoint\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::outpoint\+\_\+output (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nfile,  }\item[{type (beambunch), intent(in)}]{this,  }\item[{double precision, intent(in)}]{z,  }\item[{integer, intent(in)}]{inb,  }\item[{integer, intent(in)}]{jstp,  }\item[{integer, intent(in)}]{ibal,  }\item[{integer, intent(in)}]{nstep,  }\item[{integer, intent(in)}]{nprocrow,  }\item[{integer, intent(in)}]{nproccol,  }\item[{type(compdom), intent(in)}]{geom }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_a15a58393664c8a9ded7a8e259fc511e8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_a86742b646a584647da7837ee6fc09c89}\label{namespaceoutputclass_a86742b646a584647da7837ee6fc09c89}} 
+\index{outputclass@{outputclass}!phase\_output@{phase\_output}}
+\index{phase\_output@{phase\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{phase\_output()}{phase\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::phase\+\_\+output (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nfile,  }\item[{type (beambunch), intent(in)}]{this,  }\item[{integer}]{sample\+Period }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_a86742b646a584647da7837ee6fc09c89_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceoutputclass_a92eb6a8aec3f143754010f6e417e8ac2}\label{namespaceoutputclass_a92eb6a8aec3f143754010f6e417e8ac2}} 
+\index{outputclass@{outputclass}!phaseout\_output@{phaseout\_output}}
+\index{phaseout\_output@{phaseout\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{phaseout\_output()}{phaseout\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::phaseout\+\_\+output (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nfile,  }\item[{type (beambunch), intent(in)}]{this }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceoutputclass_aaba51e45761070d95883093a25e402c4}\label{namespaceoutputclass_aaba51e45761070d95883093a25e402c4}} 
+\index{outputclass@{outputclass}!sliceprocdep\_output@{sliceprocdep\_output}}
+\index{sliceprocdep\_output@{sliceprocdep\_output}!outputclass@{outputclass}}
+\subsubsection{\texorpdfstring{sliceprocdep\_output()}{sliceprocdep\_output()}}
+{\footnotesize\ttfamily subroutine outputclass\+::sliceprocdep\+\_\+output (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(\+:,\+:), pointer}]{pts,  }\item[{integer}]{innp,  }\item[{integer}]{npt,  }\item[{integer}]{nslice,  }\item[{real$\ast$8}]{qchg,  }\item[{real$\ast$8}]{pmass,  }\item[{}]{nfil }\end{DoxyParamCaption})}
+
+
+
+This program calculate the current profile, slice emittance and uncorrelated energy spread using linear deposition. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 26, 2012 
+\end{DoxyDate}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceoutputclass_aaba51e45761070d95883093a25e402c4_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,267 @@
+\hypertarget{_f_f_t_8f90}{}\section{src/\+Func/\+F\+FT.f90 File Reference}
+\label{_f_f_t_8f90}\index{src/Func/FFT.f90@{src/Func/FFT.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacefftclass_1_1fftcrlocal__fft}{fftclass\+::fftcrlocal\+\_\+fft}}
+\item 
+interface \mbox{\hyperlink{interfacefftclass_1_1fftrclocal__fft}{fftclass\+::fftrclocal\+\_\+fft}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacefftclass}{fftclass}}
+\begin{DoxyCompactList}\small\item\em Fourier function class in Math Function module of F\+U\+N\+C\+T\+I\+ON layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_acef38aed3ece8d2c1120ce0004e6297e}{fftclass\+::fft3d1\+\_\+fft}} (nx, ny, nz, nsizez, nsizey, nsizexy, nsizeyz, ksign, scalex, scaley, scalez, x, xstable, xrtable, ystable, yrtable, nprocrow, commrow, nproccol, commcol, comm2d, myidx, myidy, xout)
+\begin{DoxyCompactList}\small\item\em 3\+\_\+D F\+FT. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a21e8a7bd2877ec439bc4f0e0bc0e4681}{fftclass\+::invfft3d1\+\_\+fft}} (nz, ny, nx, nsizexy, nsizeyz, nsizey, nsizez, ksign, scalex, scaley, scalez, x, xstable, xrtable, ystable, yrtable, nprocrow, commrow, nproccol, commcol, comm2d, myidx, myidy, xout)
+\begin{DoxyCompactList}\small\item\em 3\+\_\+D inverse F\+FT for open B\+Cs. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a374c599138aeca237d4c303a07a470ee}{fftclass\+::invfft3d1img\+\_\+fft}} (nz, ny, nx, nsizexy, nsizeyz, nsizey, nsizez, ksign, scalex, scaley, scalez, x, xstable, xrtable, ystable, yrtable, nprocrow, commrow, nproccol, commcol, comm2d, myidx, myidy, xout)
+\begin{DoxyCompactList}\small\item\em 3\+\_\+D inverse F\+FT for open B\+Cs. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a501325267c1425bfece04a18e20efe31}{fftclass\+::fftlocal0\+\_\+fft}} (ksign, scale, x, ny, nsizex)
+\begin{DoxyCompactList}\small\item\em used to find the first derivative after F\+FT. Subroutine to perform 1D F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa64d94b8c8578b384955207a409a2445}{fftclass\+::fftlocal\+\_\+fft}} (ksign, scale, x, ny, nsizex)
+\begin{DoxyCompactList}\small\item\em Subroutine to perform 1D F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af33a24fc1bf4d5763c335c0cef247e3c}{fftclass\+::fftrclocal1\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\begin{DoxyCompactList}\small\item\em Subroutine to perform 1D real to complex F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a83a1c8ccf853ae07fdfc5a80e1e244d1}{fftclass\+::fftrclocal2\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a25ecfa928dd28501b9c251c1e887996b}{fftclass\+::fftcrlocal1\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\begin{DoxyCompactList}\small\item\em Subroutine to perform 1D complex to real F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a62d05d7b0980c823708d03f4a1520c1e}{fftclass\+::fftcrlocal2\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4597d420a1363f9fd0b652472d7caf52}{fftclass\+::four1}} (data, nn, isign)
+\begin{DoxyCompactList}\small\item\em Fast fourier transform. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a1aec6e8023ec23ff926a64c54c93ee1e}{fftclass\+::realft}} (data, n, isign)
+\begin{DoxyCompactList}\small\item\em real fast Fourier tranform \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_abcd5ef700f07a29fa9949e15866f5d41}{fftclass\+::sinft}} (y, ny)
+\begin{DoxyCompactList}\small\item\em fast discrete sine transform \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac4347b89b0b1a5894943daa3f37c54ee}{fftclass\+::cosft1\+\_\+fftpack}} (y, n)
+\begin{DoxyCompactList}\small\item\em fast discrete cosine transform \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a8f3b38a9f0433b6b847b670b98acab99}{fftclass\+::rvec\+\_\+pack2nr\+\_\+cosft1}} (r, ny, y)
+\begin{DoxyCompactList}\small\item\em transfer real vector from fftpack style to nr style for (forward) cost1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae1f9bdd4e66db530852187dff115ae36}{fftclass\+::rvec\+\_\+nr2pack\+\_\+sint1f}} (r, n, y)
+\begin{DoxyCompactList}\small\item\em transfer real vector from nr style to fftpack style for (forward) sint1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a667b3d13eccd40bf9e60f379f6d44e04}{fftclass\+::rvec\+\_\+pack2nr\+\_\+sint1f}} (r, n, y)
+\begin{DoxyCompactList}\small\item\em transfer real vector from fftpack style to nr style for (forward) sint 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac09ed442a8bb7846768adbe2d5c798c6}{fftclass\+::rvec\+\_\+nr2pack\+\_\+rfft1f}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from nr style to fftpack style for forward real fft 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac898bf50e64ca8c43e8d9fa0c2c85919}{fftclass\+::rvec\+\_\+pack2nr\+\_\+rfft1f}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from pack style to nr style for forward real fft 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a78a858cc72da790e88dc826f5bdd14b3}{fftclass\+::rvec\+\_\+nr2pack\+\_\+rfft1b}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from nr style to fftpack style for backward real fft 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a49a850047c36eff6fb6d5eb1669cb009}{fftclass\+::rvec\+\_\+pack2nr\+\_\+rfft1b}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from pack style to nr style for backward real fft 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2c47e8aa546c8ea9f5f23219be52d57e}{fftclass\+::rvec\+\_\+nr2pack\+\_\+gnl}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from nr style to fftpack style generally \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5b968c02330134b7f60b0b19e3192e77}{fftclass\+::rvec\+\_\+pack2nr\+\_\+gnl}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em tansfer real vector from fftpack style to nr style generally \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5b4381756639205cdda3aa66b4d3e98c}{fftclass\+::c1f2kb}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F2\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a0535bb9fc14fda824be9053638cdfb2a}{fftclass\+::c1f2kf}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F2\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af43eb54e0a7553e31585e67ad240b860}{fftclass\+::c1f3kb}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F3\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae586c2f39848274e0454c7d161522c31}{fftclass\+::c1f3kf}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F3\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a16b67c4056cd4bef03d70d6289f60954}{fftclass\+::c1f4kb}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F4\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4121c0b7de23d7df058852fb75a9a31a}{fftclass\+::c1f4kf}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F4\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa356856107611ad66966fed70ede74f1}{fftclass\+::c1f5kb}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F5\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a21d2647f4c2392ed5498288f99a3203c}{fftclass\+::c1f5kf}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F5\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac9b19ae24fcc92a08a29696cf60fd412}{fftclass\+::c1fgkb}} (ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2,
+\begin{DoxyCompactList}\small\item\em C1\+F\+G\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac6d6749fee5ff8e325bdf80834fa5337}{fftclass\+::c1fgkf}} (ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2,
+\begin{DoxyCompactList}\small\item\em C1\+F\+G\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2f5368919279e1986ee34764caa05fe0}{fftclass\+::c1fm1b}} (n, inc, c, ch, wa, fnf, fac)
+\begin{DoxyCompactList}\small\item\em C1\+F\+M1B is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a8870afa6b2bab24460d719026aa6e0d8}{fftclass\+::c1fm1f}} (n, inc, c, ch, wa, fnf, fac)
+\begin{DoxyCompactList}\small\item\em C1\+F\+M1F is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad484b97b5f8fc5ab868f25d7be0de7f8}{fftclass\+::cfft1b}} (n, inc, c, lenc, wsave, lensav, work, lenwrk, ier
+\begin{DoxyCompactList}\small\item\em C\+F\+F\+T1B\+: complex single precision backward fast Fourier transform, 1D. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a8ecbd8fa5a63e3cef089dbe7e91c6438}{fftclass\+::cfft1f}} (n, inc, c, lenc, wsave, lensav, work, lenwrk, ier
+\begin{DoxyCompactList}\small\item\em C\+F\+F\+T1F\+: complex single precision forward fast Fourier transform, 1D. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a7aaa42c1b45fc7175f2560cd023e4487}{fftclass\+::cfft1i}} (n, wsave, lensav, ier)
+\begin{DoxyCompactList}\small\item\em C\+F\+F\+T1I\+: initialization for C\+F\+F\+T1B and C\+F\+F\+T1F. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a718a5d0ac7052a9bcbcb9db18430dd61}{fftclass\+::cmf2kb}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F2\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a87e04f91c6fd5a8be5cce797b134f4c3}{fftclass\+::cmf2kf}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F2\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_afc9e57527719d38dc3716ee9bf6b090d}{fftclass\+::cmf3kb}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F3\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a449e799516aa491a87b0f5937a7abc86}{fftclass\+::cmf3kf}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F3\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad51087e9f2795e7bf337d4c6b55de780}{fftclass\+::cmf4kb}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F4\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_acdd67c6a77ecec55c036ab8899c07dee}{fftclass\+::cmf4kf}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F4\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4bf0caaf1c5caeb50490706cd35d82c5}{fftclass\+::cmf5kb}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a59cb57b66516dd0b08cf36e366933c56}{fftclass\+::cmf5kf}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ab1c60a144232626a03fad4dd30f88d7d}{fftclass\+::cmfgkb}} (lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, ch, ch1, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a317b5c8887b5c2ecb7e518f0c7058589}{fftclass\+::cmfgkf}} (lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, ch, ch1, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6684b378360642f160b255df6b3aa0bd}{fftclass\+::cosq1b}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a546e80f6eb00444bf4508ae26186e0d2}{fftclass\+::cosq1f}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ab281b0d26ef5d825f00696ab35e18e65}{fftclass\+::cosq1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4f908baf4cda5a6be5b71eb85fc9309c}{fftclass\+::cosqb1}} (n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a894b76f80148bf5d923d558356a6cc1a}{fftclass\+::cosqf1}} (n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a766146700483880896edee5e866f29a6}{fftclass\+::cosqmb}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, len
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a48467d0cccf9f7f93786f4997fe714f5}{fftclass\+::cosqmf}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a9851ac46e48072ac6c85e3c574a10dc5}{fftclass\+::cosqmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2bdaaab2b5d3130f8339f9463daa6db9}{fftclass\+::cost1b}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae01eaac3c675ef6c95b60a480bda63ba}{fftclass\+::cost1f}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa0605a45256c5ff2bfcd9229dd8854e4}{fftclass\+::cost1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2769de58926e8dc80c0fa9f862de7dce}{fftclass\+::costb1}} (n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af419be9c656e387f89facc1033cf4f55}{fftclass\+::costf1}} (n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a1bb83e3c96bf08b2789acf52feef22b8}{fftclass\+::costmb}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a04e4666f4382e42cf8e63ee5c44fc61a}{fftclass\+::costmf}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4e2ea9d14ac7ed425be8cb1fd1ed8ddf}{fftclass\+::costmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a91e23ffaebaadf2b1c22e689f69996a2}{fftclass\+::mcsqb1}} (lot, jump, n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a05d00644e8642979b2c55b7822bbfb03}{fftclass\+::mcsqf1}} (lot, jump, n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a10f96df2a58ce7f2e6ac9eaddf09588e}{fftclass\+::mcstb1}} (lot, jump, n, inc, x, wsave, dsum, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aac5cdc09f4e9979eb972972e1db55cb3}{fftclass\+::mcstf1}} (lot, jump, n, inc, x, wsave, dsum, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a39691ebdf781bf380b7ef426f4027896}{fftclass\+::mradb2}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a493cf432cfe190657e9a56a0d452b275}{fftclass\+::mradb3}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5aae50728c25b5089b6b3c61d3ef27eb}{fftclass\+::mradb4}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2, wa3)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a69781205c1568e37470a06e001a0dae7}{fftclass\+::mradb5}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2, wa3, wa4)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae156d4969bbcc9250a0dc81ee91d3cdf}{fftclass\+::mradbg}} (m, ido, ip, l1, idl1, cc, c1, c2, im1, in1, ch, ch2, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a577b893eadc27ccc53b888490cb1b873}{fftclass\+::mradf2}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4e99b7194e96b9a086f743a98205cc5a}{fftclass\+::mradf3}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aec86b95620b11b4db180468a4f771842}{fftclass\+::mradf4}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2, wa3)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ab6d74e30932fcf82744ac339de050933}{fftclass\+::mradf5}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2, wa3, wa4)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5741ec7db9519828a0c46df4355b734d}{fftclass\+::mradfg}} (m, ido, ip, l1, idl1, cc, c1, c2, im1, in1, ch, ch2, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a025f68a6ddd573ad3fa337835b621d3c}{fftclass\+::mrftb1}} (m, im, n, in, c, ch, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5b17cd46c9d021ed6dfe9499fc802b3f}{fftclass\+::mrftf1}} (m, im, n, in, c, ch, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a88a3f7fd420d15d4e4d603d4d8ebf38e}{fftclass\+::mrfti1}} (n, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aebd25014fd97baa3be31bda9b446e99f}{fftclass\+::msntb1}} (lot, jump, n, inc, x, wsave, dsum, xh, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a151bd1685dbe69c9c36a08ff00a7e10e}{fftclass\+::msntf1}} (lot, jump, n, inc, x, wsave, dsum, xh, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6cf75b3c3c340adb4eb40e50289cf439}{fftclass\+::r1f2kb}} (ido, l1, cc, in1, ch, in2, wa1)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a9d3bdd521a616fe934704cb38ac074f4}{fftclass\+::r1f2kf}} (ido, l1, cc, in1, ch, in2, wa1)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad450dc5bf08d49d4784e609c41b42950}{fftclass\+::r1f3kb}} (ido, l1, cc, in1, ch, in2, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a382f39146e7d8e1450810efdc6f4cd79}{fftclass\+::r1f3kf}} (ido, l1, cc, in1, ch, in2, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a71f9b9a5e0173f9ddef4dd0fc92e6164}{fftclass\+::r1f4kb}} (ido, l1, cc, in1, ch, in2, wa1, wa2, wa3)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac2e28efef69b7ac5c599c51dc9be973d}{fftclass\+::r1f4kf}} (ido, l1, cc, in1, ch, in2, wa1, wa2, wa3)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a42f5de07f4eb994cbe15a8526291566b}{fftclass\+::r1f5kb}} (ido, l1, cc, in1, ch, in2, wa1, wa2, wa3, wa4)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_acc419931cfa3ec3e19e6264b35e83aae}{fftclass\+::r1f5kf}} (ido, l1, cc, in1, ch, in2, wa1, wa2, wa3, wa4)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa5cb9e2d3b6aa9d5adcb4144cd17f10e}{fftclass\+::r1fgkb}} (ido, ip, l1, idl1, cc, c1, c2, in1, ch, ch2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_adb327056327448d0a605271d57091578}{fftclass\+::r1fgkf}} (ido, ip, l1, idl1, cc, c1, c2, in1, ch, ch2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6d2b5609d651241869584e962d234756}{fftclass\+::r2w}} (ldr, ldw, l, m, r, w)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad76d163c3f3aec3b5a3bbb3285498ffd}{fftclass\+::r4\+\_\+factor}} (n, nf, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aecf4238ff306578dd37cab143ce6efac}{fftclass\+::r4\+\_\+mcfti1}} (n, wa, fnf, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a882cd8d6eeb407d2b10ee9b3d9fee8b9}{fftclass\+::r4\+\_\+tables}} (ido, ip, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a22bddf5efe99e8dcd5737d2d73ae832f}{fftclass\+::r8\+\_\+factor}} (n, nf, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a89d64713ecbaec08b4d5180fcbc56cea}{fftclass\+::r8\+\_\+mcfti1}} (n, wa, fnf, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a68ac2e6dba058989d5e0d7fbee9aa19f}{fftclass\+::r8\+\_\+tables}} (ido, ip, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2bdd31e65a4abb79ed9e0eeaa71cee6b}{fftclass\+::rfft1b}} (n, inc, r, lenr, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad5aa2059236e01ea65aecda114c3f45f}{fftclass\+::rfft1f}} (n, inc, r, lenr, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_abb3d8b6f0166090db98de3e7d627434f}{fftclass\+::rfft1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a338a7a4db13f2357c42a682142df3190}{fftclass\+::rfftb1}} (n, in, c, ch, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af9f24f143ca02395c91f7757343e8003}{fftclass\+::rfftf1}} (n, in, c, ch, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a122822a405cd96e5df936acaad731746}{fftclass\+::rffti1}} (n, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_acc4295c5a3646519e26c3dd5ae66418d}{fftclass\+::rfftmb}} (lot, jump, n, inc, r, lenr, wsave, lensav, work, len
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4662111bc784aa321b0567a1a0578963}{fftclass\+::rfftmf}} (lot, jump, n, inc, r, lenr, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6a543283f910322f94293d719f923881}{fftclass\+::rfftmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6770a2a0c7bdf09af5ed719175fb4ca4}{fftclass\+::sinq1b}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a205d9dc43dfb082cdee420a4ae2fb269}{fftclass\+::sinq1f}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa0d2ffdfc38a79ecd1b47de75f3d1084}{fftclass\+::sinq1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa7e7e40b824e045f452a09a2e7abf333}{fftclass\+::sinqmb}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae56c7f24f27f2fb48f15359441b5e82f}{fftclass\+::sinqmf}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a642a9e3f241f3aaa6baf58741d4cdd3b}{fftclass\+::sinqmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ada18e37204cdb55b83be98eaecc27730}{fftclass\+::sint1b}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6ae22ff215b2e962b410eb1b9c4860d7}{fftclass\+::sint1f}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae156ccdcf953af967a42d20df0ddb725}{fftclass\+::sint1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af29f41f086c8e8901df2716d0b86db20}{fftclass\+::sintb1}} (n, inc, x, wsave, xh, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa79de4b10a068408990ac9ac8f32d134}{fftclass\+::sintf1}} (n, inc, x, wsave, xh, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4d9b6f96810b5b7a8b7dd38af74f5b55}{fftclass\+::sintmb}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a497c6a39bac7daa7973b53cb00ffd6c3}{fftclass\+::sintmf}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a9b28ecda04690fe2a4425da2b5625e4d}{fftclass\+::sintmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af191171f5e31fbad6c0e224faaf6175e}{fftclass\+::w2r}} (ldr, ldw, l, m, r, w)
+\item 
+logical function \mbox{\hyperlink{namespacefftclass_a16b89da06cf17773f6b5aec6883952c2}{fftclass\+::xercon}} (inc, jump, n, lot)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a3e1884f0fa20142f45f2d3efe3246adc}{fftclass\+::xerfft}} (srname, info)
+\end{DoxyCompactItemize}

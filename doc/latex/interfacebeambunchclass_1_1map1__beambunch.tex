@@ -1,0 +1,37 @@
+\hypertarget{interfacebeambunchclass_1_1map1__beambunch}{}\section{beambunchclass\+::map1\+\_\+beambunch Interface Reference}
+\label{interfacebeambunchclass_1_1map1__beambunch}\index{beambunchclass::map1\_beambunch@{beambunchclass::map1\_beambunch}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{interfacebeambunchclass_1_1map1__beambunch_a769f104462ef136329df136f5f531d27}{drift1\+\_\+beambunch}} (this, beamln, z, tau, bitype, nseg, nst, ih
+\begin{DoxyCompactList}\small\item\em Drift beam half step using linear map for external field. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{interfacebeambunchclass_1_1map1__beambunch_a5f0061ebcef646b860c6d44c6f93407c}{drift2\+\_\+beambunch}} (this, z, tau)
+\begin{DoxyCompactList}\small\item\em drift half step using nonlinear Lorentz integrator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{interfacebeambunchclass_1_1map1__beambunch_a769f104462ef136329df136f5f531d27}\label{interfacebeambunchclass_1_1map1__beambunch_a769f104462ef136329df136f5f531d27}} 
+\index{beambunchclass::map1\_beambunch@{beambunchclass::map1\_beambunch}!drift1\_beambunch@{drift1\_beambunch}}
+\index{drift1\_beambunch@{drift1\_beambunch}!beambunchclass::map1\_beambunch@{beambunchclass::map1\_beambunch}}
+\subsubsection{\texorpdfstring{drift1\_beambunch()}{drift1\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::map1\+\_\+beambunch\+::drift1\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{type (beamlineelem), intent(inout)}]{beamln,  }\item[{double precision, intent(inout)}]{z,  }\item[{double precision, intent(in)}]{tau,  }\item[{integer, intent(in)}]{bitype,  }\item[{integer, intent(in)}]{nseg,  }\item[{integer, intent(in)}]{nst,  }\item[{}]{ih }\end{DoxyParamCaption})}
+
+
+
+Drift beam half step using linear map for external field. 
+
+\mbox{\Hypertarget{interfacebeambunchclass_1_1map1__beambunch_a5f0061ebcef646b860c6d44c6f93407c}\label{interfacebeambunchclass_1_1map1__beambunch_a5f0061ebcef646b860c6d44c6f93407c}} 
+\index{beambunchclass::map1\_beambunch@{beambunchclass::map1\_beambunch}!drift2\_beambunch@{drift2\_beambunch}}
+\index{drift2\_beambunch@{drift2\_beambunch}!beambunchclass::map1\_beambunch@{beambunchclass::map1\_beambunch}}
+\subsubsection{\texorpdfstring{drift2\_beambunch()}{drift2\_beambunch()}}
+{\footnotesize\ttfamily subroutine beambunchclass\+::map1\+\_\+beambunch\+::drift2\+\_\+beambunch (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunch}}), intent(inout)}]{this,  }\item[{double precision, intent(inout)}]{z,  }\item[{double precision, intent(in)}]{tau }\end{DoxyParamCaption})}
+
+
+
+drift half step using nonlinear Lorentz integrator 
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Appl/\mbox{\hyperlink{_beam_bunch_8f90}{Beam\+Bunch.\+f90}}\end{DoxyCompactItemize}

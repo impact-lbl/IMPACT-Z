@@ -1,0 +1,9 @@
+<map id="beamlineelemclass::geterr_beamlineelem" name="beamlineelemclass::geterr_beamlineelem">
+<area shape="rect" id="node1" title=" " alt="" coords="557,100,704,139"/>
+<area shape="rect" id="node2" href="$namespacebeambunchclass.html#aea8cfefa2f70ade95202cc40f015f7bf" title="shift and rotate the beam at the leading edge of the element" alt="" coords="307,5,488,44"/>
+<area shape="rect" id="node5" href="$namespacebeambunchclass.html#ab2f6f9e95d5786dab15c1b73f305e349" title="shift and rotate the beam at the tail edge of the element" alt="" coords="306,68,488,107"/>
+<area shape="rect" id="node6" href="$namespacebeambunchclass.html#add3fe05fd157f9a0d3f09445660f038e" title="scatter grid quantity onto particles." alt="" coords="297,131,497,169"/>
+<area shape="rect" id="node7" href="$namespacebeambunchclass.html#a2395bc91f4fc52175d8a5cc92890bb83" title=" " alt="" coords="286,193,509,232"/>
+<area shape="rect" id="node3" href="$namespaceaccsimulatorclass.html#acbe26eeaf1cb4076384b90e1016785f0" title="Run beam dynamics simulation through accelerator." alt="" coords="104,37,238,76"/>
+<area shape="rect" id="node4" href="$main_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="v.1.0" alt="" coords="5,44,56,69"/>
+</map>

@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Solclass: Solenoid beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Authors: Ji Qiang, LBNL
-! Description: This class defines the linear transfer map and field
-!              for the Solenoid beam line elment.
+!
+! MODULE  : ... Solclass
+! VERSION : ... 1.0
+!> @authors
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the linear transfer map and field
+!> for the Solenoid beam line elment.
 ! Comments: The linear map does NOT work.
 !----------------------------------------------------------------
       module Solclass
@@ -14,7 +19,7 @@
         integer, private, parameter :: Nparam = 9
         type Sol
           !Itype = 3
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 3
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -328,7 +333,7 @@
 
         end subroutine getBgradfld_Sol
 
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderr_Sol(pos,extfld,this,dx,dy,anglex,angley,&
                                   anglez)
         implicit none
@@ -385,9 +390,9 @@
 
         end subroutine getflderr_Sol
         
-        !get external field without displacement and rotation errors and
-        !with fringe field of Solenoid. (f(z) = b0 + bb*z)
-        !here, the length of the solenoid has to the effective hard-edge length + 2*aperature 
+        !> get external field without displacement and rotation errors and
+        !> with fringe field of Solenoid. (f(z) = b0 + bb*z)
+        !> here, the length of the solenoid has to the effective hard-edge length + 2*aperature 
         subroutine  getfld_Sol(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -434,8 +439,8 @@
 
         end subroutine getfld_Sol
 
-        !get external field without displacement and rotation errors and
-        !with fringe field of Solenoid. (f(z) = b0 + bb*z^2 + cc*z^4,f(x0)=0,f'(x0)=0)
+        !> get external field without displacement and rotation errors and
+        !> with fringe field of Solenoid. (f(z) = b0 + bb*z^2 + cc*z^4,f(x0)=0,f'(x0)=0)
         subroutine  getfldold_Sol(pos,extfld,this)
         implicit none
         include 'mpif.h'

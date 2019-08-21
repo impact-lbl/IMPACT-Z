@@ -1,0 +1,9 @@
+<map id="fldmgerclass::guardexch1_fldmger" name="fldmgerclass::guardexch1_fldmger">
+<area shape="rect" id="node1" title="exchange grid information between neighboring guard cell to calculate E from phi." alt="" coords="5,131,179,169"/>
+<area shape="rect" id="node2" href="$namespacepgrid2dclass.html#ac088657db5b1deb05bb1ec732579ba53" title="get the total number of PEs, PEs in column and row communicators." alt="" coords="234,5,380,44"/>
+<area shape="rect" id="node3" href="$namespacepgrid2dclass.html#a559d4550356f88440ae55fceda480de2" title="get my rank position in 2d, column, and row communicators." alt="" coords="233,68,381,107"/>
+<area shape="rect" id="node4" href="$namespacepgrid2dclass.html#a550cb1b5c94a9e168c3e0108bb8a6d5b" title="get 2D, column, and row communicators." alt="" coords="228,131,386,169"/>
+<area shape="rect" id="node5" href="$namespacetimerclass.html#afb272bcdcff72d225c2df5862630025c" title=" " alt="" coords="237,193,377,232"/>
+<area shape="rect" id="node7" href="$namespacetimerclass.html#a3378d323d442f85aff95ab73cd13376d" title=" " alt="" coords="227,256,387,295"/>
+<area shape="rect" id="node6" href="$namespacempistub.html#a2456432a60801629e19273ebe4114bc9" title="mpi timing" alt="" coords="435,232,574,257"/>
+</map>

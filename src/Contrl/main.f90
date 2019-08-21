@@ -1,6 +1,6 @@
 !----------------------------------------------------------------
 !*** Copyright Notice ***
-!IMPACT-Zâ Copyright (c) 2016, The Regents of the University of California, through 
+!IMPACT-Zï¿½ Copyright (c) 2016, The Regents of the University of California, through 
 !Lawrence Berkeley National Laboratory (subject to receipt of any required approvals 
 !from the U.S. Dept. of Energy).  All rights reserved.
 !If you have questions about your rights to use or distribute this software, 
@@ -11,7 +11,8 @@
 !worldwide license in the Software to reproduce, distribute copies to the public, prepare 
 !derivative works, and perform publicly and display publicly, and to permit other to do so.
 !****************************
-! Description: v.1.0
+! DESCRIPTION: 
+!> v.1.0
 ! Comments:
 !----------------------------------------------------------------
       program main

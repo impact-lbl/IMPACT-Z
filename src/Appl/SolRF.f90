@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! SolRFclass: Solenoid with imbeded RF field beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the linear transfer map and RF field
-!              for the Sol-RF beam line elment.
+!
+! MODULE  : ... SolRFclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the linear transfer map and RF field
+!> for the Sol-RF beam line elment.
 ! Comments:
 !----------------------------------------------------------------
       module SolRFclass
@@ -14,7 +19,7 @@
         integer, private, parameter :: Nparam = 15
         type SolRF
           !Itype = 105
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 105
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -352,7 +357,7 @@
  
         end subroutine intfunc1_SolRF
 
-        !interpolate the field from the SolRF rf cavity onto bunch location.
+        !> interpolate the field from the SolRF rf cavity onto bunch location.
         subroutine getaxfldE_SolRF(z,this,ez1,ezp1,ezpp1)
         implicit none
         include 'mpif.h'
@@ -478,7 +483,7 @@
 
         end subroutine getBgradfld_SolRF
 
-        !get external field without displacement and rotation errors.
+        !> get external field without displacement and rotation errors.
         subroutine  getfld_SolRF(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -627,7 +632,7 @@
 
         end subroutine getfld_SolRF
 
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderr_SolRF(pos,extfld,this,dx,dy,anglex,angley,&
                                     anglez)
         implicit none

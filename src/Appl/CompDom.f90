@@ -2,30 +2,35 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! CompDomclass: 3D global and local computational domain class in 
 !               Computational Domain module of APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines 3-D global and local computational domain
-!              in the parallel simulation.
+! 
+! MODULE  : ... CompDomclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+! 
+! DESCRIPTION: 
+!> This class defines 3-D global and local computational domain
+!> in the parallel simulation.
 ! Comments:
 !----------------------------------------------------------------
       module CompDomclass
         use Timerclass
         use Pgrid2dclass
-        integer, private, parameter :: Ndim = 3   !spatial dimension
+        integer, private, parameter :: Ndim = 3   !< spatial dimension
         interface setlctab_CompDom
           module procedure setlctab1_CompDom, setlctab2_CompDom
         end interface
         type CompDom
 !          private
-          !spatial range in each dimenion.
+          !> spatial range in each dimenion.
           double precision, dimension(2*Ndim) :: SpatRange
           double precision, dimension(2*Ndim) :: Sptrnglocal
-          !mesh size in each dimension.
+          !> mesh size in each dimension.
           double precision, dimension(Ndim) :: Meshsize
-          !# of mesh points in each dimension.
+          !> \# of mesh points in each dimension.
           integer, dimension(Ndim) :: Meshnum
           integer, dimension(Ndim) :: Mshlocal
-          !ymin, ymax, # of y grids on local processor.
+          !> ymin, ymax, \# of y grids on local processor.
           double precision, pointer, dimension(:,:,:) :: LcTabrg
           integer, pointer, dimension(:,:,:) :: LcTabnm
         end type CompDom
@@ -33,9 +38,9 @@
           module procedure init_CompDom
         end interface
       contains
-        ! calculate the initial computational geometry parameters
-        ! and double precision parameters. Here, computational domain is mapped
-        ! onto a one dimension processor array in y direction. 
+        !> calculate the initial computational geometry parameters
+        !> and double precision parameters. Here, computational domain is mapped
+        !> onto a one dimension processor array in y direction. 
         subroutine init_CompDom(this,distparam,nparam, &
                flg,nx,ny,nz,grid2d,nprocrow,nproccol,Flagbc,xrad,yrad,perd)
         implicit none
@@ -477,7 +482,7 @@
         
         end subroutine init_CompDom
 
-        !update geometry parameters using new particle positions.
+        !> update geometry parameters using new particle positions.
         subroutine update_CompDom(this, ptrange, grid2d, Flagbc)
         implicit none
         include 'mpif.h'
@@ -794,7 +799,7 @@
 
         end subroutine update_CompDom
 
-        !update geometry parameters using new particle positions.
+        !> update geometry parameters using new particle positions.
         subroutine updateold_CompDom(this, inrange, grid2d, nplc)
         implicit none
         include 'mpif.h'
@@ -1101,8 +1106,8 @@
 
         end subroutine updateold_CompDom
 
-        ! find the balanced local domain geometry so that the number 
-        ! of particles on this domain about equal.
+        !> find the balanced local domain geometry so that the number 
+        !> of particles on this domain about equal.
         subroutine balance_CompDom(source,lctabnmz,lctabnmy,&
         lctabrgz,lctabrgy,npz,npy,commrow,commcol,innx,inny,innz,inyglb,&
         inzglb,hy,hz,ymin,zmin)

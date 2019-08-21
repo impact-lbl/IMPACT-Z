@@ -1,0 +1,159 @@
+\hypertarget{_beam_bunch_8f90}{}\section{src/\+Appl/\+Beam\+Bunch.f90 File Reference}
+\label{_beam_bunch_8f90}\index{src/Appl/BeamBunch.f90@{src/Appl/BeamBunch.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacebeambunchclass_structbeambunchclass_1_1beambunch}{beambunchclass\+::beambunch}}
+\item 
+interface \mbox{\hyperlink{interfacebeambunchclass_1_1map1__beambunch}{beambunchclass\+::map1\+\_\+beambunch}}
+\item 
+interface \mbox{\hyperlink{interfacebeambunchclass_1_1map2__beambunch}{beambunchclass\+::map2\+\_\+beambunch}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacebeambunchclass}{beambunchclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the charged particle beam bunch information in the accelerator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a1605e527eb41043dc5962da1e3bb5159}{beambunchclass\+::construct\+\_\+beambunch}} (this, incurr, inkin, inmass, incharge
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aea8cfefa2f70ade95202cc40f015f7bf}{beambunchclass\+::geomerrl\+\_\+beambunch}} (this, beamln)
+\begin{DoxyCompactList}\small\item\em shift and rotate the beam at the leading edge of the element \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ab2f6f9e95d5786dab15c1b73f305e349}{beambunchclass\+::geomerrt\+\_\+beambunch}} (this, beamln)
+\begin{DoxyCompactList}\small\item\em shift and rotate the beam at the tail edge of the element \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a3be2b49f0fef567493258758c44fffd6}{beambunchclass\+::drift1org\+\_\+beambunch}} (this, beamln, z, tau)
+\begin{DoxyCompactList}\small\item\em Drift beam half step using linear map for external field. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a212c0d38a812d95f238d7da7f29ac17c}{beambunchclass\+::drift1\+\_\+beambunch}} (this, beamln, z, tau, bitype, nseg, nst, ih
+\begin{DoxyCompactList}\small\item\em Drift beam half step using linear map for external field. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a6e3aecf1a2cf3d54950c09c603c2f11c}{beambunchclass\+::drift2\+\_\+beambunch}} (this, z, tau)
+\begin{DoxyCompactList}\small\item\em drift half step using nonlinear Lorentz integrator \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a3f5a86fb4b3ff5b33efdfa76b1c52ce4}{beambunchclass\+::drift2halo\+\_\+beambunch}} (this, z, tau)
+\begin{DoxyCompactList}\small\item\em drift half step using nonlinear Lorentz integrator for halo study \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a618f97b46c83d8ca29a7cb05345d655e}{beambunchclass\+::lostcount\+\_\+beambunch}} (this, nplc, nptot, xrad, yrad)
+\begin{DoxyCompactList}\small\item\em counter the particles get lost outside the xrad and yrad. we have not put the lost through rf bucket yet. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a54a4d80405bb8fbde341ea9e46a224e4}{beambunchclass\+::lostcountxy\+\_\+beambunch}} (this, nplc, nptot, x1, x2, y1, y2)
+\begin{DoxyCompactList}\small\item\em counter the particles get lost outside the xrad and yrad. we have not put the lost through rf bucket yet. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ac5b1c15c02703f7339b67283bc9816bd}{beambunchclass\+::chgupdate\+\_\+beambunch}} (this, nchge, idchgold, qmcclist)
+\begin{DoxyCompactList}\small\item\em update the total current fraction of each charge state update total \# of ptcl for each charge state \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a030c80c97cd3523478e56fdaff0e7560}{beambunchclass\+::convforth0th\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em 0th order algorithm to transfer from z to t frame. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a35f6511340579ba6bb5f07bebf6d09d5}{beambunchclass\+::convforth1st\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em Linear(1st order) algorithm to transfer from z to t frame. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ad12625a90fb4a096ff15ba55f655b148}{beambunchclass\+::convback0th\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em 0th order algorithm to transfer from t to z frame. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a704068cca17e98c6568c1e6056d1c4d6}{beambunchclass\+::convback1st\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em Linear algorithm to transfer from t to z frame. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a374fdc0e530a8835113fcd674283a150}{beambunchclass\+::conv0thold\+\_\+beambunch}} (this, tau, rad, nplc, nptot)
+\begin{DoxyCompactList}\small\item\em from z to t beam frame 0th order approximation. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ad456951b863b3dfab6eb7fa018e17230}{beambunchclass\+::conv0th\+\_\+beambunch}} (this, tau, nplc, nptot, ptrange, Flagbc, perd, xrad, yrad)
+\begin{DoxyCompactList}\small\item\em from z to t beam frame 0th order transformation. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a0b46fd8b4c41577688761ad62175772b}{beambunchclass\+::conv1st\+\_\+beambunch}} (this, tau, nplc, nptot, ptrange, Flagbc, perd, xrad, yrad)
+\begin{DoxyCompactList}\small\item\em from z to t beam frame 1st order transformation. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_acacb775484bda2729c3da9adbbeffc53}{beambunchclass\+::cvbkforth1st\+\_\+beambunch}} (this)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_abf23fdc1e8ca69fe7fe8f2995fbc1bcc}{beambunchclass\+::kick1\+\_\+beambunch}} (this, tau, innx, inny, innz, temppotent, ptsgeom, grid, Flagbc, perdlen)
+\begin{DoxyCompactList}\small\item\em Here, all indices of potential are local to processor. Advance the particles in the velocity space using the force from the external field and the self space charge force interpolated from the grid to particles. (linear map) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a023a12f9279f0764fc57deda1bcb852f}{beambunchclass\+::scatter1\+\_\+beambunch}} (innp, innx, inny, innz, rays, exg, eyg, ezg, ptsgeom, npx, npy, myidx, myidy, gam, curr, tau, mass
+\begin{DoxyCompactList}\small\item\em scatter grid quantity onto particles using linear map. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a398a8735bfae34f0d7a9337c8e5ec621}{beambunchclass\+::kick2\+\_\+beambunch}} (this, beamelem, z, tau, innx, inny, innz, temppotent, ptsgeom, grid, Flagbc, flagerr)
+\begin{DoxyCompactList}\small\item\em Here, all indices of potential are local to processor. Advance the particles in the velocity space using the force from the external field and the self space charge force interpolated from the grid to particles. (Lorentz force) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_ad2054e6e5714a86db0112c5eb3978abb}{beambunchclass\+::scatter2\+\_\+beambunch}} (innp, innx, inny, innz, rays, exg, eyg, ezg, ptsgeom, npx, npy, myidx, myidy, tg, gam, curr, chge, mass, tau, z,
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a8a96c99996275cf03ceec41dc011695e}{beambunchclass\+::scatter20\+\_\+beambunch}} (innp, rays, tg, gam, chge, mass, tau, z, beamelem)
+\begin{DoxyCompactList}\small\item\em scatter grid quantity onto particles. only external fields are included \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_add3fe05fd157f9a0d3f09445660f038e}{beambunchclass\+::scatter20err\+\_\+beambunch}} (innp, rays, tg, gam, chge, mass, tau, z, beamelem)
+\begin{DoxyCompactList}\small\item\em scatter grid quantity onto particles. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a91563d467d36ccca8231ee2c62483246}{beambunchclass\+::charge\+\_\+beambunch}} (this, innp, innx, inny, innz, ptsgeom, grid, chgdens, Flagbc, perdlen)
+\begin{DoxyCompactList}\small\item\em All indices here are local to the processor. find charge density on grid from particles. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a2cf9a1a04b69a4b2509d80522112a3bd}{beambunchclass\+::setpts\+\_\+beambunch}} (this, inparticles, nptsin)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_af1b14b706bd1283ff6c5a7cec4b06c48}{beambunchclass\+::setnpt\+\_\+beambunch}} (this, innpt)
+\begin{DoxyCompactList}\small\item\em set local \# of particles. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aec332b229b76111b68db82b20ab2846e}{beambunchclass\+::getnpt\+\_\+beambunch}} (this, outnpt)
+\begin{DoxyCompactList}\small\item\em get local \# of particles. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_abc601844eaf85727173ebd3ef6d2b256}{beambunchclass\+::getpts\+\_\+beambunch}} (this, outparticles)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aa0438cba132ce3b2fdc8e053375c0097}{beambunchclass\+::deposit\+\_\+beambunch}} (innp, innx, inny, innz, rays, rho, ptsgeom, npx, npy, myidx, myidy)
+\begin{DoxyCompactList}\small\item\em deposit particles onto grid. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a0fe1e4d236f209b18f75b272bf07782d}{beambunchclass\+::destruct\+\_\+beambunch}} (this)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aef2d76ba15a23896de0838b2001d72b1}{beambunchclass\+::transfto\+\_\+beambunch}} (this, ptref)
+\begin{DoxyCompactList}\small\item\em transform the particle coordinates to local coordinate of \char`\"{}ptref\char`\"{}. Here, \char`\"{}ptref\char`\"{} coordinate has a rotation \char`\"{}theta\char`\"{} in y-\/z plane with respect to the orginal coordinate. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a89d32b2a56cd1eb84867e95897af307a}{beambunchclass\+::transfback\+\_\+beambunch}} (this, ptref)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a05e93a990ca0c8071c035d078ffb7bb0}{beambunchclass\+::rotto\+\_\+beambunch}} (this, ptref, ptrange)
+\begin{DoxyCompactList}\small\item\em rotate to the particle coordinates to local beam coordinate of \char`\"{}ptref\char`\"{}. Here, the local \char`\"{}z\char`\"{} direction has been enlarged by \char`\"{}gamma\char`\"{} for the space-\/charge calculation. Here, \char`\"{}ptref\char`\"{} coordinate has a rotation \char`\"{}theta\char`\"{} in x-\/z plane with respect to the orginal coordinate. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a3b4334f47908375d6a6dc12f1509397c}{beambunchclass\+::rotback\+\_\+beambunch}} (this, ptref)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a82f485cba1b5e039b1a25b4b4bd9d81f}{beambunchclass\+::convzt\+\_\+beambunch}} (this)
+\begin{DoxyCompactList}\small\item\em convert from z coordinates (x,px,y,py,phase,pt0-\/pt) to t frame coordinates (x,px,y,py,z,pz). Here, x normalized by xl, px = gamma beta\+\_\+x. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a9d14e9a28575e2d4d173669b8e0356a7}{beambunchclass\+::convtz\+\_\+beambunch}} (this, tout)
+\begin{DoxyCompactList}\small\item\em Linear algorithm to transfer from t to z frame after bend. The Cartesian coordinate has been rotated following the exit direction of the reference particle. The exit angle of the reference particle should correspond to the bend angle. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a8970622c75fe29b57d31607d71692976}{beambunchclass\+::drifthalft\+\_\+beambunch}} (this, t, tau)
+\begin{DoxyCompactList}\small\item\em drift half step in positions. Here, x, y, z are normalized by C $\ast$ Dt tau -\/ normalized step size (by Dt). the time \char`\"{}t\char`\"{} is normalized by the scaling frequency. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a119b1d68c4a2a790014a9408c2db1575}{beambunchclass\+::kickt\+\_\+beambunch}} (this, beamelem, z, tau, innx, inny, innz, temppotent, ptsgeom, grid, Flagbc, flagerr)
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a3da6bfdf683e278c6005fddbceac16db}{beambunchclass\+::scattert\+\_\+beambunch}} (innp, innx, inny, innz, rays, refpt, exg
+\begin{DoxyCompactList}\small\item\em Here, the update of the momentum is in the rotated coordinates since the boost direction is not along z but in the x-\/z plane ue to the bend magnet. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a80dd0ce0010992cda1f2ba4d873371e0}{beambunchclass\+::scattert0\+\_\+beambunch}} (innp, rays, refpt, tg, chge, mass, dt, z, beamelem)
+\begin{DoxyCompactList}\small\item\em Here, the update of the momentum is in the rotated coordinates since the boost direction is not along z but in the x-\/z plane due to the bend magnet. (Without Current) \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a02f7f46438747a0fb811de64b1ed95aa}{beambunchclass\+::kick1wake\+\_\+beambunch}} (this, tau, innx, inny, innz, temppoten
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a530cca8371b8decda64389ce29d10bcd}{beambunchclass\+::kick2wake\+\_\+beambunch}} (this, beamelem, z, tau, innx, inny, inn
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_aa17d706a08d23a054bf547514e796e6a}{beambunchclass\+::scatter2wake\+\_\+beambunch}} (innp, innx, inny, innz, rays, exg, eyg, ezg, ptsgeom, npx, npy, myidx, myidy, tg, gam, curr, chge, mass, tau, z,
+\item 
+subroutine \mbox{\hyperlink{namespacebeambunchclass_a2395bc91f4fc52175d8a5cc92890bb83}{beambunchclass\+::scatter2errwake\+\_\+beambunch}} (innp, innx, inny, innz, rays, ex
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{beambunchclass::beambunch@{beambunchclass::beambunch}}\label{structbeambunchclass_1_1beambunch}
+\Hypertarget{namespacebeambunchclass_structbeambunchclass_1_1beambunch}
+\subsubsection{type beambunchclass\+::beambunch}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacebeambunchclass_a555bb0dc53871a3f69755125598c8938}\label{namespacebeambunchclass_a555bb0dc53871a3f69755125598c8938}} 
+double precision&
+charge&
+beam freq, current, part. mass and charge. \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_a0611d8fb67f60eb1ea7a3df79c5de915}\label{namespacebeambunchclass_a0611d8fb67f60eb1ea7a3df79c5de915}} 
+double precision&
+current&
+beam freq, current, part. mass and charge. \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_abeaad3b1ce823a9c49cab5a8b96f5ff0}\label{namespacebeambunchclass_abeaad3b1ce823a9c49cab5a8b96f5ff0}} 
+double precision&
+mass&
+beam freq, current, part. mass and charge. \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_a20f5303645e1b7fa0cbfa88f81cda947}\label{namespacebeambunchclass_a20f5303645e1b7fa0cbfa88f81cda947}} 
+integer&
+npt&
+\# of total global macroparticles and local particles \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_a71a8687235fdc19d862fb13092b714a3}\label{namespacebeambunchclass_a71a8687235fdc19d862fb13092b714a3}} 
+integer&
+nptlocal&
+\# of total global macroparticles and local particles \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_af0d19c1e3e537ade010af8554783c8d7}\label{namespacebeambunchclass_af0d19c1e3e537ade010af8554783c8d7}} 
+double precision, dimension(:,:), pointer&
+pts1&
+particles type one. \\
+\hline
+
+\mbox{\Hypertarget{namespacebeambunchclass_a973e0e4ee1b24185bac1d727d2c074f5}\label{namespacebeambunchclass_a973e0e4ee1b24185bac1d727d2c074f5}} 
+double precision, dimension(6)&
+refptcl&
+reference particle \\
+\hline
+
+\end{DoxyFields}

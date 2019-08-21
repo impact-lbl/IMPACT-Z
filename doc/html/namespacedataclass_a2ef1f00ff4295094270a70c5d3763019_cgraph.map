@@ -1,0 +1,5 @@
+<map id="dataclass::read4_data" name="dataclass::read4_data">
+<area shape="rect" id="node1" title="read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) rf data from files ..." alt="" coords="5,31,158,56"/>
+<area shape="rect" id="node2" href="$namespacempistub.html#a3085e38e0e5d38df633afc7b2d92cebb" title="processor ID" alt="" coords="206,5,380,31"/>
+<area shape="rect" id="node3" href="$namespacempistub.html#a0d84064615f696d4877ad9f912d4cbef" title="synchronize communication" alt="" coords="221,55,364,80"/>
+</map>

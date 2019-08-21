@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! BeamBunchclass: Charged beam bunch class in Beam module of APPLICATION 
 !                 layer.
-! Version: 2.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the charged particle beam bunch 
-!              information in the accelerator.
+!
+! MODULE  : ... BeamBunchclass
+! VERSION : ... 2.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the charged particle beam bunch 
+!> information in the accelerator.
 ! Comments: 1) I have added the 3 attributes to the particle array:
 !           x,px,y,py,t,pt,charge/mass,charge weight,id. We have moved
 !           the charge*curr/freq/Ntot into the charge density calculation,
@@ -22,13 +27,21 @@
         use PhysConstclass
         type BeamBunch
 !          private
-          !beam freq, current, part. mass and charge.
+          !> @name
+        
+          !> @{
+          !> beam freq, current, part. mass and charge.
           double precision :: Current,Mass,Charge
-          !# of total global macroparticles and local particles
+          !> @}
+          !> @name
+          
+          !> @{
+          !> \# of total global macroparticles and local particles
           integer :: Npt,Nptlocal
-          !particles type one.
+          !> @}
+          !> particles type one.
           double precision, pointer, dimension(:,:) :: Pts1
-          !reference particle
+          !> reference particle
           double precision, dimension(6) :: refptcl
         end type BeamBunch
         interface map1_BeamBunch
@@ -59,7 +72,7 @@
 
         end subroutine construct_BeamBunch
 
-        !shift and rotate the beam at the leading edge of the element
+        !> shift and rotate the beam at the leading edge of the element
         subroutine geomerrL_BeamBunch(this,beamln)
         implicit none
         include 'mpif.h'
@@ -127,7 +140,7 @@
 
         end subroutine geomerrL_BeamBunch
 
-        !shift and rotate the beam at the tail edge of the element
+        !> shift and rotate the beam at the tail edge of the element
         subroutine geomerrT_BeamBunch(this,beamln)
         implicit none
         include 'mpif.h'
@@ -198,7 +211,7 @@
 
         end subroutine geomerrT_BeamBunch
 
-        ! Drift beam half step using linear map for external field.
+        !> Drift beam half step using linear map for external field.
         subroutine drift1org_BeamBunch(this,beamln,z,tau)
         implicit none
         include 'mpif.h'
@@ -246,7 +259,7 @@
 
         end subroutine drift1org_BeamBunch
 
-        ! Drift beam half step using linear map for external field.
+        !> Drift beam half step using linear map for external field.
         subroutine drift1_BeamBunch(this,beamln,z,tau,bitype,nseg,nst,ihlf)
         implicit none
         include 'mpif.h'
@@ -423,7 +436,7 @@
 
         end subroutine drift1_BeamBunch
 
-! drift half step using nonlinear Lorentz integrator
+        !> drift half step using nonlinear Lorentz integrator
         subroutine drift2_BeamBunch(this,z,tau)
         implicit none
         include 'mpif.h'
@@ -468,7 +481,7 @@
 
         end subroutine drift2_BeamBunch
 
-! drift half step using nonlinear Lorentz integrator for halo study
+        !> drift half step using nonlinear Lorentz integrator for halo study
         subroutine drift2halo_BeamBunch(this,z,tau)
         implicit none
         include 'mpif.h'
@@ -507,8 +520,8 @@
 
         end subroutine drift2halo_BeamBunch
 
-        !counter the particles get lost outside the xrad and yrad.
-        !we have not put the lost through rf bucket yet.
+        !> counter the particles get lost outside the xrad and yrad.
+        !> we have not put the lost through rf bucket yet.
         subroutine lostcount_BeamBunch(this,nplc,nptot,xrad,yrad)
         implicit none
         include 'mpif.h'
@@ -587,8 +600,8 @@
 
         end subroutine lostcount_BeamBunch
 
-        !counter the particles get lost outside the xrad and yrad.
-        !we have not put the lost through rf bucket yet.
+        !> counter the particles get lost outside the xrad and yrad.
+        !> we have not put the lost through rf bucket yet.
         subroutine lostcountXY_BeamBunch(this,nplc,nptot,x1,x2,&
                                          y1,y2)
         implicit none
@@ -643,8 +656,8 @@
 
         end subroutine lostcountXY_BeamBunch
 
-        !//update the total current fraction of each charge state
-        !//update total # of ptcl for each charge state
+        !> update the total current fraction of each charge state
+        !> update total \# of ptcl for each charge state
         subroutine chgupdate_BeamBunch(this,nchge,idchgold,qmcclist)
         implicit none
         include 'mpif.h'
@@ -687,7 +700,7 @@
 
         end subroutine chgupdate_BeamBunch
 
-        !0th order algorithm to transfer from z to t frame.
+        !> 0th order algorithm to transfer from z to t frame.
         subroutine convforth0th_BeamBunch(this)
         implicit none
         include 'mpif.h'
@@ -711,7 +724,7 @@
 
         end subroutine convforth0th_BeamBunch
 
-        !Linear(1st order) algorithm to transfer from z to t frame.
+        !> Linear(1st order) algorithm to transfer from z to t frame.
         subroutine convforth1st_BeamBunch(this)
         implicit none
         include 'mpif.h'
@@ -737,7 +750,7 @@
 
         end subroutine convforth1st_BeamBunch
 
-        !0th order algorithm to transfer from t to z frame.
+        !> 0th order algorithm to transfer from t to z frame.
         subroutine convback0th_BeamBunch(this)
         implicit none
         include 'mpif.h'
@@ -763,7 +776,7 @@
 
         end subroutine convback0th_BeamBunch
 
-        !Linear algorithm to transfer from t to z frame.
+        !> Linear algorithm to transfer from t to z frame.
         subroutine convback1st_BeamBunch(this)
         implicit none
         include 'mpif.h'
@@ -791,7 +804,7 @@
 
         end subroutine convback1st_BeamBunch
 
-        !from z to t beam frame 0th order approximation.
+        !> from z to t beam frame 0th order approximation.
         subroutine conv0thold_BeamBunch(this,tau,rad,nplc,nptot)
         implicit none
         include 'mpif.h'
@@ -844,7 +857,7 @@
 
         end subroutine conv0thold_BeamBunch
 
-        !from z to t beam frame 0th order transformation.
+        !> from z to t beam frame 0th order transformation.
         subroutine conv0th_BeamBunch(this,tau,nplc,nptot,ptrange,&
                                      Flagbc,perd,xrad,yrad)
         implicit none
@@ -1208,7 +1221,7 @@
 
         end subroutine conv0th_BeamBunch
 
-        !from z to t beam frame 1st order transformation.
+        !> from z to t beam frame 1st order transformation.
         subroutine conv1st_BeamBunch(this,tau,nplc,nptot,ptrange,&
                                      Flagbc,perd,xrad,yrad)
         implicit none
@@ -1660,10 +1673,10 @@
 
         end subroutine cvbkforth1st_BeamBunch
 
-        ! Here, all indices of potential are local to processor.
-        ! Advance the particles in the velocity space using the force
-        ! from the external field and the self space charge force
-        ! interpolated from the grid to particles. (linear map)
+        !> Here, all indices of potential are local to processor.
+        !> Advance the particles in the velocity space using the force
+        !> from the external field and the self space charge force
+        !> interpolated from the grid to particles. (linear map)
         subroutine kick1_BeamBunch(this,tau,innx,inny,innz,temppotent,&
                               ptsgeom,grid,Flagbc,perdlen)
         implicit none
@@ -1997,7 +2010,7 @@
 
         end subroutine kick1_BeamBunch
 
-        ! scatter grid quantity onto particles using linear map.
+        !> scatter grid quantity onto particles using linear map.
         subroutine scatter1_BeamBunch(innp,innx,inny,innz,rays,exg,&
                    eyg,ezg,ptsgeom,npx,npy,myidx,myidy,gam,curr,tau,mass,chrg)
         implicit none
@@ -2140,10 +2153,10 @@
 
         end subroutine scatter1_BeamBunch
 
-        ! Here, all indices of potential are local to processor.
-        ! Advance the particles in the velocity space using the force
-        ! from the external field and the self space charge force
-        ! interpolated from the grid to particles. (Lorentz force)
+        !> Here, all indices of potential are local to processor.
+        !> Advance the particles in the velocity space using the force
+        !> from the external field and the self space charge force
+        !> interpolated from the grid to particles. (Lorentz force)
         subroutine kick2_BeamBunch(this,beamelem,z,tau,innx,inny,innz, &
                              temppotent,ptsgeom,grid,Flagbc,flagerr)
         implicit none
@@ -2905,8 +2918,8 @@
 
         end subroutine scatter2_BeamBunch
 
-        ! scatter grid quantity onto particles.
-        ! only external fields are included
+        !> scatter grid quantity onto particles.
+        !> only external fields are included
         subroutine scatter20_BeamBunch(innp,rays,tg,gam,chge,mass,&
                                        tau,z,beamelem)
         implicit none
@@ -3242,7 +3255,7 @@
 
         end subroutine scatter20_BeamBunch
 
-        ! scatter grid quantity onto particles.
+        !> scatter grid quantity onto particles.
         subroutine scatter20err_BeamBunch(innp,rays,tg,gam,chge,mass,&
                                        tau,z,beamelem)
         implicit none
@@ -3433,8 +3446,8 @@
 
         end subroutine scatter20err_BeamBunch
 
-        !All indices here are local to the processor.
-        !find charge density on grid from particles.
+        !> All indices here are local to the processor.
+        !> find charge density on grid from particles.
         subroutine charge_BeamBunch(this,innp,innx,inny,innz,ptsgeom,&
                                     grid,chgdens,Flagbc,perdlen)
         implicit none
@@ -3545,7 +3558,7 @@
 
         end subroutine setpts_BeamBunch
 
-        ! set local # of particles.
+        !> set local \# of particles.
         subroutine setnpt_BeamBunch(this,innpt)
         implicit none
         include 'mpif.h'
@@ -3556,7 +3569,7 @@
 
         end subroutine setnpt_BeamBunch  
 
-        ! get local # of particles.
+        !> get local \# of particles.
         subroutine getnpt_BeamBunch(this,outnpt)
         implicit none
         include 'mpif.h'
@@ -3577,7 +3590,7 @@
 
         end subroutine getpts_BeamBunch
 
-        ! deposit particles onto grid.
+        !> deposit particles onto grid.
         subroutine deposit_BeamBunch(innp,innx,inny,innz,rays,rho,& 
                                 ptsgeom,npx,npy,myidx,myidy)
         implicit none
@@ -3677,9 +3690,9 @@
 
         end subroutine destruct_BeamBunch
 
-        !transform the particle coordinates to local coordinate of "ptref". 
-        !Here, "ptref" coordinate has a rotation "theta" in y-z plane with
-        !respect to the orginal coordinate.
+        !> transform the particle coordinates to local coordinate of "ptref". 
+        !> Here, "ptref" coordinate has a rotation "theta" in y-z plane with
+        !> respect to the orginal coordinate.
         subroutine transfto_BeamBunch(this,ptref)
         implicit none
         include 'mpif.h'
@@ -3735,11 +3748,11 @@
 
         end subroutine transfback_BeamBunch
 
-        !rotate to the particle coordinates to local beam coordinate of "ptref".
-        !Here, the local "z" direction has been enlarged by "gamma" for the space-charge
-        !calculation.
-        !Here, "ptref" coordinate has a rotation "theta" in x-z plane with
-        !respect to the orginal coordinate.
+        !> rotate to the particle coordinates to local beam coordinate of "ptref".
+        !> Here, the local "z" direction has been enlarged by "gamma" for the space-charge
+        !> calculation.
+        !> Here, "ptref" coordinate has a rotation "theta" in x-z plane with
+        !> respect to the orginal coordinate.
         subroutine rotto_BeamBunch(this,ptref,ptrange)
         implicit none
         include 'mpif.h'
@@ -3821,8 +3834,8 @@
  
         end subroutine rotback_BeamBunch
 
-        !convert from z coordinates (x,px,y,py,phase,pt0-pt) to 
-        !t frame coordinates (x,px,y,py,z,pz). Here, x normalized by xl, px = gamma beta_x.
+        !> convert from z coordinates (x,px,y,py,phase,pt0-pt) to 
+        !> t frame coordinates (x,px,y,py,z,pz). Here, x normalized by xl, px = gamma beta_x.
         subroutine convZT_BeamBunch(this)
         implicit none
         include 'mpif.h'
@@ -3832,8 +3845,8 @@
  
         gam = -this%refptcl(6)
  
-        ! The following steps go from z to t frame.
-        ! 2) Linear algorithm to transfer from z to t frame.
+        !> The following steps go from z to t frame.
+        !> 2) Linear algorithm to transfer from z to t frame.
         do i = 1, this%Nptlocal
           rcpgammai = 1.0/(-this%Pts1(6,i)+gam)
           betai = sqrt(1.0-rcpgammai*rcpgammai*(1+this%Pts1(2,i)**2+ &
@@ -3857,10 +3870,10 @@
           
         end subroutine convZT_BeamBunch
 
-        !Linear algorithm to transfer from t to z frame after bend.
-        !The Cartesian coordinate has been rotated following the exit direction 
-        !of the reference particle. The exit angle of the reference particle
-        !should correspond to the bend angle.
+        !> Linear algorithm to transfer from t to z frame after bend.
+        !> The Cartesian coordinate has been rotated following the exit direction 
+        !> of the reference particle. The exit angle of the reference particle
+        !> should correspond to the bend angle.
         subroutine convTZ_BeamBunch(this,tout)
         implicit none
         include 'mpif.h'
@@ -3924,10 +3937,10 @@
  
         end subroutine convTZ_BeamBunch
 
-        !//drift half step in positions.
-        !//Here, x, y, z are normalized by C * Dt
-        !//tau - normalized step size (by Dt).
-        !//the time "t" is normalized by the scaling frequency.
+        !> drift half step in positions.
+        !> Here, x, y, z are normalized by C * Dt
+        !> tau - normalized step size (by Dt).
+        !> the time "t" is normalized by the scaling frequency.
         subroutine drifthalfT_BeamBunch(this,t,tau)
         implicit none
         include 'mpif.h'
@@ -4281,9 +4294,9 @@
 
         end subroutine kickT_BeamBunch
 
-        !Here, the update of the momentum is in the rotated coordinates
-        !since the boost direction is not along z but in the x-z plane
-        !due to the bend magnet.
+        !> Here, the update of the momentum is in the rotated coordinates
+        !> since the boost direction is not along z but in the x-z plane
+        !> ue to the bend magnet.
         subroutine scatterT_BeamBunch(innp,innx,inny,innz,rays,refpt,exg,&
         eyg,ezg,ptsgeom,npx,npy,myidx,myidy,tg,chge,mass,dt,z,&
         beamelem)
@@ -4477,9 +4490,9 @@
 
         end subroutine scatterT_BeamBunch
 
-        !Here, the update of the momentum is in the rotated coordinates
-        !since the boost direction is not along z but in the x-z plane
-        !due to the bend magnet. (Without Current)
+        !> Here, the update of the momentum is in the rotated coordinates
+        !> since the boost direction is not along z but in the x-z plane
+        !> due to the bend magnet. (Without Current)
         subroutine scatterT0_BeamBunch(innp,rays,refpt,&
         tg,chge,mass,dt,z,beamelem)
         implicit none

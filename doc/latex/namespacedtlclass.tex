@@ -1,0 +1,312 @@
+\hypertarget{namespacedtlclass}{}\section{dtlclass Module Reference}
+\label{namespacedtlclass}\index{dtlclass@{dtlclass}}
+
+
+This class defines the linear transfer map and RF field for the D\+TL beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}
+\item 
+interface \mbox{\hyperlink{interfacedtlclass_1_1getparam__dtl}{getparam\+\_\+dtl}}
+\item 
+interface \mbox{\hyperlink{interfacedtlclass_1_1setparam__dtl}{setparam\+\_\+dtl}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a5f65e89a18b2765e966ea8c1db85aa0c}{construct\+\_\+dtl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aa8af784d85ac535b6238e9dd4d844be9}{setparam1\+\_\+dtl}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a267abecac3bfad96fd1ce717ba50c8b4}{setparam2\+\_\+dtl}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aaccb0362c1862fd4f4e34a23f1bb25b9}{setparam3\+\_\+dtl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_abd0fd1a590b8e198a5b7081e105f11e8}{getparam1\+\_\+dtl}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aac10b9bb174a986cd15c1f0a11369c57}{getparam2\+\_\+dtl}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_adb7337b9d81c5d4fef24ba72ad107cbe}{getparam3\+\_\+dtl}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_afcf262e9f63f2008931d898ff6d9973a}{maplinear\+\_\+dtl}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aa1988f1526102adea7683c31ce2164d9}{rk6i\+\_\+dtl}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a913997c12a39f072f1a2be1576dc59d2}{intfunc1\+\_\+dtl}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a1fb756446dfd217cc32e4a9088e7f4c7}{getaxflde\+\_\+dtl}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the D\+TL rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a79f0618eb609338c97470f6f8f05a848}{getbgradfld\+\_\+dtl}} (z, this, bgrad)
+\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_aa42e9d402234d9be025275b620c42326}{getflderrold\+\_\+dtl}} (pos, extfld, this, dx, dy, anglex, angley
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_ab866f108c00b307f9e7a55731eadafa4}{getflderr\+\_\+dtl}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with different field and Quad displacement and rotation errors. Here, there 2 displacement errors and rotation errors for Quad \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a9e97d93c8f7ec49afee134e3ffd3f900}{getfld\+\_\+dtl}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_ad87e70265bf1286abf4b2976d8ac37ac}{getfldpts\+\_\+dtl}} (pos, extfld, this, nplc)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedtlclass_a34e4fef41e0eab9b94f596f73059c2b7}{getflderrpts\+\_\+dtl}} (pos, extfld, this, dx, dy, anglex, angley
+\begin{DoxyCompactList}\small\item\em get external field with different field and Quad displacement and rotation errors. Here, there 2 displacement errors and rotation errors for Quad \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacedtlclass_adf04761c96168c3dc492c89c72194cea}{nparam}} = 25
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and RF field for the D\+TL beam line elment. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{dtlclass::dtl@{dtlclass::dtl}}\label{structdtlclass_1_1dtl}
+\Hypertarget{namespacedtlclass_structdtlclass_1_1dtl}
+\subsubsection{type dtlclass\+::dtl}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacedtlclass_a75f1d8c2908cb2ac40cd24dc45a122ff}\label{namespacedtlclass_a75f1d8c2908cb2ac40cd24dc45a122ff}} 
+integer&
+itype&
+Itype = 101. \\
+\hline
+
+\mbox{\Hypertarget{namespacedtlclass_ac3b7a490164af376dab82d59957bcdd3}\label{namespacedtlclass_ac3b7a490164af376dab82d59957bcdd3}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedtlclass_ad89c7805074fee80c05af3ae3861cb87}\label{namespacedtlclass_ad89c7805074fee80c05af3ae3861cb87}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedtlclass_ab0c5195ab0993ee3107484257b94cfe5}\label{namespacedtlclass_ab0c5195ab0993ee3107484257b94cfe5}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedtlclass_a95bc1c81e12444e39d8ea61b6e67ae34}\label{namespacedtlclass_a95bc1c81e12444e39d8ea61b6e67ae34}} 
+double precision, dimension(\mbox{\hyperlink{namespacedtlclass_adf04761c96168c3dc492c89c72194cea}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacedtlclass_a5f65e89a18b2765e966ea8c1db85aa0c}\label{namespacedtlclass_a5f65e89a18b2765e966ea8c1db85aa0c}} 
+\index{dtlclass@{dtlclass}!construct\_dtl@{construct\_dtl}}
+\index{construct\_dtl@{construct\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{construct\_dtl()}{construct\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::construct\+\_\+dtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedtlclass_a1fb756446dfd217cc32e4a9088e7f4c7}\label{namespacedtlclass_a1fb756446dfd217cc32e4a9088e7f4c7}} 
+\index{dtlclass@{dtlclass}!getaxflde\_dtl@{getaxflde\_dtl}}
+\index{getaxflde\_dtl@{getaxflde\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getaxflde\_dtl()}{getaxflde\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getaxflde\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{ez1,  }\item[{double precision, intent(out)}]{ezp1,  }\item[{double precision, intent(out)}]{ezpp1 }\end{DoxyParamCaption})}
+
+
+
+interpolate the field from the D\+TL rf cavity onto bunch location. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_a1fb756446dfd217cc32e4a9088e7f4c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedtlclass_a79f0618eb609338c97470f6f8f05a848}\label{namespacedtlclass_a79f0618eb609338c97470f6f8f05a848}} 
+\index{dtlclass@{dtlclass}!getbgradfld\_dtl@{getbgradfld\_dtl}}
+\index{getbgradfld\_dtl@{getbgradfld\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getbgradfld\_dtl()}{getbgradfld\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getbgradfld\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{bgrad }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_a79f0618eb609338c97470f6f8f05a848_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedtlclass_a9e97d93c8f7ec49afee134e3ffd3f900}\label{namespacedtlclass_a9e97d93c8f7ec49afee134e3ffd3f900}} 
+\index{dtlclass@{dtlclass}!getfld\_dtl@{getfld\_dtl}}
+\index{getfld\_dtl@{getfld\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getfld\_dtl()}{getfld\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getfld\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_a9e97d93c8f7ec49afee134e3ffd3f900_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedtlclass_ab866f108c00b307f9e7a55731eadafa4}\label{namespacedtlclass_ab866f108c00b307f9e7a55731eadafa4}} 
+\index{dtlclass@{dtlclass}!getflderr\_dtl@{getflderr\_dtl}}
+\index{getflderr\_dtl@{getflderr\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getflderr\_dtl()}{getflderr\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getflderr\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley,  }\item[{double precision, intent(in)}]{anglez }\end{DoxyParamCaption})}
+
+
+
+get external field with different field and Quad displacement and rotation errors. Here, there 2 displacement errors and rotation errors for Quad 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_ab866f108c00b307f9e7a55731eadafa4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedtlclass_aa42e9d402234d9be025275b620c42326}\label{namespacedtlclass_aa42e9d402234d9be025275b620c42326}} 
+\index{dtlclass@{dtlclass}!getflderrold\_dtl@{getflderrold\_dtl}}
+\index{getflderrold\_dtl@{getflderrold\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getflderrold\_dtl()}{getflderrold\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getflderrold\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+\mbox{\Hypertarget{namespacedtlclass_a34e4fef41e0eab9b94f596f73059c2b7}\label{namespacedtlclass_a34e4fef41e0eab9b94f596f73059c2b7}} 
+\index{dtlclass@{dtlclass}!getflderrpts\_dtl@{getflderrpts\_dtl}}
+\index{getflderrpts\_dtl@{getflderrpts\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getflderrpts\_dtl()}{getflderrpts\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getflderrpts\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, dimension(4,nplc), intent(in)}]{pos,  }\item[{double precision, dimension(6,nplc), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley }\end{DoxyParamCaption})}
+
+
+
+get external field with different field and Quad displacement and rotation errors. Here, there 2 displacement errors and rotation errors for Quad 
+
+\mbox{\Hypertarget{namespacedtlclass_ad87e70265bf1286abf4b2976d8ac37ac}\label{namespacedtlclass_ad87e70265bf1286abf4b2976d8ac37ac}} 
+\index{dtlclass@{dtlclass}!getfldpts\_dtl@{getfldpts\_dtl}}
+\index{getfldpts\_dtl@{getfldpts\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getfldpts\_dtl()}{getfldpts\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getfldpts\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, dimension(4,nplc), intent(in)}]{pos,  }\item[{double precision, dimension(6,nplc), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{nplc }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+\mbox{\Hypertarget{namespacedtlclass_abd0fd1a590b8e198a5b7081e105f11e8}\label{namespacedtlclass_abd0fd1a590b8e198a5b7081e105f11e8}} 
+\index{dtlclass@{dtlclass}!getparam1\_dtl@{getparam1\_dtl}}
+\index{getparam1\_dtl@{getparam1\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getparam1\_dtl()}{getparam1\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getparam1\+\_\+dtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedtlclass_aac10b9bb174a986cd15c1f0a11369c57}\label{namespacedtlclass_aac10b9bb174a986cd15c1f0a11369c57}} 
+\index{dtlclass@{dtlclass}!getparam2\_dtl@{getparam2\_dtl}}
+\index{getparam2\_dtl@{getparam2\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getparam2\_dtl()}{getparam2\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getparam2\+\_\+dtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedtlclass_adb7337b9d81c5d4fef24ba72ad107cbe}\label{namespacedtlclass_adb7337b9d81c5d4fef24ba72ad107cbe}} 
+\index{dtlclass@{dtlclass}!getparam3\_dtl@{getparam3\_dtl}}
+\index{getparam3\_dtl@{getparam3\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{getparam3\_dtl()}{getparam3\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::getparam3\+\_\+dtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedtlclass_a913997c12a39f072f1a2be1576dc59d2}\label{namespacedtlclass_a913997c12a39f072f1a2be1576dc59d2}} 
+\index{dtlclass@{dtlclass}!intfunc1\_dtl@{intfunc1\_dtl}}
+\index{intfunc1\_dtl@{intfunc1\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{intfunc1\_dtl()}{intfunc1\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::intfunc1\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{namespacedtlclass_a913997c12a39f072f1a2be1576dc59d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_a913997c12a39f072f1a2be1576dc59d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedtlclass_afcf262e9f63f2008931d898ff6d9973a}\label{namespacedtlclass_afcf262e9f63f2008931d898ff6d9973a}} 
+\index{dtlclass@{dtlclass}!maplinear\_dtl@{maplinear\_dtl}}
+\index{maplinear\_dtl@{maplinear\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{maplinear\_dtl()}{maplinear\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::maplinear\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_afcf262e9f63f2008931d898ff6d9973a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_afcf262e9f63f2008931d898ff6d9973a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedtlclass_aa1988f1526102adea7683c31ce2164d9}\label{namespacedtlclass_aa1988f1526102adea7683c31ce2164d9}} 
+\index{dtlclass@{dtlclass}!rk6i\_dtl@{rk6i\_dtl}}
+\index{rk6i\_dtl@{rk6i\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{rk6i\_dtl()}{rk6i\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::rk6i\+\_\+dtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_aa1988f1526102adea7683c31ce2164d9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedtlclass_aa1988f1526102adea7683c31ce2164d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedtlclass_aa8af784d85ac535b6238e9dd4d844be9}\label{namespacedtlclass_aa8af784d85ac535b6238e9dd4d844be9}} 
+\index{dtlclass@{dtlclass}!setparam1\_dtl@{setparam1\_dtl}}
+\index{setparam1\_dtl@{setparam1\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{setparam1\_dtl()}{setparam1\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::setparam1\+\_\+dtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedtlclass_a267abecac3bfad96fd1ce717ba50c8b4}\label{namespacedtlclass_a267abecac3bfad96fd1ce717ba50c8b4}} 
+\index{dtlclass@{dtlclass}!setparam2\_dtl@{setparam2\_dtl}}
+\index{setparam2\_dtl@{setparam2\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{setparam2\_dtl()}{setparam2\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::setparam2\+\_\+dtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedtlclass_aaccb0362c1862fd4f4e34a23f1bb25b9}\label{namespacedtlclass_aaccb0362c1862fd4f4e34a23f1bb25b9}} 
+\index{dtlclass@{dtlclass}!setparam3\_dtl@{setparam3\_dtl}}
+\index{setparam3\_dtl@{setparam3\_dtl}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{setparam3\_dtl()}{setparam3\_dtl()}}
+{\footnotesize\ttfamily subroutine dtlclass\+::setparam3\+\_\+dtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedtlclass_structdtlclass_1_1dtl}{dtl}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedtlclass_adf04761c96168c3dc492c89c72194cea}\label{namespacedtlclass_adf04761c96168c3dc492c89c72194cea}} 
+\index{dtlclass@{dtlclass}!nparam@{nparam}}
+\index{nparam@{nparam}!dtlclass@{dtlclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private dtlclass\+::nparam = 25\hspace{0.3cm}{\ttfamily [private]}}
+

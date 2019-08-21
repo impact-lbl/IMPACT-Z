@@ -1,0 +1,88 @@
+\hypertarget{_multipole_8f90}{}\section{src/\+Appl/\+Multipole.f90 File Reference}
+\label{_multipole_8f90}\index{src/Appl/Multipole.f90@{src/Appl/Multipole.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacemultipoleclass_structmultipoleclass_1_1multipole}{multipoleclass\+::multipole}}
+\item 
+interface \mbox{\hyperlink{interfacemultipoleclass_1_1getparam__multipole}{multipoleclass\+::getparam\+\_\+multipole}}
+\item 
+interface \mbox{\hyperlink{interfacemultipoleclass_1_1setparam__multipole}{multipoleclass\+::setparam\+\_\+multipole}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacemultipoleclass}{multipoleclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and field for the multipole (sextupole, octupole, decapole) beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_acce84c33b6ef25e4e2ee0572faa92b60}{multipoleclass\+::construct\+\_\+multipole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_a85869614f5049e8bb17c4f195011fca5}{multipoleclass\+::setparam1\+\_\+multipole}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_ac9e1b3b044ae69816a92317bcfd1bc05}{multipoleclass\+::setparam2\+\_\+multipole}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_ad752ec84fa7145abc1b9130eb8654867}{multipoleclass\+::setparam3\+\_\+multipole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_afc5919c9854c17e95241242284635eaf}{multipoleclass\+::getparam1\+\_\+multipole}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_a4ee9aad22a430e9de1e1abb8ea21b058}{multipoleclass\+::getparam2\+\_\+multipole}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_a75142a086a96c998e2ce878857d50179}{multipoleclass\+::getparam3\+\_\+multipole}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_ab9ed6db5fa3b4ea0f6e1a07cd6d57431}{multipoleclass\+::maplinear\+\_\+multipole}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_aebbed53759ae97dc55df35264c89274c}{multipoleclass\+::rk6i\+\_\+multipole}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_adba27354e821268f6cb786c415a5bc91}{multipoleclass\+::intfunc1\+\_\+multipole}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_ade719df1a7d0e47f6495032cb64b1450}{multipoleclass\+::getflderr\+\_\+multipole}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_af4fb9d3cfd9db2d92930fcda605fbe26}{multipoleclass\+::getfld\+\_\+multipole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacemultipoleclass_a8712b7622d8ed7c0e71cdc18204dcf46}{multipoleclass\+::getfldfrg\+\_\+multipole}} (zz, this, bgrad)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the SC rf cavity onto bunch location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacemultipoleclass_a67bb1a71461cf39cdd365adab7fec8b9}{multipoleclass\+::nparam}} = 10
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{multipoleclass::multipole@{multipoleclass::multipole}}\label{structmultipoleclass_1_1multipole}
+\Hypertarget{namespacemultipoleclass_structmultipoleclass_1_1multipole}
+\subsubsection{type multipoleclass\+::multipole}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacemultipoleclass_a0819a9c738ccf5ddd0aa69c2a7befd2a}\label{namespacemultipoleclass_a0819a9c738ccf5ddd0aa69c2a7befd2a}} 
+integer&
+itype&
+Itype = 5. \\
+\hline
+
+\mbox{\Hypertarget{namespacemultipoleclass_aa096a41e77f2a963837b3ec8d5b3324b}\label{namespacemultipoleclass_aa096a41e77f2a963837b3ec8d5b3324b}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacemultipoleclass_a4d8dd9ec28f1f2396c1fe8634b1ffb81}\label{namespacemultipoleclass_a4d8dd9ec28f1f2396c1fe8634b1ffb81}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacemultipoleclass_a7e808e5433de77a1defc9a21691400dc}\label{namespacemultipoleclass_a7e808e5433de77a1defc9a21691400dc}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacemultipoleclass_ab06c87e37bb85347c808f7e43bd9bd1f}\label{namespacemultipoleclass_ab06c87e37bb85347c808f7e43bd9bd1f}} 
+double precision, dimension(\mbox{\hyperlink{namespacemultipoleclass_a67bb1a71461cf39cdd365adab7fec8b9}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
