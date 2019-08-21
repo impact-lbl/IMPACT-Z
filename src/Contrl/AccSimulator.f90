@@ -138,9 +138,9 @@
         double precision :: z,xrad,yrad,phsini
         double precision, dimension(2) :: tmpdr 
         double precision, dimension(5) :: tmpcf 
-        double precision, dimension(8) :: tmpbpm 
+        double precision, dimension(10) :: tmpbpm 
         double precision, dimension(9) :: tmpquad
-        double precision, dimension(15) :: tmpdipole 
+        double precision, dimension(10) :: tmpdipole 
         double precision, dimension(11) :: tmprf
         double precision, dimension(15) :: tmpslrf
         double precision, dimension(14) :: tmp13
@@ -257,6 +257,8 @@
             tmpbpm(6) = val5(i)
             tmpbpm(7) = val6(i)
             tmpbpm(8) = val7(i)
+            tmpbpm(9) = val8(i)
+            tmpbpm(10) = val9(i)
             call setparam_BPM(beamln0(ibpm),tmpbpm)
             Blnelem(i) = assign_BeamLineElem(beamln0(ibpm))
             if(bitype(i).eq.-7) nfileout=bmpstp(i)
@@ -313,22 +315,22 @@
             idipole = idipole + 1
             call construct_Dipole(beamln10(idipole),bnseg(i),bmpstp(i),&
             bitype(i),blength(i))
-            tmpdipole(1) = 0.0
-            tmpdipole(2) = val1(i)
-            tmpdipole(3) = val2(i)
-            tmpdipole(4) = val3(i)
-            tmpdipole(5) = val4(i)
-            tmpdipole(6) = val5(i)
-            tmpdipole(7) = val6(i)
-            tmpdipole(8) = val7(i)
-            tmpdipole(9) = val8(i)
-            tmpdipole(10) = val9(i)
-            tmpdipole(11) = val10(i)
-            tmpdipole(12) = val11(i)
-            tmpdipole(13) = val12(i)
-            tmpdipole(14) = val13(i)
-            tmpdipole(15) = val14(i)
-            call setparam_Dipole(beamln10(idipole),tmpdipole)
+            tmpslrf(1) = 0.0
+            tmpslrf(2) = val1(i)
+            tmpslrf(3) = val2(i)
+            tmpslrf(4) = val3(i)
+            tmpslrf(5) = val4(i)
+            tmpslrf(6) = val5(i)
+            tmpslrf(7) = val6(i)
+            tmpslrf(8) = val7(i)
+            tmpslrf(9) = val8(i)
+            tmpslrf(10) = val9(i)
+            tmpslrf(11) = val10(i)
+            tmpslrf(12) = val11(i)
+            tmpslrf(13) = val12(i)
+            tmpslrf(14) = val13(i)
+            tmpslrf(15) = val14(i)
+            call setparam_Dipole(beamln10(idipole),tmpslrf)
             Blnelem(i) = assign_BeamLineElem(beamln10(idipole))
           else if(bitype(i).eq.5) then
             imultpole = imultpole + 1
@@ -547,12 +549,9 @@
         double precision :: hy,hz,ymin,zmin,piperad,zedge
         double precision :: tmp1,tmp2,tmp3,tmp4,rfile
         double precision, allocatable, dimension(:,:,:) :: chgdens
-        double precision, allocatable, dimension(:,:,:) :: besscoef
-        double precision, allocatable, dimension(:,:) :: bessnorm,gml
-        integer, allocatable, dimension(:) :: modth,pydisp
         integer :: nmod,k,ii,jj
         !double precision :: sumtest, sumtest2, sumtest3
-        double precision, dimension(8) :: drange
+        double precision, dimension(10) :: drange
         double precision, dimension(3) :: al0,ga0,epson0
         double precision :: realSamplePeriod,tg,tv,gam,piperad2
         integer :: nsubstep,integerSamplePeriod,Flagbctmp
@@ -578,7 +577,7 @@
             angB,tanphiB,tanphiBb,hF,hB,qm0,qmi,psi1,psi2,r0,gamn,gambet,&
             angz,dpi,ang0,hgap,betai,rcpgammai,ssll
         double precision, dimension(6) :: ptarry
-        double precision, dimension(10) :: dparam
+        double precision, dimension(15) :: dparam
         real*8 :: xradmin,xradmax,yradmin,yradmax
         real*8 :: zwkmin,bendlen,zbleng
         real*8 :: tmplump,b0,qmass,qchg,pmass, alphax0,betax0,alphay0,betay0,scwk
@@ -1354,13 +1353,6 @@
         deallocate(temptab)
         deallocate(chgdens)
         deallocate(tmpptcs)
-        if(Flagbc.eq.3) then
-          deallocate(besscoef)
-          deallocate(bessnorm)
-          deallocate(gml)
-          deallocate(pydisp)
-          deallocate(modth)
-        endif
         !deallocate(ztable)
         !deallocate(zdisp)
         deallocate(denszlc)
