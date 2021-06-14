@@ -13,11 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install GFortran
-        run: sudo apt install gfortran make
+        run: |
+          sudo apt-get update
+          sudo apt install gfortran make
 
       - name: Install MPI - ${{ matrix.mpi }}
         if: matrix.mpi != 'nompi'
-        run: sudo apt install lib${{ matrix.mpi }}-dev
+        run: |
+          sudo apt-get update
+          sudo apt install lib${{ matrix.mpi }}-dev
 
       - name: Build - No MPI
         if: matrix.mpi == 'nompi'
@@ -55,11 +59,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install GFortran
-        run: sudo apt install gfortran cmake
+        run: |
+          sudo apt-get update
+          sudo apt install gfortran cmake
 
       - name: Install MPI - ${{ matrix.mpi }}
         if: matrix.mpi != 'nompi'
-        run: sudo apt install lib${{ matrix.mpi }}-dev
+        run: |
+          sudo apt-get update
+          sudo apt install lib${{ matrix.mpi }}-dev
 
       - name: Build - No MPI
         if: matrix.mpi == 'nompi'
