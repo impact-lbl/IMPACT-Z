@@ -10,7 +10,7 @@ if(NOT DEFINED CMAKE_BUILD_TYPE)
 endif()
 
 # project name and language
-project(ImpactT LANGUAGES Fortran)
+project(ImpactZ LANGUAGES Fortran)
 
 option(USE_MPI "Activate MPI build" OFF)
 
@@ -66,9 +66,9 @@ else()
     list(APPEND _sources mpistub.f90)
 
     # Create mpif.h from mpif_single.h
-    configure_file(mpif_single.h ${ImpactT_BINARY_DIR}/include/mpif.h COPYONLY)
+    configure_file(mpif_single.h ${ImpactZ_BINARY_DIR}/include/mpif.h COPYONLY)
     # Add include dir above into search path
-    target_include_directories(${OUTPUT_NAME} PRIVATE $<BUILD_INTERFACE:${ImpactT_BINARY_DIR}/include>)
+    target_include_directories(${OUTPUT_NAME} PRIVATE $<BUILD_INTERFACE:${ImpactZ_BINARY_DIR}/include>)
 endif()
 
 # Associate source files with target
