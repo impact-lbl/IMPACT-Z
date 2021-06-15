@@ -5,8 +5,9 @@ cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 #set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Uncomment for Debug Build
-#set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_BUILD_TYPE Release)
+if(NOT DEFINED CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 # project name and language
 project(ImpactT LANGUAGES Fortran)
