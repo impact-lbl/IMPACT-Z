@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! BPMclass: Beam position monitor class in Lattice module of APPLICATION 
 !           layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the different beam diagnostics at given
-!              beam position.
+!
+! MODULE  : ... BPMclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+! 
+! DESCRIPTION: 
+!> This class defines the different beam diagnostics at given
+!> beam position.
 ! Comments:
 !  1) Itype = -1, shift the transverse centroid position to 0.
 !  2) Itype = -2, shift the transverse centroid position and angle to 0.
@@ -22,7 +27,7 @@
         integer, private, parameter :: Nparam = 10
         type BPM
           !Itype < 0
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype < 0
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -213,17 +218,20 @@
  
         end subroutine scale_BPM
 
-        !shift the beam centroid in the 6D phase space.
-        !This element can be used to model steering magnet etc.
-        !Here, the storage Param(3:8) is used to store the amount of shift.
-        !drange(3); shift in x (m)
-        !drange(4); shift in Px (rad)
-        !drange(5); shift in y (m)
-        !drange(6); shift in Py (rad)
-        !drange(7); shift in z (deg)
-        !drange(8); shift in Pz (MeV)
-        !gam; relativistic gamma factor for design particle
-        !mass; mass in eV/c^2
+        !------------------------------------------------------------------------
+        !> @brief
+        !> shift the beam centroid in the 6D phase space.
+        !> This element can be used to model steering magnet etc.
+        !> Here, the storage Param(3:8) is used to store the amount of shift.
+        !> drange(3); shift in x (m)
+        !> drange(4); shift in Px (rad)
+        !> drange(5); shift in y (m)
+        !> drange(6); shift in Py (rad)
+        !> drange(7); shift in z (deg)
+        !> drange(8); shift in Pz (MeV)
+        !> gam; relativistic gamma factor for design particle
+        !> mass; mass in eV/c^2
+        !------------------------------------------------------------------------
         subroutine kick_BPM(Pts1,innp,xshift,pxshift,yshift,pyshift,zshift,&
                    pzshift,gam,mass)
         implicit none
@@ -247,11 +255,14 @@
  
         end subroutine kick_BPM
 
-        !kick the beam longitudinally by the rf nonlinearity (the linear
-        !part has been included in the map integrator and substracted.)
-        !drange(3); vmax (V)
-        !drange(4); phi0 (degree)
-        !drange(5); horm number of rf
+        !----------------------------------------------------------------------
+        !> @brief
+        !> kick the beam longitudinally by the rf nonlinearity (the linear
+        !> part has been included in the map integrator and substracted.)
+        !> drange(3); vmax (V)
+        !> drange(4); phi0 (degree)
+        !> drange(5); horm number of rf
+        !----------------------------------------------------------------------
         subroutine kickRF_BPM(Pts1,innp,vmax,phi0,horm,mass)
         implicit none
         include 'mpif.h'
@@ -275,9 +286,9 @@
  
         end subroutine kickRF_BPM
 
-        !rotate the beam along longitudinal s-axis at given location
-        !using the MAD8 notation.
-        !btype = -18
+        !> rotate the beam along longitudinal s-axis at given location
+        !> using the MAD8 notation.
+        !> btype = -18
         subroutine srot_BPM(Pts1,innp,phi)
         implicit none
         include 'mpif.h'
@@ -300,7 +311,7 @@
  
         end subroutine srot_BPM
 
-        !shift the centroid of the longitudinal phase space
+        !> shift the centroid of the longitudinal phase space
         subroutine shiftlong_BPM(Pts1,itype,innp,nptot,tc,ptc)
         implicit none
         include 'mpif.h'
@@ -344,7 +355,7 @@
 
         end subroutine shiftlong_BPM
 
-        !The following subroutine increases the uncorrelated energy spread by heating
+        !> The following subroutine increases the uncorrelated energy spread by heating
         subroutine engheater_BPM(Pts1,innp,b0,qmass)
         implicit none
         include 'mpif.h'
@@ -384,13 +395,15 @@
         enddo
  
         end subroutine normVec1
-
-!        k0 = this%Param(3) !dipole
-!        k1 = this%Param(4) !quad
-!        k2 = this%Param(5) !sext
-!        k3 = this%Param(6) !oct
-!        k4 = this%Param(7) !dec
-!        k5 = this%Param(8) !dodec
+        !-----------------------------------------------------------------------
+        !> @brief
+        !> k0 = this%Param(3) !dipole
+        !> k1 = this%Param(4) !quad
+        !> k2 = this%Param(5) !sext
+        !> k3 = this%Param(6) !oct
+        !> k4 = this%Param(7) !dec
+        !> k5 = this%Param(8) !dodec
+        !-----------------------------------------------------------------------
         subroutine thinMultipole_BPM(Pts1in,innp,k0,k1,k2,k3,k4,k5,gam0,&
                                      qmass)
         implicit none

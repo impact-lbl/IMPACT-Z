@@ -1,0 +1,212 @@
+\hypertarget{namespacedrifttubeclass}{}\section{drifttubeclass Module Reference}
+\label{namespacedrifttubeclass}\index{drifttubeclass@{drifttubeclass}}
+
+
+This class defines the linear transfer map and field for the drift space beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}
+\item 
+interface \mbox{\hyperlink{interfacedrifttubeclass_1_1getparam__drifttube}{getparam\+\_\+drifttube}}
+\item 
+interface \mbox{\hyperlink{interfacedrifttubeclass_1_1setparam__drifttube}{setparam\+\_\+drifttube}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_a322f55e58fbe6fb5e4ed93cd126e5ede}{construct\+\_\+drifttube}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_ae2e1974821a810c5d65afd4546b1a690}{setparam1\+\_\+drifttube}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_a3883fd9688d0b98e279f57547de67b8c}{setparam2\+\_\+drifttube}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_a5c05a55ca0f98570b2b02f3c84181015}{setparam3\+\_\+drifttube}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_ade5fb645fa735d4743cd431024727261}{getparam1\+\_\+drifttube}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_af16030dcb46192b3748c28ceb1ca7d4f}{getparam2\+\_\+drifttube}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_a4dc53dfc73175d3eb0d420c6cb9d64f8}{getparam3\+\_\+drifttube}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_aaf41c0aaec4dc3e16fc0f678b3220de3}{maplinear\+\_\+drifttube}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_a186a18efb61fce23e16a18534af446fb}{rk6i\+\_\+drifttube}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_a053027aad7a9b20bafb34d676de9a14a}{intfunc1\+\_\+drifttube}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedrifttubeclass_aa903101ae6943402917a2f29a8aa67d3}{getfld\+\_\+drifttube}} (pos, extfld, this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacedrifttubeclass_af382d7cef81496c1d2c2bf3ba72c4350}{nparam}} = 2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and field for the drift space beam line elment. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{drifttubeclass::drifttube@{drifttubeclass::drifttube}}\label{structdrifttubeclass_1_1drifttube}
+\Hypertarget{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}
+\subsubsection{type drifttubeclass\+::drifttube}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacedrifttubeclass_a1155bc20a840fce9a823eba951439db2}\label{namespacedrifttubeclass_a1155bc20a840fce9a823eba951439db2}} 
+integer&
+itype&
+Itype = 0. \\
+\hline
+
+\mbox{\Hypertarget{namespacedrifttubeclass_afec6676520da9cf2c2dd6a8298f8577b}\label{namespacedrifttubeclass_afec6676520da9cf2c2dd6a8298f8577b}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedrifttubeclass_a32a529cb8bf2da679620c46a2ac0bd6d}\label{namespacedrifttubeclass_a32a529cb8bf2da679620c46a2ac0bd6d}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedrifttubeclass_ac9c97374879fd6cd44d8ff391152ce6f}\label{namespacedrifttubeclass_ac9c97374879fd6cd44d8ff391152ce6f}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedrifttubeclass_abc755647bb29543bf6f4d65f7af740d4}\label{namespacedrifttubeclass_abc755647bb29543bf6f4d65f7af740d4}} 
+double precision, dimension(\mbox{\hyperlink{namespacedrifttubeclass_af382d7cef81496c1d2c2bf3ba72c4350}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacedrifttubeclass_a322f55e58fbe6fb5e4ed93cd126e5ede}\label{namespacedrifttubeclass_a322f55e58fbe6fb5e4ed93cd126e5ede}} 
+\index{drifttubeclass@{drifttubeclass}!construct\_drifttube@{construct\_drifttube}}
+\index{construct\_drifttube@{construct\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{construct\_drifttube()}{construct\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::construct\+\_\+drifttube (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedrifttubeclass_aa903101ae6943402917a2f29a8aa67d3}\label{namespacedrifttubeclass_aa903101ae6943402917a2f29a8aa67d3}} 
+\index{drifttubeclass@{drifttubeclass}!getfld\_drifttube@{getfld\_drifttube}}
+\index{getfld\_drifttube@{getfld\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{getfld\_drifttube()}{getfld\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::getfld\+\_\+drifttube (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedrifttubeclass_aa903101ae6943402917a2f29a8aa67d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedrifttubeclass_ade5fb645fa735d4743cd431024727261}\label{namespacedrifttubeclass_ade5fb645fa735d4743cd431024727261}} 
+\index{drifttubeclass@{drifttubeclass}!getparam1\_drifttube@{getparam1\_drifttube}}
+\index{getparam1\_drifttube@{getparam1\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{getparam1\_drifttube()}{getparam1\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::getparam1\+\_\+drifttube (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedrifttubeclass_af16030dcb46192b3748c28ceb1ca7d4f}\label{namespacedrifttubeclass_af16030dcb46192b3748c28ceb1ca7d4f}} 
+\index{drifttubeclass@{drifttubeclass}!getparam2\_drifttube@{getparam2\_drifttube}}
+\index{getparam2\_drifttube@{getparam2\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{getparam2\_drifttube()}{getparam2\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::getparam2\+\_\+drifttube (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedrifttubeclass_a4dc53dfc73175d3eb0d420c6cb9d64f8}\label{namespacedrifttubeclass_a4dc53dfc73175d3eb0d420c6cb9d64f8}} 
+\index{drifttubeclass@{drifttubeclass}!getparam3\_drifttube@{getparam3\_drifttube}}
+\index{getparam3\_drifttube@{getparam3\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{getparam3\_drifttube()}{getparam3\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::getparam3\+\_\+drifttube (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedrifttubeclass_a053027aad7a9b20bafb34d676de9a14a}\label{namespacedrifttubeclass_a053027aad7a9b20bafb34d676de9a14a}} 
+\index{drifttubeclass@{drifttubeclass}!intfunc1\_drifttube@{intfunc1\_drifttube}}
+\index{intfunc1\_drifttube@{intfunc1\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{intfunc1\_drifttube()}{intfunc1\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::intfunc1\+\_\+drifttube (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedrifttubeclass_a053027aad7a9b20bafb34d676de9a14a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedrifttubeclass_aaf41c0aaec4dc3e16fc0f678b3220de3}\label{namespacedrifttubeclass_aaf41c0aaec4dc3e16fc0f678b3220de3}} 
+\index{drifttubeclass@{drifttubeclass}!maplinear\_drifttube@{maplinear\_drifttube}}
+\index{maplinear\_drifttube@{maplinear\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{maplinear\_drifttube()}{maplinear\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::maplinear\+\_\+drifttube (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedrifttubeclass_aaf41c0aaec4dc3e16fc0f678b3220de3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedrifttubeclass_aaf41c0aaec4dc3e16fc0f678b3220de3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedrifttubeclass_a186a18efb61fce23e16a18534af446fb}\label{namespacedrifttubeclass_a186a18efb61fce23e16a18534af446fb}} 
+\index{drifttubeclass@{drifttubeclass}!rk6i\_drifttube@{rk6i\_drifttube}}
+\index{rk6i\_drifttube@{rk6i\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{rk6i\_drifttube()}{rk6i\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::rk6i\+\_\+drifttube (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{namespacedrifttubeclass_a186a18efb61fce23e16a18534af446fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedrifttubeclass_a186a18efb61fce23e16a18534af446fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedrifttubeclass_ae2e1974821a810c5d65afd4546b1a690}\label{namespacedrifttubeclass_ae2e1974821a810c5d65afd4546b1a690}} 
+\index{drifttubeclass@{drifttubeclass}!setparam1\_drifttube@{setparam1\_drifttube}}
+\index{setparam1\_drifttube@{setparam1\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{setparam1\_drifttube()}{setparam1\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::setparam1\+\_\+drifttube (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedrifttubeclass_a3883fd9688d0b98e279f57547de67b8c}\label{namespacedrifttubeclass_a3883fd9688d0b98e279f57547de67b8c}} 
+\index{drifttubeclass@{drifttubeclass}!setparam2\_drifttube@{setparam2\_drifttube}}
+\index{setparam2\_drifttube@{setparam2\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{setparam2\_drifttube()}{setparam2\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::setparam2\+\_\+drifttube (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedrifttubeclass_a5c05a55ca0f98570b2b02f3c84181015}\label{namespacedrifttubeclass_a5c05a55ca0f98570b2b02f3c84181015}} 
+\index{drifttubeclass@{drifttubeclass}!setparam3\_drifttube@{setparam3\_drifttube}}
+\index{setparam3\_drifttube@{setparam3\_drifttube}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{setparam3\_drifttube()}{setparam3\_drifttube()}}
+{\footnotesize\ttfamily subroutine drifttubeclass\+::setparam3\+\_\+drifttube (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedrifttubeclass_structdrifttubeclass_1_1drifttube}{drifttube}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedrifttubeclass_af382d7cef81496c1d2c2bf3ba72c4350}\label{namespacedrifttubeclass_af382d7cef81496c1d2c2bf3ba72c4350}} 
+\index{drifttubeclass@{drifttubeclass}!nparam@{nparam}}
+\index{nparam@{nparam}!drifttubeclass@{drifttubeclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private drifttubeclass\+::nparam = 2\hspace{0.3cm}{\ttfamily [private]}}
+

@@ -1,0 +1,255 @@
+\hypertarget{namespacesolclass}{}\section{solclass Module Reference}
+\label{namespacesolclass}\index{solclass@{solclass}}
+
+
+This class defines the linear transfer map and field for the Solenoid beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacesolclass_1_1getparam__sol}{getparam\+\_\+sol}}
+\item 
+interface \mbox{\hyperlink{interfacesolclass_1_1setparam__sol}{setparam\+\_\+sol}}
+\item 
+type \mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a2307b36cefac8604240e62757dd08cb9}{construct\+\_\+sol}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_aaec011d4f25d3b03a7e0b42beaa7c9db}{setparam1\+\_\+sol}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a8f2eac99c954759e1b3b6094d8f502fb}{setparam2\+\_\+sol}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a05dc05d4a94a2e1a71280ff983e62c3e}{setparam3\+\_\+sol}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a68e03415e9802b36da3ec9bae72f41b7}{getparam1\+\_\+sol}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_aab6c073c4b20670742987b17bcb8366d}{getparam2\+\_\+sol}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a11962a787b8bed31dd906ac4a5e2853e}{getparam3\+\_\+sol}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_ac1f4d73224d7585c1be1bb6f24f125df}{maplinear\+\_\+sol}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_ae384372c54c045759b9bb9e1eb0886a1}{rk6i\+\_\+sol}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a195ad6d94c20d0ac4d6ed1c8063a8a3b}{intfunc1\+\_\+sol}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_ad89ee3db004c00d4f2e128ddbf03ce32}{getbgradfld\+\_\+sol}} (z, this, b0, bgrad)
+\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a571ab7b6c8ce4dd9e7eaa2489b874682}{getflderr\+\_\+sol}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a7a865f7ab4470f9bff328ed98aacd7c8}{getfld\+\_\+sol}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors and with fringe field of Solenoid. (f(z) = b0 + bb$\ast$z) here, the length of the solenoid has to the effective hard-\/edge length + 2$\ast$aperature \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacesolclass_a592dd58600b2d6df21aab781e8faebac}{getfldold\+\_\+sol}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors and with fringe field of Solenoid. (f(z) = b0 + bb$\ast$z$^\wedge$2 + cc$\ast$z$^\wedge$4,f(x0)=0,f\textquotesingle{}(x0)=0) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacesolclass_abb5af39a08a5ff2cbe713621b2727eaf}{nparam}} = 9
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and field for the Solenoid beam line elment. 
+
+\begin{DoxyAuthor}{Authors}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{solclass::sol@{solclass::sol}}\label{structsolclass_1_1sol}
+\Hypertarget{namespacesolclass_structsolclass_1_1sol}
+\subsubsection{type solclass\+::sol}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacesolclass_ae34e01b972a2658f3ff55fccc3f6b99a}\label{namespacesolclass_ae34e01b972a2658f3ff55fccc3f6b99a}} 
+integer&
+itype&
+Itype = 3. \\
+\hline
+
+\mbox{\Hypertarget{namespacesolclass_a66fe4253293f305d51d6d7db753bb2c2}\label{namespacesolclass_a66fe4253293f305d51d6d7db753bb2c2}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolclass_a3821a5713cb3e0e9ae5359b42644b860}\label{namespacesolclass_a3821a5713cb3e0e9ae5359b42644b860}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolclass_a4e0b71eae9d2072fd83b1a4e524da7fc}\label{namespacesolclass_a4e0b71eae9d2072fd83b1a4e524da7fc}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolclass_a70efaac352dbf744000a92effd3d814b}\label{namespacesolclass_a70efaac352dbf744000a92effd3d814b}} 
+double precision, dimension(\mbox{\hyperlink{namespacesolclass_abb5af39a08a5ff2cbe713621b2727eaf}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacesolclass_a2307b36cefac8604240e62757dd08cb9}\label{namespacesolclass_a2307b36cefac8604240e62757dd08cb9}} 
+\index{solclass@{solclass}!construct\_sol@{construct\_sol}}
+\index{construct\_sol@{construct\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{construct\_sol()}{construct\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::construct\+\_\+sol (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesolclass_ad89ee3db004c00d4f2e128ddbf03ce32}\label{namespacesolclass_ad89ee3db004c00d4f2e128ddbf03ce32}} 
+\index{solclass@{solclass}!getbgradfld\_sol@{getbgradfld\_sol}}
+\index{getbgradfld\_sol@{getbgradfld\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{getbgradfld\_sol()}{getbgradfld\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::getbgradfld\+\_\+sol (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{b0,  }\item[{double precision, intent(out)}]{bgrad }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesolclass_a7a865f7ab4470f9bff328ed98aacd7c8}\label{namespacesolclass_a7a865f7ab4470f9bff328ed98aacd7c8}} 
+\index{solclass@{solclass}!getfld\_sol@{getfld\_sol}}
+\index{getfld\_sol@{getfld\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{getfld\_sol()}{getfld\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::getfld\+\_\+sol (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors and with fringe field of Solenoid. (f(z) = b0 + bb$\ast$z) here, the length of the solenoid has to the effective hard-\/edge length + 2$\ast$aperature 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesolclass_a7a865f7ab4470f9bff328ed98aacd7c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacesolclass_a571ab7b6c8ce4dd9e7eaa2489b874682}\label{namespacesolclass_a571ab7b6c8ce4dd9e7eaa2489b874682}} 
+\index{solclass@{solclass}!getflderr\_sol@{getflderr\_sol}}
+\index{getflderr\_sol@{getflderr\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{getflderr\_sol()}{getflderr\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::getflderr\+\_\+sol (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley,  }\item[{double precision, intent(in)}]{anglez }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesolclass_a571ab7b6c8ce4dd9e7eaa2489b874682_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacesolclass_a592dd58600b2d6df21aab781e8faebac}\label{namespacesolclass_a592dd58600b2d6df21aab781e8faebac}} 
+\index{solclass@{solclass}!getfldold\_sol@{getfldold\_sol}}
+\index{getfldold\_sol@{getfldold\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{getfldold\_sol()}{getfldold\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::getfldold\+\_\+sol (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors and with fringe field of Solenoid. (f(z) = b0 + bb$\ast$z$^\wedge$2 + cc$\ast$z$^\wedge$4,f(x0)=0,f\textquotesingle{}(x0)=0) 
+
+\mbox{\Hypertarget{namespacesolclass_a68e03415e9802b36da3ec9bae72f41b7}\label{namespacesolclass_a68e03415e9802b36da3ec9bae72f41b7}} 
+\index{solclass@{solclass}!getparam1\_sol@{getparam1\_sol}}
+\index{getparam1\_sol@{getparam1\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{getparam1\_sol()}{getparam1\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::getparam1\+\_\+sol (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesolclass_aab6c073c4b20670742987b17bcb8366d}\label{namespacesolclass_aab6c073c4b20670742987b17bcb8366d}} 
+\index{solclass@{solclass}!getparam2\_sol@{getparam2\_sol}}
+\index{getparam2\_sol@{getparam2\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{getparam2\_sol()}{getparam2\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::getparam2\+\_\+sol (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesolclass_a11962a787b8bed31dd906ac4a5e2853e}\label{namespacesolclass_a11962a787b8bed31dd906ac4a5e2853e}} 
+\index{solclass@{solclass}!getparam3\_sol@{getparam3\_sol}}
+\index{getparam3\_sol@{getparam3\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{getparam3\_sol()}{getparam3\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::getparam3\+\_\+sol (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesolclass_a195ad6d94c20d0ac4d6ed1c8063a8a3b}\label{namespacesolclass_a195ad6d94c20d0ac4d6ed1c8063a8a3b}} 
+\index{solclass@{solclass}!intfunc1\_sol@{intfunc1\_sol}}
+\index{intfunc1\_sol@{intfunc1\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{intfunc1\_sol()}{intfunc1\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::intfunc1\+\_\+sol (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesolclass_a195ad6d94c20d0ac4d6ed1c8063a8a3b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacesolclass_ac1f4d73224d7585c1be1bb6f24f125df}\label{namespacesolclass_ac1f4d73224d7585c1be1bb6f24f125df}} 
+\index{solclass@{solclass}!maplinear\_sol@{maplinear\_sol}}
+\index{maplinear\_sol@{maplinear\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{maplinear\_sol()}{maplinear\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::maplinear\+\_\+sol (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesolclass_ac1f4d73224d7585c1be1bb6f24f125df_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesolclass_ac1f4d73224d7585c1be1bb6f24f125df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacesolclass_ae384372c54c045759b9bb9e1eb0886a1}\label{namespacesolclass_ae384372c54c045759b9bb9e1eb0886a1}} 
+\index{solclass@{solclass}!rk6i\_sol@{rk6i\_sol}}
+\index{rk6i\_sol@{rk6i\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{rk6i\_sol()}{rk6i\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::rk6i\+\_\+sol (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{namespacesolclass_ae384372c54c045759b9bb9e1eb0886a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacesolclass_ae384372c54c045759b9bb9e1eb0886a1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacesolclass_aaec011d4f25d3b03a7e0b42beaa7c9db}\label{namespacesolclass_aaec011d4f25d3b03a7e0b42beaa7c9db}} 
+\index{solclass@{solclass}!setparam1\_sol@{setparam1\_sol}}
+\index{setparam1\_sol@{setparam1\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{setparam1\_sol()}{setparam1\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::setparam1\+\_\+sol (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesolclass_a8f2eac99c954759e1b3b6094d8f502fb}\label{namespacesolclass_a8f2eac99c954759e1b3b6094d8f502fb}} 
+\index{solclass@{solclass}!setparam2\_sol@{setparam2\_sol}}
+\index{setparam2\_sol@{setparam2\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{setparam2\_sol()}{setparam2\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::setparam2\+\_\+sol (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacesolclass_a05dc05d4a94a2e1a71280ff983e62c3e}\label{namespacesolclass_a05dc05d4a94a2e1a71280ff983e62c3e}} 
+\index{solclass@{solclass}!setparam3\_sol@{setparam3\_sol}}
+\index{setparam3\_sol@{setparam3\_sol}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{setparam3\_sol()}{setparam3\_sol()}}
+{\footnotesize\ttfamily subroutine solclass\+::setparam3\+\_\+sol (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacesolclass_structsolclass_1_1sol}{sol}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesolclass_abb5af39a08a5ff2cbe713621b2727eaf}\label{namespacesolclass_abb5af39a08a5ff2cbe713621b2727eaf}} 
+\index{solclass@{solclass}!nparam@{nparam}}
+\index{nparam@{nparam}!solclass@{solclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private solclass\+::nparam = 9\hspace{0.3cm}{\ttfamily [private]}}
+

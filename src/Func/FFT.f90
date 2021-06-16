@@ -1,11 +1,20 @@
 !----------------------------------------------------------------
 ! (c) Copyright, 2018 by the Regents of the University of California.
 ! FFTclass: Fourier function class in Math Function module of FUNCTION layer.
-! Version: 2.0
-! Author: Ji Qiang 
-! Description: This class defines the 3d FFT transformation subject to
-!              open or periodic conditions, Fourier Sine transformation,
-!              Complex-Complex, Complex-Real, and Real-Complex FFT.
+!
+! MODULE  : ... FFTclass
+!> @brief
+!> Fourier function class in Math Function module of FUNCTION layer.
+!> @version
+!> 2.0
+!> @author
+!> Ji Qiang 
+!
+! DESCRIPTION: 
+!> @details
+!> This class defines the 3d FFT transformation subject to
+!> open or periodic conditions, Fourier Sine transformation,
+!> Complex-Complex, Complex-Real, and Real-Complex FFT.
 ! Comments:
 !----------------------------------------------------------------
       module FFTclass
@@ -22,7 +31,7 @@
 ! FFT for 3D open boundary conditions. 
 ! The original computational domain is doubled in each dimension
 ! to apply the FFT for the new domain.
-        ! 3_D FFT.
+        !> 3_D FFT.
         subroutine fft3d1_FFT(nx,ny,nz,nsizez,nsizey,nsizexy,&
                 nsizeyz,ksign,scalex,scaley,scalez,x,xstable,xrtable,&
             ystable,yrtable,nprocrow,commrow,nproccol,commcol,comm2d,&
@@ -140,7 +149,7 @@
         return
         end subroutine fft3d1_FFT
 
-        ! 3_D inverse FFT for open BCs.
+        !> 3_D inverse FFT for open BCs.
         subroutine invfft3d1_FFT(nz,ny,nx,nsizexy,nsizeyz,nsizey,&
                 nsizez,ksign,scalex,scaley,scalez,x,xstable,xrtable,&
             ystable,yrtable,nprocrow,commrow,nproccol,commcol,comm2d,&
@@ -249,7 +258,7 @@
         return
         end subroutine invfft3d1_FFT
 
-        ! 3_D inverse FFT for open BCs.
+        !> 3_D inverse FFT for open BCs.
         subroutine invfft3d1Img_FFT(nz,ny,nx,nsizexy,nsizeyz,nsizey,&
                 nsizez,ksign,scalex,scaley,scalez,x,xstable,xrtable,&
             ystable,yrtable,nprocrow,commrow,nproccol,commcol,comm2d,&
@@ -360,9 +369,9 @@
         return
         end subroutine invfft3d1Img_FFT
 
-      !used to find the first derivative after FFT.
-      ! Subroutine to perform 1D FFT along y in 2D array. Here
-      ! y is local to each processor.
+      !> used to find the first derivative after FFT.
+      !> Subroutine to perform 1D FFT along y in 2D array. Here
+      !> y is local to each processor.
       subroutine fftlocal0_FFT(ksign,scale,x,ny,nsizex)
       implicit none
       include 'mpif.h'
@@ -386,8 +395,8 @@
 
       end subroutine fftlocal0_FFT
 
-      ! Subroutine to perform 1D FFT along y in 2D array. Here
-      ! y is local to each processor.
+      !> Subroutine to perform 1D FFT along y in 2D array. Here
+      !> y is local to each processor.
       subroutine fftlocal_FFT(ksign,scale,x,ny,nsizex)
       implicit none
       include 'mpif.h'
@@ -416,9 +425,9 @@
 
       end subroutine fftlocal_FFT
 
-      ! Subroutine to perform 1D real to complex
-      ! FFT along y in 2D array. Here
-      ! y is local to each processor.
+      !> Subroutine to perform 1D real to complex
+      !> FFT along y in 2D array. Here
+      !> y is local to each processor.
       subroutine fftrclocal1_FFT(ksign,scale,x,ny,nsizex,y)
       implicit none
       include 'mpif.h'
@@ -475,9 +484,9 @@
 
       end subroutine fftrclocal2_FFT
 
-      ! Subroutine to perform 1D complex to real 
-      ! FFT along y in 2D array. Here
-      ! y is local to each processor.
+      !> Subroutine to perform 1D complex to real 
+      !> FFT along y in 2D array. Here
+      !> y is local to each processor.
       subroutine fftcrlocal1_FFT(ksign,scale,x,ny,nsizex,y)
       implicit none
       include 'mpif.h'
@@ -542,7 +551,7 @@
 ! Dawei Zheng    01/27/2015        1.0             create the file!
 
 
-!Fast fourier transform
+!> Fast fourier transform
 subroutine four1(data,nn,isign)
   integer isign, nn
   real*8 data(2*nn)
@@ -583,7 +592,7 @@ return
 
 end subroutine four1
 
-!real fast Fourier tranform 
+!> real fast Fourier tranform 
 subroutine realft(data,n,isign)
   integer isign, n
   real*8 data(n)
@@ -629,7 +638,7 @@ return
 
 end subroutine realft
 
-!fast discrete sine transform
+!> fast discrete sine transform
 subroutine sinft(y,ny)
 integer ny, n
 real*8 y(ny)
@@ -669,7 +678,7 @@ real*8 y(ny)
 return
 end subroutine sinft
 
-!fast discrete cosine transform
+!> fast discrete cosine transform
 subroutine cosft1_fftpack(y,n)
 integer n,ny
 real*8 y(n+1)
@@ -711,7 +720,7 @@ real*8 y(n+1)
 
 end subroutine cosft1_fftpack
 
-!transfer real vector from fftpack style to nr style for (forward) cost1D
+!> transfer real vector from fftpack style to nr style for (forward) cost1D
 subroutine Rvec_pack2nr_cosft1 (r,ny,y)
 integer ny
 integer i
@@ -725,7 +734,7 @@ y(ny)=r(ny)*dble(ny-1)
 return
 end subroutine Rvec_pack2nr_cosft1
 
-!transfer real vector from nr style to fftpack style for (forward) sint1D
+!> transfer real vector from nr style to fftpack style for (forward) sint1D
 subroutine Rvec_nr2pack_sint1f(r,n,y)
 integer n
 integer i
@@ -738,7 +747,7 @@ enddo
 return
 end subroutine Rvec_nr2pack_sint1f
 
-!transfer real vector from fftpack style to nr style for (forward) sint 1D
+!> transfer real vector from fftpack style to nr style for (forward) sint 1D
 subroutine Rvec_pack2nr_sint1f (r,n,y)
 integer n, ny
 integer i
@@ -753,7 +762,7 @@ enddo
 return
 end subroutine Rvec_pack2nr_sint1f
 
-!transfer real vector from nr style to fftpack style for forward real fft 1D
+!> transfer real vector from nr style to fftpack style for forward real fft 1D
 subroutine Rvec_nr2pack_rfft1f(r,n,data)
 integer n
 integer i
@@ -765,7 +774,7 @@ enddo
 return
 end subroutine Rvec_nr2pack_rfft1f
 
-!transfer real vector from pack style to nr style for forward real fft 1D
+!> transfer real vector from pack style to nr style for forward real fft 1D
 subroutine Rvec_pack2nr_rfft1f (r,n,data)
 integer n
 integer i
@@ -779,7 +788,7 @@ enddo
 return
 end subroutine Rvec_pack2nr_rfft1f
 
-!transfer real vector from nr style to fftpack style for backward real fft 1D
+!> transfer real vector from nr style to fftpack style for backward real fft 1D
 subroutine Rvec_nr2pack_rfft1b(r,n,data)
 integer n
 integer i
@@ -793,7 +802,7 @@ enddo
 return
 end subroutine Rvec_nr2pack_rfft1b
 
-!transfer real vector from pack style to nr style for backward real fft 1D
+!> transfer real vector from pack style to nr style for backward real fft 1D
 subroutine Rvec_pack2nr_rfft1b (r,n,data)
 integer n
 integer i
@@ -806,7 +815,7 @@ enddo
 return
 end subroutine Rvec_pack2nr_rfft1b
 
-!transfer real vector from nr style to fftpack style generally 
+!> transfer real vector from nr style to fftpack style generally 
 subroutine Rvec_nr2pack_gnl(r,n,data)
 integer n
 integer i
@@ -818,7 +827,7 @@ enddo
 return
 end subroutine Rvec_nr2pack_gnl
 
-!tansfer real vector from fftpack style to nr style generally 
+!> tansfer real vector from fftpack style to nr style generally 
 subroutine Rvec_pack2nr_gnl (r,n,data)
 integer n
 integer i
@@ -830,41 +839,45 @@ enddo
 return
 end subroutine Rvec_pack2nr_gnl
 
+!*****************************************************************************80
+!> @brief
+!> C1F2KB is an FFTPACK5.1 auxiliary routine.
+!
+!> @copyright
+!
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research 
+!
+!> @date  
+!
+!>    Modified: 01 August 2011
+!
+!> @author
+!
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
+!
+!> @details
+!> \verbatim
+!> Reference:
+!> 
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982. 
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
+!
+!> @param
+!
 subroutine c1f2kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
-!*****************************************************************************80
-!
-!! C1F2KB is an FFTPACK5.1 auxiliary routine.
-!
-!  License:
-!
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
-!
-!  Modified:
-!
-!    01 August 2011
-!
-!  Author:
-!
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+
   implicit none
 
   integer ( kind = 4 ) ido
@@ -921,41 +934,43 @@ subroutine c1f2kb ( ido, l1, na, cc, in1, ch, in2, wa )
   return
 end subroutine c1f2kb
 
-subroutine c1f2kf ( ido, l1, na, cc, in1, ch, in2, wa )
-
 !*****************************************************************************80
+!> @brief
+!> C1F2KF is an FFTPACK5.1 auxiliary routine.
 !
-!! C1F2KF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
 !
-!  Modified:
+!>    Modified: 31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!> Reference:
+!> 
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1f2kf ( ido, l1, na, cc, in1, ch, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -1021,41 +1036,44 @@ subroutine c1f2kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
   return
 end subroutine c1f2kf
-subroutine c1f3kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> C1F3KB is an FFTPACK5.1 auxiliary routine.
 !
-!! C1F3KB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
-!
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
+!    Licensed under the GNU General Public License (GPL). \n
+!    Copyright (C) 1995-2004, Scientific Computing Division, \n
 !    University Corporation for Atmospheric Research
 !
-!  Modified:
+!> @date
 !
-!    31 July 2011
+!> Modified:   31 July 2011
 !
-!  Author:
+!> @author
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!  Reference:
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
+!> @param
 !
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1f3kb ( ido, l1, na, cc, in1, ch, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -1141,41 +1159,44 @@ subroutine c1f3kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
   return
 end subroutine c1f3kb
-subroutine c1f3kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> C1F3KF is an FFTPACK5.1 auxiliary routine.
 !
-!! C1F3KF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
 !
-!  Modified:
+!> Modified:    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1f3kf ( ido, l1, na, cc, in1, ch, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -1279,41 +1300,44 @@ subroutine c1f3kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
   return
 end subroutine c1f3kf
-subroutine c1f4kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> C1F4KB is an FFTPACK5.1 auxiliary routine.
 !
-!! C1F4KB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n 
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
 !
-!  Modified:
+!> Modified:    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>   Paul Swarztrauber,
+!>   Vectorizing the Fast Fourier Transforms,
+!>   in Parallel Computations,
+!>   edited by G. Rodrigue,
+!>   Academic Press, 1982.
+!>
+!>   Paul Swarztrauber,
+!>   Fast Fourier Transform Algorithms for Vector Computers,
+!>   Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1f4kb ( ido, l1, na, cc, in1, ch, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -1413,41 +1437,45 @@ subroutine c1f4kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
   return
 end subroutine  c1f4kb
-subroutine c1f4kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> C1F4KF is an FFTPACK5.1 auxiliary routine.
 !
-!! C1F4KF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n 
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1f4kf ( ido, l1, na, cc, in1, ch, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -1570,41 +1598,46 @@ subroutine c1f4kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
   return
 end subroutine c1f4kf
-subroutine c1f5kb ( ido, l1, na, cc, in1, ch, in2, wa )
+
 
 !*****************************************************************************80
+!> @brief
+!> C1F5KB is an FFTPACK5.1 auxiliary routine.
 !
-!! C1F5KB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1f5kb ( ido, l1, na, cc, in1, ch, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -1754,41 +1787,45 @@ subroutine c1f5kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
   return
 end subroutine c1f5kb
-subroutine c1f5kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> C1F5KF is an FFTPACK5.1 auxiliary routine.
 !
-!! C1F5KF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1f5kf ( ido, l1, na, cc, in1, ch, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -1972,41 +2009,45 @@ subroutine c1f5kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
   return
 end subroutine c1f5kf
-subroutine c1fgkb ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> C1FGKB is an FFTPACK5.1 auxiliary routine.
 !
-!! C1FGKB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1fgkb ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -2145,43 +2186,46 @@ subroutine c1fgkb ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
 
   return
 end subroutine c1fgkb 
-subroutine c1fgkf ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> C1FGKF is an FFTPACK5.1 auxiliary routine.
 !
-!! C1FGKF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1fgkf ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
 !  implicit none
-
   integer ( kind = 4 ) ido
   integer ( kind = 4 ) in1
   integer ( kind = 4 ) in2
@@ -2330,41 +2374,45 @@ subroutine c1fgkf ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
 
   return
 end subroutine c1fgkf
-subroutine c1fm1b ( n, inc, c, ch, wa, fnf, fac )
 
 !*****************************************************************************80
+!> @brief
+!> C1FM1B is an FFTPACK5.1 auxiliary routine.
 !
-!! C1FM1B is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1fm1b ( n, inc, c, ch, wa, fnf, fac )
   implicit none
 
 !  complex ( kind = 8 ) c(*)
@@ -2427,41 +2475,45 @@ subroutine c1fm1b ( n, inc, c, ch, wa, fnf, fac )
 
   return
 end subroutine c1fm1b
-subroutine c1fm1f ( n, inc, c, ch, wa, fnf, fac )
 
 !*****************************************************************************80
+!> @brief
+!> C1FM1F is an FFTPACK5.1 auxiliary routine.
 !
-!! C1FM1F is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine c1fm1f ( n, inc, c, ch, wa, fnf, fac )
   implicit none
 
 !  complex ( kind = 8 ) c(*)
@@ -2524,85 +2576,91 @@ subroutine c1fm1f ( n, inc, c, ch, wa, fnf, fac )
 
   return
 end subroutine c1fm1f
-subroutine cfft1b ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
+!> @brief
+!> CFFT1B: complex single precision backward fast Fourier transform, 1D.
 !
-!! CFFT1B: complex single precision backward fast Fourier transform, 1D.
+!> @details
+!> \verbatim
+!>  Discussion:
+!> 
+!>    CFFT1B computes the one-dimensional Fourier transform of a single 
+!>    periodic sequence within a complex array.  This transform is referred 
+!>    to as the backward transform or Fourier synthesis, transforming the
+!>    sequence from spectral to physical space.
+!>
+!>    This transform is normalized since a call to CFFT1B followed
+!>    by a call to CFFT1F (or vice-versa) reproduces the original
+!>    array within roundoff error.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    CFFT1B computes the one-dimensional Fourier transform of a single 
-!    periodic sequence within a complex array.  This transform is referred 
-!    to as the backward transform or Fourier synthesis, transforming the
-!    sequence from spectral to physical space.
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    This transform is normalized since a call to CFFT1B followed
-!    by a call to CFFT1F (or vice-versa) reproduces the original
-!    array within roundoff error.
+!> @date
+!>  Modified:
 !
-!  License:
+!>    31 July 2011
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @author
 !
-!  Modified:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    31 July 2011
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Author:
+!> @param
+!>    [in] N integer ( kind = 4 ), the length of the sequence to be 
+!>    transformed.  The transform is most efficient when N is a product of
+!>    small primes.
+!> @param
+!>    [in] INC integer ( kind = 4 ), the increment between the locations, in 
+!>    array C, of two consecutive elements within the sequence to be transformed.
+!> @param
+!>    [inout] C(LENC) complex ( kind = 8 ) containing the sequence to be 
+!>    transformed.
+!> @param
+!>    [in] LENC integer ( kind = 4 ), the dimension of the C array.
+!>    LENC must be at least INC*(N-1) + 1.
+!> @param
+!>    [in] WSAVE(LENSAV) real ( kind = 8 ).  WSAVE's contents must be 
+!>    initialized with a call to CFFT1I before the first call to routine CFFT1F 
+!>    or CFFT1B for a given transform length N.  WSAVE's contents may be 
+!>    re-used for subsequent calls to CFFT1F and CFFT1B with the same N.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [in] WORK(LENWRK) real ( kind = 8 ), Workspace.
+!> @param
+!>    [in] LENWRK integer ( kind = 4 ), the dimension of the WORK array.
+!>    LENWRK must be at least 2*N.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    1, input parameter LENC not big enough; \n
+!>    2, input parameter LENSAV not big enough; \n 
+!>    3, input parameter LENWRK not big enough; \n
+!>    20, input error returned by lower level routine.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) N, the length of the sequence to be 
-!    transformed.  The transform is most efficient when N is a product of
-!    small primes.
-!
-!    Input, integer ( kind = 4 ) INC, the increment between the locations, in 
-!    array C, of two consecutive elements within the sequence to be transformed.
-!
-!    Input/output, complex ( kind = 8 ) C(LENC) containing the sequence to be 
-!    transformed.
-!
-!    Input, integer ( kind = 4 ) LENC, the dimension of the C array.  
-!    LENC must be at least INC*(N-1) + 1.
-!
-!    Input, real ( kind = 8 ) WSAVE(LENSAV).  WSAVE's contents must be 
-!    initialized with a call to CFFT1I before the first call to routine CFFT1F 
-!    or CFFT1B for a given transform length N.  WSAVE's contents may be 
-!    re-used for subsequent calls to CFFT1F and CFFT1B with the same N.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Workspace, real ( kind = 8 ) WORK(LENWRK).
-!
-!    Input, integer ( kind = 4 ) LENWRK, the dimension of the WORK array.  
-!    LENWRK must be at least 2*N.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    1, input parameter LENC not big enough;
-!    2, input parameter LENSAV not big enough;
-!    3, input parameter LENWRK not big enough;
-!    20, input error returned by lower level routine.
-!
+  subroutine cfft1b ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
   implicit none
 
   integer ( kind = 4 ) lenc
@@ -2642,85 +2700,91 @@ subroutine cfft1b ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
 
   return
 end subroutine cfft1b 
-subroutine cfft1f ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
+!> @brief
+!> CFFT1F: complex single precision forward fast Fourier transform, 1D.
 !
-!! CFFT1F: complex single precision forward fast Fourier transform, 1D.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    CFFT1F computes the one-dimensional Fourier transform of a single 
+!>    periodic sequence within a complex array.  This transform is referred 
+!>    to as the forward transform or Fourier analysis, transforming the 
+!>    sequence from physical to spectral space.
+!>
+!>    This transform is normalized since a call to CFFT1F followed
+!>    by a call to CFFT1B (or vice-versa) reproduces the original
+!>    array within roundoff error.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    CFFT1F computes the one-dimensional Fourier transform of a single 
-!    periodic sequence within a complex array.  This transform is referred 
-!    to as the forward transform or Fourier analysis, transforming the 
-!    sequence from physical to spectral space.
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    This transform is normalized since a call to CFFT1F followed
-!    by a call to CFFT1B (or vice-versa) reproduces the original
-!    array within roundoff error.
+!> @date
+!>  Modified:
 !
-!  License:
+!>    31 July 2011
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @author
 !
-!  Modified:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    31 July 2011
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Author:
+!> @param
+!>    [in] N integer ( kind = 4 ), the length of the sequence to be 
+!>    transformed.  The transform is most efficient when N is a product of 
+!>    small primes.
+!> @param
+!>    [in] INC integer ( kind = 4 ), the increment between the locations, in 
+!>    array C, of two consecutive elements within the sequence to be transformed.
+!> @param
+!>    [inout] C(LENC) complex ( kind = 8 ) containing the sequence to 
+!>    be transformed.
+!> @param
+!>    [in] LENC integer ( kind = 4 ), the dimension of the C array.
+!>    LENC must be at least INC*(N-1) + 1.
+!> @param
+!>    [in] WSAVE(LENSAV) real ( kind = 8 ).  WSAVE's contents must be 
+!>    initialized with a call to CFFT1I before the first call to routine CFFT1F 
+!>    or CFFT1B for a given transform length N.  WSAVE's contents may be re-used
+!>    for subsequent calls to CFFT1F and CFFT1B with the same N.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [in] WORK(LENWRK) real ( kind = 8 ), Workspace.
+!> @param
+!>    [in] LENWRK integer ( kind = 4 ), the dimension of the WORK array.
+!>    LENWRK must be at least 2*N.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    1, input parameter LENC   not big enough; \n
+!>    2, input parameter LENSAV not big enough; \n
+!>    3, input parameter LENWRK not big enough; \n
+!>    20, input error returned by lower level routine.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) N, the length of the sequence to be 
-!    transformed.  The transform is most efficient when N is a product of 
-!    small primes.
-!
-!    Input, integer ( kind = 4 ) INC, the increment between the locations, in 
-!    array C, of two consecutive elements within the sequence to be transformed.
-!
-!    Input/output, complex ( kind = 8 ) C(LENC) containing the sequence to 
-!    be transformed.
-!
-!    Input, integer ( kind = 4 ) LENC, the dimension of the C array.  
-!    LENC must be at least INC*(N-1) + 1.
-!
-!    Input, real ( kind = 8 ) WSAVE(LENSAV).  WSAVE's contents must be 
-!    initialized with a call to CFFT1I before the first call to routine CFFT1F 
-!    or CFFT1B for a given transform length N.  WSAVE's contents may be re-used
-!    for subsequent calls to CFFT1F and CFFT1B with the same N.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Workspace, real ( kind = 8 ) WORK(LENWRK).
-!
-!    Input, integer ( kind = 4 ) LENWRK, the dimension of the WORK array.  
-!    LENWRK must be at least 2*N.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    1, input parameter LENC   not big enough;
-!    2, input parameter LENSAV not big enough;
-!    3, input parameter LENWRK not big enough;
-!    20, input error returned by lower level routine.
-!
+  subroutine cfft1f ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
   implicit none
 
   integer ( kind = 4 ) lenc
@@ -2759,63 +2823,68 @@ subroutine cfft1f ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
 
   return
 end subroutine cfft1f
-subroutine cfft1i ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
+!> @brief
+!> CFFT1I: initialization for CFFT1B and CFFT1F.
 !
-!! CFFT1I: initialization for CFFT1B and CFFT1F.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    CFFT1I initializes array WSAVE for use in its companion routines 
+!>    CFFT1B and CFFT1F.  Routine CFFT1I must be called before the first 
+!>    call to CFFT1B or CFFT1F, and after whenever the value of integer 
+!>    N changes.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    CFFT1I initializes array WSAVE for use in its companion routines 
-!    CFFT1B and CFFT1F.  Routine CFFT1I must be called before the first 
-!    call to CFFT1B or CFFT1F, and after whenever the value of integer 
-!    N changes.
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n 
+!>    University Corporation for Atmospheric Research
 !
-!  License:
+!> @date
+!>  Modified:
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!>    31 July 2011
 !
-!  Modified:
+!> @author
 !
-!    31 July 2011
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!  Author:
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) N, the length of the sequence to be 
-!    transformed.  The transform is most efficient when N is a product 
-!    of small primes.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Output, real ( kind = 8 ) WSAVE(LENSAV), containing the prime factors 
-!    of N and  also containing certain trigonometric values which will be used 
-!    in routines CFFT1B or CFFT1F.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    2, input parameter LENSAV not big enough.
-
+!> @param
+!>    [in] N integer ( kind = 4 ), the length of the sequence to be 
+!>    transformed.  The transform is most efficient when N is a product 
+!>    of small primes.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [out] WSAVE(LENSAV) real ( kind = 8 ), containing the prime factors 
+!>    of N and  also containing certain trigonometric values which will be used 
+!>    in routines CFFT1B or CFFT1F.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    2, input parameter LENSAV not big enough.
+  subroutine cfft1i ( n, wsave, lensav, ier )
   implicit none
 
   integer ( kind = 4 ) lensav
@@ -2845,41 +2914,44 @@ end subroutine cfft1i
 
 
 
-subroutine cmf2kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
-
 !*****************************************************************************80
+!> @brief
+!> CMF2KB is an FFTPACK5.1 auxiliary routine.
 !
-!! CMF2KB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmf2kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -2953,41 +3025,45 @@ subroutine cmf2kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
   return
 end subroutine cmf2kb
-subroutine cmf2kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMF2KF is an FFTPACK5.1 auxiliary routine.
 !
-!! CMF2KF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt. 
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmf2kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -3075,41 +3151,45 @@ subroutine cmf2kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
   return
 end subroutine cmf2kf
-subroutine cmf3kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMF3KB is an FFTPACK5.1 auxiliary routine.
 !
-!! CMF3KB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmf3kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -3211,41 +3291,45 @@ subroutine cmf3kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
   return
 end subroutine cmf3kb
-subroutine cmf3kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMF3KF is an FFTPACK5.1 auxiliary routine.
 !
-!! CMF3KF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmf3kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -3367,41 +3451,45 @@ subroutine cmf3kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
   return
 end subroutine cmf3kf
-subroutine cmf4kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMF4KB is an FFTPACK5.1 auxiliary routine.
 !
-!! CMF4KB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmf4kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -3521,41 +3609,45 @@ subroutine cmf4kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
   return
 end subroutine cmf4kb 
-subroutine cmf4kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMF4KF is an FFTPACK5.1 auxiliary routine.
 !
-!! CMF4KF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmf4kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -3697,41 +3789,45 @@ subroutine cmf4kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
   return
 end subroutine cmf4kf
-subroutine cmf5kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMF5KB is an FFTPACK5.1 auxiliary routine.
 !
-!! CMF5KB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmf5kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -3897,41 +3993,45 @@ subroutine cmf5kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
   return
 end subroutine cmf5kb
-subroutine cmf5kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMF5KF is an FFTPACK5.1 auxiliary routine.
 !
-!! CMF5KF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmf5kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -4133,42 +4233,46 @@ subroutine cmf5kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
   return
 end subroutine cmf5kf
-subroutine cmfgkb ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
-  ch, ch1, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMFGKB is an FFTPACK5.1 auxiliary routine.
 !
-!! CMFGKB is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmfgkb ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
+  ch, ch1, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -4352,42 +4456,46 @@ subroutine cmfgkb ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
 
   return
 end subroutine cmfgkb
-subroutine cmfgkf ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
-  ch, ch1, im2, in2, wa )
 
 !*****************************************************************************80
+!> @brief
+!> CMFGKF is an FFTPACK5.1 auxiliary routine.
 !
-!! CMFGKF is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cmfgkf ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
+  ch, ch1, im2, in2, wa )
   implicit none
 
   integer ( kind = 4 ) ido
@@ -4587,85 +4695,90 @@ subroutine cmfgkf ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
   return
 end subroutine cmfgkf
 
-subroutine cosq1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
-
 !*****************************************************************************80
+!> @brief
+!> COSQ1B: real single precision backward cosine quarter wave transform, 1D.
 !
-!! COSQ1B: real single precision backward cosine quarter wave transform, 1D.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    COSQ1B computes the one-dimensional Fourier transform of a sequence 
+!>    which is a cosine series with odd wave numbers.  This transform is 
+!>    referred to as the backward transform or Fourier synthesis, transforming
+!>    the sequence from spectral to physical space.
+!>
+!>    This transform is normalized since a call to COSQ1B followed
+!>    by a call to COSQ1F (or vice-versa) reproduces the original
+!>    array  within roundoff error.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    COSQ1B computes the one-dimensional Fourier transform of a sequence 
-!    which is a cosine series with odd wave numbers.  This transform is 
-!    referred to as the backward transform or Fourier synthesis, transforming
-!    the sequence from spectral to physical space.
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    This transform is normalized since a call to COSQ1B followed
-!    by a call to COSQ1F (or vice-versa) reproduces the original
-!    array  within roundoff error.
+!> @date
+!>  Modified:
 !
-!  License:
+!>    31 July 2011
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @author
 !
-!  Modified:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    31 July 2011
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Author:
+!> @param
+!>    [in] N integer ( kind = 4 ), the number of elements to be transformed 
+!>    in the sequence.  The transform is most efficient when N is a 
+!>    product of small primes.
+!> @param
+!>    [in] INC integer ( kind = 4 ), the increment between the locations, 
+!>    in array R, of two consecutive elements within the sequence.
+!> @param
+!>    [inout] R(LENR) real ( kind = 8 ); on input, containing the sequence 
+!>    to be transformed, and on output, containing the transformed sequence.
+!> @param
+!>    [in] LENR integer ( kind = 4 ), the dimension of the R array.
+!>    LENR must be at least INC*(N-1)+ 1.
+!> @param
+!>    [in] WSAVE(LENSAV) real ( kind = 8 ).  WSAVE's contents must be 
+!>    initialized with a call to COSQ1I before the first call to routine COSQ1F 
+!>    or COSQ1B for a given transform length N.  WSAVE's contents may be 
+!>    re-used for subsequent calls to COSQ1F and COSQ1B with the same N.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [in] WORK(LENWRK) real ( kind = 8 ), Workspace.
+!> @param
+!>    [in] LENWRK integer ( kind = 4 ), the dimension of the WORK array.
+!>    LENWRK must be at least N.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    1, input parameter LENR   not big enough; \n
+!>    2, input parameter LENSAV not big enough; \n
+!>    3, input parameter LENWRK not big enough; \n
+!>    20, input error returned by lower level routine.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) N, the number of elements to be transformed 
-!    in the sequence.  The transform is most efficient when N is a 
-!    product of small primes.
-!
-!    Input, integer ( kind = 4 ) INC, the increment between the locations, 
-!    in array R, of two consecutive elements within the sequence.
-!
-!    Input/output, real ( kind = 8 ) R(LENR); on input, containing the sequence 
-!    to be transformed, and on output, containing the transformed sequence.
-!
-!    Input, integer ( kind = 4 ) LENR, the dimension of the R array.  
-!    LENR must be at least INC*(N-1)+ 1.
-!
-!    Input, real ( kind = 8 ) WSAVE(LENSAV).  WSAVE's contents must be 
-!    initialized with a call to COSQ1I before the first call to routine COSQ1F 
-!    or COSQ1B for a given transform length N.  WSAVE's contents may be 
-!    re-used for subsequent calls to COSQ1F and COSQ1B with the same N.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Workspace, real ( kind = 8 ) WORK(LENWRK).
-!
-!    Input, integer ( kind = 4 ) LENWRK, the dimension of the WORK array.  
-!    LENWRK must be at least N.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    1, input parameter LENR   not big enough;
-!    2, input parameter LENSAV not big enough;
-!    3, input parameter LENWRK not big enough;
-!    20, input error returned by lower level routine.
-!
+  subroutine cosq1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   implicit none
 
   integer ( kind = 4 ) inc
@@ -4718,85 +4831,91 @@ subroutine cosq1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
   return
 end subroutine cosq1b
-subroutine cosq1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
+!> @brief
+!> COSQ1F: real single precision forward cosine quarter wave transform, 1D.
 !
-!! COSQ1F: real single precision forward cosine quarter wave transform, 1D.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    COSQ1F computes the one-dimensional Fourier transform of a sequence 
+!>    which is a cosine series with odd wave numbers.  This transform is 
+!>    referred to as the forward transform or Fourier analysis, transforming 
+!>    the sequence from physical to spectral space.
+!>
+!>    This transform is normalized since a call to COSQ1F followed
+!>    by a call to COSQ1B (or vice-versa) reproduces the original
+!>    array  within roundoff error.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    COSQ1F computes the one-dimensional Fourier transform of a sequence 
-!    which is a cosine series with odd wave numbers.  This transform is 
-!    referred to as the forward transform or Fourier analysis, transforming 
-!    the sequence from physical to spectral space.
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    This transform is normalized since a call to COSQ1F followed
-!    by a call to COSQ1B (or vice-versa) reproduces the original
-!    array  within roundoff error.
+!> @date
+!>  Modified:
 !
-!  License:
+!>    31 July 2011
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @author
 !
-!  Modified:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    31 July 2011
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Author:
+!> @param
+!>    [in] N integer ( kind = 4 ), the number of elements to be transformed 
+!>    in the sequence.  The transform is most efficient when N is a 
+!>    product of small primes.
+!> @param
+!>    [in] INC integer ( kind = 4 ), the increment between the locations, 
+!>    in array R, of two consecutive elements within the sequence.
+!> @param
+!>    [inout] R(LENR) real ( kind = 8 ); on input, containing the sequence 
+!>    to be transformed, and on output, containing the transformed sequence.
+!> @param
+!>    [in] LENR integer ( kind = 4 ), the dimension of the R array.
+!>    LENR must be at least INC*(N-1)+ 1.
+!> @param
+!>    [in] WSAVE(LENSAV) real ( kind = 8 ).  WSAVE's contents must be 
+!>    initialized with a call to COSQ1I before the first call to routine COSQ1F 
+!>    or COSQ1B for a given transform length N.  WSAVE's contents may be 
+!>    re-used for subsequent calls to COSQ1F and COSQ1B with the same N.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [in]  WORK(LENWRK) real ( kind = 8 ), Workspace.
+!> @param
+!>    [in] LENWRK integer ( kind = 4 ), the dimension of the WORK array.
+!>    LENWRK must be at least N.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    1, input parameter LENR   not big enough; \n
+!>    2, input parameter LENSAV not big enough; \n
+!>    3, input parameter LENWRK not big enough; \n
+!>    20, input error returned by lower level routine.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) N, the number of elements to be transformed 
-!    in the sequence.  The transform is most efficient when N is a 
-!    product of small primes.
-!
-!    Input, integer ( kind = 4 ) INC, the increment between the locations, 
-!    in array R, of two consecutive elements within the sequence.
-!
-!    Input/output, real ( kind = 8 ) R(LENR); on input, containing the sequence 
-!    to be transformed, and on output, containing the transformed sequence.
-!
-!    Input, integer ( kind = 4 ) LENR, the dimension of the R array.  
-!    LENR must be at least INC*(N-1)+ 1.
-!
-!    Input, real ( kind = 8 ) WSAVE(LENSAV).  WSAVE's contents must be 
-!    initialized with a call to COSQ1I before the first call to routine COSQ1F 
-!    or COSQ1B for a given transform length N.  WSAVE's contents may be 
-!    re-used for subsequent calls to COSQ1F and COSQ1B with the same N.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Workspace, real ( kind = 8 ) WORK(LENWRK).
-!
-!    Input, integer ( kind = 4 ) LENWRK, the dimension of the WORK array.  
-!    LENWRK must be at least N.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    1, input parameter LENR   not big enough;
-!    2, input parameter LENSAV not big enough;
-!    3, input parameter LENWRK not big enough;
-!    20, input error returned by lower level routine.
-!
+  subroutine cosq1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   implicit none
 
   integer ( kind = 4 ) inc
@@ -4845,65 +4964,71 @@ subroutine cosq1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
   return
 end subroutine cosq1f
-subroutine cosq1i ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
+!> @brief
+!> COSQ1I: initialization for COSQ1B and COSQ1F.
 !
-!! COSQ1I: initialization for COSQ1B and COSQ1F.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    COSQ1I initializes array WSAVE for use in its companion routines 
+!>    COSQ1F and COSQ1B.  The prime factorization of N together with a 
+!>    tabulation of the trigonometric functions are computed and stored 
+!>    in array WSAVE.  Separate WSAVE arrays are required for different 
+!>    values of N.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    COSQ1I initializes array WSAVE for use in its companion routines 
-!    COSQ1F and COSQ1B.  The prime factorization of N together with a 
-!    tabulation of the trigonometric functions are computed and stored 
-!    in array WSAVE.  Separate WSAVE arrays are required for different 
-!    values of N.
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!  License:
+!> @date
+!>  Modified:
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!>    31 July 2011
 !
-!  Modified:
+!> @author
 !
-!    31 July 2011
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!  Author:
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @param
+!>    [in] N integer ( kind = 4 ), the length of the sequence to be 
+!>    transformed.  The transform is most efficient when N is a product 
+!>    of small primes.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [out] WSAVE(LENSAV) real ( kind = 8 ), containing the prime factors of N
+!>    and also containing certain trigonometric values which will be used 
+!>    in routines COSQ1B or COSQ1F.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    2, input parameter LENSAV not big enough; \n
+!>    20, input error returned by lower level routine.
 !
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) N, the length of the sequence to be 
-!    transformed.  The transform is most efficient when N is a product 
-!    of small primes.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Output, real ( kind = 8 ) WSAVE(LENSAV), containing the prime factors of N
-!    and also containing certain trigonometric values which will be used 
-!    in routines COSQ1B or COSQ1F.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    2, input parameter LENSAV not big enough;
-!    20, input error returned by lower level routine.
-!
+  subroutine cosq1i ( n, wsave, lensav, ier )
   implicit none
 
   integer ( kind = 4 ) lensav
@@ -4946,41 +5071,45 @@ subroutine cosq1i ( n, wsave, lensav, ier )
 
   return
 end subroutine cosq1i
-subroutine cosqb1 ( n, inc, x, wsave, work, ier )
 
 !*****************************************************************************80
+!> @brief
+!> COSQB1 is an FFTPACK5.1 auxiliary routine.
 !
-!! COSQB1 is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cosqb1 ( n, inc, x, wsave, work, ier )
   implicit none
 
   integer ( kind = 4 ) inc
@@ -5051,41 +5180,45 @@ subroutine cosqb1 ( n, inc, x, wsave, work, ier )
 
   return
 end subroutine cosqb1
-subroutine cosqf1 ( n, inc, x, wsave, work, ier )
 
 !*****************************************************************************80
+!> @brief
+!> COSQF1 is an FFTPACK5.1 auxiliary routine.
 !
-!! COSQF1 is an FFTPACK5.1 auxiliary routine.
+!> @copyright
 !
-!  License:
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @date
+!>  Modified:
 !
-!  Modified:
+!>    31 July 2011
 !
-!    31 July 2011
+!> @author
 !
-!  Author:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Reference:
+!> @param
 !
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
+  subroutine cosqf1 ( n, inc, x, wsave, work, ier )
   implicit none
 
   integer ( kind = 4 ) inc
@@ -5153,96 +5286,102 @@ subroutine cosqf1 ( n, inc, x, wsave, work, ier )
 
   return
 end subroutine cosqf1
-subroutine cosqmb ( lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, &
-  ier )
 
 !*****************************************************************************80
+!> @brief
+!> COSQMB: real single precision backward cosine quarter wave, multiple vectors.
 !
-!! COSQMB: real single precision backward cosine quarter wave, multiple vectors.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    COSQMB computes the one-dimensional Fourier transform of multiple
+!>    sequences, each of which is a cosine series with odd wave numbers.
+!>    This transform is referred to as the backward transform or Fourier
+!>    synthesis, transforming the sequences from spectral to physical space.
+!>
+!>    This transform is normalized since a call to COSQMB followed
+!>    by a call to COSQMF (or vice-versa) reproduces the original
+!>    array within roundoff error.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    COSQMB computes the one-dimensional Fourier transform of multiple
-!    sequences, each of which is a cosine series with odd wave numbers.
-!    This transform is referred to as the backward transform or Fourier
-!    synthesis, transforming the sequences from spectral to physical space.
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    This transform is normalized since a call to COSQMB followed
-!    by a call to COSQMF (or vice-versa) reproduces the original
-!    array within roundoff error.
+!> @date
+!>  Modified:
 !
-!  License:
+!>    31 July 2011
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @author
 !
-!  Modified:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    31 July 2011
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Author:
+!> @param
+!>    [in] LOT integer ( kind = 4 ), the number of sequences to be transformed 
+!>    within array R.
+!> @param
+!>    [in] JUMP integer ( kind = 4 ), the increment between the locations, 
+!>    in array R, of the first elements of two consecutive sequences to be 
+!>    transformed.
+!> @param
+!>    [in] N integer ( kind = 4 ), the length of each sequence to be 
+!>    transformed.  The transform is most efficient when N is a product of 
+!>    small primes.
+!> @param
+!>    [in] INC, integer ( kind = 4 ) the increment between the locations, 
+!>    in array R, of two consecutive elements within the same sequence.
+!> @param
+!>    [inout] R(LENR) real ( kind = 8 ), array containing LOT sequences, 
+!>    each having length N.  R can have any number of dimensions, but the total 
+!>    number of locations must be at least LENR.  On input, R contains the data
+!>    to be transformed, and on output, the transformed data.
+!> @param
+!>    [in] LENR integer ( kind = 4 ), the dimension of the R array.
+!>    LENR must be at least (LOT-1)*JUMP + INC*(N-1)+ 1.
+!> @param
+!>    [in] WSAVE(LENSAV) real ( kind = 8 ).  WSAVE's contents must be 
+!>    initialized with a call to COSQMI before the first call to routine COSQMF 
+!>    or COSQMB for a given transform length N.  WSAVE's contents may be re-used 
+!>    for subsequent calls to COSQMF and COSQMB with the same N.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [in] WORK(LENWRK) real ( kind = 8 ), Workspace.
+!> @param
+!>    [in] LENWRK integer ( kind = 4 ), the dimension of the WORK array.
+!>    LENWRK must be at least LOT*N.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    1, input parameter LENR   not big enough; \n
+!>    2, input parameter LENSAV not big enough; \n
+!>    3, input parameter LENWRK not big enough; \n
+!>    4, input parameters INC,JUMP,N,LOT are not consistent; \n
+!>    20, input error returned by lower level routine.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) LOT, the number of sequences to be transformed 
-!    within array R.
-!
-!    Input, integer ( kind = 4 ) JUMP, the increment between the locations, 
-!    in array R, of the first elements of two consecutive sequences to be 
-!    transformed.
-!
-!    Input, integer ( kind = 4 ) N, the length of each sequence to be 
-!    transformed.  The transform is most efficient when N is a product of 
-!    small primes.
-!
-!    Input, integer ( kind = 4 ) INC, the increment between the locations, 
-!    in array R, of two consecutive elements within the same sequence.
-!
-!    Input/output, real ( kind = 8 ) R(LENR), array containing LOT sequences, 
-!    each having length N.  R can have any number of dimensions, but the total 
-!    number of locations must be at least LENR.  On input, R contains the data
-!    to be transformed, and on output, the transformed data.
-!
-!    Input, integer ( kind = 4 ) LENR, the dimension of the R array.  
-!    LENR must be at least (LOT-1)*JUMP + INC*(N-1)+ 1.
-!
-!    Input, real ( kind = 8 ) WSAVE(LENSAV).  WSAVE's contents must be 
-!    initialized with a call to COSQMI before the first call to routine COSQMF 
-!    or COSQMB for a given transform length N.  WSAVE's contents may be re-used 
-!    for subsequent calls to COSQMF and COSQMB with the same N.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Workspace, real ( kind = 8 ) WORK(LENWRK).
-!
-!    Input, integer ( kind = 4 ) LENWRK, the dimension of the WORK array.  
-!    LENWRK must be at least LOT*N.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    1, input parameter LENR   not big enough;
-!    2, input parameter LENSAV not big enough;
-!    3, input parameter LENWRK not big enough;
-!    4, input parameters INC,JUMP,N,LOT are not consistent;
-!    20, input error returned by lower level routine.
-!
+  subroutine cosqmb ( lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, &
+  ier )
   implicit none
 
   integer ( kind = 4 ) inc
@@ -5308,97 +5447,103 @@ subroutine cosqmb ( lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, &
 
   return
 end subroutine cosqmb 
-subroutine cosqmf ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
-  lenwrk, ier )
 
 !*****************************************************************************80
+!> @brief
+!> COSQMF: real single precision forward cosine quarter wave, multiple vectors.
 !
-!! COSQMF: real single precision forward cosine quarter wave, multiple vectors.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    COSQMF computes the one-dimensional Fourier transform of multiple 
+!>    sequences within a real array, where each of the sequences is a 
+!>    cosine series with odd wave numbers.  This transform is referred to 
+!>    as the forward transform or Fourier synthesis, transforming the 
+!>    sequences from spectral to physical space.
+!>
+!>    This transform is normalized since a call to COSQMF followed
+!>    by a call to COSQMB (or vice-versa) reproduces the original
+!>    array within roundoff error.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    COSQMF computes the one-dimensional Fourier transform of multiple 
-!    sequences within a real array, where each of the sequences is a 
-!    cosine series with odd wave numbers.  This transform is referred to 
-!    as the forward transform or Fourier synthesis, transforming the 
-!    sequences from spectral to physical space.
+!>    Licensed under the GNU General Public License (GPL). \n 
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    This transform is normalized since a call to COSQMF followed
-!    by a call to COSQMB (or vice-versa) reproduces the original
-!    array within roundoff error.
+!> @date
+!>  Modified:
 !
-!  License:
+!>    31 July 2011
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @author
 !
-!  Modified:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    31 July 2011
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Author:
+!> @param
+!>    [in] LOT integer ( kind = 4 ), the number of sequences to be transformed 
+!>    within array R.
+!> @param
+!>    [in] JUMP integer ( kind = 4 ), the increment between the locations, in 
+!>    array R, of the first elements of two consecutive sequences to be 
+!>    transformed.
+!> @param
+!>    [in] N integer ( kind = 4 ), the length of each sequence to be 
+!>    transformed.  The transform is most efficient when N is a product of 
+!>    small primes.
+!> @param
+!>    [in] INC integer ( kind = 4 ), the increment between the locations, 
+!>    in array R, of two consecutive elements within the same sequence.
+!> @param
+!>    [inout] R(LENR) real ( kind = 8 ), array containing LOT sequences, 
+!>    each having length N.  R can have any number of dimensions, but the total
+!>    number of locations must be at least LENR.  On input, R contains the data
+!>    to be transformed, and on output, the transformed data.
+!> @param
+!>    [in] LENR integer ( kind = 4 ), the dimension of the R array.
+!>    LENR must be at least (LOT-1)*JUMP + INC*(N-1)+ 1.
+!> @param
+!>    [in] WSAVE(LENSAV) real ( kind = 8 ).  WSAVE's contents must be 
+!>    initialized with a call to COSQMI before the first call to routine COSQMF 
+!>    or COSQMB for a given transform length N.  WSAVE's contents may be re-used
+!>    for subsequent calls to COSQMF and COSQMB with the same N.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [in] WORK(LENWRK) real ( kind = 8 ), Workspace.
+!> @param
+!>    [in] LENWRK integer ( kind = 4 ), the dimension of the WORK array.
+!>    LENWRK must be at least LOT*N.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    1, input parameter LENR   not big enough; \n
+!>    2, input parameter LENSAV not big enough; \n
+!>    3, input parameter LENWRK not big enough; \n
+!>    4, input parameters INC,JUMP,N,LOT are not consistent; \n
+!>    20, input error returned by lower level routine.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) LOT, the number of sequences to be transformed 
-!    within array R.
-!
-!    Input, integer ( kind = 4 ) JUMP, the increment between the locations, in 
-!    array R, of the first elements of two consecutive sequences to be 
-!    transformed.
-!
-!    Input, integer ( kind = 4 ) N, the length of each sequence to be 
-!    transformed.  The transform is most efficient when N is a product of 
-!    small primes.
-!
-!    Input, integer ( kind = 4 ) INC, the increment between the locations, 
-!    in array R, of two consecutive elements within the same sequence.
-!
-!    Input/output, real ( kind = 8 ) R(LENR), array containing LOT sequences, 
-!    each having length N.  R can have any number of dimensions, but the total
-!    number of locations must be at least LENR.  On input, R contains the data
-!    to be transformed, and on output, the transformed data.
-!
-!    Input, integer ( kind = 4 ) LENR, the dimension of the R array.  
-!    LENR must be at least (LOT-1)*JUMP + INC*(N-1)+ 1.
-!
-!    Input, real ( kind = 8 ) WSAVE(LENSAV).  WSAVE's contents must be 
-!    initialized with a call to COSQMI before the first call to routine COSQMF 
-!    or COSQMB for a given transform length N.  WSAVE's contents may be re-used
-!    for subsequent calls to COSQMF and COSQMB with the same N.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Workspace, real ( kind = 8 ) WORK(LENWRK).
-!
-!    Input, integer ( kind = 4 ) LENWRK, the dimension of the WORK array.  
-!    LENWRK must be at least LOT*N.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    1, input parameter LENR   not big enough;
-!    2, input parameter LENSAV not big enough;
-!    3, input parameter LENWRK not big enough;
-!    4, input parameters INC,JUMP,N,LOT are not consistent;
-!    20, input error returned by lower level routine.
-!
+  subroutine cosqmf ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
+  lenwrk, ier )
   implicit none
 
   integer ( kind = 4 ) inc
@@ -5463,65 +5608,71 @@ subroutine cosqmf ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
 
   return
 end subroutine cosqmf
-subroutine cosqmi ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
+!> @brief
+!> COSQMI: initialization for COSQMB and COSQMF.
 !
-!! COSQMI: initialization for COSQMB and COSQMF.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    COSQMI initializes array WSAVE for use in its companion routines 
+!>    COSQMF and COSQMB.  The prime factorization of N together with a 
+!>    tabulation of the trigonometric functions are computed and stored 
+!>    in array WSAVE.  Separate WSAVE arrays are required for different 
+!>    values of N.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    COSQMI initializes array WSAVE for use in its companion routines 
-!    COSQMF and COSQMB.  The prime factorization of N together with a 
-!    tabulation of the trigonometric functions are computed and stored 
-!    in array WSAVE.  Separate WSAVE arrays are required for different 
-!    values of N.
+!>    Licensed under the GNU General Public License (GPL). \n 
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!  License:
+!> @date
+!>  Modified:
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!>    31 July 2011
 !
-!  Modified:
+!> @author
 !
-!    31 July 2011
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!  Author:
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
+!> @param
+!>    [in] N integer ( kind = 4 ), the length of each sequence to be 
+!>    transformed.  The transform is most efficient when N is a product of 
+!>    small primes.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [out] WSAVE(LENSAV) real ( kind = 8 ), containing the prime factors of 
+!>    N and also containing certain trigonometric values which will be used 
+!>    in routines COSQMB or COSQMF.
+!> @param
+!>    [in] IER integer ( kind = 4 ), error flag.
+!>    0, successful exit;
+!>    2, input parameter LENSAV not big enough;
+!>    20, input error returned by lower level routine.
 !
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) N, the length of each sequence to be 
-!    transformed.  The transform is most efficient when N is a product of 
-!    small primes.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Output, real ( kind = 8 ) WSAVE(LENSAV), containing the prime factors of 
-!    N and also containing certain trigonometric values which will be used 
-!    in routines COSQMB or COSQMF.
-!
-!    Input, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    2, input parameter LENSAV not big enough;
-!    20, input error returned by lower level routine.
-!
+  subroutine cosqmi ( n, wsave, lensav, ier )
   implicit none
 
   integer ( kind = 4 ) lensav
@@ -5565,85 +5716,91 @@ subroutine cosqmi ( n, wsave, lensav, ier )
 
   return
 end subroutine cosqmi
-subroutine cost1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
+!> @brief
+!> COST1B: real single precision backward cosine transform, 1D.
 !
-!! COST1B: real single precision backward cosine transform, 1D.
+!> @details
+!> \verbatim
+!>  Discussion:
+!>
+!>    COST1B computes the one-dimensional Fourier transform of an even 
+!>    sequence within a real array.  This transform is referred to as 
+!>    the backward transform or Fourier synthesis, transforming the sequence 
+!>    from spectral to physical space.
+!>
+!>    This transform is normalized since a call to COST1B followed
+!>    by a call to COST1F (or vice-versa) reproduces the original array 
+!>    within roundoff error.
+!> \endverbatim
 !
-!  Discussion:
+!> @copyright
 !
-!    COST1B computes the one-dimensional Fourier transform of an even 
-!    sequence within a real array.  This transform is referred to as 
-!    the backward transform or Fourier synthesis, transforming the sequence 
-!    from spectral to physical space.
+!>    Licensed under the GNU General Public License (GPL). \n
+!>    Copyright (C) 1995-2004, Scientific Computing Division, \n
+!>    University Corporation for Atmospheric Research
 !
-!    This transform is normalized since a call to COST1B followed
-!    by a call to COST1F (or vice-versa) reproduces the original array 
-!    within roundoff error.
+!> @date
+!>  Modified:
 !
-!  License:
+!>    31 July 2011
 !
-!    Licensed under the GNU General Public License (GPL).
-!    Copyright (C) 1995-2004, Scientific Computing Division,
-!    University Corporation for Atmospheric Research
+!> @author
 !
-!  Modified:
+!>    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent. \n
+!>    FORTRAN90 version by John Burkardt.
 !
-!    31 July 2011
+!> @details
+!> \verbatim
+!>  Reference:
+!>
+!>    Paul Swarztrauber,
+!>    Vectorizing the Fast Fourier Transforms,
+!>    in Parallel Computations,
+!>    edited by G. Rodrigue,
+!>    Academic Press, 1982.
+!>
+!>    Paul Swarztrauber,
+!>    Fast Fourier Transform Algorithms for Vector Computers,
+!>    Parallel Computing, pages 45-63, 1984.
+!> \endverbatim
 !
-!  Author:
+!> @param
+!>    [in] N integer ( kind = 4 ), the length of the sequence to be 
+!>    transformed.  The transform is most efficient when N-1 is a product of
+!>    small primes.
+!> @param
+!>    [in] INC integer ( kind = 4 ), the increment between the locations, 
+!>    in array R, of two consecutive elements within the sequence.
+!> @param
+!>    [inout] R(LENR) real ( kind = 8 ), containing the sequence to 
+!>     be transformed.
+!> @param
+!>    [in] LENR integer ( kind = 4 ), the dimension of the R array.
+!>    LENR must be at least INC*(N-1)+ 1.
+!> @param
+!>    [in] WSAVE(LENSAV) real ( kind = 8 ).  WSAVE's contents must be 
+!>    initialized with a call to COST1I before the first call to routine COST1F 
+!>    or COST1B for a given transform length N.  WSAVE's contents may be re-used 
+!>    for subsequent calls to COST1F and COST1B with the same N.
+!> @param
+!>    [in] LENSAV integer ( kind = 4 ), the dimension of the WSAVE array.
+!>    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
+!> @param
+!>    [in] WORK(LENWRK) real ( kind = 8 ), Workspace.
+!> @param
+!>    [in] LENWRK integer ( kind = 4 ), the dimension of the WORK array.
+!>    LENWRK must be at least N-1.
+!> @param
+!>    [out] IER integer ( kind = 4 ), error flag. \n
+!>    0, successful exit; \n
+!>    1, input parameter LENR   not big enough; \n
+!>    2, input parameter LENSAV not big enough; \n
+!>    3, input parameter LENWRK not big enough; \n
+!>    20, input error returned by lower level routine.
 !
-!    Original FORTRAN77 version by Paul Swarztrauber, Richard Valent.
-!    FORTRAN90 version by John Burkardt.
-!
-!  Reference:
-!
-!    Paul Swarztrauber,
-!    Vectorizing the Fast Fourier Transforms,
-!    in Parallel Computations,
-!    edited by G. Rodrigue,
-!    Academic Press, 1982.
-!
-!    Paul Swarztrauber,
-!    Fast Fourier Transform Algorithms for Vector Computers,
-!    Parallel Computing, pages 45-63, 1984.
-!
-!  Parameters:
-!
-!    Input, integer ( kind = 4 ) N, the length of the sequence to be 
-!    transformed.  The transform is most efficient when N-1 is a product of
-!    small primes.
-!
-!    Input, integer ( kind = 4 ) INC, the increment between the locations, 
-!    in array R, of two consecutive elements within the sequence.
-!
-!    Input/output, real ( kind = 8 ) R(LENR), containing the sequence to 
-!     be transformed.
-!
-!    Input, integer ( kind = 4 ) LENR, the dimension of the R array.  
-!    LENR must be at least INC*(N-1)+ 1.
-!
-!    Input, real ( kind = 8 ) WSAVE(LENSAV).  WSAVE's contents must be 
-!    initialized with a call to COST1I before the first call to routine COST1F 
-!    or COST1B for a given transform length N.  WSAVE's contents may be re-used 
-!    for subsequent calls to COST1F and COST1B with the same N.
-!
-!    Input, integer ( kind = 4 ) LENSAV, the dimension of the WSAVE array.  
-!    LENSAV must be at least 2*N + INT(LOG(REAL(N))) + 4.
-!
-!    Workspace, real ( kind = 8 ) WORK(LENWRK).
-!
-!    Input, integer ( kind = 4 ) LENWRK, the dimension of the WORK array.  
-!    LENWRK must be at least N-1.
-!
-!    Output, integer ( kind = 4 ) IER, error flag.
-!    0, successful exit;
-!    1, input parameter LENR   not big enough;
-!    2, input parameter LENSAV not big enough;
-!    3, input parameter LENWRK not big enough;
-!    20, input error returned by lower level routine.
-!
+  subroutine cost1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   implicit none
 
   integer ( kind = 4 ) inc

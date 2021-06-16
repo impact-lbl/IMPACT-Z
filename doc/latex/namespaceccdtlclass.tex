@@ -1,0 +1,261 @@
+\hypertarget{namespaceccdtlclass}{}\section{ccdtlclass Module Reference}
+\label{namespaceccdtlclass}\index{ccdtlclass@{ccdtlclass}}
+
+
+This class defines the linear transfer map and RF field for the C\+C\+D\+TL beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}
+\item 
+interface \mbox{\hyperlink{interfaceccdtlclass_1_1getparam__ccdtl}{getparam\+\_\+ccdtl}}
+\item 
+interface \mbox{\hyperlink{interfaceccdtlclass_1_1setparam__ccdtl}{setparam\+\_\+ccdtl}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_aaa94d8179c6d59c2d3e81b64e8237962}{construct\+\_\+ccdtl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_adedaabef796136ab3b22dcc923243cfd}{setparam1\+\_\+ccdtl}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_aa32b5665906eac3911db6712a5710f97}{setparam2\+\_\+ccdtl}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a3632b0f42925964cedb7778792da563f}{setparam3\+\_\+ccdtl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a027b988ab66d8b89dabf46f5e45d82f5}{getparam1\+\_\+ccdtl}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a8455f87d9ac20671adf737902c8b90d8}{getparam2\+\_\+ccdtl}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a529631343d4306c6c486d72e2a6696a3}{getparam3\+\_\+ccdtl}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a520796b320588e1f31ce8587301b571b}{maplinear\+\_\+ccdtl}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_aca1c6ac6cdbd554820ab2c213a987647}{rk6i\+\_\+ccdtl}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_afad7c4471295ba39993a4a180d6a4d54}{intfunc1\+\_\+ccdtl}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_adb7b1c30d3fcb087a5064911ccd4fd1d}{getaxflde\+\_\+ccdtl}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the C\+C\+D\+TL rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_ab81d1b262943e405eebe3bfef401bb97}{getflderr\+\_\+ccdtl}} (pos, extfld, this, dx, dy, anglex, angley,
+\begin{DoxyCompactList}\small\item\em get the external field with misalignment and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceccdtlclass_a62eb43f6a732d52951d468e91a2312cb}{getfld\+\_\+ccdtl}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get the external field without misalignment and rotation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespaceccdtlclass_a0e8e95c86f2dab6639fc79f05859b6ea}{nparam}} = 11
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and RF field for the C\+C\+D\+TL beam line elment. 
+
+\begin{DoxyAuthor}{Authors}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{ccdtlclass::ccdtl@{ccdtlclass::ccdtl}}\label{structccdtlclass_1_1ccdtl}
+\Hypertarget{namespaceccdtlclass_structccdtlclass_1_1ccdtl}
+\subsubsection{type ccdtlclass\+::ccdtl}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespaceccdtlclass_aea542f9975283b5fd43c8f15a0d2762f}\label{namespaceccdtlclass_aea542f9975283b5fd43c8f15a0d2762f}} 
+integer&
+itype&
+Itype = 102. \\
+\hline
+
+\mbox{\Hypertarget{namespaceccdtlclass_a367acb3cd3326d78cf47fe5c8891b80c}\label{namespaceccdtlclass_a367acb3cd3326d78cf47fe5c8891b80c}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceccdtlclass_a646c337f17e8c188638d58449ea92b99}\label{namespaceccdtlclass_a646c337f17e8c188638d58449ea92b99}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceccdtlclass_a56759205b010998a69c2716e35e0d6d6}\label{namespaceccdtlclass_a56759205b010998a69c2716e35e0d6d6}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespaceccdtlclass_a6b125e6ca6440736ab2272ad373cc24d}\label{namespaceccdtlclass_a6b125e6ca6440736ab2272ad373cc24d}} 
+double precision, dimension(\mbox{\hyperlink{namespaceccdtlclass_a0e8e95c86f2dab6639fc79f05859b6ea}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespaceccdtlclass_aaa94d8179c6d59c2d3e81b64e8237962}\label{namespaceccdtlclass_aaa94d8179c6d59c2d3e81b64e8237962}} 
+\index{ccdtlclass@{ccdtlclass}!construct\_ccdtl@{construct\_ccdtl}}
+\index{construct\_ccdtl@{construct\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{construct\_ccdtl()}{construct\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::construct\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceccdtlclass_adb7b1c30d3fcb087a5064911ccd4fd1d}\label{namespaceccdtlclass_adb7b1c30d3fcb087a5064911ccd4fd1d}} 
+\index{ccdtlclass@{ccdtlclass}!getaxflde\_ccdtl@{getaxflde\_ccdtl}}
+\index{getaxflde\_ccdtl@{getaxflde\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{getaxflde\_ccdtl()}{getaxflde\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::getaxflde\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{ez1,  }\item[{double precision, intent(out)}]{ezp1,  }\item[{double precision, intent(out)}]{ezpp1 }\end{DoxyParamCaption})}
+
+
+
+interpolate the field from the C\+C\+D\+TL rf cavity onto bunch location. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceccdtlclass_adb7b1c30d3fcb087a5064911ccd4fd1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceccdtlclass_a62eb43f6a732d52951d468e91a2312cb}\label{namespaceccdtlclass_a62eb43f6a732d52951d468e91a2312cb}} 
+\index{ccdtlclass@{ccdtlclass}!getfld\_ccdtl@{getfld\_ccdtl}}
+\index{getfld\_ccdtl@{getfld\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{getfld\_ccdtl()}{getfld\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::getfld\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get the external field without misalignment and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceccdtlclass_a62eb43f6a732d52951d468e91a2312cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceccdtlclass_ab81d1b262943e405eebe3bfef401bb97}\label{namespaceccdtlclass_ab81d1b262943e405eebe3bfef401bb97}} 
+\index{ccdtlclass@{ccdtlclass}!getflderr\_ccdtl@{getflderr\_ccdtl}}
+\index{getflderr\_ccdtl@{getflderr\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{getflderr\_ccdtl()}{getflderr\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::getflderr\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley }\end{DoxyParamCaption})}
+
+
+
+get the external field with misalignment and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceccdtlclass_ab81d1b262943e405eebe3bfef401bb97_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceccdtlclass_a027b988ab66d8b89dabf46f5e45d82f5}\label{namespaceccdtlclass_a027b988ab66d8b89dabf46f5e45d82f5}} 
+\index{ccdtlclass@{ccdtlclass}!getparam1\_ccdtl@{getparam1\_ccdtl}}
+\index{getparam1\_ccdtl@{getparam1\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{getparam1\_ccdtl()}{getparam1\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::getparam1\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceccdtlclass_a8455f87d9ac20671adf737902c8b90d8}\label{namespaceccdtlclass_a8455f87d9ac20671adf737902c8b90d8}} 
+\index{ccdtlclass@{ccdtlclass}!getparam2\_ccdtl@{getparam2\_ccdtl}}
+\index{getparam2\_ccdtl@{getparam2\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{getparam2\_ccdtl()}{getparam2\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::getparam2\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceccdtlclass_a529631343d4306c6c486d72e2a6696a3}\label{namespaceccdtlclass_a529631343d4306c6c486d72e2a6696a3}} 
+\index{ccdtlclass@{ccdtlclass}!getparam3\_ccdtl@{getparam3\_ccdtl}}
+\index{getparam3\_ccdtl@{getparam3\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{getparam3\_ccdtl()}{getparam3\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::getparam3\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceccdtlclass_afad7c4471295ba39993a4a180d6a4d54}\label{namespaceccdtlclass_afad7c4471295ba39993a4a180d6a4d54}} 
+\index{ccdtlclass@{ccdtlclass}!intfunc1\_ccdtl@{intfunc1\_ccdtl}}
+\index{intfunc1\_ccdtl@{intfunc1\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{intfunc1\_ccdtl()}{intfunc1\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::intfunc1\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{namespaceccdtlclass_afad7c4471295ba39993a4a180d6a4d54_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceccdtlclass_afad7c4471295ba39993a4a180d6a4d54_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceccdtlclass_a520796b320588e1f31ce8587301b571b}\label{namespaceccdtlclass_a520796b320588e1f31ce8587301b571b}} 
+\index{ccdtlclass@{ccdtlclass}!maplinear\_ccdtl@{maplinear\_ccdtl}}
+\index{maplinear\_ccdtl@{maplinear\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{maplinear\_ccdtl()}{maplinear\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::maplinear\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceccdtlclass_a520796b320588e1f31ce8587301b571b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceccdtlclass_a520796b320588e1f31ce8587301b571b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceccdtlclass_aca1c6ac6cdbd554820ab2c213a987647}\label{namespaceccdtlclass_aca1c6ac6cdbd554820ab2c213a987647}} 
+\index{ccdtlclass@{ccdtlclass}!rk6i\_ccdtl@{rk6i\_ccdtl}}
+\index{rk6i\_ccdtl@{rk6i\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{rk6i\_ccdtl()}{rk6i\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::rk6i\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceccdtlclass_aca1c6ac6cdbd554820ab2c213a987647_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceccdtlclass_aca1c6ac6cdbd554820ab2c213a987647_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceccdtlclass_adedaabef796136ab3b22dcc923243cfd}\label{namespaceccdtlclass_adedaabef796136ab3b22dcc923243cfd}} 
+\index{ccdtlclass@{ccdtlclass}!setparam1\_ccdtl@{setparam1\_ccdtl}}
+\index{setparam1\_ccdtl@{setparam1\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{setparam1\_ccdtl()}{setparam1\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::setparam1\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceccdtlclass_aa32b5665906eac3911db6712a5710f97}\label{namespaceccdtlclass_aa32b5665906eac3911db6712a5710f97}} 
+\index{ccdtlclass@{ccdtlclass}!setparam2\_ccdtl@{setparam2\_ccdtl}}
+\index{setparam2\_ccdtl@{setparam2\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{setparam2\_ccdtl()}{setparam2\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::setparam2\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceccdtlclass_a3632b0f42925964cedb7778792da563f}\label{namespaceccdtlclass_a3632b0f42925964cedb7778792da563f}} 
+\index{ccdtlclass@{ccdtlclass}!setparam3\_ccdtl@{setparam3\_ccdtl}}
+\index{setparam3\_ccdtl@{setparam3\_ccdtl}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{setparam3\_ccdtl()}{setparam3\_ccdtl()}}
+{\footnotesize\ttfamily subroutine ccdtlclass\+::setparam3\+\_\+ccdtl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespaceccdtlclass_structccdtlclass_1_1ccdtl}{ccdtl}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceccdtlclass_a0e8e95c86f2dab6639fc79f05859b6ea}\label{namespaceccdtlclass_a0e8e95c86f2dab6639fc79f05859b6ea}} 
+\index{ccdtlclass@{ccdtlclass}!nparam@{nparam}}
+\index{nparam@{nparam}!ccdtlclass@{ccdtlclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private ccdtlclass\+::nparam = 11\hspace{0.3cm}{\ttfamily [private]}}
+

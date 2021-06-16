@@ -1,0 +1,73 @@
+\hypertarget{namespacetransposeclass}{}\section{transposeclass Module Reference}
+\label{namespacetransposeclass}\index{transposeclass@{transposeclass}}
+
+
+This class defines a tranpose class which contains 2D and 3D tranpose functions. (Both arrays are distributed on 2D Cartisian processor array).  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacetransposeclass_ac2cdff8d4fbeb19df8a8ba2ff562b8c2}{trans3d3\+\_\+transp}} (nx, nsizey, nsizez, nsizexz, xin, xout, np, st
+\begin{DoxyCompactList}\small\item\em Subroutine Trans3d3\+: get the transpose of 3D double precision array with uneven distribution. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacetransposeclass_a53eeae5e11acd8c39e03fb8672f2d90e}{trans3d\+\_\+transp}} (ny, nx, nysizex, nsizex, xin, tempmtr, np, stab
+\begin{DoxyCompactList}\small\item\em Subroutine Trans3d\+: get the transpose of 3D double precision array with uneven distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines a tranpose class which contains 2D and 3D tranpose functions. (Both arrays are distributed on 2D Cartisian processor array). 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacetransposeclass_ac2cdff8d4fbeb19df8a8ba2ff562b8c2}\label{namespacetransposeclass_ac2cdff8d4fbeb19df8a8ba2ff562b8c2}} 
+\index{transposeclass@{transposeclass}!trans3d3\_transp@{trans3d3\_transp}}
+\index{trans3d3\_transp@{trans3d3\_transp}!transposeclass@{transposeclass}}
+\subsubsection{\texorpdfstring{trans3d3\_transp()}{trans3d3\_transp()}}
+{\footnotesize\ttfamily subroutine transposeclass\+::trans3d3\+\_\+transp (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nx,  }\item[{integer, intent(in)}]{nsizey,  }\item[{integer, intent(in)}]{nsizez,  }\item[{integer, intent(in)}]{nsizexz,  }\item[{double complex, dimension(nx,nsizey,nsizez), intent(in)}]{xin,  }\item[{double complex, dimension(nz,nsizey,nsizexz), intent(out)}]{xout,  }\item[{integer, intent(in)}]{np,  }\item[{}]{st }\end{DoxyParamCaption})}
+
+
+
+Subroutine Trans3d3\+: get the transpose of 3D double precision array with uneven distribution. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetransposeclass_ac2cdff8d4fbeb19df8a8ba2ff562b8c2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetransposeclass_ac2cdff8d4fbeb19df8a8ba2ff562b8c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetransposeclass_a53eeae5e11acd8c39e03fb8672f2d90e}\label{namespacetransposeclass_a53eeae5e11acd8c39e03fb8672f2d90e}} 
+\index{transposeclass@{transposeclass}!trans3d\_transp@{trans3d\_transp}}
+\index{trans3d\_transp@{trans3d\_transp}!transposeclass@{transposeclass}}
+\subsubsection{\texorpdfstring{trans3d\_transp()}{trans3d\_transp()}}
+{\footnotesize\ttfamily subroutine transposeclass\+::trans3d\+\_\+transp (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nx,  }\item[{integer, intent(in)}]{nysizex,  }\item[{integer, intent(in)}]{nsizex,  }\item[{double complex, dimension(ny,nsizex,nzlcal), intent(in)}]{xin,  }\item[{}]{tempmtr,  }\item[{integer, intent(in)}]{np,  }\item[{integer, dimension(0\+:np-\/1), intent(in)}]{stab }\end{DoxyParamCaption})}
+
+
+
+Subroutine Trans3d\+: get the transpose of 3D double precision array with uneven distribution. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetransposeclass_a53eeae5e11acd8c39e03fb8672f2d90e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetransposeclass_a53eeae5e11acd8c39e03fb8672f2d90e_icgraph}
+\end{center}
+\end{figure}

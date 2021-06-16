@@ -1,0 +1,6 @@
+<map id="timerclass::showtime_timer" name="timerclass::showtime_timer">
+<area shape="rect" id="node1" title=" " alt="" coords="5,24,150,63"/>
+<area shape="rect" id="node2" href="$namespacetimerclass.html#a3535b11970327778ddd27cee93c2288b" title=" " alt="" coords="198,31,372,56"/>
+<area shape="rect" id="node3" href="$namespacempistub.html#a3085e38e0e5d38df633afc7b2d92cebb" title="processor ID" alt="" coords="420,5,594,31"/>
+<area shape="rect" id="node4" href="$namespacempistub.html#a188b67a76569dcb918a27f48018e6baf" title="total number of processors" alt="" coords="421,55,593,80"/>
+</map>

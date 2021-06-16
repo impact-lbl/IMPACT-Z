@@ -1,0 +1,286 @@
+\hypertarget{namespacedipoleclass}{}\section{dipoleclass Module Reference}
+\label{namespacedipoleclass}\index{dipoleclass@{dipoleclass}}
+
+
+This class defines the linear transfer map and field for the Dipole beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}
+\item 
+interface \mbox{\hyperlink{interfacedipoleclass_1_1getparam__dipole}{getparam\+\_\+dipole}}
+\item 
+interface \mbox{\hyperlink{interfacedipoleclass_1_1setparam__dipole}{setparam\+\_\+dipole}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_ad926e6953a9110fb9662f9d75aec0578}{construct\+\_\+dipole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a88c00f58bdecf1b9c087e1fa6fe4d890}{setparam1\+\_\+dipole}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_af9b4f7bb26e407880166d1b7d19f8877}{setparam2\+\_\+dipole}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a46e12e75054e010d776e23895101e223}{setparam3\+\_\+dipole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_af02462235721b966a71753610096e85a}{getparam1\+\_\+dipole}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_af793a317f0b5d337d6818755609641a7}{getparam2\+\_\+dipole}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a6a7322bcea3d9d07affd0628002985fd}{getparam3\+\_\+dipole}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a3388afe517788e8b824b96bf49793510}{maplinear\+\_\+dipole}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a1a92cd51d6ad864d251dd3abdc361ba8}{rk6i\+\_\+dipole}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_ab15f3a0defc0de419f5613659abc9cad}{intfunc1\+\_\+dipole}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a0a75204835a2e4dd1ea67c1ee32e62fe}{getflderr\+\_\+dipole}} (pos, extfld, this, dx, dy, anglex, angley
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_ac8c755e07904e113f223ee5ef029ac93}{getfld\+\_\+dipole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_abab9a0945263c7c75aa7ef9f94c07b9a}{getfldold2\+\_\+dipole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a417b00dd769e534be3746eaeff56c074}{getfldold\+\_\+dipole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_ab0dd1e8b5ca921939ce0d97f0bd817ee}{fpol\+\_\+dipole}} (h0, h1, tanphi, tanphib, k1, psi, ptarry1, ang, N
+\begin{DoxyCompactList}\small\item\em Now particle distribution in ImpactZ coordinates Transfer matrix follows the Transport\+: K. L. Brown, S\+L\+A\+C-\/75. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_aecb437418e23046347e41045d2988d3b}{bpol\+\_\+dipole}} (h0, h1, tanphi, tanphib, k1, psi, ptarry1, ang, Nplocal, gam0, qm0)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a2aaba3f2e21950bbcafe3eb744fff547}{sector\+\_\+dipole}} (len, beta, h0, k1, ptarry1, Nplocal, qm0)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacedipoleclass_abc619199e1e9a2811da9e97630125da3}{nparam}} = 15
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and field for the Dipole beam line elment. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{dipoleclass::dipole@{dipoleclass::dipole}}\label{structdipoleclass_1_1dipole}
+\Hypertarget{namespacedipoleclass_structdipoleclass_1_1dipole}
+\subsubsection{type dipoleclass\+::dipole}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacedipoleclass_a488890695ad6becc93db5079e740868e}\label{namespacedipoleclass_a488890695ad6becc93db5079e740868e}} 
+integer&
+itype&
+Itype = 4. \\
+\hline
+
+\mbox{\Hypertarget{namespacedipoleclass_aada668e2b218b56769c64c2ec9f21dea}\label{namespacedipoleclass_aada668e2b218b56769c64c2ec9f21dea}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedipoleclass_af0a1da636573d6878f6d1c11d0c9e5ab}\label{namespacedipoleclass_af0a1da636573d6878f6d1c11d0c9e5ab}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedipoleclass_a5f280e96dab020ba48b5b28f47b0d5fa}\label{namespacedipoleclass_a5f280e96dab020ba48b5b28f47b0d5fa}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedipoleclass_a5ce0b668334f66ce50e3852ce17ddc39}\label{namespacedipoleclass_a5ce0b668334f66ce50e3852ce17ddc39}} 
+double precision, dimension(\mbox{\hyperlink{namespacedipoleclass_abc619199e1e9a2811da9e97630125da3}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacedipoleclass_aecb437418e23046347e41045d2988d3b}\label{namespacedipoleclass_aecb437418e23046347e41045d2988d3b}} 
+\index{dipoleclass@{dipoleclass}!bpol\_dipole@{bpol\_dipole}}
+\index{bpol\_dipole@{bpol\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{bpol\_dipole()}{bpol\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::bpol\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision}]{h0,  }\item[{double precision}]{h1,  }\item[{double precision}]{tanphi,  }\item[{double precision}]{tanphib,  }\item[{double precision}]{k1,  }\item[{double precision}]{psi,  }\item[{double precision, dimension(\+:,\+:), pointer}]{ptarry1,  }\item[{double precision}]{ang,  }\item[{integer, intent(in)}]{Nplocal,  }\item[{double precision}]{gam0,  }\item[{double precision}]{qm0 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedipoleclass_ad926e6953a9110fb9662f9d75aec0578}\label{namespacedipoleclass_ad926e6953a9110fb9662f9d75aec0578}} 
+\index{dipoleclass@{dipoleclass}!construct\_dipole@{construct\_dipole}}
+\index{construct\_dipole@{construct\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{construct\_dipole()}{construct\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::construct\+\_\+dipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedipoleclass_ab0dd1e8b5ca921939ce0d97f0bd817ee}\label{namespacedipoleclass_ab0dd1e8b5ca921939ce0d97f0bd817ee}} 
+\index{dipoleclass@{dipoleclass}!fpol\_dipole@{fpol\_dipole}}
+\index{fpol\_dipole@{fpol\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{fpol\_dipole()}{fpol\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::fpol\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision}]{h0,  }\item[{double precision}]{h1,  }\item[{double precision}]{tanphi,  }\item[{double precision}]{tanphib,  }\item[{double precision}]{k1,  }\item[{double precision}]{psi,  }\item[{double precision, dimension(\+:,\+:), pointer}]{ptarry1,  }\item[{double precision}]{ang,  }\item[{}]{N }\end{DoxyParamCaption})}
+
+
+
+Now particle distribution in ImpactZ coordinates Transfer matrix follows the Transport\+: K. L. Brown, S\+L\+A\+C-\/75. 
+
+\begin{DoxyAuthor}{Author}
+J.\+Q. 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+modified 2018 
+\end{DoxyDate}
+\mbox{\Hypertarget{namespacedipoleclass_ac8c755e07904e113f223ee5ef029ac93}\label{namespacedipoleclass_ac8c755e07904e113f223ee5ef029ac93}} 
+\index{dipoleclass@{dipoleclass}!getfld\_dipole@{getfld\_dipole}}
+\index{getfld\_dipole@{getfld\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{getfld\_dipole()}{getfld\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::getfld\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedipoleclass_ac8c755e07904e113f223ee5ef029ac93_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedipoleclass_a0a75204835a2e4dd1ea67c1ee32e62fe}\label{namespacedipoleclass_a0a75204835a2e4dd1ea67c1ee32e62fe}} 
+\index{dipoleclass@{dipoleclass}!getflderr\_dipole@{getflderr\_dipole}}
+\index{getflderr\_dipole@{getflderr\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{getflderr\_dipole()}{getflderr\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::getflderr\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedipoleclass_a0a75204835a2e4dd1ea67c1ee32e62fe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedipoleclass_abab9a0945263c7c75aa7ef9f94c07b9a}\label{namespacedipoleclass_abab9a0945263c7c75aa7ef9f94c07b9a}} 
+\index{dipoleclass@{dipoleclass}!getfldold2\_dipole@{getfldold2\_dipole}}
+\index{getfldold2\_dipole@{getfldold2\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{getfldold2\_dipole()}{getfldold2\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::getfldold2\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+\mbox{\Hypertarget{namespacedipoleclass_a417b00dd769e534be3746eaeff56c074}\label{namespacedipoleclass_a417b00dd769e534be3746eaeff56c074}} 
+\index{dipoleclass@{dipoleclass}!getfldold\_dipole@{getfldold\_dipole}}
+\index{getfldold\_dipole@{getfldold\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{getfldold\_dipole()}{getfldold\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::getfldold\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+\mbox{\Hypertarget{namespacedipoleclass_af02462235721b966a71753610096e85a}\label{namespacedipoleclass_af02462235721b966a71753610096e85a}} 
+\index{dipoleclass@{dipoleclass}!getparam1\_dipole@{getparam1\_dipole}}
+\index{getparam1\_dipole@{getparam1\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{getparam1\_dipole()}{getparam1\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::getparam1\+\_\+dipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedipoleclass_af793a317f0b5d337d6818755609641a7}\label{namespacedipoleclass_af793a317f0b5d337d6818755609641a7}} 
+\index{dipoleclass@{dipoleclass}!getparam2\_dipole@{getparam2\_dipole}}
+\index{getparam2\_dipole@{getparam2\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{getparam2\_dipole()}{getparam2\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::getparam2\+\_\+dipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedipoleclass_a6a7322bcea3d9d07affd0628002985fd}\label{namespacedipoleclass_a6a7322bcea3d9d07affd0628002985fd}} 
+\index{dipoleclass@{dipoleclass}!getparam3\_dipole@{getparam3\_dipole}}
+\index{getparam3\_dipole@{getparam3\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{getparam3\_dipole()}{getparam3\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::getparam3\+\_\+dipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedipoleclass_ab15f3a0defc0de419f5613659abc9cad}\label{namespacedipoleclass_ab15f3a0defc0de419f5613659abc9cad}} 
+\index{dipoleclass@{dipoleclass}!intfunc1\_dipole@{intfunc1\_dipole}}
+\index{intfunc1\_dipole@{intfunc1\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{intfunc1\_dipole()}{intfunc1\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::intfunc1\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedipoleclass_ab15f3a0defc0de419f5613659abc9cad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedipoleclass_a3388afe517788e8b824b96bf49793510}\label{namespacedipoleclass_a3388afe517788e8b824b96bf49793510}} 
+\index{dipoleclass@{dipoleclass}!maplinear\_dipole@{maplinear\_dipole}}
+\index{maplinear\_dipole@{maplinear\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{maplinear\_dipole()}{maplinear\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::maplinear\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedipoleclass_a3388afe517788e8b824b96bf49793510_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedipoleclass_a1a92cd51d6ad864d251dd3abdc361ba8}\label{namespacedipoleclass_a1a92cd51d6ad864d251dd3abdc361ba8}} 
+\index{dipoleclass@{dipoleclass}!rk6i\_dipole@{rk6i\_dipole}}
+\index{rk6i\_dipole@{rk6i\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{rk6i\_dipole()}{rk6i\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::rk6i\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{namespacedipoleclass_a1a92cd51d6ad864d251dd3abdc361ba8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedipoleclass_a1a92cd51d6ad864d251dd3abdc361ba8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedipoleclass_a2aaba3f2e21950bbcafe3eb744fff547}\label{namespacedipoleclass_a2aaba3f2e21950bbcafe3eb744fff547}} 
+\index{dipoleclass@{dipoleclass}!sector\_dipole@{sector\_dipole}}
+\index{sector\_dipole@{sector\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{sector\_dipole()}{sector\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::sector\+\_\+dipole (\begin{DoxyParamCaption}\item[{double precision}]{len,  }\item[{double precision}]{beta,  }\item[{double precision}]{h0,  }\item[{double precision}]{k1,  }\item[{double precision, dimension(\+:,\+:), pointer}]{ptarry1,  }\item[{integer, intent(in)}]{Nplocal,  }\item[{double precision}]{qm0 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedipoleclass_a88c00f58bdecf1b9c087e1fa6fe4d890}\label{namespacedipoleclass_a88c00f58bdecf1b9c087e1fa6fe4d890}} 
+\index{dipoleclass@{dipoleclass}!setparam1\_dipole@{setparam1\_dipole}}
+\index{setparam1\_dipole@{setparam1\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{setparam1\_dipole()}{setparam1\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::setparam1\+\_\+dipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedipoleclass_af9b4f7bb26e407880166d1b7d19f8877}\label{namespacedipoleclass_af9b4f7bb26e407880166d1b7d19f8877}} 
+\index{dipoleclass@{dipoleclass}!setparam2\_dipole@{setparam2\_dipole}}
+\index{setparam2\_dipole@{setparam2\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{setparam2\_dipole()}{setparam2\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::setparam2\+\_\+dipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedipoleclass_a46e12e75054e010d776e23895101e223}\label{namespacedipoleclass_a46e12e75054e010d776e23895101e223}} 
+\index{dipoleclass@{dipoleclass}!setparam3\_dipole@{setparam3\_dipole}}
+\index{setparam3\_dipole@{setparam3\_dipole}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{setparam3\_dipole()}{setparam3\_dipole()}}
+{\footnotesize\ttfamily subroutine dipoleclass\+::setparam3\+\_\+dipole (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipole}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedipoleclass_abc619199e1e9a2811da9e97630125da3}\label{namespacedipoleclass_abc619199e1e9a2811da9e97630125da3}} 
+\index{dipoleclass@{dipoleclass}!nparam@{nparam}}
+\index{nparam@{nparam}!dipoleclass@{dipoleclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private dipoleclass\+::nparam = 15\hspace{0.3cm}{\ttfamily [private]}}
+

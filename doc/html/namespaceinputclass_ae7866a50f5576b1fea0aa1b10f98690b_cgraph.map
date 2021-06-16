@@ -1,0 +1,5 @@
+<map id="inputclass::init_input" name="inputclass::init_input">
+<area shape="rect" id="node1" title="Start MPI." alt="" coords="5,31,147,56"/>
+<area shape="rect" id="node2" href="$namespacempistub.html#af6819ee02570b8c8bef94e79e67a4af9" title="mpi initialization" alt="" coords="204,5,325,31"/>
+<area shape="rect" id="node3" href="$namespacempistub.html#a2456432a60801629e19273ebe4114bc9" title="mpi timing" alt="" coords="195,55,334,80"/>
+</map>

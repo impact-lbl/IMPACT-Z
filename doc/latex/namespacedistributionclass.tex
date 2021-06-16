@@ -1,0 +1,310 @@
+\hypertarget{namespacedistributionclass}{}\section{distributionclass Module Reference}
+\label{namespacedistributionclass}\index{distributionclass@{distributionclass}}
+
+
+This class defines initial distributions for the charged particle beam bunch information in the accelerator.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a90036cb4aa43f5e3f9844bc412d2a766}{sample\+\_\+dist}} (this, distparam0, nparam, flagdist, geom, grid
+\begin{DoxyCompactList}\small\item\em sample the particles with intial distribution. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_af85f956a3fdb677022a546bc69ecfb3c}{gauss3\+\_\+dist}} (this, nparam, distparam, grid, flagalloc)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a00377c8aa90fa9dc8b222d71d019f936}{normdv}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_acfc04ca0c8be3e0f3e73779c5e88693b}{normvec}} (y, num)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_aed734df6d00f7004cf11847adb42dd1d}{waterbag\+\_\+dist}} (this, nparam, distparam, grid, flagalloc)
+\begin{DoxyCompactList}\small\item\em sample the particles with intial distribution using rejection method. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a2e96d2c85cac39531d37f2ce057c5766}{kv3d\+\_\+dist}} (this, nparam, distparam, grid)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a4a013e2bf1afc4cdeefe0fce7f0e0e00}{uniform\+\_\+dist}} (this, nparam, distparam, geom, grid)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a0e031187f6b2818aebcd2911b93c0722}{semigauss\+\_\+dist}} (this, nparam, distparam, geom, grid)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a020961b4717af242fc3c82090a17ce12}{normdv2}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a50c29600de2efb52342fa5b2e2e21283}{waterbagmc\+\_\+dist}} (this, nparam, distparam, grid, flagalloc,
+\begin{DoxyCompactList}\small\item\em sample the particles with intial distribution using rejection method for multi-\/charge state. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_ae3590d26a730b67c67e6e6597196f4bd}{gaussmc\+\_\+dist}} (this, nparam, distparam, grid, flagalloc, nch
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_acf080fd52aac8287d955bcfd88362c07}{readelegant\+\_\+dist}} (this, nparam, distparam, geom, grid, Flag
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a4efaf82e4273159a0e2651238502bbf2}{readin\+\_\+dist}} (this)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_ab1d0719de2c779c9d5e8a5f353555193}{readimpt\+\_\+dist}} (this, nparam, distparam, geom, grid, Flagbc)
+\begin{DoxyCompactList}\small\item\em read particle distribution from ImpactT output \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines initial distributions for the charged particle beam bunch information in the accelerator. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacedistributionclass_af85f956a3fdb677022a546bc69ecfb3c}\label{namespacedistributionclass_af85f956a3fdb677022a546bc69ecfb3c}} 
+\index{distributionclass@{distributionclass}!gauss3\_dist@{gauss3\_dist}}
+\index{gauss3\_dist@{gauss3\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{gauss3\_dist()}{gauss3\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::gauss3\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{integer, intent(in)}]{flagalloc }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_af85f956a3fdb677022a546bc69ecfb3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_af85f956a3fdb677022a546bc69ecfb3c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_ae3590d26a730b67c67e6e6597196f4bd}\label{namespacedistributionclass_ae3590d26a730b67c67e6e6597196f4bd}} 
+\index{distributionclass@{distributionclass}!gaussmc\_dist@{gaussmc\_dist}}
+\index{gaussmc\_dist@{gaussmc\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{gaussmc\_dist()}{gaussmc\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::gaussmc\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{integer, intent(in)}]{flagalloc,  }\item[{}]{nch }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_ae3590d26a730b67c67e6e6597196f4bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_ae3590d26a730b67c67e6e6597196f4bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_a2e96d2c85cac39531d37f2ce057c5766}\label{namespacedistributionclass_a2e96d2c85cac39531d37f2ce057c5766}} 
+\index{distributionclass@{distributionclass}!kv3d\_dist@{kv3d\_dist}}
+\index{kv3d\_dist@{kv3d\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{kv3d\_dist()}{kv3d\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::kv3d\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (pgrid2d), intent(in)}]{grid }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a2e96d2c85cac39531d37f2ce057c5766_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a2e96d2c85cac39531d37f2ce057c5766_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_a00377c8aa90fa9dc8b222d71d019f936}\label{namespacedistributionclass_a00377c8aa90fa9dc8b222d71d019f936}} 
+\index{distributionclass@{distributionclass}!normdv@{normdv}}
+\index{normdv@{normdv}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{normdv()}{normdv()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::normdv (\begin{DoxyParamCaption}\item[{double precision, dimension(2), intent(out)}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedistributionclass_a020961b4717af242fc3c82090a17ce12}\label{namespacedistributionclass_a020961b4717af242fc3c82090a17ce12}} 
+\index{distributionclass@{distributionclass}!normdv2@{normdv2}}
+\index{normdv2@{normdv2}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{normdv2()}{normdv2()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::normdv2 (\begin{DoxyParamCaption}\item[{double precision, dimension(3), intent(out)}]{y }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a020961b4717af242fc3c82090a17ce12_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_acfc04ca0c8be3e0f3e73779c5e88693b}\label{namespacedistributionclass_acfc04ca0c8be3e0f3e73779c5e88693b}} 
+\index{distributionclass@{distributionclass}!normvec@{normvec}}
+\index{normvec@{normvec}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{normvec()}{normvec()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::normvec (\begin{DoxyParamCaption}\item[{double precision, dimension(2,num), intent(out)}]{y,  }\item[{integer, intent(in)}]{num }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_acfc04ca0c8be3e0f3e73779c5e88693b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_acf080fd52aac8287d955bcfd88362c07}\label{namespacedistributionclass_acf080fd52aac8287d955bcfd88362c07}} 
+\index{distributionclass@{distributionclass}!readelegant\_dist@{readelegant\_dist}}
+\index{readelegant\_dist@{readelegant\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{readelegant\_dist()}{readelegant\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::readelegant\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (compdom), intent(in)}]{geom,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{}]{Flag }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{namespacedistributionclass_acf080fd52aac8287d955bcfd88362c07_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_acf080fd52aac8287d955bcfd88362c07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_ab1d0719de2c779c9d5e8a5f353555193}\label{namespacedistributionclass_ab1d0719de2c779c9d5e8a5f353555193}} 
+\index{distributionclass@{distributionclass}!readimpt\_dist@{readimpt\_dist}}
+\index{readimpt\_dist@{readimpt\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{readimpt\_dist()}{readimpt\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::readimpt\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (compdom), intent(in)}]{geom,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{integer, intent(in)}]{Flagbc }\end{DoxyParamCaption})}
+
+
+
+read particle distribution from ImpactT output 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{namespacedistributionclass_ab1d0719de2c779c9d5e8a5f353555193_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_ab1d0719de2c779c9d5e8a5f353555193_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_a4efaf82e4273159a0e2651238502bbf2}\label{namespacedistributionclass_a4efaf82e4273159a0e2651238502bbf2}} 
+\index{distributionclass@{distributionclass}!readin\_dist@{readin\_dist}}
+\index{readin\_dist@{readin\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{readin\_dist()}{readin\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::readin\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a4efaf82e4273159a0e2651238502bbf2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_a90036cb4aa43f5e3f9844bc412d2a766}\label{namespacedistributionclass_a90036cb4aa43f5e3f9844bc412d2a766}} 
+\index{distributionclass@{distributionclass}!sample\_dist@{sample\_dist}}
+\index{sample\_dist@{sample\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{sample\_dist()}{sample\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::sample\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{double precision, dimension(nparam)}]{distparam0,  }\item[{integer, intent(in)}]{nparam,  }\item[{integer, intent(in)}]{flagdist,  }\item[{type (compdom), intent(in)}]{geom,  }\item[{type (pgrid2d), intent(in)}]{grid }\end{DoxyParamCaption})}
+
+
+
+sample the particles with intial distribution. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a90036cb4aa43f5e3f9844bc412d2a766_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{namespacedistributionclass_a90036cb4aa43f5e3f9844bc412d2a766_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_a0e031187f6b2818aebcd2911b93c0722}\label{namespacedistributionclass_a0e031187f6b2818aebcd2911b93c0722}} 
+\index{distributionclass@{distributionclass}!semigauss\_dist@{semigauss\_dist}}
+\index{semigauss\_dist@{semigauss\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{semigauss\_dist()}{semigauss\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::semigauss\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (compdom), intent(in)}]{geom,  }\item[{type (pgrid2d), intent(in)}]{grid }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a0e031187f6b2818aebcd2911b93c0722_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a0e031187f6b2818aebcd2911b93c0722_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_a4a013e2bf1afc4cdeefe0fce7f0e0e00}\label{namespacedistributionclass_a4a013e2bf1afc4cdeefe0fce7f0e0e00}} 
+\index{distributionclass@{distributionclass}!uniform\_dist@{uniform\_dist}}
+\index{uniform\_dist@{uniform\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{uniform\_dist()}{uniform\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::uniform\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (compdom), intent(in)}]{geom,  }\item[{type (pgrid2d), intent(in)}]{grid }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a4a013e2bf1afc4cdeefe0fce7f0e0e00_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a4a013e2bf1afc4cdeefe0fce7f0e0e00_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_aed734df6d00f7004cf11847adb42dd1d}\label{namespacedistributionclass_aed734df6d00f7004cf11847adb42dd1d}} 
+\index{distributionclass@{distributionclass}!waterbag\_dist@{waterbag\_dist}}
+\index{waterbag\_dist@{waterbag\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{waterbag\_dist()}{waterbag\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::waterbag\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{integer, intent(in)}]{flagalloc }\end{DoxyParamCaption})}
+
+
+
+sample the particles with intial distribution using rejection method. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_aed734df6d00f7004cf11847adb42dd1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_aed734df6d00f7004cf11847adb42dd1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedistributionclass_a50c29600de2efb52342fa5b2e2e21283}\label{namespacedistributionclass_a50c29600de2efb52342fa5b2e2e21283}} 
+\index{distributionclass@{distributionclass}!waterbagmc\_dist@{waterbagmc\_dist}}
+\index{waterbagmc\_dist@{waterbagmc\_dist}!distributionclass@{distributionclass}}
+\subsubsection{\texorpdfstring{waterbagmc\_dist()}{waterbagmc\_dist()}}
+{\footnotesize\ttfamily subroutine distributionclass\+::waterbagmc\+\_\+dist (\begin{DoxyParamCaption}\item[{type (beambunch), intent(inout)}]{this,  }\item[{integer, intent(in)}]{nparam,  }\item[{double precision, dimension(nparam)}]{distparam,  }\item[{type (pgrid2d), intent(in)}]{grid,  }\item[{integer, intent(in)}]{flagalloc }\end{DoxyParamCaption})}
+
+
+
+sample the particles with intial distribution using rejection method for multi-\/charge state. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a50c29600de2efb52342fa5b2e2e21283_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedistributionclass_a50c29600de2efb52342fa5b2e2e21283_icgraph}
+\end{center}
+\end{figure}

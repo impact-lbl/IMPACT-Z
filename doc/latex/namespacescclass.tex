@@ -1,0 +1,261 @@
+\hypertarget{namespacescclass}{}\section{scclass Module Reference}
+\label{namespacescclass}\index{scclass@{scclass}}
+
+
+This class defines the linear transfer map and RF field for the SC beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacescclass_1_1getparam__sc}{getparam\+\_\+sc}}
+\item 
+type \mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}
+\item 
+interface \mbox{\hyperlink{interfacescclass_1_1setparam__sc}{setparam\+\_\+sc}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a117b083b5a5a59d050fe5c0a4771332b}{construct\+\_\+sc}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a23a57a64ee6a74149bbc9cf009ce8711}{setparam1\+\_\+sc}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_af35b79ac06dc2b6bec2d97f6e745ab20}{setparam2\+\_\+sc}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a656d4cc4d5fe872ffa9df12bab721bec}{setparam3\+\_\+sc}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a5f02207aa4bb28b292bf39bd5876c7e2}{getparam1\+\_\+sc}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a036860e8ca9dff4cc79e19ec6c55f86a}{getparam2\+\_\+sc}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_aaa829fed79c7f89ac09b012687895817}{getparam3\+\_\+sc}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_aec786348c1a0beec0d090c12b13d588c}{maplinear\+\_\+sc}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a4b16987e1d3852123c69a6bfc0cec75a}{rk6i\+\_\+sc}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a5d354b33de72df0b6be68290744f94ba}{intfunc1\+\_\+sc}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_aefc9ea62cf36830e2c74869fff2f1b17}{getaxflde\+\_\+sc}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the SC rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacescclass_abe42c84df8190cc0443752dff296dd89}{getflderr\+\_\+sc}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacescclass_a5af81e94b531e8d02789525f1f4438ac}{getfld\+\_\+sc}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacescclass_a78eec9a89964d83818db291873df4436}{nparam}} = 11
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and RF field for the SC beam line elment. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{scclass::sc@{scclass::sc}}\label{structscclass_1_1sc}
+\Hypertarget{namespacescclass_structscclass_1_1sc}
+\subsubsection{type scclass\+::sc}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacescclass_a4ddd6baf3b915cf7ff25830e84ce6e75}\label{namespacescclass_a4ddd6baf3b915cf7ff25830e84ce6e75}} 
+integer&
+itype&
+Itype = 104. \\
+\hline
+
+\mbox{\Hypertarget{namespacescclass_ae9c1bce2c31838e6ec98bdbfe04cb6d7}\label{namespacescclass_ae9c1bce2c31838e6ec98bdbfe04cb6d7}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacescclass_ac919c69cd2bb089386f56a5ac75728f0}\label{namespacescclass_ac919c69cd2bb089386f56a5ac75728f0}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacescclass_a32cf6178c767aecb2b10b7baa0221c78}\label{namespacescclass_a32cf6178c767aecb2b10b7baa0221c78}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacescclass_a21e20d06bda8473fab959e3ee29e5183}\label{namespacescclass_a21e20d06bda8473fab959e3ee29e5183}} 
+double precision, dimension(\mbox{\hyperlink{namespacescclass_a78eec9a89964d83818db291873df4436}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacescclass_a117b083b5a5a59d050fe5c0a4771332b}\label{namespacescclass_a117b083b5a5a59d050fe5c0a4771332b}} 
+\index{scclass@{scclass}!construct\_sc@{construct\_sc}}
+\index{construct\_sc@{construct\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{construct\_sc()}{construct\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::construct\+\_\+sc (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacescclass_aefc9ea62cf36830e2c74869fff2f1b17}\label{namespacescclass_aefc9ea62cf36830e2c74869fff2f1b17}} 
+\index{scclass@{scclass}!getaxflde\_sc@{getaxflde\_sc}}
+\index{getaxflde\_sc@{getaxflde\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{getaxflde\_sc()}{getaxflde\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::getaxflde\+\_\+sc (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{ez1,  }\item[{double precision, intent(out)}]{ezp1,  }\item[{double precision, intent(out)}]{ezpp1 }\end{DoxyParamCaption})}
+
+
+
+interpolate the field from the SC rf cavity onto bunch location. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacescclass_aefc9ea62cf36830e2c74869fff2f1b17_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacescclass_a5af81e94b531e8d02789525f1f4438ac}\label{namespacescclass_a5af81e94b531e8d02789525f1f4438ac}} 
+\index{scclass@{scclass}!getfld\_sc@{getfld\_sc}}
+\index{getfld\_sc@{getfld\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{getfld\_sc()}{getfld\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::getfld\+\_\+sc (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacescclass_a5af81e94b531e8d02789525f1f4438ac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacescclass_abe42c84df8190cc0443752dff296dd89}\label{namespacescclass_abe42c84df8190cc0443752dff296dd89}} 
+\index{scclass@{scclass}!getflderr\_sc@{getflderr\_sc}}
+\index{getflderr\_sc@{getflderr\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{getflderr\_sc()}{getflderr\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::getflderr\+\_\+sc (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley,  }\item[{double precision, intent(in)}]{anglez }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacescclass_abe42c84df8190cc0443752dff296dd89_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacescclass_a5f02207aa4bb28b292bf39bd5876c7e2}\label{namespacescclass_a5f02207aa4bb28b292bf39bd5876c7e2}} 
+\index{scclass@{scclass}!getparam1\_sc@{getparam1\_sc}}
+\index{getparam1\_sc@{getparam1\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{getparam1\_sc()}{getparam1\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::getparam1\+\_\+sc (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacescclass_a036860e8ca9dff4cc79e19ec6c55f86a}\label{namespacescclass_a036860e8ca9dff4cc79e19ec6c55f86a}} 
+\index{scclass@{scclass}!getparam2\_sc@{getparam2\_sc}}
+\index{getparam2\_sc@{getparam2\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{getparam2\_sc()}{getparam2\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::getparam2\+\_\+sc (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacescclass_aaa829fed79c7f89ac09b012687895817}\label{namespacescclass_aaa829fed79c7f89ac09b012687895817}} 
+\index{scclass@{scclass}!getparam3\_sc@{getparam3\_sc}}
+\index{getparam3\_sc@{getparam3\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{getparam3\_sc()}{getparam3\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::getparam3\+\_\+sc (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacescclass_a5d354b33de72df0b6be68290744f94ba}\label{namespacescclass_a5d354b33de72df0b6be68290744f94ba}} 
+\index{scclass@{scclass}!intfunc1\_sc@{intfunc1\_sc}}
+\index{intfunc1\_sc@{intfunc1\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{intfunc1\_sc()}{intfunc1\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::intfunc1\+\_\+sc (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{namespacescclass_a5d354b33de72df0b6be68290744f94ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacescclass_a5d354b33de72df0b6be68290744f94ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacescclass_aec786348c1a0beec0d090c12b13d588c}\label{namespacescclass_aec786348c1a0beec0d090c12b13d588c}} 
+\index{scclass@{scclass}!maplinear\_sc@{maplinear\_sc}}
+\index{maplinear\_sc@{maplinear\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{maplinear\_sc()}{maplinear\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::maplinear\+\_\+sc (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacescclass_aec786348c1a0beec0d090c12b13d588c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacescclass_aec786348c1a0beec0d090c12b13d588c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacescclass_a4b16987e1d3852123c69a6bfc0cec75a}\label{namespacescclass_a4b16987e1d3852123c69a6bfc0cec75a}} 
+\index{scclass@{scclass}!rk6i\_sc@{rk6i\_sc}}
+\index{rk6i\_sc@{rk6i\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{rk6i\_sc()}{rk6i\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::rk6i\+\_\+sc (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacescclass_a4b16987e1d3852123c69a6bfc0cec75a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacescclass_a4b16987e1d3852123c69a6bfc0cec75a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacescclass_a23a57a64ee6a74149bbc9cf009ce8711}\label{namespacescclass_a23a57a64ee6a74149bbc9cf009ce8711}} 
+\index{scclass@{scclass}!setparam1\_sc@{setparam1\_sc}}
+\index{setparam1\_sc@{setparam1\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{setparam1\_sc()}{setparam1\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::setparam1\+\_\+sc (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacescclass_af35b79ac06dc2b6bec2d97f6e745ab20}\label{namespacescclass_af35b79ac06dc2b6bec2d97f6e745ab20}} 
+\index{scclass@{scclass}!setparam2\_sc@{setparam2\_sc}}
+\index{setparam2\_sc@{setparam2\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{setparam2\_sc()}{setparam2\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::setparam2\+\_\+sc (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacescclass_a656d4cc4d5fe872ffa9df12bab721bec}\label{namespacescclass_a656d4cc4d5fe872ffa9df12bab721bec}} 
+\index{scclass@{scclass}!setparam3\_sc@{setparam3\_sc}}
+\index{setparam3\_sc@{setparam3\_sc}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{setparam3\_sc()}{setparam3\_sc()}}
+{\footnotesize\ttfamily subroutine scclass\+::setparam3\+\_\+sc (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{sc}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacescclass_a78eec9a89964d83818db291873df4436}\label{namespacescclass_a78eec9a89964d83818db291873df4436}} 
+\index{scclass@{scclass}!nparam@{nparam}}
+\index{nparam@{nparam}!scclass@{scclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private scclass\+::nparam = 11\hspace{0.3cm}{\ttfamily [private]}}
+

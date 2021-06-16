@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! BeamLineElemclass: Beam line element base class in Lattice module of 
 !                    APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the base beam line element class for
-!              different lattice element class.
+! 
+! MODULE  : ... BeamLineElemclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+! 
+! DESCRIPTION: 
+!> This class defines the base beam line element class for
+!> different lattice element class.
 ! Comments:
 !----------------------------------------------------------------
       module BeamLineElemclass

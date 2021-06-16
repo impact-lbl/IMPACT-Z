@@ -2,12 +2,17 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Fldmgerclass: Exchange guard grid data between neighboring processors 
 ! class in Communication module of FUNCTION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines the functions to sum up the particle
-!              contribution from neighboring processor domain, exchange
-!              the potential, exchange the field for interpolation between
-!              neighboring processors.
+!
+! MODULE  : ... Fldmgerclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the functions to sum up the particle
+!> contribution from neighboring processor domain, exchange
+!> the potential, exchange the field for interpolation between
+!> neighboring processors.
 ! Comments:
 !----------------------------------------------------------------
         module Fldmgerclass
@@ -16,7 +21,7 @@
         contains
 !----------------------------------------------------------------
 ! neighboring grid communication for the 3D open boundary conditions
-        ! sum up the contributions from neighboring guard cells.
+        !> sum up the contributions from neighboring guard cells.
         subroutine guardsum1_Fldmger(x,innx,inny,innz,grid) 
         implicit none
         include 'mpif.h'
@@ -159,8 +164,8 @@
 
         end subroutine guardsum1_Fldmger
 
-        ! exchange grid information between neighboring guard cell
-        ! to calculate E from phi. 
+        !> exchange grid information between neighboring guard cell
+        !> to calculate E from phi. 
         subroutine guardexch1_Fldmger(x,innx,inny,innz,grid)
         implicit none
         include 'mpif.h'
@@ -299,8 +304,8 @@
         end subroutine guardexch1_Fldmger
 
 !----------------------------------------------------------------
-        ! exchange the information for interpolation 
-        ! from neighboring guard cells.
+        !> exchange the information for interpolation 
+        !> from neighboring guard cells.
         subroutine boundint4_Fldmger(x1,x2,x3,innx,inny,innz,grid) 
         implicit none
         include 'mpif.h'

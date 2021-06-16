@@ -1,0 +1,70 @@
+<map id="accsimulatorclass::run_accsimulator" name="accsimulatorclass::run_accsimulator">
+<area shape="rect" id="node1" title="Run beam dynamics simulation through accelerator." alt="" coords="5,1889,139,1928"/>
+<area shape="rect" id="node2" href="$namespacepgrid2dclass.html#a559d4550356f88440ae55fceda480de2" title="get my rank position in 2d, column, and row communicators." alt="" coords="709,198,856,237"/>
+<area shape="rect" id="node3" href="$namespacepgrid2dclass.html#a550cb1b5c94a9e168c3e0108bb8a6d5b" title="get 2D, column, and row communicators." alt="" coords="704,261,862,300"/>
+<area shape="rect" id="node4" href="$namespacepgrid2dclass.html#ac088657db5b1deb05bb1ec732579ba53" title="get the total number of PEs, PEs in column and row communicators." alt="" coords="710,484,856,522"/>
+<area shape="rect" id="node5" href="$namespacetimerclass.html#afb272bcdcff72d225c2df5862630025c" title=" " alt="" coords="713,921,853,960"/>
+<area shape="rect" id="node7" href="$namespaceoutputclass.html#aa94732fb01ea05e3a65d2cb9aa5a0402" title="calculate &lt;x^2&gt;,&lt;xp&gt;,&lt;px^2&gt;,x emittance, &lt;y^2&gt;,&lt;ypy&gt;, &lt;py^2&gt; and y emittance, &lt;z^2&gt;,..." alt="" coords="206,1580,369,1618"/>
+<area shape="rect" id="node8" href="$namespaceoutputclass.html#a678b3c4ce8356d742c32eb555ee16f08" title=" " alt="" coords="206,1642,369,1681"/>
+<area shape="rect" id="node9" href="$namespacebeamlineelemclass.html#aa3e3f73b38a31d67a955712c9706a2bd" title=" " alt="" coords="204,1705,371,1744"/>
+<area shape="rect" id="node10" href="$namespacedataclass.html#a39afae6095340e01362de7d4876aee60" title="readin the Fourier coefficients of the RF field from files &quot;rfdatax or rfdataxx or rfdataxxx&quot;." alt="" coords="463,1950,616,1976"/>
+<area shape="rect" id="node12" href="$namespacedataclass.html#a6733af7e3067d69140c61e2b4580a70b" title="read in the discrete field data Ez(0,z), Ez&#39;(0,z), Ez&#39;&#39;(0,z) distribution along axis zdat from files ..." alt="" coords="463,1750,616,1776"/>
+<area shape="rect" id="node13" href="$namespacedataclass.html#a2ef1f00ff4295094270a70c5d3763019" title="read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) rf data from files ..." alt="" coords="211,1870,364,1896"/>
+<area shape="rect" id="node15" href="$namespaceoutputclass.html#a86742b646a584647da7837ee6fc09c89" title=" " alt="" coords="221,2034,354,2073"/>
+<area shape="rect" id="node16" href="$namespaceoutputclass.html#ac66061da2efec314c456fc5e7ed4fc8b" title="output the 1D accumulated particle density" alt="" coords="207,2097,368,2136"/>
+<area shape="rect" id="node17" href="$namespaceoutputclass.html#acc8a8c481be8eb7a7ebb49852db14185" title="output 1d particle density" alt="" coords="218,2160,358,2198"/>
+<area shape="rect" id="node18" href="$namespaceoutputclass.html#ab7f55098e75e7410bbbb6ffa50148508" title="output 2D particle number density." alt="" coords="218,2222,358,2261"/>
+<area shape="rect" id="node19" href="$namespaceoutputclass.html#a49102c15c2635cf9b329a9ccb56a8db2" title="output the 3D particle number density" alt="" coords="218,2285,358,2324"/>
+<area shape="rect" id="node20" href="$namespaceoutputclass.html#a15a58393664c8a9ded7a8e259fc511e8" title=" " alt="" coords="216,2348,359,2386"/>
+<area shape="rect" id="node21" href="$namespaceoutputclass.html#aaba51e45761070d95883093a25e402c4" title="This program calculate the current profile, slice emittance and uncorrelated energy spread using line..." alt="" coords="202,2410,373,2449"/>
+<area shape="rect" id="node22" href="$namespacebeambunchclass.html#a54a4d80405bb8fbde341ea9e46a224e4" title="counter the particles get lost outside the xrad and yrad. we have not put the lost through rf bucket ..." alt="" coords="190,2473,385,2512"/>
+<area shape="rect" id="node23" href="$namespacebeambunchclass.html#ac5b1c15c02703f7339b67283bc9816bd" title="update the total current fraction of each charge state update total # of ptcl for each charge state" alt="" coords="192,2536,383,2574"/>
+<area shape="rect" id="node24" href="$namespacedataclass.html#a2fed396f3daf5a5c465b01235d98c776" title="read in the discrete wake field data in z, x, y. distribution along axis zdat from files &quot;rfdatax or ..." alt="" coords="455,1800,624,1825"/>
+<area shape="rect" id="node25" href="$namespacebeambunchclass.html#aea8cfefa2f70ade95202cc40f015f7bf" title="shift and rotate the beam at the leading edge of the element" alt="" coords="197,2598,378,2637"/>
+<area shape="rect" id="node27" href="$namespacebeambunchclass.html#a0b46fd8b4c41577688761ad62175772b" title="from z to t beam frame 1st order transformation." alt="" coords="200,2724,375,2762"/>
+<area shape="rect" id="node28" href="$namespacecompdomclass.html#a0e7d562b378f77e0d3a14b33168cb46b" title="update geometry parameters using new particle positions." alt="" coords="460,198,619,237"/>
+<area shape="rect" id="node29" href="$namespacetimerclass.html#a3378d323d442f85aff95ab73cd13376d" title=" " alt="" coords="702,814,863,853"/>
+<area shape="rect" id="node30" href="$namespacecompdomclass.html#a545b0a4e8dce9ec9c326806ed1b36598" title=" " alt="" coords="196,2786,379,2825"/>
+<area shape="rect" id="node31" href="$namespacecompdomclass.html#ad0a907860c5bf17c263d8ad957c7ed1d" title=" " alt="" coords="198,2849,378,2888"/>
+<area shape="rect" id="node32" href="$namespacecompdomclass.html#acba710aa1017492e05a537273742cc16" title=" " alt="" coords="698,1305,868,1344"/>
+<area shape="rect" id="node33" href="$namespaceptclmgerclass.html#a15bfd87febad22b6f820896f8720a3d7" title="move particles from one processor to 4 neighboring processors." alt="" coords="463,261,616,300"/>
+<area shape="rect" id="node34" href="$namespacebeambunchclass.html#af1b14b706bd1283ff6c5a7cec4b06c48" title="set local # of particles." alt="" coords="205,2912,370,2950"/>
+<area shape="rect" id="node35" href="$namespacebeambunchclass.html#a91563d467d36ccca8231ee2c62483246" title="All indices here are local to the processor. find charge density on grid from particles." alt="" coords="203,401,372,440"/>
+<area shape="rect" id="node37" href="$namespacecompdomclass.html#a460a22916802ee9041aa66d1922cb812" title=" " alt="" coords="697,1369,868,1408"/>
+<area shape="rect" id="node38" href="$namespacecompdomclass.html#a7c7c1450a459bb1753ef8230ab0d7651" title=" " alt="" coords="691,1452,874,1490"/>
+<area shape="rect" id="node40" href="$namespacecompdomclass.html#a024b1cbd7d29d1bd2ac4285c45b25cb1" title="find the balanced local domain geometry so that the number of particles on this domain about equal." alt="" coords="205,2974,370,3013"/>
+<area shape="rect" id="node41" href="$namespacebeambunchclass.html#acacb775484bda2729c3da9adbbeffc53" title=" " alt="" coords="187,3037,388,3076"/>
+<area shape="rect" id="node42" href="$namespacebeambunchclass.html#a02f7f46438747a0fb811de64b1ed95aa" title=" " alt="" coords="192,912,383,950"/>
+<area shape="rect" id="node46" href="$namespacebeambunchclass.html#a530cca8371b8decda64389ce29d10bcd" title=" " alt="" coords="192,1016,383,1054"/>
+<area shape="rect" id="node65" href="$namespacebeambunchclass.html#ab2f6f9e95d5786dab15c1b73f305e349" title="shift and rotate the beam at the tail edge of the element" alt="" coords="197,2661,379,2700"/>
+<area shape="rect" id="node66" href="$namespacetimerclass.html#aa34d67fa57ad546ab7e1a7fb1643e9b0" title=" " alt="" coords="215,1972,360,2010"/>
+<area shape="rect" id="node6" href="$namespacempistub.html#a2456432a60801629e19273ebe4114bc9" title="mpi timing" alt="" coords="932,824,1071,849"/>
+<area shape="rect" id="node11" href="$namespacempistub.html#a3085e38e0e5d38df633afc7b2d92cebb" title="processor ID" alt="" coords="696,1850,870,1876"/>
+<area shape="rect" id="node14" href="$namespacempistub.html#a0d84064615f696d4877ad9f912d4cbef" title="synchronize communication" alt="" coords="468,1901,611,1926"/>
+<area shape="rect" id="node26" href="$namespacebeamlineelemclass.html#aa02696ccb3d6d48bfdcb0ff3ea906fa1" title=" " alt="" coords="466,2629,613,2668"/>
+<area shape="rect" id="node36" href="$namespacebeambunchclass.html#aa0438cba132ce3b2fdc8e053375c0097" title="deposit particles onto grid." alt="" coords="454,1188,626,1226"/>
+<area shape="rect" id="node39" href="$namespacefldmgerclass.html#a54886b0763b8458a0560ccf7087b07f1" title="sum up the contributions from neighboring guard cells." alt="" coords="455,376,625,414"/>
+<area shape="rect" id="node43" href="$namespacefldmgerclass.html#a028236bf0d8419b6f75a7fb28eb7226b" title="exchange grid information between neighboring guard cell to calculate E from phi." alt="" coords="453,592,626,630"/>
+<area shape="rect" id="node44" href="$namespacefldmgerclass.html#a490fceb1792fb1664488b1394dcff5f0" title="exchange the information for interpolation from neighboring guard cells." alt="" coords="459,654,621,693"/>
+<area shape="rect" id="node45" href="$namespacebeambunchclass.html#a023a12f9279f0764fc57deda1bcb852f" title="scatter grid quantity onto particles using linear map." alt="" coords="452,1313,628,1352"/>
+<area shape="rect" id="node47" href="$namespacebeambunchclass.html#aa17d706a08d23a054bf547514e796e6a" title=" " alt="" coords="436,1250,643,1289"/>
+<area shape="rect" id="node64" href="$namespacebeambunchclass.html#a8a96c99996275cf03ceec41dc011695e" title="scatter grid quantity onto particles. only external fields are included" alt="" coords="448,1073,631,1112"/>
+<area shape="rect" id="node48" href="$namespacebeamlineelemclass.html#a21fd373bab34a4c18c8bcf5b00816c0c" title=" " alt="" coords="711,1229,855,1268"/>
+<area shape="rect" id="node49" href="$namespacequadrupoleclass.html#a1d1bf0b4ea88a1cd0c0832a178fc80e5" title="get external field without displacement and rotation errors." alt="" coords="922,1054,1081,1093"/>
+<area shape="rect" id="node51" href="$namespacedrifttubeclass.html#aa903101ae6943402917a2f29a8aa67d3" title=" " alt="" coords="931,1117,1071,1156"/>
+<area shape="rect" id="node52" href="$namespacecclclass.html#a6c8d8825e6d50c30ba91c90892619a5b" title="get external field without displacement and rotation errors." alt="" coords="936,1180,1067,1205"/>
+<area shape="rect" id="node53" href="$namespaceccdtlclass.html#a62eb43f6a732d52951d468e91a2312cb" title="get the external field without misalignment and rotation errors." alt="" coords="942,1229,1061,1268"/>
+<area shape="rect" id="node54" href="$namespacedtlclass.html#a9e97d93c8f7ec49afee134e3ffd3f900" title="get external field without displacement and rotation errors." alt="" coords="938,1292,1065,1317"/>
+<area shape="rect" id="node55" href="$namespacescclass.html#a5af81e94b531e8d02789525f1f4438ac" title="get external field without displacement and rotation errors" alt="" coords="939,1341,1064,1366"/>
+<area shape="rect" id="node56" href="$namespaceconstfocclass.html#a34425bf98b4a4cff016108f25a629dff" title=" " alt="" coords="931,1390,1072,1429"/>
+<area shape="rect" id="node57" href="$namespacesolrfclass.html#a394f9bb9d3b50c8652a704f3c5af16ef" title="get external field without displacement and rotation errors." alt="" coords="943,1453,1060,1492"/>
+<area shape="rect" id="node58" href="$namespacesolclass.html#a7a865f7ab4470f9bff328ed98aacd7c8" title="get external field without displacement and rotation errors and with fringe field of Solenoid...." alt="" coords="935,1516,1068,1541"/>
+<area shape="rect" id="node59" href="$namespacedipoleclass.html#ac8c755e07904e113f223ee5ef029ac93" title="get external field without displacement and rotation errors." alt="" coords="938,1565,1065,1604"/>
+<area shape="rect" id="node60" href="$namespaceemfldclass.html#aa0023b4b2c7a17c75becc20eeb9be23c" title=" " alt="" coords="939,880,1064,918"/>
+<area shape="rect" id="node61" href="$namespacemultipoleclass.html#af4fb9d3cfd9db2d92930fcda605fbe26" title="get external field without displacement and rotation errors." alt="" coords="929,942,1074,981"/>
+<area shape="rect" id="node63" href="$namespacetwsclass.html#a30d73a1ffc1ce8ce728e8fdf7caa6002" title="get external field without displacement and rotation errors." alt="" coords="932,1005,1071,1030"/>
+<area shape="rect" id="node50" href="$namespacequadrupoleclass.html#ab1abe8916ad3dace3e5d1373da4688ac" title=" " alt="" coords="1129,1054,1332,1093"/>
+<area shape="rect" id="node62" href="$namespacemultipoleclass.html#a8712b7622d8ed7c0e71cdc18204dcf46" title="interpolate the field from the SC rf cavity onto bunch location." alt="" coords="1150,942,1311,981"/>
+<area shape="rect" id="node67" href="$namespacetimerclass.html#a3535b11970327778ddd27cee93c2288b" title=" " alt="" coords="453,2000,627,2025"/>
+<area shape="rect" id="node68" href="$namespacempistub.html#a188b67a76569dcb918a27f48018e6baf" title="total number of processors" alt="" coords="697,2000,869,2025"/>
+</map>

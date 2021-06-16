@@ -1,0 +1,154 @@
+\hypertarget{_acc_simulator_8f90}{}\section{src/\+Contrl/\+Acc\+Simulator.f90 File Reference}
+\label{_acc_simulator_8f90}\index{src/Contrl/AccSimulator.f90@{src/Contrl/AccSimulator.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfaceaccsimulatorclass_1_1construct__accsimulator}{accsimulatorclass\+::construct\+\_\+accsimulator}}
+\begin{DoxyCompactList}\small\item\em beam line element period. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespaceaccsimulatorclass}{accsimulatorclass}}
+\begin{DoxyCompactList}\small\item\em This class defines functions to set up the initial beam particle distribution, field information, computational domain, beam line element lattice and run the dynamics simulation through the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespaceaccsimulatorclass_a6a90186281758191cfa3ef4fc9c54078}{accsimulatorclass\+::init\+\_\+accsimulator}} (time)
+\begin{DoxyCompactList}\small\item\em set up objects and parameters. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaccsimulatorclass_acbe26eeaf1cb4076384b90e1016785f0}{accsimulatorclass\+::run\+\_\+accsimulator}} ()
+\begin{DoxyCompactList}\small\item\em Run beam dynamics simulation through accelerator. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespaceaccsimulatorclass_a7bcc6275f447513b2ea5d85d46aade2a}{accsimulatorclass\+::destruct\+\_\+accsimulator}} (time)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(21), private \mbox{\hyperlink{namespaceaccsimulatorclass_a1b6defb6bd9b1c4ddada0b30c99f4dd5}{accsimulatorclass\+::distparam}}
+\begin{DoxyCompactList}\small\item\em conts. in init. dist. \end{DoxyCompactList}\item 
+type(pgrid2d), private \mbox{\hyperlink{namespaceaccsimulatorclass_a7fbad7f6e18df1ec95d1f76620a8bd80}{accsimulatorclass\+::grid2d}}
+\begin{DoxyCompactList}\small\item\em 1d logical processor array. \end{DoxyCompactList}\item 
+type(beambunch), private \mbox{\hyperlink{namespaceaccsimulatorclass_a4d06760340147c29a3ce5ba4f4ba9066}{accsimulatorclass\+::bpts}}
+\begin{DoxyCompactList}\small\item\em beam particle object and array. \end{DoxyCompactList}\item 
+type(fieldquant), private \mbox{\hyperlink{namespaceaccsimulatorclass_a2d7cf949e4c05edf370cfbb6ee936951}{accsimulatorclass\+::potential}}
+\begin{DoxyCompactList}\small\item\em beam charge density and field potential arrays. \end{DoxyCompactList}\item 
+type(compdom), private \mbox{\hyperlink{namespaceaccsimulatorclass_ac6dafc4c6322db3e6507ece8c3ff9e37}{accsimulatorclass\+::ageom}}
+\begin{DoxyCompactList}\small\item\em geometry object. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_ac4f089e8c954990197b1d251b800692f}{accsimulatorclass\+::nchrg}}
+\begin{DoxyCompactList}\small\item\em total \# of charge state \end{DoxyCompactList}\item 
+double precision, dimension(100) \mbox{\hyperlink{namespaceaccsimulatorclass_a8c7c321579304f645389a08a8725f241}{accsimulatorclass\+::currlist}}
+\begin{DoxyCompactList}\small\item\em current list of charge state. \end{DoxyCompactList}\item 
+double precision, dimension(100) \mbox{\hyperlink{namespaceaccsimulatorclass_a41077f15e4eaaf833944e89b231a9df9}{accsimulatorclass\+::qmcclist}}
+\begin{DoxyCompactList}\small\item\em charge/mass list of charge state. \end{DoxyCompactList}\item 
+integer, dimension(100) \mbox{\hyperlink{namespaceaccsimulatorclass_a891a5868a86440d94c4eb40df9f3b8b9}{accsimulatorclass\+::nptlist}}
+\begin{DoxyCompactList}\small\item\em number of particles of charge state. \end{DoxyCompactList}\item 
+integer, dimension(\+:), allocatable \mbox{\hyperlink{namespaceaccsimulatorclass_a9fa9911cc9d2b1442c2d6a945394fc7a}{accsimulatorclass\+::nptlist0}}
+\item 
+double precision, dimension(\+:), allocatable \mbox{\hyperlink{namespaceaccsimulatorclass_accc2494fdb269aeeba10e0f6eea90690}{accsimulatorclass\+::currlist0}}
+\item 
+double precision, dimension(\+:), allocatable \mbox{\hyperlink{namespaceaccsimulatorclass_a6dce29a29cf7312e80b95b700300e37d}{accsimulatorclass\+::qmcclis}}
+\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_aa5a33a2f7563789fd061ef4e28d010a5}{accsimulatorclass\+::iend}}
+\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_aaf128f52875dead988078d4645537192}{accsimulatorclass\+::jend}}
+\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_a9b454cb233fe47004ba9388d9c495805}{accsimulatorclass\+::ibalend}}
+\item 
+integer \mbox{\hyperlink{namespaceaccsimulatorclass_a3efdd317f3f447eb0e9af6118c312cb5}{accsimulatorclass\+::nstepend}}
+\item 
+real $\ast$8 \mbox{\hyperlink{namespaceaccsimulatorclass_a36e211bc045925eb053915a15d72ea4f}{accsimulatorclass\+::zend}}
+\end{DoxyCompactItemize}
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a26217a3bed78a53045dc70c1ac59207a}{accsimulatorclass\+::dim}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a1149425f2a1942ae90449ee7a0a06fe0}{accsimulatorclass\+::np}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a673e05862dc992db1e5f59ae966a1bc6}{accsimulatorclass\+::nplocal}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a487e5f5861f9d6613a37837a38e8a2c0}{accsimulatorclass\+::flagdist}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_af704d398708fe866be2cd6b2f2705267}{accsimulatorclass\+::rstartflg}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_aeed14cf632798f53deb7a49d73f7d09f}{accsimulatorclass\+::flagerr}}
+\begin{DoxyCompactList}\small\item\em \# of phase dim., num. total and local particles, int. dist. and restart switch, error study switch, substep for space-\/charge switch \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_af61920248f0078da76332ba7c03691f2}{accsimulatorclass\+::nx}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a51134373ee457cfeffdc9a5041a4d01c}{accsimulatorclass\+::ny}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a56a2e4504ed5d475f38307ecc7360ede}{accsimulatorclass\+::nz}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a7f23c64ad80c114ef62069aaede70561}{accsimulatorclass\+::nxlocal}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a48f766f48eeb1fb22aeff17c6c81e776}{accsimulatorclass\+::nylocal}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_af547860c8c8685ee94f4cca4da117acc}{accsimulatorclass\+::nzlocal}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a1ba011ab9980a00689505f8cbbd05732}{accsimulatorclass\+::flagbc}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_a99e7feb0e1e3adf9ad845a7425a1b9f7}{accsimulatorclass\+::nblem}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_aeb76c7474e39b4748e1f18d5c44b63ce}{accsimulatorclass\+::flagmap}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_af61313c9e48dba34ab064f69f8d43183}{accsimulatorclass\+::flagdiag}}
+\begin{DoxyCompactList}\small\item\em \# of num. total x, total and local y mesh pts., type of BC, \# of beam elems, type of integrator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_ac427142c8239a7c9d4d571de0516f6d0}{accsimulatorclass\+::npcol}}
+\begin{DoxyCompactList}\small\item\em \# of processors in column and row direction. \end{DoxyCompactList}\item 
+integer, private \mbox{\hyperlink{namespaceaccsimulatorclass_ae4ec48c98f1d184540a67f262b362b9c}{accsimulatorclass\+::nprow}}
+\begin{DoxyCompactList}\small\item\em \# of processors in column and row direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_a23e215553c71a45286be97992358dd87}{accsimulatorclass\+::bcurr}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_af510330940fc024c5092b4fd361c736e}{accsimulatorclass\+::bkenergy}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_a3f5beb7f11359c926cdc41f78c84334d}{accsimulatorclass\+::bmass}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_acc8e97a5abe7b5feb49058c5e9a8a5f5}{accsimulatorclass\+::bcharge}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\item 
+double precision, private \mbox{\hyperlink{namespaceaccsimulatorclass_a770319e9213788860e586df0ffacd465}{accsimulatorclass\+::bfreq}}
+\begin{DoxyCompactList}\small\item\em beam current, kin. energy, part. mass, and charge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+{\em beam line element array. }\begin{DoxyCompactItemize}
+\item 
+type(bpm), dimension(nbpmmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a3c3a1b96070f5f9b755af7dc8502b457}{accsimulatorclass\+::beamln0}}
+\item 
+type(drifttube), dimension(ndriftmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a4afbfe5b21f1ef4f6ed80b26919a5b65}{accsimulatorclass\+::beamln1}}
+\item 
+type(quadrupole), dimension(nquadmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a84f0e00a948fce129634ef213a1e6146}{accsimulatorclass\+::beamln2}}
+\item 
+type(dtl), dimension(ndtlmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a676f0e0a8d52bb85779983a23300d307}{accsimulatorclass\+::beamln3}}
+\item 
+type(ccdtl), dimension(nccdtlmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_aecdd8f634a42325f08705c6733739f5e}{accsimulatorclass\+::beamln4}}
+\item 
+type(ccl), dimension(ncclmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a1fe5a7819dc79e966a915ac7109a5921}{accsimulatorclass\+::beamln5}}
+\item 
+type(sc), dimension(nscmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_aecb8568d8a048be9dd3f8ebf18c48e72}{accsimulatorclass\+::beamln6}}
+\item 
+type(constfoc), dimension(ncfmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_aee9caad06453a0e66c229bf239519041}{accsimulatorclass\+::beamln7}}
+\item 
+type(solrf), dimension(nslrfmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a85003b545c7adc9e597e5fd6be9828c5}{accsimulatorclass\+::beamln8}}
+\item 
+type(sol), dimension(nslmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a7685c672080dfc1af30f91257a832844}{accsimulatorclass\+::beamln9}}
+\item 
+type(dipole), dimension(ndipolemax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a62ff8549366c26dee5a585c8d900ebac}{accsimulatorclass\+::beamln10}}
+\item 
+type(emfld), dimension(ncclmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a016c645050aaca47150651536833a42d}{accsimulatorclass\+::beamln11}}
+\item 
+type(multipole), dimension(nquadmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_a813aa983dff443b4b11bfcca3870d81a}{accsimulatorclass\+::beamln12}}
+\item 
+type(tws), dimension(nscmax), target \mbox{\hyperlink{namespaceaccsimulatorclass_aebf4a32dfb6382e980bd128f28575547}{accsimulatorclass\+::beamln13}}
+\item 
+type(beamlineelem), dimension(nblemtmax), private \mbox{\hyperlink{namespaceaccsimulatorclass_a2ca359e2c23c27bfccd5341fec0e7207}{accsimulatorclass\+::blnelem}}
+\end{DoxyCompactItemize}
+

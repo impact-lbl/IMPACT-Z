@@ -1,0 +1,297 @@
+\hypertarget{namespacecclclass}{}\section{cclclass Module Reference}
+\label{namespacecclclass}\index{cclclass@{cclclass}}
+
+
+This class defines the linear transfer map and RF field for the C\+CL beam line elment.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}
+\item 
+interface \mbox{\hyperlink{interfacecclclass_1_1getparam__ccl}{getparam\+\_\+ccl}}
+\item 
+interface \mbox{\hyperlink{interfacecclclass_1_1setparam__ccl}{setparam\+\_\+ccl}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_af38d062f04c18827d1d2a76c17039c58}{construct\+\_\+ccl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_adf1829da601e1090ce5f5e5046c4d62c}{setparam1\+\_\+ccl}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a7bc5a807438db526489d8773fa168375}{setparam2\+\_\+ccl}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a5a90756fe0684d2f29121a368dbef489}{setparam3\+\_\+ccl}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a3cb17684a6eef64dd3c35cbb03bcb8b3}{getparam1\+\_\+ccl}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_ad1c56a9447d1ff854afdc5502ae0fe18}{getparam2\+\_\+ccl}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_ad223096667fbe2e53bae56b52b2350fa}{getparam3\+\_\+ccl}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a2efbf5186624893a0f213ca40968c198}{maplinear\+\_\+ccl}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a6dd4075592b69b308b61e3ee2f065517}{rk6i\+\_\+ccl}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a09adb3ba980646f12eb22fddbd4c962d}{intfunc1\+\_\+ccl}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a881db4a51cdc73a6c489b2814565a243}{getaxflde\+\_\+ccl}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the C\+CL rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a06d52f7ecb50e977ef5e2330506180d2}{getaxfldefc\+\_\+ccl}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em get external RF field on axis from analytical Fourier coefficients \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a4d8386891ff89c7352f001b01d5f84b5}{getflderr\+\_\+ccl}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a6c8d8825e6d50c30ba91c90892619a5b}{getfld\+\_\+ccl}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_a22dde155eb6d5e19ccedbe59cd955580}{getflderrpts\+\_\+ccl}} (pos, extfld, this, dx, dy, anglex, angley
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecclclass_aa98c971191ca605d023e7c03c447566a}{getfldpts\+\_\+ccl}} (pos, extfld, this, nplc)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacecclclass_adeb399ff41e54cda7bdefa51063c0de6}{nparam}} = 11
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the linear transfer map and RF field for the C\+CL beam line elment. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{cclclass::ccl@{cclclass::ccl}}\label{structcclclass_1_1ccl}
+\Hypertarget{namespacecclclass_structcclclass_1_1ccl}
+\subsubsection{type cclclass\+::ccl}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacecclclass_ac0907eebcd93b9aa41c33858f394496d}\label{namespacecclclass_ac0907eebcd93b9aa41c33858f394496d}} 
+integer&
+itype&
+Itype = 103. \\
+\hline
+
+\mbox{\Hypertarget{namespacecclclass_a128d51138685ec33b8c0c7f6bd89dc81}\label{namespacecclclass_a128d51138685ec33b8c0c7f6bd89dc81}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecclclass_a5d663b5eeafc5a924cfe6383143f9b0a}\label{namespacecclclass_a5d663b5eeafc5a924cfe6383143f9b0a}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecclclass_a37e0a279ff69258948ddecf0a4c78045}\label{namespacecclclass_a37e0a279ff69258948ddecf0a4c78045}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecclclass_a4b800d069f005c436b2295924f8f7bb9}\label{namespacecclclass_a4b800d069f005c436b2295924f8f7bb9}} 
+double precision, dimension(\mbox{\hyperlink{namespacecclclass_adeb399ff41e54cda7bdefa51063c0de6}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacecclclass_af38d062f04c18827d1d2a76c17039c58}\label{namespacecclclass_af38d062f04c18827d1d2a76c17039c58}} 
+\index{cclclass@{cclclass}!construct\_ccl@{construct\_ccl}}
+\index{construct\_ccl@{construct\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{construct\_ccl()}{construct\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::construct\+\_\+ccl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(out)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecclclass_a881db4a51cdc73a6c489b2814565a243}\label{namespacecclclass_a881db4a51cdc73a6c489b2814565a243}} 
+\index{cclclass@{cclclass}!getaxflde\_ccl@{getaxflde\_ccl}}
+\index{getaxflde\_ccl@{getaxflde\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getaxflde\_ccl()}{getaxflde\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getaxflde\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{ez1,  }\item[{double precision, intent(out)}]{ezp1,  }\item[{double precision, intent(out)}]{ezpp1 }\end{DoxyParamCaption})}
+
+
+
+interpolate the field from the C\+CL rf cavity onto bunch location. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecclclass_a881db4a51cdc73a6c489b2814565a243_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecclclass_a06d52f7ecb50e977ef5e2330506180d2}\label{namespacecclclass_a06d52f7ecb50e977ef5e2330506180d2}} 
+\index{cclclass@{cclclass}!getaxfldefc\_ccl@{getaxfldefc\_ccl}}
+\index{getaxfldefc\_ccl@{getaxfldefc\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getaxfldefc\_ccl()}{getaxfldefc\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getaxfldefc\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{z,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{ez1,  }\item[{double precision, intent(out)}]{ezp1,  }\item[{double precision, intent(out)}]{ezpp1 }\end{DoxyParamCaption})}
+
+
+
+get external RF field on axis from analytical Fourier coefficients 
+
+\mbox{\Hypertarget{namespacecclclass_a6c8d8825e6d50c30ba91c90892619a5b}\label{namespacecclclass_a6c8d8825e6d50c30ba91c90892619a5b}} 
+\index{cclclass@{cclclass}!getfld\_ccl@{getfld\_ccl}}
+\index{getfld\_ccl@{getfld\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getfld\_ccl()}{getfld\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getfld\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecclclass_a6c8d8825e6d50c30ba91c90892619a5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecclclass_a4d8386891ff89c7352f001b01d5f84b5}\label{namespacecclclass_a4d8386891ff89c7352f001b01d5f84b5}} 
+\index{cclclass@{cclclass}!getflderr\_ccl@{getflderr\_ccl}}
+\index{getflderr\_ccl@{getflderr\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getflderr\_ccl()}{getflderr\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getflderr\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, dimension(4), intent(in)}]{pos,  }\item[{double precision, dimension(6), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley,  }\item[{double precision, intent(in)}]{anglez }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecclclass_a4d8386891ff89c7352f001b01d5f84b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecclclass_a22dde155eb6d5e19ccedbe59cd955580}\label{namespacecclclass_a22dde155eb6d5e19ccedbe59cd955580}} 
+\index{cclclass@{cclclass}!getflderrpts\_ccl@{getflderrpts\_ccl}}
+\index{getflderrpts\_ccl@{getflderrpts\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getflderrpts\_ccl()}{getflderrpts\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getflderrpts\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, dimension(4,nplc), intent(in)}]{pos,  }\item[{double precision, dimension(6,nplc), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{dx,  }\item[{double precision, intent(in)}]{dy,  }\item[{double precision, intent(in)}]{anglex,  }\item[{double precision, intent(in)}]{angley }\end{DoxyParamCaption})}
+
+
+
+get external field with displacement and rotation errors. 
+
+\mbox{\Hypertarget{namespacecclclass_aa98c971191ca605d023e7c03c447566a}\label{namespacecclclass_aa98c971191ca605d023e7c03c447566a}} 
+\index{cclclass@{cclclass}!getfldpts\_ccl@{getfldpts\_ccl}}
+\index{getfldpts\_ccl@{getfldpts\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getfldpts\_ccl()}{getfldpts\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getfldpts\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, dimension(4,nplc), intent(in)}]{pos,  }\item[{double precision, dimension(6,nplc), intent(out)}]{extfld,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{nplc }\end{DoxyParamCaption})}
+
+
+
+get external field without displacement and rotation errors. 
+
+\mbox{\Hypertarget{namespacecclclass_a3cb17684a6eef64dd3c35cbb03bcb8b3}\label{namespacecclclass_a3cb17684a6eef64dd3c35cbb03bcb8b3}} 
+\index{cclclass@{cclclass}!getparam1\_ccl@{getparam1\_ccl}}
+\index{getparam1\_ccl@{getparam1\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getparam1\_ccl()}{getparam1\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getparam1\+\_\+ccl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(out)}]{blparam }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecclclass_ad1c56a9447d1ff854afdc5502ae0fe18}\label{namespacecclclass_ad1c56a9447d1ff854afdc5502ae0fe18}} 
+\index{cclclass@{cclclass}!getparam2\_ccl@{getparam2\_ccl}}
+\index{getparam2\_ccl@{getparam2\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getparam2\_ccl()}{getparam2\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getparam2\+\_\+ccl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{blparams }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecclclass_ad223096667fbe2e53bae56b52b2350fa}\label{namespacecclclass_ad223096667fbe2e53bae56b52b2350fa}} 
+\index{cclclass@{cclclass}!getparam3\_ccl@{getparam3\_ccl}}
+\index{getparam3\_ccl@{getparam3\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{getparam3\_ccl()}{getparam3\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::getparam3\+\_\+ccl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, intent(out)}]{blength,  }\item[{integer, intent(out)}]{bnseg,  }\item[{integer, intent(out)}]{bmapstp,  }\item[{integer, intent(out)}]{btype }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecclclass_a09adb3ba980646f12eb22fddbd4c962d}\label{namespacecclclass_a09adb3ba980646f12eb22fddbd4c962d}} 
+\index{cclclass@{cclclass}!intfunc1\_ccl@{intfunc1\_ccl}}
+\index{intfunc1\_ccl@{intfunc1\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{intfunc1\_ccl()}{intfunc1\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::intfunc1\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, dimension(\+:), intent(in)}]{y,  }\item[{double precision, dimension(\+:), intent(out)}]{f,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{namespacecclclass_a09adb3ba980646f12eb22fddbd4c962d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecclclass_a09adb3ba980646f12eb22fddbd4c962d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecclclass_a2efbf5186624893a0f213ca40968c198}\label{namespacecclclass_a2efbf5186624893a0f213ca40968c198}} 
+\index{cclclass@{cclclass}!maplinear\_ccl@{maplinear\_ccl}}
+\index{maplinear\_ccl@{maplinear\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{maplinear\_ccl()}{maplinear\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::maplinear\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{t,  }\item[{double precision, intent(in)}]{tau,  }\item[{double precision, dimension(6,6), intent(out)}]{xm,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, dimension(6), intent(inout)}]{refpt,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecclclass_a2efbf5186624893a0f213ca40968c198_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecclclass_a2efbf5186624893a0f213ca40968c198_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecclclass_a6dd4075592b69b308b61e3ee2f065517}\label{namespacecclclass_a6dd4075592b69b308b61e3ee2f065517}} 
+\index{cclclass@{cclclass}!rk6i\_ccl@{rk6i\_ccl}}
+\index{rk6i\_ccl@{rk6i\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{rk6i\_ccl()}{rk6i\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::rk6i\+\_\+ccl (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{h,  }\item[{integer, intent(in)}]{ns,  }\item[{double precision, intent(inout)}]{t,  }\item[{double precision, dimension(nvar), intent(inout)}]{y,  }\item[{integer, intent(in)}]{nvar,  }\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(in)}]{this,  }\item[{double precision, intent(in)}]{Bchg,  }\item[{double precision, intent(in)}]{Bmass }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecclclass_a6dd4075592b69b308b61e3ee2f065517_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecclclass_a6dd4075592b69b308b61e3ee2f065517_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecclclass_adf1829da601e1090ce5f5e5046c4d62c}\label{namespacecclclass_adf1829da601e1090ce5f5e5046c4d62c}} 
+\index{cclclass@{cclclass}!setparam1\_ccl@{setparam1\_ccl}}
+\index{setparam1\_ccl@{setparam1\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{setparam1\_ccl()}{setparam1\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::setparam1\+\_\+ccl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{i,  }\item[{double precision, intent(in)}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecclclass_a7bc5a807438db526489d8773fa168375}\label{namespacecclclass_a7bc5a807438db526489d8773fa168375}} 
+\index{cclclass@{cclclass}!setparam2\_ccl@{setparam2\_ccl}}
+\index{setparam2\_ccl@{setparam2\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{setparam2\_ccl()}{setparam2\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::setparam2\+\_\+ccl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:), intent(in)}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecclclass_a5a90756fe0684d2f29121a368dbef489}\label{namespacecclclass_a5a90756fe0684d2f29121a368dbef489}} 
+\index{cclclass@{cclclass}!setparam3\_ccl@{setparam3\_ccl}}
+\index{setparam3\_ccl@{setparam3\_ccl}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{setparam3\_ccl()}{setparam3\_ccl()}}
+{\footnotesize\ttfamily subroutine cclclass\+::setparam3\+\_\+ccl (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecclclass_structcclclass_1_1ccl}{ccl}}), intent(inout)}]{this,  }\item[{integer, intent(in)}]{numseg,  }\item[{integer, intent(in)}]{nmpstp,  }\item[{integer, intent(in)}]{type,  }\item[{double precision, intent(in)}]{blength }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacecclclass_adeb399ff41e54cda7bdefa51063c0de6}\label{namespacecclclass_adeb399ff41e54cda7bdefa51063c0de6}} 
+\index{cclclass@{cclclass}!nparam@{nparam}}
+\index{nparam@{nparam}!cclclass@{cclclass}}
+\subsubsection{\texorpdfstring{nparam}{nparam}}
+{\footnotesize\ttfamily integer, parameter, private cclclass\+::nparam = 11\hspace{0.3cm}{\ttfamily [private]}}
+

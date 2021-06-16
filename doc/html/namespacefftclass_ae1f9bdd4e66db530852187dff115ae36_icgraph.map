@@ -1,0 +1,4 @@
+<map id="fftclass::rvec_nr2pack_sint1f" name="fftclass::rvec_nr2pack_sint1f">
+<area shape="rect" id="node1" title="transfer real vector from nr style to fftpack style for (forward) sint1D" alt="" coords="148,5,298,44"/>
+<area shape="rect" id="node2" href="$namespacefftclass.html#abcd5ef700f07a29fa9949e15866f5d41" title="fast discrete sine transform" alt="" coords="5,12,100,37"/>
+</map>

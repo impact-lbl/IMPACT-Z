@@ -1,0 +1,90 @@
+\hypertarget{_sol_r_f_8f90}{}\section{src/\+Appl/\+Sol\+RF.f90 File Reference}
+\label{_sol_r_f_8f90}\index{src/Appl/SolRF.f90@{src/Appl/SolRF.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacesolrfclass_structsolrfclass_1_1solrf}{solrfclass\+::solrf}}
+\item 
+interface \mbox{\hyperlink{interfacesolrfclass_1_1getparam__solrf}{solrfclass\+::getparam\+\_\+solrf}}
+\item 
+interface \mbox{\hyperlink{interfacesolrfclass_1_1setparam__solrf}{solrfclass\+::setparam\+\_\+solrf}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacesolrfclass}{solrfclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and RF field for the Sol-\/\+RF beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_a3d7deb451633bf4e6fc42e0b43f21e2e}{solrfclass\+::construct\+\_\+solrf}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_ad06b3becdb99ba947f714809bea2af35}{solrfclass\+::setparam1\+\_\+solrf}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_a4f5cee7483285ca745064b5331f3c30f}{solrfclass\+::setparam2\+\_\+solrf}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_ae51249f1d976b6ff71436430614a854e}{solrfclass\+::setparam3\+\_\+solrf}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_af623613497d4af2070e81c255374535e}{solrfclass\+::getparam1\+\_\+solrf}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_ac8cc63a77159c54d547e156bf816e7d1}{solrfclass\+::getparam2\+\_\+solrf}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_abb727d5c5f8ebd6af19e036fe9204923}{solrfclass\+::getparam3\+\_\+solrf}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_a70f5e9afe73a56ed66363e6ca3207226}{solrfclass\+::maplinear\+\_\+solrf}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_a47bcede8ab38e0e035ef1be479490018}{solrfclass\+::rk6i\+\_\+solrf}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_aaf806853862c8c4b3f448ca750500178}{solrfclass\+::intfunc1\+\_\+solrf}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_a1033b422b682ef72ecc3b482c38b5065}{solrfclass\+::getaxflde\+\_\+solrf}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the Sol\+RF rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_adf7673f885573c8468f07faebc432d7d}{solrfclass\+::getbgradfld\+\_\+solrf}} (z, this, b0, bgrad)
+\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_a394f9bb9d3b50c8652a704f3c5af16ef}{solrfclass\+::getfld\+\_\+solrf}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacesolrfclass_a8a44826fce541cba8b4f7f5573ec7c98}{solrfclass\+::getflderr\+\_\+solrf}} (pos, extfld, this, dx, dy, anglex, angley,
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacesolrfclass_a01b965e25069cff9fb1797fbbcb9939d}{solrfclass\+::nparam}} = 15
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{solrfclass::solrf@{solrfclass::solrf}}\label{structsolrfclass_1_1solrf}
+\Hypertarget{namespacesolrfclass_structsolrfclass_1_1solrf}
+\subsubsection{type solrfclass\+::solrf}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacesolrfclass_af3ec222ea47a2e9d6dea703d94927750}\label{namespacesolrfclass_af3ec222ea47a2e9d6dea703d94927750}} 
+integer&
+itype&
+Itype = 105. \\
+\hline
+
+\mbox{\Hypertarget{namespacesolrfclass_a6fbb4ce6f8918840cadf9ee8e16769f9}\label{namespacesolrfclass_a6fbb4ce6f8918840cadf9ee8e16769f9}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolrfclass_af5533539dedb70fb85e93b1a76a7a55d}\label{namespacesolrfclass_af5533539dedb70fb85e93b1a76a7a55d}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolrfclass_a1825472ba9b6dfe1d7ca72bfc85f0532}\label{namespacesolrfclass_a1825472ba9b6dfe1d7ca72bfc85f0532}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacesolrfclass_a10deafd1e7cbd79c86c62766f73105f9}\label{namespacesolrfclass_a10deafd1e7cbd79c86c62766f73105f9}} 
+double precision, dimension(\mbox{\hyperlink{namespacesolrfclass_a01b965e25069cff9fb1797fbbcb9939d}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}

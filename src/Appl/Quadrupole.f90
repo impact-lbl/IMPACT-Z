@@ -2,10 +2,17 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Quadrupoleclass: Quadrupole beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL, 2016
-! Description: This class defines the linear transfer map and field
-!              for the quadrupole beam line elment.
+! 
+! MODULE  : ... Quadrupoleclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!> @date
+!> 2016
+! 
+! DESCRIPTION: 
+!> This class defines the linear transfer map and field
+!> for the quadrupole beam line elment.
 ! Comments:
 !----------------------------------------------------------------
       module Quadrupoleclass
@@ -14,7 +21,7 @@
         integer, private, parameter :: Nparam = 9
         type Quadrupole
           !Itype = 1
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 1
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -304,7 +311,7 @@
 
         end subroutine intfunc1_Quadrupole
 
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderr_Quadrupole(pos,extfld,this,dx,dy,anglex,&
                                          angley,anglez)
         implicit none
@@ -365,7 +372,7 @@
 
         end subroutine getflderr_Quadrupole
         
-        !get external field without displacement and rotation errors.
+        !> get external field without displacement and rotation errors.
         subroutine getfld_Quadrupole(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -401,7 +408,7 @@
 
         end subroutine getfld_Quadrupole
 
-        !interpolate the field from the SC rf cavity onto bunch location.
+        !> interpolate the field from the SC rf cavity onto bunch location.
         subroutine getfldfrg_Quadrupole(zz,this,bgrad)
         implicit none
         include 'mpif.h'
@@ -505,7 +512,7 @@
  
         end subroutine getfldfrgAna2_Quadrupole
 
-        !quad strength using K
+        !> quad strength using K
         subroutine transfmapK_Quadrupole(tt,tau,this,refpt,Nplc,pts,qmass)
         implicit none
         include 'mpif.h'

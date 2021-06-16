@@ -1,0 +1,5 @@
+<map id="beambunchclass::drifthalft_beambunch" name="beambunchclass::drifthalft_beambunch">
+<area shape="rect" id="node1" title="drift half step in positions. Here, x, y, z are normalized by C * Dt tau &#45; normalized step size (by D..." alt="" coords="5,5,182,44"/>
+<area shape="rect" id="node2" href="$namespacetimerclass.html#a3378d323d442f85aff95ab73cd13376d" title=" " alt="" coords="230,5,390,44"/>
+<area shape="rect" id="node3" href="$namespacempistub.html#a2456432a60801629e19273ebe4114bc9" title="mpi timing" alt="" coords="438,12,577,37"/>
+</map>

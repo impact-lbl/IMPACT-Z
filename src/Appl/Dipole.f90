@@ -2,10 +2,15 @@
 ! (c) Copyright, 2019 by the Regents of the University of California.
 ! Dipoleclass: Dipole beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 2.1
-! Author: Ji Qiang, LBNL
-! Descriion: This class defines the linear transfer map and field
-!              for the Dipole beam line elment.
+!
+! MODULE  : ... Dipoleclass
+! VERSION : ... 2.1
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION:
+!> This class defines the linear transfer map and field
+!> for the Dipole beam line elment.
 ! Comments:
 !----------------------------------------------------------------
       module Dipoleclass
@@ -14,7 +19,7 @@
         integer, private, parameter :: Nparam = 15
         type Dipole
           !Itype = 4
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 4
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -304,7 +309,7 @@
         end subroutine intfunc1_Dipole
 !------------------------------------------------------------------------
 
-        !get external field with displacement and rotation errors.
+        !> get external field with displacement and rotation errors.
         subroutine  getflderr_Dipole(pos,extfld,this,dx,dy,anglex,angley,&
                                      anglez)
         implicit none
@@ -357,7 +362,7 @@
 
         end subroutine getflderr_Dipole
         
-        !get external field without displacement and rotation errors.
+        !> get external field without displacement and rotation errors.
         subroutine  getfld_Dipole(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -413,7 +418,7 @@
 !        print*,"dipole: ",pos,extfld(5)
         end subroutine getfld_Dipole
 
-       !get external field without displacement and rotation errors.
+       !> get external field without displacement and rotation errors.
         subroutine  getfldold2_Dipole(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -443,7 +448,7 @@
 
         end subroutine getfldold2_Dipole
 
-        !get external field without displacement and rotation errors.
+        !> get external field without displacement and rotation errors.
         subroutine  getfldold_Dipole(pos,extfld,this)
         implicit none
         include 'mpif.h'
@@ -461,8 +466,13 @@
 
         end subroutine getfldold_Dipole
 
-        !J.Q. modified 2018. Now particle distribution in ImpactZ coordinates
-        !Transfer matrix follows the Transport: K. L. Brown, SLAC-75.
+        !--------------------------------------------------------------------------------------
+        !> @author J.Q.
+        !> @date modified 2018
+        !> @brief
+        !> Now particle distribution in ImpactZ coordinates
+        !> Transfer matrix follows the Transport: K. L. Brown, SLAC-75.
+        !--------------------------------------------------------------------------------------
         subroutine Fpol_Dipole(h0,h1,tanphi,tanphib,k1,psi,ptarry1,ang,Nplocal,&
                                gam0,qm0)
         implicit none

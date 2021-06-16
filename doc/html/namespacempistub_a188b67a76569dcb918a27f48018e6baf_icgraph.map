@@ -1,0 +1,10 @@
+<map id="mpistub::mpi_comm_size" name="mpistub::mpi_comm_size">
+<area shape="rect" id="node1" title="total number of processors" alt="" coords="701,61,872,87"/>
+<area shape="rect" id="node2" href="$namespaceinputclass.html#a907319f6e5d34930fbc63f5af426e9bd" title="Input all parameters except beam line element parameters." alt="" coords="494,5,637,31"/>
+<area shape="rect" id="node3" href="$namespacepgrid2dclass.html#a93b626c7a473ab28463a29b9661dcefb" title="set up 2&#45;D Cartisian grid." alt="" coords="487,55,644,93"/>
+<area shape="rect" id="node5" href="$namespacetimerclass.html#a3535b11970327778ddd27cee93c2288b" title=" " alt="" coords="479,119,653,144"/>
+<area shape="rect" id="node4" href="$namespaceaccsimulatorclass.html#a6a90186281758191cfa3ef4fc9c54078" title="set up objects and parameters." alt="" coords="291,52,425,91"/>
+<area shape="rect" id="node6" href="$namespacetimerclass.html#aa34d67fa57ad546ab7e1a7fb1643e9b0" title=" " alt="" coords="286,115,431,153"/>
+<area shape="rect" id="node7" href="$namespaceaccsimulatorclass.html#acbe26eeaf1cb4076384b90e1016785f0" title="Run beam dynamics simulation through accelerator." alt="" coords="104,115,238,153"/>
+<area shape="rect" id="node8" href="$main_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="v.1.0" alt="" coords="5,121,56,147"/>
+</map>

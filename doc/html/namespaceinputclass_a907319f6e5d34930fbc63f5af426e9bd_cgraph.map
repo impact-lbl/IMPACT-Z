@@ -1,0 +1,5 @@
+<map id="inputclass::in1_input" name="inputclass::in1_input">
+<area shape="rect" id="node1" title="Input all parameters except beam line element parameters." alt="" coords="5,31,147,56"/>
+<area shape="rect" id="node2" href="$namespacempistub.html#a3085e38e0e5d38df633afc7b2d92cebb" title="processor ID" alt="" coords="195,5,369,31"/>
+<area shape="rect" id="node3" href="$namespacempistub.html#a188b67a76569dcb918a27f48018e6baf" title="total number of processors" alt="" coords="197,55,368,80"/>
+</map>

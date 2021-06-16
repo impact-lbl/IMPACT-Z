@@ -1,0 +1,50 @@
+<map id="beamlineelemclass::maplinear_beamlineelem" name="beamlineelemclass::maplinear_beamlineelem">
+<area shape="rect" id="node1" title=" " alt="" coords="5,519,176,557"/>
+<area shape="rect" id="node2" href="$namespacequadrupoleclass.html#adcdf5386d19cfb0a90cbc42426cf0d44" title=" " alt="" coords="224,19,408,57"/>
+<area shape="rect" id="node6" href="$namespacedrifttubeclass.html#aaf41c0aaec4dc3e16fc0f678b3220de3" title=" " alt="" coords="233,95,399,133"/>
+<area shape="rect" id="node9" href="$namespacecclclass.html#a2efbf5186624893a0f213ca40968c198" title=" " alt="" coords="237,183,395,208"/>
+<area shape="rect" id="node13" href="$namespaceccdtlclass.html#a520796b320588e1f31ce8587301b571b" title=" " alt="" coords="243,284,388,323"/>
+<area shape="rect" id="node17" href="$namespacedtlclass.html#afcf262e9f63f2008931d898ff6d9973a" title=" " alt="" coords="239,399,392,424"/>
+<area shape="rect" id="node22" href="$namespacescclass.html#aec786348c1a0beec0d090c12b13d588c" title=" " alt="" coords="240,497,392,523"/>
+<area shape="rect" id="node26" href="$namespaceconstfocclass.html#af393c0fed039b82c7eb2aa347bc12bd8" title=" " alt="" coords="232,547,399,585"/>
+<area shape="rect" id="node29" href="$namespacesolrfclass.html#a70f5e9afe73a56ed66363e6ca3207226" title=" " alt="" coords="244,609,387,648"/>
+<area shape="rect" id="node34" href="$namespacesolclass.html#ac1f4d73224d7585c1be1bb6f24f125df" title=" " alt="" coords="236,697,395,723"/>
+<area shape="rect" id="node37" href="$namespaceemfldclass.html#ab283b339abd3df592d8200c244652131" title=" " alt="" coords="241,771,391,809"/>
+<area shape="rect" id="node41" href="$namespacemultipoleclass.html#ab9ed6db5fa3b4ea0f6e1a07cd6d57431" title=" " alt="" coords="230,855,401,893"/>
+<area shape="rect" id="node45" href="$namespacetwsclass.html#ab57cbdca9514adc28eb62c6bbb8633b6" title=" " alt="" coords="233,955,398,980"/>
+<area shape="rect" id="node3" href="$namespacequadrupoleclass.html#a156f69f00644d8511e9f1ee150504b83" title=" " alt="" coords="459,5,606,44"/>
+<area shape="rect" id="node4" href="$namespacequadrupoleclass.html#a3cbe01df676294387d1293468425aa70" title=" " alt="" coords="657,5,830,44"/>
+<area shape="rect" id="node5" href="$namespacequadrupoleclass.html#a28a961157d94669d59f8c6f024995899" title="interpolate the field from the SC rf cavity onto bunch location." alt="" coords="878,5,1052,44"/>
+<area shape="rect" id="node7" href="$namespacedrifttubeclass.html#a186a18efb61fce23e16a18534af446fb" title=" " alt="" coords="468,68,597,107"/>
+<area shape="rect" id="node8" href="$namespacedrifttubeclass.html#a053027aad7a9b20bafb34d676de9a14a" title=" " alt="" coords="667,68,821,107"/>
+<area shape="rect" id="node10" href="$namespacecclclass.html#a881db4a51cdc73a6c489b2814565a243" title="interpolate the field from the CCL rf cavity onto bunch location." alt="" coords="888,157,1041,183"/>
+<area shape="rect" id="node11" href="$namespacecclclass.html#a6dd4075592b69b308b61e3ee2f065517" title=" " alt="" coords="472,183,593,208"/>
+<area shape="rect" id="node12" href="$namespacecclclass.html#a09adb3ba980646f12eb22fddbd4c962d" title=" " alt="" coords="671,183,816,208"/>
+<area shape="rect" id="node14" href="$namespaceccdtlclass.html#adb7b1c30d3fcb087a5064911ccd4fd1d" title="interpolate the field from the CCDTL rf cavity onto bunch location." alt="" coords="894,256,1035,295"/>
+<area shape="rect" id="node15" href="$namespaceccdtlclass.html#aca1c6ac6cdbd554820ab2c213a987647" title=" " alt="" coords="461,291,604,316"/>
+<area shape="rect" id="node16" href="$namespaceccdtlclass.html#afad7c4471295ba39993a4a180d6a4d54" title=" " alt="" coords="677,284,810,323"/>
+<area shape="rect" id="node18" href="$namespacedtlclass.html#a1fb756446dfd217cc32e4a9088e7f4c7" title="interpolate the field from the DTL rf cavity onto bunch location." alt="" coords="890,348,1039,373"/>
+<area shape="rect" id="node19" href="$namespacedtlclass.html#aa1988f1526102adea7683c31ce2164d9" title=" " alt="" coords="475,399,591,424"/>
+<area shape="rect" id="node20" href="$namespacedtlclass.html#a913997c12a39f072f1a2be1576dc59d2" title=" " alt="" coords="673,399,814,424"/>
+<area shape="rect" id="node21" href="$namespacedtlclass.html#a79f0618eb609338c97470f6f8f05a848" title=" " alt="" coords="884,399,1046,424"/>
+<area shape="rect" id="node23" href="$namespacescclass.html#aefc9ea62cf36830e2c74869fff2f1b17" title="interpolate the field from the SC rf cavity onto bunch location." alt="" coords="891,475,1038,500"/>
+<area shape="rect" id="node24" href="$namespacescclass.html#a4b16987e1d3852123c69a6bfc0cec75a" title=" " alt="" coords="475,500,590,525"/>
+<area shape="rect" id="node25" href="$namespacescclass.html#a5d354b33de72df0b6be68290744f94ba" title=" " alt="" coords="674,500,813,525"/>
+<area shape="rect" id="node27" href="$namespaceconstfocclass.html#a25aa498c0852e2952880172b61f0f034" title=" " alt="" coords="468,549,598,588"/>
+<area shape="rect" id="node28" href="$namespaceconstfocclass.html#a6cedac4005af8166900c4d4b1afd707b" title=" " alt="" coords="666,549,821,588"/>
+<area shape="rect" id="node30" href="$namespacesolrfclass.html#a1033b422b682ef72ecc3b482c38b5065" title="interpolate the field from the SolRF rf cavity onto bunch location." alt="" coords="896,607,1034,645"/>
+<area shape="rect" id="node31" href="$namespacesolrfclass.html#a47bcede8ab38e0e035ef1be479490018" title=" " alt="" coords="463,667,602,692"/>
+<area shape="rect" id="node32" href="$namespacesolrfclass.html#aaf806853862c8c4b3f448ca750500178" title=" " alt="" coords="678,664,809,703"/>
+<area shape="rect" id="node33" href="$namespacesolrfclass.html#adf7673f885573c8468f07faebc432d7d" title=" " alt="" coords="889,669,1040,708"/>
+<area shape="rect" id="node35" href="$namespacesolclass.html#ae384372c54c045759b9bb9e1eb0886a1" title=" " alt="" coords="472,723,594,748"/>
+<area shape="rect" id="node36" href="$namespacesolclass.html#a195ad6d94c20d0ac4d6ed1c8063a8a3b" title=" " alt="" coords="670,727,817,752"/>
+<area shape="rect" id="node38" href="$namespaceemfldclass.html#ae77f42a7f667c3dd902df1d26480e602" title=" " alt="" coords="887,799,1043,837"/>
+<area shape="rect" id="node39" href="$namespaceemfldclass.html#ae4bfa1325df7cec4a3facbe8ebc66845" title=" " alt="" coords="456,831,609,856"/>
+<area shape="rect" id="node40" href="$namespaceemfldclass.html#af90bd5467acb5c62a2d93f6eb1738097" title=" " alt="" coords="674,828,813,867"/>
+<area shape="rect" id="node42" href="$namespacemultipoleclass.html#aebbed53759ae97dc55df35264c89274c" title=" " alt="" coords="466,887,600,925"/>
+<area shape="rect" id="node43" href="$namespacemultipoleclass.html#adba27354e821268f6cb786c415a5bc91" title=" " alt="" coords="664,891,823,929"/>
+<area shape="rect" id="node44" href="$namespacemultipoleclass.html#a8712b7622d8ed7c0e71cdc18204dcf46" title="interpolate the field from the SC rf cavity onto bunch location." alt="" coords="884,891,1045,929"/>
+<area shape="rect" id="node46" href="$namespacetwsclass.html#a9c88e1753c1d3faff3af95cf8c071d4f" title="get the E field on the axis" alt="" coords="884,980,1045,1005"/>
+<area shape="rect" id="node47" href="$namespacetwsclass.html#a2d527684d5c9fd42e3217ac03914bd90" title=" " alt="" coords="469,1005,597,1031"/>
+<area shape="rect" id="node48" href="$namespacetwsclass.html#a1681f57f6e70160ddb0f6e59f4cd5349" title=" " alt="" coords="667,1005,820,1031"/>
+</map>

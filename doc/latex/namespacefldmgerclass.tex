@@ -1,0 +1,99 @@
+\hypertarget{namespacefldmgerclass}{}\section{fldmgerclass Module Reference}
+\label{namespacefldmgerclass}\index{fldmgerclass@{fldmgerclass}}
+
+
+This class defines the functions to sum up the particle contribution from neighboring processor domain, exchange the potential, exchange the field for interpolation between neighboring processors.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefldmgerclass_a54886b0763b8458a0560ccf7087b07f1}{guardsum1\+\_\+fldmger}} (x, innx, inny, innz, grid)
+\begin{DoxyCompactList}\small\item\em sum up the contributions from neighboring guard cells. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefldmgerclass_a028236bf0d8419b6f75a7fb28eb7226b}{guardexch1\+\_\+fldmger}} (x, innx, inny, innz, grid)
+\begin{DoxyCompactList}\small\item\em exchange grid information between neighboring guard cell to calculate E from phi. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefldmgerclass_a490fceb1792fb1664488b1394dcff5f0}{boundint4\+\_\+fldmger}} (x1, x2, x3, innx, inny, innz, grid)
+\begin{DoxyCompactList}\small\item\em exchange the information for interpolation from neighboring guard cells. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines the functions to sum up the particle contribution from neighboring processor domain, exchange the potential, exchange the field for interpolation between neighboring processors. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacefldmgerclass_a490fceb1792fb1664488b1394dcff5f0}\label{namespacefldmgerclass_a490fceb1792fb1664488b1394dcff5f0}} 
+\index{fldmgerclass@{fldmgerclass}!boundint4\_fldmger@{boundint4\_fldmger}}
+\index{boundint4\_fldmger@{boundint4\_fldmger}!fldmgerclass@{fldmgerclass}}
+\subsubsection{\texorpdfstring{boundint4\_fldmger()}{boundint4\_fldmger()}}
+{\footnotesize\ttfamily subroutine fldmgerclass\+::boundint4\+\_\+fldmger (\begin{DoxyParamCaption}\item[{double precision, dimension(innx,inny,innz), intent(inout)}]{x1,  }\item[{double precision, dimension(innx,inny,innz), intent(inout)}]{x2,  }\item[{double precision, dimension(innx,inny,innz), intent(inout)}]{x3,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{type (pgrid2d), intent(in)}]{grid }\end{DoxyParamCaption})}
+
+
+
+exchange the information for interpolation from neighboring guard cells. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefldmgerclass_a490fceb1792fb1664488b1394dcff5f0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefldmgerclass_a490fceb1792fb1664488b1394dcff5f0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefldmgerclass_a028236bf0d8419b6f75a7fb28eb7226b}\label{namespacefldmgerclass_a028236bf0d8419b6f75a7fb28eb7226b}} 
+\index{fldmgerclass@{fldmgerclass}!guardexch1\_fldmger@{guardexch1\_fldmger}}
+\index{guardexch1\_fldmger@{guardexch1\_fldmger}!fldmgerclass@{fldmgerclass}}
+\subsubsection{\texorpdfstring{guardexch1\_fldmger()}{guardexch1\_fldmger()}}
+{\footnotesize\ttfamily subroutine fldmgerclass\+::guardexch1\+\_\+fldmger (\begin{DoxyParamCaption}\item[{double precision, dimension(innx,inny,innz), intent(inout)}]{x,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{type (pgrid2d), intent(in)}]{grid }\end{DoxyParamCaption})}
+
+
+
+exchange grid information between neighboring guard cell to calculate E from phi. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefldmgerclass_a028236bf0d8419b6f75a7fb28eb7226b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefldmgerclass_a028236bf0d8419b6f75a7fb28eb7226b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefldmgerclass_a54886b0763b8458a0560ccf7087b07f1}\label{namespacefldmgerclass_a54886b0763b8458a0560ccf7087b07f1}} 
+\index{fldmgerclass@{fldmgerclass}!guardsum1\_fldmger@{guardsum1\_fldmger}}
+\index{guardsum1\_fldmger@{guardsum1\_fldmger}!fldmgerclass@{fldmgerclass}}
+\subsubsection{\texorpdfstring{guardsum1\_fldmger()}{guardsum1\_fldmger()}}
+{\footnotesize\ttfamily subroutine fldmgerclass\+::guardsum1\+\_\+fldmger (\begin{DoxyParamCaption}\item[{double precision, dimension(innx,inny,innz), intent(inout)}]{x,  }\item[{integer, intent(in)}]{innx,  }\item[{integer, intent(in)}]{inny,  }\item[{integer, intent(in)}]{innz,  }\item[{type (pgrid2d), intent(in)}]{grid }\end{DoxyParamCaption})}
+
+
+
+sum up the contributions from neighboring guard cells. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefldmgerclass_a54886b0763b8458a0560ccf7087b07f1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefldmgerclass_a54886b0763b8458a0560ccf7087b07f1_icgraph}
+\end{center}
+\end{figure}

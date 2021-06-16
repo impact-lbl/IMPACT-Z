@@ -1,0 +1,38 @@
+\hypertarget{_distribution_8f90}{}\section{src/\+Appl/\+Distribution.f90 File Reference}
+\label{_distribution_8f90}\index{src/Appl/Distribution.f90@{src/Appl/Distribution.f90}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacedistributionclass}{distributionclass}}
+\begin{DoxyCompactList}\small\item\em This class defines initial distributions for the charged particle beam bunch information in the accelerator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a90036cb4aa43f5e3f9844bc412d2a766}{distributionclass\+::sample\+\_\+dist}} (this, distparam0, nparam, flagdist, geom, grid
+\begin{DoxyCompactList}\small\item\em sample the particles with intial distribution. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_af85f956a3fdb677022a546bc69ecfb3c}{distributionclass\+::gauss3\+\_\+dist}} (this, nparam, distparam, grid, flagalloc)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a00377c8aa90fa9dc8b222d71d019f936}{distributionclass\+::normdv}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_acfc04ca0c8be3e0f3e73779c5e88693b}{distributionclass\+::normvec}} (y, num)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_aed734df6d00f7004cf11847adb42dd1d}{distributionclass\+::waterbag\+\_\+dist}} (this, nparam, distparam, grid, flagalloc)
+\begin{DoxyCompactList}\small\item\em sample the particles with intial distribution using rejection method. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a2e96d2c85cac39531d37f2ce057c5766}{distributionclass\+::kv3d\+\_\+dist}} (this, nparam, distparam, grid)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a4a013e2bf1afc4cdeefe0fce7f0e0e00}{distributionclass\+::uniform\+\_\+dist}} (this, nparam, distparam, geom, grid)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a0e031187f6b2818aebcd2911b93c0722}{distributionclass\+::semigauss\+\_\+dist}} (this, nparam, distparam, geom, grid)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a020961b4717af242fc3c82090a17ce12}{distributionclass\+::normdv2}} (y)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a50c29600de2efb52342fa5b2e2e21283}{distributionclass\+::waterbagmc\+\_\+dist}} (this, nparam, distparam, grid, flagalloc,
+\begin{DoxyCompactList}\small\item\em sample the particles with intial distribution using rejection method for multi-\/charge state. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_ae3590d26a730b67c67e6e6597196f4bd}{distributionclass\+::gaussmc\+\_\+dist}} (this, nparam, distparam, grid, flagalloc, nch
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_acf080fd52aac8287d955bcfd88362c07}{distributionclass\+::readelegant\+\_\+dist}} (this, nparam, distparam, geom, grid, Flag
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_a4efaf82e4273159a0e2651238502bbf2}{distributionclass\+::readin\+\_\+dist}} (this)
+\item 
+subroutine \mbox{\hyperlink{namespacedistributionclass_ab1d0719de2c779c9d5e8a5f353555193}{distributionclass\+::readimpt\+\_\+dist}} (this, nparam, distparam, geom, grid, Flagbc)
+\begin{DoxyCompactList}\small\item\em read particle distribution from ImpactT output \end{DoxyCompactList}\end{DoxyCompactItemize}

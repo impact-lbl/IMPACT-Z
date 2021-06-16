@@ -1,0 +1,303 @@
+\hypertarget{namespacecompdomclass}{}\section{compdomclass Module Reference}
+\label{namespacecompdomclass}\index{compdomclass@{compdomclass}}
+
+
+This class defines 3-\/D global and local computational domain in the parallel simulation.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}
+\item 
+interface \mbox{\hyperlink{interfacecompdomclass_1_1construct__compdom}{construct\+\_\+compdom}}
+\item 
+interface \mbox{\hyperlink{interfacecompdomclass_1_1setlctab__compdom}{setlctab\+\_\+compdom}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_acdfdc48f4091ad70b76c1c7ed66c10b0}{init\+\_\+compdom}} (this, distparam, nparam, flg, nx, ny, nz, grid2d, nprocrow, nproccol, Flagbc, xrad, yrad, pe
+\begin{DoxyCompactList}\small\item\em calculate the initial computational geometry parameters and double precision parameters. Here, computational domain is mapped onto a one dimension processor array in y direction. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a0e7d562b378f77e0d3a14b33168cb46b}{update\+\_\+compdom}} (this, ptrange, grid2d, Flagbc)
+\begin{DoxyCompactList}\small\item\em update geometry parameters using new particle positions. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_abf3eab7526c06e30b574ddf8be378826}{updateold\+\_\+compdom}} (this, inrange, grid2d, nplc)
+\begin{DoxyCompactList}\small\item\em update geometry parameters using new particle positions. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a024b1cbd7d29d1bd2ac4285c45b25cb1}{balance\+\_\+compdom}} (source, lctabnmz, lctabnmy, lctabrgz, lctabrgy, npz, npy, commrow, commcol, innx, inny, innz, inyglb,
+\begin{DoxyCompactList}\small\item\em find the balanced local domain geometry so that the number of particles on this domain about equal. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a460a22916802ee9041aa66d1922cb812}{getmsize\+\_\+compdom}} (this, msize)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a4742fe5698151e1e31e2261798a433c8}{getmnum\+\_\+compdom}} (this, mnum)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a545b0a4e8dce9ec9c326806ed1b36598}{getlcmnum\+\_\+compdom}} (this, mnum)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_acba710aa1017492e05a537273742cc16}{getrange\+\_\+compdom}} (this, range)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_ad0a907860c5bf17c263d8ad957c7ed1d}{getlcrange\+\_\+compdom}} (this, range)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_ab679e7ac8218e1580f1a45a53d1fe9f1}{getlctabrg\+\_\+compdom}} (this, lctable)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a7c7c1450a459bb1753ef8230ab0d7651}{getlctabnm\+\_\+compdom}} (this, lctable)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a60f5ad087b624e541fe9c0872e1c4b90}{setlctab1\+\_\+compdom}} (this, lctabnmz, lctabnmy, lctabrgz, lctabrgy, npx, npy, myidx, myidy)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_a4bc32865e40fe6b277898a429caff3ca}{setlctab2\+\_\+compdom}} (this, lctabnmz, lctabrgz, npx, npy, myidx, myidy)
+\item 
+subroutine \mbox{\hyperlink{namespacecompdomclass_ae220a1544909bd8851faed61ce9ad7b8}{destruct\+\_\+compdom}} (this)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}} = 3
+\begin{DoxyCompactList}\small\item\em spatial dimension \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines 3-\/D global and local computational domain in the parallel simulation. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang, L\+B\+NL 
+\end{DoxyAuthor}
+
+
+\subsection{Data Type Documentation}
+\index{compdomclass::compdom@{compdomclass::compdom}}\label{structcompdomclass_1_1compdom}
+\Hypertarget{namespacecompdomclass_structcompdomclass_1_1compdom}
+\subsubsection{type compdomclass\+::compdom}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacecompdomclass_aebcef97b10bb06dc69848b22acaffe70}\label{namespacecompdomclass_aebcef97b10bb06dc69848b22acaffe70}} 
+integer, dimension(:,:,:), pointer&
+lctabnm&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a339ff58ad4edb52e01cf217b9a7f081c}\label{namespacecompdomclass_a339ff58ad4edb52e01cf217b9a7f081c}} 
+double precision, dimension(:,:,:), pointer&
+lctabrg&
+ymin, ymax, \# of y grids on local processor. \\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a80b917ff817964bc120175119768f93e}\label{namespacecompdomclass_a80b917ff817964bc120175119768f93e}} 
+integer, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+meshnum&
+\# of mesh points in each dimension. \\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a13c6277e9ca60fa6a80081b2a0bc91ff}\label{namespacecompdomclass_a13c6277e9ca60fa6a80081b2a0bc91ff}} 
+double precision, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+meshsize&
+mesh size in each dimension. \\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a21d05738eabd33f56f26879055af6343}\label{namespacecompdomclass_a21d05738eabd33f56f26879055af6343}} 
+integer, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+mshlocal&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a55068267999d67699122c91b366a0682}\label{namespacecompdomclass_a55068267999d67699122c91b366a0682}} 
+double precision, dimension(2 $\ast$\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+spatrange&
+spatial range in each dimenion. \\
+\hline
+
+\mbox{\Hypertarget{namespacecompdomclass_a2a2654ff7dd41dbb57b11a089e568123}\label{namespacecompdomclass_a2a2654ff7dd41dbb57b11a089e568123}} 
+double precision, dimension(2 $\ast$\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}})&
+sptrnglocal&
+\\
+\hline
+
+\end{DoxyFields}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacecompdomclass_a024b1cbd7d29d1bd2ac4285c45b25cb1}\label{namespacecompdomclass_a024b1cbd7d29d1bd2ac4285c45b25cb1}} 
+\index{compdomclass@{compdomclass}!balance\_compdom@{balance\_compdom}}
+\index{balance\_compdom@{balance\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{balance\_compdom()}{balance\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::balance\+\_\+compdom (\begin{DoxyParamCaption}\item[{double precision, dimension(\+:,\+:,\+:)}]{source,  }\item[{integer, dimension(0\+:npz-\/1), intent(inout)}]{lctabnmz,  }\item[{integer, dimension(0\+:npy-\/1), intent(inout)}]{lctabnmy,  }\item[{double precision, dimension(2,0\+:npz-\/1), intent(out)}]{lctabrgz,  }\item[{double precision, dimension(2,0\+:npy-\/1), intent(out)}]{lctabrgy,  }\item[{integer, intent(in)}]{npz,  }\item[{integer, intent(in)}]{npy,  }\item[{integer, intent(in)}]{commrow,  }\item[{integer, intent(in)}]{commcol,  }\item[{integer}]{innx,  }\item[{integer}]{inny,  }\item[{integer}]{innz,  }\item[{integer}]{inyglb }\end{DoxyParamCaption})}
+
+
+
+find the balanced local domain geometry so that the number of particles on this domain about equal. 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_a024b1cbd7d29d1bd2ac4285c45b25cb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_ae220a1544909bd8851faed61ce9ad7b8}\label{namespacecompdomclass_ae220a1544909bd8851faed61ce9ad7b8}} 
+\index{compdomclass@{compdomclass}!destruct\_compdom@{destruct\_compdom}}
+\index{destruct\_compdom@{destruct\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{destruct\_compdom()}{destruct\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::destruct\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(out)}]{this }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_ae220a1544909bd8851faed61ce9ad7b8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_a545b0a4e8dce9ec9c326806ed1b36598}\label{namespacecompdomclass_a545b0a4e8dce9ec9c326806ed1b36598}} 
+\index{compdomclass@{compdomclass}!getlcmnum\_compdom@{getlcmnum\_compdom}}
+\index{getlcmnum\_compdom@{getlcmnum\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{getlcmnum\_compdom()}{getlcmnum\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::getlcmnum\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(in)}]{this,  }\item[{integer, dimension(\+:), intent(out)}]{mnum }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_a545b0a4e8dce9ec9c326806ed1b36598_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_ad0a907860c5bf17c263d8ad957c7ed1d}\label{namespacecompdomclass_ad0a907860c5bf17c263d8ad957c7ed1d}} 
+\index{compdomclass@{compdomclass}!getlcrange\_compdom@{getlcrange\_compdom}}
+\index{getlcrange\_compdom@{getlcrange\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{getlcrange\_compdom()}{getlcrange\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::getlcrange\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{range }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_ad0a907860c5bf17c263d8ad957c7ed1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_a7c7c1450a459bb1753ef8230ab0d7651}\label{namespacecompdomclass_a7c7c1450a459bb1753ef8230ab0d7651}} 
+\index{compdomclass@{compdomclass}!getlctabnm\_compdom@{getlctabnm\_compdom}}
+\index{getlctabnm\_compdom@{getlctabnm\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{getlctabnm\_compdom()}{getlctabnm\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::getlctabnm\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(in)}]{this,  }\item[{integer, dimension(\+:,\+:,\+:), intent(out)}]{lctable }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_a7c7c1450a459bb1753ef8230ab0d7651_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_ab679e7ac8218e1580f1a45a53d1fe9f1}\label{namespacecompdomclass_ab679e7ac8218e1580f1a45a53d1fe9f1}} 
+\index{compdomclass@{compdomclass}!getlctabrg\_compdom@{getlctabrg\_compdom}}
+\index{getlctabrg\_compdom@{getlctabrg\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{getlctabrg\_compdom()}{getlctabrg\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::getlctabrg\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:,\+:,\+:), intent(out)}]{lctable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecompdomclass_a4742fe5698151e1e31e2261798a433c8}\label{namespacecompdomclass_a4742fe5698151e1e31e2261798a433c8}} 
+\index{compdomclass@{compdomclass}!getmnum\_compdom@{getmnum\_compdom}}
+\index{getmnum\_compdom@{getmnum\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{getmnum\_compdom()}{getmnum\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::getmnum\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(in)}]{this,  }\item[{integer, dimension(\+:), intent(out)}]{mnum }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecompdomclass_a460a22916802ee9041aa66d1922cb812}\label{namespacecompdomclass_a460a22916802ee9041aa66d1922cb812}} 
+\index{compdomclass@{compdomclass}!getmsize\_compdom@{getmsize\_compdom}}
+\index{getmsize\_compdom@{getmsize\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{getmsize\_compdom()}{getmsize\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::getmsize\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{msize }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_a460a22916802ee9041aa66d1922cb812_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_acba710aa1017492e05a537273742cc16}\label{namespacecompdomclass_acba710aa1017492e05a537273742cc16}} 
+\index{compdomclass@{compdomclass}!getrange\_compdom@{getrange\_compdom}}
+\index{getrange\_compdom@{getrange\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{getrange\_compdom()}{getrange\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::getrange\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(in)}]{this,  }\item[{double precision, dimension(\+:), intent(out)}]{range }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_acba710aa1017492e05a537273742cc16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_acdfdc48f4091ad70b76c1c7ed66c10b0}\label{namespacecompdomclass_acdfdc48f4091ad70b76c1c7ed66c10b0}} 
+\index{compdomclass@{compdomclass}!init\_compdom@{init\_compdom}}
+\index{init\_compdom@{init\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{init\_compdom()}{init\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::init\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(out)}]{this,  }\item[{double precision, dimension(nparam), intent(in)}]{distparam,  }\item[{integer, intent(in)}]{nparam,  }\item[{integer, intent(in)}]{flg,  }\item[{integer, intent(in)}]{nx,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nz,  }\item[{type (pgrid2d), intent(in)}]{grid2d,  }\item[{integer, intent(in)}]{nprocrow,  }\item[{integer, intent(in)}]{nproccol,  }\item[{}]{Flagbc,  }\item[{double precision, intent(in)}]{xrad,  }\item[{double precision, intent(in)}]{yrad,  }\item[{}]{pe }\end{DoxyParamCaption})}
+
+
+
+calculate the initial computational geometry parameters and double precision parameters. Here, computational domain is mapped onto a one dimension processor array in y direction. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{namespacecompdomclass_acdfdc48f4091ad70b76c1c7ed66c10b0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_a60f5ad087b624e541fe9c0872e1c4b90}\label{namespacecompdomclass_a60f5ad087b624e541fe9c0872e1c4b90}} 
+\index{compdomclass@{compdomclass}!setlctab1\_compdom@{setlctab1\_compdom}}
+\index{setlctab1\_compdom@{setlctab1\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{setlctab1\_compdom()}{setlctab1\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::setlctab1\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(inout)}]{this,  }\item[{integer, dimension(0\+:npx-\/1), intent(in)}]{lctabnmz,  }\item[{integer, dimension(0\+:npy-\/1), intent(in)}]{lctabnmy,  }\item[{double precision, dimension(2,0\+:npx-\/1), intent(in)}]{lctabrgz,  }\item[{double precision, dimension(2,0\+:npy-\/1), intent(in)}]{lctabrgy,  }\item[{integer, intent(in)}]{npx,  }\item[{integer, intent(in)}]{npy,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecompdomclass_a4bc32865e40fe6b277898a429caff3ca}\label{namespacecompdomclass_a4bc32865e40fe6b277898a429caff3ca}} 
+\index{compdomclass@{compdomclass}!setlctab2\_compdom@{setlctab2\_compdom}}
+\index{setlctab2\_compdom@{setlctab2\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{setlctab2\_compdom()}{setlctab2\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::setlctab2\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(inout)}]{this,  }\item[{integer, dimension(0\+:npx-\/1), intent(in)}]{lctabnmz,  }\item[{double precision, dimension(2,0\+:npx-\/1), intent(in)}]{lctabrgz,  }\item[{integer, intent(in)}]{npx,  }\item[{integer, intent(in)}]{npy,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacecompdomclass_a0e7d562b378f77e0d3a14b33168cb46b}\label{namespacecompdomclass_a0e7d562b378f77e0d3a14b33168cb46b}} 
+\index{compdomclass@{compdomclass}!update\_compdom@{update\_compdom}}
+\index{update\_compdom@{update\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{update\_compdom()}{update\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::update\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(inout)}]{this,  }\item[{double precision, dimension(6), intent(in)}]{ptrange,  }\item[{type (pgrid2d), intent(in)}]{grid2d,  }\item[{integer, intent(in)}]{Flagbc }\end{DoxyParamCaption})}
+
+
+
+update geometry parameters using new particle positions. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_a0e7d562b378f77e0d3a14b33168cb46b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_a0e7d562b378f77e0d3a14b33168cb46b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacecompdomclass_abf3eab7526c06e30b574ddf8be378826}\label{namespacecompdomclass_abf3eab7526c06e30b574ddf8be378826}} 
+\index{compdomclass@{compdomclass}!updateold\_compdom@{updateold\_compdom}}
+\index{updateold\_compdom@{updateold\_compdom}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{updateold\_compdom()}{updateold\_compdom()}}
+{\footnotesize\ttfamily subroutine compdomclass\+::updateold\+\_\+compdom (\begin{DoxyParamCaption}\item[{type (\mbox{\hyperlink{namespacecompdomclass_structcompdomclass_1_1compdom}{compdom}}), intent(inout)}]{this,  }\item[{double precision, dimension(\+:,\+:), intent(in)}]{inrange,  }\item[{type (pgrid2d), intent(in)}]{grid2d,  }\item[{integer, intent(in)}]{nplc }\end{DoxyParamCaption})}
+
+
+
+update geometry parameters using new particle positions. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacecompdomclass_abf3eab7526c06e30b574ddf8be378826_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}\label{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}} 
+\index{compdomclass@{compdomclass}!ndim@{ndim}}
+\index{ndim@{ndim}!compdomclass@{compdomclass}}
+\subsubsection{\texorpdfstring{ndim}{ndim}}
+{\footnotesize\ttfamily integer, parameter, private compdomclass\+::ndim = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+spatial dimension 
+

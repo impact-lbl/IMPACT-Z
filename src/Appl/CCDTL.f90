@@ -2,10 +2,15 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! CCDTLclass: Coupled-cavity-drift-tube-linac beam line element class
 !             in Lattice module of APPLICATION layer.
-! Version: 1.0
-! Authors: Ji Qiang, LBNL
-! Description: This class defines the linear transfer map and RF field
-!              for the CCDTL beam line elment.
+! 
+! MODULE        : ... CCDTLclass
+! VERSION       : ... 1.0
+!> @authors
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines the linear transfer map and RF field
+!> for the CCDTL beam line elment.
 ! Comments:
 !----------------------------------------------------------------
       module CCDTLclass
@@ -14,7 +19,7 @@
         integer, private, parameter :: Nparam = 11
         type CCDTL
           !Itype = 102
-          integer :: Nseg,Mapstp,Itype
+          integer :: Nseg,Mapstp,Itype !< Itype = 102
           double precision :: Length
           double precision, dimension(Nparam) :: Param
           ! Param(1) : zedge
@@ -327,7 +332,7 @@
 
         end subroutine intfunc1_CCDTL
 
-        !interpolate the field from the CCDTL rf cavity onto bunch location.
+        !> interpolate the field from the CCDTL rf cavity onto bunch location.
         subroutine getaxfldE_CCDTL(z,this,ez1,ezp1,ezpp1)
         implicit none
         include 'mpif.h'
@@ -372,7 +377,7 @@
 
         end subroutine getaxfldE_CCDTL
 
-        !get the external field with misalignment and rotation errors.
+        !> get the external field with misalignment and rotation errors.
         subroutine  getflderr_CCDTL(pos,extfld,this,dx,dy,anglex,angley,&
                                     anglez)
         implicit none
@@ -479,7 +484,7 @@
 
         end subroutine getflderr_CCDTL
 
-        !get the external field without misalignment and rotation errors.
+        !> get the external field without misalignment and rotation errors.
         subroutine  getfld_CCDTL(pos,extfld,this)
         implicit none
         include 'mpif.h'

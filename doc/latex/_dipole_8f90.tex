@@ -1,0 +1,96 @@
+\hypertarget{_dipole_8f90}{}\section{src/\+Appl/\+Dipole.f90 File Reference}
+\label{_dipole_8f90}\index{src/Appl/Dipole.f90@{src/Appl/Dipole.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacedipoleclass_structdipoleclass_1_1dipole}{dipoleclass\+::dipole}}
+\item 
+interface \mbox{\hyperlink{interfacedipoleclass_1_1getparam__dipole}{dipoleclass\+::getparam\+\_\+dipole}}
+\item 
+interface \mbox{\hyperlink{interfacedipoleclass_1_1setparam__dipole}{dipoleclass\+::setparam\+\_\+dipole}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacedipoleclass}{dipoleclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and field for the Dipole beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_ad926e6953a9110fb9662f9d75aec0578}{dipoleclass\+::construct\+\_\+dipole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a88c00f58bdecf1b9c087e1fa6fe4d890}{dipoleclass\+::setparam1\+\_\+dipole}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_af9b4f7bb26e407880166d1b7d19f8877}{dipoleclass\+::setparam2\+\_\+dipole}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a46e12e75054e010d776e23895101e223}{dipoleclass\+::setparam3\+\_\+dipole}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_af02462235721b966a71753610096e85a}{dipoleclass\+::getparam1\+\_\+dipole}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_af793a317f0b5d337d6818755609641a7}{dipoleclass\+::getparam2\+\_\+dipole}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a6a7322bcea3d9d07affd0628002985fd}{dipoleclass\+::getparam3\+\_\+dipole}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a3388afe517788e8b824b96bf49793510}{dipoleclass\+::maplinear\+\_\+dipole}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a1a92cd51d6ad864d251dd3abdc361ba8}{dipoleclass\+::rk6i\+\_\+dipole}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_ab15f3a0defc0de419f5613659abc9cad}{dipoleclass\+::intfunc1\+\_\+dipole}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a0a75204835a2e4dd1ea67c1ee32e62fe}{dipoleclass\+::getflderr\+\_\+dipole}} (pos, extfld, this, dx, dy, anglex, angley
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_ac8c755e07904e113f223ee5ef029ac93}{dipoleclass\+::getfld\+\_\+dipole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_abab9a0945263c7c75aa7ef9f94c07b9a}{dipoleclass\+::getfldold2\+\_\+dipole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a417b00dd769e534be3746eaeff56c074}{dipoleclass\+::getfldold\+\_\+dipole}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_ab0dd1e8b5ca921939ce0d97f0bd817ee}{dipoleclass\+::fpol\+\_\+dipole}} (h0, h1, tanphi, tanphib, k1, psi, ptarry1, ang, N
+\begin{DoxyCompactList}\small\item\em Now particle distribution in ImpactZ coordinates Transfer matrix follows the Transport\+: K. L. Brown, S\+L\+A\+C-\/75. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_aecb437418e23046347e41045d2988d3b}{dipoleclass\+::bpol\+\_\+dipole}} (h0, h1, tanphi, tanphib, k1, psi, ptarry1, ang, Nplocal, gam0, qm0)
+\item 
+subroutine \mbox{\hyperlink{namespacedipoleclass_a2aaba3f2e21950bbcafe3eb744fff547}{dipoleclass\+::sector\+\_\+dipole}} (len, beta, h0, k1, ptarry1, Nplocal, qm0)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacedipoleclass_abc619199e1e9a2811da9e97630125da3}{dipoleclass\+::nparam}} = 15
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{dipoleclass::dipole@{dipoleclass::dipole}}\label{structdipoleclass_1_1dipole}
+\Hypertarget{namespacedipoleclass_structdipoleclass_1_1dipole}
+\subsubsection{type dipoleclass\+::dipole}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacedipoleclass_a488890695ad6becc93db5079e740868e}\label{namespacedipoleclass_a488890695ad6becc93db5079e740868e}} 
+integer&
+itype&
+Itype = 4. \\
+\hline
+
+\mbox{\Hypertarget{namespacedipoleclass_aada668e2b218b56769c64c2ec9f21dea}\label{namespacedipoleclass_aada668e2b218b56769c64c2ec9f21dea}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedipoleclass_af0a1da636573d6878f6d1c11d0c9e5ab}\label{namespacedipoleclass_af0a1da636573d6878f6d1c11d0c9e5ab}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedipoleclass_a5f280e96dab020ba48b5b28f47b0d5fa}\label{namespacedipoleclass_a5f280e96dab020ba48b5b28f47b0d5fa}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacedipoleclass_a5ce0b668334f66ce50e3852ce17ddc39}\label{namespacedipoleclass_a5ce0b668334f66ce50e3852ce17ddc39}} 
+double precision, dimension(\mbox{\hyperlink{namespacedipoleclass_abc619199e1e9a2811da9e97630125da3}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}

@@ -1,0 +1,32 @@
+<map id="beambunchclass::kickt_beambunch" name="beambunchclass::kickt_beambunch">
+<area shape="rect" id="node1" title=" " alt="" coords="5,237,161,276"/>
+<area shape="rect" id="node2" href="$namespacetimerclass.html#afb272bcdcff72d225c2df5862630025c" title=" " alt="" coords="458,285,598,324"/>
+<area shape="rect" id="node4" href="$namespacepgrid2dclass.html#ac088657db5b1deb05bb1ec732579ba53" title="get the total number of PEs, PEs in column and row communicators." alt="" coords="455,35,601,73"/>
+<area shape="rect" id="node5" href="$namespacepgrid2dclass.html#a559d4550356f88440ae55fceda480de2" title="get my rank position in 2d, column, and row communicators." alt="" coords="455,97,602,136"/>
+<area shape="rect" id="node6" href="$namespacecompdomclass.html#a460a22916802ee9041aa66d1922cb812" title=" " alt="" coords="443,536,614,575"/>
+<area shape="rect" id="node7" href="$namespacefldmgerclass.html#a028236bf0d8419b6f75a7fb28eb7226b" title="exchange grid information between neighboring guard cell to calculate E from phi." alt="" coords="212,117,385,156"/>
+<area shape="rect" id="node9" href="$namespacetimerclass.html#a3378d323d442f85aff95ab73cd13376d" title=" " alt="" coords="448,223,608,261"/>
+<area shape="rect" id="node10" href="$namespacefldmgerclass.html#a490fceb1792fb1664488b1394dcff5f0" title="exchange the information for interpolation from neighboring guard cells." alt="" coords="218,180,380,219"/>
+<area shape="rect" id="node11" href="$namespacebeambunchclass.html#a3da6bfdf683e278c6005fddbceac16db" title="Here, the update of the momentum is in the rotated coordinates since the boost direction is not along..." alt="" coords="213,408,385,447"/>
+<area shape="rect" id="node30" href="$namespacebeambunchclass.html#a80dd0ce0010992cda1f2ba4d873371e0" title="Here, the update of the momentum is in the rotated coordinates since the boost direction is not along..." alt="" coords="209,345,389,384"/>
+<area shape="rect" id="node3" href="$namespacempistub.html#a2456432a60801629e19273ebe4114bc9" title="mpi timing" alt="" coords="677,5,816,31"/>
+<area shape="rect" id="node8" href="$namespacepgrid2dclass.html#a550cb1b5c94a9e168c3e0108bb8a6d5b" title="get 2D, column, and row communicators." alt="" coords="449,160,607,199"/>
+<area shape="rect" id="node12" href="$namespacecompdomclass.html#acba710aa1017492e05a537273742cc16" title=" " alt="" coords="443,473,613,512"/>
+<area shape="rect" id="node13" href="$namespacecompdomclass.html#a7c7c1450a459bb1753ef8230ab0d7651" title=" " alt="" coords="437,411,620,449"/>
+<area shape="rect" id="node14" href="$namespacebeamlineelemclass.html#a21fd373bab34a4c18c8bcf5b00816c0c" title=" " alt="" coords="456,348,600,387"/>
+<area shape="rect" id="node15" href="$namespacequadrupoleclass.html#a1d1bf0b4ea88a1cd0c0832a178fc80e5" title="get external field without displacement and rotation errors." alt="" coords="668,229,826,268"/>
+<area shape="rect" id="node17" href="$namespacedrifttubeclass.html#aa903101ae6943402917a2f29a8aa67d3" title=" " alt="" coords="677,292,817,331"/>
+<area shape="rect" id="node18" href="$namespacecclclass.html#a6c8d8825e6d50c30ba91c90892619a5b" title="get external field without displacement and rotation errors." alt="" coords="681,355,813,380"/>
+<area shape="rect" id="node19" href="$namespaceccdtlclass.html#a62eb43f6a732d52951d468e91a2312cb" title="get the external field without misalignment and rotation errors." alt="" coords="687,404,806,443"/>
+<area shape="rect" id="node20" href="$namespacedtlclass.html#a9e97d93c8f7ec49afee134e3ffd3f900" title="get external field without displacement and rotation errors." alt="" coords="683,467,811,492"/>
+<area shape="rect" id="node21" href="$namespacescclass.html#a5af81e94b531e8d02789525f1f4438ac" title="get external field without displacement and rotation errors" alt="" coords="684,516,810,541"/>
+<area shape="rect" id="node22" href="$namespaceconstfocclass.html#a34425bf98b4a4cff016108f25a629dff" title=" " alt="" coords="676,565,818,604"/>
+<area shape="rect" id="node23" href="$namespacesolrfclass.html#a394f9bb9d3b50c8652a704f3c5af16ef" title="get external field without displacement and rotation errors." alt="" coords="688,628,805,667"/>
+<area shape="rect" id="node24" href="$namespacesolclass.html#a7a865f7ab4470f9bff328ed98aacd7c8" title="get external field without displacement and rotation errors and with fringe field of Solenoid...." alt="" coords="680,691,813,716"/>
+<area shape="rect" id="node25" href="$namespacedipoleclass.html#ac8c755e07904e113f223ee5ef029ac93" title="get external field without displacement and rotation errors." alt="" coords="683,740,811,779"/>
+<area shape="rect" id="node26" href="$namespaceemfldclass.html#aa0023b4b2c7a17c75becc20eeb9be23c" title=" " alt="" coords="685,55,809,93"/>
+<area shape="rect" id="node27" href="$namespacemultipoleclass.html#af4fb9d3cfd9db2d92930fcda605fbe26" title="get external field without displacement and rotation errors." alt="" coords="674,117,819,156"/>
+<area shape="rect" id="node29" href="$namespacetwsclass.html#a30d73a1ffc1ce8ce728e8fdf7caa6002" title="get external field without displacement and rotation errors." alt="" coords="677,180,816,205"/>
+<area shape="rect" id="node16" href="$namespacequadrupoleclass.html#ab1abe8916ad3dace3e5d1373da4688ac" title=" " alt="" coords="874,229,1078,268"/>
+<area shape="rect" id="node28" href="$namespacemultipoleclass.html#a8712b7622d8ed7c0e71cdc18204dcf46" title="interpolate the field from the SC rf cavity onto bunch location." alt="" coords="896,117,1056,156"/>
+</map>

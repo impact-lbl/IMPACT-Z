@@ -1,0 +1,5 @@
+<map id="dataclass::read2_data" name="dataclass::read2_data">
+<area shape="rect" id="node1" title="read in discrete Ez(r,z), Er(r,z) and Btheta(r,z) rf data from files &quot;rfdatax.in or rfdataxx...." alt="" coords="5,31,158,56"/>
+<area shape="rect" id="node2" href="$namespacempistub.html#a3085e38e0e5d38df633afc7b2d92cebb" title="processor ID" alt="" coords="206,5,380,31"/>
+<area shape="rect" id="node3" href="$namespacempistub.html#a0d84064615f696d4877ad9f912d4cbef" title="synchronize communication" alt="" coords="221,55,364,80"/>
+</map>

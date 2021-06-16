@@ -1,0 +1,85 @@
+\hypertarget{structcompdomclass_1_1compdom}{}\section{compdomclass\+::compdom Type Reference}
+\label{structcompdomclass_1_1compdom}\index{compdomclass::compdom@{compdomclass::compdom}}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(2 $\ast$\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) \mbox{\hyperlink{structcompdomclass_1_1compdom_a55068267999d67699122c91b366a0682}{spatrange}}
+\begin{DoxyCompactList}\small\item\em spatial range in each dimenion. \end{DoxyCompactList}\item 
+double precision, dimension(2 $\ast$\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) \mbox{\hyperlink{structcompdomclass_1_1compdom_a2a2654ff7dd41dbb57b11a089e568123}{sptrnglocal}}
+\item 
+double precision, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) \mbox{\hyperlink{structcompdomclass_1_1compdom_a13c6277e9ca60fa6a80081b2a0bc91ff}{meshsize}}
+\begin{DoxyCompactList}\small\item\em mesh size in each dimension. \end{DoxyCompactList}\item 
+integer, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) \mbox{\hyperlink{structcompdomclass_1_1compdom_a80b917ff817964bc120175119768f93e}{meshnum}}
+\begin{DoxyCompactList}\small\item\em \# of mesh points in each dimension. \end{DoxyCompactList}\item 
+integer, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) \mbox{\hyperlink{structcompdomclass_1_1compdom_a21d05738eabd33f56f26879055af6343}{mshlocal}}
+\item 
+double precision, dimension(\+:,\+:,\+:), pointer \mbox{\hyperlink{structcompdomclass_1_1compdom_a339ff58ad4edb52e01cf217b9a7f081c}{lctabrg}}
+\begin{DoxyCompactList}\small\item\em ymin, ymax, \# of y grids on local processor. \end{DoxyCompactList}\item 
+integer, dimension(\+:,\+:,\+:), pointer \mbox{\hyperlink{structcompdomclass_1_1compdom_aebcef97b10bb06dc69848b22acaffe70}{lctabnm}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structcompdomclass_1_1compdom_aebcef97b10bb06dc69848b22acaffe70}\label{structcompdomclass_1_1compdom_aebcef97b10bb06dc69848b22acaffe70}} 
+\index{compdomclass::compdom@{compdomclass::compdom}!lctabnm@{lctabnm}}
+\index{lctabnm@{lctabnm}!compdomclass::compdom@{compdomclass::compdom}}
+\subsubsection{\texorpdfstring{lctabnm}{lctabnm}}
+{\footnotesize\ttfamily integer, dimension(\+:,\+:,\+:), pointer compdomclass\+::compdom\+::lctabnm}
+
+\mbox{\Hypertarget{structcompdomclass_1_1compdom_a339ff58ad4edb52e01cf217b9a7f081c}\label{structcompdomclass_1_1compdom_a339ff58ad4edb52e01cf217b9a7f081c}} 
+\index{compdomclass::compdom@{compdomclass::compdom}!lctabrg@{lctabrg}}
+\index{lctabrg@{lctabrg}!compdomclass::compdom@{compdomclass::compdom}}
+\subsubsection{\texorpdfstring{lctabrg}{lctabrg}}
+{\footnotesize\ttfamily double precision, dimension(\+:,\+:,\+:), pointer compdomclass\+::compdom\+::lctabrg}
+
+
+
+ymin, ymax, \# of y grids on local processor. 
+
+\mbox{\Hypertarget{structcompdomclass_1_1compdom_a80b917ff817964bc120175119768f93e}\label{structcompdomclass_1_1compdom_a80b917ff817964bc120175119768f93e}} 
+\index{compdomclass::compdom@{compdomclass::compdom}!meshnum@{meshnum}}
+\index{meshnum@{meshnum}!compdomclass::compdom@{compdomclass::compdom}}
+\subsubsection{\texorpdfstring{meshnum}{meshnum}}
+{\footnotesize\ttfamily integer, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) compdomclass\+::compdom\+::meshnum}
+
+
+
+\# of mesh points in each dimension. 
+
+\mbox{\Hypertarget{structcompdomclass_1_1compdom_a13c6277e9ca60fa6a80081b2a0bc91ff}\label{structcompdomclass_1_1compdom_a13c6277e9ca60fa6a80081b2a0bc91ff}} 
+\index{compdomclass::compdom@{compdomclass::compdom}!meshsize@{meshsize}}
+\index{meshsize@{meshsize}!compdomclass::compdom@{compdomclass::compdom}}
+\subsubsection{\texorpdfstring{meshsize}{meshsize}}
+{\footnotesize\ttfamily double precision, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) compdomclass\+::compdom\+::meshsize}
+
+
+
+mesh size in each dimension. 
+
+\mbox{\Hypertarget{structcompdomclass_1_1compdom_a21d05738eabd33f56f26879055af6343}\label{structcompdomclass_1_1compdom_a21d05738eabd33f56f26879055af6343}} 
+\index{compdomclass::compdom@{compdomclass::compdom}!mshlocal@{mshlocal}}
+\index{mshlocal@{mshlocal}!compdomclass::compdom@{compdomclass::compdom}}
+\subsubsection{\texorpdfstring{mshlocal}{mshlocal}}
+{\footnotesize\ttfamily integer, dimension(\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) compdomclass\+::compdom\+::mshlocal}
+
+\mbox{\Hypertarget{structcompdomclass_1_1compdom_a55068267999d67699122c91b366a0682}\label{structcompdomclass_1_1compdom_a55068267999d67699122c91b366a0682}} 
+\index{compdomclass::compdom@{compdomclass::compdom}!spatrange@{spatrange}}
+\index{spatrange@{spatrange}!compdomclass::compdom@{compdomclass::compdom}}
+\subsubsection{\texorpdfstring{spatrange}{spatrange}}
+{\footnotesize\ttfamily double precision, dimension(2$\ast$\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) compdomclass\+::compdom\+::spatrange}
+
+
+
+spatial range in each dimenion. 
+
+\mbox{\Hypertarget{structcompdomclass_1_1compdom_a2a2654ff7dd41dbb57b11a089e568123}\label{structcompdomclass_1_1compdom_a2a2654ff7dd41dbb57b11a089e568123}} 
+\index{compdomclass::compdom@{compdomclass::compdom}!sptrnglocal@{sptrnglocal}}
+\index{sptrnglocal@{sptrnglocal}!compdomclass::compdom@{compdomclass::compdom}}
+\subsubsection{\texorpdfstring{sptrnglocal}{sptrnglocal}}
+{\footnotesize\ttfamily double precision, dimension(2$\ast$\mbox{\hyperlink{namespacecompdomclass_a01f031d8af670f66db4484cd6411e99f}{ndim}}) compdomclass\+::compdom\+::sptrnglocal}
+
+
+
+The documentation for this type was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Appl/\mbox{\hyperlink{_comp_dom_8f90}{Comp\+Dom.\+f90}}\end{DoxyCompactItemize}

@@ -2,10 +2,15 @@
 ! (c) Copyright, 2018 by the Regents of the University of California.
 ! Distributionclass: Initial distribution of charged beam bunch class in 
 !                    Beam module of APPLICATION layer.
-! Version: 2.1
-! Author: Ji Qiang, LBNL
-! Description: This class defines initial distributions for the charged 
-!              particle beam bunch information in the accelerator.
+!
+! MODULE  : ... Distributionclass
+! VERSION : ... 2.1
+!> @author
+!> Ji Qiang, LBNL
+! 
+! DESCRIPTION: 
+!> This class defines initial distributions for the charged 
+!> particle beam bunch information in the accelerator.
 ! Comments: we have added three attributes to each particle:
 !           x,px,y,py,t,pt,charge/mass,charge weight,id
 !----------------------------------------------------------------
@@ -17,7 +22,7 @@
         use NumConstclass
         use PhysConstclass
       contains
-        ! sample the particles with intial distribution.
+        !> sample the particles with intial distribution.
         subroutine sample_Dist(this,distparam0,nparam,flagdist,geom,grid,Flagbc,&
                                nchrg,nptlist,qmcclist,currlist)
         implicit none
@@ -290,8 +295,8 @@
 
         end subroutine normVec
 
-        ! sample the particles with intial distribution 
-        ! using rejection method. 
+        !> sample the particles with intial distribution 
+        !> using rejection method. 
         subroutine Waterbag_Dist(this,nparam,distparam,grid,flagalloc)
         implicit none
         include 'mpif.h'
@@ -1207,8 +1212,8 @@
 
         end subroutine normdv2
 
-        ! sample the particles with intial distribution 
-        ! using rejection method for multi-charge state. 
+        !> sample the particles with intial distribution 
+        !> using rejection method for multi-charge state. 
         subroutine WaterbagMC_Dist(this,nparam,distparam,grid,flagalloc,nchrg,&
                                    nptlist,qmcclist,currlist)
         implicit none
@@ -1711,7 +1716,7 @@
  
         end subroutine readin_Dist
 
-        !read particle distribution from ImpactT output
+        !> read particle distribution from ImpactT output
         subroutine readimpt_Dist(this,nparam,distparam,geom,grid,Flagbc)
         implicit none
         include 'mpif.h'

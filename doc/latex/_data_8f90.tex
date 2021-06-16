@@ -1,0 +1,148 @@
+\hypertarget{_data_8f90}{}\section{src/\+Data\+Struct/\+Data.f90 File Reference}
+\label{_data_8f90}\index{src/DataStruct/Data.f90@{src/DataStruct/Data.f90}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacedataclass}{dataclass}}
+\begin{DoxyCompactList}\small\item\em This class stores the rf cavity data Ez, Ez\textquotesingle{}, Ez\textquotesingle{}\textquotesingle{} on the axis; Fourier coefficients of Ez on the axis; Ez(r,z), Er(r,z), Htheta(r,z) on the r-\/z grid plane; and Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) on uniform x, y, z grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a474ffe5e76484d63015aaf6255c27294}{dataclass\+::init\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the data storage arrays. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_ac5b255034c2a115b6740378b4d1e630e}{dataclass\+::destruct\+\_\+data}} ()
+\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a6733af7e3067d69140c61e2b4580a70b}{dataclass\+::read1\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em read in the discrete field data Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) distribution along axis zdat from files \char`\"{}rfdatax or rfdataxx 
+ or rfdataxxx\char`\"{}. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_abf0c8413e040d7ea8c0bc5df73c9ef96}{dataclass\+::read2\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em read in discrete Ez(r,z), Er(r,z) and Btheta(r,z) rf data from files "rfdatax.\+in or rfdataxx.\+in or rfdataxxx.\+in. Here, the grid is uniform in r and z. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a39afae6095340e01362de7d4876aee60}{dataclass\+::read3\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em readin the Fourier coefficients of the RF field from files \char`\"{}rfdatax or rfdataxx or rfdataxxx\char`\"{}. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a2ef1f00ff4295094270a70c5d3763019}{dataclass\+::read4\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) rf data from files "rfdatax.\+in or rfdataxx.\+in or rfdataxxx.\+in. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacedataclass_a2fed396f3daf5a5c465b01235d98c776}{dataclass\+::read1wk\+\_\+data}} (ifile)
+\begin{DoxyCompactList}\small\item\em read in the discrete wake field data in z, x, y. distribution along axis zdat from files \char`\"{}rfdatax or rfdataxx 
+ or rfdataxxx\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\textbf{ }\par
+{\em using the x-\/y-\/z field data (Ex,Ey,Ez,Bx,By,Bz) directly. }\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacedataclass_a6302bc97206196f7003db67abd75507e}{dataclass\+::nxintvrfg}} = 1
+\begin{DoxyCompactList}\small\item\em number of grid points along x, y, and z direction. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedataclass_a32c01f4c7d58343edc8d318b2e5f4760}{dataclass\+::nyintvrfg}} = 1
+\begin{DoxyCompactList}\small\item\em number of grid points along x, y, and z direction. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedataclass_a53f757bd562f34f7e8e6bb58606fc289}{dataclass\+::nzintvrfg}} = 1
+\begin{DoxyCompactList}\small\item\em number of grid points along x, y, and z direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision \mbox{\hyperlink{namespacedataclass_a32b5b26da65d1b3507a36c17029a18ae}{dataclass\+::xmaxrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_ab5b5b652fce1e93de12accd3514958a0}{dataclass\+::xminrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a79212aa125148748cc4bd5a11fff492f}{dataclass\+::ymaxrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a5393ad3032e6f0311c62d03d468a6cf0}{dataclass\+::yminrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a52b6a1ee39c205fce4ef2be72ab153aa}{dataclass\+::zmaxrfg}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a9c2398fd87701d5c0de37ff6b3357a0c}{dataclass\+::zmin}}
+\begin{DoxyCompactList}\small\item\em range in x, y, and z directions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a3379b2d98107a6908aabb71e53031c00}{dataclass\+::exgrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a85c21f161fb74970fc84639092c193dd}{dataclass\+::eygrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_aff9491f2e1258faccd2530eace979c78}{dataclass\+::ezgrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_ad10657f6c8e764ba3c355bd0e2c98a01}{dataclass\+::bxgrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_aa12722da71ea440ed769b715936c87a3}{dataclass\+::bygrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_aabd84b55c65371356291620ee4dceb06}{dataclass\+::bzgrid}}
+\begin{DoxyCompactList}\small\item\em discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacedataclass_a3b9a2feb5ab8139d532626cad00a9769}{dataclass\+::nrintvrf}} = 1
+\begin{DoxyCompactList}\small\item\em using the r-\/z field data (Er,Ez,Htheta) directly. number of grid points along r direction. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedataclass_a7dee8b652907c73253c32891a2a08514}{dataclass\+::nzintvrf}} = 1
+\begin{DoxyCompactList}\small\item\em number of grid points along z direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision \mbox{\hyperlink{namespacedataclass_a8ea08da279b20aa500095cba377a2de2}{dataclass\+::rmaxrf}}
+\begin{DoxyCompactList}\small\item\em range in r and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_aae1944e971e5c71db5d8f21afceb0935}{dataclass\+::rminrf}}
+\begin{DoxyCompactList}\small\item\em range in r and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a4646788256b1b461413c546d6df8ee88}{dataclass\+::zmaxrf}}
+\begin{DoxyCompactList}\small\item\em range in r and z directions. \end{DoxyCompactList}\item 
+double precision \mbox{\hyperlink{namespacedataclass_a24985c63a3d2c04ccb2cf299eff0c626}{dataclass\+::zminrf}}
+\begin{DoxyCompactList}\small\item\em range in r and z directions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a2f3f7950dbca31f394856d31781256f3}{dataclass\+::ezdata}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a4f3abc6db52a89363b184d4bec9ebff8}{dataclass\+::erdata}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. \end{DoxyCompactList}\item 
+double precision, dimension(\+:,\+:), allocatable \mbox{\hyperlink{namespacedataclass_a09d27eeab42c3e3369268d8ce133a2c0}{dataclass\+::btdata}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(r,z), Er(r,z) and Htheta(r,z) rf data. Here, the grid is uniform in r and z. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacedataclass_a2578bbe9c4dc0892ee08a8619cd7e978}{dataclass\+::ndataini}} = 5000
+\begin{DoxyCompactList}\small\item\em using only on-\/axis field data and its derivities. initial number of grid points on the axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(ndataini) \mbox{\hyperlink{namespacedataclass_aeed47a37719b1f84d885a1cb8a962081}{dataclass\+::zdat}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. \end{DoxyCompactList}\item 
+double precision, dimension(ndataini) \mbox{\hyperlink{namespacedataclass_a67357b933079ed021a94705c576fead0}{dataclass\+::edat}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. \end{DoxyCompactList}\item 
+double precision, dimension(ndataini) \mbox{\hyperlink{namespacedataclass_a2f77b697b14f3e0d557f044ea69402d8}{dataclass\+::epdat}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. \end{DoxyCompactList}\item 
+double precision, dimension(ndataini) \mbox{\hyperlink{namespacedataclass_a1c9d30100962693c922470368987ec8a}{dataclass\+::eppdat}}
+\begin{DoxyCompactList}\small\item\em discrete Ez(0,z), Ez\textquotesingle{}(0,z), Ez\textquotesingle{}\textquotesingle{}(0,z) rf data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+double precision, dimension(ndataini) \mbox{\hyperlink{namespacedataclass_aedbb605bbae521fa94b55a592eaf5802}{dataclass\+::zdatwk}}
+\begin{DoxyCompactList}\small\item\em discrete wake function, z, longitudinal, x and y wake function \end{DoxyCompactList}\item 
+double precision, dimension(ndataini) \mbox{\hyperlink{namespacedataclass_aa19cbc20e7c55cc7625fe414eb6283d7}{dataclass\+::edatwk}}
+\begin{DoxyCompactList}\small\item\em discrete wake function, z, longitudinal, x and y wake function \end{DoxyCompactList}\item 
+double precision, dimension(ndataini) \mbox{\hyperlink{namespacedataclass_a0efc01b23a17c274db7c427517e41e22}{dataclass\+::epdatwk}}
+\begin{DoxyCompactList}\small\item\em discrete wake function, z, longitudinal, x and y wake function \end{DoxyCompactList}\item 
+double precision, dimension(ndataini) \mbox{\hyperlink{namespacedataclass_ab79752b3c2a7160b76ff3430350e23e3}{dataclass\+::ep}}
+\begin{DoxyCompactList}\small\item\em discrete wake function, z, longitudinal, x and y wake function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \mbox{\hyperlink{namespacedataclass_aea44837b0eb59e9b5a864f3a59c7facc}{dataclass\+::ncoeff}} = 401
+\begin{DoxyCompactList}\small\item\em using the Fourier coefficients number of Fourier expansion coefficients. \end{DoxyCompactList}\item 
+double precision, dimension(ncoeff) \mbox{\hyperlink{namespacedataclass_ac8605e11e3fc14fbebbc843cc36c2836}{dataclass\+::fcoef}}
+\begin{DoxyCompactList}\small\item\em Fcoef(1)\+: constant ~\newline
+ Fcoef(2k)\+: cosine term ~\newline
+ Fcoef(2k+1)\+: sine term ~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\textbf{ }\par
+\begin{DoxyCompactItemize}
+\item 
+integer \mbox{\hyperlink{namespacedataclass_a72f075bdeedd35dc0962289e6f3461ba}{dataclass\+::ndata}}
+\begin{DoxyCompactList}\small\item\em practical number of grid data on the axis or Fourier coefficients. \end{DoxyCompactList}\item 
+integer \mbox{\hyperlink{namespacedataclass_ae1faef34fdc08790ab0a4d85650d797f}{dataclass\+::ndatawk}}
+\begin{DoxyCompactList}\small\item\em practical number of grid data on the axis or Fourier coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+

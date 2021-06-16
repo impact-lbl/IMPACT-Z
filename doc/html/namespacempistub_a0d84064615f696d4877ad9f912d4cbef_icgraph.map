@@ -1,0 +1,7 @@
+<map id="mpistub::mpi_barrier" name="mpistub::mpi_barrier">
+<area shape="rect" id="node1" title="synchronize communication" alt="" coords="486,31,629,56"/>
+<area shape="rect" id="node2" href="$namespacedataclass.html#abf0c8413e040d7ea8c0bc5df73c9ef96" title="read in discrete Ez(r,z), Er(r,z) and Btheta(r,z) rf data from files &quot;rfdatax.in or rfdataxx...." alt="" coords="286,5,438,31"/>
+<area shape="rect" id="node3" href="$namespacedataclass.html#a2ef1f00ff4295094270a70c5d3763019" title="read in discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z), Bx(x,y,z), By(x,y,z), Bz(x,y,z) rf data from files ..." alt="" coords="286,55,438,80"/>
+<area shape="rect" id="node4" href="$namespaceaccsimulatorclass.html#acbe26eeaf1cb4076384b90e1016785f0" title="Run beam dynamics simulation through accelerator." alt="" coords="104,48,238,87"/>
+<area shape="rect" id="node5" href="$main_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="v.1.0" alt="" coords="5,55,56,80"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="fftclass::rvec_pack2nr_cosft1" name="fftclass::rvec_pack2nr_cosft1">
+<area shape="rect" id="node1" title="transfer real vector from fftpack style to nr style for (forward) cost1D" alt="" coords="205,5,355,44"/>
+<area shape="rect" id="node2" href="$namespacefftclass.html#ac4347b89b0b1a5894943daa3f37c54ee" title="fast discrete cosine transform" alt="" coords="5,12,157,37"/>
+</map>

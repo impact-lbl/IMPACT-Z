@@ -1,0 +1,2925 @@
+\hypertarget{namespacefftclass}{}\section{fftclass Module Reference}
+\label{namespacefftclass}\index{fftclass@{fftclass}}
+
+
+Fourier function class in Math Function module of F\+U\+N\+C\+T\+I\+ON layer.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \mbox{\hyperlink{interfacefftclass_1_1fftcrlocal__fft}{fftcrlocal\+\_\+fft}}
+\item 
+interface \mbox{\hyperlink{interfacefftclass_1_1fftrclocal__fft}{fftrclocal\+\_\+fft}}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_acef38aed3ece8d2c1120ce0004e6297e}{fft3d1\+\_\+fft}} (nx, ny, nz, nsizez, nsizey, nsizexy, nsizeyz, ksign, scalex, scaley, scalez, x, xstable, xrtable, ystable, yrtable, nprocrow, commrow, nproccol, commcol, comm2d, myidx, myidy, xout)
+\begin{DoxyCompactList}\small\item\em 3\+\_\+D F\+FT. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a21e8a7bd2877ec439bc4f0e0bc0e4681}{invfft3d1\+\_\+fft}} (nz, ny, nx, nsizexy, nsizeyz, nsizey, nsizez, ksign, scalex, scaley, scalez, x, xstable, xrtable, ystable, yrtable, nprocrow, commrow, nproccol, commcol, comm2d, myidx, myidy, xout)
+\begin{DoxyCompactList}\small\item\em 3\+\_\+D inverse F\+FT for open B\+Cs. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a374c599138aeca237d4c303a07a470ee}{invfft3d1img\+\_\+fft}} (nz, ny, nx, nsizexy, nsizeyz, nsizey, nsizez, ksign, scalex, scaley, scalez, x, xstable, xrtable, ystable, yrtable, nprocrow, commrow, nproccol, commcol, comm2d, myidx, myidy, xout)
+\begin{DoxyCompactList}\small\item\em 3\+\_\+D inverse F\+FT for open B\+Cs. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a501325267c1425bfece04a18e20efe31}{fftlocal0\+\_\+fft}} (ksign, scale, x, ny, nsizex)
+\begin{DoxyCompactList}\small\item\em used to find the first derivative after F\+FT. Subroutine to perform 1D F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa64d94b8c8578b384955207a409a2445}{fftlocal\+\_\+fft}} (ksign, scale, x, ny, nsizex)
+\begin{DoxyCompactList}\small\item\em Subroutine to perform 1D F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af33a24fc1bf4d5763c335c0cef247e3c}{fftrclocal1\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\begin{DoxyCompactList}\small\item\em Subroutine to perform 1D real to complex F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a83a1c8ccf853ae07fdfc5a80e1e244d1}{fftrclocal2\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a25ecfa928dd28501b9c251c1e887996b}{fftcrlocal1\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\begin{DoxyCompactList}\small\item\em Subroutine to perform 1D complex to real F\+FT along y in 2D array. Here y is local to each processor. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a62d05d7b0980c823708d03f4a1520c1e}{fftcrlocal2\+\_\+fft}} (ksign, scale, x, ny, nsizex, y)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4597d420a1363f9fd0b652472d7caf52}{four1}} (data, nn, isign)
+\begin{DoxyCompactList}\small\item\em Fast fourier transform. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a1aec6e8023ec23ff926a64c54c93ee1e}{realft}} (data, n, isign)
+\begin{DoxyCompactList}\small\item\em real fast Fourier tranform \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_abcd5ef700f07a29fa9949e15866f5d41}{sinft}} (y, ny)
+\begin{DoxyCompactList}\small\item\em fast discrete sine transform \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac4347b89b0b1a5894943daa3f37c54ee}{cosft1\+\_\+fftpack}} (y, n)
+\begin{DoxyCompactList}\small\item\em fast discrete cosine transform \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a8f3b38a9f0433b6b847b670b98acab99}{rvec\+\_\+pack2nr\+\_\+cosft1}} (r, ny, y)
+\begin{DoxyCompactList}\small\item\em transfer real vector from fftpack style to nr style for (forward) cost1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae1f9bdd4e66db530852187dff115ae36}{rvec\+\_\+nr2pack\+\_\+sint1f}} (r, n, y)
+\begin{DoxyCompactList}\small\item\em transfer real vector from nr style to fftpack style for (forward) sint1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a667b3d13eccd40bf9e60f379f6d44e04}{rvec\+\_\+pack2nr\+\_\+sint1f}} (r, n, y)
+\begin{DoxyCompactList}\small\item\em transfer real vector from fftpack style to nr style for (forward) sint 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac09ed442a8bb7846768adbe2d5c798c6}{rvec\+\_\+nr2pack\+\_\+rfft1f}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from nr style to fftpack style for forward real fft 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac898bf50e64ca8c43e8d9fa0c2c85919}{rvec\+\_\+pack2nr\+\_\+rfft1f}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from pack style to nr style for forward real fft 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a78a858cc72da790e88dc826f5bdd14b3}{rvec\+\_\+nr2pack\+\_\+rfft1b}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from nr style to fftpack style for backward real fft 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a49a850047c36eff6fb6d5eb1669cb009}{rvec\+\_\+pack2nr\+\_\+rfft1b}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from pack style to nr style for backward real fft 1D \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2c47e8aa546c8ea9f5f23219be52d57e}{rvec\+\_\+nr2pack\+\_\+gnl}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em transfer real vector from nr style to fftpack style generally \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5b968c02330134b7f60b0b19e3192e77}{rvec\+\_\+pack2nr\+\_\+gnl}} (r, n, data)
+\begin{DoxyCompactList}\small\item\em tansfer real vector from fftpack style to nr style generally \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5b4381756639205cdda3aa66b4d3e98c}{c1f2kb}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F2\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a0535bb9fc14fda824be9053638cdfb2a}{c1f2kf}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F2\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af43eb54e0a7553e31585e67ad240b860}{c1f3kb}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F3\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae586c2f39848274e0454c7d161522c31}{c1f3kf}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F3\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a16b67c4056cd4bef03d70d6289f60954}{c1f4kb}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F4\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4121c0b7de23d7df058852fb75a9a31a}{c1f4kf}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F4\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa356856107611ad66966fed70ede74f1}{c1f5kb}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F5\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a21d2647f4c2392ed5498288f99a3203c}{c1f5kf}} (ido, l1, na, cc, in1, ch, in2, wa)
+\begin{DoxyCompactList}\small\item\em C1\+F5\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac9b19ae24fcc92a08a29696cf60fd412}{c1fgkb}} (ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2,
+\begin{DoxyCompactList}\small\item\em C1\+F\+G\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac6d6749fee5ff8e325bdf80834fa5337}{c1fgkf}} (ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2,
+\begin{DoxyCompactList}\small\item\em C1\+F\+G\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2f5368919279e1986ee34764caa05fe0}{c1fm1b}} (n, inc, c, ch, wa, fnf, fac)
+\begin{DoxyCompactList}\small\item\em C1\+F\+M1B is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a8870afa6b2bab24460d719026aa6e0d8}{c1fm1f}} (n, inc, c, ch, wa, fnf, fac)
+\begin{DoxyCompactList}\small\item\em C1\+F\+M1F is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad484b97b5f8fc5ab868f25d7be0de7f8}{cfft1b}} (n, inc, c, lenc, wsave, lensav, work, lenwrk, ier
+\begin{DoxyCompactList}\small\item\em C\+F\+F\+T1B\+: complex single precision backward fast Fourier transform, 1D. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a8ecbd8fa5a63e3cef089dbe7e91c6438}{cfft1f}} (n, inc, c, lenc, wsave, lensav, work, lenwrk, ier
+\begin{DoxyCompactList}\small\item\em C\+F\+F\+T1F\+: complex single precision forward fast Fourier transform, 1D. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a7aaa42c1b45fc7175f2560cd023e4487}{cfft1i}} (n, wsave, lensav, ier)
+\begin{DoxyCompactList}\small\item\em C\+F\+F\+T1I\+: initialization for C\+F\+F\+T1B and C\+F\+F\+T1F. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a718a5d0ac7052a9bcbcb9db18430dd61}{cmf2kb}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F2\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a87e04f91c6fd5a8be5cce797b134f4c3}{cmf2kf}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F2\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_afc9e57527719d38dc3716ee9bf6b090d}{cmf3kb}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F3\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a449e799516aa491a87b0f5937a7abc86}{cmf3kf}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F3\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad51087e9f2795e7bf337d4c6b55de780}{cmf4kb}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F4\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_acdd67c6a77ecec55c036ab8899c07dee}{cmf4kf}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\begin{DoxyCompactList}\small\item\em C\+M\+F4\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4bf0caaf1c5caeb50490706cd35d82c5}{cmf5kb}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a59cb57b66516dd0b08cf36e366933c56}{cmf5kf}} (lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ab1c60a144232626a03fad4dd30f88d7d}{cmfgkb}} (lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, ch, ch1, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a317b5c8887b5c2ecb7e518f0c7058589}{cmfgkf}} (lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, ch, ch1, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6684b378360642f160b255df6b3aa0bd}{cosq1b}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a546e80f6eb00444bf4508ae26186e0d2}{cosq1f}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ab281b0d26ef5d825f00696ab35e18e65}{cosq1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4f908baf4cda5a6be5b71eb85fc9309c}{cosqb1}} (n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a894b76f80148bf5d923d558356a6cc1a}{cosqf1}} (n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a766146700483880896edee5e866f29a6}{cosqmb}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, len
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a48467d0cccf9f7f93786f4997fe714f5}{cosqmf}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a9851ac46e48072ac6c85e3c574a10dc5}{cosqmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2bdaaab2b5d3130f8339f9463daa6db9}{cost1b}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae01eaac3c675ef6c95b60a480bda63ba}{cost1f}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa0605a45256c5ff2bfcd9229dd8854e4}{cost1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2769de58926e8dc80c0fa9f862de7dce}{costb1}} (n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af419be9c656e387f89facc1033cf4f55}{costf1}} (n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a1bb83e3c96bf08b2789acf52feef22b8}{costmb}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a04e4666f4382e42cf8e63ee5c44fc61a}{costmf}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4e2ea9d14ac7ed425be8cb1fd1ed8ddf}{costmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a91e23ffaebaadf2b1c22e689f69996a2}{mcsqb1}} (lot, jump, n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a05d00644e8642979b2c55b7822bbfb03}{mcsqf1}} (lot, jump, n, inc, x, wsave, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a10f96df2a58ce7f2e6ac9eaddf09588e}{mcstb1}} (lot, jump, n, inc, x, wsave, dsum, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aac5cdc09f4e9979eb972972e1db55cb3}{mcstf1}} (lot, jump, n, inc, x, wsave, dsum, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a39691ebdf781bf380b7ef426f4027896}{mradb2}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a493cf432cfe190657e9a56a0d452b275}{mradb3}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5aae50728c25b5089b6b3c61d3ef27eb}{mradb4}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2, wa3)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a69781205c1568e37470a06e001a0dae7}{mradb5}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2, wa3, wa4)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae156d4969bbcc9250a0dc81ee91d3cdf}{mradbg}} (m, ido, ip, l1, idl1, cc, c1, c2, im1, in1, ch, ch2, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a577b893eadc27ccc53b888490cb1b873}{mradf2}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4e99b7194e96b9a086f743a98205cc5a}{mradf3}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aec86b95620b11b4db180468a4f771842}{mradf4}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2, wa3)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ab6d74e30932fcf82744ac339de050933}{mradf5}} (m, ido, l1, cc, im1, in1, ch, im2, in2, wa1, wa2, wa3, wa4)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5741ec7db9519828a0c46df4355b734d}{mradfg}} (m, ido, ip, l1, idl1, cc, c1, c2, im1, in1, ch, ch2, im2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a025f68a6ddd573ad3fa337835b621d3c}{mrftb1}} (m, im, n, in, c, ch, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a5b17cd46c9d021ed6dfe9499fc802b3f}{mrftf1}} (m, im, n, in, c, ch, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a88a3f7fd420d15d4e4d603d4d8ebf38e}{mrfti1}} (n, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aebd25014fd97baa3be31bda9b446e99f}{msntb1}} (lot, jump, n, inc, x, wsave, dsum, xh, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a151bd1685dbe69c9c36a08ff00a7e10e}{msntf1}} (lot, jump, n, inc, x, wsave, dsum, xh, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6cf75b3c3c340adb4eb40e50289cf439}{r1f2kb}} (ido, l1, cc, in1, ch, in2, wa1)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a9d3bdd521a616fe934704cb38ac074f4}{r1f2kf}} (ido, l1, cc, in1, ch, in2, wa1)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad450dc5bf08d49d4784e609c41b42950}{r1f3kb}} (ido, l1, cc, in1, ch, in2, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a382f39146e7d8e1450810efdc6f4cd79}{r1f3kf}} (ido, l1, cc, in1, ch, in2, wa1, wa2)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a71f9b9a5e0173f9ddef4dd0fc92e6164}{r1f4kb}} (ido, l1, cc, in1, ch, in2, wa1, wa2, wa3)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ac2e28efef69b7ac5c599c51dc9be973d}{r1f4kf}} (ido, l1, cc, in1, ch, in2, wa1, wa2, wa3)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a42f5de07f4eb994cbe15a8526291566b}{r1f5kb}} (ido, l1, cc, in1, ch, in2, wa1, wa2, wa3, wa4)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_acc419931cfa3ec3e19e6264b35e83aae}{r1f5kf}} (ido, l1, cc, in1, ch, in2, wa1, wa2, wa3, wa4)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa5cb9e2d3b6aa9d5adcb4144cd17f10e}{r1fgkb}} (ido, ip, l1, idl1, cc, c1, c2, in1, ch, ch2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_adb327056327448d0a605271d57091578}{r1fgkf}} (ido, ip, l1, idl1, cc, c1, c2, in1, ch, ch2, in2, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6d2b5609d651241869584e962d234756}{r2w}} (ldr, ldw, l, m, r, w)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad76d163c3f3aec3b5a3bbb3285498ffd}{r4\+\_\+factor}} (n, nf, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aecf4238ff306578dd37cab143ce6efac}{r4\+\_\+mcfti1}} (n, wa, fnf, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a882cd8d6eeb407d2b10ee9b3d9fee8b9}{r4\+\_\+tables}} (ido, ip, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a22bddf5efe99e8dcd5737d2d73ae832f}{r8\+\_\+factor}} (n, nf, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a89d64713ecbaec08b4d5180fcbc56cea}{r8\+\_\+mcfti1}} (n, wa, fnf, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a68ac2e6dba058989d5e0d7fbee9aa19f}{r8\+\_\+tables}} (ido, ip, wa)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a2bdd31e65a4abb79ed9e0eeaa71cee6b}{rfft1b}} (n, inc, r, lenr, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ad5aa2059236e01ea65aecda114c3f45f}{rfft1f}} (n, inc, r, lenr, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_abb3d8b6f0166090db98de3e7d627434f}{rfft1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a338a7a4db13f2357c42a682142df3190}{rfftb1}} (n, in, c, ch, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af9f24f143ca02395c91f7757343e8003}{rfftf1}} (n, in, c, ch, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a122822a405cd96e5df936acaad731746}{rffti1}} (n, wa, fac)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_acc4295c5a3646519e26c3dd5ae66418d}{rfftmb}} (lot, jump, n, inc, r, lenr, wsave, lensav, work, len
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4662111bc784aa321b0567a1a0578963}{rfftmf}} (lot, jump, n, inc, r, lenr, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6a543283f910322f94293d719f923881}{rfftmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6770a2a0c7bdf09af5ed719175fb4ca4}{sinq1b}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a205d9dc43dfb082cdee420a4ae2fb269}{sinq1f}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa0d2ffdfc38a79ecd1b47de75f3d1084}{sinq1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa7e7e40b824e045f452a09a2e7abf333}{sinqmb}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae56c7f24f27f2fb48f15359441b5e82f}{sinqmf}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a642a9e3f241f3aaa6baf58741d4cdd3b}{sinqmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ada18e37204cdb55b83be98eaecc27730}{sint1b}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a6ae22ff215b2e962b410eb1b9c4860d7}{sint1f}} (n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_ae156ccdcf953af967a42d20df0ddb725}{sint1i}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af29f41f086c8e8901df2716d0b86db20}{sintb1}} (n, inc, x, wsave, xh, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_aa79de4b10a068408990ac9ac8f32d134}{sintf1}} (n, inc, x, wsave, xh, work, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a4d9b6f96810b5b7a8b7dd38af74f5b55}{sintmb}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a497c6a39bac7daa7973b53cb00ffd6c3}{sintmf}} (lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a9b28ecda04690fe2a4425da2b5625e4d}{sintmi}} (n, wsave, lensav, ier)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_af191171f5e31fbad6c0e224faaf6175e}{w2r}} (ldr, ldw, l, m, r, w)
+\item 
+logical function \mbox{\hyperlink{namespacefftclass_a16b89da06cf17773f6b5aec6883952c2}{xercon}} (inc, jump, n, lot)
+\item 
+subroutine \mbox{\hyperlink{namespacefftclass_a3e1884f0fa20142f45f2d3efe3246adc}{xerfft}} (srname, info)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fourier function class in Math Function module of F\+U\+N\+C\+T\+I\+ON layer. 
+
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+Ji Qiang
+\end{DoxyAuthor}
+This class defines the 3d F\+FT transformation subject to open or periodic conditions, Fourier Sine transformation, Complex-\/\+Complex, Complex-\/\+Real, and Real-\/\+Complex F\+FT. 
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacefftclass_a5b4381756639205cdda3aa66b4d3e98c}\label{namespacefftclass_a5b4381756639205cdda3aa66b4d3e98c}} 
+\index{fftclass@{fftclass}!c1f2kb@{c1f2kb}}
+\index{c1f2kb@{c1f2kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1f2kb()}{c1f2kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1f2kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ido,2)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,2,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,1,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C1\+F2\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 01 August 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb} Reference:
+ 
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982. 
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a5b4381756639205cdda3aa66b4d3e98c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a0535bb9fc14fda824be9053638cdfb2a}\label{namespacefftclass_a0535bb9fc14fda824be9053638cdfb2a}} 
+\index{fftclass@{fftclass}!c1f2kf@{c1f2kf}}
+\index{c1f2kf@{c1f2kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1f2kf()}{c1f2kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1f2kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ido,2)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,2,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,1,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C1\+F2\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb} Reference:
+ 
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a0535bb9fc14fda824be9053638cdfb2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_af43eb54e0a7553e31585e67ad240b860}\label{namespacefftclass_af43eb54e0a7553e31585e67ad240b860}} 
+\index{fftclass@{fftclass}!c1f3kb@{c1f3kb}}
+\index{c1f3kb@{c1f3kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1f3kb()}{c1f3kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1f3kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ido,3)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,3,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,2,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C1\+F3\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_af43eb54e0a7553e31585e67ad240b860_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ae586c2f39848274e0454c7d161522c31}\label{namespacefftclass_ae586c2f39848274e0454c7d161522c31}} 
+\index{fftclass@{fftclass}!c1f3kf@{c1f3kf}}
+\index{c1f3kf@{c1f3kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1f3kf()}{c1f3kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1f3kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ido,3)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,3,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,2,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C1\+F3\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ae586c2f39848274e0454c7d161522c31_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a16b67c4056cd4bef03d70d6289f60954}\label{namespacefftclass_a16b67c4056cd4bef03d70d6289f60954}} 
+\index{fftclass@{fftclass}!c1f4kb@{c1f4kb}}
+\index{c1f4kb@{c1f4kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1f4kb()}{c1f4kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1f4kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ido,4)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,4,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,3,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C1\+F4\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+   Paul Swarztrauber,
+   Vectorizing the Fast Fourier Transforms,
+   in Parallel Computations,
+   edited by G. Rodrigue,
+   Academic Press, 1982.
+
+   Paul Swarztrauber,
+   Fast Fourier Transform Algorithms for Vector Computers,
+   Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a16b67c4056cd4bef03d70d6289f60954_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a4121c0b7de23d7df058852fb75a9a31a}\label{namespacefftclass_a4121c0b7de23d7df058852fb75a9a31a}} 
+\index{fftclass@{fftclass}!c1f4kf@{c1f4kf}}
+\index{c1f4kf@{c1f4kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1f4kf()}{c1f4kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1f4kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ido,4)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,4,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,3,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C1\+F4\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4121c0b7de23d7df058852fb75a9a31a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aa356856107611ad66966fed70ede74f1}\label{namespacefftclass_aa356856107611ad66966fed70ede74f1}} 
+\index{fftclass@{fftclass}!c1f5kb@{c1f5kb}}
+\index{c1f5kb@{c1f5kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1f5kb()}{c1f5kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1f5kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ido,5)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,5,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,4,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C1\+F5\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aa356856107611ad66966fed70ede74f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a21d2647f4c2392ed5498288f99a3203c}\label{namespacefftclass_a21d2647f4c2392ed5498288f99a3203c}} 
+\index{fftclass@{fftclass}!c1f5kf@{c1f5kf}}
+\index{c1f5kf@{c1f5kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1f5kf()}{c1f5kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1f5kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ido,5)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,5,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,4,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C1\+F5\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a21d2647f4c2392ed5498288f99a3203c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ac9b19ae24fcc92a08a29696cf60fd412}\label{namespacefftclass_ac9b19ae24fcc92a08a29696cf60fd412}} 
+\index{fftclass@{fftclass}!c1fgkb@{c1fgkb}}
+\index{c1fgkb@{c1fgkb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1fgkb()}{c1fgkb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1fgkb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{lid,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ip,ido)}]{cc,  }\item[{real ( kind = 8 ), dimension(in1,lid,ip)}]{cc1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,ido,ip)}]{ch,  }\item[{real ( kind = 8 ), dimension(in2,lid,ip)}]{ch1,  }\item[{integer ( kind = 4 )}]{in2 }\end{DoxyParamCaption})}
+
+
+
+C1\+F\+G\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ac9b19ae24fcc92a08a29696cf60fd412_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ac6d6749fee5ff8e325bdf80834fa5337}\label{namespacefftclass_ac6d6749fee5ff8e325bdf80834fa5337}} 
+\index{fftclass@{fftclass}!c1fgkf@{c1fgkf}}
+\index{c1fgkf@{c1fgkf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1fgkf()}{c1fgkf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1fgkf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{lid,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(in1,l1,ip,ido)}]{cc,  }\item[{real ( kind = 8 ), dimension(in1,lid,ip)}]{cc1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,l1,ido,ip)}]{ch,  }\item[{real ( kind = 8 ), dimension(in2,lid,ip)}]{ch1,  }\item[{integer ( kind = 4 )}]{in2 }\end{DoxyParamCaption})}
+
+
+
+C1\+F\+G\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ac6d6749fee5ff8e325bdf80834fa5337_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a2f5368919279e1986ee34764caa05fe0}\label{namespacefftclass_a2f5368919279e1986ee34764caa05fe0}} 
+\index{fftclass@{fftclass}!c1fm1b@{c1fm1b}}
+\index{c1fm1b@{c1fm1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1fm1b()}{c1fm1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1fm1b (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{c,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{ch,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wa,  }\item[{real ( kind = 8 )}]{fnf,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{fac }\end{DoxyParamCaption})}
+
+
+
+C1\+F\+M1B is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{namespacefftclass_a2f5368919279e1986ee34764caa05fe0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a2f5368919279e1986ee34764caa05fe0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a8870afa6b2bab24460d719026aa6e0d8}\label{namespacefftclass_a8870afa6b2bab24460d719026aa6e0d8}} 
+\index{fftclass@{fftclass}!c1fm1f@{c1fm1f}}
+\index{c1fm1f@{c1fm1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{c1fm1f()}{c1fm1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::c1fm1f (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{c,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{ch,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wa,  }\item[{real ( kind = 8 )}]{fnf,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{fac }\end{DoxyParamCaption})}
+
+
+
+C1\+F\+M1F is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{namespacefftclass_a8870afa6b2bab24460d719026aa6e0d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a8870afa6b2bab24460d719026aa6e0d8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ad484b97b5f8fc5ab868f25d7be0de7f8}\label{namespacefftclass_ad484b97b5f8fc5ab868f25d7be0de7f8}} 
+\index{fftclass@{fftclass}!cfft1b@{cfft1b}}
+\index{cfft1b@{cfft1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cfft1b()}{cfft1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cfft1b (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real (kind = 8 ), dimension(2$\ast$lenc)}]{c,  }\item[{integer ( kind = 4 )}]{lenc,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+
+
+C\+F\+F\+T1B\+: complex single precision backward fast Fourier transform, 1D. 
+
+\begin{DoxyVerb}  Discussion:
+ 
+    CFFT1B computes the one-dimensional Fourier transform of a single 
+    periodic sequence within a complex array.  This transform is referred 
+    to as the backward transform or Fourier synthesis, transforming the
+    sequence from spectral to physical space.
+
+    This transform is normalized since a call to CFFT1B followed
+    by a call to CFFT1F (or vice-versa) reproduces the original
+    array within roundoff error.\end{DoxyVerb}
+ \begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em N} & integer ( kind = 4 ), the length of the sequence to be transformed. The transform is most efficient when N is a product of small primes. \\
+\hline
+\mbox{\texttt{ in}}  & {\em I\+NC} & integer ( kind = 4 ), the increment between the locations, in array C, of two consecutive elements within the sequence to be transformed. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em C(\+L\+E\+N\+C)} & complex ( kind = 8 ) containing the sequence to be transformed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+E\+NC} & integer ( kind = 4 ), the dimension of the C array. L\+E\+NC must be at least I\+N\+C$\ast$(N-\/1) + 1. \\
+\hline
+\mbox{\texttt{ in}}  & {\em W\+S\+A\+V\+E(\+L\+E\+N\+S\+A\+V)} & real ( kind = 8 ). W\+S\+A\+VE\textquotesingle{}s contents must be initialized with a call to C\+F\+F\+T1I before the first call to routine C\+F\+F\+T1F or C\+F\+F\+T1B for a given transform length N. W\+S\+A\+VE\textquotesingle{}s contents may be re-\/used for subsequent calls to C\+F\+F\+T1F and C\+F\+F\+T1B with the same N. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+E\+N\+S\+AV} & integer ( kind = 4 ), the dimension of the W\+S\+A\+VE array. L\+E\+N\+S\+AV must be at least 2$\ast$N + I\+NT(L\+O\+G(\+R\+E\+A\+L(\+N))) + 4. \\
+\hline
+\mbox{\texttt{ in}}  & {\em W\+O\+R\+K(\+L\+E\+N\+W\+R\+K)} & real ( kind = 8 ), Workspace. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+E\+N\+W\+RK} & integer ( kind = 4 ), the dimension of the W\+O\+RK array. L\+E\+N\+W\+RK must be at least 2$\ast$N. \\
+\hline
+\mbox{\texttt{ out}}  & {\em I\+ER} & integer ( kind = 4 ), error flag. ~\newline
+ 0, successful exit; ~\newline
+ 1, input parameter L\+E\+NC not big enough; ~\newline
+ 2, input parameter L\+E\+N\+S\+AV not big enough; ~\newline
+ 3, input parameter L\+E\+N\+W\+RK not big enough; ~\newline
+ 20, input error returned by lower level routine. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ad484b97b5f8fc5ab868f25d7be0de7f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ad484b97b5f8fc5ab868f25d7be0de7f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a8ecbd8fa5a63e3cef089dbe7e91c6438}\label{namespacefftclass_a8ecbd8fa5a63e3cef089dbe7e91c6438}} 
+\index{fftclass@{fftclass}!cfft1f@{cfft1f}}
+\index{cfft1f@{cfft1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cfft1f()}{cfft1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cfft1f (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(2$\ast$lenc)}]{c,  }\item[{integer ( kind = 4 )}]{lenc,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+
+
+C\+F\+F\+T1F\+: complex single precision forward fast Fourier transform, 1D. 
+
+\begin{DoxyVerb}  Discussion:
+
+    CFFT1F computes the one-dimensional Fourier transform of a single 
+    periodic sequence within a complex array.  This transform is referred 
+    to as the forward transform or Fourier analysis, transforming the 
+    sequence from physical to spectral space.
+
+    This transform is normalized since a call to CFFT1F followed
+    by a call to CFFT1B (or vice-versa) reproduces the original
+    array within roundoff error.\end{DoxyVerb}
+ \begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em N} & integer ( kind = 4 ), the length of the sequence to be transformed. The transform is most efficient when N is a product of small primes. \\
+\hline
+\mbox{\texttt{ in}}  & {\em I\+NC} & integer ( kind = 4 ), the increment between the locations, in array C, of two consecutive elements within the sequence to be transformed. \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em C(\+L\+E\+N\+C)} & complex ( kind = 8 ) containing the sequence to be transformed. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+E\+NC} & integer ( kind = 4 ), the dimension of the C array. L\+E\+NC must be at least I\+N\+C$\ast$(N-\/1) + 1. \\
+\hline
+\mbox{\texttt{ in}}  & {\em W\+S\+A\+V\+E(\+L\+E\+N\+S\+A\+V)} & real ( kind = 8 ). W\+S\+A\+VE\textquotesingle{}s contents must be initialized with a call to C\+F\+F\+T1I before the first call to routine C\+F\+F\+T1F or C\+F\+F\+T1B for a given transform length N. W\+S\+A\+VE\textquotesingle{}s contents may be re-\/used for subsequent calls to C\+F\+F\+T1F and C\+F\+F\+T1B with the same N. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+E\+N\+S\+AV} & integer ( kind = 4 ), the dimension of the W\+S\+A\+VE array. L\+E\+N\+S\+AV must be at least 2$\ast$N + I\+NT(L\+O\+G(\+R\+E\+A\+L(\+N))) + 4. \\
+\hline
+\mbox{\texttt{ in}}  & {\em W\+O\+R\+K(\+L\+E\+N\+W\+R\+K)} & real ( kind = 8 ), Workspace. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+E\+N\+W\+RK} & integer ( kind = 4 ), the dimension of the W\+O\+RK array. L\+E\+N\+W\+RK must be at least 2$\ast$N. \\
+\hline
+\mbox{\texttt{ out}}  & {\em I\+ER} & integer ( kind = 4 ), error flag. ~\newline
+ 0, successful exit; ~\newline
+ 1, input parameter L\+E\+NC not big enough; ~\newline
+ 2, input parameter L\+E\+N\+S\+AV not big enough; ~\newline
+ 3, input parameter L\+E\+N\+W\+RK not big enough; ~\newline
+ 20, input error returned by lower level routine. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a8ecbd8fa5a63e3cef089dbe7e91c6438_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a8ecbd8fa5a63e3cef089dbe7e91c6438_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a7aaa42c1b45fc7175f2560cd023e4487}\label{namespacefftclass_a7aaa42c1b45fc7175f2560cd023e4487}} 
+\index{fftclass@{fftclass}!cfft1i@{cfft1i}}
+\index{cfft1i@{cfft1i}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cfft1i()}{cfft1i()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cfft1i (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+
+
+C\+F\+F\+T1I\+: initialization for C\+F\+F\+T1B and C\+F\+F\+T1F. 
+
+\begin{DoxyVerb}  Discussion:
+
+    CFFT1I initializes array WSAVE for use in its companion routines 
+    CFFT1B and CFFT1F.  Routine CFFT1I must be called before the first 
+    call to CFFT1B or CFFT1F, and after whenever the value of integer 
+    N changes.\end{DoxyVerb}
+ \begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em N} & integer ( kind = 4 ), the length of the sequence to be transformed. The transform is most efficient when N is a product of small primes. \\
+\hline
+\mbox{\texttt{ in}}  & {\em L\+E\+N\+S\+AV} & integer ( kind = 4 ), the dimension of the W\+S\+A\+VE array. L\+E\+N\+S\+AV must be at least 2$\ast$N + I\+NT(L\+O\+G(\+R\+E\+A\+L(\+N))) + 4. \\
+\hline
+\mbox{\texttt{ out}}  & {\em W\+S\+A\+V\+E(\+L\+E\+N\+S\+A\+V)} & real ( kind = 8 ), containing the prime factors of N and also containing certain trigonometric values which will be used in routines C\+F\+F\+T1B or C\+F\+F\+T1F. \\
+\hline
+\mbox{\texttt{ out}}  & {\em I\+ER} & integer ( kind = 4 ), error flag. ~\newline
+ 0, successful exit; ~\newline
+ 2, input parameter L\+E\+N\+S\+AV not big enough. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a7aaa42c1b45fc7175f2560cd023e4487_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a7aaa42c1b45fc7175f2560cd023e4487_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a718a5d0ac7052a9bcbcb9db18430dd61}\label{namespacefftclass_a718a5d0ac7052a9bcbcb9db18430dd61}} 
+\index{fftclass@{fftclass}!cmf2kb@{cmf2kb}}
+\index{cmf2kb@{cmf2kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmf2kb()}{cmf2kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmf2kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ido,2)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,2,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,1,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C\+M\+F2\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}
+  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984. @param 
+\end{DoxyVerb}
+\mbox{\Hypertarget{namespacefftclass_a87e04f91c6fd5a8be5cce797b134f4c3}\label{namespacefftclass_a87e04f91c6fd5a8be5cce797b134f4c3}} 
+\index{fftclass@{fftclass}!cmf2kf@{cmf2kf}}
+\index{cmf2kf@{cmf2kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmf2kf()}{cmf2kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmf2kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ido,2)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,2,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,1,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C\+M\+F2\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacefftclass_afc9e57527719d38dc3716ee9bf6b090d}\label{namespacefftclass_afc9e57527719d38dc3716ee9bf6b090d}} 
+\index{fftclass@{fftclass}!cmf3kb@{cmf3kb}}
+\index{cmf3kb@{cmf3kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmf3kb()}{cmf3kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmf3kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ido,3)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,3,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,2,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C\+M\+F3\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacefftclass_a449e799516aa491a87b0f5937a7abc86}\label{namespacefftclass_a449e799516aa491a87b0f5937a7abc86}} 
+\index{fftclass@{fftclass}!cmf3kf@{cmf3kf}}
+\index{cmf3kf@{cmf3kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmf3kf()}{cmf3kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmf3kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ido,3)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,3,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,2,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C\+M\+F3\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacefftclass_ad51087e9f2795e7bf337d4c6b55de780}\label{namespacefftclass_ad51087e9f2795e7bf337d4c6b55de780}} 
+\index{fftclass@{fftclass}!cmf4kb@{cmf4kb}}
+\index{cmf4kb@{cmf4kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmf4kb()}{cmf4kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmf4kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ido,4)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,4,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,3,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C\+M\+F4\+KB is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacefftclass_acdd67c6a77ecec55c036ab8899c07dee}\label{namespacefftclass_acdd67c6a77ecec55c036ab8899c07dee}} 
+\index{fftclass@{fftclass}!cmf4kf@{cmf4kf}}
+\index{cmf4kf@{cmf4kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmf4kf()}{cmf4kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmf4kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ido,4)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,4,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,3,2)}]{wa }\end{DoxyParamCaption})}
+
+
+
+C\+M\+F4\+KF is an F\+F\+T\+P\+A\+C\+K5.\+1 auxiliary routine. 
+
+\begin{DoxyCopyright}{Copyright}
+Licensed under the G\+NU General Public License (G\+PL). ~\newline
+ Copyright (C) 1995-\/2004, Scientific Computing Division, ~\newline
+ University Corporation for Atmospheric Research 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+Modified\+: 31 July 2011 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Original F\+O\+R\+T\+R\+A\+N77 version by Paul Swarztrauber, Richard Valent. ~\newline
+ F\+O\+R\+T\+R\+A\+N90 version by John Burkardt.
+\end{DoxyAuthor}
+\begin{DoxyVerb}  Reference:
+
+    Paul Swarztrauber,
+    Vectorizing the Fast Fourier Transforms,
+    in Parallel Computations,
+    edited by G. Rodrigue,
+    Academic Press, 1982.
+
+    Paul Swarztrauber,
+    Fast Fourier Transform Algorithms for Vector Computers,
+    Parallel Computing, pages 45-63, 1984.\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacefftclass_a4bf0caaf1c5caeb50490706cd35d82c5}\label{namespacefftclass_a4bf0caaf1c5caeb50490706cd35d82c5}} 
+\index{fftclass@{fftclass}!cmf5kb@{cmf5kb}}
+\index{cmf5kb@{cmf5kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmf5kb()}{cmf5kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmf5kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ido,5)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,5,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,4,2)}]{wa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefftclass_a59cb57b66516dd0b08cf36e366933c56}\label{namespacefftclass_a59cb57b66516dd0b08cf36e366933c56}} 
+\index{fftclass@{fftclass}!cmf5kf@{cmf5kf}}
+\index{cmf5kf@{cmf5kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmf5kf()}{cmf5kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmf5kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ido,5)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,5,ido)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,4,2)}]{wa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefftclass_ab1c60a144232626a03fad4dd30f88d7d}\label{namespacefftclass_ab1c60a144232626a03fad4dd30f88d7d}} 
+\index{fftclass@{fftclass}!cmfgkb@{cmfgkb}}
+\index{cmfgkb@{cmfgkb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmfgkb()}{cmfgkb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmfgkb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{lid,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ip,ido)}]{cc,  }\item[{real ( kind = 8 ), dimension(2,in1,lid,ip)}]{cc1,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,ido,ip)}]{ch,  }\item[{real ( kind = 8 ), dimension(2,in2,lid,ip)}]{ch1,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,ip-\/1,2)}]{wa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefftclass_a317b5c8887b5c2ecb7e518f0c7058589}\label{namespacefftclass_a317b5c8887b5c2ecb7e518f0c7058589}} 
+\index{fftclass@{fftclass}!cmfgkf@{cmfgkf}}
+\index{cmfgkf@{cmfgkf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cmfgkf()}{cmfgkf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cmfgkf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{lid,  }\item[{integer ( kind = 4 )}]{na,  }\item[{real ( kind = 8 ), dimension(2,in1,l1,ip,ido)}]{cc,  }\item[{real ( kind = 8 ), dimension(2,in1,lid,ip)}]{cc1,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(2,in2,l1,ido,ip)}]{ch,  }\item[{real ( kind = 8 ), dimension(2,in2,lid,ip)}]{ch1,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido,ip-\/1,2)}]{wa }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefftclass_ac4347b89b0b1a5894943daa3f37c54ee}\label{namespacefftclass_ac4347b89b0b1a5894943daa3f37c54ee}} 
+\index{fftclass@{fftclass}!cosft1\_fftpack@{cosft1\_fftpack}}
+\index{cosft1\_fftpack@{cosft1\_fftpack}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosft1\_fftpack()}{cosft1\_fftpack()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosft1\+\_\+fftpack (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(n+1)}]{y,  }\item[{integer}]{n }\end{DoxyParamCaption})}
+
+
+
+fast discrete cosine transform 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ac4347b89b0b1a5894943daa3f37c54ee_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a6684b378360642f160b255df6b3aa0bd}\label{namespacefftclass_a6684b378360642f160b255df6b3aa0bd}} 
+\index{fftclass@{fftclass}!cosq1b@{cosq1b}}
+\index{cosq1b@{cosq1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosq1b()}{cosq1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosq1b (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a6684b378360642f160b255df6b3aa0bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{namespacefftclass_a6684b378360642f160b255df6b3aa0bd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a546e80f6eb00444bf4508ae26186e0d2}\label{namespacefftclass_a546e80f6eb00444bf4508ae26186e0d2}} 
+\index{fftclass@{fftclass}!cosq1f@{cosq1f}}
+\index{cosq1f@{cosq1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosq1f()}{cosq1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosq1f (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a546e80f6eb00444bf4508ae26186e0d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{namespacefftclass_a546e80f6eb00444bf4508ae26186e0d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ab281b0d26ef5d825f00696ab35e18e65}\label{namespacefftclass_ab281b0d26ef5d825f00696ab35e18e65}} 
+\index{fftclass@{fftclass}!cosq1i@{cosq1i}}
+\index{cosq1i@{cosq1i}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosq1i()}{cosq1i()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosq1i (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ab281b0d26ef5d825f00696ab35e18e65_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{namespacefftclass_ab281b0d26ef5d825f00696ab35e18e65_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a4f908baf4cda5a6be5b71eb85fc9309c}\label{namespacefftclass_a4f908baf4cda5a6be5b71eb85fc9309c}} 
+\index{fftclass@{fftclass}!cosqb1@{cosqb1}}
+\index{cosqb1@{cosqb1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosqb1()}{cosqb1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosqb1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4f908baf4cda5a6be5b71eb85fc9309c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4f908baf4cda5a6be5b71eb85fc9309c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a894b76f80148bf5d923d558356a6cc1a}\label{namespacefftclass_a894b76f80148bf5d923d558356a6cc1a}} 
+\index{fftclass@{fftclass}!cosqf1@{cosqf1}}
+\index{cosqf1@{cosqf1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosqf1()}{cosqf1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosqf1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a894b76f80148bf5d923d558356a6cc1a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a894b76f80148bf5d923d558356a6cc1a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a766146700483880896edee5e866f29a6}\label{namespacefftclass_a766146700483880896edee5e866f29a6}} 
+\index{fftclass@{fftclass}!cosqmb@{cosqmb}}
+\index{cosqmb@{cosqmb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosqmb()}{cosqmb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosqmb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{}]{len }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a766146700483880896edee5e866f29a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{namespacefftclass_a766146700483880896edee5e866f29a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a48467d0cccf9f7f93786f4997fe714f5}\label{namespacefftclass_a48467d0cccf9f7f93786f4997fe714f5}} 
+\index{fftclass@{fftclass}!cosqmf@{cosqmf}}
+\index{cosqmf@{cosqmf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosqmf()}{cosqmf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosqmf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a48467d0cccf9f7f93786f4997fe714f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{namespacefftclass_a48467d0cccf9f7f93786f4997fe714f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a9851ac46e48072ac6c85e3c574a10dc5}\label{namespacefftclass_a9851ac46e48072ac6c85e3c574a10dc5}} 
+\index{fftclass@{fftclass}!cosqmi@{cosqmi}}
+\index{cosqmi@{cosqmi}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cosqmi()}{cosqmi()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cosqmi (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a9851ac46e48072ac6c85e3c574a10dc5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{namespacefftclass_a9851ac46e48072ac6c85e3c574a10dc5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a2bdaaab2b5d3130f8339f9463daa6db9}\label{namespacefftclass_a2bdaaab2b5d3130f8339f9463daa6db9}} 
+\index{fftclass@{fftclass}!cost1b@{cost1b}}
+\index{cost1b@{cost1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cost1b()}{cost1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cost1b (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a2bdaaab2b5d3130f8339f9463daa6db9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ae01eaac3c675ef6c95b60a480bda63ba}\label{namespacefftclass_ae01eaac3c675ef6c95b60a480bda63ba}} 
+\index{fftclass@{fftclass}!cost1f@{cost1f}}
+\index{cost1f@{cost1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cost1f()}{cost1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cost1f (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ae01eaac3c675ef6c95b60a480bda63ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{namespacefftclass_ae01eaac3c675ef6c95b60a480bda63ba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aa0605a45256c5ff2bfcd9229dd8854e4}\label{namespacefftclass_aa0605a45256c5ff2bfcd9229dd8854e4}} 
+\index{fftclass@{fftclass}!cost1i@{cost1i}}
+\index{cost1i@{cost1i}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{cost1i()}{cost1i()}}
+{\footnotesize\ttfamily subroutine fftclass\+::cost1i (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aa0605a45256c5ff2bfcd9229dd8854e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{namespacefftclass_aa0605a45256c5ff2bfcd9229dd8854e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a2769de58926e8dc80c0fa9f862de7dce}\label{namespacefftclass_a2769de58926e8dc80c0fa9f862de7dce}} 
+\index{fftclass@{fftclass}!costb1@{costb1}}
+\index{costb1@{costb1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{costb1()}{costb1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::costb1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a2769de58926e8dc80c0fa9f862de7dce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{namespacefftclass_a2769de58926e8dc80c0fa9f862de7dce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_af419be9c656e387f89facc1033cf4f55}\label{namespacefftclass_af419be9c656e387f89facc1033cf4f55}} 
+\index{fftclass@{fftclass}!costf1@{costf1}}
+\index{costf1@{costf1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{costf1()}{costf1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::costf1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_af419be9c656e387f89facc1033cf4f55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_af419be9c656e387f89facc1033cf4f55_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a1bb83e3c96bf08b2789acf52feef22b8}\label{namespacefftclass_a1bb83e3c96bf08b2789acf52feef22b8}} 
+\index{fftclass@{fftclass}!costmb@{costmb}}
+\index{costmb@{costmb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{costmb()}{costmb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::costmb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a1bb83e3c96bf08b2789acf52feef22b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a04e4666f4382e42cf8e63ee5c44fc61a}\label{namespacefftclass_a04e4666f4382e42cf8e63ee5c44fc61a}} 
+\index{fftclass@{fftclass}!costmf@{costmf}}
+\index{costmf@{costmf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{costmf()}{costmf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::costmf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a04e4666f4382e42cf8e63ee5c44fc61a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a4e2ea9d14ac7ed425be8cb1fd1ed8ddf}\label{namespacefftclass_a4e2ea9d14ac7ed425be8cb1fd1ed8ddf}} 
+\index{fftclass@{fftclass}!costmi@{costmi}}
+\index{costmi@{costmi}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{costmi()}{costmi()}}
+{\footnotesize\ttfamily subroutine fftclass\+::costmi (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4e2ea9d14ac7ed425be8cb1fd1ed8ddf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_acef38aed3ece8d2c1120ce0004e6297e}\label{namespacefftclass_acef38aed3ece8d2c1120ce0004e6297e}} 
+\index{fftclass@{fftclass}!fft3d1\_fft@{fft3d1\_fft}}
+\index{fft3d1\_fft@{fft3d1\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{fft3d1\_fft()}{fft3d1\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fft3d1\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nx,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nz,  }\item[{integer, intent(in)}]{nsizez,  }\item[{integer, intent(in)}]{nsizey,  }\item[{integer, intent(in)}]{nsizexy,  }\item[{integer, intent(in)}]{nsizeyz,  }\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scalex,  }\item[{double precision, intent(in)}]{scaley,  }\item[{double precision, intent(in)}]{scalez,  }\item[{double precision, dimension(nx/2,nsizey,nsizez), intent(in)}]{x,  }\item[{integer, dimension(0\+:nprocrow-\/1), intent(in)}]{xstable,  }\item[{integer, dimension(0\+:nprocrow-\/1), intent(in)}]{xrtable,  }\item[{integer, dimension(0\+:nproccol-\/1), intent(in)}]{ystable,  }\item[{integer, dimension(0\+:nproccol-\/1), intent(in)}]{yrtable,  }\item[{integer, intent(in)}]{nprocrow,  }\item[{integer, intent(in)}]{commrow,  }\item[{integer, intent(in)}]{nproccol,  }\item[{integer, intent(in)}]{commcol,  }\item[{integer, intent(in)}]{comm2d,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy,  }\item[{double complex, dimension(nz,nsizexy,nsizeyz), intent(out)}]{xout }\end{DoxyParamCaption})}
+
+
+
+3\+\_\+D F\+FT. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_acef38aed3ece8d2c1120ce0004e6297e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a25ecfa928dd28501b9c251c1e887996b}\label{namespacefftclass_a25ecfa928dd28501b9c251c1e887996b}} 
+\index{fftclass@{fftclass}!fftcrlocal1\_fft@{fftcrlocal1\_fft}}
+\index{fftcrlocal1\_fft@{fftcrlocal1\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{fftcrlocal1\_fft()}{fftcrlocal1\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fftcrlocal1\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scale,  }\item[{double complex, dimension(ny/2+1,nsizex), intent(in)}]{x,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nsizex,  }\item[{double precision, dimension(ny,nsizex), intent(out)}]{y }\end{DoxyParamCaption})}
+
+
+
+Subroutine to perform 1D complex to real F\+FT along y in 2D array. Here y is local to each processor. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a25ecfa928dd28501b9c251c1e887996b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a62d05d7b0980c823708d03f4a1520c1e}\label{namespacefftclass_a62d05d7b0980c823708d03f4a1520c1e}} 
+\index{fftclass@{fftclass}!fftcrlocal2\_fft@{fftcrlocal2\_fft}}
+\index{fftcrlocal2\_fft@{fftcrlocal2\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{fftcrlocal2\_fft()}{fftcrlocal2\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fftcrlocal2\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scale,  }\item[{double precision, dimension(ny,nsizex), intent(in)}]{x,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nsizex,  }\item[{double precision, dimension(ny,nsizex), intent(out)}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a62d05d7b0980c823708d03f4a1520c1e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a501325267c1425bfece04a18e20efe31}\label{namespacefftclass_a501325267c1425bfece04a18e20efe31}} 
+\index{fftclass@{fftclass}!fftlocal0\_fft@{fftlocal0\_fft}}
+\index{fftlocal0\_fft@{fftlocal0\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{fftlocal0\_fft()}{fftlocal0\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fftlocal0\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scale,  }\item[{double precision, dimension(ny,nsizex), intent(inout)}]{x,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nsizex }\end{DoxyParamCaption})}
+
+
+
+used to find the first derivative after F\+FT. Subroutine to perform 1D F\+FT along y in 2D array. Here y is local to each processor. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a501325267c1425bfece04a18e20efe31_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aa64d94b8c8578b384955207a409a2445}\label{namespacefftclass_aa64d94b8c8578b384955207a409a2445}} 
+\index{fftclass@{fftclass}!fftlocal\_fft@{fftlocal\_fft}}
+\index{fftlocal\_fft@{fftlocal\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{fftlocal\_fft()}{fftlocal\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fftlocal\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scale,  }\item[{double complex, dimension(ny,nsizex), intent(inout)}]{x,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nsizex }\end{DoxyParamCaption})}
+
+
+
+Subroutine to perform 1D F\+FT along y in 2D array. Here y is local to each processor. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aa64d94b8c8578b384955207a409a2445_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{namespacefftclass_aa64d94b8c8578b384955207a409a2445_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_af33a24fc1bf4d5763c335c0cef247e3c}\label{namespacefftclass_af33a24fc1bf4d5763c335c0cef247e3c}} 
+\index{fftclass@{fftclass}!fftrclocal1\_fft@{fftrclocal1\_fft}}
+\index{fftrclocal1\_fft@{fftrclocal1\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{fftrclocal1\_fft()}{fftrclocal1\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fftrclocal1\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scale,  }\item[{double precision, dimension(ny,nsizex), intent(in)}]{x,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nsizex,  }\item[{double complex, dimension(ny/2+1,nsizex), intent(out)}]{y }\end{DoxyParamCaption})}
+
+
+
+Subroutine to perform 1D real to complex F\+FT along y in 2D array. Here y is local to each processor. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_af33a24fc1bf4d5763c335c0cef247e3c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a83a1c8ccf853ae07fdfc5a80e1e244d1}\label{namespacefftclass_a83a1c8ccf853ae07fdfc5a80e1e244d1}} 
+\index{fftclass@{fftclass}!fftrclocal2\_fft@{fftrclocal2\_fft}}
+\index{fftrclocal2\_fft@{fftrclocal2\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{fftrclocal2\_fft()}{fftrclocal2\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::fftrclocal2\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scale,  }\item[{double precision, dimension(ny,nsizex), intent(in)}]{x,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nsizex,  }\item[{double precision, dimension(ny,nsizex), intent(out)}]{y }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a83a1c8ccf853ae07fdfc5a80e1e244d1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a4597d420a1363f9fd0b652472d7caf52}\label{namespacefftclass_a4597d420a1363f9fd0b652472d7caf52}} 
+\index{fftclass@{fftclass}!four1@{four1}}
+\index{four1@{four1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{four1()}{four1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::four1 (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(2$\ast$nn)}]{data,  }\item[{integer}]{nn,  }\item[{integer}]{isign }\end{DoxyParamCaption})}
+
+
+
+Fast fourier transform. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4597d420a1363f9fd0b652472d7caf52_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4597d420a1363f9fd0b652472d7caf52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a21e8a7bd2877ec439bc4f0e0bc0e4681}\label{namespacefftclass_a21e8a7bd2877ec439bc4f0e0bc0e4681}} 
+\index{fftclass@{fftclass}!invfft3d1\_fft@{invfft3d1\_fft}}
+\index{invfft3d1\_fft@{invfft3d1\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{invfft3d1\_fft()}{invfft3d1\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::invfft3d1\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nz,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nx,  }\item[{integer, intent(in)}]{nsizexy,  }\item[{integer, intent(in)}]{nsizeyz,  }\item[{integer, intent(in)}]{nsizey,  }\item[{integer, intent(in)}]{nsizez,  }\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scalex,  }\item[{double precision, intent(in)}]{scaley,  }\item[{double precision, intent(in)}]{scalez,  }\item[{double complex, dimension(nz,nsizexy,nsizeyz), intent(inout)}]{x,  }\item[{integer, dimension(0\+:nprocrow-\/1), intent(in)}]{xstable,  }\item[{integer, dimension(0\+:nprocrow-\/1), intent(in)}]{xrtable,  }\item[{integer, dimension(0\+:nproccol-\/1), intent(in)}]{ystable,  }\item[{integer, dimension(0\+:nproccol-\/1), intent(in)}]{yrtable,  }\item[{integer, intent(in)}]{nprocrow,  }\item[{integer, intent(in)}]{commrow,  }\item[{integer, intent(in)}]{nproccol,  }\item[{integer, intent(in)}]{commcol,  }\item[{integer, intent(in)}]{comm2d,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy,  }\item[{double precision, dimension(nx/2,nsizey,nsizez), intent(out)}]{xout }\end{DoxyParamCaption})}
+
+
+
+3\+\_\+D inverse F\+FT for open B\+Cs. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a21e8a7bd2877ec439bc4f0e0bc0e4681_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a374c599138aeca237d4c303a07a470ee}\label{namespacefftclass_a374c599138aeca237d4c303a07a470ee}} 
+\index{fftclass@{fftclass}!invfft3d1img\_fft@{invfft3d1img\_fft}}
+\index{invfft3d1img\_fft@{invfft3d1img\_fft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{invfft3d1img\_fft()}{invfft3d1img\_fft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::invfft3d1img\+\_\+fft (\begin{DoxyParamCaption}\item[{integer, intent(in)}]{nz,  }\item[{integer, intent(in)}]{ny,  }\item[{integer, intent(in)}]{nx,  }\item[{integer, intent(in)}]{nsizexy,  }\item[{integer, intent(in)}]{nsizeyz,  }\item[{integer, intent(in)}]{nsizey,  }\item[{integer, intent(in)}]{nsizez,  }\item[{integer, intent(in)}]{ksign,  }\item[{double precision, intent(in)}]{scalex,  }\item[{double precision, intent(in)}]{scaley,  }\item[{double precision, intent(in)}]{scalez,  }\item[{double complex, dimension(nz,nsizexy,nsizeyz), intent(inout)}]{x,  }\item[{integer, dimension(0\+:nprocrow-\/1), intent(in)}]{xstable,  }\item[{integer, dimension(0\+:nprocrow-\/1), intent(in)}]{xrtable,  }\item[{integer, dimension(0\+:nproccol-\/1), intent(in)}]{ystable,  }\item[{integer, dimension(0\+:nproccol-\/1), intent(in)}]{yrtable,  }\item[{integer, intent(in)}]{nprocrow,  }\item[{integer, intent(in)}]{commrow,  }\item[{integer, intent(in)}]{nproccol,  }\item[{integer, intent(in)}]{commcol,  }\item[{integer, intent(in)}]{comm2d,  }\item[{integer, intent(in)}]{myidx,  }\item[{integer, intent(in)}]{myidy,  }\item[{double precision, dimension(nx/2,nsizey,nsizez), intent(out)}]{xout }\end{DoxyParamCaption})}
+
+
+
+3\+\_\+D inverse F\+FT for open B\+Cs. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a374c599138aeca237d4c303a07a470ee_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a91e23ffaebaadf2b1c22e689f69996a2}\label{namespacefftclass_a91e23ffaebaadf2b1c22e689f69996a2}} 
+\index{fftclass@{fftclass}!mcsqb1@{mcsqb1}}
+\index{mcsqb1@{mcsqb1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mcsqb1()}{mcsqb1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mcsqb1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension(lot,$\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a91e23ffaebaadf2b1c22e689f69996a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a91e23ffaebaadf2b1c22e689f69996a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a05d00644e8642979b2c55b7822bbfb03}\label{namespacefftclass_a05d00644e8642979b2c55b7822bbfb03}} 
+\index{fftclass@{fftclass}!mcsqf1@{mcsqf1}}
+\index{mcsqf1@{mcsqf1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mcsqf1()}{mcsqf1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mcsqf1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension(lot,$\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a05d00644e8642979b2c55b7822bbfb03_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a05d00644e8642979b2c55b7822bbfb03_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a10f96df2a58ce7f2e6ac9eaddf09588e}\label{namespacefftclass_a10f96df2a58ce7f2e6ac9eaddf09588e}} 
+\index{fftclass@{fftclass}!mcstb1@{mcstb1}}
+\index{mcstb1@{mcstb1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mcstb1()}{mcstb1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mcstb1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{dsum,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a10f96df2a58ce7f2e6ac9eaddf09588e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{namespacefftclass_a10f96df2a58ce7f2e6ac9eaddf09588e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aac5cdc09f4e9979eb972972e1db55cb3}\label{namespacefftclass_aac5cdc09f4e9979eb972972e1db55cb3}} 
+\index{fftclass@{fftclass}!mcstf1@{mcstf1}}
+\index{mcstf1@{mcstf1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mcstf1()}{mcstf1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mcstf1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{dsum,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aac5cdc09f4e9979eb972972e1db55cb3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{namespacefftclass_aac5cdc09f4e9979eb972972e1db55cb3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a39691ebdf781bf380b7ef426f4027896}\label{namespacefftclass_a39691ebdf781bf380b7ef426f4027896}} 
+\index{fftclass@{fftclass}!mradb2@{mradb2}}
+\index{mradb2@{mradb2}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradb2()}{mradb2()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradb2 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,2,l1)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,2)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a39691ebdf781bf380b7ef426f4027896_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a493cf432cfe190657e9a56a0d452b275}\label{namespacefftclass_a493cf432cfe190657e9a56a0d452b275}} 
+\index{fftclass@{fftclass}!mradb3@{mradb3}}
+\index{mradb3@{mradb3}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradb3()}{mradb3()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradb3 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,3,l1)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,3)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a493cf432cfe190657e9a56a0d452b275_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a5aae50728c25b5089b6b3c61d3ef27eb}\label{namespacefftclass_a5aae50728c25b5089b6b3c61d3ef27eb}} 
+\index{fftclass@{fftclass}!mradb4@{mradb4}}
+\index{mradb4@{mradb4}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradb4()}{mradb4()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradb4 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,4,l1)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,4)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa3 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a5aae50728c25b5089b6b3c61d3ef27eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a69781205c1568e37470a06e001a0dae7}\label{namespacefftclass_a69781205c1568e37470a06e001a0dae7}} 
+\index{fftclass@{fftclass}!mradb5@{mradb5}}
+\index{mradb5@{mradb5}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradb5()}{mradb5()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradb5 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,5,l1)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,5)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa3,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa4 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a69781205c1568e37470a06e001a0dae7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ae156d4969bbcc9250a0dc81ee91d3cdf}\label{namespacefftclass_ae156d4969bbcc9250a0dc81ee91d3cdf}} 
+\index{fftclass@{fftclass}!mradbg@{mradbg}}
+\index{mradbg@{mradbg}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradbg()}{mradbg()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradbg (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{idl1,  }\item[{real ( kind = 8 ), dimension(in1,ido,ip,l1)}]{cc,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,ip)}]{c1,  }\item[{real ( kind = 8 ), dimension(in1,idl1,ip)}]{c2,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,ip)}]{ch,  }\item[{real ( kind = 8 ), dimension(in2,idl1,ip)}]{ch2,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ae156d4969bbcc9250a0dc81ee91d3cdf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a577b893eadc27ccc53b888490cb1b873}\label{namespacefftclass_a577b893eadc27ccc53b888490cb1b873}} 
+\index{fftclass@{fftclass}!mradf2@{mradf2}}
+\index{mradf2@{mradf2}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradf2()}{mradf2()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradf2 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,2)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,2,l1)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a577b893eadc27ccc53b888490cb1b873_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a4e99b7194e96b9a086f743a98205cc5a}\label{namespacefftclass_a4e99b7194e96b9a086f743a98205cc5a}} 
+\index{fftclass@{fftclass}!mradf3@{mradf3}}
+\index{mradf3@{mradf3}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradf3()}{mradf3()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradf3 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,3)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,3,l1)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4e99b7194e96b9a086f743a98205cc5a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aec86b95620b11b4db180468a4f771842}\label{namespacefftclass_aec86b95620b11b4db180468a4f771842}} 
+\index{fftclass@{fftclass}!mradf4@{mradf4}}
+\index{mradf4@{mradf4}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradf4()}{mradf4()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradf4 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,4)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,4,l1)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa3 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aec86b95620b11b4db180468a4f771842_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ab6d74e30932fcf82744ac339de050933}\label{namespacefftclass_ab6d74e30932fcf82744ac339de050933}} 
+\index{fftclass@{fftclass}!mradf5@{mradf5}}
+\index{mradf5@{mradf5}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradf5()}{mradf5()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradf5 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,5)}]{cc,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,5,l1)}]{ch,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa3,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa4 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ab6d74e30932fcf82744ac339de050933_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a5741ec7db9519828a0c46df4355b734d}\label{namespacefftclass_a5741ec7db9519828a0c46df4355b734d}} 
+\index{fftclass@{fftclass}!mradfg@{mradfg}}
+\index{mradfg@{mradfg}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mradfg()}{mradfg()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mradfg (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{idl1,  }\item[{real ( kind = 8 ), dimension(in1,ido,ip,l1)}]{cc,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,ip)}]{c1,  }\item[{real ( kind = 8 ), dimension(in1,idl1,ip)}]{c2,  }\item[{integer ( kind = 4 )}]{im1,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,ip)}]{ch,  }\item[{real ( kind = 8 ), dimension(in2,idl1,ip)}]{ch2,  }\item[{integer ( kind = 4 )}]{im2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a5741ec7db9519828a0c46df4355b734d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a025f68a6ddd573ad3fa337835b621d3c}\label{namespacefftclass_a025f68a6ddd573ad3fa337835b621d3c}} 
+\index{fftclass@{fftclass}!mrftb1@{mrftb1}}
+\index{mrftb1@{mrftb1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mrftb1()}{mrftb1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mrftb1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{im,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{in,  }\item[{real ( kind = 8 ), dimension(in,$\ast$)}]{c,  }\item[{real ( kind = 8 ), dimension(m,$\ast$)}]{ch,  }\item[{real ( kind = 8 ), dimension(n)}]{wa,  }\item[{real ( kind = 8 ), dimension(15)}]{fac }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{namespacefftclass_a025f68a6ddd573ad3fa337835b621d3c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a025f68a6ddd573ad3fa337835b621d3c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a5b17cd46c9d021ed6dfe9499fc802b3f}\label{namespacefftclass_a5b17cd46c9d021ed6dfe9499fc802b3f}} 
+\index{fftclass@{fftclass}!mrftf1@{mrftf1}}
+\index{mrftf1@{mrftf1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mrftf1()}{mrftf1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mrftf1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{m,  }\item[{integer ( kind = 4 )}]{im,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{in,  }\item[{real ( kind = 8 ), dimension(in,$\ast$)}]{c,  }\item[{real ( kind = 8 ), dimension(m,$\ast$)}]{ch,  }\item[{real ( kind = 8 ), dimension(n)}]{wa,  }\item[{real ( kind = 8 ), dimension(15)}]{fac }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{namespacefftclass_a5b17cd46c9d021ed6dfe9499fc802b3f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a5b17cd46c9d021ed6dfe9499fc802b3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a88a3f7fd420d15d4e4d603d4d8ebf38e}\label{namespacefftclass_a88a3f7fd420d15d4e4d603d4d8ebf38e}} 
+\index{fftclass@{fftclass}!mrfti1@{mrfti1}}
+\index{mrfti1@{mrfti1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{mrfti1()}{mrfti1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::mrfti1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(n)}]{wa,  }\item[{real ( kind = 8 ), dimension(15)}]{fac }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a88a3f7fd420d15d4e4d603d4d8ebf38e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aebd25014fd97baa3be31bda9b446e99f}\label{namespacefftclass_aebd25014fd97baa3be31bda9b446e99f}} 
+\index{fftclass@{fftclass}!msntb1@{msntb1}}
+\index{msntb1@{msntb1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{msntb1()}{msntb1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::msntb1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{dsum,  }\item[{real ( kind = 8 ), dimension(lot,$\ast$)}]{xh,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aebd25014fd97baa3be31bda9b446e99f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{namespacefftclass_aebd25014fd97baa3be31bda9b446e99f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a151bd1685dbe69c9c36a08ff00a7e10e}\label{namespacefftclass_a151bd1685dbe69c9c36a08ff00a7e10e}} 
+\index{fftclass@{fftclass}!msntf1@{msntf1}}
+\index{msntf1@{msntf1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{msntf1()}{msntf1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::msntf1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{dsum,  }\item[{real ( kind = 8 ), dimension(lot,$\ast$)}]{xh,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a151bd1685dbe69c9c36a08ff00a7e10e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{namespacefftclass_a151bd1685dbe69c9c36a08ff00a7e10e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a6cf75b3c3c340adb4eb40e50289cf439}\label{namespacefftclass_a6cf75b3c3c340adb4eb40e50289cf439}} 
+\index{fftclass@{fftclass}!r1f2kb@{r1f2kb}}
+\index{r1f2kb@{r1f2kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1f2kb()}{r1f2kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1f2kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,2,l1)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,2)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a6cf75b3c3c340adb4eb40e50289cf439_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a9d3bdd521a616fe934704cb38ac074f4}\label{namespacefftclass_a9d3bdd521a616fe934704cb38ac074f4}} 
+\index{fftclass@{fftclass}!r1f2kf@{r1f2kf}}
+\index{r1f2kf@{r1f2kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1f2kf()}{r1f2kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1f2kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,2)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,2,l1)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a9d3bdd521a616fe934704cb38ac074f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ad450dc5bf08d49d4784e609c41b42950}\label{namespacefftclass_ad450dc5bf08d49d4784e609c41b42950}} 
+\index{fftclass@{fftclass}!r1f3kb@{r1f3kb}}
+\index{r1f3kb@{r1f3kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1f3kb()}{r1f3kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1f3kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,3,l1)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,3)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ad450dc5bf08d49d4784e609c41b42950_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a382f39146e7d8e1450810efdc6f4cd79}\label{namespacefftclass_a382f39146e7d8e1450810efdc6f4cd79}} 
+\index{fftclass@{fftclass}!r1f3kf@{r1f3kf}}
+\index{r1f3kf@{r1f3kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1f3kf()}{r1f3kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1f3kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,3)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,3,l1)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a382f39146e7d8e1450810efdc6f4cd79_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a71f9b9a5e0173f9ddef4dd0fc92e6164}\label{namespacefftclass_a71f9b9a5e0173f9ddef4dd0fc92e6164}} 
+\index{fftclass@{fftclass}!r1f4kb@{r1f4kb}}
+\index{r1f4kb@{r1f4kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1f4kb()}{r1f4kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1f4kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,4,l1)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,4)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa3 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a71f9b9a5e0173f9ddef4dd0fc92e6164_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ac2e28efef69b7ac5c599c51dc9be973d}\label{namespacefftclass_ac2e28efef69b7ac5c599c51dc9be973d}} 
+\index{fftclass@{fftclass}!r1f4kf@{r1f4kf}}
+\index{r1f4kf@{r1f4kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1f4kf()}{r1f4kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1f4kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,4)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,4,l1)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa3 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ac2e28efef69b7ac5c599c51dc9be973d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a42f5de07f4eb994cbe15a8526291566b}\label{namespacefftclass_a42f5de07f4eb994cbe15a8526291566b}} 
+\index{fftclass@{fftclass}!r1f5kb@{r1f5kb}}
+\index{r1f5kb@{r1f5kb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1f5kb()}{r1f5kb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1f5kb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,5,l1)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,5)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa3,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa4 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a42f5de07f4eb994cbe15a8526291566b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_acc419931cfa3ec3e19e6264b35e83aae}\label{namespacefftclass_acc419931cfa3ec3e19e6264b35e83aae}} 
+\index{fftclass@{fftclass}!r1f5kf@{r1f5kf}}
+\index{r1f5kf@{r1f5kf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1f5kf()}{r1f5kf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1f5kf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,5)}]{cc,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,5,l1)}]{ch,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa1,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa3,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa4 }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_acc419931cfa3ec3e19e6264b35e83aae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aa5cb9e2d3b6aa9d5adcb4144cd17f10e}\label{namespacefftclass_aa5cb9e2d3b6aa9d5adcb4144cd17f10e}} 
+\index{fftclass@{fftclass}!r1fgkb@{r1fgkb}}
+\index{r1fgkb@{r1fgkb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1fgkb()}{r1fgkb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1fgkb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{idl1,  }\item[{real ( kind = 8 ), dimension(in1,ido,ip,l1)}]{cc,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,ip)}]{c1,  }\item[{real ( kind = 8 ), dimension(in1,idl1,ip)}]{c2,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,ip)}]{ch,  }\item[{real ( kind = 8 ), dimension(in2,idl1,ip)}]{ch2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aa5cb9e2d3b6aa9d5adcb4144cd17f10e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_adb327056327448d0a605271d57091578}\label{namespacefftclass_adb327056327448d0a605271d57091578}} 
+\index{fftclass@{fftclass}!r1fgkf@{r1fgkf}}
+\index{r1fgkf@{r1fgkf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r1fgkf()}{r1fgkf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r1fgkf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{integer ( kind = 4 )}]{l1,  }\item[{integer ( kind = 4 )}]{idl1,  }\item[{real ( kind = 8 ), dimension(in1,ido,ip,l1)}]{cc,  }\item[{real ( kind = 8 ), dimension(in1,ido,l1,ip)}]{c1,  }\item[{real ( kind = 8 ), dimension(in1,idl1,ip)}]{c2,  }\item[{integer ( kind = 4 )}]{in1,  }\item[{real ( kind = 8 ), dimension(in2,ido,l1,ip)}]{ch,  }\item[{real ( kind = 8 ), dimension(in2,idl1,ip)}]{ch2,  }\item[{integer ( kind = 4 )}]{in2,  }\item[{real ( kind = 8 ), dimension(ido)}]{wa }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_adb327056327448d0a605271d57091578_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a6d2b5609d651241869584e962d234756}\label{namespacefftclass_a6d2b5609d651241869584e962d234756}} 
+\index{fftclass@{fftclass}!r2w@{r2w}}
+\index{r2w@{r2w}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r2w()}{r2w()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r2w (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ldr,  }\item[{integer ( kind = 4 )}]{ldw,  }\item[{integer ( kind = 4 )}]{l,  }\item[{integer ( kind = 4 )}]{m,  }\item[{real ( kind = 8 ), dimension(ldr,m)}]{r,  }\item[{real ( kind = 8 ), dimension(ldw,m)}]{w }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefftclass_ad76d163c3f3aec3b5a3bbb3285498ffd}\label{namespacefftclass_ad76d163c3f3aec3b5a3bbb3285498ffd}} 
+\index{fftclass@{fftclass}!r4\_factor@{r4\_factor}}
+\index{r4\_factor@{r4\_factor}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r4\_factor()}{r4\_factor()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r4\+\_\+factor (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{nf,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{fac }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ad76d163c3f3aec3b5a3bbb3285498ffd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aecf4238ff306578dd37cab143ce6efac}\label{namespacefftclass_aecf4238ff306578dd37cab143ce6efac}} 
+\index{fftclass@{fftclass}!r4\_mcfti1@{r4\_mcfti1}}
+\index{r4\_mcfti1@{r4\_mcfti1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r4\_mcfti1()}{r4\_mcfti1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r4\+\_\+mcfti1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wa,  }\item[{real ( kind = 8 )}]{fnf,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{fac }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{namespacefftclass_aecf4238ff306578dd37cab143ce6efac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aecf4238ff306578dd37cab143ce6efac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a882cd8d6eeb407d2b10ee9b3d9fee8b9}\label{namespacefftclass_a882cd8d6eeb407d2b10ee9b3d9fee8b9}} 
+\index{fftclass@{fftclass}!r4\_tables@{r4\_tables}}
+\index{r4\_tables@{r4\_tables}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r4\_tables()}{r4\_tables()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r4\+\_\+tables (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{real ( kind = 8 ), dimension(ido,ip-\/1,2)}]{wa }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a882cd8d6eeb407d2b10ee9b3d9fee8b9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a22bddf5efe99e8dcd5737d2d73ae832f}\label{namespacefftclass_a22bddf5efe99e8dcd5737d2d73ae832f}} 
+\index{fftclass@{fftclass}!r8\_factor@{r8\_factor}}
+\index{r8\_factor@{r8\_factor}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r8\_factor()}{r8\_factor()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r8\+\_\+factor (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{nf,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{fac }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{namespacefftclass_a22bddf5efe99e8dcd5737d2d73ae832f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a89d64713ecbaec08b4d5180fcbc56cea}\label{namespacefftclass_a89d64713ecbaec08b4d5180fcbc56cea}} 
+\index{fftclass@{fftclass}!r8\_mcfti1@{r8\_mcfti1}}
+\index{r8\_mcfti1@{r8\_mcfti1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r8\_mcfti1()}{r8\_mcfti1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r8\+\_\+mcfti1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wa,  }\item[{real ( kind = 8 )}]{fnf,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{fac }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{namespacefftclass_a89d64713ecbaec08b4d5180fcbc56cea_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a68ac2e6dba058989d5e0d7fbee9aa19f}\label{namespacefftclass_a68ac2e6dba058989d5e0d7fbee9aa19f}} 
+\index{fftclass@{fftclass}!r8\_tables@{r8\_tables}}
+\index{r8\_tables@{r8\_tables}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{r8\_tables()}{r8\_tables()}}
+{\footnotesize\ttfamily subroutine fftclass\+::r8\+\_\+tables (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ido,  }\item[{integer ( kind = 4 )}]{ip,  }\item[{real ( kind = 8 ), dimension(ido,ip-\/1,2)}]{wa }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{namespacefftclass_a68ac2e6dba058989d5e0d7fbee9aa19f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a1aec6e8023ec23ff926a64c54c93ee1e}\label{namespacefftclass_a1aec6e8023ec23ff926a64c54c93ee1e}} 
+\index{fftclass@{fftclass}!realft@{realft}}
+\index{realft@{realft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{realft()}{realft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::realft (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(n)}]{data,  }\item[{integer}]{n,  }\item[{integer}]{isign }\end{DoxyParamCaption})}
+
+
+
+real fast Fourier tranform 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a1aec6e8023ec23ff926a64c54c93ee1e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{namespacefftclass_a1aec6e8023ec23ff926a64c54c93ee1e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a2bdd31e65a4abb79ed9e0eeaa71cee6b}\label{namespacefftclass_a2bdd31e65a4abb79ed9e0eeaa71cee6b}} 
+\index{fftclass@{fftclass}!rfft1b@{rfft1b}}
+\index{rfft1b@{rfft1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rfft1b()}{rfft1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rfft1b (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(lenr)}]{r,  }\item[{integer ( kind = 4 )}]{lenr,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a2bdd31e65a4abb79ed9e0eeaa71cee6b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a2bdd31e65a4abb79ed9e0eeaa71cee6b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ad5aa2059236e01ea65aecda114c3f45f}\label{namespacefftclass_ad5aa2059236e01ea65aecda114c3f45f}} 
+\index{fftclass@{fftclass}!rfft1f@{rfft1f}}
+\index{rfft1f@{rfft1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rfft1f()}{rfft1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rfft1f (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(lenr)}]{r,  }\item[{integer ( kind = 4 )}]{lenr,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ad5aa2059236e01ea65aecda114c3f45f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ad5aa2059236e01ea65aecda114c3f45f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_abb3d8b6f0166090db98de3e7d627434f}\label{namespacefftclass_abb3d8b6f0166090db98de3e7d627434f}} 
+\index{fftclass@{fftclass}!rfft1i@{rfft1i}}
+\index{rfft1i@{rfft1i}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rfft1i()}{rfft1i()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rfft1i (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{namespacefftclass_abb3d8b6f0166090db98de3e7d627434f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_abb3d8b6f0166090db98de3e7d627434f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a338a7a4db13f2357c42a682142df3190}\label{namespacefftclass_a338a7a4db13f2357c42a682142df3190}} 
+\index{fftclass@{fftclass}!rfftb1@{rfftb1}}
+\index{rfftb1@{rfftb1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rfftb1()}{rfftb1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rfftb1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{in,  }\item[{real ( kind = 8 ), dimension(in,$\ast$)}]{c,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{ch,  }\item[{real ( kind = 8 ), dimension(n)}]{wa,  }\item[{real ( kind = 8 ), dimension(15)}]{fac }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{namespacefftclass_a338a7a4db13f2357c42a682142df3190_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a338a7a4db13f2357c42a682142df3190_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_af9f24f143ca02395c91f7757343e8003}\label{namespacefftclass_af9f24f143ca02395c91f7757343e8003}} 
+\index{fftclass@{fftclass}!rfftf1@{rfftf1}}
+\index{rfftf1@{rfftf1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rfftf1()}{rfftf1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rfftf1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{in,  }\item[{real ( kind = 8 ), dimension(in,$\ast$)}]{c,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{ch,  }\item[{real ( kind = 8 ), dimension(n)}]{wa,  }\item[{real ( kind = 8 ), dimension(15)}]{fac }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{namespacefftclass_af9f24f143ca02395c91f7757343e8003_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_af9f24f143ca02395c91f7757343e8003_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a122822a405cd96e5df936acaad731746}\label{namespacefftclass_a122822a405cd96e5df936acaad731746}} 
+\index{fftclass@{fftclass}!rffti1@{rffti1}}
+\index{rffti1@{rffti1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rffti1()}{rffti1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rffti1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(n)}]{wa,  }\item[{real ( kind = 8 ), dimension(15)}]{fac }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a122822a405cd96e5df936acaad731746_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_acc4295c5a3646519e26c3dd5ae66418d}\label{namespacefftclass_acc4295c5a3646519e26c3dd5ae66418d}} 
+\index{fftclass@{fftclass}!rfftmb@{rfftmb}}
+\index{rfftmb@{rfftmb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rfftmb()}{rfftmb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rfftmb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(lenr)}]{r,  }\item[{integer ( kind = 4 )}]{lenr,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{}]{len }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_acc4295c5a3646519e26c3dd5ae66418d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_acc4295c5a3646519e26c3dd5ae66418d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a4662111bc784aa321b0567a1a0578963}\label{namespacefftclass_a4662111bc784aa321b0567a1a0578963}} 
+\index{fftclass@{fftclass}!rfftmf@{rfftmf}}
+\index{rfftmf@{rfftmf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rfftmf()}{rfftmf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rfftmf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(lenr)}]{r,  }\item[{integer ( kind = 4 )}]{lenr,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4662111bc784aa321b0567a1a0578963_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4662111bc784aa321b0567a1a0578963_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a6a543283f910322f94293d719f923881}\label{namespacefftclass_a6a543283f910322f94293d719f923881}} 
+\index{fftclass@{fftclass}!rfftmi@{rfftmi}}
+\index{rfftmi@{rfftmi}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rfftmi()}{rfftmi()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rfftmi (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{namespacefftclass_a6a543283f910322f94293d719f923881_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a6a543283f910322f94293d719f923881_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a2c47e8aa546c8ea9f5f23219be52d57e}\label{namespacefftclass_a2c47e8aa546c8ea9f5f23219be52d57e}} 
+\index{fftclass@{fftclass}!rvec\_nr2pack\_gnl@{rvec\_nr2pack\_gnl}}
+\index{rvec\_nr2pack\_gnl@{rvec\_nr2pack\_gnl}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_nr2pack\_gnl()}{rvec\_nr2pack\_gnl()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+nr2pack\+\_\+gnl (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(n)}]{r,  }\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n)}]{data }\end{DoxyParamCaption})}
+
+
+
+transfer real vector from nr style to fftpack style generally 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a2c47e8aa546c8ea9f5f23219be52d57e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a78a858cc72da790e88dc826f5bdd14b3}\label{namespacefftclass_a78a858cc72da790e88dc826f5bdd14b3}} 
+\index{fftclass@{fftclass}!rvec\_nr2pack\_rfft1b@{rvec\_nr2pack\_rfft1b}}
+\index{rvec\_nr2pack\_rfft1b@{rvec\_nr2pack\_rfft1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_nr2pack\_rfft1b()}{rvec\_nr2pack\_rfft1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+nr2pack\+\_\+rfft1b (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(n)}]{r,  }\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n)}]{data }\end{DoxyParamCaption})}
+
+
+
+transfer real vector from nr style to fftpack style for backward real fft 1D 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a78a858cc72da790e88dc826f5bdd14b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ac09ed442a8bb7846768adbe2d5c798c6}\label{namespacefftclass_ac09ed442a8bb7846768adbe2d5c798c6}} 
+\index{fftclass@{fftclass}!rvec\_nr2pack\_rfft1f@{rvec\_nr2pack\_rfft1f}}
+\index{rvec\_nr2pack\_rfft1f@{rvec\_nr2pack\_rfft1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_nr2pack\_rfft1f()}{rvec\_nr2pack\_rfft1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+nr2pack\+\_\+rfft1f (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(n)}]{r,  }\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n)}]{data }\end{DoxyParamCaption})}
+
+
+
+transfer real vector from nr style to fftpack style for forward real fft 1D 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ac09ed442a8bb7846768adbe2d5c798c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ae1f9bdd4e66db530852187dff115ae36}\label{namespacefftclass_ae1f9bdd4e66db530852187dff115ae36}} 
+\index{fftclass@{fftclass}!rvec\_nr2pack\_sint1f@{rvec\_nr2pack\_sint1f}}
+\index{rvec\_nr2pack\_sint1f@{rvec\_nr2pack\_sint1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_nr2pack\_sint1f()}{rvec\_nr2pack\_sint1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+nr2pack\+\_\+sint1f (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(n)}]{r,  }\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n+1)}]{y }\end{DoxyParamCaption})}
+
+
+
+transfer real vector from nr style to fftpack style for (forward) sint1D 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{namespacefftclass_ae1f9bdd4e66db530852187dff115ae36_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a8f3b38a9f0433b6b847b670b98acab99}\label{namespacefftclass_a8f3b38a9f0433b6b847b670b98acab99}} 
+\index{fftclass@{fftclass}!rvec\_pack2nr\_cosft1@{rvec\_pack2nr\_cosft1}}
+\index{rvec\_pack2nr\_cosft1@{rvec\_pack2nr\_cosft1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_pack2nr\_cosft1()}{rvec\_pack2nr\_cosft1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+pack2nr\+\_\+cosft1 (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(ny)}]{r,  }\item[{integer}]{ny,  }\item[{real$\ast$8, dimension(ny)}]{y }\end{DoxyParamCaption})}
+
+
+
+transfer real vector from fftpack style to nr style for (forward) cost1D 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{namespacefftclass_a8f3b38a9f0433b6b847b670b98acab99_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a5b968c02330134b7f60b0b19e3192e77}\label{namespacefftclass_a5b968c02330134b7f60b0b19e3192e77}} 
+\index{fftclass@{fftclass}!rvec\_pack2nr\_gnl@{rvec\_pack2nr\_gnl}}
+\index{rvec\_pack2nr\_gnl@{rvec\_pack2nr\_gnl}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_pack2nr\_gnl()}{rvec\_pack2nr\_gnl()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+pack2nr\+\_\+gnl (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(n)}]{r,  }\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n)}]{data }\end{DoxyParamCaption})}
+
+
+
+tansfer real vector from fftpack style to nr style generally 
+
+\mbox{\Hypertarget{namespacefftclass_a49a850047c36eff6fb6d5eb1669cb009}\label{namespacefftclass_a49a850047c36eff6fb6d5eb1669cb009}} 
+\index{fftclass@{fftclass}!rvec\_pack2nr\_rfft1b@{rvec\_pack2nr\_rfft1b}}
+\index{rvec\_pack2nr\_rfft1b@{rvec\_pack2nr\_rfft1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_pack2nr\_rfft1b()}{rvec\_pack2nr\_rfft1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+pack2nr\+\_\+rfft1b (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(n)}]{r,  }\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n)}]{data }\end{DoxyParamCaption})}
+
+
+
+transfer real vector from pack style to nr style for backward real fft 1D 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a49a850047c36eff6fb6d5eb1669cb009_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ac898bf50e64ca8c43e8d9fa0c2c85919}\label{namespacefftclass_ac898bf50e64ca8c43e8d9fa0c2c85919}} 
+\index{fftclass@{fftclass}!rvec\_pack2nr\_rfft1f@{rvec\_pack2nr\_rfft1f}}
+\index{rvec\_pack2nr\_rfft1f@{rvec\_pack2nr\_rfft1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_pack2nr\_rfft1f()}{rvec\_pack2nr\_rfft1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+pack2nr\+\_\+rfft1f (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(n)}]{r,  }\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n)}]{data }\end{DoxyParamCaption})}
+
+
+
+transfer real vector from pack style to nr style for forward real fft 1D 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ac898bf50e64ca8c43e8d9fa0c2c85919_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a667b3d13eccd40bf9e60f379f6d44e04}\label{namespacefftclass_a667b3d13eccd40bf9e60f379f6d44e04}} 
+\index{fftclass@{fftclass}!rvec\_pack2nr\_sint1f@{rvec\_pack2nr\_sint1f}}
+\index{rvec\_pack2nr\_sint1f@{rvec\_pack2nr\_sint1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{rvec\_pack2nr\_sint1f()}{rvec\_pack2nr\_sint1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::rvec\+\_\+pack2nr\+\_\+sint1f (\begin{DoxyParamCaption}\item[{real ( kind = 8 ), dimension(n)}]{r,  }\item[{integer}]{n,  }\item[{real$\ast$8, dimension(n+1)}]{y }\end{DoxyParamCaption})}
+
+
+
+transfer real vector from fftpack style to nr style for (forward) sint 1D 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{namespacefftclass_a667b3d13eccd40bf9e60f379f6d44e04_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_abcd5ef700f07a29fa9949e15866f5d41}\label{namespacefftclass_abcd5ef700f07a29fa9949e15866f5d41}} 
+\index{fftclass@{fftclass}!sinft@{sinft}}
+\index{sinft@{sinft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sinft()}{sinft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sinft (\begin{DoxyParamCaption}\item[{real$\ast$8, dimension(ny)}]{y,  }\item[{integer}]{ny }\end{DoxyParamCaption})}
+
+
+
+fast discrete sine transform 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_abcd5ef700f07a29fa9949e15866f5d41_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a6770a2a0c7bdf09af5ed719175fb4ca4}\label{namespacefftclass_a6770a2a0c7bdf09af5ed719175fb4ca4}} 
+\index{fftclass@{fftclass}!sinq1b@{sinq1b}}
+\index{sinq1b@{sinq1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sinq1b()}{sinq1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sinq1b (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a6770a2a0c7bdf09af5ed719175fb4ca4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a205d9dc43dfb082cdee420a4ae2fb269}\label{namespacefftclass_a205d9dc43dfb082cdee420a4ae2fb269}} 
+\index{fftclass@{fftclass}!sinq1f@{sinq1f}}
+\index{sinq1f@{sinq1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sinq1f()}{sinq1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sinq1f (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a205d9dc43dfb082cdee420a4ae2fb269_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aa0d2ffdfc38a79ecd1b47de75f3d1084}\label{namespacefftclass_aa0d2ffdfc38a79ecd1b47de75f3d1084}} 
+\index{fftclass@{fftclass}!sinq1i@{sinq1i}}
+\index{sinq1i@{sinq1i}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sinq1i()}{sinq1i()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sinq1i (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aa0d2ffdfc38a79ecd1b47de75f3d1084_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aa7e7e40b824e045f452a09a2e7abf333}\label{namespacefftclass_aa7e7e40b824e045f452a09a2e7abf333}} 
+\index{fftclass@{fftclass}!sinqmb@{sinqmb}}
+\index{sinqmb@{sinqmb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sinqmb()}{sinqmb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sinqmb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aa7e7e40b824e045f452a09a2e7abf333_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ae56c7f24f27f2fb48f15359441b5e82f}\label{namespacefftclass_ae56c7f24f27f2fb48f15359441b5e82f}} 
+\index{fftclass@{fftclass}!sinqmf@{sinqmf}}
+\index{sinqmf@{sinqmf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sinqmf()}{sinqmf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sinqmf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ae56c7f24f27f2fb48f15359441b5e82f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a642a9e3f241f3aaa6baf58741d4cdd3b}\label{namespacefftclass_a642a9e3f241f3aaa6baf58741d4cdd3b}} 
+\index{fftclass@{fftclass}!sinqmi@{sinqmi}}
+\index{sinqmi@{sinqmi}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sinqmi()}{sinqmi()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sinqmi (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a642a9e3f241f3aaa6baf58741d4cdd3b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ada18e37204cdb55b83be98eaecc27730}\label{namespacefftclass_ada18e37204cdb55b83be98eaecc27730}} 
+\index{fftclass@{fftclass}!sint1b@{sint1b}}
+\index{sint1b@{sint1b}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sint1b()}{sint1b()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sint1b (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ada18e37204cdb55b83be98eaecc27730_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a6ae22ff215b2e962b410eb1b9c4860d7}\label{namespacefftclass_a6ae22ff215b2e962b410eb1b9c4860d7}} 
+\index{fftclass@{fftclass}!sint1f@{sint1f}}
+\index{sint1f@{sint1f}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sint1f()}{sint1f()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sint1f (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a6ae22ff215b2e962b410eb1b9c4860d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{namespacefftclass_a6ae22ff215b2e962b410eb1b9c4860d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_ae156ccdcf953af967a42d20df0ddb725}\label{namespacefftclass_ae156ccdcf953af967a42d20df0ddb725}} 
+\index{fftclass@{fftclass}!sint1i@{sint1i}}
+\index{sint1i@{sint1i}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sint1i()}{sint1i()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sint1i (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_ae156ccdcf953af967a42d20df0ddb725_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{namespacefftclass_ae156ccdcf953af967a42d20df0ddb725_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_af29f41f086c8e8901df2716d0b86db20}\label{namespacefftclass_af29f41f086c8e8901df2716d0b86db20}} 
+\index{fftclass@{fftclass}!sintb1@{sintb1}}
+\index{sintb1@{sintb1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sintb1()}{sintb1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sintb1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{xh,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_af29f41f086c8e8901df2716d0b86db20_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{namespacefftclass_af29f41f086c8e8901df2716d0b86db20_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_aa79de4b10a068408990ac9ac8f32d134}\label{namespacefftclass_aa79de4b10a068408990ac9ac8f32d134}} 
+\index{fftclass@{fftclass}!sintf1@{sintf1}}
+\index{sintf1@{sintf1}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sintf1()}{sintf1()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sintf1 (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{wsave,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{xh,  }\item[{real ( kind = 8 ), dimension($\ast$)}]{work,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aa79de4b10a068408990ac9ac8f32d134_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_aa79de4b10a068408990ac9ac8f32d134_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a4d9b6f96810b5b7a8b7dd38af74f5b55}\label{namespacefftclass_a4d9b6f96810b5b7a8b7dd38af74f5b55}} 
+\index{fftclass@{fftclass}!sintmb@{sintmb}}
+\index{sintmb@{sintmb}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sintmb()}{sintmb()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sintmb (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a4d9b6f96810b5b7a8b7dd38af74f5b55_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a497c6a39bac7daa7973b53cb00ffd6c3}\label{namespacefftclass_a497c6a39bac7daa7973b53cb00ffd6c3}} 
+\index{fftclass@{fftclass}!sintmf@{sintmf}}
+\index{sintmf@{sintmf}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sintmf()}{sintmf()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sintmf (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{lot,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{inc,  }\item[{real ( kind = 8 ), dimension(inc,$\ast$)}]{x,  }\item[{integer ( kind = 4 )}]{lenx,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{real ( kind = 8 ), dimension(lenwrk)}]{work,  }\item[{integer ( kind = 4 )}]{lenwrk,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a497c6a39bac7daa7973b53cb00ffd6c3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a9b28ecda04690fe2a4425da2b5625e4d}\label{namespacefftclass_a9b28ecda04690fe2a4425da2b5625e4d}} 
+\index{fftclass@{fftclass}!sintmi@{sintmi}}
+\index{sintmi@{sintmi}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{sintmi()}{sintmi()}}
+{\footnotesize\ttfamily subroutine fftclass\+::sintmi (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{n,  }\item[{real ( kind = 8 ), dimension(lensav)}]{wsave,  }\item[{integer ( kind = 4 )}]{lensav,  }\item[{integer ( kind = 4 )}]{ier }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a9b28ecda04690fe2a4425da2b5625e4d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_af191171f5e31fbad6c0e224faaf6175e}\label{namespacefftclass_af191171f5e31fbad6c0e224faaf6175e}} 
+\index{fftclass@{fftclass}!w2r@{w2r}}
+\index{w2r@{w2r}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{w2r()}{w2r()}}
+{\footnotesize\ttfamily subroutine fftclass\+::w2r (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{ldr,  }\item[{integer ( kind = 4 )}]{ldw,  }\item[{integer ( kind = 4 )}]{l,  }\item[{integer ( kind = 4 )}]{m,  }\item[{real ( kind = 8 ), dimension(ldr,m)}]{r,  }\item[{real ( kind = 8 ), dimension(ldw,m)}]{w }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacefftclass_a16b89da06cf17773f6b5aec6883952c2}\label{namespacefftclass_a16b89da06cf17773f6b5aec6883952c2}} 
+\index{fftclass@{fftclass}!xercon@{xercon}}
+\index{xercon@{xercon}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{xercon()}{xercon()}}
+{\footnotesize\ttfamily logical function fftclass\+::xercon (\begin{DoxyParamCaption}\item[{integer ( kind = 4 )}]{inc,  }\item[{integer ( kind = 4 )}]{jump,  }\item[{integer ( kind = 4 )}]{n,  }\item[{integer ( kind = 4 )}]{lot }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacefftclass_a16b89da06cf17773f6b5aec6883952c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacefftclass_a3e1884f0fa20142f45f2d3efe3246adc}\label{namespacefftclass_a3e1884f0fa20142f45f2d3efe3246adc}} 
+\index{fftclass@{fftclass}!xerfft@{xerfft}}
+\index{xerfft@{xerfft}!fftclass@{fftclass}}
+\subsubsection{\texorpdfstring{xerfft()}{xerfft()}}
+{\footnotesize\ttfamily subroutine fftclass\+::xerfft (\begin{DoxyParamCaption}\item[{character ( len = $\ast$ )}]{srname,  }\item[{integer ( kind = 4 )}]{info }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{namespacefftclass_a3e1884f0fa20142f45f2d3efe3246adc_icgraph}
+\end{center}
+\end{figure}

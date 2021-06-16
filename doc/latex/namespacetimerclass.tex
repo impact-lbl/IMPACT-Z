@@ -1,0 +1,362 @@
+\hypertarget{namespacetimerclass}{}\section{timerclass Module Reference}
+\label{namespacetimerclass}\index{timerclass@{timerclass}}
+
+
+This module is to record time spent in different subroutines.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacetimerclass_a162c9c59b952268a3b7b544cff4f4295}{construct\+\_\+timer}} (values)
+\item 
+subroutine \mbox{\hyperlink{namespacetimerclass_afb272bcdcff72d225c2df5862630025c}{starttime\+\_\+timer}} (sec0)
+\item 
+double precision function \mbox{\hyperlink{namespacetimerclass_a3378d323d442f85aff95ab73cd13376d}{elapsedtime\+\_\+timer}} (sec0)
+\item 
+subroutine \mbox{\hyperlink{namespacetimerclass_aa34d67fa57ad546ab7e1a7fb1643e9b0}{showtime\+\_\+timer}} ()
+\item 
+subroutine \mbox{\hyperlink{namespacetimerclass_a3535b11970327778ddd27cee93c2288b}{showtime\+\_\+aux}} (routine, sec)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a27a1612019724dba83c6282789acd438}{t\+\_\+integ}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_add1e5cdff404cd8526ae448ac2fb7f04}{t\+\_\+map1}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_afedfbbf4bbafaa50343cdc8c6aa10f81}{t\+\_\+map2}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a46c757a554e9df6d4b0afaa3705277be}{t\+\_\+prnt}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a9b6b0481b5c71629a787a1e558afa8b0}{t\+\_\+dist}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ab4a25c76f5337ddbe92d696962d74b8f}{t\+\_\+kvdist}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a22ac90d37e89e2e290014ff2942f201d}{t\+\_\+gaussn}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a5540a93d3b5aaa9f4e565dcb6d9d51ca}{t\+\_\+normdv}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a6b31e88ecf075c6a84871dac40764766}{t\+\_\+correct}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a999480c13b7174ab484db8ca3b22e8c1}{t\+\_\+spch2d}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_aa77a1d30c4b660cf6b3b63114d193793}{t\+\_\+boundgeom}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_aa38ad4042a025f6277353cc66f212a87}{t\+\_\+greenf}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a90dda0e43d26c34adab1c014bf769b9a}{t\+\_\+rhofas}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_add80bbd91dff017ed09673ec91b01b61}{t\+\_\+ntrslo}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a853c2d6920418548ad54bd15e9f822a1}{t\+\_\+fft2dhpf}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ab7ead1f16d3ab25623889ad5459d9ce1}{t\+\_\+mfft\+\_\+local1}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a17175fbcc799b0ea8174c970b128e1b5}{t\+\_\+field}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_accf4dcea0dd48030e848ec7af2f1e30c}{t\+\_\+force}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a3c92f057232df785c821c8340801e508}{t\+\_\+charge}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a3dea6c858addd80b0f3ffa23635e58ee}{t\+\_\+beamln}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a014cdbd0d72a928c7d6307b246671522}{t\+\_\+diag}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ad87bfd792cca542e63e5888518d15f74}{t\+\_\+ptsmv}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ac02821c26e6c5b8fe3ce7df142bedd47}{t\+\_\+init}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a6ada82fea692f0dbd703888ffbd44214}{t\+\_\+transp}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a95e3a3f478de91de1ebd380edef137ae}{t\+\_\+enlarge}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a78620c6678e30a2cd4796a31b2f718ff}{t\+\_\+shrink}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_abfb4952ad8c64a2985930df8e27025de}{t\+\_\+guardsum}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_ad0e0d8ccf1da4567018453934b6c5795}{t\+\_\+boundint}}
+\item 
+double precision \mbox{\hyperlink{namespacetimerclass_a555d18ed5df532a56a58498c3915a778}{t\+\_\+guardexch}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module is to record time spent in different subroutines. 
+
+\begin{DoxyAuthor}{Author}
+Ji Qiang 
+\end{DoxyAuthor}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{namespacetimerclass_a162c9c59b952268a3b7b544cff4f4295}\label{namespacetimerclass_a162c9c59b952268a3b7b544cff4f4295}} 
+\index{timerclass@{timerclass}!construct\_timer@{construct\_timer}}
+\index{construct\_timer@{construct\_timer}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{construct\_timer()}{construct\_timer()}}
+{\footnotesize\ttfamily subroutine timerclass\+::construct\+\_\+timer (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{values }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{namespacetimerclass_a162c9c59b952268a3b7b544cff4f4295_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetimerclass_a3378d323d442f85aff95ab73cd13376d}\label{namespacetimerclass_a3378d323d442f85aff95ab73cd13376d}} 
+\index{timerclass@{timerclass}!elapsedtime\_timer@{elapsedtime\_timer}}
+\index{elapsedtime\_timer@{elapsedtime\_timer}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{elapsedtime\_timer()}{elapsedtime\_timer()}}
+{\footnotesize\ttfamily double precision function timerclass\+::elapsedtime\+\_\+timer (\begin{DoxyParamCaption}\item[{double precision, intent(in)}]{sec0 }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{namespacetimerclass_a3378d323d442f85aff95ab73cd13376d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{namespacetimerclass_a3378d323d442f85aff95ab73cd13376d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetimerclass_a3535b11970327778ddd27cee93c2288b}\label{namespacetimerclass_a3535b11970327778ddd27cee93c2288b}} 
+\index{timerclass@{timerclass}!showtime\_aux@{showtime\_aux}}
+\index{showtime\_aux@{showtime\_aux}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{showtime\_aux()}{showtime\_aux()}}
+{\footnotesize\ttfamily subroutine timerclass\+::showtime\+\_\+aux (\begin{DoxyParamCaption}\item[{character (len = $\ast$), intent(in)}]{routine,  }\item[{double precision, intent(in)}]{sec }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetimerclass_a3535b11970327778ddd27cee93c2288b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetimerclass_a3535b11970327778ddd27cee93c2288b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetimerclass_aa34d67fa57ad546ab7e1a7fb1643e9b0}\label{namespacetimerclass_aa34d67fa57ad546ab7e1a7fb1643e9b0}} 
+\index{timerclass@{timerclass}!showtime\_timer@{showtime\_timer}}
+\index{showtime\_timer@{showtime\_timer}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{showtime\_timer()}{showtime\_timer()}}
+{\footnotesize\ttfamily subroutine timerclass\+::showtime\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetimerclass_aa34d67fa57ad546ab7e1a7fb1643e9b0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetimerclass_aa34d67fa57ad546ab7e1a7fb1643e9b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetimerclass_afb272bcdcff72d225c2df5862630025c}\label{namespacetimerclass_afb272bcdcff72d225c2df5862630025c}} 
+\index{timerclass@{timerclass}!starttime\_timer@{starttime\_timer}}
+\index{starttime\_timer@{starttime\_timer}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{starttime\_timer()}{starttime\_timer()}}
+{\footnotesize\ttfamily subroutine timerclass\+::starttime\+\_\+timer (\begin{DoxyParamCaption}\item[{double precision, intent(out)}]{sec0 }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{namespacetimerclass_afb272bcdcff72d225c2df5862630025c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{namespacetimerclass_afb272bcdcff72d225c2df5862630025c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacetimerclass_a3dea6c858addd80b0f3ffa23635e58ee}\label{namespacetimerclass_a3dea6c858addd80b0f3ffa23635e58ee}} 
+\index{timerclass@{timerclass}!t\_beamln@{t\_beamln}}
+\index{t\_beamln@{t\_beamln}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_beamln}{t\_beamln}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+beamln}
+
+\mbox{\Hypertarget{namespacetimerclass_aa77a1d30c4b660cf6b3b63114d193793}\label{namespacetimerclass_aa77a1d30c4b660cf6b3b63114d193793}} 
+\index{timerclass@{timerclass}!t\_boundgeom@{t\_boundgeom}}
+\index{t\_boundgeom@{t\_boundgeom}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_boundgeom}{t\_boundgeom}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+boundgeom}
+
+\mbox{\Hypertarget{namespacetimerclass_ad0e0d8ccf1da4567018453934b6c5795}\label{namespacetimerclass_ad0e0d8ccf1da4567018453934b6c5795}} 
+\index{timerclass@{timerclass}!t\_boundint@{t\_boundint}}
+\index{t\_boundint@{t\_boundint}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_boundint}{t\_boundint}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+boundint}
+
+\mbox{\Hypertarget{namespacetimerclass_a3c92f057232df785c821c8340801e508}\label{namespacetimerclass_a3c92f057232df785c821c8340801e508}} 
+\index{timerclass@{timerclass}!t\_charge@{t\_charge}}
+\index{t\_charge@{t\_charge}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_charge}{t\_charge}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+charge}
+
+\mbox{\Hypertarget{namespacetimerclass_a6b31e88ecf075c6a84871dac40764766}\label{namespacetimerclass_a6b31e88ecf075c6a84871dac40764766}} 
+\index{timerclass@{timerclass}!t\_correct@{t\_correct}}
+\index{t\_correct@{t\_correct}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_correct}{t\_correct}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+correct}
+
+\mbox{\Hypertarget{namespacetimerclass_a014cdbd0d72a928c7d6307b246671522}\label{namespacetimerclass_a014cdbd0d72a928c7d6307b246671522}} 
+\index{timerclass@{timerclass}!t\_diag@{t\_diag}}
+\index{t\_diag@{t\_diag}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_diag}{t\_diag}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+diag}
+
+\mbox{\Hypertarget{namespacetimerclass_a9b6b0481b5c71629a787a1e558afa8b0}\label{namespacetimerclass_a9b6b0481b5c71629a787a1e558afa8b0}} 
+\index{timerclass@{timerclass}!t\_dist@{t\_dist}}
+\index{t\_dist@{t\_dist}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_dist}{t\_dist}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+dist}
+
+\mbox{\Hypertarget{namespacetimerclass_a95e3a3f478de91de1ebd380edef137ae}\label{namespacetimerclass_a95e3a3f478de91de1ebd380edef137ae}} 
+\index{timerclass@{timerclass}!t\_enlarge@{t\_enlarge}}
+\index{t\_enlarge@{t\_enlarge}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_enlarge}{t\_enlarge}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+enlarge}
+
+\mbox{\Hypertarget{namespacetimerclass_a853c2d6920418548ad54bd15e9f822a1}\label{namespacetimerclass_a853c2d6920418548ad54bd15e9f822a1}} 
+\index{timerclass@{timerclass}!t\_fft2dhpf@{t\_fft2dhpf}}
+\index{t\_fft2dhpf@{t\_fft2dhpf}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_fft2dhpf}{t\_fft2dhpf}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+fft2dhpf}
+
+\mbox{\Hypertarget{namespacetimerclass_a17175fbcc799b0ea8174c970b128e1b5}\label{namespacetimerclass_a17175fbcc799b0ea8174c970b128e1b5}} 
+\index{timerclass@{timerclass}!t\_field@{t\_field}}
+\index{t\_field@{t\_field}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_field}{t\_field}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+field}
+
+\mbox{\Hypertarget{namespacetimerclass_accf4dcea0dd48030e848ec7af2f1e30c}\label{namespacetimerclass_accf4dcea0dd48030e848ec7af2f1e30c}} 
+\index{timerclass@{timerclass}!t\_force@{t\_force}}
+\index{t\_force@{t\_force}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_force}{t\_force}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+force}
+
+\mbox{\Hypertarget{namespacetimerclass_a22ac90d37e89e2e290014ff2942f201d}\label{namespacetimerclass_a22ac90d37e89e2e290014ff2942f201d}} 
+\index{timerclass@{timerclass}!t\_gaussn@{t\_gaussn}}
+\index{t\_gaussn@{t\_gaussn}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_gaussn}{t\_gaussn}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+gaussn}
+
+\mbox{\Hypertarget{namespacetimerclass_aa38ad4042a025f6277353cc66f212a87}\label{namespacetimerclass_aa38ad4042a025f6277353cc66f212a87}} 
+\index{timerclass@{timerclass}!t\_greenf@{t\_greenf}}
+\index{t\_greenf@{t\_greenf}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_greenf}{t\_greenf}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+greenf}
+
+\mbox{\Hypertarget{namespacetimerclass_a555d18ed5df532a56a58498c3915a778}\label{namespacetimerclass_a555d18ed5df532a56a58498c3915a778}} 
+\index{timerclass@{timerclass}!t\_guardexch@{t\_guardexch}}
+\index{t\_guardexch@{t\_guardexch}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_guardexch}{t\_guardexch}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+guardexch}
+
+\mbox{\Hypertarget{namespacetimerclass_abfb4952ad8c64a2985930df8e27025de}\label{namespacetimerclass_abfb4952ad8c64a2985930df8e27025de}} 
+\index{timerclass@{timerclass}!t\_guardsum@{t\_guardsum}}
+\index{t\_guardsum@{t\_guardsum}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_guardsum}{t\_guardsum}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+guardsum}
+
+\mbox{\Hypertarget{namespacetimerclass_ac02821c26e6c5b8fe3ce7df142bedd47}\label{namespacetimerclass_ac02821c26e6c5b8fe3ce7df142bedd47}} 
+\index{timerclass@{timerclass}!t\_init@{t\_init}}
+\index{t\_init@{t\_init}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_init}{t\_init}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+init}
+
+\mbox{\Hypertarget{namespacetimerclass_a27a1612019724dba83c6282789acd438}\label{namespacetimerclass_a27a1612019724dba83c6282789acd438}} 
+\index{timerclass@{timerclass}!t\_integ@{t\_integ}}
+\index{t\_integ@{t\_integ}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_integ}{t\_integ}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+integ}
+
+\mbox{\Hypertarget{namespacetimerclass_ab4a25c76f5337ddbe92d696962d74b8f}\label{namespacetimerclass_ab4a25c76f5337ddbe92d696962d74b8f}} 
+\index{timerclass@{timerclass}!t\_kvdist@{t\_kvdist}}
+\index{t\_kvdist@{t\_kvdist}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_kvdist}{t\_kvdist}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+kvdist}
+
+\mbox{\Hypertarget{namespacetimerclass_add1e5cdff404cd8526ae448ac2fb7f04}\label{namespacetimerclass_add1e5cdff404cd8526ae448ac2fb7f04}} 
+\index{timerclass@{timerclass}!t\_map1@{t\_map1}}
+\index{t\_map1@{t\_map1}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_map1}{t\_map1}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+map1}
+
+\mbox{\Hypertarget{namespacetimerclass_afedfbbf4bbafaa50343cdc8c6aa10f81}\label{namespacetimerclass_afedfbbf4bbafaa50343cdc8c6aa10f81}} 
+\index{timerclass@{timerclass}!t\_map2@{t\_map2}}
+\index{t\_map2@{t\_map2}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_map2}{t\_map2}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+map2}
+
+\mbox{\Hypertarget{namespacetimerclass_ab7ead1f16d3ab25623889ad5459d9ce1}\label{namespacetimerclass_ab7ead1f16d3ab25623889ad5459d9ce1}} 
+\index{timerclass@{timerclass}!t\_mfft\_local1@{t\_mfft\_local1}}
+\index{t\_mfft\_local1@{t\_mfft\_local1}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_mfft\_local1}{t\_mfft\_local1}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+mfft\+\_\+local1}
+
+\mbox{\Hypertarget{namespacetimerclass_a5540a93d3b5aaa9f4e565dcb6d9d51ca}\label{namespacetimerclass_a5540a93d3b5aaa9f4e565dcb6d9d51ca}} 
+\index{timerclass@{timerclass}!t\_normdv@{t\_normdv}}
+\index{t\_normdv@{t\_normdv}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_normdv}{t\_normdv}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+normdv}
+
+\mbox{\Hypertarget{namespacetimerclass_add80bbd91dff017ed09673ec91b01b61}\label{namespacetimerclass_add80bbd91dff017ed09673ec91b01b61}} 
+\index{timerclass@{timerclass}!t\_ntrslo@{t\_ntrslo}}
+\index{t\_ntrslo@{t\_ntrslo}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_ntrslo}{t\_ntrslo}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+ntrslo}
+
+\mbox{\Hypertarget{namespacetimerclass_a46c757a554e9df6d4b0afaa3705277be}\label{namespacetimerclass_a46c757a554e9df6d4b0afaa3705277be}} 
+\index{timerclass@{timerclass}!t\_prnt@{t\_prnt}}
+\index{t\_prnt@{t\_prnt}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_prnt}{t\_prnt}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+prnt}
+
+\mbox{\Hypertarget{namespacetimerclass_ad87bfd792cca542e63e5888518d15f74}\label{namespacetimerclass_ad87bfd792cca542e63e5888518d15f74}} 
+\index{timerclass@{timerclass}!t\_ptsmv@{t\_ptsmv}}
+\index{t\_ptsmv@{t\_ptsmv}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_ptsmv}{t\_ptsmv}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+ptsmv}
+
+\mbox{\Hypertarget{namespacetimerclass_a90dda0e43d26c34adab1c014bf769b9a}\label{namespacetimerclass_a90dda0e43d26c34adab1c014bf769b9a}} 
+\index{timerclass@{timerclass}!t\_rhofas@{t\_rhofas}}
+\index{t\_rhofas@{t\_rhofas}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_rhofas}{t\_rhofas}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+rhofas}
+
+\mbox{\Hypertarget{namespacetimerclass_a78620c6678e30a2cd4796a31b2f718ff}\label{namespacetimerclass_a78620c6678e30a2cd4796a31b2f718ff}} 
+\index{timerclass@{timerclass}!t\_shrink@{t\_shrink}}
+\index{t\_shrink@{t\_shrink}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_shrink}{t\_shrink}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+shrink}
+
+\mbox{\Hypertarget{namespacetimerclass_a999480c13b7174ab484db8ca3b22e8c1}\label{namespacetimerclass_a999480c13b7174ab484db8ca3b22e8c1}} 
+\index{timerclass@{timerclass}!t\_spch2d@{t\_spch2d}}
+\index{t\_spch2d@{t\_spch2d}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_spch2d}{t\_spch2d}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+spch2d}
+
+\mbox{\Hypertarget{namespacetimerclass_a6ada82fea692f0dbd703888ffbd44214}\label{namespacetimerclass_a6ada82fea692f0dbd703888ffbd44214}} 
+\index{timerclass@{timerclass}!t\_transp@{t\_transp}}
+\index{t\_transp@{t\_transp}!timerclass@{timerclass}}
+\subsubsection{\texorpdfstring{t\_transp}{t\_transp}}
+{\footnotesize\ttfamily double precision timerclass\+::t\+\_\+transp}
+

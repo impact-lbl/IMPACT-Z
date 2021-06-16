@@ -1,0 +1,6 @@
+<map id="fftclass::fftlocal_fft" name="fftclass::fftlocal_fft">
+<area shape="rect" id="node1" title="Subroutine to perform 1D FFT along y in 2D array. Here y is local to each processor." alt="" coords="213,55,340,80"/>
+<area shape="rect" id="node2" href="$namespacefftclass.html#acef38aed3ece8d2c1120ce0004e6297e" title="3_D FFT." alt="" coords="25,5,146,31"/>
+<area shape="rect" id="node3" href="$namespacefftclass.html#a21e8a7bd2877ec439bc4f0e0bc0e4681" title="3_D inverse FFT for open BCs." alt="" coords="16,55,155,80"/>
+<area shape="rect" id="node4" href="$namespacefftclass.html#a374c599138aeca237d4c303a07a470ee" title="3_D inverse FFT for open BCs." alt="" coords="5,104,165,129"/>
+</map>

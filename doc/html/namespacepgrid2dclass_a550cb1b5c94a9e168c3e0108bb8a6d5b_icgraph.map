@@ -1,0 +1,24 @@
+<map id="pgrid2dclass::getcomm_pgrid2d" name="pgrid2dclass::getcomm_pgrid2d">
+<area shape="rect" id="node1" title="get 2D, column, and row communicators." alt="" coords="748,551,906,589"/>
+<area shape="rect" id="node2" href="$namespacebeambunchclass.html#a91563d467d36ccca8231ee2c62483246" title="All indices here are local to the processor. find charge density on grid from particles." alt="" coords="296,496,465,535"/>
+<area shape="rect" id="node3" href="$namespaceaccsimulatorclass.html#acbe26eeaf1cb4076384b90e1016785f0" title="Run beam dynamics simulation through accelerator." alt="" coords="104,351,238,389"/>
+<area shape="rect" id="node5" href="$namespacecompdomclass.html#acdfdc48f4091ad70b76c1c7ed66c10b0" title="calculate the initial computational geometry parameters and double precision parameters...." alt="" coords="545,608,679,647"/>
+<area shape="rect" id="node6" href="$namespacecompdomclass.html#a0e7d562b378f77e0d3a14b33168cb46b" title="update geometry parameters using new particle positions." alt="" coords="301,319,460,357"/>
+<area shape="rect" id="node7" href="$namespacecompdomclass.html#abf3eab7526c06e30b574ddf8be378826" title="update geometry parameters using new particle positions." alt="" coords="524,671,700,709"/>
+<area shape="rect" id="node8" href="$namespacedistributionclass.html#a4a013e2bf1afc4cdeefe0fce7f0e0e00" title=" " alt="" coords="550,921,674,960"/>
+<area shape="rect" id="node11" href="$namespacedistributionclass.html#a0e031187f6b2818aebcd2911b93c0722" title=" " alt="" coords="550,733,674,772"/>
+<area shape="rect" id="node12" href="$namespacedistributionclass.html#acf080fd52aac8287d955bcfd88362c07" title=" " alt="" coords="550,796,674,835"/>
+<area shape="rect" id="node13" href="$namespacedistributionclass.html#ab1d0719de2c779c9d5e8a5f353555193" title="read particle distribution from ImpactT output" alt="" coords="550,859,674,897"/>
+<area shape="rect" id="node14" href="$namespacefldmgerclass.html#a54886b0763b8458a0560ccf7087b07f1" title="sum up the contributions from neighboring guard cells." alt="" coords="527,493,697,532"/>
+<area shape="rect" id="node15" href="$namespacefldmgerclass.html#a028236bf0d8419b6f75a7fb28eb7226b" title="exchange grid information between neighboring guard cell to calculate E from phi." alt="" coords="525,193,699,232"/>
+<area shape="rect" id="node21" href="$namespacefldmgerclass.html#a490fceb1792fb1664488b1394dcff5f0" title="exchange the information for interpolation from neighboring guard cells." alt="" coords="531,131,693,169"/>
+<area shape="rect" id="node22" href="$namespaceptclmgerclass.html#a15bfd87febad22b6f820896f8720a3d7" title="move particles from one processor to 4 neighboring processors." alt="" coords="304,381,457,420"/>
+<area shape="rect" id="node4" href="$main_8f90.html#a8ec2266d83cd6c0b762cbcbc92c0af3d" title="v.1.0" alt="" coords="5,357,56,383"/>
+<area shape="rect" id="node9" href="$namespacedistributionclass.html#a90036cb4aa43f5e3f9844bc412d2a766" title="sample the particles with intial distribution." alt="" coords="319,827,442,865"/>
+<area shape="rect" id="node10" href="$namespaceaccsimulatorclass.html#a6a90186281758191cfa3ef4fc9c54078" title="set up objects and parameters." alt="" coords="104,827,238,865"/>
+<area shape="rect" id="node16" href="$namespacebeambunchclass.html#abf23fdc1e8ca69fe7fe8f2995fbc1bcc" title="Here, all indices of potential are local to processor. Advance the particles in the velocity space us..." alt="" coords="301,5,460,44"/>
+<area shape="rect" id="node17" href="$namespacebeambunchclass.html#a398a8735bfae34f0d7a9337c8e5ec621" title="Here, all indices of potential are local to processor. Advance the particles in the velocity space us..." alt="" coords="301,68,460,107"/>
+<area shape="rect" id="node18" href="$namespacebeambunchclass.html#a119b1d68c4a2a790014a9408c2db1575" title=" " alt="" coords="303,256,458,295"/>
+<area shape="rect" id="node19" href="$namespacebeambunchclass.html#a02f7f46438747a0fb811de64b1ed95aa" title=" " alt="" coords="286,131,476,169"/>
+<area shape="rect" id="node20" href="$namespacebeambunchclass.html#a530cca8371b8decda64389ce29d10bcd" title=" " alt="" coords="286,193,476,232"/>
+</map>

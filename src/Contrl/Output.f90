@@ -1,10 +1,15 @@
 !----------------------------------------------------------------
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Outputclass: Output class in I/O module of CONTROL layer. 
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines functions to print out the charged
-!              particle beam information in the accelerator.
+! 
+! MODULE  : ... Outputclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+! 
+! DESCRIPTION: 
+!> This class defines functions to print out the charged
+!> particle beam information in the accelerator.
 ! Comments: We have added 3 more attributes to the particle:
 !           x,px,y,py,t,pt,charge/mass,charge weight,id
 !----------------------------------------------------------------
@@ -15,8 +20,8 @@
         use Fldmgerclass
         use PhysConstclass
       contains
-        ! calculate <x^2>,<xp>,<px^2>,x emittance, <y^2>,<ypy>,
-        ! <py^2> and y emittance, <z^2>,<zp>,<pz^2>,z emittance.
+        !> calculate <x^2>,<xp>,<px^2>,x emittance, <y^2>,<ypy>,
+        !> <py^2> and y emittance, <z^2>,<zp>,<pz^2>,z emittance.
         subroutine diagnostic1_Output(z,this,nchrg,nptlist)
         implicit none
         include 'mpif.h'
@@ -1085,8 +1090,8 @@
 
         end subroutine diagnostic2_Output
 
-        ! calculate <x^2>,<xp>,<px^2>,x emittance, <y^2>,<ypy>,
-        ! <py^2> and y emittance, <z^2>,<zp>,<pz^2>,z emittance.
+        !> calculate <x^2>,<xp>,<px^2>,x emittance, <y^2>,<ypy>,
+        !> <py^2> and y emittance, <z^2>,<zp>,<pz^2>,z emittance.
         subroutine diagnosticT_Output(z,this)
         implicit none
         include 'mpif.h'
@@ -1848,7 +1853,7 @@
 
         end subroutine phase_Output
 
-        !//output the 3D particle number density
+        !> output the 3D particle number density
         subroutine dens3d_Output(nstep,nfile,this,totnptcls,xmni,xmxi,ymni,&
           ymxi,zmni,zmxi)
         implicit none
@@ -2014,7 +2019,7 @@
 
         end subroutine dens3d_Output
 
-        !//output 2D particle number density.
+        !> output 2D particle number density.
         subroutine dens2d_Output(nstep,nfile,this,totnptcls,xmnin,xmxin,&
         pxmnin,pxmxin,ymnin,ymxin,pymnin,pymxin,zmnin,zmxin,pzmnin,pzmxin)
         implicit none
@@ -2548,7 +2553,7 @@
 
         end subroutine dens2d_Output
 
-        !//output the 1D accumulated particle density
+        !> output the 1D accumulated particle density
         subroutine accdens1d_Output(nstep,nfile,this,nptot,rmxi,xmni,xmxi,&
                                  ymni,ymxi)
         implicit none
@@ -2770,7 +2775,7 @@
 
         end subroutine accdens1d_Output
 
-        !//output 1d particle density
+        !> output 1d particle density
         subroutine dens1d_Output(nstep,nfile,this,nptot,rmxi,xmni,xmxi,&
                                   ymni,ymxi)
         implicit none
@@ -2963,7 +2968,7 @@
 
         end subroutine dens1d_Output
 
-        ! Terminate MPI
+        !> Terminate MPI
         subroutine end_Output(time)
         implicit none
         include 'mpif.h'
@@ -2990,9 +2995,13 @@
 
         end subroutine end_Output
 
-!This program calculate the current profile, slice emittance
-! and uncorrelated energy spread using linear deposition.
-!J. Q. 04/26/12
+      !--------------------------------------------------------------------------------------
+      !> @author Ji Qiang
+      !> @date April 26, 2012
+      !> @brief
+      !> This program calculate the current profile, slice emittance
+      !> and uncorrelated energy spread using linear deposition.
+      !--------------------------------------------------------------------------------------
       subroutine sliceprocdep_Output(pts,innp,npt,nslice,qchg,pmass,nfile,&
                                      alphax0,betax0,alphay0,betay0,gam0)
       implicit none

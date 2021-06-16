@@ -1,0 +1,165 @@
+\hypertarget{_beam_line_elem_8f90}{}\section{src/\+Appl/\+Beam\+Line\+Elem.f90 File Reference}
+\label{_beam_line_elem_8f90}\index{src/Appl/BeamLineElem.f90@{src/Appl/BeamLineElem.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacebeamlineelemclass_structbeamlineelemclass_1_1beamlineelem}{beamlineelemclass\+::beamlineelem}}
+\item 
+interface \mbox{\hyperlink{interfacebeamlineelemclass_1_1assign__beamlineelem}{beamlineelemclass\+::assign\+\_\+beamlineelem}}
+\item 
+interface \mbox{\hyperlink{interfacebeamlineelemclass_1_1getparam__beamlineelem}{beamlineelemclass\+::getparam\+\_\+beamlineelem}}
+\item 
+interface \mbox{\hyperlink{interfacebeamlineelemclass_1_1setparam__beamlineelem}{beamlineelemclass\+::setparam\+\_\+beamlineelem}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacebeamlineelemclass}{beamlineelemclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the base beam line element class for different lattice element class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_aad515fd3f566490d835b1d406b23ea12}{beamlineelemclass\+::assign\+\_\+quad}} (tquad)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_a667b68ced2d4a0e5cd691d7d472a59ae}{beamlineelemclass\+::assign\+\_\+drift}} (tdrift)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_ac9b767ca614ed15fb347d385e982ef0d}{beamlineelemclass\+::assign\+\_\+ccl}} (tccl)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_a729afda498a0fcdb5c6625258a745a94}{beamlineelemclass\+::assign\+\_\+ccdtl}} (tccdtl)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_a56b55ab902212809615ff965f7e6591d}{beamlineelemclass\+::assign\+\_\+dtl}} (tdtl)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_a1e66e5399a7d4fc6fcfba7e3877f8d2e}{beamlineelemclass\+::assign\+\_\+sc}} (tsc)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_a078ba2f100d1ff9fe51c4ff957e30897}{beamlineelemclass\+::assign\+\_\+bpm}} (tbpm)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_ab5db1ddb5dbca2a72ab8efde22f2f90d}{beamlineelemclass\+::assign\+\_\+cf}} (tcf)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_a2ab33d7e54bdcb16b1f080eda6e520f2}{beamlineelemclass\+::assign\+\_\+slrf}} (tslrf)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_ad06dd33f09db1eab5304ec2a865a4b83}{beamlineelemclass\+::assign\+\_\+sl}} (tsl)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_ab472ce183e8b1faa6f40c494a9d8bc03}{beamlineelemclass\+::assign\+\_\+dipole}} (tdipole)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_ac9cc1a9326b192530803d06d2e8b088b}{beamlineelemclass\+::assign\+\_\+emfld}} (temfld)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_aacf4de73999b66f3e37bf58cda6e562b}{beamlineelemclass\+::assign\+\_\+mult}} (tmult)
+\item 
+type(beamlineelem) function \mbox{\hyperlink{namespacebeamlineelemclass_a097831d1513c1bbd70e5f97dea56fcd4}{beamlineelemclass\+::assign\+\_\+tws}} (ttws)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_a52595a459a442685b5ab427a2fdb27c8}{beamlineelemclass\+::getparam1\+\_\+beamlineelem}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_ab0803e0260eb5f57a59a7d1f70cf7050}{beamlineelemclass\+::getparam2\+\_\+beamlineelem}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_a0b69da010861c6ca72da3822335a7b2f}{beamlineelemclass\+::getparam3\+\_\+beamlineelem}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_aa3e3f73b38a31d67a955712c9706a2bd}{beamlineelemclass\+::getradius\+\_\+beamlineelem}} (this, piperadius, piperadius2)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_aa02696ccb3d6d48bfdcb0ff3ea906fa1}{beamlineelemclass\+::geterr\+\_\+beamlineelem}} (this, xerr, yerr, anglerrx, anglerry,
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_a2475c641494686c9c9688a8b15975cbf}{beamlineelemclass\+::setparam1\+\_\+beamlineelem}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_a2ac6f016596ac46cf326e023cbb3f23b}{beamlineelemclass\+::setparam2\+\_\+beamlineelem}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_a604cc75bca5926a1918df8c19454e41e}{beamlineelemclass\+::setparam3\+\_\+beamlineelem}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_a76cac49c6e8615751de8c9f8bbba2641}{beamlineelemclass\+::maplinear\+\_\+beamlineelem}} (this, t, tau, xm, refpt, chg, mss)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_a21fd373bab34a4c18c8bcf5b00816c0c}{beamlineelemclass\+::getfld\+\_\+beamlineelem}} (this, pos, extfld)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_aa711cecfd3c01152cb0d88d88b645c4b}{beamlineelemclass\+::getflderr\+\_\+beamlineelem}} (this, pos, extfld, dx, dy, anglex, angley, anglez)
+\item 
+subroutine \mbox{\hyperlink{namespacebeamlineelemclass_aa38d23f41bd5b34e31e784e1bb1b4ba2}{beamlineelemclass\+::getaxflde\+\_\+beamlineelem}} (this, z, ez1, ezp1, ezpp1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{beamlineelemclass::beamlineelem@{beamlineelemclass::beamlineelem}}\label{structbeamlineelemclass_1_1beamlineelem}
+\Hypertarget{namespacebeamlineelemclass_structbeamlineelemclass_1_1beamlineelem}
+\subsubsection{type beamlineelemclass\+::beamlineelem}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacebeamlineelemclass_ab1486848bf9231eeed15a83170442e32}\label{namespacebeamlineelemclass_ab1486848bf9231eeed15a83170442e32}} 
+type(bpm), pointer&
+pbpm&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_afc03034604a05eb1bc374945e4ab176d}\label{namespacebeamlineelemclass_afc03034604a05eb1bc374945e4ab176d}} 
+type(ccdtl), pointer&
+pccdtl&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_ac12416dfd09e0a7195c5297b12c1194f}\label{namespacebeamlineelemclass_ac12416dfd09e0a7195c5297b12c1194f}} 
+type(ccl), pointer&
+pccl&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_a39cb4d5220b28f075e92fd09819f86ce}\label{namespacebeamlineelemclass_a39cb4d5220b28f075e92fd09819f86ce}} 
+type(constfoc), pointer&
+pcf&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_a2427f96729e2667041326c4dcf583b82}\label{namespacebeamlineelemclass_a2427f96729e2667041326c4dcf583b82}} 
+type(dipole), pointer&
+pdipole&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_a295bb7932c8566c26f980d0bd89d2f7d}\label{namespacebeamlineelemclass_a295bb7932c8566c26f980d0bd89d2f7d}} 
+type(drifttube), pointer&
+pdrift&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_a8efdbd654fcb17a5dcf4826638e79720}\label{namespacebeamlineelemclass_a8efdbd654fcb17a5dcf4826638e79720}} 
+type(dtl), pointer&
+pdtl&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_a626e5426ee98993dfe2352be10075411}\label{namespacebeamlineelemclass_a626e5426ee98993dfe2352be10075411}} 
+type(emfld), pointer&
+pemfld&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_aa189f35902f7b7265e0485c363023f28}\label{namespacebeamlineelemclass_aa189f35902f7b7265e0485c363023f28}} 
+type(multipole), pointer&
+pmult&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_a4dc5bf2560031246e9c34bc11576b75c}\label{namespacebeamlineelemclass_a4dc5bf2560031246e9c34bc11576b75c}} 
+type(quadrupole), pointer&
+pquad&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_ad948a3ca9b39d5bc89fabe69a16b26f2}\label{namespacebeamlineelemclass_ad948a3ca9b39d5bc89fabe69a16b26f2}} 
+type(sc), pointer&
+psc&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_a227ca9307b3706cafe607d50bc6efaec}\label{namespacebeamlineelemclass_a227ca9307b3706cafe607d50bc6efaec}} 
+type(sol), pointer&
+psl&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_ae4662d217dff6d83c07fe77d93525c61}\label{namespacebeamlineelemclass_ae4662d217dff6d83c07fe77d93525c61}} 
+type(solrf), pointer&
+pslrf&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacebeamlineelemclass_aaf07ee15460778392212e2c7232079a7}\label{namespacebeamlineelemclass_aaf07ee15460778392212e2c7232079a7}} 
+type(tws), pointer&
+ptws&
+\\
+\hline
+
+\end{DoxyFields}

@@ -2,11 +2,16 @@
 ! (c) Copyright, 2016 by the Regents of the University of California.
 ! Transposeclass: 2D and 3D array parallel transpose class in Linear  
 !                 Algebra module of FUNCTION layer.
-! Version: 1.0
-! Author: Ji Qiang, LBNL
-! Description: This class defines a tranpose class which contains 2D and 3D 
-!              tranpose functions. (Both arrays are distributed on 2D 
-!              Cartisian processor array). 
+!
+! MODULE  : ... Transposeclass
+! VERSION : ... 1.0
+!> @author
+!> Ji Qiang, LBNL
+!
+! DESCRIPTION: 
+!> This class defines a tranpose class which contains 2D and 3D 
+!> tranpose functions. (Both arrays are distributed on 2D 
+!> Cartisian processor array). 
 ! Comments:
 !----------------------------------------------------------------
       module Transposeclass
@@ -14,8 +19,8 @@
 
       contains
 
-      ! Subroutine Trans3d3: get the transpose of 3D double precision array with
-      ! uneven distribution.
+      !> Subroutine Trans3d3: get the transpose of 3D double precision array with
+      !> uneven distribution.
       subroutine trans3d3_TRANSP(nx,nsizey,nsizez,nsizexz,xin,xout,np,stab,&
                          rtab,comm,myid,nz)
       use Timerclass
@@ -113,8 +118,8 @@
 
       end subroutine trans3d3_TRANSP
 
-      ! Subroutine Trans3d: get the transpose of 3D double precision array with
-      ! uneven distribution.
+      !> Subroutine Trans3d: get the transpose of 3D double precision array with
+      !> uneven distribution.
       subroutine trans3d_TRANSP(ny,nx,nysizex,nsizex,xin,tempmtr,np,stab,&
                          rtab,comm,nzlcal)
       use Timerclass

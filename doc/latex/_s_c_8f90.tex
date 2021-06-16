@@ -1,0 +1,88 @@
+\hypertarget{_s_c_8f90}{}\section{src/\+Appl/\+SC.f90 File Reference}
+\label{_s_c_8f90}\index{src/Appl/SC.f90@{src/Appl/SC.f90}}
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \mbox{\hyperlink{namespacescclass_structscclass_1_1sc}{scclass\+::sc}}
+\item 
+interface \mbox{\hyperlink{interfacescclass_1_1getparam__sc}{scclass\+::getparam\+\_\+sc}}
+\item 
+interface \mbox{\hyperlink{interfacescclass_1_1setparam__sc}{scclass\+::setparam\+\_\+sc}}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \mbox{\hyperlink{namespacescclass}{scclass}}
+\begin{DoxyCompactList}\small\item\em This class defines the linear transfer map and RF field for the SC beam line elment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a117b083b5a5a59d050fe5c0a4771332b}{scclass\+::construct\+\_\+sc}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a23a57a64ee6a74149bbc9cf009ce8711}{scclass\+::setparam1\+\_\+sc}} (this, i, value)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_af35b79ac06dc2b6bec2d97f6e745ab20}{scclass\+::setparam2\+\_\+sc}} (this, values)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a656d4cc4d5fe872ffa9df12bab721bec}{scclass\+::setparam3\+\_\+sc}} (this, numseg, nmpstp, type, blength)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a5f02207aa4bb28b292bf39bd5876c7e2}{scclass\+::getparam1\+\_\+sc}} (this, i, blparam)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a036860e8ca9dff4cc79e19ec6c55f86a}{scclass\+::getparam2\+\_\+sc}} (this, blparams)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_aaa829fed79c7f89ac09b012687895817}{scclass\+::getparam3\+\_\+sc}} (this, blength, bnseg, bmapstp, btype)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_aec786348c1a0beec0d090c12b13d588c}{scclass\+::maplinear\+\_\+sc}} (t, tau, xm, this, refpt, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a4b16987e1d3852123c69a6bfc0cec75a}{scclass\+::rk6i\+\_\+sc}} (h, ns, t, y, nvar, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_a5d354b33de72df0b6be68290744f94ba}{scclass\+::intfunc1\+\_\+sc}} (t, y, f, this, Bchg, Bmass)
+\item 
+subroutine \mbox{\hyperlink{namespacescclass_aefc9ea62cf36830e2c74869fff2f1b17}{scclass\+::getaxflde\+\_\+sc}} (z, this, ez1, ezp1, ezpp1)
+\begin{DoxyCompactList}\small\item\em interpolate the field from the SC rf cavity onto bunch location. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacescclass_abe42c84df8190cc0443752dff296dd89}{scclass\+::getflderr\+\_\+sc}} (pos, extfld, this, dx, dy, anglex, angley, anglez)
+\begin{DoxyCompactList}\small\item\em get external field with displacement and rotation errors. \end{DoxyCompactList}\item 
+subroutine \mbox{\hyperlink{namespacescclass_a5af81e94b531e8d02789525f1f4438ac}{scclass\+::getfld\+\_\+sc}} (pos, extfld, this)
+\begin{DoxyCompactList}\small\item\em get external field without displacement and rotation errors \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, private \mbox{\hyperlink{namespacescclass_a78eec9a89964d83818db291873df4436}{scclass\+::nparam}} = 11
+\end{DoxyCompactItemize}
+
+
+\subsection{Data Type Documentation}
+\index{scclass::sc@{scclass::sc}}\label{structscclass_1_1sc}
+\Hypertarget{namespacescclass_structscclass_1_1sc}
+\subsubsection{type scclass\+::sc}
+\begin{DoxyFields}{Data Fields}
+\mbox{\Hypertarget{namespacescclass_a4ddd6baf3b915cf7ff25830e84ce6e75}\label{namespacescclass_a4ddd6baf3b915cf7ff25830e84ce6e75}} 
+integer&
+itype&
+Itype = 104. \\
+\hline
+
+\mbox{\Hypertarget{namespacescclass_ae9c1bce2c31838e6ec98bdbfe04cb6d7}\label{namespacescclass_ae9c1bce2c31838e6ec98bdbfe04cb6d7}} 
+double precision&
+length&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacescclass_ac919c69cd2bb089386f56a5ac75728f0}\label{namespacescclass_ac919c69cd2bb089386f56a5ac75728f0}} 
+integer&
+mapstp&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacescclass_a32cf6178c767aecb2b10b7baa0221c78}\label{namespacescclass_a32cf6178c767aecb2b10b7baa0221c78}} 
+integer&
+nseg&
+\\
+\hline
+
+\mbox{\Hypertarget{namespacescclass_a21e20d06bda8473fab959e3ee29e5183}\label{namespacescclass_a21e20d06bda8473fab959e3ee29e5183}} 
+double precision, dimension(\mbox{\hyperlink{namespacescclass_a78eec9a89964d83818db291873df4436}{nparam}})&
+param&
+\\
+\hline
+
+\end{DoxyFields}
