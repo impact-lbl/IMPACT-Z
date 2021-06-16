@@ -1,0 +1,99 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  make:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ['ubuntu-latest']
+        mpi: ['nompi', 'openmpi', 'mpich']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install GFortran
+        run: |
+          sudo apt-get update
+          sudo apt install gfortran make
+
+      - name: Install MPI - ${{ matrix.mpi }}
+        if: matrix.mpi != 'nompi'
+        run: |
+          sudo apt-get update
+          sudo apt install lib${{ matrix.mpi }}-dev
+
+      - name: Build - No MPI
+        if: matrix.mpi == 'nompi'
+        run: |
+          cd src/
+          make FC=gfortran LINK=gfortran
+
+      - name: Build - MPI - ${{ matrix.mpi }}
+        if: matrix.mpi != 'nompi'
+        run: |
+          cd src/
+          make FC=mpifort LINK=mpifort USE_MPI=1
+
+      - name: Test - No MPI
+        if: matrix.mpi == 'nompi'
+        run: |
+          cd $GITHUB_WORKSPACE/examples/Example1
+          $GITHUB_WORKSPACE/src/ImpactZexe
+
+      - name: Test - MPI - ${{ matrix.mpi }}
+        if: matrix.mpi != 'nompi'
+        run: |
+          cd $GITHUB_WORKSPACE/examples/Example1
+          sed -i"" '11s/1 1/2 1/' ImpactZ.in
+          mpirun -n 2 $GITHUB_WORKSPACE/src/ImpactZexe-mpi
+
+
+  cmake:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest ]
+        mpi: [ nompi, openmpi, mpich ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install GFortran
+        run: |
+          sudo apt-get update
+          sudo apt install gfortran cmake
+
+      - name: Install MPI - ${{ matrix.mpi }}
+        if: matrix.mpi != 'nompi'
+        run: |
+          sudo apt-get update
+          sudo apt install lib${{ matrix.mpi }}-dev
+
+      - name: Build - No MPI
+        if: matrix.mpi == 'nompi'
+        run: |
+          mkdir build
+          cd build
+          cmake ../src
+          make
+
+      - name: Build - MPI - ${{ matrix.mpi }}
+        if: matrix.mpi != 'nompi'
+        run: |
+          mkdir build
+          cd build
+          cmake ../src -DUSE_MPI=ON
+          make
+
+      - name: Test - No MPI
+        if: matrix.mpi == 'nompi'
+        run: |
+          cd $GITHUB_WORKSPACE/examples/Example1
+          $GITHUB_WORKSPACE/build/ImpactZexe
+
+      - name: Test - MPI - ${{ matrix.mpi }}
+        if: matrix.mpi != 'nompi'
+        run: |
+          cd $GITHUB_WORKSPACE/examples/Example1
+          sed -i"" '11s/1 1/2 1/' ImpactZ.in
+          mpirun -n 2 $GITHUB_WORKSPACE/build/ImpactZexe-mpi

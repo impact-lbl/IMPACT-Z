@@ -11,7 +11,9 @@
 !           input file "ImpactZ.in".
 !----------------------------------------------------------------
       module Inputclass
+#if USE_MPI != 1
         use mpistub
+#endif
         interface in_Input
           module procedure in1_Input, in2_Input
         end interface
