@@ -487,12 +487,12 @@
 
         do i = 1, Nplocal
           ptarry1(1,i) = ptarry1(1,i)*Scxl
-!          gamn = gam0 - ptarry1(6,i)
-!          gambetz = sqrt(gamn**2-1.0d0-ptarry1(2,i)**2-&
-!                         ptarry1(4,i)**2)
-          ptarry1(2,i) = ptarry1(2,i)/gambet
+          gamn = gam0 - ptarry1(6,i)
+          gambetz = sqrt(gamn**2-1.0d0-ptarry1(2,i)**2-&
+                         ptarry1(4,i)**2)
+          ptarry1(2,i) = ptarry1(2,i)/gambetz
           ptarry1(3,i) = ptarry1(3,i)*Scxl
-          ptarry1(4,i) = ptarry1(4,i)/gambet
+          ptarry1(4,i) = ptarry1(4,i)/gambetz
           ptarry1(5,i) = -ptarry1(5,i)*beta0*Scxl
           ptarry1(6,i) = -ptarry1(6,i)/beta0/gambet - &
                        (ptarry1(7,i)-qm0)/qm0
@@ -514,11 +514,11 @@
           ptarry2(5) = ptarry1(5,i)
           ptarry2(6) = ptarry1(6,i)
 
-!          gambetz = sqrt(gamn**2-1.0d0)/sqrt(ptarry2(2)**2+ptarry2(4)**2+1)
+          gambetz = sqrt(gamn**2-1.0d0)/sqrt(ptarry2(2)**2+ptarry2(4)**2+1)
           ptarry1(1,i) = ptarry2(1)/Scxl
-          ptarry1(2,i) = ptarry2(2)*gambet
+          ptarry1(2,i) = ptarry2(2)*gambetz
           ptarry1(3,i) = ptarry2(3)/Scxl
-          ptarry1(4,i) = ptarry2(4)*gambet
+          ptarry1(4,i) = ptarry2(4)*gambetz
           ptarry1(5,i) = -ptarry2(5)/Scxl/beta0
           ptarry1(6,i) = -beta0*gambet*(ptarry2(6)+(ptarry1(7,i)-qm0)/qm0)
         enddo
@@ -550,14 +550,12 @@
 
         do i = 1, Nplocal
           ptarry1(1,i) = ptarry1(1,i)*Scxl
-!          gamn = gam0 - ptarry1(6,i)
-!          gambetz = sqrt(gamn**2-1.0d0-ptarry1(2,i)**2-&
-!                         ptarry1(4,i)**2)
-!          ptarry1(2,i) = ptarry1(2,i)/gambetz
-          ptarry1(2,i) = ptarry1(2,i)/gambet
+          gamn = gam0 - ptarry1(6,i)
+          gambetz = sqrt(gamn**2-1.0d0-ptarry1(2,i)**2-&
+                         ptarry1(4,i)**2)
+          ptarry1(2,i) = ptarry1(2,i)/gambetz
           ptarry1(3,i) = ptarry1(3,i)*Scxl
-!          ptarry1(4,i) = ptarry1(4,i)/gambetz
-          ptarry1(4,i) = ptarry1(4,i)/gambet
+          ptarry1(4,i) = ptarry1(4,i)/gambetz
           ptarry1(5,i) = -ptarry1(5,i)*beta0*Scxl
           ptarry1(6,i) = -ptarry1(6,i)/beta0/gambet - &
                        (ptarry1(7,i)-qm0)/qm0
@@ -579,11 +577,11 @@
           ptarry2(5) = ptarry1(5,i)
           ptarry2(6) = ptarry1(6,i)
 
-!          gambetz = sqrt(gamn**2-1.0d0)/sqrt(ptarry2(2)**2+ptarry2(4)**2+1)
+          gambetz = sqrt(gamn**2-1.0d0)/sqrt(ptarry2(2)**2+ptarry2(4)**2+1)
           ptarry1(1,i) = ptarry2(1)/Scxl
-          ptarry1(2,i) = ptarry2(2)*gambet
+          ptarry1(2,i) = ptarry2(2)*gambetz
           ptarry1(3,i) = ptarry2(3)/Scxl
-          ptarry1(4,i) = ptarry2(4)*gambet
+          ptarry1(4,i) = ptarry2(4)*gambetz
           ptarry1(5,i) = -ptarry2(5)/Scxl/beta0
           ptarry1(6,i) = -beta0*gambet*(ptarry2(6)+(ptarry1(7,i)-qm0)/qm0)
         enddo
@@ -698,7 +696,7 @@
         double precision :: h0,len,beta0,k1,qm0
         double precision, dimension(6) :: ptarry2
         integer :: i
-        real*8 :: gami,gam0,gam2,gambet
+        real*8 :: gami,gambetz,gam0,gam2,gambet
         real*8 :: R11,R12,R16,R21,R22,R26
         real*8 :: T111,T112,T116,T122,T126,T166,T144
         real*8 :: T216,T222,T266,T244,T314,T324,T346
@@ -737,13 +735,15 @@
         ptarry2 = 0.0d0
         do i = 1, Nplocal
           gami = gam0 - ptarry1(6,i)
+          gambetz=sqrt(gami**2-1.0d0-ptarry1(2,i)**2-ptarry1(4,i)**2)
+
           !transform to geometry phase space (x,xp,y,yp,z,eta)
           x0     =  ptarry1(1,i)*Scxl
-          xp0    =  ptarry1(2,i)/gambet
+          xp0    =  ptarry1(2,i)/gambetz
           y0     =  ptarry1(3,i)*Scxl
-          yp0    =  ptarry1(4,i)/gambet
+          yp0    =  ptarry1(4,i)/gambetz
           z0     = -ptarry1(5,i)*beta0*Scxl
-          eta   = (gami-gam0)/gambet
+          eta    = -ptarry1(6,i)/beta0/gambet-(ptarry1(7,i)-qm0)/qm0
           !applying transfer map up to 2nd order
           ptarry2(1) = R11*x0 +R12*xp0 +R16*eta &
               +T111*x0**2 +T112*x0*xp0 +T116*x0*eta &
@@ -754,15 +754,18 @@
           ptarry2(4) = yp0
           ptarry2(5) = -sin(theta)*x0 -rho*(1.0d0-cos(theta))*xp0 &
                        +z0 +rho*(sin(theta)-beta0**2*theta)*eta
-          !ptarry2(6) = eta
+          ptarry2(6) = eta
+
+          !back to IMPACT-Z coordinates
+          gambetz=sqrt(gami**2-1.0d0)/sqrt(ptarry2(2)**2 &
+                  +ptarry2(4)**2+1.0d0)
 
           ptarry1(1,i) = ptarry2(1)/Scxl
-          ptarry1(2,i) = ptarry2(2)*gambet
+          ptarry1(2,i) = ptarry2(2)*gambetz
           ptarry1(3,i) = ptarry2(3)/Scxl
-          ptarry1(4,i) = ptarry2(4)*gambet
+          ptarry1(4,i) = ptarry2(4)*gambetz
           ptarry1(5,i) = -ptarry2(5)/Scxl/beta0
-          !ptarry1(6,i) = -beta0*gambet*(ptarry2(6)+(ptarry1(7,i)-qm0)/qm0)
-          ptarry1(6,i) = gam0-gami
+          ptarry1(6,i) = -beta0*gambet*(ptarry2(6)+(ptarry1(7,i)-qm0)/qm0)
         enddo
 
         end subroutine Sector_Dipole
