@@ -389,8 +389,13 @@
               dgami = tau*vtmp*cos(phi)
               gami_2 = gami_1+dgami
               gambeti_2 = sqrt(gami_2**2-1.0d0)
-
-              fact = gambeti_1/dgami*dlog(gambeti_2/gambeti_1)*tau/Scxl
+              
+              ! volt=0.0 case
+              if(abs(vtmp).lt.1.0d-10) then
+                fact=tau/Scxl
+              else
+                fact = gambeti_1/dgami*dlog(gambeti_2/gambeti_1)*tau/Scxl
+              endif
 
               this%Pts1(1,i) = this%Pts1(1,i) + fact*&
                                this%Pts1(2,i)/gambetzi_1
@@ -400,6 +405,7 @@
                                                 this%Pts1(6,i)
             enddo
 
+            print*,"biaobin is here."
             !update the reference particle energy
             this%refptcl(6) = this%refptcl(6) - tau*vtmp*cos(phi0lc)
             !apply exit focusing kick
