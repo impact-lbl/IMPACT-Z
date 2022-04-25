@@ -436,54 +436,6 @@
           enddo
         enddo
 
-!              xx(1) = iii*hx-hx/2
-!              xx(2) = iii*hx+hx/2
-!              yy(1) = jjj*hy-hy/2
-!              yy(2) = jjj*hy+hy/2
-!              zz(1) = kkk*hz-hz/2
-!              zz(2) = kkk*hz+hz/2
-!       
-!              !find the integrated Green function.
-!              n = 0
-!              do k = 1, 2
-!                do j = 1, 2
-!                  do i = 1, 2
-!                    n = n+1
-!                    rr(n) = sqrt(xx(i)**2+yy(j)**2+zz(k)**2)
-!                    aa(n) = xx(i)**2*zz(k)+(yy(j)**2+zz(k)**2)*zz(k) + &
-!                            xx(i)*zz(k)*rr(n)
-!                    bb(n) = xx(i)**2*yy(j) + xx(i)*yy(j)*rr(n)
-!                    cc(n) = xx(i)*(xx(i)**2+yy(j)**2)+zz(k)*xx(i)*(zz(k)+rr(n))
-!                    dd(n) = zz(k)*yy(j)*(zz(k) + rr(n))
-!                    ee(n) = xx(i)**2*yy(j)+yy(j)*(yy(j)**2+zz(k)*(zz(k)+rr(n)))
-!                    ff(n) = xx(i)*zz(k)*(zz(k)+rr(n))
-!                    ss(n) = 4*yy(j)*zz(k)*log(xx(i)+rr(n)) + &
-!                            4*xx(i)*zz(k)*log(yy(j)+rr(n)) + &
-!                            4*xx(i)*yy(j)*log(zz(k)+rr(n))
-!                    gg(n) = cmplx(0.0,zz(k)**2)*log(cmplx(aa(n)**2-bb(n)**2,2*aa(n)*bb(n))/ &
-!                            (aa(n)**2+bb(n)**2) ) + cmplx(0.0,xx(i)**2)*&
-!                            log(cmplx(cc(n)**2-dd(n)**2,2*cc(n)*dd(n) )/(cc(n)**2+dd(n)**2))+&
-!                            cmplx(0.0,yy(j)**2)*log(cmplx(ee(n)**2-ff(n)**2,2*ee(n)*ff(n))/ &
-!                            (ee(n)**2+ff(n)**2) )
-!                    gg2(n) = ss(n) +  gg(n)
-!                  enddo
-!                enddo
-!              enddo
-!              ggrr = (-gg2(1)+gg2(2)+gg2(3)-gg2(4)+gg2(5d0)-gg2(6)-gg2(7)+gg2(8))/4
-!              grn(i0,j0,k0) = real(ggrr)/(hx*hy*hz)
-!            enddo
-!          enddo
-!        enddo
-
-
-        if((myidx.eq.0).and.(myidy.eq.0)) then
-          if(nsizez.gt.1) then
-            grn(1,1,1) = grn(1,1,2)
-          else
-            grn(1,1,1) = 1.0
-          endif
-        endif
-
         scalex = 1.0d0
         scaley = 1.0d0
         scalez = 1.0d0
