@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import tkinter as tk
 from tkinter import ttk,filedialog
 import time,os,sys
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
 from matplotlib.ticker import MultipleLocator, FormatStrFormatter 
 
@@ -317,10 +317,10 @@ class PlotBaseFrame(tk.Frame):
         self.subfig = self.fig.add_subplot(111)
 
         self.canvas = FigureCanvasTkAgg(self.fig, self)
-        self.canvas.show()
+        self.canvas.draw()
         self.canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
     
-        self.toolbar = NavigationToolbar2TkAgg(self.canvas, self)
+        self.toolbar = NavigationToolbar2Tk(self.canvas, self)
         self.toolbar.update()
         self.canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
         
@@ -352,10 +352,10 @@ class PlotFrame(tk.Frame):
             y = y*1.0e6       # unit convert from (m-rad) to (mm-mrad)
         
         fig = Figure(figsize=(7,5), dpi=100)
-        subfig = fig.add_subplot(111)
-        subfig.plot(x,y)
-        subfig.set_xlabel('Z (m)')
-        subfig.set_ylabel(labelY)
+        self.subfig = fig.add_subplot(111)
+        self.subfig.plot(x,y)
+        self.subfig.set_xlabel('Z (m)')
+        self.subfig.set_ylabel(labelY)
         
         
         xMax = np.max(x)
@@ -367,14 +367,14 @@ class PlotFrame(tk.Frame):
         if (yMax-yMin)>IMPACT_Z_sciMaxLimit or (yMax-yMin)<IMPACT_Z_sciMinLimit:
             self.subfig.yaxis.set_major_formatter(IMPACT_Z_SciFormatter)
         
-        box = subfig.get_position()
-        subfig.set_position([box.x0*1.3, box.y0*1.1, box.width, box.height])
+        box = self.subfig.get_position()
+        self.subfig.set_position([box.x0*1.3, box.y0*1.1, box.width, box.height])
         
         canvas = FigureCanvasTkAgg(fig, self) 
-        canvas.show()
+        canvas.draw()
         canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
 
-        toolbar = NavigationToolbar2TkAgg(canvas, self)
+        toolbar = NavigationToolbar2Tk(canvas, self)
         toolbar.update()
         canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
     
@@ -393,10 +393,10 @@ class OverallFrame(tk.Frame):
         self.subfig.append(self.fig.add_subplot(224))
 
         self.canvas = FigureCanvasTkAgg(self.fig, self)
-        self.canvas.show()
+        self.canvas.draw()
         self.canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
     
-        self.toolbar = NavigationToolbar2TkAgg(self.canvas, self)
+        self.toolbar = NavigationToolbar2Tk(self.canvas, self)
         self.toolbar.update()
         self.canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
         
@@ -618,10 +618,10 @@ class PlotHighOrderBaseFrame(tk.Frame):
         self.subfig.set_position([box.x0*1.4, box.y0, box.width, box.height])
 
         self.canvas = FigureCanvasTkAgg(self.fig, self)
-        self.canvas.show()
+        self.canvas.draw()
         self.canvas.get_tk_widget().pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True)
 
-        self.toolbar = NavigationToolbar2TkAgg(self.canvas, self)
+        self.toolbar = NavigationToolbar2Tk(self.canvas, self)
         self.toolbar.update()
         self.canvas._tkcanvas.pack(side=tk.TOP, fill=tk.BOTH, expand=True)
         
