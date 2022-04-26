@@ -461,7 +461,7 @@
 
         end subroutine getfldold_Dipole
 
-        !J.Q. modified 2018. Now particle distribution in ImpactZ coordinates
+        !J.Q. modified 2022. Now particle distribution in ImpactZ coordinates
         !Transfer matrix follows the Transport: K. L. Brown, SLAC-75.
         subroutine Fpol_Dipole(h0,h1,tanphi,tanphib,k1,psi,ptarry1,ang,Nplocal,&
                                gam0,qm0)
@@ -487,12 +487,12 @@
 
         do i = 1, Nplocal
           ptarry1(1,i) = ptarry1(1,i)*Scxl
-!          gamn = gam0 - ptarry1(6,i)
-!          gambetz = sqrt(gamn**2-1.0d0-ptarry1(2,i)**2-&
-!                         ptarry1(4,i)**2)
-          ptarry1(2,i) = ptarry1(2,i)/gambet
+          gamn = gam0 - ptarry1(6,i)
+          gambetz = sqrt(gamn**2-1.0d0-ptarry1(2,i)**2-&
+                         ptarry1(4,i)**2)
+          ptarry1(2,i) = ptarry1(2,i)/gambetz
           ptarry1(3,i) = ptarry1(3,i)*Scxl
-          ptarry1(4,i) = ptarry1(4,i)/gambet
+          ptarry1(4,i) = ptarry1(4,i)/gambetz
           ptarry1(5,i) = -ptarry1(5,i)*beta0*Scxl
           ptarry1(6,i) = -ptarry1(6,i)/beta0/gambet - &
                        (ptarry1(7,i)-qm0)/qm0
@@ -514,11 +514,11 @@
           ptarry2(5) = ptarry1(5,i)
           ptarry2(6) = ptarry1(6,i)
 
-!          gambetz = sqrt(gamn**2-1.0d0)/sqrt(ptarry2(2)**2+ptarry2(4)**2+1)
+          gambetz = sqrt(gamn**2-1.0d0)/sqrt(ptarry2(2)**2+ptarry2(4)**2+1)
           ptarry1(1,i) = ptarry2(1)/Scxl
-          ptarry1(2,i) = ptarry2(2)*gambet
+          ptarry1(2,i) = ptarry2(2)*gambetz
           ptarry1(3,i) = ptarry2(3)/Scxl
-          ptarry1(4,i) = ptarry2(4)*gambet
+          ptarry1(4,i) = ptarry2(4)*gambetz
           ptarry1(5,i) = -ptarry2(5)/Scxl/beta0
           ptarry1(6,i) = -beta0*gambet*(ptarry2(6)+(ptarry1(7,i)-qm0)/qm0)
         enddo
@@ -550,14 +550,14 @@
 
         do i = 1, Nplocal
           ptarry1(1,i) = ptarry1(1,i)*Scxl
-!          gamn = gam0 - ptarry1(6,i)
-!          gambetz = sqrt(gamn**2-1.0d0-ptarry1(2,i)**2-&
-!                         ptarry1(4,i)**2)
-!          ptarry1(2,i) = ptarry1(2,i)/gambetz
-          ptarry1(2,i) = ptarry1(2,i)/gambet
+          gamn = gam0 - ptarry1(6,i)
+          gambetz = sqrt(gamn**2-1.0d0-ptarry1(2,i)**2-&
+                         ptarry1(4,i)**2)
+          ptarry1(2,i) = ptarry1(2,i)/gambetz
+!          ptarry1(2,i) = ptarry1(2,i)/gambet
           ptarry1(3,i) = ptarry1(3,i)*Scxl
-!          ptarry1(4,i) = ptarry1(4,i)/gambetz
-          ptarry1(4,i) = ptarry1(4,i)/gambet
+          ptarry1(4,i) = ptarry1(4,i)/gambetz
+!          ptarry1(4,i) = ptarry1(4,i)/gambet
           ptarry1(5,i) = -ptarry1(5,i)*beta0*Scxl
           ptarry1(6,i) = -ptarry1(6,i)/beta0/gambet - &
                        (ptarry1(7,i)-qm0)/qm0
@@ -579,11 +579,11 @@
           ptarry2(5) = ptarry1(5,i)
           ptarry2(6) = ptarry1(6,i)
 
-!          gambetz = sqrt(gamn**2-1.0d0)/sqrt(ptarry2(2)**2+ptarry2(4)**2+1)
+          gambetz = sqrt(gamn**2-1.0d0)/sqrt(ptarry2(2)**2+ptarry2(4)**2+1)
           ptarry1(1,i) = ptarry2(1)/Scxl
-          ptarry1(2,i) = ptarry2(2)*gambet
+          ptarry1(2,i) = ptarry2(2)*gambetz
           ptarry1(3,i) = ptarry2(3)/Scxl
-          ptarry1(4,i) = ptarry2(4)*gambet
+          ptarry1(4,i) = ptarry2(4)*gambetz
           ptarry1(5,i) = -ptarry2(5)/Scxl/beta0
           ptarry1(6,i) = -beta0*gambet*(ptarry2(6)+(ptarry1(7,i)-qm0)/qm0)
         enddo
@@ -689,24 +689,27 @@
         end subroutine Sectorlinear_Dipole
 
         !B. Li added the 2nd order map
-        !ref: Brown_1982_SlacPub
+        !ref: Brown_1982_SlacPub-75
         subroutine Sector_Dipole(len,beta0,h0,k1,ptarry1,Nplocal,qm0)
         implicit none
         include 'mpif.h'
         integer, intent(in) :: Nplocal
         double precision, pointer, dimension(:,:) :: ptarry1
-        double precision :: h0,len,beta0,k1,qm0
+        double precision :: h0,len,beta0,k1,qm0,qmrel
         double precision, dimension(6) :: ptarry2
         integer :: i
-        real*8 :: gami,gam0,gam2,gambet
-        real*8 :: R11,R12,R16,R21,R22,R26
+        real*8 :: gam0,gam2,gambet
+        real*8 :: R11,R12,R16,R21,R22,R26,R51,R52,R56
         real*8 :: T111,T112,T116,T122,T126,T166,T144
         real*8 :: T216,T222,T266,T244,T314,T324,T346
+        real*8 :: T526,T522,T544
         real*8 :: theta, rho
         real*8 :: x0,xp0,y0,yp0,z0,eta
+        real*8 :: gambeti,gami,gambetx,gambety,gambetz,xp,yp        
 
+        !print*,"non-linear map for Dipole."
         !right now, sector dipole only has dipole filed, no quad filed
-        !K1=0, for K1.ne.0, map too complicated, added in future
+        !K1=0, for K1.ne.0, map too complicated, add in future
         rho = 1.0d0/h0;
         theta = len*h0
 
@@ -716,13 +719,16 @@
         R21 = -sin(theta)/rho
         R22 = cos(theta)
         R26 = sin(theta)
+        R51 = -R26
+        R52 = -R16
+        R56 = rho*(sin(theta)-beta0**2*theta)
         T111 = -sin(theta)**2/(2.0d0*rho)
         T112 = sin(theta)*cos(theta)
         T116 = sin(theta)**2
         T122 = rho*cos(theta)*sin(theta/2.0d0)**2
         T126 = -rho*sin(theta)*(-1.0d0+cos(theta))
         T166 = -rho*sin(theta)**2/2.0d0
-                T144 = rho*(-1.0d0+cos(theta))/2.0d0
+        T144 = rho*(-1.0d0+cos(theta))/2.0d0
         T216 = sin(theta)/rho
         T222 = -sin(theta)/2.0d0
         T266 = -sin(theta)
@@ -730,20 +736,31 @@
         T314 = sin(theta)
         T324 = 2.0d0*rho*sin(theta/2.0d0)**2
         T346 = rho*(theta-sin(theta))
+
+        T522= -0.5d0*rho*sin(theta)
+        T544= T522   !bbl, I think T544 should be 0, but ELEGANT map 
+                     !gives T522 value
+        T526=rho*(cos(theta)-1.0d0)
+
         !reference particle information
         gambet = beta0/sqrt(1.0d0-beta0**2)
         gam2 = 1.0d0/(1.0d0-beta0**2)
         gam0 = sqrt(gam2)
         ptarry2 = 0.0d0
         do i = 1, Nplocal
-          gami = gam0 - ptarry1(6,i)
+          gami = -ptarry1(6,i)+gam0
+          gambeti = sqrt(gami**2-1.0d0)
+          gambetx = ptarry1(2,i)
+          gambety = ptarry1(4,i)
+          gambetz = sqrt(gambeti**2-gambetx**2-gambety**2) 
+
           !transform to geometry phase space (x,xp,y,yp,z,eta)
           x0     =  ptarry1(1,i)*Scxl
-          xp0    =  ptarry1(2,i)/gambet
+          xp0    =  ptarry1(2,i)/gambetz
           y0     =  ptarry1(3,i)*Scxl
-          yp0    =  ptarry1(4,i)/gambet
+          yp0    =  ptarry1(4,i)/gambetz
           z0     = -ptarry1(5,i)*beta0*Scxl
-          eta   = (gami-gam0)/gambet
+          eta    = -ptarry1(6,i)/beta0/gambet-(ptarry1(7,i)-qm0)/qm0
           !applying transfer map up to 2nd order
           ptarry2(1) = R11*x0 +R12*xp0 +R16*eta &
               +T111*x0**2 +T112*x0*xp0 +T116*x0*eta &
@@ -752,19 +769,21 @@
               +T216*x0*eta +T222*xp0**2 +T266*eta**2 +T244*yp0**2
           ptarry2(3) = y0 +len*yp0 +T314*x0*yp0 +T324*xp0*yp0 +T346*yp0*eta
           ptarry2(4) = yp0
-          ptarry2(5) = -sin(theta)*x0 -rho*(1.0d0-cos(theta))*xp0 &
-                       +z0 +rho*(sin(theta)-beta0**2*theta)*eta
-          !ptarry2(6) = eta
+          ptarry2(5) = R51*x0+R52*xp0+z0+R56*eta &
+                       +T522*xp0**2+T544*yp0**2+T526*xp0*eta
+          ptarry2(6) = eta
+
+          xp=ptarry2(2)
+          yp=ptarry2(4)
+          gambetz = gambeti/sqrt(xp**2+yp**2+1.0d0)           
 
           ptarry1(1,i) = ptarry2(1)/Scxl
-          ptarry1(2,i) = ptarry2(2)*gambet
+          ptarry1(2,i) = ptarry2(2)*gambetz
           ptarry1(3,i) = ptarry2(3)/Scxl
-          ptarry1(4,i) = ptarry2(4)*gambet
+          ptarry1(4,i) = ptarry2(4)*gambetz
           ptarry1(5,i) = -ptarry2(5)/Scxl/beta0
-          !ptarry1(6,i) = -beta0*gambet*(ptarry2(6)+(ptarry1(7,i)-qm0)/qm0)
-          ptarry1(6,i) = gam0-gami
+          ptarry1(6,i) = -beta0*gambet*(ptarry2(6)+(ptarry1(7,i)-qm0)/qm0)
         enddo
 
         end subroutine Sector_Dipole
-
       end module Dipoleclass
