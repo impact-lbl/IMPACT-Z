@@ -528,7 +528,7 @@
         double precision, allocatable, dimension(:,:,:) :: chgdens
         integer :: nmod,k,ii,jj
         !double precision :: sumtest, sumtest2, sumtest3
-        double precision, dimension(10) :: drange
+        double precision, dimension(30) :: drange
         double precision, dimension(3) :: al0,ga0,epson0
         double precision :: realSamplePeriod,tg,tv,gam,piperad2
         integer :: nsubstep,integerSamplePeriod,Flagbctmp

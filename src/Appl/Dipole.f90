@@ -69,7 +69,7 @@
         type (Dipole), intent(inout) :: this
         double precision, dimension(:), intent(in) :: values
 
-        this%Param = values
+        this%Param(1:Nparam) = values(1:Nparam)
 
         end subroutine setparam2_Dipole
 
@@ -101,7 +101,7 @@
         type (Dipole), intent(in) :: this
         double precision, dimension(:), intent(out) :: blparams
 
-        blparams = this%Param
+        blparams(1:Nparam) = this%Param(1:Nparam)
 
         end subroutine getparam2_Dipole
 
