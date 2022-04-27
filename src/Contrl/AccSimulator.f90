@@ -125,6 +125,10 @@
         integer :: iqr,idr,ibpm,iccl,iccdtl,idtl,isc,icf,islrf,isl,idipole,&
                    iemfld,myrank,imultpole,itws,nfileout
 
+        integer, allocatable, dimension(:) :: seedarray
+        real rancheck
+        integer :: meanpts20,seedsize
+           
         !start up MPI.
         call init_Input(time)
 
@@ -160,7 +164,7 @@
         if(myid.eq.0) then
           !print*,"Start simulation:"
           print*,"!-----------------------------------------------------------"
-          print*,"! IMPACT-Z: Integrated Map and PArticle Tracking Code: Version 2.1"
+          print*,"! IMPACT-Z: Integrated Map and PArticle Tracking Code: Version 2.2"
           print*,"! Copyright of The Regents of the University of California"
           print*,"!-----------------------------------------------------------"
         endif
@@ -479,6 +483,20 @@
         nstepend = 0
         zend = 0.0
 
+        call random_seed(SIZE=seedsize)
+        allocate(seedarray(seedsize))
+        do i = 1, seedsize
+            seedarray(i) = 10.0d0 + myid*Dim*20+i*1.0d0*myid
+        enddo
+        call random_seed(PUT=seedarray)
+        call random_number(rancheck)
+                do i = 1, 3000*(myid+1)
+           call random_number(rancheck)
+        enddo
+        deallocate(seedarray)
+        call MPI_BARRIER(MPI_COMM_WORLD,ierr)
+        print*,"check random: ",myid,rancheck
+
         if(Rstartflg.eq.1) then
           call inpoint_Output(myid+nfileout,Bpts,zend,iend,jend,ibalend,nstepend,&
                nprow,npcol,Ageom,Nx,Ny,Nz,myidx,myidy,Np)
@@ -594,7 +612,7 @@
 
         if(Flagdiag.eq.1) then
             call diagnostic1_Output(z,Bpts,nchrg,nptlist0)
-        else
+        else if(Flagdiag.eq.2) then
             call diagnostic2_Output(Bpts,z,nchrg,nptlist0)
         endif
 
@@ -1292,7 +1310,7 @@
 
             if(Flagdiag.eq.1) then
                 call diagnostic1_Output(z,Bpts,nchrg,nptlist0)
-            else
+            else if(Flagdiag.eq.2) then
                 call diagnostic2_Output(Bpts,z,nchrg,nptlist0)
             endif
 

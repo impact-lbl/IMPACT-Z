@@ -41,23 +41,23 @@
 !        call random_seed(put=seedarray(1:1))
 !        write(6,*)'seedarray=',seedarray
 
-        call random_seed(SIZE=seedsize)
-        allocate(seedarray(seedsize))
-        do i = 1, seedsize
-!          seedarray(i) = (1000+5*myid)*(myid+7)+i-1 !//original one.
-          !//2nd group
-!          seedarray(i) = (2000+5*myid)*(myid+7)+i-1
-          !//3rd group
-          !seedarray(i) = (3000+5*myid)*(myid+7)+i-1
-          seedarray(i) = (3001+5001*myid)*(myid+7)+i-1
-        enddo
-        call random_seed(PUT=seedarray)
-        call random_number(rancheck)
-        !the following is added new for 2nd random group ....
-        do i = 1, 3000
-          call random_number(rancheck)
-        enddo
-!        write(6,*)'myid,rancheck=',seedarray,myid,rancheck
+!        call random_seed(SIZE=seedsize)
+!        allocate(seedarray(seedsize))
+!        do i = 1, seedsize
+!!          seedarray(i) = (1000+5*myid)*(myid+7)+i-1 !//original one.
+!          !//2nd group
+!!          seedarray(i) = (2000+5*myid)*(myid+7)+i-1
+!          !//3rd group
+!          !seedarray(i) = (3000+5*myid)*(myid+7)+i-1
+!          seedarray(i) = (3001+5001*myid)*(myid+7)+i-1
+!        enddo
+!        call random_seed(PUT=seedarray)
+!        call random_number(rancheck)
+!        !the following is added new for 2nd random group ....
+!        do i = 1, 3000
+!          call random_number(rancheck)
+!        enddo
+!        write(6,*)'myid,rancheck=',myid,rancheck
 
         distparam = distparam0
 
@@ -103,6 +103,8 @@
                                nptlist,qmcclist,currlist)
         else if(flagdist.eq.19) then
           call readin_Dist(this)
+        else if(flagdist.eq.199) then
+          call readPar_Dist(this,nparam,distparam0)
         else if(flagdist.eq.22) then
           call readElegant_Dist(this,nparam,distparam,geom,grid,Flagbc)
         else if(flagdist.eq.35) then
@@ -112,7 +114,7 @@
           stop
         endif
 
-        deallocate(seedarray)
+!        deallocate(seedarray)
 
         end subroutine sample_Dist
        
@@ -1711,7 +1713,44 @@
  
         end subroutine readin_Dist
 
-        !read particle distribution from ImpactT output
+        !parallel read in an initial distribution with binary format from ImpactZ
+        subroutine readPar_Dist(this,nparam,distparam)
+        implicit none
+        include 'mpif.h'
+        type (BeamBunch), intent(inout) :: this
+        integer, intent(in) :: nparam
+        double precision, dimension(nparam) :: distparam
+        integer :: myid,ierr
+        integer :: myfile,nptlc,i
+        real*8 :: dnptlc,dnptot
+
+        call MPI_COMM_RANK(MPI_COMM_WORLD,myid,ierr)
+
+        myfile = distparam(2)+0.001+myid
+
+        read(myfile)nptlc
+        allocate(this%Pts1(9,nptlc))
+        read(myfile)this%Pts1(1:9,1:nptlc)
+        close(myfile)
+
+        do i = 1, nptlc
+          this%Pts1(1,i) = this%Pts1(1,i) + distparam(6)
+          this%Pts1(2,i) = this%Pts1(2,i) + distparam(7)
+          this%Pts1(3,i) = this%Pts1(3,i) + distparam(13)
+          this%Pts1(4,i) = this%Pts1(4,i) + distparam(14)
+          this%Pts1(5,i) = this%Pts1(5,i) + distparam(20)
+          this%Pts1(6,i) = this%Pts1(6,i) + distparam(21)
+        enddo
+
+        this%Nptlocal = nptlc
+        dnptlc = 1.0d0*nptlc
+        call MPI_ALLREDUCE(dnptlc,dnptot,1,MPI_DOUBLE_PRECISION,&
+                           MPI_SUM,MPI_COMM_WORLD,ierr)
+        this%Npt = dnptot + 0.01d0
+
+        end subroutine readPar_Dist
+
+        !read particle distribution from ImpactT output at fixed Z.
         subroutine readimpt_Dist(this,nparam,distparam,geom,grid,Flagbc)
         implicit none
         include 'mpif.h'
