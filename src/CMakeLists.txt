@@ -77,4 +77,9 @@ target_sources(${OUTPUT_NAME} PRIVATE ${_sources})
 # Enables preprocessing
 target_compile_options(${OUTPUT_NAME} PRIVATE -cpp)
 
+enable_testing()
+add_test(NAME example1 COMMAND ${OUTPUT_NAME} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../examples/Example1/)
+add_test(NAME example2 COMMAND ${OUTPUT_NAME} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../examples/Example2/)
+add_test(NAME example3 COMMAND ${OUTPUT_NAME} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../examples/Example3/)
+
 install(TARGETS ${OUTPUT_NAME} RUNTIME DESTINATION bin)
