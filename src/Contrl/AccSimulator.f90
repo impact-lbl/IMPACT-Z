@@ -702,6 +702,11 @@
             call engheater_BPM(Bpts%Pts1,Nplocal,b0,qmass)
           endif
 
+          !switch integrator types
+          if(bitype.eq.-25) then
+            Flagmap = bmpstp
+          endif
+
 !-------------------------------------------------------------------
 ! read in the on axis E field for rf cavities.
 !          if(myid.eq.0) print*,"bitype: ",bitype
