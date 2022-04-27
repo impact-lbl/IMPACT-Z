@@ -24,15 +24,8 @@
         double precision, pointer, dimension(:,:) :: Ptsl
 !        double precision, dimension(pdim,npmax) :: Ptsl
         double precision, dimension(:),intent(in) :: lcrange
-        !integer, parameter :: nptmv = 100000
-        integer, parameter :: nptmv = 3000000
-!        integer, parameter :: nptmv = 300000
-        double precision, dimension(9,nptmv) :: left,right,up,down
-        !integer, parameter :: ntmpstr = 400000
-        integer, parameter :: ntmpstr = 10000000
-!        integer, parameter :: ntmpstr = 600000
-        double precision, dimension(9,ntmpstr) :: temp1
-        double precision, allocatable, dimension(:,:) :: recv
+        double precision, allocatable, dimension(:,:) :: left,right,up,down
+        double precision, allocatable, dimension(:,:) :: temp1,recv
         integer :: myid,myidx,myidy,totnp,npy,npx, &
                    comm2d,commcol,commrow
         integer :: ileft,iright,iup,idown,iupright,iupleft,&
@@ -41,153 +34,191 @@
                    jdownleft,jdownright
         integer :: myleft,myright,myup,mydown,myupright,myupleft,&
                    mydwnleft,mydwnright
-        integer :: nsmall,i,j,numpts,ic
+        integer status(MPI_STATUS_SIZE)
+        integer :: nsmall,i,j,numpts,ic,ierr
         integer, dimension(2) :: tmpcoord
-        logical, dimension(Nptlocal) :: msk
-        logical, allocatable, dimension(:) :: mmsk
-        integer :: numbuf,nmv,nmv0,nout,ii,totnmv
-        integer :: msid,ierr,nrecv
-        integer status(MPI_STATUS_SIZE) 
-        integer statarry(MPI_STATUS_SIZE,4), req(4)
-        integer :: flag,Nptlocal0,nst,nout0,iileft,iiright,iiup,iidown
-        integer :: totflag
-        double precision :: t0
-        real*8, dimension(6) :: tmpctlc,tmpct,tmpct2
+        logical, allocatable, dimension(:) :: msk,mmsk
+        double precision :: t0,t1
+        integer :: numbuf,nmv,nmv0,nout,ii,totnmv,ij
 
         call starttime_Timer(t0)
+!        call starttime_Timer(t1)
 
         call getsize_Pgrid2d(grid,totnp,npy,npx)
         call getpost_Pgrid2d(grid,myid,myidy,myidx)
         call getcomm_Pgrid2d(grid,comm2d,commcol,commrow)
-        if(myidx.ne.(npx-1)) then
-          myright = myidx + 1
+
+        if(Nptlocal.gt.480) then
+          nsmall = Nptlocal/16
         else
-          myright = MPI_PROC_NULL
+          nsmall = Nptlocal
         endif
-        if(myidx.ne.0) then
-          myleft = myidx - 1
-        else
-          myleft = MPI_PROC_NULL
-        endif 
+        allocate(left(9,nsmall))
+        allocate(right(9,nsmall))
+        allocate(up(9,nsmall))
+        allocate(down(9,nsmall))
 
-        if(myidy.ne.npy-1) then
-          myup = myidy + 1
-        else
-          myup = MPI_PROC_NULL
-        endif
-        if(myidy.ne.0) then
-          mydown = myidy -1
-        else
-          mydown = MPI_PROC_NULL
-        endif
-
-!        call MPI_BARRIER(comm2d,ierr)
-
-        tmpctlc = 0.0
-!        do i = 1, Nptlocal
-!          tmpctlc(1) = tmpctlc(1) + abs(Ptsl(1,i))
-!          tmpctlc(2) = tmpctlc(2) + abs(Ptsl(2,i))
-!          tmpctlc(3) = tmpctlc(3) + abs(Ptsl(3,i))
-!          tmpctlc(4) = tmpctlc(4) + abs(Ptsl(4,i))
-!          tmpctlc(5) = tmpctlc(5) + abs(Ptsl(5,i))
-!          tmpctlc(6) = tmpctlc(6) + abs(Ptsl(6,i))
-!        enddo
-!        call MPI_ALLREDUCE(tmpctlc,tmpct,6,MPI_DOUBLE_PRECISION,MPI_SUM, &
-!                           comm2d,ierr)
-!        if(myid.eq.0) then
-!          print*,"before particle move: ",tmpct
-!        endif
-
-        flag = 0
-        Nptlocal0 = Nptlocal
-        nout0 = 0
-
+        left = 0.0
+        right = 0.0
+        up = 0.0
+        down = 0.0
         ileft = 0
         iright = 0
         iup = 0
         idown = 0
-        iileft = 0
-        iiright = 0
-        iiup = 0
-        iidown = 0
-        do i = 1, Nptlocal0 - nout0
-          msk(i) = .true.
+
+        allocate(msk(Nptlocal))
+        msk = .true.
+
+        do i = 1, Nptlocal
           if(Ptsl(5,i).le.lcrange(5)) then
             if(myidx.ne.0) then
-              iileft = iileft + 1
-              if(iileft.le.nptmv) then
-                ileft = ileft + 1
-                left(:,ileft) = Ptsl(:,i)
-                msk(i) = .false.
+              ileft = ileft + 1
+              left(:,ileft) = Ptsl(:,i)
+              msk(i) = .false.
+              if(mod(ileft,nsmall).eq.0) then
+                allocate(temp1(9,ileft))
+                do j = 1,ileft
+                  temp1(:,j) = left(:,j)
+                enddo
+                deallocate(left)
+                allocate(left(9,ileft+nsmall))
+                do j = 1,ileft
+                  left(:,j) = temp1(:,j) 
+                enddo
+                deallocate(temp1)
               endif
             else
               if(Ptsl(3,i).gt.lcrange(4)) then
                 if(myidy.ne.(npy-1)) then
-                  iiup = iiup + 1
-                  if(iiup.le.nptmv) then
-                    iup = iup + 1
-                    up(:,iup) = Ptsl(:,i)
-                    msk(i) = .false.
-                  endif
+                iup = iup + 1
+                up(:,iup) = Ptsl(:,i)
+                msk(i) = .false.
+                if(mod(iup,nsmall).eq.0) then
+                  allocate(temp1(9,iup))
+                  do j = 1, iup
+                    temp1(:,j) = up(:,j)
+                  enddo
+                  deallocate(up)
+                  allocate(up(9,iup+nsmall))
+                  do j = 1, iup
+                    up(:,j) = temp1(:,j) 
+                  enddo
+                  deallocate(temp1)
+                endif
                 endif
               else if(Ptsl(3,i).le.lcrange(3)) then
                 if(myidy.ne.0) then
-                  iidown = iidown + 1
-                  if(iidown.le.nptmv) then
-                    idown = idown + 1
-                    down(:,idown) = Ptsl(:,i)
-                    msk(i) = .false.
-                  endif
+                idown = idown + 1
+                down(:,idown) = Ptsl(:,i)
+                msk(i) = .false.
+                if(mod(idown,nsmall).eq.0) then
+                  allocate(temp1(9,idown))
+                  do j = 1, idown
+                    temp1(:,j) = down(:,j)
+                  enddo
+                  deallocate(down)
+                  allocate(down(9,idown+nsmall))
+                  do j = 1, idown
+                    down(:,j) = temp1(:,j) 
+                  enddo
+                  deallocate(temp1)
+                endif
                 endif
               else
               endif
             endif
           else if(Ptsl(5,i).gt.lcrange(6)) then
             if(myidx.ne.(npx-1)) then
-              iiright = iiright + 1
-              if(iiright.le.nptmv) then
-                iright = iright + 1
-                right(:,iright) = Ptsl(:,i)
-                msk(i) = .false.
+              iright = iright + 1
+              right(:,iright) = Ptsl(:,i)
+              msk(i) = .false.
+              if(mod(iright,nsmall).eq.0) then
+                allocate(temp1(9,iright))
+                do j =1, iright
+                  temp1(:,j) = right(:,j)
+                enddo
+                deallocate(right)
+                allocate(right(9,iright+nsmall))
+                do j =1, iright
+                  right(:,j) = temp1(:,j) 
+                enddo
+                deallocate(temp1)
               endif
             else
               if(Ptsl(3,i).gt.lcrange(4)) then
                 if(myidy.ne.(npy-1)) then
-                  iiup = iiup + 1
-                  if(iiup.le.nptmv) then
-                    iup = iup + 1
-                    up(:,iup) = Ptsl(:,i)
-                    msk(i) = .false.
-                  endif
+                iup = iup + 1
+                up(:,iup) = Ptsl(:,i)
+                msk(i) = .false.
+                if(mod(iup,nsmall).eq.0) then
+                  allocate(temp1(9,iup))
+                  do j = 1, iup
+                    temp1(:,j) = up(:,j)
+                  enddo
+                  deallocate(up)
+                  allocate(up(9,iup+nsmall))
+                  do j = 1, iup
+                    up(:,j) = temp1(:,j) 
+                  enddo
+                  deallocate(temp1)
+                endif
                 endif
               else if(Ptsl(3,i).le.lcrange(3)) then
                 if(myidy.ne.0) then
-                  iidown = iidown + 1
-                  if(iidown.le.nptmv) then
-                    idown = idown + 1
-                    down(:,idown) = Ptsl(:,i)
-                    msk(i) = .false.
-                  endif
+                idown = idown + 1
+                down(:,idown) = Ptsl(:,i)
+                msk(i) = .false.
+                if(mod(idown,nsmall).eq.0) then
+                  allocate(temp1(9,idown))
+                  do j = 1, idown
+                    temp1(:,j) = down(:,j)
+                  enddo
+                  deallocate(down)
+                  allocate(down(9,idown+nsmall))
+                  do j = 1, idown
+                    down(:,j) = temp1(:,j) 
+                  enddo
+                  deallocate(temp1)
+                endif
                 endif
               else
               endif
             endif
           else if(Ptsl(3,i).gt.lcrange(4)) then
             if(myidy.ne.(npy-1)) then
-              iiup = iiup + 1
-              if(iiup.le.nptmv) then
-                iup = iup + 1
-                up(:,iup) = Ptsl(:,i)
-                msk(i) = .false.
+              iup = iup + 1
+              up(:,iup) = Ptsl(:,i)
+              msk(i) = .false.
+              if(mod(iup,nsmall).eq.0) then
+                allocate(temp1(9,iup))
+                do j = 1, iup
+                  temp1(:,j) = up(:,j)
+                enddo
+                deallocate(up)
+                allocate(up(9,iup+nsmall))
+                do j = 1, iup
+                  up(:,j) = temp1(:,j) 
+                enddo
+                deallocate(temp1)
               endif
             endif
           else if(Ptsl(3,i).le.lcrange(3)) then
             if(myidy.ne.0) then
-              iidown = iidown + 1
-              if(iidown.le.nptmv) then
-                idown = idown + 1
-                down(:,idown) = Ptsl(:,i)
-                msk(i) = .false.
+              idown = idown + 1
+              down(:,idown) = Ptsl(:,i)
+              msk(i) = .false.
+              if(mod(idown,nsmall).eq.0) then
+                allocate(temp1(9,idown))
+                do j = 1, idown
+                  temp1(:,j) = down(:,j)
+                enddo
+                deallocate(down)
+                allocate(down(9,idown+nsmall))
+                do j = 1, idown
+                  down(:,j) = temp1(:,j) 
+                enddo
+                deallocate(temp1)
               endif
             endif
           else
@@ -195,157 +226,238 @@
 
         enddo
 
-        if((iileft.gt.nptmv).or.(iiright.gt.nptmv).or.(iiup.gt.nptmv) &
-            .or.(iidown.gt.nptmv)) then
-           print*,"too small buffer size, nptmv, for particle move!"
-           flag = 1
-           stop
-        else
-           flag = 0
-        endif
-
+!        t_ptsmv1 = t_ptsmv1 + elapsedtime_Timer(t1)
+        nmv0 = 0
         nout = ileft+iright+iup+idown
-
-        allocate(recv(9,1))
-        allocate(mmsk(1))
-        recv = 0.0d0
-
-        call MPI_BARRIER(comm2d,ierr)
-!        temp1 = 0.0d0
-
-        ic = 0
+!        print*,"in comm: ",Nptlocal,nout
+        allocate(recv(9,nmv0+1))
+        allocate(temp1(9,nmv0+1))
+        ij = 0
 
         do
 
+        ij = ij + 1
+        myleft = myidx - 1
+        myright = myidx + 1
         jleft = 0
         jright = 0
 
-        call MPI_IRECV(jleft,1,MPI_INTEGER,myright,0,commrow,req(1),&
-                      ierr)
-        call MPI_IRECV(jright,1,MPI_INTEGER,myleft,0,commrow,req(2),&
+        if(myidx.ne.0) then
+          call MPI_SEND(ileft,1,MPI_INTEGER,myleft,0,commrow,ierr)
+        endif
+        if(myidx.ne.(npx-1)) then
+          call MPI_RECV(jleft,1,MPI_INTEGER,myright,0,commrow,status,&
                         ierr)
-        call MPI_ISEND(ileft,1,MPI_INTEGER,myleft,0,commrow,req(3),&
-                       ierr)
-        call MPI_ISEND(iright,1,MPI_INTEGER,myright,0,commrow,req(4),&
-                       ierr)
-        call MPI_WAITALL(4,req,statarry,ierr) 
+        endif
 
-        call MPI_BARRIER(commrow,ierr)
-!        if(myid.eq.0) then
-!          print*,"pass 1:"
-!        endif
+        if(myidx.ne.(npx-1)) then
+          call MPI_SEND(iright,1,MPI_INTEGER,myright,0,commrow,ierr)
+        endif
+        if(myidx.ne.0) then
+          call MPI_RECV(jright,1,MPI_INTEGER,myleft,0,commrow,status,&
+                        ierr)
+        endif
 
+        myup = myidy + 1
+        mydown = myidy - 1
         jup = 0
         jdown = 0
 
-        call MPI_IRECV(jdown,1,MPI_INTEGER,myup,0,commcol,req(1),&
-                      ierr)
-        call MPI_IRECV(jup,1,MPI_INTEGER,mydown,0,commcol,req(2),&
-                      ierr)
-        call MPI_ISEND(idown,1,MPI_INTEGER,mydown,0,commcol,req(3),&
-                       ierr)
-        call MPI_ISEND(iup,1,MPI_INTEGER,myup,0,commcol,req(4),&
-                       ierr)
-        call MPI_WAITALL(4,req,statarry,ierr) 
-
-        call MPI_BARRIER(commcol,ierr)
-!        if(myid.eq.0) then
-!          print*,"pass 2:"
-!        endif
+        if(myidy.ne.0) then
+          call MPI_SEND(idown,1,MPI_INTEGER,mydown,0,commcol,ierr)
+        endif
+        if(myidy.ne.(npy-1)) then
+          call MPI_RECV(jdown,1,MPI_INTEGER,myup,0,commcol,status,&
+                        ierr)
+        endif
+        
+        if(myidy.ne.(npy-1)) then
+          call MPI_SEND(iup,1,MPI_INTEGER,myup,0,commcol,ierr)
+        endif
+        if(myidy.ne.0) then
+          call MPI_RECV(jup,1,MPI_INTEGER,mydown,0,commcol,status,&
+                        ierr)
+        endif
 
         numbuf = jleft+jright+jup+jdown 
-
-        deallocate(recv)
-        allocate(recv(9,numbuf))
-
-        nmv0 = 0
-        nst = nmv0 + 1
-        !send outgoing particles to left neibhoring processor.
-        jleft = 9*jleft
-        ileft = 9*ileft
-        call MPI_IRECV(recv(1,nst),jleft,MPI_DOUBLE_PRECISION,myright,&
-                       0,commrow,msid,ierr)
-        call MPI_SEND(left(1,1),ileft,MPI_DOUBLE_PRECISION,myleft,&
-                      0,commrow,ierr)
-        call MPI_WAIT(msid,status,ierr) 
-        ileft = ileft/9
-        jleft = jleft/9
-        nmv0 = nmv0+jleft
         
-        nst = nmv0 + 1
+        deallocate(recv)
+        allocate(recv(9,numbuf+nmv0+1))
+        do i = 1, nmv0
+          recv(:,i) = temp1(:,i)
+        enddo
+        deallocate(temp1)
+
+        !send outgoing particles to left neibhoring processor.
+        allocate(temp1(9,jleft))
+        temp1 = 0.0
+        if(myidx.ne.0) then
+          ileft = 9*ileft
+          call MPI_SEND(left(1,1),ileft,MPI_DOUBLE_PRECISION,myleft,&
+                        0,commrow,ierr)
+          ileft = ileft/9
+        endif
+        if(myidx.ne.(npx-1)) then
+          jleft = 9*jleft
+          call MPI_RECV(temp1(1,1),jleft,MPI_DOUBLE_PRECISION,myright,&
+                        0,commrow,&
+                        status,ierr)
+          jleft = jleft/9
+        endif
+        do i = 1, jleft
+          recv(:,i+nmv0) = temp1(:,i)
+        enddo
+        nmv0 = nmv0+jleft
+        deallocate(temp1)
+        
+!        call MPI_BARRIER(comm2d,ierr)
         !send outgoing particles to right neibhoring processor.
-        jright = 9*jright
-        iright = 9*iright
-        call MPI_IRECV(recv(1,nst),jright,MPI_DOUBLE_PRECISION,myleft,&
-                        0,commrow,msid,ierr)
-        call MPI_SEND(right(1,1),iright,MPI_DOUBLE_PRECISION,myright,&
-                      0,commrow,ierr)
-        call MPI_WAIT(msid,status,ierr) 
-        iright = iright/9
-        jright = jright/9
+        allocate(temp1(9,jright))
+        temp1 = 0.0
+        if(myidx.ne.(npx-1)) then
+          iright = 9*iright
+          call MPI_SEND(right(1,1),iright,MPI_DOUBLE_PRECISION,myright,&
+                        0,commrow,&
+                        ierr)
+          iright = iright/9
+        endif
+        if(myidx.ne.0) then
+          jright = 9*jright
+          call MPI_RECV(temp1(1,1),jright,MPI_DOUBLE_PRECISION,myleft,&
+                        0,commrow,&
+                        status,ierr)
+          jright = jright/9
+        endif
+        do i = 1, jright
+          recv(:,i+nmv0) = temp1(:,i)
+        enddo
         nmv0 = nmv0 + jright
+        deallocate(temp1)
 
-        call MPI_BARRIER(commrow,ierr)
-!        if(myid.eq.0) then
-!          print*,"pass 3:"
-!        endif
-
-        nst = nmv0 + 1
+!        call MPI_BARRIER(comm2d,ierr)
         !send outgoing particles to down neibhoring processor.
-        jdown = 9*jdown
-        idown = 9*idown
-        call MPI_IRECV(recv(1,nst),jdown,MPI_DOUBLE_PRECISION,myup,&
-                        0,commcol,msid,ierr)
-        call MPI_SEND(down(1,1),idown,MPI_DOUBLE_PRECISION,mydown,&
-                        0,commcol,ierr)
-        call MPI_WAIT(msid,status,ierr)
-        idown = idown/9
-        jdown = jdown/9
+        allocate(temp1(9,jdown))
+        temp1 = 0.0
+        if(myidy.ne.0) then
+          idown = 9*idown
+          call MPI_SEND(down(1,1),idown,MPI_DOUBLE_PRECISION,mydown,&
+                        0,commcol,&
+                        ierr)
+          idown = idown/9
+        endif
+        if(myidy.ne.(npy-1)) then
+          jdown = 9*jdown
+          call MPI_RECV(temp1(1,1),jdown,MPI_DOUBLE_PRECISION,myup,&
+                        0,commcol,&
+                        status,ierr)
+          jdown = jdown/9
+        endif
+        do i = 1, jdown
+          recv(:,i+nmv0) = temp1(:,i)
+        enddo
         nmv0 = nmv0 + jdown
+        deallocate(temp1)
 
-        nst = nmv0 + 1
+!        call MPI_BARRIER(comm2d,ierr)
         !send outgoing particles to up neibhoring processor.
-        jup = 9*jup
-        iup = 9*iup
-        call MPI_IRECV(recv(1,nst),jup,MPI_DOUBLE_PRECISION,mydown,&
-                      0,commcol,msid,ierr)
-        call MPI_SEND(up(1,1),iup,MPI_DOUBLE_PRECISION,myup,&
-                      0,commcol,ierr)
-        call MPI_WAIT(msid,status,ierr)
-        iup = iup/9
-        jup = jup/9
+        allocate(temp1(9,jup))
+        temp1 = 0.0
+        if(myidy.ne.(npy-1)) then
+          iup = 9*iup
+          call MPI_SEND(up(1,1),iup,MPI_DOUBLE_PRECISION,myup,&
+                        0,commcol,&
+                        ierr)
+          iup = iup/9
+        endif
+        if(myidy.ne.0) then
+          jup = 9*jup
+          call MPI_RECV(temp1(1,1),jup,MPI_DOUBLE_PRECISION,mydown,&
+                        0,commcol,&
+                        status,ierr)
+          jup = jup/9
+        endif
+        do i = 1, jup
+          recv(:,i+nmv0) = temp1(:,i)
+        enddo
+        nmv0 = nmv0 + jup
+        deallocate(temp1)
+ 
+        deallocate(up)
+        deallocate(down)
+        deallocate(left)
+        deallocate(right)
 
-        call MPI_BARRIER(commcol,ierr)
-
-        deallocate(mmsk)
+        if(numbuf.gt.480) then
+          nsmall = numbuf/16
+        else
+          nsmall = numbuf
+        endif
+        allocate(left(9,nsmall))
+        allocate(right(9,nsmall))
+        allocate(up(9,nsmall))
+        allocate(down(9,nsmall))
         allocate(mmsk(numbuf))
-
+        mmsk = .true.
         ileft = 0
         iright = 0
         iup = 0
         idown = 0
-        nmv0 = 0
-
+        nmv0 = nmv0 - numbuf
         do i = 1, numbuf
-          mmsk(i) = .true.
           ii = i+nmv0
           if(recv(5,ii).le.lcrange(5)) then
             if(myidx.ne.0) then
               ileft = ileft + 1
               left(:,ileft) = recv(:,ii)
               mmsk(i) = .false.
+              if(mod(ileft,nsmall).eq.0) then
+                allocate(temp1(9,ileft))
+                do j = 1,ileft
+                  temp1(:,j) = left(:,j)
+                enddo
+                deallocate(left)
+                allocate(left(9,ileft+nsmall))
+                do j = 1,ileft
+                  left(:,j) = temp1(:,j) 
+                enddo
+                deallocate(temp1)
+              endif
             else
               if(recv(3,ii).gt.lcrange(4)) then
                 if(myidy.ne.(npy-1)) then
                 iup = iup + 1
                 up(:,iup) = recv(:,ii)
                 mmsk(i) = .false.
+                if(mod(iup,nsmall).eq.0) then
+                  allocate(temp1(9,iup))
+                  do j = 1, iup
+                    temp1(:,j) = up(:,j)
+                  enddo
+                  deallocate(up)
+                  allocate(up(9,iup+nsmall))
+                  do j = 1, iup
+                    up(:,j) = temp1(:,j) 
+                  enddo
+                  deallocate(temp1)
+                endif
                 endif
               else if(recv(3,ii).le.lcrange(3)) then
                 if(myidy.ne.0) then
                 idown = idown + 1
                 down(:,idown) = recv(:,ii)
                 mmsk(i) = .false.
+                if(mod(idown,nsmall).eq.0) then
+                  allocate(temp1(9,idown))
+                  do j = 1, idown
+                    temp1(:,j) = down(:,j)
+                  enddo
+                  deallocate(down)
+                  allocate(down(9,idown+nsmall))
+                  do j = 1, idown
+                    down(:,j) = temp1(:,j) 
+                  enddo
+                  deallocate(temp1)
+                endif
                 endif
               else
               endif
@@ -355,18 +467,54 @@
               iright = iright + 1
               right(:,iright) = recv(:,ii)
               mmsk(i) = .false.
+              if(mod(iright,nsmall).eq.0) then
+                allocate(temp1(9,iright))
+                do j =1, iright
+                  temp1(:,j) = right(:,j)
+                enddo
+                deallocate(right)
+                allocate(right(9,iright+nsmall))
+                do j =1, iright
+                  right(:,j) = temp1(:,j) 
+                enddo
+                deallocate(temp1)
+              endif
             else
               if(recv(3,ii).gt.lcrange(4)) then
                 if(myidy.ne.(npy-1)) then
                 iup = iup + 1
                 up(:,iup) = recv(:,ii)
                 mmsk(i) = .false.
+                if(mod(iup,nsmall).eq.0) then
+                  allocate(temp1(9,iup))
+                  do j = 1, iup
+                    temp1(:,j) = up(:,j)
+                  enddo
+                  deallocate(up)
+                  allocate(up(9,iup+nsmall))
+                  do j = 1, iup
+                    up(:,j) = temp1(:,j) 
+                  enddo
+                  deallocate(temp1)
+                endif
                 endif
               else if(recv(3,ii).le.lcrange(3)) then
                 if(myidy.ne.0) then
                 idown = idown + 1
                 down(:,idown) = recv(:,ii)
                 mmsk(i) = .false.
+                if(mod(idown,nsmall).eq.0) then
+                  allocate(temp1(9,idown))
+                  do j = 1, idown
+                    temp1(:,j) = down(:,j)
+                  enddo
+                  deallocate(down)
+                  allocate(down(9,idown+nsmall))
+                  do j = 1, idown
+                    down(:,j) = temp1(:,j) 
+                  enddo
+                  deallocate(temp1)
+                endif
                 endif
               else
               endif
@@ -376,101 +524,101 @@
               iup = iup + 1
               up(:,iup) = recv(:,ii)
               mmsk(i) = .false.
+              if(mod(iup,nsmall).eq.0) then
+                allocate(temp1(9,iup))
+                do j = 1, iup
+                  temp1(:,j) = up(:,j)
+                enddo
+                deallocate(up)
+                allocate(up(9,iup+nsmall))
+                do j = 1, iup
+                  up(:,j) = temp1(:,j) 
+                enddo
+                deallocate(temp1)
+              endif
             endif
           else if(recv(3,ii).le.lcrange(3)) then
             if(myidy.ne.0) then
               idown = idown + 1
               down(:,idown) = recv(:,ii)
               mmsk(i) = .false.
+              if(mod(idown,nsmall).eq.0) then
+                allocate(temp1(9,idown))
+                do j = 1, idown
+                  temp1(:,j) = down(:,j)
+                enddo
+                deallocate(down)
+                allocate(down(9,idown+nsmall))
+                do j = 1, idown
+                  down(:,j) = temp1(:,j) 
+                enddo
+                deallocate(temp1)
+              endif
             endif
           else
           endif
         enddo
-
-        if((ileft.gt.nptmv).or.(iright.gt.nptmv).or.(iup.gt.nptmv) &
-            .or.(idown.gt.nptmv)) then
-           print*,"too small buffer size, nptmv, for particle move!"
-           flag = 1
-           stop
-        endif
-
         nmv = ileft+iright+idown+iup
         call MPI_ALLREDUCE(nmv,totnmv,1,MPI_INTEGER,MPI_SUM, &
                            comm2d,ierr)
-        do i = 1, numbuf
-          if(mmsk(i)) then
-            ic = ic + 1
-            temp1(:,ic) = recv(:,i)
-          endif
-        enddo
-
-        if(ic.gt.ntmpstr) then
-          print*,"temporary storage size, ntmpstr, is too small!"
-          stop
-        endif
-
         if(totnmv.eq.0) then
+          deallocate(mmsk)
+          deallocate(up)
+          deallocate(down)
+          deallocate(left)
+          deallocate(right)
+          nmv0 = nmv0 + numbuf - nmv
           exit
         endif
 
-        call MPI_BARRIER(comm2d,ierr)
+        ic = 0
+        allocate(temp1(9,nmv0+numbuf-nmv))
+        do i = 1, nmv0
+          temp1(:,i) = recv(:,i)
+        enddo
+        do i = 1, numbuf
+          ii = i + nmv0
+          if(mmsk(i)) then
+            ic = ic + 1
+            temp1(:,ic+nmv0) = recv(:,ii)
+          endif
+        enddo
+        deallocate(mmsk)
+        nmv0 = nmv0 + numbuf - nmv
+
+!        print*," loop ", ij,numbuf,nmv,nmv0
 
         enddo
 
-        nrecv = ic
-        !print*,"nrecv: ",nrecv,myid,nout,Nptlocal
-
         !copy the remaining local particles into a temporary array.
         numpts = Nptlocal-nout
-        deallocate(recv)
-        deallocate(mmsk)
-        allocate(recv(9,numpts))
+        allocate(temp1(9,numpts))
         ic = 0
         do i = 1, Nptlocal
           if(msk(i)) then
             ic = ic + 1
-            do j = 1, 9
-              recv(j,ic) = Ptsl(j,i)
-            enddo
+            temp1(:,ic) = Ptsl(:,i)
           endif
         enddo
 
-        call MPI_BARRIER(comm2d,ierr)
+        deallocate(msk)
+
+!        call MPI_BARRIER(comm2d,ierr)
         !recopy the remaining local particles back to Ptsl which has 
         !a new size now.
-        Nptlocal = numpts+nrecv
-
+        Nptlocal = numpts+nmv0 
         deallocate(Ptsl)
         allocate(Ptsl(9,Nptlocal))
         do i = 1, numpts
-          do j = 1, 9
-            Ptsl(j,i) = recv(j,i)
-          enddo
+          Ptsl(:,i) = temp1(:,i)
         enddo
-        do i = 1, nrecv
+        deallocate(temp1)
+        do i = 1, nmv0
           ii = i + numpts
-          do j = 1, 9
-            Ptsl(j,ii) = temp1(j,i)
-          enddo
+          Ptsl(:,ii) = recv(:,i)
         enddo
 
         deallocate(recv)
-
-        tmpctlc = 0.0
-!        do i = 1, Nptlocal
-!          tmpctlc(1) = tmpctlc(1) + abs(Ptsl(1,i))
-!          tmpctlc(2) = tmpctlc(2) + abs(Ptsl(2,i))
-!          tmpctlc(3) = tmpctlc(3) + abs(Ptsl(3,i))
-!          tmpctlc(4) = tmpctlc(4) + abs(Ptsl(4,i))
-!          tmpctlc(5) = tmpctlc(5) + abs(Ptsl(5,i))
-!          tmpctlc(6) = tmpctlc(6) + abs(Ptsl(6,i))
-!        enddo
-!        call MPI_ALLREDUCE(tmpctlc,tmpct2,6,MPI_DOUBLE_PRECISION,MPI_SUM, &
-!                           comm2d,ierr)
-!        if(myid.eq.0) then
-!          print*,"after particle move: ",tmpct2
-!          print*,"difference of move: ",sum(tmpct2-tmpct)
-!        endif
 
         t_ptsmv = t_ptsmv + elapsedtime_Timer(t0)
 
