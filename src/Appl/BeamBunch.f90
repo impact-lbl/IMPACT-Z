@@ -390,7 +390,11 @@
               gami_2 = gami_1+dgami
               gambeti_2 = sqrt(gami_2**2-1.0d0)
 
-              fact = gambeti_1/dgami*dlog(gambeti_2/gambeti_1)*tau/Scxl
+              if(abs(vtmp).lt.1.0d-10) then
+                fact = tau/Scxl
+              else
+                fact = gambeti_1/dgami*dlog(gambeti_2/gambeti_1)*tau/Scxl
+              endif
 
               this%Pts1(1,i) = this%Pts1(1,i) + fact*&
                                this%Pts1(2,i)/gambetzi_1
