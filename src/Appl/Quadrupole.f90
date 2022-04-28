@@ -606,4 +606,62 @@
 
         end subroutine transfmapK_Quadrupole
 
+        !undulator transfer matrix using quad element
+        subroutine transfUndulator_Quadrupole(tt,tau,this,refpt,Nplc,pts,qmass)
+        implicit none
+        include 'mpif.h'
+        integer, intent(in) :: Nplc
+        double precision, intent(inout) :: tt
+        double precision, intent(in) :: tau,qmass
+        double precision, dimension(6), intent(inout) :: refpt
+        double precision, dimension(6) :: tmp
+        type (Quadrupole), intent(in) :: this
+        double precision, pointer, dimension(:,:) :: pts
+        real*8 :: xm11,xm12,xm21,xm22,xm33,xm34,xm43,xm44,gam,gambetz,&
+                  betaz,beta0,rtkstrzz,rtkstr,kstr,gambet0
+        integer  :: i
+        real*8 :: t,cs,ss,ARGh,ARGh2,ARGh4,ARGh6,SINCARGh,R34h,kqlh
+
+        gambet0 = sqrt(refpt(6)**2-1.0d0)
+        beta0 = sqrt(1.0d0-1.0d0/(refpt(6)**2))
+
+        kqlh = this%Param(2)
+        ARGh     = tau*sqrt(kqlh)
+        ARGh2    = ARGh*ARGh
+        ARGh4    = ARGh2*ARGh2
+        ARGh6    = ARGh4*ARGh2
+        SINCARGh = 1-ARGh2/6+ARGh4/120-ARGh6/5040 !~sinc(ARGh)=sin(ARGh)/ARGh
+        R34h     = tau*SINCARGh
+
+        xm11=1.0d0
+        xm12=tau
+        xm21=0.0d0
+        xm22=1.0d0
+        xm33=cos(tau*sqrt(kqlh))
+        xm34=R34h
+        xm43=-sin(tau*sqrt(kqlh))*sqrt(kqlh)
+        xm44=cos(tau*sqrt(kqlh))
+
+        do i = 1, Nplc
+          gam = -refpt(6) - pts(6,i)
+          gambetz = sqrt(gam**2-1.0d0-pts(2,i)**2-pts(4,i)**2)
+          betaz = gambetz/gam
+          tmp(1) = xm11*pts(1,i)+xm12*pts(2,i)/gambetz/Scxl
+          tmp(2) = gambetz*Scxl*xm21*pts(1,i)+xm22*pts(2,i)
+          tmp(3) = xm33*pts(3,i)+xm34*pts(4,i)/gambetz/Scxl
+          tmp(4) = gambetz*Scxl*xm43*pts(3,i)+xm44*pts(4,i)
+          tmp(5) = pts(5,i) + (1.0/betaz-1.0/beta0)*tau/Scxl
+          tmp(6) = pts(6,i)
+          pts(1,i) = tmp(1)
+          pts(2,i) = tmp(2)
+          pts(3,i) = tmp(3)
+          pts(4,i) = tmp(4)
+          pts(5,i) = tmp(5)
+          pts(6,i) = tmp(6)
+        enddo
+        refpt(5) = refpt(5) + tau/beta0/Scxl
+!        tt = tt + tau
+
+        end subroutine transfUndulator_Quadrupole
+
       end module Quadrupoleclass

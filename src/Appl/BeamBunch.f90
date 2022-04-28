@@ -298,7 +298,10 @@
           this%refptcl(5) = this%refptcl(5) + tau/(Scxl*beta0)
         else if(bitype.eq.1) then
           call getparam_BeamLineElem(beamln,3,x3)
-          if(x3.lt.-1.0d-6) then
+          if(x3.lt.-10.0) then !undulator transfer map
+             call transfUndulator_Quadrupole(z,tau,beamln%pquad,this%refptcl,this%Nptlocal,&
+                                    this%Pts1,qmass)
+          else if(x3.lt.-1.0d-6) then
             call transfmapK_Quadrupole(z,tau,beamln%pquad,this%refptcl,this%Nptlocal,&
                                     this%Pts1,qmass)
           else
