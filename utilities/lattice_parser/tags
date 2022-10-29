@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+__default_beam	impactz_parser.py	/^    def __default_beam(self):$/;"	m	class:impactz_parser	file:
+__default_control	impactz_parser.py	/^    def __default_control(self):    $/;"	m	class:impactz_parser	file:
+__default_lattice	impactz_parser.py	/^    def __default_lattice(self):$/;"	m	class:impactz_parser	file:
+__init__	impactz_parser.py	/^    def __init__(self, fileName, lineName):$/;"	m	class:impactz_parser
+__init__	lattice_parser.py	/^    def __init__(self, fileName, lineName):$/;"	m	class:lattice_parser
+_combine_lines	lattice_parser.py	/^    def _combine_lines(self,lines):$/;"	m	class:lattice_parser
+_delete_backslashn	lattice_parser.py	/^    def _delete_backslashn(self, lines):$/;"	m	class:lattice_parser
+_delete_comment_blank_lines	lattice_parser.py	/^    def _delete_comment_blank_lines(self, lines):$/;"	m	class:lattice_parser
+_delete_redundant_comma	lattice_parser.py	/^    def _delete_redundant_comma(self, lines):$/;"	m	class:lattice_parser
+_expandline	lattice_parser.py	/^    def _expandline(self, line, lines):$/;"	m	class:lattice_parser
+_get_bendmap_flag	impactz_parser.py	/^    def _get_bendmap_flag(self, elem :dict):$/;"	m	class:impactz_parser
+_get_index	impactz_parser.py	/^    def _get_index(self, pattern1, pattern2, lines):$/;"	m	class:impactz_parser
+_get_lattice	lattice_parser.py	/^    def _get_lattice(self, lines):$/;"	m	class:lattice_parser
+_is_number	lattice_parser.py	/^    def _is_number(self, s:str):$/;"	m	class:lattice_parser
+_readfile	lattice_parser.py	/^    def _readfile(self):$/;"	m	class:lattice_parser
+_set_steps_maps_radius	impactz_parser.py	/^    def _set_steps_maps_radius(self, elem :dict):$/;"	m	class:impactz_parser
+c_light	const.py	/^c_light = 2.99792458e8$/;"	v
+electron_mass	const.py	/^electron_mass = 0.51099895000e6  #eV$/;"	v
+elegant2impz_lattice	impactz_parser.py	/^    def elegant2impz_lattice(self,trackline):$/;"	m	class:impactz_parser
+file_name	impactz_parser.py	/^    file_name = '.\/debugExample\/shine.impz'   $/;"	v	class:impactz_parser
+file_name	lattice_parser.py	/^    file_name = '.\/debugExample\/lattice.lte'$/;"	v	class:lattice_parser
+get_beam_section	impactz_parser.py	/^    def get_beam_section(self):$/;"	m	class:impactz_parser
+get_brieflines	lattice_parser.py	/^    def get_brieflines(self):$/;"	m	class:lattice_parser
+get_control_section	impactz_parser.py	/^    def get_control_section(self):$/;"	m	class:impactz_parser
+get_lattice_section	impactz_parser.py	/^    def get_lattice_section(self):$/;"	m	class:impactz_parser
+get_trackline	lattice_parser.py	/^    def get_trackline(self, lines):$/;"	m	class:lattice_parser
+impactz_parser	impactz_parser.py	/^class impactz_parser(lattice_parser):$/;"	c
+impactzin_control	impactz_parser.py	/^    def impactzin_control(self):$/;"	m	class:impactz_parser
+impactzin_lattice	impactz_parser.py	/^    def impactzin_lattice(self):$/;"	m	class:impactz_parser
+lattice_parser	lattice_parser.py	/^class lattice_parser:$/;"	c
+line_name	impactz_parser.py	/^    line_name = 'SHINE'$/;"	v	class:impactz_parser
+line_name	lattice_parser.py	/^    line_name = 'line'$/;"	v	class:lattice_parser
+lines	lattice_parser.py	/^    lines = lte.get_brieflines()$/;"	v	class:lattice_parser
+lte	impactz_parser.py	/^    lte = impactz_parser(file_name,line_name)$/;"	v	class:impactz_parser
+lte	lattice_parser.py	/^    lte = lattice_parser(file_name,line_name)$/;"	v	class:lattice_parser
+nest_dict	impactz_parser.py	/^nest_dict = lambda: defaultdict(nest_dict) # to define a['key1']['key2'] = value$/;"	v
+proton_mass	const.py	/^proton_mass = 938.27208816e6     #eV$/;"	v
+rpn_cal	lattice_parser.py	/^    def rpn_cal(self, rpn_str:str):$/;"	m	class:lattice_parser
+trackline	lattice_parser.py	/^    trackline = lte.get_trackline(lines)$/;"	v	class:lattice_parser
+update_beam	impactz_parser.py	/^    def update_beam(self):$/;"	m	class:impactz_parser
+update_control	impactz_parser.py	/^    def update_control(self):$/;"	m	class:impactz_parser
+update_paras	impactz_parser.py	/^    def update_paras(self):  $/;"	m	class:impactz_parser
+update_trackline	impactz_parser.py	/^    def update_trackline(self):$/;"	m	class:impactz_parser
+write_impactzin	impactz_parser.py	/^    def write_impactzin(self):$/;"	m	class:impactz_parser

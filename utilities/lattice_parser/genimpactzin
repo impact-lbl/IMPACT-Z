@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+import sys
+import impactz_parser as impz
+
+if len(sys.argv) != 3:
+   print("\n Please give *.impz file and LineName, usage: genimpactzin tmp.impz LineName \n")
+   exit()
+
+file = sys.argv[1] 
+line= sys.argv[2]
+
+tmp = impz.impactz_parser(file, line)
+tmp.write_impactzin()    
+
+

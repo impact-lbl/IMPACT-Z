@@ -1,0 +1,8 @@
+#!/bin/bash
+
+./cleanUp
+genimpactzin lte.impz LN123
+
+ImpactZexe ImpactZ.in
+
+#mpirun -np 4 ImpactZexe ImpactZ.in

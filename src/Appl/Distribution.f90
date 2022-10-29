@@ -63,27 +63,27 @@
 
         gam = -this%refptcl(6)
         gambet = sqrt(gam**2-1.0d0)
-!X-Px
-        alpha = distparam0(1)     
-        beta = distparam0(2)
-        eps = distparam0(3)/gambet !unnormalized emittance m-rad
-        distparam(1) = sqrt(beta*eps/(1.d0+alpha**2))/Scxl
-        distparam(2) = sqrt(eps/beta)*gambet 
-        distparam(3) = alpha/sqrt(1.d0+alpha**2)
-!Y-Py
-        alpha = distparam0(8)     
-        beta = distparam0(9)
-        eps = distparam0(10)/gambet
-        distparam(8) = sqrt(beta*eps/(1.d0+alpha**2))/Scxl
-        distparam(9) = sqrt(eps/beta)*gambet 
-        distparam(10) = alpha/sqrt(1.d0+alpha**2)
-!T-Pt
-        alpha = distparam0(15)     
-        beta = distparam0(16) !degree/MeV
-        eps = distparam0(17) !degree-MeV
-        distparam(15) = sqrt(beta*eps/(1.d0+alpha**2))/Rad2deg
-        distparam(16) = sqrt(eps/beta)/(this%Mass/1.0d6)
-        distparam(17) = -alpha/sqrt(1.d0+alpha**2)
+!!X-Px
+!        alpha = distparam0(1)     
+!        beta = distparam0(2)
+!        eps = distparam0(3)/gambet !unnormalized emittance m-rad
+!        distparam(1) = sqrt(beta*eps/(1.d0+alpha**2))/Scxl
+!        distparam(2) = sqrt(eps/beta)*gambet 
+!        distparam(3) = alpha/sqrt(1.d0+alpha**2)
+!!Y-Py
+!        alpha = distparam0(8)     
+!        beta = distparam0(9)
+!        eps = distparam0(10)/gambet
+!        distparam(8) = sqrt(beta*eps/(1.d0+alpha**2))/Scxl
+!        distparam(9) = sqrt(eps/beta)*gambet 
+!        distparam(10) = alpha/sqrt(1.d0+alpha**2)
+!!T-Pt
+!        alpha = distparam0(15)     
+!        beta = distparam0(16) !degree/MeV
+!        eps = distparam0(17) !degree-MeV
+!        distparam(15) = sqrt(beta*eps/(1.d0+alpha**2))/Rad2deg
+!        distparam(16) = sqrt(eps/beta)/(this%Mass/1.0d6)
+!        distparam(17) = -alpha/sqrt(1.d0+alpha**2)
 
         if(flagdist.eq.1) then
           call Uniform_Dist(this,nparam,distparam,geom,grid)
