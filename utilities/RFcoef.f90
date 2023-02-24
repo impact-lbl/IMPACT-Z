@@ -108,8 +108,8 @@
                   Fcoef2(j)*sin((j-1)*2*pi*zz/zlen)
          tmpsump = tmpsump-(j-1)*2*pi*Fcoef(j)*sin((j-1)*2*pi*zz/zlen)/zlen +&
                   (j-1)*2*pi*Fcoef2(j)*cos((j-1)*2*pi*zz/zlen)/zlen
-         tmpsumpp = tmpsumpp-((j-1)*2*pi*Fcoef(j)/zlen)**2*cos((j-1)*2*pi*zz/zlen) -&
-                  ((j-1)*2*pi*Fcoef2(j)/zlen)**2*sin((j-1)*2*pi*zz/zlen)
+         tmpsumpp = tmpsumpp-((j-1)*2*pi/zlen)**2*Fcoef(j)*cos((j-1)*2*pi*zz/zlen) -&
+                  ((j-1)*2*pi/zlen)**2*Fcoef2(j)*sin((j-1)*2*pi*zz/zlen)
         enddo
         write(8,*)zdata(i),tmpsum,tmpsump,tmpsumpp
       enddo
