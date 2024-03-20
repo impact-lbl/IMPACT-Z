@@ -25,7 +25,7 @@
         double precision :: XmaxRfg,XminRfg,YmaxRfg,YminRfg,ZmaxRfg,ZminRfg
         ! discrete Ex(x,y,z), Ey(x,y,z), Ez(x,y,z) and Bx(x,y,z), By(x,y,z), and 
         ! Bz(x,y,z) rf data. Here, the grid is uniform in x, y and z.
-        double precision,allocatable,dimension(:,:,:) :: &
+        double complex,allocatable,dimension(:,:,:) :: &
                Exgrid,Eygrid,Ezgrid,Bxgrid,Bygrid,Bzgrid
 !-----------------------------------------------------------------------
 ! using the r-z field data (Er,Ez,Htheta) directly.
@@ -417,7 +417,7 @@
         include 'mpif.h' 
         integer, intent(in) :: ifile
         integer :: myrank,ierr,i,ii,jj,kk,ll,n,nn,Ndatalc,j,tmpint,k
-        double precision :: tmp1,tmp2,tmp3,tmp4,zdat1,mu0,tmp5,tmp6
+        double complex :: tmp1,tmp2,tmp3,tmp4,zdat1,mu0,tmp5,tmp6
         character*10 name1
         character*11 name2
         character*12 name3
@@ -528,17 +528,17 @@
 
         call MPI_BCAST(Ndatalc,1,MPI_INTEGER,0,&
              MPI_COMM_WORLD,ierr)
-        call MPI_BCAST(Exgrid,Ndatalc,MPI_DOUBLE_PRECISION,0,&
+        call MPI_BCAST(Exgrid,Ndatalc,MPI_DOUBLE_COMPLEX,0,&
              MPI_COMM_WORLD,ierr)
-        call MPI_BCAST(Eygrid,Ndatalc,MPI_DOUBLE_PRECISION,0,&
+        call MPI_BCAST(Eygrid,Ndatalc,MPI_DOUBLE_COMPLEX,0,&
              MPI_COMM_WORLD,ierr)
-        call MPI_BCAST(Ezgrid,Ndatalc,MPI_DOUBLE_PRECISION,0,&
+        call MPI_BCAST(Ezgrid,Ndatalc,MPI_DOUBLE_COMPLEX,0,&
              MPI_COMM_WORLD,ierr)
-        call MPI_BCAST(Bxgrid,Ndatalc,MPI_DOUBLE_PRECISION,0,&
+        call MPI_BCAST(Bxgrid,Ndatalc,MPI_DOUBLE_COMPLEX,0,&
              MPI_COMM_WORLD,ierr)
-        call MPI_BCAST(Bygrid,Ndatalc,MPI_DOUBLE_PRECISION,0,&
+        call MPI_BCAST(Bygrid,Ndatalc,MPI_DOUBLE_COMPLEX,0,&
              MPI_COMM_WORLD,ierr)
-        call MPI_BCAST(Bzgrid,Ndatalc,MPI_DOUBLE_PRECISION,0,&
+        call MPI_BCAST(Bzgrid,Ndatalc,MPI_DOUBLE_COMPLEX,0,&
              MPI_COMM_WORLD,ierr)
 
 !        if(myrank.eq.0) then

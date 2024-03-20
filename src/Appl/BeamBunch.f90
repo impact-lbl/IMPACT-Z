@@ -2532,12 +2532,13 @@
                             er,btheta,ww,et,bt
         integer :: ir,ir1,FlagCart,FlagDisc
         !3D Cartesian coordinate.
-        double precision,dimension(6,NxIntvRfg+1,NyIntvRfg+1)::extfld6xyz
+        double complex,dimension(6,NxIntvRfg+1,NyIntvRfg+1)::extfld6xyz
         double precision :: xx,yy,hxx,hyy,hxxi,hyyi,efx,efy
         integer :: iy,iy1
         double precision, dimension(4,innp) :: postmp
         double precision, dimension(6,innp) :: extfldtmp
         real*8, dimension(6) :: tmprays
+        double complex :: tmpt
 
         call starttime_Timer( t0 )
 
@@ -2616,12 +2617,14 @@
               iy = (yy-YminRfg)/hyy + 1
               iy1 = iy+1
               efy = (YminRfg-yy+iy*hyy)/hyy
-              ezn = extfld6xyz(3,ix,iy)*efx*efy + &
+              tmpt = escale*dcmplx(cos(ww*tg+theta0),sin(ww*tg+theta0))
+              ezn = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                     extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                     extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy)
-              et = escale*cos(ww*tg+theta0)
-              ez0 = ezn*et
+                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+              !et = escale*cos(ww*tg+theta0)
+              !ez0 = ezn*et
+              ez0 = ezn
             endif
           else if(FlagDisc.eq.2) then
             pos(1) = 0.0
@@ -2650,12 +2653,14 @@
               iy = (yy-YminRfg)/hyy + 1
               iy1 = iy+1
               efy = (YminRfg-yy+iy*hyy)/hyy
-              ezn = extfld6xyz(3,ix,iy)*efx*efy + &
+              tmpt = escale*dcmplx(cos(ww*tg+theta0),sin(ww*tg+theta0))
+              ezn = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                     extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                     extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy)
-              et = escale*cos(ww*tg+theta0)
-              ez0 = ez0 + ezn*et
+                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+              !et = escale*cos(ww*tg+theta0)
+              !ez0 = ez0 + ezn*et
+              ez0 = ez0 + ezn
             endif
           else
             pos(1) = 0.0
@@ -2761,6 +2766,7 @@
               !field function (r) in cylindrical coordinate
               et = escale*cos(ww*(tg+rays(5,n))+theta0)
               bt = escale*sin(ww*(tg+rays(5,n))+theta0)
+              tmpt = dcmplx(et,bt)
               if(FlagCart.eq.1) then
                 rr = sqrt(rays(1,n)*rays(1,n)+rays(3,n)*rays(3,n))*xl
                 ir = rr*hri + 1
@@ -2784,30 +2790,30 @@
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
                 efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = (extfld6xyz(1,ix,iy)*efx*efy + &
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
                       extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(2) = (extfld6xyz(2,ix,iy)*efx*efy + &
+                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
                       extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(3) = (extfld6xyz(3,ix,iy)*efx*efy + &
+                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                       extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(4) = (extfld6xyz(4,ix,iy)*efx*efy + &
+                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
                       extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(5) = (extfld6xyz(5,ix,iy)*efx*efy + &
+                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
                       extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(6) = (extfld6xyz(6,ix,iy)*efx*efy + &
+                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
                       extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
+                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
               endif
           !use both analytical function and discrete data.
           else if(FlagDisc.eq.2) then
@@ -2821,6 +2827,7 @@
               !field function (r) in cylindrical coordinate
               et = escale*cos(ww*(tg+rays(5,n))+theta0)
               bt = escale*sin(ww*(tg+rays(5,n))+theta0)
+              tmpt = dcmplx(et,bt)
               if(FlagCart.eq.1) then
                 rr = sqrt(rays(1,n)*rays(1,n)+rays(3,n)*rays(3,n))*xl
                 ir = rr*hri + 1
@@ -2845,30 +2852,30 @@
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
                 efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = (extfld6xyz(1,ix,iy)*efx*efy + &
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
                       extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(2) = (extfld6xyz(2,ix,iy)*efx*efy + &
+                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
                       extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(3) = (extfld6xyz(3,ix,iy)*efx*efy + &
+                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                       extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(4) = (extfld6xyz(4,ix,iy)*efx*efy + &
+                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
                       extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(5) = (extfld6xyz(5,ix,iy)*efx*efy + &
+                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
                       extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(6) = (extfld6xyz(6,ix,iy)*efx*efy + &
+                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
                       extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
+                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
               endif
           else !use analytical function data only
             if(associated(beamelem%pdtl)) then
@@ -2962,11 +2969,12 @@
                             er,btheta,ww,et,bt
         integer :: ir,ir1,FlagCart,FlagDisc
         !3D Cartesian coordinate.
-        double precision,dimension(6,NxIntvRfg+1,NyIntvRfg+1)::extfld6xyz
+        double complex,dimension(6,NxIntvRfg+1,NyIntvRfg+1)::extfld6xyz
         double precision :: xx,yy,hxx,hyy,hxxi,hyyi,efx,efy,ezn
         integer :: iy,iy1,ix,ix1
         double precision, dimension(4,innp) :: postmp
         double precision, dimension(6,innp) :: extfldtmp
+        double complex :: tmpt
 
         call starttime_Timer( t0 )
 
@@ -3008,12 +3016,14 @@
               iy = (yy-YminRfg)/hyy + 1
               iy1 = iy+1
               efy = (YminRfg-yy+iy*hyy)/hyy
-              ezn = extfld6xyz(3,ix,iy)*efx*efy + &
+              tmpt = escale*dcmplx(cos(ww*tg+theta0),sin(ww*tg+theta0))
+              ezn = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                     extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                     extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy)
-              et = escale*cos(ww*tg+theta0)
-              ez0 = ezn*et
+                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+              !et = escale*cos(ww*tg+theta0)
+              !ez0 = ezn*et
+              ez0 = ezn
               !print*,"ezn: ",xx,yy,z,ezn
             endif
           else if(FlagDisc.eq.2) then
@@ -3043,12 +3053,14 @@
               iy = (yy-YminRfg)/hyy + 1
               iy1 = iy+1
               efy = (YminRfg-yy+iy*hyy)/hyy
-              ezn = extfld6xyz(3,ix,iy)*efx*efy + &
+              tmpt = escale*dcmplx(cos(ww*tg+theta0),sin(ww*tg+theta0))
+              ezn = dcmplx((extfld6xyz(3,ix,iy)*efx*efy + &
                     extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                     extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy)
-              et = escale*cos(ww*tg+theta0)
-              ez0 = ez0 + ezn*et
+                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+              !et = escale*cos(ww*tg+theta0)
+              !ez0 = ez0 + ezn*et
+              ez0 = ez0 + ezn
             endif
           else
             pos(1) = 0.0
@@ -3094,6 +3106,7 @@
               !field function (r) in cylindrical coordinate
               et = escale*cos(ww*(tg+rays(5,n))+theta0)
               bt = escale*sin(ww*(tg+rays(5,n))+theta0)
+              tmpt = dcmplx(et,bt)
               if(FlagCart.eq.1) then
                 rr = sqrt(rays(1,n)*rays(1,n)+rays(3,n)*rays(3,n))*xl
                 ir = rr*hri + 1
@@ -3117,30 +3130,30 @@
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
                 efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = (extfld6xyz(1,ix,iy)*efx*efy + &
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
                       extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(2) = (extfld6xyz(2,ix,iy)*efx*efy + &
+                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
                       extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(3) = (extfld6xyz(3,ix,iy)*efx*efy + &
+                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                       extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(4) = (extfld6xyz(4,ix,iy)*efx*efy + &
+                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
                       extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(5) = (extfld6xyz(5,ix,iy)*efx*efy + &
+                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
                       extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(6) = (extfld6xyz(6,ix,iy)*efx*efy + &
+                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
                       extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
+                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
               endif
             !use both analytical function and discrete data.
             else if(FlagDisc.eq.2) then 
@@ -3154,6 +3167,7 @@
               !field function (r) in cylindrical coordinate
               et = escale*cos(ww*(tg+rays(5,n))+theta0)
               bt = escale*sin(ww*(tg+rays(5,n))+theta0)
+              tmpt = dcmplx(et,bt)
               if(FlagCart.eq.1) then
                 rr = sqrt(rays(1,n)*rays(1,n)+rays(3,n)*rays(3,n))*xl
                 ir = rr*hri + 1
@@ -3178,30 +3192,30 @@
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
                 efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = (extfld6xyz(1,ix,iy)*efx*efy + &
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
                       extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(2) = (extfld6xyz(2,ix,iy)*efx*efy + &
+                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
                       extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(3) = (extfld6xyz(3,ix,iy)*efx*efy + &
+                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                       extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(4) = (extfld6xyz(4,ix,iy)*efx*efy + &
+                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
                       extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(5) = (extfld6xyz(5,ix,iy)*efx*efy + &
+                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
                       extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(6) = (extfld6xyz(6,ix,iy)*efx*efy + &
+                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
                       extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
+                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
               endif
             else !use analytical function data only
               !get field in Cartesian coordinate from analytical function.
@@ -3274,197 +3288,6 @@
         t_ntrslo = t_ntrslo + elapsedtime_Timer( t0 )
 
         end subroutine scatter20_BeamBunch
-
-        ! scatter grid quantity onto particles.
-        subroutine scatter20err_BeamBunch(innp,rays,tg,gam,chge,mass,&
-                                       tau,z,beamelem)
-        implicit none
-        include 'mpif.h'
-        double precision, intent (inout), dimension (9,innp) :: rays
-        double precision, intent (in) :: tau,mass,chge,tg,z
-        double precision, intent (inout) :: gam
-        integer, intent(in) :: innp
-        type (BeamLineElem), intent(in) :: beamelem
-        integer :: n,i,ii
-        double precision :: t0
-        double precision, dimension(4) :: pos
-        double precision, dimension(6) :: extfld
-        double precision :: twopi,xl,tmpgamma0,tmpgamma00,&
-        beta0,qmcc,ez0,tmp1,tmp2,tmp3,tmp4,tmp5,tmp12,tmp23,&
-        tmp13,pz,p1,p2,p3,a12,a13,a23,b1,b2,b3,s11,s12,s13,s21,s22,s23,&
-        s31,s32,s33,det,tmpsq2,ex,ey,ez,bx,by,bz
-        double precision, dimension(6) :: extfld6
-        double precision :: rr,hr,hri,te,tb,escale,rffreq,theta0,efr,&
-                            er,btheta,ww,et,bt
-        integer :: ir,ir1,FlagCart,FlagDisc
-        double precision :: dx,dy,anglex,angley,anglez
-        double precision, dimension(4,innp) :: postmp
-        double precision, dimension(6,innp) :: extfldtmp
-
-        call starttime_Timer( t0 )
-
-        twopi = 2.0*Pi
-        xl = Scxl
-        beta0 = sqrt(gam**2-1.0)/gam
-        qmcc = chge/mass
-
-        call geterr_BeamLineElem(beamelem,dx,dy,anglex,angley,anglez)
-
-        FlagDisc = 0
-        FlagCart = 1
-        pos(1) = 0.0
-        pos(2) = 0.0
-        pos(3) = z
-        pos(4) = tg
-        if(associated(beamelem%pemfld)) then
-          FlagDisc = 0.1+beamelem%pemfld%Param(13)
-          FlagCart = 0.1+beamelem%pemfld%Param(14)
-
-          if(FlagDisc.eq.1) then
-            if(FlagCart.eq.1) then
-              call getfld6err_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-            else if(FlagCart.eq.2) then
-              call getfld6xyzerr_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-            endif
-            ez0 = extfld6(3)
-          else if(FlagDisc.eq.2) then
-            call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                        angley,anglez)
-            ez0 = extfld(3)
-            if(FlagCart.eq.1) then
-              call getfld6err_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-            else if(FlagCart.eq.2) then
-              call getfld6xyzerr_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-            endif
-            ez0 = ez0 + extfld6(3)
-          else
-            call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                        angley,anglez)
-            ez0 = extfld(3)
-          endif
-        else
-          call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                       angley,anglez)
-          ez0 = extfld(3)
-        endif
-
-        if(associated(beamelem%pdtl)) then
-          !  print*,"into dtl"
-          do n=1,innp
-            postmp(1,n) = rays(1,n)*xl
-            postmp(2,n) = rays(3,n)*xl
-            postmp(3,n) = z
-            postmp(4,n) = rays(5,n) + tg
-          enddo
-          call getfldpts_DTL(postmp,extfldtmp,beamelem%pdtl,innp)
-        else if(associated(beamelem%pccl)) then
-          do n=1,innp
-            postmp(1,n) = rays(1,n)*xl
-            postmp(2,n) = rays(3,n)*xl
-            postmp(3,n) = z
-            postmp(4,n) = rays(5,n) + tg
-          enddo
-          call getfldpts_CCL(postmp,extfldtmp,beamelem%pccl,innp)
-        endif
-
-        tmpgamma0 = gam + 0.5*tau*qmcc*ez0
-        !print*,"ez0: ",ez0
-        do n = 1, innp
-          pos(1) = rays(1,n)*xl
-          pos(2) = rays(3,n)*xl
-          pos(3) = z
-          pos(4) = rays(5,n) + tg
-          if(FlagDisc.eq.1) then !use discrete data only
-            !calculate field in Cartesian coordinate from the discrete
-            !field function (r) in cylindrical coordinate
-            if(FlagCart.eq.1) then
-              call getfld6err_EMfld(beamelem%pemfld,pos,extfld,dx,dy,anglex,&
-                                  angley,anglez)
-            else if(FlagCart.eq.2) then
-              call getfld6xyzerr_EMfld(beamelem%pemfld,pos,extfld,dx,dy,anglex,&
-                                  angley,anglez)
-            endif
-          !use both analytical function and discrete data.
-          else if(FlagDisc.eq.2) then 
-            !get field in Cartesian coordinate from analytical function.
-            call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                        angley,anglez)
-            !calculate field in Cartesian coordinate from the discrete
-            !field function (r) in cylindrical coordinate
-            if(FlagCart.eq.1) then
-              call getfld6err_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-            else if(FlagCart.eq.2) then
-              call getfld6xyzerr_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-            endif
-            extfld = extfld + extfld6
-          else if(associated(beamelem%pdtl)) then
-            extfld(:)=extfldtmp(:,n)
-          else if(associated(beamelem%pccl)) then
-            extfld(:)=extfldtmp(:,n)
-          else !use analytical function data only
-            !get field in Cartesian coordinate from analytical function.
-            call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                        angley,anglez)
-          endif
-
-          ex = extfld(1)
-          ey = extfld(2)
-          ez = extfld(3)
-          bx = extfld(4)
-          by = extfld(5)
-          bz = extfld(6)
-          tmp12 = -tau*Clight*bz*rays(7,n)/2
-          tmp13 = tau*ex*rays(7,n)/2
-          tmp23 = tau*ey*rays(7,n)/2
-          tmp1 = tmpgamma0*ex*tau*rays(7,n)
-          tmp2 = Clight*by*tau*rays(7,n)
-          tmp3 = tmpgamma0*ey*tau*rays(7,n)
-          tmp4 = Clight*bx*tau*rays(7,n)
-!          tmp5 = (ez0-ez)*tau*rays(7,n)
-          !for multi-charge state, qmcc not equal to rays(7,n)
-          tmp5 = (ez0*qmcc-ez*rays(7,n))*tau
-          pz = sqrt((gam-rays(6,n))**2-1.0-rays(2,n)**2-rays(4,n)**2)
-          p1 = rays(2,n)
-          p2 = rays(4,n)
-          p3 = rays(6,n)
-          do ii = 1, 2
-            a12 = tmp12/pz
-            a13 = tmp13/pz
-            a23 = tmp23/pz
-            b1 = p1-a12*p2-a13*p3+tmp1/pz - tmp2
-            b2 = a12*p1+p2-a23*p3+tmp3/pz + tmp4
-            b3 = -a13*p1-a23*p2+p3 + tmp5
-            det = 1+a12*a12-a13*a13-a23*a23
-            s11 = 1-a23*a23
-            s12 = -a12+a13*a23
-            s13 = a12*a23-a13
-            s21 = a12+a13*a23
-            s22 = 1-a13*a13
-            s23 = -a23-a13*a12
-            s31 = -a12*a23-a13
-            s32 = -a23+a12*a13
-            s33 = 1+a12*a12
-            rays(2,n) = (s11*b1+s12*b2+s13*b3)/det
-            rays(4,n) = (s21*b1+s22*b2+s23*b3)/det
-            rays(6,n) = (s31*b1+s32*b2+s33*b3)/det
-            tmpgamma00 = gam + tau*qmcc*ez0
-            tmpsq2 = (tmpgamma00-rays(6,n))**2-1.0-rays(2,n)**2-rays(4,n)**2
-            if(tmpsq2.gt.0.0) then
-              pz = 0.5*pz + 0.5*sqrt(tmpsq2)
-            endif
-          enddo
-        enddo
-        gam = gam + tau*qmcc*ez0
-
-        t_ntrslo = t_ntrslo + elapsedtime_Timer( t0 )
-
-        end subroutine scatter20err_BeamBunch
 
         !All indices here are local to the processor.
         !find charge density on grid from particles.
@@ -5376,10 +5199,11 @@
                             er,btheta,ww,et,bt
         integer :: ir,ir1,FlagCart,FlagDisc
         !3D Cartesian coordinate.
-        double precision,dimension(6,NxIntvRfg+1,NyIntvRfg+1)::extfld6xyz
+        double complex,dimension(6,NxIntvRfg+1,NyIntvRfg+1)::extfld6xyz
         double precision :: xx,yy,hxx,hyy,hxxi,hyyi,efx,efy
         integer :: iy,iy1
         double precision :: exnwk,eynwk,eznwk
+        double complex :: tmpt
 
         call starttime_Timer( t0 )
 
@@ -5458,12 +5282,14 @@
               iy = (yy-YminRfg)/hyy + 1
               iy1 = iy+1
               efy = (YminRfg-yy+iy*hyy)/hyy
-              ezn = extfld6xyz(3,ix,iy)*efx*efy + &
+              tmpt = escale*dcmplx(cos(ww*tg+theta0),sin(ww*tg+theta0))
+              ezn = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                     extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                     extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy)
-              et = escale*cos(ww*tg+theta0)
-              ez0 = ezn*et
+                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+              !et = escale*cos(ww*tg+theta0)
+              !ez0 = ezn*et
+              ez0 = ezn
             endif
           else if(FlagDisc.eq.2) then
             pos(1) = 0.0
@@ -5492,12 +5318,14 @@
               iy = (yy-YminRfg)/hyy + 1
               iy1 = iy+1
               efy = (YminRfg-yy+iy*hyy)/hyy
-              ezn = extfld6xyz(3,ix,iy)*efx*efy + &
+              tmpt = escale*dcmplx(cos(ww*tg+theta0),sin(ww*tg+theta0))
+              ezn = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                     extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                     extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy)
-              et = escale*cos(ww*tg+theta0)
-              ez0 = ez0 + ezn*et
+                    extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+              !et = escale*cos(ww*tg+theta0)
+              !ez0 = ez0 + ezn*et
+              ez0 = ez0 + ezn
             endif
           else
             pos(1) = 0.0
@@ -5574,6 +5402,7 @@
               !field function (r) in cylindrical coordinate
               et = escale*cos(ww*(tg+rays(5,n))+theta0)
               bt = escale*sin(ww*(tg+rays(5,n))+theta0)
+              tmpt = dcmplx(et,bt)
               if(FlagCart.eq.1) then
                 rr = sqrt(rays(1,n)*rays(1,n)+rays(3,n)*rays(3,n))*xl
                 ir = rr*hri + 1
@@ -5597,30 +5426,30 @@
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
                 efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = (extfld6xyz(1,ix,iy)*efx*efy + &
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
                       extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(2) = (extfld6xyz(2,ix,iy)*efx*efy + &
+                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
                       extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(3) = (extfld6xyz(3,ix,iy)*efx*efy + &
+                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                       extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(4) = (extfld6xyz(4,ix,iy)*efx*efy + &
+                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
                       extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(5) = (extfld6xyz(5,ix,iy)*efx*efy + &
+                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
                       extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(6) = (extfld6xyz(6,ix,iy)*efx*efy + &
+                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
                       extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
+                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
               endif
           !use both analytical function and discrete data.
           else if(FlagDisc.eq.2) then
@@ -5634,6 +5463,7 @@
               !field function (r) in cylindrical coordinate
               et = escale*cos(ww*(tg+rays(5,n))+theta0)
               bt = escale*sin(ww*(tg+rays(5,n))+theta0)
+              tmpt = dcmplx(et,bt)
               if(FlagCart.eq.1) then
                 rr = sqrt(rays(1,n)*rays(1,n)+rays(3,n)*rays(3,n))*xl
                 ir = rr*hri + 1
@@ -5658,30 +5488,30 @@
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
                 efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = (extfld6xyz(1,ix,iy)*efx*efy + &
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
                       extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(2) = (extfld6xyz(2,ix,iy)*efx*efy + &
+                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
                       extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(3) = (extfld6xyz(3,ix,iy)*efx*efy + &
+                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
                       extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*et
-                extfld(4) = (extfld6xyz(4,ix,iy)*efx*efy + &
+                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
                       extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(5) = (extfld6xyz(5,ix,iy)*efx*efy + &
+                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
                       extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
-                extfld(6) = (extfld6xyz(6,ix,iy)*efx*efy + &
+                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
                       extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
                       extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*bt
+                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
               endif
           else !use analytical function data only
               !get field in Cartesian coordinate from analytical function.
@@ -5745,278 +5575,5 @@
 
 !----------------------------------------------------------------
         end subroutine scatter2wake_BeamBunch
-
-        subroutine scatter2errwake_BeamBunch(innp,innx,inny,innz,rays,exg,&
-        eyg,ezg,ptsgeom,npx,npy,myidx,myidy,tg,gam,curr,chge,mass,tau,z,&
-        beamelem,exwakelc,eywakelc,ezwakelc)
-        implicit none
-        include 'mpif.h'
-        double precision, intent (inout), dimension (9,innp) :: rays
-        double precision, intent (in), dimension (innx,inny,innz) :: exg,eyg,ezg 
-        double precision, intent (in) :: curr,tau,mass,chge,tg,z
-        double precision, dimension(innz) :: exwakelc,eywakelc,ezwakelc
-        double precision, intent (inout) :: gam
-        integer, intent(in) :: innp,innx,inny,innz,npx,npy,myidx,myidy
-        type (BeamLineElem), intent(in) :: beamelem
-        integer, dimension(2,0:npx-1,0:npy-1) :: table
-        integer, dimension(0:npx-1) :: xtable
-        integer, dimension(0:npy-1) :: ytable
-        double precision :: ab, cd, ef
-        integer :: n,i,ii
-        double precision :: t0
-        double precision :: hx,hxi,hy,hyi,hz,hzi,xmin,ymin,zmin
-        double precision, dimension(3) :: msize
-        double precision, dimension(4) :: pos
-        double precision, dimension(6) :: range, extfld
-        type (CompDom) :: ptsgeom
-        integer :: ix,jx,kx,ix1,jx1,kx1,ierr,kadd,jadd
-        double precision :: twopi,xk,xl,bfreq,tmpscale,tmpgamma0,tmpgamma00,&
-        beta0,qmcc,rcpgammai,betai,ez0,tmp1,tmp2,tmp3,tmp4,tmp5,tmp12,tmp23,&
-        tmp13,pz,p1,p2,p3,a12,a13,a23,b1,b2,b3,s11,s12,s13,s21,s22,s23,&
-        s31,s32,s33,det,tmpsq2,exn,eyn,ezn,ex,ey,ez,bx,by,bz
-        double precision, dimension(6) :: extfld6
-        double precision :: rr,hr,hri,mu0,te,tb,escale,rffreq,theta0,efr,&
-                            er,btheta,ww,et,bt
-        integer :: ir,ir1,FlagCart,FlagDisc
-        double precision :: dx,dy,anglex,angley,anglez
-        double precision :: exnwk,eynwk,eznwk
-
-        call starttime_Timer( t0 )
-
-        twopi = 2.0*Pi
-        xk = 1/Scxl
-        xl = Scxl
-        bfreq = Scfreq
-        !tmpscale = Clight*Clight*1.0e-7*curr/bfreq*chge
-        tmpscale = Clight*Clight*1.0e-7
-        beta0 = sqrt(gam**2-1.0)/gam
-        qmcc = chge/mass
-
-        call getmsize_CompDom(ptsgeom,msize)
-        hxi = 1.0/msize(1)
-        hyi = 1.0/msize(2)
-        hzi = 1.0/msize(3)
-        hx = msize(1)
-        hy = msize(2)
-        hz = msize(3)
-
-        call getrange_CompDom(ptsgeom,range)
-        xmin = range(1)
-        ymin = range(3)
-        zmin = range(5)
-
-        call getlctabnm_CompDom(ptsgeom,table)
-        xtable(0) = 0
-        do i = 1, npx - 1
-          xtable(i) = xtable(i-1) + table(1,i-1,0)
-        enddo
-
-        ytable(0) = 0
-        do i = 1, npy - 1
-          ytable(i) = ytable(i-1) + table(2,0,i-1)
-        enddo
-
-        if(npx.gt.1) then
-          kadd = -xtable(myidx) + 1
-        else
-          kadd = 0
-        endif
-        if(npy.gt.1) then
-          jadd = -ytable(myidy) + 1
-        else
-          jadd = 0
-        endif
-
-        call geterr_BeamLineElem(beamelem,dx,dy,anglex,angley,anglez)
-
-        FlagDisc = 0
-        FlagCart = 1
-        if(associated(beamelem%pemfld)) then
-          FlagDisc = 0.1+beamelem%pemfld%Param(13)
-          FlagCart = 0.1+beamelem%pemfld%Param(14)
-
-          pos(1) = 0.0
-          pos(2) = 0.0
-          pos(3) = z
-          pos(4) = tg
-          if(FlagDisc.eq.1) then
-            if(FlagCart.eq.1) then 
-              call getfld6err_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-              ez0 = extfld6(3)
-            else if(FlagCart.eq.2) then
-              call getfld6xyzerr_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-              ez0 = extfld6(3)
-            endif
-          else if(FlagDisc.eq.2) then
-            call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                        angley,anglez)
-            ez0 = extfld(3)
-            if(FlagCart.eq.1) then
-              call getfld6err_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-              ez0 = ez0 + extfld6(3)
-            else if(FlagCart.eq.2) then
-              call getfld6xyzerr_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-              ez0 = ez0 + extfld6(3)
-            endif
-          else
-            call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                        angley,anglez)
-            ez0 = extfld(3)
-          endif
-        else
-          pos(1) = 0.0
-          pos(2) = 0.0
-          pos(3) = z
-          pos(4) = tg
-          call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                       angley,anglez)
-          ez0 = extfld(3)
-        endif
-
-        tmpgamma0 = gam + 0.5*tau*qmcc*ez0
-
-        do n = 1, innp
-          ix=(rays(1,n)-xmin)*hxi + 1
-          ab=((xmin-rays(1,n))+ix*hx)*hxi
-          jx=(rays(3,n)-ymin)*hyi + 1 + jadd
-          cd=((ymin-rays(3,n))+(jx-jadd)*hy)*hyi
-          kx=(rays(5,n)-zmin)*hzi + 1 + kadd
-          ef=((zmin-rays(5,n))+(kx-kadd)*hz)*hzi
-
-          ix1 = ix + 1
-          jx1 = jx + 1
-          kx1 = kx + 1
-
-          exn = (exg(ix,jx,kx)*ab*cd*ef  &
-                  +exg(ix,jx1,kx)*ab*(1.-cd)*ef &
-                  +exg(ix,jx1,kx1)*ab*(1.-cd)*(1.0-ef) &
-                  +exg(ix,jx,kx1)*ab*cd*(1.0-ef) &
-                  +exg(ix1,jx,kx1)*(1.0-ab)*cd*(1.0-ef) &
-                  +exg(ix1,jx1,kx1)*(1.0-ab)*(1.0-cd)*(1.0-ef)&
-                  +exg(ix1,jx1,kx)*(1.0-ab)*(1.0-cd)*ef &
-                  +exg(ix1,jx,kx)*(1.0-ab)*cd*ef)*gam 
-
-          eyn = (eyg(ix,jx,kx)*ab*cd*ef  &
-                  +eyg(ix,jx1,kx)*ab*(1.-cd)*ef &
-                  +eyg(ix,jx1,kx1)*ab*(1.-cd)*(1.0-ef) &
-                  +eyg(ix,jx,kx1)*ab*cd*(1.0-ef) &
-                  +eyg(ix1,jx,kx1)*(1.0-ab)*cd*(1.0-ef) &
-                  +eyg(ix1,jx1,kx1)*(1.0-ab)*(1.0-cd)*(1.0-ef)&
-                  +eyg(ix1,jx1,kx)*(1.0-ab)*(1.0-cd)*ef &
-                  +eyg(ix1,jx,kx)*(1.0-ab)*cd*ef)*gam 
-
-          ezn = ezg(ix,jx,kx)*ab*cd*ef  &
-                  +ezg(ix,jx1,kx)*ab*(1.-cd)*ef &
-                  +ezg(ix,jx1,kx1)*ab*(1.-cd)*(1.0-ef) &
-                  +ezg(ix,jx,kx1)*ab*cd*(1.0-ef) &
-                  +ezg(ix1,jx,kx1)*(1.0-ab)*cd*(1.0-ef) &
-                  +ezg(ix1,jx1,kx1)*(1.0-ab)*(1.0-cd)*(1.0-ef)&
-                  +ezg(ix1,jx1,kx)*(1.0-ab)*(1.0-cd)*ef &
-                  +ezg(ix1,jx,kx)*(1.0-ab)*cd*ef
-
-          exnwk = exwakelc(kx)*ef+exwakelc(kx1)*(1.0-ef)
-          eynwk = eywakelc(kx)*ef+eywakelc(kx1)*(1.0-ef)
-          eznwk = ezwakelc(kx)*ef+ezwakelc(kx1)*(1.0-ef)
-
-          !Linear algorithm to transfer back from t to z.
-          rcpgammai = 1.0/(-rays(6,n)+gam)
-          betai = sqrt(1.0-rcpgammai*rcpgammai*(1+rays(2,n)**2+ &
-                                                rays(4,n)**2) )
-          rays(5,n) = rays(5,n)*xk/(-gam*betai)
-          rays(1,n) = rays(1,n)*xk
-          rays(3,n) = rays(3,n)*xk
-
-          pos(1) = rays(1,n)*xl
-          pos(2) = rays(3,n)*xl
-          pos(3) = z
-          pos(4) = rays(5,n) + tg
-
-          if(FlagDisc.eq.1) then !use discrete data only
-            !calculate field in Cartesian coordinate from the discrete
-            !field function (r) in cylindrical coordinate
-            if(FlagCart.eq.1) then
-              call getfld6err_EMfld(beamelem%pemfld,pos,extfld,dx,dy,anglex,&
-                                  angley,anglez)
-            else if(FlagCart.eq.2) then ! in Cartesian coordinate
-              call getfld6xyzerr_EMfld(beamelem%pemfld,pos,extfld,dx,dy,anglex,&
-                                  angley,anglez)
-            endif
-          !use both analytical function and discrete data.
-          else if(FlagDisc.eq.2) then
-            !get field in Cartesian coordinate from analytical function.
-            call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                        angley,anglez)
-            !calculate field in Cartesian coordinate from the discrete
-            !field function (r) in cylindrical coordinate
-            if(FlagCart.eq.1) then
-              call getfld6err_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-            else if(FlagCart.eq.2) then
-              call getfld6xyzerr_EMfld(beamelem%pemfld,pos,extfld6,dx,dy,anglex,&
-                                  angley,anglez)
-            endif
-            extfld = extfld + extfld6
-          else !use analytical function data only
-              !get field in Cartesian coordinate from analytical function.
-              call getflderr_BeamLineElem(beamelem,pos,extfld,dx,dy,anglex,&
-                                          angley,anglez)
-          endif
-
-          ex = tmpscale*exn+extfld(1) + exnwk
-          ey = tmpscale*eyn+extfld(2) + eynwk
-          ez = tmpscale*ezn+extfld(3) + eznwk
-          bx = -beta0/Clight*tmpscale*eyn+extfld(4)
-          by = beta0/Clight*tmpscale*exn+extfld(5)
-          bz = extfld(6)
-          tmp12 = -tau*Clight*bz*rays(7,n)/2
-          tmp13 = tau*ex*rays(7,n)/2
-          tmp23 = tau*ey*rays(7,n)/2
-          tmp1 = tmpgamma0*ex*tau*rays(7,n)
-          tmp2 = Clight*by*tau*rays(7,n)
-          tmp3 = tmpgamma0*ey*tau*rays(7,n)
-          tmp4 = Clight*bx*tau*rays(7,n)
-!          tmp5 = (ez0-ez)*tau*rays(7,n)
-          !for multi-charge state, qmcc not equal to rays(7,n)
-          tmp5 = (ez0*qmcc-ez*rays(7,n))*tau
-          pz = sqrt((gam-rays(6,n))**2-1.0-rays(2,n)**2-rays(4,n)**2)
-          p1 = rays(2,n)
-          p2 = rays(4,n)
-          p3 = rays(6,n)
-          do ii = 1, 2
-            a12 = tmp12/pz
-            a13 = tmp13/pz
-            a23 = tmp23/pz
-            b1 = p1-a12*p2-a13*p3+tmp1/pz - tmp2
-            b2 = a12*p1+p2-a23*p3+tmp3/pz + tmp4
-            b3 = -a13*p1-a23*p2+p3 + tmp5
-            det = 1+a12*a12-a13*a13-a23*a23
-            s11 = 1-a23*a23
-            s12 = -a12+a13*a23
-            s13 = a12*a23-a13
-            s21 = a12+a13*a23
-            s22 = 1-a13*a13
-            s23 = -a23-a13*a12
-            s31 = -a12*a23-a13
-            s32 = -a23+a12*a13
-            s33 = 1+a12*a12
-            rays(2,n) = (s11*b1+s12*b2+s13*b3)/det
-            rays(4,n) = (s21*b1+s22*b2+s23*b3)/det
-            rays(6,n) = (s31*b1+s32*b2+s33*b3)/det
-            tmpgamma00 = gam + tau*qmcc*ez0
-            tmpsq2 = (tmpgamma00-rays(6,n))**2-1.0-rays(2,n)**2-rays(4,n)**2
-            if(tmpsq2.gt.0.0) then
-              pz = 0.5*pz + 0.5*sqrt(tmpsq2)
-            endif
-          enddo
-        enddo
-        gam = gam + tau*qmcc*ez0
-
-        t_ntrslo = t_ntrslo + elapsedtime_Timer( t0 )
-
-        end subroutine scatter2errwake_BeamBunch
 
       end module BeamBunchclass
