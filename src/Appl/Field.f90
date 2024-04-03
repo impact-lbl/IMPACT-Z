@@ -359,11 +359,12 @@
         double complex, dimension(2*nz,nsizexy) :: tmp3
         double complex, allocatable, dimension(:,:,:) :: x1
         double complex, allocatable, dimension(:,:,:) :: x0
-        double precision :: rr,aa,bb,cc,dd,ee,ff,ss
-        double complex :: gg,gg2
-        double complex :: ggrr
+        double precision :: aa,bb,cc,dd,ee,ff,ss
+        double complex :: gg
         double precision, dimension(2) :: xx,yy,zz
-        double precision, dimension(3) :: vv
+        real*16, dimension(3) :: vv
+        real*16 :: rr
+        real*8 :: gg2
         integer :: n,i0,j0,k0
         double precision :: recfourpi
 
@@ -401,27 +402,17 @@
               vv(2) = jjj*hy-hy/2
               vv(3) = kkk*hz-hz/2
             
+
                 rr = sqrt(vv(1)**2+vv(2)**2+vv(3)**2)
-                aa = vv(1)**2*vv(3)+(vv(2)**2+vv(3)**2)*vv(3) + &
-                            vv(1)*vv(3)*rr
-                bb = vv(1)**2*vv(2) + vv(1)*vv(2)*rr
-                cc = vv(1)*(vv(1)**2+vv(2)**2)+vv(3)*vv(1)*(vv(3)+rr)
-                dd = vv(3)*vv(2)*(vv(3) + rr)
-                ee = vv(1)**2*vv(2)+vv(2)*(vv(2)**2+vv(3)*(vv(3)+rr))
-                ff = vv(1)*vv(3)*(vv(3)+rr)
-                ss = 4*vv(2)*vv(3)*log(vv(1)+rr) + &
-                        4*vv(1)*vv(3)*log(vv(2)+rr) + &
-                        4*vv(1)*vv(2)*log(vv(3)+rr)
+                aa = -vv(3)**2*atan(vv(1)*vv(2)/(vv(3)*rr))/2
+                bb = -vv(2)**2*atan(vv(1)*vv(3)/(vv(2)*rr))/2
+                cc = -vv(1)**2*atan(vv(2)*vv(3)/(vv(1)*rr))/2
+                dd = vv(2)*vv(3)*log(vv(1)+rr)
+                ee = vv(1)*vv(3)*log(vv(2)+rr)
+                ff = vv(1)*vv(2)*log(vv(3)+rr)
 
-                gg2 = cmplx(0.0,vv(3)**2)*log(cmplx(aa**2-bb**2,2*aa*bb)/ &
-                        (aa**2+bb**2) ) + cmplx(0.0,vv(1)**2)*&
-                        log(cmplx(cc**2-dd**2,2*cc*dd )/(cc**2+dd**2))+&
-                        cmplx(0.0,vv(2)**2)*log(cmplx(ee**2-ff**2,2*ee*ff)/ &
-                        (ee**2+ff**2) ) + ss
-               
-              !grntmp(i0,j0,k0) = recfourpi*real(gg2)/(4*hx*hy*hz) !wrong in Z code
-              grntmp(i0,j0,k0) = real(gg2)/(4*hx*hy*hz)
-
+                gg2 = aa + bb + cc + dd + ee + ff
+                grntmp(i0,j0,k0) = gg2/(hx*hy*hz)
             enddo
           enddo
         enddo
