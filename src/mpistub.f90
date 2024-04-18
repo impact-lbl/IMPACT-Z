@@ -35,7 +35,7 @@
         end interface
         interface MPI_BCAST
           module procedure MPI_BCAST1,MPI_BCAST2,MPI_BCAST3,MPI_BCAST4,&
-          MPI_BCAST5,MPI_BCAST6    
+          MPI_BCAST5,MPI_BCAST6,MPI_BCAST7    
         end interface
       contains
         !mpi initialization
@@ -133,6 +133,10 @@
           integer :: comm2d
         end subroutine MPI_BCAST6
 
+        subroutine MPI_BCAST7(rffile,num1,MPI_INTEGER,num2,comm2d,ierr)
+          double complex, dimension(:,:,:) :: rffile
+          integer :: comm2d
+        end subroutine MPI_BCAST7
         !total number of processors
         subroutine MPI_COMM_SIZE(MPI_COMM_WORLD,np,ierr)
           np = 1
