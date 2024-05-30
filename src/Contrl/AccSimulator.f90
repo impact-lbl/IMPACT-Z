@@ -580,6 +580,8 @@
         real*8 :: rsiglaser,rlaserwvleng
         real*8, dimension(2) :: xylc,xygl
         real*8 :: xsig2,ysig2,freqlaser,harm,sigx2,ezlaser
+        !for ISR
+        real*8 :: beta,brho
 
 
 !-------------------------------------------------------------------
@@ -1319,6 +1321,15 @@
                 call diagnostic2_Output(Bpts,z,nchrg,nptlist0)
             endif
 
+            !add ISR inside the bending magnet
+            if(bitype.eq.4 .and. (Bcurr.gt.1.0d-15)) then
+              gamma0 = -Bpts%refptcl(6)
+              beta=sqrt((gamma0+1.d0)*(gamma0-1.d0))/gamma0
+              brho=gamma0*beta/Clight*Bmass
+              b0 =abs(brho*dparam(2)/blength)
+              call ISRchicane(Bpts%Pts1,Nplocal,tau2,gamma0,b0)
+            endif
+
             nstep = nstep + 1
             if(myid.eq.0) then 
               print*,"j, nstep, z",j,nstep,z
@@ -1369,6 +1380,52 @@
 
 
         end subroutine run_AccSimulator
+
+        !The following subroutine calculate the ISR effects in a chicane bend
+        !following Jowett's paper.
+        subroutine ISRchicane(Pts1,innp,tau,gam0,b0)
+        implicit none
+        include 'mpif.h'
+        integer, intent(in) :: innp
+        double precision, pointer, dimension(:,:) :: Pts1
+        real*8 :: tau,gam0,b0
+        real*8, dimension(innp) :: rd
+        integer :: i
+        real*8 :: re,emass,hbar,gambet0,c1,c2,sqrtc2,p1,p2,ptot,gam,gambet,&
+                  px,py,gam2,gambet2,bb,qmass
+ 
+
+        re = 2.81794028946d-15
+        emass = 9.109382154d-31
+        hbar = 1.054571628d-34
+        qmass = 1./0.511d6
+
+        gambet0 = sqrt(gam0**2-1.0d0)
+        c1 = 2*re*gambet0**2/3
+        c2 = 55.0d0*re*hbar*gambet0**3/(24.0d0*sqrt(3.0d0)*(emass*Clight))
+        !here, c1 is multiplied by mc, c2 is multiplied by (mc)^2 from the p.
+
+        bb = b0*qmass*Clight/(gambet0)
+
+        p1 = c1*bb**2*tau
+        p2 = sqrt(c2)*sqrt(bb)**3*sqrt(tau)
+
+        call normVec1(rd,innp)
+
+        do i = 1, innp
+          gam = gam0-Pts1(6,i)
+          gambet = sqrt(gam**2-1.0d0)
+          ptot = gambet**2*(p1+p2*rd(i))
+          px = Pts1(2,i) - ptot*Pts1(2,i)/gambet
+          py = Pts1(4,i) - ptot*Pts1(4,i)/gambet
+          gambet2 = gambet - ptot
+          gam2 = sqrt(1.0d0+gambet2**2)
+          Pts1(2,i) = px
+          Pts1(4,i) = py
+          Pts1(6,i) = gam0 - gam2
+        enddo
+ 
+        end subroutine ISRchicane
 
         subroutine destruct_AccSimulator(time)
         implicit none
