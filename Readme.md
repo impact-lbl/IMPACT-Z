@@ -16,3 +16,5 @@ the ImpactT github Readme file.
 
 The ImpactZexeMac, ImpactZexeUbuntu, and ImpactZexeWin.exe are old executables.
 
+Main contact: Ji Qiang (jqiang@lbl.gov), Lawrence Berkeley National Laboratory
+
