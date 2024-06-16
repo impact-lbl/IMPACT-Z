@@ -11,8 +11,6 @@ brightness electron linac, beam dynamics in SNS linac, JARPC linac, RIA driver
 linac, CERN superconducting linac, LEDA halo experiment, Proton Synchrotron at 
 CERN, etc.
 
-To compile the ImpactZ code, one can follow the same procedure as described in 
-the Impact-T github Readme file.
 
 The ImpactZexeMac, ImpactZexeUbuntu, and ImpactZexeWin.exe are old executables.
 
@@ -38,3 +36,10 @@ cmake --build build
 cmake --build build --target install
 ```
 
+### Multi Processor Code:
+
+```shell script
+# inside the IMPACT-T src/ directory:
+cmake -S . -B build -DUSE_MPI=ON
+cmake --build build
+cmake --build build --target install
