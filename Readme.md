@@ -27,10 +27,10 @@ If you just want to use CMake to build the project, jump into sections *1. Intro
 ### Single Processor Code:
 
 ```shell script
-# inside the IMPACT-T src/ directory:
+# inside the IMPACT-Z src/ directory:
 cmake -S . -B build
 cmake --build build
-# the executable in now in build/bin/
+# the executable in now in build/
 
 # this command needs sudo if you install into system paths:
 cmake --build build --target install
@@ -39,7 +39,7 @@ cmake --build build --target install
 ### Multi Processor Code:
 
 ```shell script
-# inside the IMPACT-T src/ directory:
+# inside the IMPACT-Z src/ directory:
 cmake -S . -B build -DUSE_MPI=ON
 cmake --build build
 cmake --build build --target install
