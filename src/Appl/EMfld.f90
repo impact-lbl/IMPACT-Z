@@ -856,6 +856,70 @@
         double precision, intent(in) :: z
         double complex, dimension(6,NxIntvRfg+1,NyIntvRfg+1),&
                           intent(out) :: extfld6xyz
+        double precision :: zz,hz,ef,ab,wix,wix1,wix2
+
+        hz = (ZmaxRfg-ZminRfg)/NzIntvRfg
+        zz = z-this%Param(1)
+        
+        iz = zz/hz + 1 
+        if(iz.eq.(NzIntvRfg+1)) then
+           iz = iz - 1
+        endif
+
+        if(iz.eq.1 .or. iz.eq.NzIntvRfg) then
+          !linear interpolation 
+          iz1 = iz+1
+          ef = (iz*hz - zz)/hz
+          do j = 1, NyIntvRfg+1
+            do i = 1, NxIntvRfg+1
+              extfld6xyz(1,i,j) = Exgrid(i,j,iz)*ef + Exgrid(i,j,iz1)*(1.0-ef)  
+              extfld6xyz(2,i,j) = Eygrid(i,j,iz)*ef + Eygrid(i,j,iz1)*(1.0-ef)  
+              extfld6xyz(3,i,j) = Ezgrid(i,j,iz)*ef + Ezgrid(i,j,iz1)*(1.0-ef)  
+              extfld6xyz(4,i,j) = Bxgrid(i,j,iz)*ef + Bxgrid(i,j,iz1)*(1.0-ef)  
+              extfld6xyz(5,i,j) = Bygrid(i,j,iz)*ef + Bygrid(i,j,iz1)*(1.0-ef)  
+              extfld6xyz(6,i,j) = Bzgrid(i,j,iz)*ef + Bzgrid(i,j,iz1)*(1.0-ef)  
+            enddo
+          enddo
+        else !quadratic interpolation
+          ab = (zz-(iz-1)*hz)/hz
+          iz1 = iz+1
+          if(ab.le.0.5d0) then
+            iz2 = iz - 1
+            wix = 0.75-ab*ab
+            wix1 = (0.5+ab)**2/2
+            wix2 = (0.5-ab)**2/2
+          else
+            iz2 = iz + 2
+            wix = (1.5d0-ab)**2/2
+            wix1 = 0.75 - (1-ab)*(1-ab)
+            wix2 = (ab-0.5)**2/2
+          endif
+
+          do j = 1, NyIntvRfg+1
+            do i = 1, NxIntvRfg+1
+              extfld6xyz(1,i,j) = Exgrid(i,j,iz)*wix + Exgrid(i,j,iz1)*wix1+&
+                                  Exgrid(i,j,iz2)*wix2
+              extfld6xyz(2,i,j) = Eygrid(i,j,iz)*wix + Eygrid(i,j,iz1)*wix1+&
+                                  Eygrid(i,j,iz2)*wix2
+              extfld6xyz(3,i,j) = Ezgrid(i,j,iz)*wix + Ezgrid(i,j,iz1)*wix1+&
+                                  Ezgrid(i,j,iz2)*wix2
+              extfld6xyz(4,i,j) = Bxgrid(i,j,iz)*wix + Bxgrid(i,j,iz1)*wix1+&
+                                  Bxgrid(i,j,iz2)*wix2
+              extfld6xyz(5,i,j) = Bygrid(i,j,iz)*wix + Bygrid(i,j,iz1)*wix1+&
+                                  Bygrid(i,j,iz2)*wix2
+              extfld6xyz(6,i,j) = Bzgrid(i,j,iz)*wix + Bzgrid(i,j,iz1)*wix1+&
+                                  Bzgrid(i,j,iz2)*wix2
+            enddo
+          enddo
+        endif
+
+        end subroutine getfld6xyz_EMfld
+
+        subroutine getfld6xyzold_EMfld(this,z,extfld6xyz)
+        type (EMfld), intent(in) :: this
+        double precision, intent(in) :: z
+        double complex, dimension(6,NxIntvRfg+1,NyIntvRfg+1),&
+                          intent(out) :: extfld6xyz
         double precision :: zz,hz,ef
 
         hz = (ZmaxRfg-ZminRfg)/NzIntvRfg
@@ -880,6 +944,6 @@
           enddo
         enddo
 
-        end subroutine getfld6xyz_EMfld
+        end subroutine getfld6xyzold_EMfld
         
       end module EMfldclass

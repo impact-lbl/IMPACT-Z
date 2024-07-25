@@ -2539,6 +2539,9 @@
         double precision, dimension(6,innp) :: extfldtmp
         real*8, dimension(6) :: tmprays
         double complex :: tmpt
+        real*8 :: wix,wix1,wix2,wiy,wiy1,wiy2
+        integer :: iy2,ix2
+
 
         call starttime_Timer( t0 )
 
@@ -2786,34 +2789,68 @@
                 yy = rays(3,n)*xl
                 ix = (xx-XminRfg)*hxxi + 1
                 ix1 = ix+1
-                efx = (XminRfg-xx+ix*hxx)*hxxi
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
-                efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
-                      extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
-                      extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
-                      extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
-                      extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
-                      extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
-                      extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+
+!                efx = (XminRfg-xx+ix*hxx)*hxxi
+!                efy = (YminRfg-yy+iy*hyy)*hyyi
+
+                ab=(rays(1,n)-XminRfg-(ix-1)*hxx)*hxxi
+                if(ab.le.0.5d0) then
+                   ix2 = ix - 1
+                   wix = 0.75-ab*ab
+                   wix1 = (0.5+ab)**2/2
+                   wix2 = (0.5-ab)**2/2
+                else
+                   ix2 = ix + 2
+                   wix = (1.5d0-ab)**2/2
+                   wix1 = 0.75 - (1-ab)*(1-ab)
+                   wix2 = (ab-0.5)**2/2
+                endif
+
+                cd=(rays(3,n)-YminRfg-(iy-1)*hyy)*hyyi
+                if(cd.le.0.5d0) then
+                   iy2 = iy - 1
+                   wiy = 0.75-cd*cd
+                   wiy1 = (0.5+cd)**2/2
+                   wiy2 = (0.5-cd)**2/2
+                else
+                   iy2 = iy + 2
+                   wiy = (1.5d0-cd)**2/2
+                   wiy1 = 0.75 - (1-cd)*(1-cd)
+                   wiy2 = (cd-0.5)**2/2
+                endif
+
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*wix*wiy+extfld6xyz(1,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(1,ix,iy2)*wix*wiy2 + extfld6xyz(1,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(1,ix1,iy1)*wix1*wiy1 + extfld6xyz(1,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(1,ix2,iy)*wix2*wiy + extfld6xyz(1,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(1,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*wix*wiy+extfld6xyz(2,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(2,ix,iy2)*wix*wiy2 + extfld6xyz(2,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(2,ix1,iy1)*wix1*wiy1 + extfld6xyz(2,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(2,ix2,iy)*wix2*wiy + extfld6xyz(2,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(2,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*wix*wiy+extfld6xyz(3,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(3,ix,iy2)*wix*wiy2 + extfld6xyz(3,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(3,ix1,iy1)*wix1*wiy1 + extfld6xyz(3,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(3,ix2,iy)*wix2*wiy + extfld6xyz(3,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(3,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*wix*wiy+extfld6xyz(4,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(4,ix,iy2)*wix*wiy2 + extfld6xyz(4,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(4,ix1,iy1)*wix1*wiy1 + extfld6xyz(4,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(4,ix2,iy)*wix2*wiy + extfld6xyz(4,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(4,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*wix*wiy+extfld6xyz(5,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(5,ix,iy2)*wix*wiy2 + extfld6xyz(5,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(5,ix1,iy1)*wix1*wiy1 + extfld6xyz(5,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(5,ix2,iy)*wix2*wiy + extfld6xyz(5,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(5,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*wix*wiy+extfld6xyz(6,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(6,ix,iy2)*wix*wiy2 + extfld6xyz(6,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(6,ix1,iy1)*wix1*wiy1 + extfld6xyz(6,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(6,ix2,iy)*wix2*wiy + extfld6xyz(6,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(6,ix2,iy2)*wix2*wiy2)*tmpt)
               endif
           !use both analytical function and discrete data.
           else if(FlagDisc.eq.2) then
@@ -2848,34 +2885,65 @@
                 yy = rays(3,n)*xl
                 ix = (xx-XminRfg)*hxxi + 1
                 ix1 = ix+1
-                efx = (XminRfg-xx+ix*hxx)*hxxi
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
-                efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
-                      extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
-                      extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
-                      extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
-                      extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
-                      extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
-                      extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+
+                ab=(rays(1,n)-XminRfg-(ix-1)*hxx)*hxxi
+                if(ab.le.0.5d0) then
+                   ix2 = ix - 1
+                   wix = 0.75-ab*ab
+                   wix1 = (0.5+ab)**2/2
+                   wix2 = (0.5-ab)**2/2
+                else
+                   ix2 = ix + 2
+                   wix = (1.5d0-ab)**2/2
+                   wix1 = 0.75 - (1-ab)*(1-ab)
+                   wix2 = (ab-0.5)**2/2
+                endif
+
+                cd=(rays(3,n)-YminRfg-(iy-1)*hyy)*hyyi
+                if(cd.le.0.5d0) then
+                   iy2 = iy - 1
+                   wiy = 0.75-cd*cd
+                   wiy1 = (0.5+cd)**2/2
+                   wiy2 = (0.5-cd)**2/2
+                else
+                   iy2 = iy + 2
+                   wiy = (1.5d0-cd)**2/2
+                   wiy1 = 0.75 - (1-cd)*(1-cd)
+                   wiy2 = (cd-0.5)**2/2
+                endif
+
+                extfld(1) =extfld(1)+dreal((extfld6xyz(1,ix,iy)*wix*wiy+extfld6xyz(1,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(1,ix,iy2)*wix*wiy2 + extfld6xyz(1,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(1,ix1,iy1)*wix1*wiy1 + extfld6xyz(1,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(1,ix2,iy)*wix2*wiy + extfld6xyz(1,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(1,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(2) =extfld(2)+dreal((extfld6xyz(2,ix,iy)*wix*wiy+extfld6xyz(2,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(2,ix,iy2)*wix*wiy2 + extfld6xyz(2,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(2,ix1,iy1)*wix1*wiy1 + extfld6xyz(2,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(2,ix2,iy)*wix2*wiy + extfld6xyz(2,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(2,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(3) =extfld(3)+dreal((extfld6xyz(3,ix,iy)*wix*wiy+extfld6xyz(3,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(3,ix,iy2)*wix*wiy2 + extfld6xyz(3,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(3,ix1,iy1)*wix1*wiy1 + extfld6xyz(3,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(3,ix2,iy)*wix2*wiy + extfld6xyz(3,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(3,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(4) =extfld(4)+dreal((extfld6xyz(4,ix,iy)*wix*wiy+extfld6xyz(4,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(4,ix,iy2)*wix*wiy2 + extfld6xyz(4,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(4,ix1,iy1)*wix1*wiy1 + extfld6xyz(4,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(4,ix2,iy)*wix2*wiy + extfld6xyz(4,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(4,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(5) =extfld(5)+dreal((extfld6xyz(5,ix,iy)*wix*wiy+extfld6xyz(5,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(5,ix,iy2)*wix*wiy2 + extfld6xyz(5,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(5,ix1,iy1)*wix1*wiy1 + extfld6xyz(5,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(5,ix2,iy)*wix2*wiy + extfld6xyz(5,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(5,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(6) =extfld(6)+dreal((extfld6xyz(6,ix,iy)*wix*wiy+extfld6xyz(6,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(6,ix,iy2)*wix*wiy2 + extfld6xyz(6,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(6,ix1,iy1)*wix1*wiy1 + extfld6xyz(6,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(6,ix2,iy)*wix2*wiy + extfld6xyz(6,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(6,ix2,iy2)*wix2*wiy2)*tmpt)
               endif
           else !use analytical function data only
             if(associated(beamelem%pdtl)) then
@@ -2975,6 +3043,9 @@
         double precision, dimension(4,innp) :: postmp
         double precision, dimension(6,innp) :: extfldtmp
         double complex :: tmpt
+        real*8 :: wix,wix1,wix2,wiy,wiy1,wiy2,ab,cd
+        integer :: iy2,ix2
+
 
         call starttime_Timer( t0 )
 
@@ -3126,34 +3197,66 @@
                 yy = rays(3,n)*xl
                 ix = (xx-XminRfg)*hxxi + 1
                 ix1 = ix+1
-                efx = (XminRfg-xx+ix*hxx)*hxxi
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
-                efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
-                      extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
-                      extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
-                      extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
-                      extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
-                      extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
-                      extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+
+                ab=(rays(1,n)-XminRfg-(ix-1)*hxx)*hxxi
+                if(ab.le.0.5d0) then
+                   ix2 = ix - 1
+                   wix = 0.75-ab*ab
+                   wix1 = (0.5+ab)**2/2
+                   wix2 = (0.5-ab)**2/2
+                else
+                   ix2 = ix + 2
+                   wix = (1.5d0-ab)**2/2
+                   wix1 = 0.75 - (1-ab)*(1-ab)
+                   wix2 = (ab-0.5)**2/2
+                endif
+
+                cd=(rays(3,n)-YminRfg-(iy-1)*hyy)*hyyi
+                if(cd.le.0.5d0) then
+                   iy2 = iy - 1
+                   wiy = 0.75-cd*cd
+                   wiy1 = (0.5+cd)**2/2
+                   wiy2 = (0.5-cd)**2/2
+                else
+                   iy2 = iy + 2
+                   wiy = (1.5d0-cd)**2/2
+                   wiy1 = 0.75 - (1-cd)*(1-cd)
+                   wiy2 = (cd-0.5)**2/2
+                endif
+
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*wix*wiy+extfld6xyz(1,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(1,ix,iy2)*wix*wiy2 + extfld6xyz(1,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(1,ix1,iy1)*wix1*wiy1 + extfld6xyz(1,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(1,ix2,iy)*wix2*wiy + extfld6xyz(1,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(1,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*wix*wiy+extfld6xyz(2,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(2,ix,iy2)*wix*wiy2 + extfld6xyz(2,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(2,ix1,iy1)*wix1*wiy1 + extfld6xyz(2,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(2,ix2,iy)*wix2*wiy + extfld6xyz(2,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(2,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*wix*wiy+extfld6xyz(3,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(3,ix,iy2)*wix*wiy2 + extfld6xyz(3,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(3,ix1,iy1)*wix1*wiy1 + extfld6xyz(3,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(3,ix2,iy)*wix2*wiy + extfld6xyz(3,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(3,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*wix*wiy+extfld6xyz(4,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(4,ix,iy2)*wix*wiy2 + extfld6xyz(4,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(4,ix1,iy1)*wix1*wiy1 + extfld6xyz(4,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(4,ix2,iy)*wix2*wiy + extfld6xyz(4,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(4,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*wix*wiy+extfld6xyz(5,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(5,ix,iy2)*wix*wiy2 + extfld6xyz(5,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(5,ix1,iy1)*wix1*wiy1 + extfld6xyz(5,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(5,ix2,iy)*wix2*wiy + extfld6xyz(5,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(5,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*wix*wiy+extfld6xyz(6,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(6,ix,iy2)*wix*wiy2 + extfld6xyz(6,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(6,ix1,iy1)*wix1*wiy1 + extfld6xyz(6,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(6,ix2,iy)*wix2*wiy + extfld6xyz(6,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(6,ix2,iy2)*wix2*wiy2)*tmpt)
+
               endif
             !use both analytical function and discrete data.
             else if(FlagDisc.eq.2) then 
@@ -3188,34 +3291,65 @@
                 yy = rays(3,n)*xl
                 ix = (xx-XminRfg)*hxxi + 1
                 ix1 = ix+1
-                efx = (XminRfg-xx+ix*hxx)*hxxi
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
-                efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
-                      extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
-                      extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
-                      extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
-                      extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
-                      extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
-                      extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+
+                ab=(rays(1,n)-XminRfg-(ix-1)*hxx)*hxxi
+                if(ab.le.0.5d0) then
+                   ix2 = ix - 1
+                   wix = 0.75-ab*ab
+                   wix1 = (0.5+ab)**2/2
+                   wix2 = (0.5-ab)**2/2
+                else
+                   ix2 = ix + 2
+                   wix = (1.5d0-ab)**2/2
+                   wix1 = 0.75 - (1-ab)*(1-ab)
+                   wix2 = (ab-0.5)**2/2
+                endif
+
+                cd=(rays(3,n)-YminRfg-(iy-1)*hyy)*hyyi
+                if(cd.le.0.5d0) then
+                   iy2 = iy - 1
+                   wiy = 0.75-cd*cd
+                   wiy1 = (0.5+cd)**2/2
+                   wiy2 = (0.5-cd)**2/2
+                else
+                   iy2 = iy + 2
+                   wiy = (1.5d0-cd)**2/2
+                   wiy1 = 0.75 - (1-cd)*(1-cd)
+                   wiy2 = (cd-0.5)**2/2
+                endif
+
+                extfld(1) =extfld(1)+dreal((extfld6xyz(1,ix,iy)*wix*wiy+extfld6xyz(1,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(1,ix,iy2)*wix*wiy2 + extfld6xyz(1,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(1,ix1,iy1)*wix1*wiy1 + extfld6xyz(1,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(1,ix2,iy)*wix2*wiy + extfld6xyz(1,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(1,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(2) =extfld(2)+dreal((extfld6xyz(2,ix,iy)*wix*wiy+extfld6xyz(2,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(2,ix,iy2)*wix*wiy2 + extfld6xyz(2,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(2,ix1,iy1)*wix1*wiy1 + extfld6xyz(2,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(2,ix2,iy)*wix2*wiy + extfld6xyz(2,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(2,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(3) =extfld(3)+dreal((extfld6xyz(3,ix,iy)*wix*wiy+extfld6xyz(3,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(3,ix,iy2)*wix*wiy2 + extfld6xyz(3,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(3,ix1,iy1)*wix1*wiy1 + extfld6xyz(3,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(3,ix2,iy)*wix2*wiy + extfld6xyz(3,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(3,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(4) =extfld(4)+dreal((extfld6xyz(4,ix,iy)*wix*wiy+extfld6xyz(4,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(4,ix,iy2)*wix*wiy2 + extfld6xyz(4,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(4,ix1,iy1)*wix1*wiy1 + extfld6xyz(4,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(4,ix2,iy)*wix2*wiy + extfld6xyz(4,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(4,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(5) =extfld(5)+dreal((extfld6xyz(5,ix,iy)*wix*wiy+extfld6xyz(5,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(5,ix,iy2)*wix*wiy2 + extfld6xyz(5,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(5,ix1,iy1)*wix1*wiy1 + extfld6xyz(5,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(5,ix2,iy)*wix2*wiy + extfld6xyz(5,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(5,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(6) =extfld(6)+dreal((extfld6xyz(6,ix,iy)*wix*wiy+extfld6xyz(6,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(6,ix,iy2)*wix*wiy2 + extfld6xyz(6,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(6,ix1,iy1)*wix1*wiy1 + extfld6xyz(6,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(6,ix2,iy)*wix2*wiy + extfld6xyz(6,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(6,ix2,iy2)*wix2*wiy2)*tmpt)
               endif
             else !use analytical function data only
               !get field in Cartesian coordinate from analytical function.
@@ -5204,6 +5338,9 @@
         integer :: iy,iy1
         double precision :: exnwk,eynwk,eznwk
         double complex :: tmpt
+        real*8 :: wix,wix1,wix2,wiy,wiy1,wiy2
+        integer :: iy2,ix2
+
 
         call starttime_Timer( t0 )
 
@@ -5422,34 +5559,68 @@
                 yy = rays(3,n)*xl
                 ix = (xx-XminRfg)*hxxi + 1
                 ix1 = ix+1
-                efx = (XminRfg-xx+ix*hxx)*hxxi
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
-                efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
-                      extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
-                      extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
-                      extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
-                      extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
-                      extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
-                      extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+
+!                efx = (XminRfg-xx+ix*hxx)*hxxi
+!                efy = (YminRfg-yy+iy*hyy)*hyyi
+
+                ab=(rays(1,n)-XminRfg-(ix-1)*hxx)*hxxi
+                if(ab.le.0.5d0) then
+                   ix2 = ix - 1
+                   wix = 0.75-ab*ab
+                   wix1 = (0.5+ab)**2/2
+                   wix2 = (0.5-ab)**2/2
+                else
+                   ix2 = ix + 2
+                   wix = (1.5d0-ab)**2/2
+                   wix1 = 0.75 - (1-ab)*(1-ab)
+                   wix2 = (ab-0.5)**2/2
+                endif
+
+                cd=(rays(3,n)-YminRfg-(iy-1)*hyy)*hyyi
+                if(cd.le.0.5d0) then
+                   iy2 = iy - 1
+                   wiy = 0.75-cd*cd
+                   wiy1 = (0.5+cd)**2/2
+                   wiy2 = (0.5-cd)**2/2
+                else
+                   iy2 = iy + 2
+                   wiy = (1.5d0-cd)**2/2
+                   wiy1 = 0.75 - (1-cd)*(1-cd)
+                   wiy2 = (cd-0.5)**2/2
+                endif
+
+                extfld(1) = dreal((extfld6xyz(1,ix,iy)*wix*wiy+extfld6xyz(1,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(1,ix,iy2)*wix*wiy2 + extfld6xyz(1,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(1,ix1,iy1)*wix1*wiy1 + extfld6xyz(1,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(1,ix2,iy)*wix2*wiy + extfld6xyz(1,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(1,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(2) = dreal((extfld6xyz(2,ix,iy)*wix*wiy+extfld6xyz(2,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(2,ix,iy2)*wix*wiy2 + extfld6xyz(2,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(2,ix1,iy1)*wix1*wiy1 + extfld6xyz(2,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(2,ix2,iy)*wix2*wiy + extfld6xyz(2,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(2,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(3) = dreal((extfld6xyz(3,ix,iy)*wix*wiy+extfld6xyz(3,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(3,ix,iy2)*wix*wiy2 + extfld6xyz(3,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(3,ix1,iy1)*wix1*wiy1 + extfld6xyz(3,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(3,ix2,iy)*wix2*wiy + extfld6xyz(3,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(3,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(4) = dreal((extfld6xyz(4,ix,iy)*wix*wiy+extfld6xyz(4,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(4,ix,iy2)*wix*wiy2 + extfld6xyz(4,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(4,ix1,iy1)*wix1*wiy1 + extfld6xyz(4,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(4,ix2,iy)*wix2*wiy + extfld6xyz(4,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(4,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(5) = dreal((extfld6xyz(5,ix,iy)*wix*wiy+extfld6xyz(5,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(5,ix,iy2)*wix*wiy2 + extfld6xyz(5,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(5,ix1,iy1)*wix1*wiy1 + extfld6xyz(5,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(5,ix2,iy)*wix2*wiy + extfld6xyz(5,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(5,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(6) = dreal((extfld6xyz(6,ix,iy)*wix*wiy+extfld6xyz(6,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(6,ix,iy2)*wix*wiy2 + extfld6xyz(6,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(6,ix1,iy1)*wix1*wiy1 + extfld6xyz(6,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(6,ix2,iy)*wix2*wiy + extfld6xyz(6,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(6,ix2,iy2)*wix2*wiy2)*tmpt)
               endif
           !use both analytical function and discrete data.
           else if(FlagDisc.eq.2) then
@@ -5484,34 +5655,65 @@
                 yy = rays(3,n)*xl
                 ix = (xx-XminRfg)*hxxi + 1
                 ix1 = ix+1
-                efx = (XminRfg-xx+ix*hxx)*hxxi
                 iy = (yy-YminRfg)*hyyi + 1
                 iy1 = iy+1
-                efy = (YminRfg-yy+iy*hyy)*hyyi
-                extfld(1) = dreal((extfld6xyz(1,ix,iy)*efx*efy + &
-                      extfld6xyz(1,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(1,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(1,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(2) = dreal((extfld6xyz(2,ix,iy)*efx*efy + &
-                      extfld6xyz(2,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(2,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(2,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(3) = dreal((extfld6xyz(3,ix,iy)*efx*efy + &
-                      extfld6xyz(3,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(3,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(3,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(4) = dreal((extfld6xyz(4,ix,iy)*efx*efy + &
-                      extfld6xyz(4,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(4,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(4,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(5) = dreal((extfld6xyz(5,ix,iy)*efx*efy + &
-                      extfld6xyz(5,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(5,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(5,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
-                extfld(6) = dreal((extfld6xyz(6,ix,iy)*efx*efy + &
-                      extfld6xyz(6,ix,iy1)*efx*(1.0-efy) + &
-                      extfld6xyz(6,ix1,iy)*(1.0-efx)*efy + &
-                      extfld6xyz(6,ix1,iy1)*(1.0-efx)*(1.0-efy))*tmpt)
+
+                ab=(rays(1,n)-XminRfg-(ix-1)*hxx)*hxxi
+                if(ab.le.0.5d0) then
+                   ix2 = ix - 1
+                   wix = 0.75-ab*ab
+                   wix1 = (0.5+ab)**2/2
+                   wix2 = (0.5-ab)**2/2
+                else
+                   ix2 = ix + 2
+                   wix = (1.5d0-ab)**2/2
+                   wix1 = 0.75 - (1-ab)*(1-ab)
+                   wix2 = (ab-0.5)**2/2
+                endif
+
+                cd=(rays(3,n)-YminRfg-(iy-1)*hyy)*hyyi
+                if(cd.le.0.5d0) then
+                   iy2 = iy - 1
+                   wiy = 0.75-cd*cd
+                   wiy1 = (0.5+cd)**2/2
+                   wiy2 = (0.5-cd)**2/2
+                else
+                   iy2 = iy + 2
+                   wiy = (1.5d0-cd)**2/2
+                   wiy1 = 0.75 - (1-cd)*(1-cd)
+                   wiy2 = (cd-0.5)**2/2
+                endif
+
+                extfld(1) =extfld(1)+dreal((extfld6xyz(1,ix,iy)*wix*wiy+extfld6xyz(1,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(1,ix,iy2)*wix*wiy2 + extfld6xyz(1,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(1,ix1,iy1)*wix1*wiy1 + extfld6xyz(1,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(1,ix2,iy)*wix2*wiy + extfld6xyz(1,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(1,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(2) =extfld(2)+dreal((extfld6xyz(2,ix,iy)*wix*wiy+extfld6xyz(2,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(2,ix,iy2)*wix*wiy2 + extfld6xyz(2,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(2,ix1,iy1)*wix1*wiy1 + extfld6xyz(2,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(2,ix2,iy)*wix2*wiy + extfld6xyz(2,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(2,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(3) =extfld(3)+dreal((extfld6xyz(3,ix,iy)*wix*wiy+extfld6xyz(3,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(3,ix,iy2)*wix*wiy2 + extfld6xyz(3,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(3,ix1,iy1)*wix1*wiy1 + extfld6xyz(3,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(3,ix2,iy)*wix2*wiy + extfld6xyz(3,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(3,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(4) =extfld(4)+dreal((extfld6xyz(4,ix,iy)*wix*wiy+extfld6xyz(4,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(4,ix,iy2)*wix*wiy2 + extfld6xyz(4,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(4,ix1,iy1)*wix1*wiy1 + extfld6xyz(4,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(4,ix2,iy)*wix2*wiy + extfld6xyz(4,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(4,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(5) =extfld(5)+dreal((extfld6xyz(5,ix,iy)*wix*wiy+extfld6xyz(5,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(5,ix,iy2)*wix*wiy2 + extfld6xyz(5,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(5,ix1,iy1)*wix1*wiy1 + extfld6xyz(5,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(5,ix2,iy)*wix2*wiy + extfld6xyz(5,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(5,ix2,iy2)*wix2*wiy2)*tmpt)
+                extfld(6) =extfld(6)+dreal((extfld6xyz(6,ix,iy)*wix*wiy+extfld6xyz(6,ix,iy1)*wix*wiy1+&
+                      extfld6xyz(6,ix,iy2)*wix*wiy2 + extfld6xyz(6,ix1,iy)*wix1*wiy + &
+                      extfld6xyz(6,ix1,iy1)*wix1*wiy1 + extfld6xyz(6,ix1,iy2)*wix1*wiy2 + &
+                      extfld6xyz(6,ix2,iy)*wix2*wiy + extfld6xyz(6,ix2,iy1)*wix2*wiy1 + &
+                      extfld6xyz(6,ix2,iy2)*wix2*wiy2)*tmpt)
               endif
           else !use analytical function data only
               !get field in Cartesian coordinate from analytical function.
