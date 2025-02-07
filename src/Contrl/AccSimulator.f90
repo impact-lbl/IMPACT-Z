@@ -98,7 +98,7 @@
         integer, allocatable, dimension(:) :: Nptlist0
         double precision, allocatable, dimension(:) :: currlist0,qmcclist0
         integer :: iend,jend,ibalend,nstepend
-        real*8 :: zend
+        real*8 :: zend, zblengend
       contains
         !set up objects and parameters.
         subroutine init_AccSimulator(time)
@@ -481,7 +481,8 @@
         jend = 0
         ibalend = 0
         nstepend = 0
-        zend = 0.0
+        zend = 0.0d0
+        zblengend = 0.0d0
 
         call random_seed(SIZE=seedsize)
         allocate(seedarray(seedsize))
@@ -566,7 +567,7 @@
                                                          recvdensz
         double precision :: xx,yy,t3dstart,rr,tmger,tmpwk
         double precision  :: aawk,ggwk,lengwk,hzwake,ab
-        integer :: flagwake,flagwakeread,flagbtw,iizz,iizz1,kz,kadd,ipt,flagcsr
+        integer :: flagwake,flagwakeread,flagbtw,iizz,iizz1,kz,kadd,ipt,flagcsr,flagcsrTr
         !for bending magnet Transport transfer matrix implementation
         double precision :: hd0,hd1,dstr1,dstr2,angF,tanphiF,tanphiFb,&
             angB,tanphiB,tanphiBb,hF,hB,qm0,qmi,psi1,psi2,r0,gamn,gambet,&
@@ -574,7 +575,9 @@
         double precision, dimension(6) :: ptarry
         double precision, dimension(15) :: dparam
         real*8 :: xradmin,xradmax,yradmin,yradmax
-        real*8 :: zwkmin,bendlen,zbleng
+        !for csr wake
+        integer :: bitypeold
+        real*8 :: zwkmin,bendlen,zbleng,blengthold
         real*8 :: tmplump,b0,qmass,qchg,pmass, alphax0,betax0,alphay0,betay0,scwk
         integer :: nslice,ihlf
         real*8 :: rsiglaser,rlaserwvleng
@@ -656,6 +659,7 @@
         flagwake = 0
         flagwakeread = 0
         flagcsr = 0
+        flagcsrTr = 0
         aawk = 0.05
         ggwk = 0.05
         lengwk = 0.1
@@ -665,6 +669,10 @@
 ! start looping through 'Nblem' beam line elements.
 !
         tmpfile = 0
+        bitypeold = 0
+        blengthold = 0.0d0
+        zbleng = zblengend
+
         do i = iend+1, Nblem
 
           call getparam_BeamLineElem(Blnelem(i),blength,bnseg,bmpstp,&
@@ -926,6 +934,17 @@
           !/bend using Transport transfer map
           if(bitype.eq.4) then
               call getparam_BeamLineElem(Blnelem(i),dparam)
+              !add the tranisent drift effects
+              if((Bcurr.gt.0.0) .and. (dparam(4).gt.500)) then
+                flagcsrTr = 1
+              else
+                flagcsrTr = 0
+              endif
+              if((bitype.eq.0) .and. (bitypeold.eq.4) .and. &
+                (flagcsrTr.eq.1)) then
+                flagcsr = 1
+              endif
+
               !transfter to the Transport coordinate (except the 5th coordinate 
               !is -v dt instead of v dt) and apply front edge transfer map
               dpi = 2*asin(1.0d0)
@@ -996,7 +1015,8 @@
                                    Flagbc,Perdlen,piperad,piperad2)
               call chgupdate_BeamBunch(Bpts,nchrg,nptlist0,qmcclist0)
               flagcsr = 0
-              if(bitype.eq.4) then
+              !if(bitype.eq.4) then
+              if(bitype.eq.4 .or. (bitypeold.eq.4 .and. flagcsrTr.eq.1)) then
                 if(dparam(4).gt.200) then
                   flagcsr = 1
                 endif
@@ -1236,10 +1256,11 @@
                 !densz(Nz) = densz(Nz)*2
 
                 if(bitype.eq.4) then
-                      zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng)
-                      bendlen = blength !inside the bend
+                   zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng)
+                   bendlen = blength !inside the bend
                 else
-                  print*,"wrong csr element"
+                   zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng+blengthold)
+                   bendlen = blengthold !out of the bend
                 endif
 
                 exwake = 0.0
@@ -1345,6 +1366,8 @@
                 call geomerrT_BeamBunch(Bpts,Blnelem(i)) 
           end if
           zbleng = zbleng + blength
+          bitypeold = bitype
+          blengthold = blength
         enddo
 !end loop through nbeam line element
 !------------------------------------------------
