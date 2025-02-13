@@ -581,9 +581,11 @@
         enddo
 
         do i = 1, innp
-          iitmp = epsiontmp(i)/hxeps
-          nii = iitmp+1
-          tmpbin(nii) = tmpbin(nii) + 1 
+          if (.not. isnan(epsiontmp(i))) then
+            iitmp = epsiontmp(i)/hxeps
+            nii = iitmp+1
+            tmpbin(nii) = tmpbin(nii) + 1 
+          endif
         enddo
 
         glbin = 0
@@ -720,9 +722,11 @@
         enddo
 
         do i = 1, innp
-          iitmp = epsiontmp(i)/hyeps
-          nii = iitmp+1
-          tmpbin(nii) = tmpbin(nii) + 1
+          if (.not. isnan(epsiontmp(i))) then
+            iitmp = epsiontmp(i)/hyeps
+            nii = iitmp+1
+            tmpbin(nii) = tmpbin(nii) + 1
+          endif
         enddo
         glbin = 0
         call MPI_ALLREDUCE(tmpbin,glbin,nbin,MPI_INTEGER,&
@@ -851,9 +855,11 @@
         enddo
 
         do i = 1, innp
-          iitmp = epsiontmp(i)/hzeps
-          nii = iitmp+1
-          tmpbin(nii) = tmpbin(nii) + 1
+          if (.not. isnan(epsiontmp(i))) then
+            iitmp = epsiontmp(i)/hzeps
+            nii = iitmp+1
+            tmpbin(nii) = tmpbin(nii) + 1
+          endif
         enddo
         glbin = 0
         call MPI_ALLREDUCE(tmpbin,glbin,nbin,MPI_INTEGER,&
