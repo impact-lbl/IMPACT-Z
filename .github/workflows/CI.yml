@@ -41,8 +41,17 @@ jobs:
           cd $GITHUB_WORKSPACE/examples/Example1
           $GITHUB_WORKSPACE/src/ImpactZexe
 
-      - name: Test - MPI - ${{ matrix.mpi }}
-        if: matrix.mpi != 'nompi'
+      - name: Test - mpich
+        if: matrix.mpi == 'mpich'
+        run: |
+          cd $GITHUB_WORKSPACE/examples/Example1
+          # NOTE: MPICH on GitHub Actions runners fail to allocate more than 1
+          # process for the communicator. We're only testing that the MPI
+          # executable doesn't fail outright here.
+          mpirun -n 1 $GITHUB_WORKSPACE/src/ImpactZexe-mpi
+
+      - name: Test - OpenMPI
+        if: matrix.mpi == 'openmpi'
         run: |
           cd $GITHUB_WORKSPACE/examples/Example1
           sed -i"" '11s/1 1/2 1/' ImpactZ.in
