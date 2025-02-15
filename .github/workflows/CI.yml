@@ -7,8 +7,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest']
-        mpi: ['nompi', 'openmpi', 'mpich']
+        os: ["ubuntu-latest"]
+        mpi: ["nompi", "openmpi", "mpich"]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -33,7 +33,7 @@ jobs:
         if: matrix.mpi != 'nompi'
         run: |
           cd src/
-          make FC=mpifort LINK=mpifort USE_MPI=1
+          FFLAGS="$FFLAGS -fallow-argument-mismatch" make FC=mpifort LINK=mpifort USE_MPI=1
 
       - name: Test - No MPI
         if: matrix.mpi == 'nompi'
@@ -41,21 +41,29 @@ jobs:
           cd $GITHUB_WORKSPACE/examples/Example1
           $GITHUB_WORKSPACE/src/ImpactZexe
 
-      - name: Test - MPI - ${{ matrix.mpi }}
-        if: matrix.mpi != 'nompi'
+      - name: Test - mpich
+        if: matrix.mpi == 'mpich'
+        run: |
+          cd $GITHUB_WORKSPACE/examples/Example1
+          # NOTE: MPICH on GitHub Actions runners fail to allocate more than 1
+          # process for the communicator. We're only testing that the MPI
+          # executable doesn't fail outright here.
+          mpirun -n 1 $GITHUB_WORKSPACE/src/ImpactZexe-mpi
+
+      - name: Test - OpenMPI
+        if: matrix.mpi == 'openmpi'
         run: |
           cd $GITHUB_WORKSPACE/examples/Example1
           sed -i"" '11s/1 1/2 1/' ImpactZ.in
           mpirun -n 2 $GITHUB_WORKSPACE/src/ImpactZexe-mpi
-
 
   cmake:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
-        mpi: [ nompi, openmpi, mpich ]
+        os: [ubuntu-latest]
+        mpi: [nompi, openmpi, mpich]
     steps:
       - uses: actions/checkout@v2
       - name: Install GFortran
@@ -91,9 +99,30 @@ jobs:
           cd $GITHUB_WORKSPACE/examples/Example1
           $GITHUB_WORKSPACE/build/ImpactZexe
 
-      - name: Test - MPI - ${{ matrix.mpi }}
-        if: matrix.mpi != 'nompi'
+      - name: Test - mpich
+        if: matrix.mpi == 'mpich'
+        run: |
+          cd $GITHUB_WORKSPACE/examples/Example1
+          # NOTE: MPICH on GitHub Actions runners fail to allocate more than 1
+          # process for the communicator. We're only testing that the MPI
+          # executable doesn't fail outright here.
+          mpirun -n 1 $GITHUB_WORKSPACE/build/ImpactZexe-mpi
+
+      - name: Test - OpenMPI
+        if: matrix.mpi == 'openmpi'
         run: |
           cd $GITHUB_WORKSPACE/examples/Example1
           sed -i"" '11s/1 1/2 1/' ImpactZ.in
           mpirun -n 2 $GITHUB_WORKSPACE/build/ImpactZexe-mpi
+
+      - uses: actions/upload-artifact@v4
+        if: matrix.mpi != 'nompi'
+        with:
+          name: ImpactZ-${{ matrix.os }}-${{ matrix.mpi }}
+          path: build/ImpactZexe-mpi
+
+      - uses: actions/upload-artifact@v4
+        if: matrix.mpi == 'nompi'
+        with:
+          name: ImpactZ-${{ matrix.os }}-${{ matrix.mpi }}
+          path: build/ImpactZexe

@@ -581,9 +581,11 @@
         enddo
 
         do i = 1, innp
-          iitmp = epsiontmp(i)/hxeps
-          nii = iitmp+1
-          tmpbin(nii) = tmpbin(nii) + 1 
+          if (.not. isnan(epsiontmp(i))) then
+            iitmp = epsiontmp(i)/hxeps
+            nii = iitmp+1
+            tmpbin(nii) = tmpbin(nii) + 1 
+          endif
         enddo
 
         glbin = 0
@@ -720,9 +722,11 @@
         enddo
 
         do i = 1, innp
-          iitmp = epsiontmp(i)/hyeps
-          nii = iitmp+1
-          tmpbin(nii) = tmpbin(nii) + 1
+          if (.not. isnan(epsiontmp(i))) then
+            iitmp = epsiontmp(i)/hyeps
+            nii = iitmp+1
+            tmpbin(nii) = tmpbin(nii) + 1
+          endif
         enddo
         glbin = 0
         call MPI_ALLREDUCE(tmpbin,glbin,nbin,MPI_INTEGER,&
@@ -851,9 +855,11 @@
         enddo
 
         do i = 1, innp
-          iitmp = epsiontmp(i)/hzeps
-          nii = iitmp+1
-          tmpbin(nii) = tmpbin(nii) + 1
+          if (.not. isnan(epsiontmp(i))) then
+            iitmp = epsiontmp(i)/hzeps
+            nii = iitmp+1
+            tmpbin(nii) = tmpbin(nii) + 1
+          endif
         enddo
         glbin = 0
         call MPI_ALLREDUCE(tmpbin,glbin,nbin,MPI_INTEGER,&
@@ -1840,8 +1846,8 @@
                         MPI_COMM_WORLD,ierr)
         endif
 
-100     format(9(1x,g0))
-101     format(6(1x,g0))
+100     format(9(g0,1x))
+101     format(6(g0,1x))
 
         deallocate(nptlist)
         deallocate(recvbuf)
