@@ -576,8 +576,8 @@
         double precision, dimension(15) :: dparam
         real*8 :: xradmin,xradmax,yradmin,yradmax
         !for csr wake
-        integer :: bitypeold
-        real*8 :: zwkmin,bendlen,zbleng,blengthold
+        integer :: bitypeold,bitypeold2
+        real*8 :: zwkmin,bendlen,zbleng,blengthold,blengthold2
         real*8 :: tmplump,b0,qmass,qchg,pmass, alphax0,betax0,alphay0,betay0,scwk
         integer :: nslice,ihlf
         real*8 :: rsiglaser,rlaserwvleng
@@ -585,6 +585,7 @@
         real*8 :: xsig2,ysig2,freqlaser,harm,sigx2,ezlaser
         !for ISR
         real*8 :: beta,brho
+        integer :: flagsc
 
 
 !-------------------------------------------------------------------
@@ -658,6 +659,7 @@
         ezwake = 0.0
         flagwake = 0
         flagwakeread = 0
+        flagsc = 1
         flagcsr = 0
         flagcsrTr = 0
         aawk = 0.05
@@ -671,6 +673,8 @@
         tmpfile = 0
         bitypeold = 0
         blengthold = 0.0d0
+        bitypeold2 = 0
+        blengthold2 = 0.0d0
         zbleng = zblengend
 
         do i = iend+1, Nblem
@@ -694,6 +698,11 @@
 
           !print*,"tau, ",i,tau1,blength,bnseg,bitype,z
 
+          !switch on/off space-charge effects
+          if(bitype.eq.-14) then
+            call getparam_BeamLineElem(Blnelem(i),3,tmplump)
+            flagsc = tmplump
+          endif
           !instant rotate "tmplump" radian w.r.s s-axis
           if(bitype.eq.-18) then
             call getparam_BeamLineElem(Blnelem(i),3,tmplump)
@@ -940,7 +949,8 @@
               else
                 flagcsrTr = 0
               endif
-              if((bitype.eq.0) .and. (bitypeold.eq.4) .and. &
+              !if((bitype.eq.0) .and. (bitypeold.eq.4) .and. &
+              if(((bitypeold.eq.4) .or. (bitypeold2.eq.4)) .and. &
                 (flagcsrTr.eq.1)) then
                 flagcsr = 1
               endif
@@ -1016,7 +1026,8 @@
               call chgupdate_BeamBunch(Bpts,nchrg,nptlist0,qmcclist0)
               flagcsr = 0
               !if(bitype.eq.4) then
-              if(bitype.eq.4 .or. (bitypeold.eq.4 .and. flagcsrTr.eq.1)) then
+              if(bitype.eq.4 .or. ((bitypeold2.eq.4 .or. bitypeold.eq.4) &
+                                  .and. flagcsrTr.eq.1)) then
                 if(dparam(4).gt.200) then
                   flagcsr = 1
                 endif
@@ -1143,13 +1154,14 @@
               endif
 !-------------------------------------------------------------------------
 ! solve 3D Poisson's equation
-              if(Flagbc.eq.1) then
+              if((Flagbc.eq.1) .and. (flagsc>0)) then
                 ! solve Poisson's equation using 3D isolated boundary condition.
                 call update3O_FieldQuant(Potential,chgdens,Ageom,&
                 grid2d,Nxlocal,Nylocal,Nzlocal,npx,npy,nylcr,nzlcr)
               else
-                print*,"no such boundary condition type!!!"
-                stop
+                !print*,"no such boundary condition type!!!"
+                !stop
+                Potential%FieldQ = 0.0d0
               endif
             endif
 
@@ -1259,8 +1271,16 @@
                    zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng)
                    bendlen = blength !inside the bend
                 else
-                   zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng+blengthold)
-                   bendlen = blengthold !out of the bend
+                   if(bitypeold.eq.4) then !1st element after bend
+                     zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng+blengthold)
+                     bendlen = blengthold !out of the bend
+                   else if(bitypeold2.eq.4) then !2nd element after bend
+                     zwkmin = range(5)/(-Bpts%refptcl(6)) + &
+                              (z-zbleng+blengthold+blengthold2)
+                     bendlen = blengthold2 !out of the bend
+                   else
+                     print*,"Not available for csr!"
+                   endif
                 endif
 
                 exwake = 0.0
@@ -1366,6 +1386,8 @@
                 call geomerrT_BeamBunch(Bpts,Blnelem(i)) 
           end if
           zbleng = zbleng + blength
+          bitypeold2 = bitypeold
+          blengthold2 = blengthold
           bitypeold = bitype
           blengthold = blength
         enddo
