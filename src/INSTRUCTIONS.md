@@ -23,6 +23,33 @@ If you are new to CMake, [this short tutorial](https://hsf-training.github.io/hs
 
 If you just want to use CMake to build the project, jump into sections *1. Introduction*, *2. Building with CMake* and *9. Finding Packages*.
 
+## Using conda to compile IMPACT-Z
+
+`conda-forge` has all of the necessary compilers and dependencies to build IMPACT-Z from source.
+
+Create a build environment like so:
+
+```bash
+conda create -n impactz-build -c conda-forge compilers cmake openmpi
+conda activate impactz-build
+```
+
+Then to build the non-parallel version:
+
+```bash
+cmake -S src/ -B build-single
+cmake --build build-single -j 4
+ls build-single/ImpactZexe
+```
+
+And to build the MPI-parallelized version with OpenMPI:
+
+```bash
+cmake -S src/ -B build-mpi -DUSE_MPI=ON
+cmake --build build-mpi -j 4
+ls build-mpi/ImpactZexe-mpi
+```
+
 ## Unix
 
 ### Single Processor Code:
