@@ -16,6 +16,29 @@ The ImpactZexeMac, ImpactZexeUbuntu, and ImpactZexeWin.exe are old executables.
 
 Main contact: Ji Qiang (jqiang@lbl.gov), Lawrence Berkeley National Laboratory
 
+Citation: 
+J. Qiang, R. Ryne, S. Habib, V. Decyk, "An Object-Oriented Parallel Particle-In-Cell Code for Beam Dynamics Simulation in Linear Accelerators," 
+J. Comp. Phys. vol. 163, 434, (2000).
+
+# Installation using Anaconda
+
+Information about Anaconda, including install instructions, can be found on the [Conda Reference](https://docs.conda.io/projects/conda/en/latest/) website.
+
+IMPACT-Z is available through conda-forge and can be installed via:
+```bash
+conda create -n impact
+source activate impact # or conda activate impact
+# For non-MPI
+conda install -c conda-forge impact-z
+
+# For OpenMPI
+conda install -c conda-forge impact-z=*=mpi_openmpi*
+
+# For MPICH
+conda install -c conda-forge impact-z=*=mpi_mpich*
+```
+After these steps, the IMPACT-Z executable `ImpactZexe` or `ImpactZexe-mpi`, respectively, will be in your [PATH](https://en.wikipedia.org/wiki/PATH_(variable)) environment variable and is thus ready to use like any regular command-line command.
+
 # Compiling The Code
 
 If you are new to CMake, [this short tutorial](https://hsf-training.github.io/hsf-training-cmake-webpage/) from the HEP Software foundation is the perfect place to get started with it.
