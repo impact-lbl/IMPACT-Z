@@ -362,9 +362,9 @@
           call flush(32)
         endif
 
-99      format(8(1x,e13.6))
-100      format(7(1x,e13.6))
-101     format(1x,e13.6,3I10)
+99      format(8(1x,g0))
+100      format(7(1x,g0))
+101     format(1x,g0,3I10)
 
         t_diag = t_diag + elapsedtime_Timer(t0)
 
@@ -1082,10 +1082,10 @@
 !                     glmax(5),glmax(6)
         endif
 
-99      format(6(1x,e13.6))
-100      format(10(1x,e13.6))
-101     format(1x,e13.6,3I13)
-102      format(7(1x,e13.6))
+99      format(6(1x,g0))
+100      format(10(1x,g0))
+101     format(1x,g0,3I13)
+102      format(7(1x,g0))
 
         t_diag = t_diag + elapsedtime_Timer(t0)
 
@@ -1360,9 +1360,9 @@
           call flush(40)
         endif
 
-99      format(6(1x,e13.6))
-100      format(7(1x,e13.6))
-101     format(1x,e13.6,3I10)
+99      format(6(1x,g0))
+100      format(7(1x,g0))
+101     format(1x,g0,3I10)
 
         t_diag = t_diag + elapsedtime_Timer(t0)
 
