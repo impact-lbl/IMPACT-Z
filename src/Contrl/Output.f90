@@ -362,9 +362,9 @@
           call flush(32)
         endif
 
-99      format(8(1x,g0))
-100      format(7(1x,g0))
-101     format(1x,g0,3I10)
+99      format(8(g0,1x))
+100      format(7(g0,1x))
+101     format(g0,1x,3I10)
 
         t_diag = t_diag + elapsedtime_Timer(t0)
 
@@ -1082,10 +1082,10 @@
 !                     glmax(5),glmax(6)
         endif
 
-99      format(6(1x,g0))
-100      format(10(1x,g0))
-101     format(1x,g0,3I13)
-102      format(7(1x,g0))
+99      format(6(g0,1x))
+100      format(10(g0,1x))
+101     format(g0,1x,3I13)
+102      format(7(g0,1x))
 
         t_diag = t_diag + elapsedtime_Timer(t0)
 
@@ -1360,9 +1360,9 @@
           call flush(40)
         endif
 
-99      format(6(1x,g0))
-100      format(7(1x,g0))
-101     format(1x,g0,3I10)
+99      format(6(g0,1x))
+100      format(7(g0,1x))
+101     format(g0,1x,3I10)
 
         t_diag = t_diag + elapsedtime_Timer(t0)
 
@@ -1724,7 +1724,7 @@
         write(9)ptout(1:9,1:this%Nptlocal)
 
         close(9)
-100     format(9(1x,e14.7))
+100     format(9(g0,1x))
 
         deallocate(ptout)
 
@@ -2014,7 +2014,7 @@
           call MPI_WAIT(req,status,ierr)
         endif
 
-100     format(4(1x,e14.7))
+100     format(4(g0,1x))
 
         deallocate(nptlist)
 
@@ -2550,7 +2550,7 @@
 
         deallocate(nptlist)
 
-100     format(3(1x,e14.7))
+100     format(3(g0,1x))
 
         end subroutine dens2d_Output
 
@@ -2770,7 +2770,7 @@
           call MPI_WAIT(req,status,ierr)
         endif
 
-100     format(2(1x,e14.7))
+100     format(2(g0,1x))
 
         deallocate(nptlist)
 
@@ -2963,7 +2963,7 @@
           call MPI_WAIT(req,status,ierr)
         endif
 
-100     format(2(1x,e14.7))
+100     format(2(g0,1x))
 
         deallocate(nptlist)
 
@@ -3210,7 +3210,7 @@
 
       call flush(nfile)
 
-777   format(11(1x,e15.7))
+777   format(11(g0,1x))
 
       end subroutine sliceprocdep_Output
 
