@@ -39,4 +39,6 @@
         integer, parameter :: Nslmax = 1000
         !maximum # of magnetic solenoid with RF field
         integer, parameter :: Nslrfmax = 1000
+        !maximum # of wiggler
+        integer, parameter :: Nwigmax = 100
       end module NumConstclass
