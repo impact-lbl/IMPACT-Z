@@ -23,6 +23,7 @@
         use Dipoleclass
         use EMfldclass
         use TWSclass
+        use Wigglerclass
         type BeamLineElem
 !          private
           type (BPM), pointer :: pbpm
@@ -39,11 +40,12 @@
           type (Dipole), pointer :: pdipole
           type (EMfld), pointer :: pemfld
           type (TWS), pointer :: ptws
+          type (Wiggler), pointer :: pwig
         end type BeamLineElem
         interface assign_BeamLineElem
           module procedure assign_ccl,assign_ccdtl,assign_dtl,assign_quad,&
           assign_drift,assign_sc,assign_bpm,assign_cf,assign_slrf,assign_sl,&
-          assign_dipole,assign_emfld,assign_mult,assign_tws
+          assign_dipole,assign_emfld,assign_mult,assign_tws,assign_wig
         end interface
         interface getparam_BeamLineElem
           module procedure getparam1_BeamLineElem, &
@@ -350,6 +352,29 @@
  
         end function assign_tws
 
+        function assign_wig(twig) result(ppwig)
+        type (BeamLineElem) :: ppwig
+        type (Wiggler), target, intent(in) :: twig
+
+        ppwig%pwig => twig
+        nullify(ppwig%pquad)
+        nullify(ppwig%pdrift)
+        nullify(ppwig%pccl)
+        nullify(ppwig%pccdtl)
+        nullify(ppwig%pdtl)
+        nullify(ppwig%psc)
+        nullify(ppwig%pbpm)
+        nullify(ppwig%pcf)
+        nullify(ppwig%pslrf)
+        nullify(ppwig%psl)
+        nullify(ppwig%pdipole)
+        nullify(ppwig%pemfld)
+        nullify(ppwig%pmult)
+        nullify(ppwig%ptws)
+
+        end function assign_wig
+
+
         subroutine getparam1_BeamLineElem(this,i,blparam)
         implicit none 
         type (BeamLineElem), intent(in) :: this
@@ -384,6 +409,8 @@
           call getparam_Multipole(this%pmult,i,blparam)
         elseif(associated(this%ptws)) then
           call getparam_TWS(this%ptws,i,blparam)
+        elseif(associated(this%pwig)) then
+          call getparam_Wiggler(this%pwig,i,blparam)
         endif
 
         end subroutine getparam1_BeamLineElem
@@ -421,6 +448,8 @@
           call getparam_Multipole(this%pmult,blparams)
         elseif(associated(this%ptws)) then
           call getparam_TWS(this%ptws,blparams)
+        elseif(associated(this%pwig)) then
+          call getparam_Wiggler(this%pwig,blparams)
         endif
 
         end subroutine getparam2_BeamLineElem
@@ -462,6 +491,8 @@
           call getparam_Multipole(this%pmult,blength,bnseg,bmapstp,btype)
         elseif(associated(this%ptws)) then
           call getparam_TWS(this%ptws,blength,bnseg,bmapstp,btype)
+        elseif(associated(this%pwig)) then
+          call getparam_Wiggler(this%pwig,blength,bnseg,bmapstp,btype)
         endif
 
         end subroutine getparam3_BeamLineElem
@@ -512,6 +543,9 @@
           piperadius2 = piperadius
         elseif(associated(this%ptws)) then
           call getparam_TWS(this%ptws,6,piperadius)
+          piperadius2 = piperadius
+        elseif(associated(this%pwig)) then
+          call getparam_Wiggler(this%pwig,5,piperadius)
           piperadius2 = piperadius
         endif
 
@@ -607,6 +641,12 @@
           anglerrx = this%ptws%Param(9)
           anglerry = this%ptws%Param(10)
           anglerrz = this%ptws%Param(11)
+        elseif(associated(this%pwig)) then
+          xerr = this%pwig%Param(8)
+          yerr = this%pwig%Param(9)
+          anglerrx = this%pwig%Param(10)
+          anglerry = this%pwig%Param(11)
+          anglerrz = this%pwig%Param(12)
         endif
 
         end subroutine geterr_BeamLineElem
@@ -645,6 +685,8 @@
           call setparam_Multipole(this%pmult,i,blparam)
         elseif(associated(this%ptws)) then
           call setparam_TWS(this%ptws,i,blparam)
+        elseif(associated(this%pwig)) then
+          call setparam_Wiggler(this%pwig,i,blparam)
         endif
 
         end subroutine setparam1_BeamLineElem
@@ -682,6 +724,8 @@
           call setparam_Multipole(this%pmult,blparams)
         elseif(associated(this%ptws)) then
           call setparam_TWS(this%ptws,blparams)
+        elseif(associated(this%pwig)) then
+          call setparam_Wiggler(this%pwig,blparams)
         endif
 
         end subroutine setparam2_BeamLineElem
@@ -723,6 +767,8 @@
           call setparam_Multipole(this%pmult,bnseg,bmapstp,btype,blength)
         elseif(associated(this%ptws)) then
           call setparam_TWS(this%ptws,bnseg,bmapstp,btype,blength)
+        elseif(associated(this%pwig)) then
+          call setparam_Wiggler(this%pwig,bnseg,bmapstp,btype,blength)
         endif
 
         end subroutine setparam3_BeamLineElem
@@ -772,6 +818,8 @@
           call maplinear_Multipole(t,tau,xm,this%pmult,refpt,chg,mss)
         elseif(associated(this%ptws)) then
           call maplinear_TWS(t,tau,xm,this%ptws,refpt,chg,mss)
+        elseif(associated(this%pwig)) then
+          print*,"no map for Wiggler!!"
         endif
 
         end subroutine maplinear_BeamLineElem
@@ -812,6 +860,8 @@
           call getfld_Multipole(pos,extfld,this%pmult)
         elseif(associated(this%ptws)) then
           call getfld_TWS(pos,extfld,this%ptws)
+        elseif(associated(this%pwig)) then
+          call getfld_Wiggler(pos,extfld,this%pwig)
         endif
 
         end subroutine getfld_BeamLineElem
@@ -866,6 +916,9 @@
         elseif(associated(this%ptws)) then
           call getflderr_TWS(pos,extfld,this%ptws,dx,dy,anglex,&
                                     angley,anglez)
+        elseif(associated(this%pwig)) then
+          print*,"no error field for Wiggler!!"
+          extfld = 0.0
         endif
 
         end subroutine getflderr_BeamLineElem
@@ -920,6 +973,10 @@
           ezpp1 = 0.0
         elseif(associated(this%ptws)) then
           call getaxfldE_TWS(z,this%ptws,ez1,ezp1,ezpp1,ez12,ezp12,ezpp12)
+        elseif(associated(this%pwig)) then
+          ez1 = 0.0
+          ezp1 = 0.0
+          ezpp1 = 0.0
         endif
 
         end subroutine getaxfldE_BeamLineElem

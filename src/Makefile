@@ -44,7 +44,7 @@ OBJS = \
 	mpistub.o DataStruct/NumConst.o DataStruct/PhysConst.o DataStruct/Pgrid.o \
 	DataStruct/Data.o \
 	Func/Timer.o Func/Transpose.o Func/Fldmger.o Func/Ptclmger.o  Func/FFT.o \
-        Appl/BPM.o Appl/CCL.o Appl/CCDTL.o Appl/DTL.o Appl/SC.o \
+        Appl/BPM.o Appl/CCL.o Appl/CCDTL.o Appl/DTL.o Appl/SC.o Appl/Wiggler.o \
 	Appl/DriftTube.o Appl/Quadrupole.o Appl/ConstFoc.o Appl/SolRF.o \
 	Appl/Sol.o Appl/Dipole.o Appl/Multipole.o Appl/EMfld.o Appl/TWS.o Appl/BeamLineElem.o \
 	Appl/CompDom.o Appl/Field.o Appl/BeamBunch.o  Appl/Distribution.o \
@@ -53,7 +53,7 @@ OBJS = \
 OBJS2 = \
 	mpistub.o NumConst.o PhysConst.o Pgrid.o Data.o \
         Timer.o Transpose.o Fldmger.o Ptclmger.o FFT.o \
-	BPM.o CCL.o CCDTL.o DTL.o SC.o DriftTube.o Quadrupole.o ConstFoc.o \
+	BPM.o CCL.o CCDTL.o DTL.o SC.o DriftTube.o Quadrupole.o Wiggler.o ConstFoc.o \
 	SolRF.o Sol.o Dipole.o Multipole.o EMfld.o TWS.o BeamLineElem.o CompDom.o Field.o BeamBunch.o Distribution.o \
 	Input.o Output.o AccSimulator.o main.o	
 
@@ -106,7 +106,7 @@ $(EXENAME):  $(OBJS)
 #	$(CC) -c -O3 Timer.f90
 
 	cp  AccSimulator.o main.o Input.o Output.o Contrl
-	cp  BPM.o CCL.o CCDTL.o DTL.o SC.o DriftTube.o Quadrupole.o \
+	cp  BPM.o CCL.o CCDTL.o DTL.o SC.o DriftTube.o Quadrupole.o Wiggler.o \
 	    ConstFoc.o BeamLineElem.o BeamBunch.o Field.o CompDom.o \
 	    Multipole.o Distribution.o SolRF.o Sol.o Dipole.o TWS.o EMfld.o Appl
 	cp  Timer.o Transpose.o Fldmger.o Ptclmger.o FFT.o Func

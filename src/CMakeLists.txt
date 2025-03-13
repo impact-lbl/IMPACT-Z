@@ -32,6 +32,7 @@ list(APPEND _sources
     Appl/Field.f90
     Appl/SC.f90
     Appl/TWS.f90
+    Appl/Wiggler.f90
     Appl/BeamBunch.f90
     Appl/CCL.f90
     Appl/DTL.f90

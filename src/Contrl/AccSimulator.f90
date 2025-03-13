@@ -82,6 +82,7 @@
         type (EMfld),target,dimension(Ncclmax) :: beamln11
         type (Multipole),target,dimension(Nquadmax) :: beamln12
         type (TWS),target,dimension(Nscmax) :: beamln13
+        type (Wiggler),target,dimension(Nwigmax) :: beamln14
         type (BeamLineElem),private,dimension(Nblemtmax)::Blnelem
         !beam line element period.
         interface construct_AccSimulator
@@ -122,12 +123,14 @@
         double precision, dimension(15) :: tmpslrf
         double precision, dimension(14) :: tmp13
         double precision, dimension(25) :: tmpdtl
+        double precision, dimension(12) :: tmpwig
         integer :: iqr,idr,ibpm,iccl,iccdtl,idtl,isc,icf,islrf,isl,idipole,&
-                   iemfld,myrank,imultpole,itws,nfileout
+                   iemfld,myrank,imultpole,itws,nfileout,iwig
 
         integer, allocatable, dimension(:) :: seedarray
         real rancheck
         integer :: meanpts20,seedsize
+        real*8 :: gambet
            
         !start up MPI.
         call init_Input(time)
@@ -164,7 +167,7 @@
         if(myid.eq.0) then
           !print*,"Start simulation:"
           print*,"!-----------------------------------------------------------"
-          print*,"! IMPACT-Z: Integrated Map and PArticle Tracking Code: Version 2.2"
+          print*,"! IMPACT-Z: Integrated Map and PArticle Tracking Code: Version 2.6"
           print*,"! Copyright of The Regents of the University of California"
           print*,"!-----------------------------------------------------------"
         endif
@@ -175,8 +178,9 @@
 !-------------------------------------------------------------------
 ! construct computational domain CompDom class and get local geometry 
 ! information on each processor.
+        gambet = sqrt((Bkenergy/Bmass+1.0d0)**2-1.0d0)
         call construct_CompDom(Ageom,distparam,21,Flagdist,&
-               Nx,Ny,Nz,grid2d,nprow,npcol,Flagbc,xrad,yrad,Perdlen)
+               Nx,Ny,Nz,grid2d,nprow,npcol,Flagbc,xrad,yrad,Perdlen,gambet)
 
 !-------------------------------------------------------------------
 ! initialize Data class.
@@ -225,6 +229,7 @@
         iemfld = 0
         imultpole = 0
         itws = 0
+        iwig = 0
         do i = 1, Nblem
           if(bitype(i).lt.0) then
             ibpm = ibpm + 1
@@ -329,6 +334,24 @@
             tmpdipole(10) = val9(i)
             call setparam_Multipole(beamln12(imultpole),tmpdipole)
             Blnelem(i) = assign_BeamLineElem(beamln12(imultpole))
+          else if(bitype(i).eq.6) then
+            iwig = iwig + 1
+            call construct_Wiggler(beamln14(iwig),bnseg(i),bmpstp(i),&
+            bitype(i),blength(i))
+            tmpwig(1) = 0.0
+            tmpwig(2) = val1(i)
+            tmpwig(3) = val2(i)
+            tmpwig(4) = val3(i)
+            tmpwig(5) = val4(i)
+            tmpwig(6) = val5(i)
+            tmpwig(7) = val6(i)
+            tmpwig(8) = val7(i)
+            tmpwig(9) = val8(i)
+            tmpwig(10) = val9(i)
+            tmpwig(11) = val10(i)
+            tmpwig(12) = val11(i)
+            call setparam_Wiggler(beamln14(iwig),tmpwig)
+            Blnelem(i) = assign_BeamLineElem(beamln14(iwig))
           else if(bitype(i).eq.101) then
             idtl = idtl + 1
             call construct_DTL(beamln3(idtl),bnseg(i),bmpstp(i),&

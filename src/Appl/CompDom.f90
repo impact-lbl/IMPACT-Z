@@ -11,6 +11,7 @@
       module CompDomclass
         use Timerclass
         use Pgrid2dclass
+        use PhysConstclass
         integer, private, parameter :: Ndim = 3   !spatial dimension
         interface setlctab_CompDom
           module procedure setlctab1_CompDom, setlctab2_CompDom
@@ -36,15 +37,16 @@
         ! calculate the initial computational geometry parameters
         ! and double precision parameters. Here, computational domain is mapped
         ! onto a one dimension processor array in y direction. 
-        subroutine init_CompDom(this,distparam,nparam, &
-               flg,nx,ny,nz,grid2d,nprocrow,nproccol,Flagbc,xrad,yrad,perd)
+        subroutine init_CompDom(this,distparam0,nparam, &
+               flg,nx,ny,nz,grid2d,nprocrow,nproccol,Flagbc,xrad,yrad,perd,gambet)
         implicit none
         include 'mpif.h'
         type (Pgrid2d), intent(in) :: grid2d
         type (CompDom), intent(out) :: this
         integer, intent(in) :: flg,nx,ny,nz,nprocrow,nproccol,nparam,Flagbc
-        double precision, dimension(nparam), intent(in) :: distparam
-        double precision, intent(in) :: xrad,yrad,perd
+        double precision, dimension(nparam), intent(in) :: distparam0
+        double precision, intent(in) :: xrad,yrad,perd,gambet
+        double precision, dimension(nparam) :: distparam
         integer :: myid,myidx,myidy,comm2d, &
                    commcol, commrow, ierr, totnp,npxx,npyy
         integer :: i,j,ih,il,nsum
@@ -60,7 +62,31 @@
         double precision, dimension(2,0:nproccol-1) :: lctabrgy
         integer :: ip,numint
         integer :: i0,j0,iflag
+        real*8 :: alpha,beta,eps
      
+        alpha = distparam0(1)
+        beta = distparam0(2)
+        eps = distparam0(3)/gambet !unnormalized emittance m-rad
+        distparam(1) = sqrt(beta*eps/(1.d0+alpha**2))/Scxl
+        distparam(2) = sqrt(eps/beta)*gambet
+        distparam(3) = alpha/sqrt(1.d0+alpha**2)
+!Y-Py
+        alpha = distparam0(8)
+        beta = distparam0(9)
+        eps = distparam0(10)/gambet
+        distparam(8) = sqrt(beta*eps/(1.d0+alpha**2))/Scxl
+        distparam(9) = sqrt(eps/beta)*gambet
+        distparam(10) = alpha/sqrt(1.d0+alpha**2)
+!T-Pt
+        alpha = distparam0(15)
+        beta = distparam0(16) !degree/MeV
+        eps = distparam0(17) !degree-MeV
+        distparam(15) = sqrt(beta*eps/(1.d0+alpha**2))/Rad2deg
+        !distparam(15) = sqrt(beta*eps/(1.d0+alpha**2))/(180.0d0/(2*asin(1.0d0)))
+        !distparam(16) = sqrt(eps/beta)/(this%Mass/1.0d6)
+        distparam(16) = sqrt(eps/beta)
+        distparam(17) = -alpha/sqrt(1.d0+alpha**2)
+
         sig1x = distparam(1)
         sig2x = distparam(2)
         ux = distparam(3)
