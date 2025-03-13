@@ -5,8 +5,7 @@
 ! Version: 1.0
 ! Author: Ji Qiang, LBNL
 ! Description: This class defines the linear transfer map and field
-!              for the multipole (sextupole, octupole, decapole)
-!              beam line elment.
+!              for the wiggler/undulator beam line elment.
 ! Comments:
 !----------------------------------------------------------------
       module Wigglerclass
@@ -14,7 +13,7 @@
         use Dataclass
         integer, private, parameter :: Nparam = 12
         type Wiggler
-          !Itype = 5
+          !Itype = 6
           integer :: Nseg,Mapstp,Itype
           double precision :: Length
           double precision, dimension(Nparam) :: Param
