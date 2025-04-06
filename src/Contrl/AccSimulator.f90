@@ -960,9 +960,9 @@
           zedge = z
           call setparam_BeamLineElem(Blnelem(i),1,zedge)
           if(myid.eq.0) print*,"zedge: ",zedge
-          if(Flagerr.eq.1) then
-              call geomerrL_BeamBunch(Bpts,Blnelem(i)) 
-          end if
+          !if(Flagerr.eq.1) then
+          !    call geomerrL_BeamBunch(Bpts,Blnelem(i)) 
+          !end if
           !/bend using Transport transfer map
           if(bitype.eq.4) then
               call getparam_BeamLineElem(Blnelem(i),dparam)
@@ -1020,6 +1020,10 @@
 ! using 2 step symplectic integeration (ie. leap frog).
           ihlf = 0
           do j = 1, bnseg
+
+            if(Flagerr.eq.1) then
+              call geomerrL_BeamBunch(Bpts,Blnelem(i)) 
+            end if
 !-------------------------------------------------------------------
 ! use linear map or nonlinear Lorentz integrator to advance particles.
             if(bitype.ne.4) then
@@ -1379,6 +1383,10 @@
             !print*,"pass sec2: ",z
 
 
+            if(Flagerr.eq.1) then
+                call geomerrT_BeamBunch(Bpts,Blnelem(i)) 
+            end if
+
             if(Flagdiag.eq.1) then
                 call diagnostic1_Output(z,Bpts,nchrg,nptlist0)
             else if(Flagdiag.eq.2) then
@@ -1405,9 +1413,9 @@
               call Bpol_Dipole(hd0,hB,tanphiB,tanphiBb,hd1,&
                                psi2,Bpts%Pts1,angB,Nplocal,gamma0,qm0)
           endif
-          if(Flagerr.eq.1) then
-                call geomerrT_BeamBunch(Bpts,Blnelem(i)) 
-          end if
+          !if(Flagerr.eq.1) then
+          !      call geomerrT_BeamBunch(Bpts,Blnelem(i)) 
+          !end if
           zbleng = zbleng + blength
           bitypeold2 = bitypeold
           blengthold2 = blengthold
