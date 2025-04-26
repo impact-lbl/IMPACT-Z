@@ -1352,6 +1352,13 @@
                                     bnseg,j,ihlf)
               else
                 !print*,"before sec2: ",z,angz
+                if(Bcurr.gt.1.0d-15) then
+                  gamma0 = -Bpts%refptcl(6)
+                  beta=sqrt((gamma0+1.d0)*(gamma0-1.d0))/gamma0
+                  brho=gamma0*beta/Clight*Bmass
+                  b0 =abs(brho*dparam(2)/blength)
+                  call ISRchicane(Bpts%Pts1,Nplocal,tau2,gamma0,b0)
+                endif
                 call Sector_Dipole(tau1,beta0,hd0,hd1,Bpts%Pts1,&
                                    Nplocal,qm0)
                 z = z + tau1
@@ -1370,6 +1377,13 @@
               if(bitype.ne.4) then
                 call map1_BeamBunch(Bpts,z,tau2)
               else
+                if(Bcurr.gt.1.0d-15) then
+                  gamma0 = -Bpts%refptcl(6)
+                  beta=sqrt((gamma0+1.d0)*(gamma0-1.d0))/gamma0
+                  brho=gamma0*beta/Clight*Bmass
+                  b0 =abs(brho*dparam(2)/blength)
+                  call ISRchicane(Bpts%Pts1,Nplocal,tau2,gamma0,b0)
+                endif
                 call Sector_Dipole(tau1,beta0,hd0,hd1,Bpts%Pts1,&
                                  Nplocal,qm0)
                 z = z + tau1
@@ -1383,15 +1397,6 @@
                 call diagnostic1_Output(z,Bpts,nchrg,nptlist0)
             else if(Flagdiag.eq.2) then
                 call diagnostic2_Output(Bpts,z,nchrg,nptlist0)
-            endif
-
-            !add ISR inside the bending magnet
-            if(bitype.eq.4 .and. (Bcurr.gt.1.0d-15)) then
-              gamma0 = -Bpts%refptcl(6)
-              beta=sqrt((gamma0+1.d0)*(gamma0-1.d0))/gamma0
-              brho=gamma0*beta/Clight*Bmass
-              b0 =abs(brho*dparam(2)/blength)
-              call ISRchicane(Bpts%Pts1,Nplocal,tau2,gamma0,b0)
             endif
 
             nstep = nstep + 1
