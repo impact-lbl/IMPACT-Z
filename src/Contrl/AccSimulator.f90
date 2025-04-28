@@ -167,7 +167,7 @@
         if(myid.eq.0) then
           !print*,"Start simulation:"
           print*,"!-----------------------------------------------------------"
-          print*,"! IMPACT-Z: Integrated Map and PArticle Tracking Code: Version 2.6"
+          print*,"! IMPACT-Z: Integrated Map and PArticle Tracking Code: Version 2.7"
           print*,"! Copyright of The Regents of the University of California"
           print*,"!-----------------------------------------------------------"
         endif
