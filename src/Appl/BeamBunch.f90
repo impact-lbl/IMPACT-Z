@@ -382,6 +382,8 @@
             !particle momentum to propagate particles
             gam0 = -this%refptcl(6)
             gambet = sqrt(gam0**2-1.0d0)
+            beta0 = gambet/gam0
+            this%refptcl(5) = this%refptcl(5) + 0.5d0*tau/(Scxl*beta0)
             do i = 1, this%Nptlocal
               !entrance momentum of individual particle
               gami_1 = gam0 - this%Pts1(6,i)
@@ -409,6 +411,11 @@
 
             !update the reference particle energy
             this%refptcl(6) = this%refptcl(6) - tau*vtmp*cos(phi0lc)
+            gam0 = -this%refptcl(6)
+            gambet0 = sqrt(gam0**2-1.0)
+            beta0 = gambet0/gam0
+            this%refptcl(5) = this%refptcl(5) + 0.5d0*tau/(Scxl*beta0)
+
             !apply exit focusing kick
             if(nst.eq.nseg .and. mod(ihlf,2).eq.1) then
               gam0 = -this%refptcl(6)
