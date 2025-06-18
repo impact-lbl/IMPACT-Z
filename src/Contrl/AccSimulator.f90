@@ -230,9 +230,19 @@
         imultpole = 0
         itws = 0
         iwig = 0
+        if(Nblem > Nblemtmax) then
+          print*,"over max. # of beam line elements!!! ",Nblemtmax
+          stop
+        endif
         do i = 1, Nblem
           if(bitype(i).lt.0) then
             ibpm = ibpm + 1
+
+            if(ibpm > Nbpmmax) then
+               print*,"over max. # of bpm: ",Nbpmmax
+               stop
+             endif
+
             call construct_BPM(beamln0(ibpm),bnseg(i),bmpstp(i),&
                  bitype(i),blength(i))
             tmpbpm(1) = 0.0
@@ -250,6 +260,12 @@
             if(bitype(i).eq.-7) nfileout=bmpstp(i)
           else if(bitype(i).eq.0) then
             idr = idr + 1
+
+            if(idr > Ndriftmax) then
+               print*,"over max. # of drift: ",Ndriftmax
+               stop
+            endif
+
             call construct_DriftTube(beamln1(idr),bnseg(i),bmpstp(i),&
                  bitype(i),blength(i))
             tmpdr(1) = 0.0
@@ -258,6 +274,12 @@
             Blnelem(i) = assign_BeamLineElem(beamln1(idr))
           else if(bitype(i).eq.1) then
             iqr = iqr + 1
+
+            if(iqr > Nquadmax) then
+               print*,"over max. # of quad: ",Nquadmax
+               stop
+            endif
+
             call construct_Quadrupole(beamln2(iqr),bnseg(i),bmpstp(i),&
             bitype(i),blength(i))
             tmpquad(1) = 0.0
@@ -402,6 +424,12 @@
             Blnelem(i) = assign_BeamLineElem(beamln4(iccdtl))
           else if(bitype(i).eq.103) then
             iccl = iccl + 1
+
+            if(iccl > Ncclmax) then
+               print*,"over max. # of CCL: ",Ncclmax
+               stop
+            endif
+
             call construct_CCL(beamln5(iccl),bnseg(i),bmpstp(i),&
                  bitype(i),blength(i))
             tmprf(1) = 0.0
@@ -419,6 +447,12 @@
             Blnelem(i) = assign_BeamLineElem(beamln5(iccl))
           else if(bitype(i).eq.104) then
             isc = isc + 1
+
+            if(isc > Nscmax) then
+               print*,"over max. # of SC: ",Nscmax
+               stop
+            endif
+
             call construct_SC(beamln6(isc),bnseg(i),bmpstp(i),&
                  bitype(i),blength(i))
             tmprf(1) = 0.0

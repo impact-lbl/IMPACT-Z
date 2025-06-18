@@ -20,19 +20,19 @@
         integer, parameter :: Nylcmax = 128
         integer, parameter :: Nzlcmax = 128
         !maximum # of beam line elements
-        integer, parameter :: Nblemtmax = 5000
+        integer, parameter :: Nblemtmax = 6000
         !maximum # of drift space
-        integer, parameter :: Ndriftmax = 2000
+        integer, parameter :: Ndriftmax = 5000
         !maximum # of quadrupoles
         integer, parameter :: Nquadmax = 4000
         integer, parameter :: Ncfmax = 1000
         !maximum # of dipoles
         integer, parameter :: Ndipolemax = 1000
         !maximum # of rf gaps
-        integer, parameter :: Ncclmax = 1000
+        integer, parameter :: Ncclmax = 2000
         integer, parameter :: Nccdtlmax = 1000
         integer, parameter :: Ndtlmax = 1000
-        integer, parameter :: Nscmax = 1000
+        integer, parameter :: Nscmax = 2000
         !maximum # of beam position monitors
         integer, parameter :: Nbpmmax = 2000
         !maximum # of magnetic solenoid
