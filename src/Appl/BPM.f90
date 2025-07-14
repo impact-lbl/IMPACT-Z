@@ -275,6 +275,64 @@
  
         end subroutine kickRF_BPM
 
+        !rotate the beam along vertical x-axis at given location
+        !btype = -16
+        subroutine xrot_BPM(Pts1,innp,phi,gam0)
+        implicit none
+        include 'mpif.h'
+        integer, intent(in) :: innp
+        real*8, intent(in) :: gam0
+        double precision, pointer, dimension(:,:) :: Pts1
+        double precision, intent(in) :: phi
+        integer :: i
+        real*8 :: tmpx,tmpy,tmppx,tmppy,gam,gambetz
+
+        do i = 1, innp
+          gam = gam0 - Pts1(6,i)
+          gambetz = sqrt(gam**2-1.0-Pts1(2,i)**2-Pts1(4,i)**2)
+
+          tmpx = Pts1(3,i)*cos(phi)
+          tmpy = -Pts1(3,i)*sin(phi)
+          tmppx = Pts1(4,i)*cos(phi)+gambetz*sin(phi)
+          tmppy = -Pts1(4,i)*sin(phi)+gambetz*cos(phi)
+
+          Pts1(1,i) = Pts1(1,i) -tmpy*Pts1(2,i)/tmppy
+          Pts1(3,i) = tmpx - tmpy*tmppx/tmppy
+          Pts1(4,i) = tmppx
+          Pts1(5,i) = Pts1(5,i) + tmpy*gam/tmppy
+        enddo
+
+        end subroutine xrot_BPM
+
+
+        !rotate the beam along vertical y-axis at given location
+        !btype = -17
+        subroutine yrot_BPM(Pts1,innp,phi,gam0)
+        implicit none
+        include 'mpif.h'
+        integer, intent(in) :: innp
+        real*8, intent(in) :: gam0
+        double precision, pointer, dimension(:,:) :: Pts1
+        double precision, intent(in) :: phi
+        integer :: i
+        real*8 :: tmpx,tmpy,tmppx,tmppy,gam,gambetz
+
+        do i = 1, innp
+          gam = gam0 - Pts1(6,i)
+          gambetz = sqrt(gam**2-1.0-Pts1(2,i)**2-Pts1(4,i)**2)
+
+          tmpx = Pts1(1,i)*cos(phi)
+          tmpy = -Pts1(1,i)*sin(phi)
+          tmppx = Pts1(2,i)*cos(phi)+gambetz*sin(phi)
+          tmppy = -Pts1(2,i)*sin(phi)+gambetz*cos(phi)
+          Pts1(1,i) = tmpx - tmpy*tmppx/tmppy
+          Pts1(2,i) = tmppx
+          Pts1(3,i) = Pts1(3,i) -tmpy*Pts1(4,i)/tmppy
+          Pts1(5,i) = Pts1(5,i) + tmpy*gam/tmppy
+        enddo
+
+        end subroutine yrot_BPM
+
         !rotate the beam along longitudinal s-axis at given location
         !using the MAD8 notation.
         !btype = -18

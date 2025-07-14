@@ -760,6 +760,18 @@
             call getparam_BeamLineElem(Blnelem(i),3,tmplump)
             flagsc = tmplump
           endif
+          !instant rotate "tmplump" radian w.r.s x-axis
+          if(bitype.eq.-16) then
+            gamma0 = -Bpts%refptcl(6)
+            call getparam_BeamLineElem(Blnelem(i),3,tmplump)
+            call xrot_BPM(Bpts%Pts1,Nplocal,tmplump,gamma0)
+          endif
+          !instant rotate "tmplump" radian w.r.s y-axis
+          if(bitype.eq.-17) then
+            gamma0 = -Bpts%refptcl(6)
+            call getparam_BeamLineElem(Blnelem(i),3,tmplump)
+            call yrot_BPM(Bpts%Pts1,Nplocal,tmplump,gamma0)
+          endif
           !instant rotate "tmplump" radian w.r.s s-axis
           if(bitype.eq.-18) then
             call getparam_BeamLineElem(Blnelem(i),3,tmplump)
