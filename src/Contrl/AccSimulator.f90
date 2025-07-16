@@ -167,7 +167,7 @@
         if(myid.eq.0) then
           !print*,"Start simulation:"
           print*,"!-----------------------------------------------------------"
-          print*,"! IMPACT-Z: Integrated Map and PArticle Tracking Code: Version 2.7"
+          print*,"! IMPACT-Z: Integrated Map and PArticle Tracking Code: Version 2.7.1"
           print*,"! Copyright of The Regents of the University of California"
           print*,"!-----------------------------------------------------------"
         endif
@@ -641,7 +641,7 @@
         real*8, dimension(2) :: xylc,xygl
         real*8 :: xsig2,ysig2,freqlaser,harm,sigx2,ezlaser
         !for ISR
-        real*8 :: beta,brho
+        real*8 :: beta,brho,gam0
         integer :: flagsc
 
 
@@ -755,6 +755,14 @@
 
           !print*,"tau, ",i,tau1,blength,bnseg,bitype,z
 
+
+          !instant kick by external linear map
+          if(bitype.eq.-12) then
+            nfile =bmpstp
+            gam0 = -Bpts%refptcl(6)
+            call kickextmap_BPM(Bpts%Pts1,Nplocal,gam0,nfile)
+          endif
+
           !switch on/off space-charge effects
           if(bitype.eq.-14) then
             call getparam_BeamLineElem(Blnelem(i),3,tmplump)
@@ -793,6 +801,12 @@
           !switch integrator types
           if(bitype.eq.-25) then
             Flagmap = bmpstp
+          endif
+
+          if(bitype.eq.-44) then
+            gam0 = -Bpts%refptcl(6)
+            call getparam_BeamLineElem(Blnelem(i),drange)
+            call kickthindef_BPM(Bpts%Pts1,Nplocal,drange(2),int(drange(3)),gam0)
           endif
 
 !-------------------------------------------------------------------

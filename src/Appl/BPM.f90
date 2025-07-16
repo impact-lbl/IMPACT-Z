@@ -488,4 +488,88 @@
 
         end subroutine thinMultipole_BPM
 
+        !RF deflecting cavity thin lens map
+        !drange(2); sk
+        !drange(3); flaghv (flag for horizontal or vertical deflecting)
+        !thin lens RF deflection kick
+        subroutine kickthindef_BPM(Pts1,innp,sk,flaghv,gam0)
+        implicit none
+        include 'mpif.h'
+        integer, intent(in) :: innp,flaghv
+        double precision, pointer, dimension(:,:) :: Pts1
+        double precision, intent(in) :: sk,gam0
+        integer :: i
+        real*8 :: gam,gambetz,x,z
+
+!        print*,"sk:",sk,flaghv,innp
+
+        gam = gam0
+        gambetz = sqrt(gam**2-1.0d0)
+        if(flaghv.ge.0) then !H-Z deflecting
+          do i = 1, innp
+!            gam = gam0 - Pts1(6,i)
+!            gambetz = sqrt(gam**2-1.0d0-Pts1(2,i)**2-Pts1(4,i)**2)
+            x = Pts1(1,i)*Scxl
+            z = -Pts1(5,i)*Scxl
+            Pts1(2,i) = Pts1(2,i)+sk*z*gambetz
+            Pts1(6,i) = Pts1(6,i)-sk*x*gam
+          enddo
+        else !V-Z deflecting
+          do i = 1, innp
+!            gam = gam0 - Pts1(6,i)
+!            gambetz = sqrt(gam**2-1.0d0-Pts1(2,i)**2-Pts1(4,i)**2)
+            x = Pts1(3,i)*Scxl
+            z = -Pts1(5,i)*Scxl
+            Pts1(4,i) = Pts1(4,i)+sk*z*gambetz
+            Pts1(6,i) = Pts1(6,i)-sk*x*gam
+          enddo
+        endif
+
+        end subroutine kickthindef_BPM
+
+        !instant kick by external linear map
+        subroutine kickextmap_BPM(pts1,innp,gam0,nfile)
+        implicit none
+        include 'mpif.h'
+        integer, intent(in) :: innp,nfile
+        double precision, pointer, dimension(:,:) :: pts1
+        real*8, dimension(6,6) :: extmap
+        double precision, intent(in) :: gam0
+        integer :: i,j,k
+        real*8 :: gam,gambet,bet
+        real*8, dimension(6) :: tmp,temp
+
+!        open(17,file="linearmap.in",status="old")
+        do i = 1, 6
+          read(nfile,*)extmap(i,1),extmap(i,2),extmap(i,3),&
+                    extmap(i,4),extmap(i,5),extmap(i,6)
+        enddo
+        close(nfile)
+        gam = gam0
+        gambet = sqrt(gam**2-1.0d0)
+        bet = gambet/gam
+!        print*,"gam0: ",gam0,extmap(1,1),extmap(6,6),scxl,gambet,bet
+        do i = 1, innp
+          !convert to x,x',y,y',z,dp/p coordinates
+          tmp(1) = pts1(1,i)*scxl
+          tmp(2) = pts1(2,i)/gambet
+          tmp(3) = pts1(3,i)*scxl
+          tmp(4) = pts1(4,i)/gambet
+          tmp(5) = -pts1(5,i)*scxl*bet
+          tmp(6) = -pts1(6,i)/(gam*bet**2)
+          do k = 1, 6
+            temp(k) = 0.0d0
+            do j = 1, 6
+              temp(k) = temp(k)+extmap(k,j)*tmp(j)
+            enddo
+          enddo
+          pts1(1,i) = temp(1)/scxl
+          pts1(2,i) = temp(2)*gambet 
+          pts1(3,i) = temp(3)/scxl
+          pts1(4,i) = temp(4)*gambet 
+          pts1(5,i) = -temp(5)/(scxl*bet)
+          pts1(6,i) = -temp(6)*gam*bet**2
+        enddo
+
+        end subroutine kickextmap_BPM
       end module BPMclass
