@@ -598,7 +598,7 @@
           do i = 2, nbin
             glbin(i) = glbin(i) + glbin(i-1)
           enddo
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f90) then
               ex90 = ((f90 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hxeps+&
                     hxeps*(i-1) 
@@ -606,7 +606,7 @@
             endif
           enddo
           !print*,"i1: ",i,nbin,glbin(i-1),glbin(i),f90,f95,f99
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f95) then
               ex95 = ((f95 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hxeps+&
                     hxeps*(i-1) 
@@ -614,7 +614,7 @@
             endif
           enddo
           !print*,"i2: ",i,nbin,glbin(i-1),glbin(i)
-          do i =1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f99) then
               ex99 = ((f99 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hxeps+&
                     hxeps*(i-1) 
@@ -735,7 +735,7 @@
           do i = 2, nbin
             glbin(i) = glbin(i) + glbin(i-1)
           enddo
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f90) then
               ey90 = ((f90 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hyeps+&
                     hyeps*(i-1)
@@ -743,7 +743,7 @@
             endif
           enddo
           !print*,"i4: ",i,nbin,glbin(i-1),glbin(i)
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f95) then
               ey95 = ((f95 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hyeps+&
                     hyeps*(i-1)
@@ -751,7 +751,7 @@
             endif
           enddo
           !print*,"i5: ",i,nbin,glbin(i-1),glbin(i)
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f99) then
               ey99 = ((f99 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hyeps+&
                     hyeps*(i-1)
@@ -868,7 +868,7 @@
           do i = 2, nbin
             glbin(i) = glbin(i) + glbin(i-1)
           enddo
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f90) then
               ez90 = ((f90 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hzeps+&
                     hzeps*(i-1)
@@ -876,7 +876,7 @@
             endif
           enddo
           !print*,"i7: ",i,nbin,glbin(i-1),glbin(i)
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f95) then
               ez95 = ((f95 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hzeps+&
                     hzeps*(i-1)
@@ -884,7 +884,7 @@
             endif
           enddo
           !print*,"i8: ",i,nbin,glbin(i-1),glbin(i)
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f99) then
               ez99 = ((f99 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hzeps+&
                     hzeps*(i-1)
@@ -1013,7 +1013,7 @@
           do i = 2, nbin
             glbin(i) = glbin(i) + glbin(i-1)
           enddo
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f90) then
               r90 = ((f90 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hreps+&
                     hreps*(i-1)
@@ -1021,7 +1021,7 @@
             endif
           enddo
           !print*,"i10: ",i,nbin,glbin(i-1),glbin(i)
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f95) then
               r95 = ((f95 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hreps+&
                     hreps*(i-1)
@@ -1029,7 +1029,7 @@
             endif
           enddo
           !print*,"i11: ",i,nbin,glbin(i-1),glbin(i)
-          do i = 1, nbin
+          do i = 2, nbin
             if(glbin(i).gt.f99) then
               r99 = ((f99 - glbin(i-1))/(glbin(i)-glbin(i-1)))*hreps+&
                     hreps*(i-1)

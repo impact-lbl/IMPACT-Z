@@ -3743,6 +3743,8 @@
           ix1=ix+1
           jx1=jx+1
           kx1=kx+1
+          if(ix.lt.1 .or. ix1.gt.innx .or. jx.lt.1 .or. jx1.gt.inny &
+             .or. kx.lt.1 .or. kx1.gt.innz) cycle
           ! (i,j,k):
           rho(ix,jx,kx) = rho(ix,jx,kx) + ab*cd*ef*rays(8,i)
           ! (i,j+1,k):

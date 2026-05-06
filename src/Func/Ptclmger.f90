@@ -51,7 +51,7 @@
         if(Nptlocal.gt.480) then
           nsmall = Nptlocal/16
         else
-          nsmall = Nptlocal
+          nsmall = max(Nptlocal,1)
         endif
         allocate(left(9,nsmall))
         allocate(right(9,nsmall))
@@ -289,7 +289,7 @@
         deallocate(temp1)
 
         !send outgoing particles to left neibhoring processor.
-        allocate(temp1(9,jleft))
+        allocate(temp1(9,max(jleft,1)))
         temp1 = 0.0
         if(myidx.ne.0) then
           ileft = 9*ileft
@@ -312,7 +312,7 @@
         
 !        call MPI_BARRIER(comm2d,ierr)
         !send outgoing particles to right neibhoring processor.
-        allocate(temp1(9,jright))
+        allocate(temp1(9,max(jright,1)))
         temp1 = 0.0
         if(myidx.ne.(npx-1)) then
           iright = 9*iright
@@ -336,7 +336,7 @@
 
 !        call MPI_BARRIER(comm2d,ierr)
         !send outgoing particles to down neibhoring processor.
-        allocate(temp1(9,jdown))
+        allocate(temp1(9,max(jdown,1)))
         temp1 = 0.0
         if(myidy.ne.0) then
           idown = 9*idown
@@ -360,7 +360,7 @@
 
 !        call MPI_BARRIER(comm2d,ierr)
         !send outgoing particles to up neibhoring processor.
-        allocate(temp1(9,jup))
+        allocate(temp1(9,max(jup,1)))
         temp1 = 0.0
         if(myidy.ne.(npy-1)) then
           iup = 9*iup
@@ -390,7 +390,7 @@
         if(numbuf.gt.480) then
           nsmall = numbuf/16
         else
-          nsmall = numbuf
+          nsmall = max(numbuf,1)
         endif
         allocate(left(9,nsmall))
         allocate(right(9,nsmall))
