@@ -64,6 +64,8 @@
         integer :: i0,j0,iflag
         real*8 :: alpha,beta,eps
      
+        distparam = distparam0
+
         alpha = distparam0(1)
         beta = distparam0(2)
         eps = distparam0(3)/gambet !unnormalized emittance m-rad
