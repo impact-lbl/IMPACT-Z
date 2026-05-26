@@ -66,3 +66,46 @@ cmake --build build --target install
 cmake -S . -B build -DUSE_MPI=ON
 cmake --build build
 cmake --build build --target install
+```
+### Using WSL on Windows computer
+
+1) Install WSL under Windows PC's PowerShell terminal using: wsl --install
+2) After installing WSL, restart the PC
+3) Under Windows PowerShell terminal type: wsl
+4) Install Ubuntu under WSL: 
+
+       wsl.exe --install Ubuntu
+   
+       sudo add-apt-repository universe
+
+       sudo apt update 
+6) Install cmake using: 
+        sudo apt install cmake
+7) Install Fortran90 compiler using: 
+         sudo apt install gfortran
+8) Make a local directory, e.g.: ImpZ
+9) Go to website: https://github.com/impact-lbl/IMPACT-Z/releases
+10) Download source code (zip) into that local ImpZ directory
+11) Under Windows File Explorer, extract all files from the zip file.
+12) Go to the IMPACT-Z-* directory
+13) Go to the src directory
+
+          cmake -S . -B build
+
+          cmake --build build
+
+Now the executable ImpactZexe is in build/
+
+You can move that executable to the location where you want to run the simulation.
+When you run a simulation, all input files and the executable must be in the same directory.
+
+For multi-core/processor simulation, install the OpenMPI package in the WSL terminal.
+  
+   sudo apt install -y openmpi-bin libopenmpi-dev  
+   
+   cmake -S . -B build -DUSE_MPI=ON
+   
+   cmake --build build
+
+Now the executable ImpactZexe-mpi is in build/
+
