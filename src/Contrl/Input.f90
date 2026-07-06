@@ -309,9 +309,9 @@
               value7(i),value8(i),value9(i),value10(i),value11(i),value12(i),&
               value13(i),value14(i),value15(i),value16(i),value17(i),value18(i),&
               value19(i),value20(i),value21(i),value22(i),value23(i),value24(i)
-            endif
-            if(obtype(i).eq.-99)then
-              goto 789
+              if(obtype(i).eq.-99)then
+                goto 789
+              endif
             endif
           goto 123
 789       continue
