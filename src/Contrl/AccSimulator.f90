@@ -625,6 +625,7 @@
         double precision :: xx,yy,t3dstart,rr,tmger,tmpwk
         double precision  :: aawk,ggwk,lengwk,hzwake,ab
         integer :: flagwake,flagwakeread,flagbtw,iizz,iizz1,kz,kadd,ipt,flagcsr,flagcsrTr
+        integer :: flagbendcsr
         !for bending magnet Transport transfer matrix implementation
         double precision :: hd0,hd1,dstr1,dstr2,angF,tanphiF,tanphiFb,&
             angB,tanphiB,tanphiBb,hF,hB,qm0,qmi,psi1,psi2,r0,gamn,gambet,&
@@ -635,6 +636,7 @@
         !for csr wake
         integer :: bitypeold,bitypeold2
         real*8 :: zwkmin,bendlen,zbleng,blengthold,blengthold2
+        real*8 :: bendlencsr,sentr
         real*8 :: tmplump,b0,qmass,qchg,pmass, alphax0,betax0,alphay0,betay0,scwk
         integer :: nslice,ihlf
         real*8 :: rsiglaser,rlaserwvleng
@@ -719,6 +721,9 @@
         flagsc = 1
         flagcsr = 0
         flagcsrTr = 0
+        flagbendcsr = 0
+        bendlencsr = 0.0d0
+        sentr = 0.0d0
         aawk = 0.05
         ggwk = 0.05
         lengwk = 0.1
@@ -1032,6 +1037,18 @@
               else
                 flagcsrTr = 0
               endif
+              !Capture this bend's geometry so that ALL downstream elements
+              !(not just the 1st/2nd) can apply the transient drift CSR wake
+              !with the correct bend length. sentr accumulates the distance
+              !from this bend's entrance; it is reset here and incremented by
+              !each element length at the end of the beam-line-element loop.
+              if(flagcsrTr.eq.1) then
+                flagbendcsr = 1
+                bendlencsr = blength
+                sentr = 0.0d0
+              else
+                flagbendcsr = 0
+              endif
               !if((bitype.eq.0) .and. (bitypeold.eq.4) .and. &
               if(((bitypeold.eq.4) .or. (bitypeold2.eq.4)) .and. &
                 (flagcsrTr.eq.1)) then
@@ -1112,12 +1129,12 @@
                                    Flagbc,Perdlen,piperad,piperad2)
               call chgupdate_BeamBunch(Bpts,nchrg,nptlist0,qmcclist0)
               flagcsr = 0
-              !if(bitype.eq.4) then
-              if(bitype.eq.4 .or. ((bitypeold2.eq.4 .or. bitypeold.eq.4) &
-                                  .and. flagcsrTr.eq.1)) then
-                if(dparam(4).gt.200) then
-                  flagcsr = 1
-                endif
+              if(bitype.eq.4) then
+                !CSR inside the bend (steady-state + entrance transient)
+                if(dparam(4).gt.200) flagcsr = 1
+              else if(flagbendcsr.eq.1) then
+                !transient (drift) CSR in ANY element downstream of a bend
+                flagcsr = 1
               endif
 
               !fix the global range for sub-cycle of space charge potential.
@@ -1355,19 +1372,16 @@
                 !densz(Nz) = densz(Nz)*2
 
                 if(bitype.eq.4) then
+                   !inside the bend: entrance is the start of this element
                    zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng)
-                   bendlen = blength !inside the bend
+                   bendlen = blength
                 else
-                   if(bitypeold.eq.4) then !1st element after bend
-                     zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng+blengthold)
-                     bendlen = blengthold !out of the bend
-                   else if(bitypeold2.eq.4) then !2nd element after bend
-                     zwkmin = range(5)/(-Bpts%refptcl(6)) + &
-                              (z-zbleng+blengthold+blengthold2)
-                     bendlen = blengthold2 !out of the bend
-                   else
-                     print*,"Not available for csr!"
-                   endif
+                   !downstream of the bend: use the retained bend length and
+                   !the distance from the bend entrance accumulated in sentr.
+                   !r0 still holds the most recent bend's radius (it is only
+                   !set in the bend branch), so it is correct here.
+                   zwkmin = range(5)/(-Bpts%refptcl(6)) + (z-zbleng+sentr)
+                   bendlen = bendlencsr
                 endif
 
                 exwake = 0.0
@@ -1482,6 +1496,7 @@
           !      call geomerrT_BeamBunch(Bpts,Blnelem(i)) 
           !end if
           zbleng = zbleng + blength
+          sentr = sentr + blength
           bitypeold2 = bitypeold
           blengthold2 = blengthold
           bitypeold = bitype
