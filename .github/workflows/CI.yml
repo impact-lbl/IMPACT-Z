@@ -9,6 +9,7 @@ jobs:
       matrix:
         os: ["ubuntu-latest"]
         mpi: ["nompi", "openmpi", "mpich"]
+        fft: ["fftpack", "fftw"]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -23,17 +24,23 @@ jobs:
           sudo apt-get update
           sudo apt install lib${{ matrix.mpi }}-dev
 
+      - name: Install FFTW
+        if: matrix.fft == 'fftw'
+        run: |
+          sudo apt-get update
+          sudo apt install libfftw3-dev
+
       - name: Build - No MPI
         if: matrix.mpi == 'nompi'
         run: |
           cd src/
-          make FC=gfortran LINK=gfortran
+          make FC=gfortran LINK=gfortran ${{ matrix.fft == 'fftw' && 'USE_FFTW=1 FFTW_HOME=/usr' || '' }}
 
       - name: Build - MPI - ${{ matrix.mpi }}
         if: matrix.mpi != 'nompi'
         run: |
           cd src/
-          FFLAGS="$FFLAGS -fallow-argument-mismatch" make FC=mpifort LINK=mpifort USE_MPI=1
+          FFLAGS="$FFLAGS -fallow-argument-mismatch" make FC=mpifort LINK=mpifort USE_MPI=1 ${{ matrix.fft == 'fftw' && 'USE_FFTW=1 FFTW_HOME=/usr' || '' }}
 
       - name: Test - No MPI
         if: matrix.mpi == 'nompi'
@@ -43,6 +50,8 @@ jobs:
 
       - name: Test - mpich
         if: matrix.mpi == 'mpich'
+        env:
+          UCX_TLS: tcp,self,sm
         run: |
           cd $GITHUB_WORKSPACE/examples/Example1
           # NOTE: MPICH on GitHub Actions runners fail to allocate more than 1
@@ -64,6 +73,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         mpi: [nompi, openmpi, mpich]
+        fft: [fftpack, fftw]
     steps:
       - uses: actions/checkout@v2
       - name: Install GFortran
@@ -77,12 +87,18 @@ jobs:
           sudo apt-get update
           sudo apt install lib${{ matrix.mpi }}-dev
 
+      - name: Install FFTW
+        if: matrix.fft == 'fftw'
+        run: |
+          sudo apt-get update
+          sudo apt install libfftw3-dev pkg-config
+
       - name: Build - No MPI
         if: matrix.mpi == 'nompi'
         run: |
           mkdir build
           cd build
-          cmake ../src
+          cmake ../src ${{ matrix.fft == 'fftw' && '-DUSE_FFTW=ON' || '' }}
           make
 
       - name: Build - MPI - ${{ matrix.mpi }}
@@ -90,7 +106,7 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake ../src -DUSE_MPI=ON
+          cmake ../src -DUSE_MPI=ON ${{ matrix.fft == 'fftw' && '-DUSE_FFTW=ON' || '' }}
           make
 
       - name: Test - No MPI
@@ -101,6 +117,8 @@ jobs:
 
       - name: Test - mpich
         if: matrix.mpi == 'mpich'
+        env:
+          UCX_TLS: tcp,self,sm
         run: |
           cd $GITHUB_WORKSPACE/examples/Example1
           # NOTE: MPICH on GitHub Actions runners fail to allocate more than 1
@@ -118,11 +136,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: matrix.mpi != 'nompi'
         with:
-          name: ImpactZ-${{ matrix.os }}-${{ matrix.mpi }}
+          name: ImpactZ-${{ matrix.os }}-${{ matrix.mpi }}-${{ matrix.fft }}
           path: build/ImpactZexe-mpi
 
       - uses: actions/upload-artifact@v4
         if: matrix.mpi == 'nompi'
         with:
-          name: ImpactZ-${{ matrix.os }}-${{ matrix.mpi }}
+          name: ImpactZ-${{ matrix.os }}-${{ matrix.mpi }}-${{ matrix.fft }}
           path: build/ImpactZexe

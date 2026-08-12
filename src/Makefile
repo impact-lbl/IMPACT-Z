@@ -37,13 +37,30 @@ else
 	FFLAGS += -I$(ROOT_DIR)
 endif
 
+# Set USE_FFTW=1 to build the FFTW3 FFT implementation (FFT_fftw.f90)
+# instead of the bundled FFTPACK 5.1 one (FFT.f90). Both provide module
+# FFTclass, so exactly one is compiled. Point FFTW_HOME at the FFTW
+# install prefix if it is not in /usr/local.
+USE_FFTW ?=
+
+ifdef USE_FFTW
+	FFT_OBJ = Func/FFT_fftw.o
+	FFT_OBJ2 = FFT_fftw.o
+	FFTW_HOME ?= /usr/local
+	FFLAGS += -I$(FFTW_HOME)/include
+	LIBS += -L$(FFTW_HOME)/lib -lfftw3
+else
+	FFT_OBJ = Func/FFT.o
+	FFT_OBJ2 = FFT.o
+endif
+
 #**************************************************************************
 # List of .o files that EXENAME depends on.  Edit as appropriate for MP.
 
 OBJS = \
 	mpistub.o DataStruct/NumConst.o DataStruct/PhysConst.o DataStruct/Pgrid.o \
 	DataStruct/Data.o \
-	Func/Timer.o Func/Transpose.o Func/Fldmger.o Func/Ptclmger.o  Func/FFT.o \
+	Func/Timer.o Func/Transpose.o Func/Fldmger.o Func/Ptclmger.o $(FFT_OBJ) \
         Appl/BPM.o Appl/CCL.o Appl/CCDTL.o Appl/DTL.o Appl/SC.o Appl/Wiggler.o \
 	Appl/DriftTube.o Appl/Quadrupole.o Appl/ConstFoc.o Appl/SolRF.o \
 	Appl/Sol.o Appl/Dipole.o Appl/Multipole.o Appl/EMfld.o Appl/TWS.o Appl/BeamLineElem.o \
@@ -52,7 +69,7 @@ OBJS = \
 
 OBJS2 = \
 	mpistub.o NumConst.o PhysConst.o Pgrid.o Data.o \
-        Timer.o Transpose.o Fldmger.o Ptclmger.o FFT.o \
+        Timer.o Transpose.o Fldmger.o Ptclmger.o $(FFT_OBJ2) \
 	BPM.o CCL.o CCDTL.o DTL.o SC.o DriftTube.o Quadrupole.o Wiggler.o ConstFoc.o \
 	SolRF.o Sol.o Dipole.o Multipole.o EMfld.o TWS.o BeamLineElem.o CompDom.o Field.o BeamBunch.o Distribution.o \
 	Input.o Output.o AccSimulator.o main.o	
@@ -97,7 +114,7 @@ all: .PrepareMPI $(EXENAME)
 .DEFAULT_GOAL := all
 
 $(EXENAME):  $(OBJS)
-	$(LINK) -o $(EXENAME) $(OBJS2)
+	$(LINK) -o $(EXENAME) $(OBJS2) $(LIBS)
 #************************************************************************
 # if you wish to compile a certain object with different flags
 # or in some special way, then specify the target & dependency explicitly
@@ -109,7 +126,7 @@ $(EXENAME):  $(OBJS)
 	cp  BPM.o CCL.o CCDTL.o DTL.o SC.o DriftTube.o Quadrupole.o Wiggler.o \
 	    ConstFoc.o BeamLineElem.o BeamBunch.o Field.o CompDom.o \
 	    Multipole.o Distribution.o SolRF.o Sol.o Dipole.o TWS.o EMfld.o Appl
-	cp  Timer.o Transpose.o Fldmger.o Ptclmger.o FFT.o Func
+	cp  Timer.o Transpose.o Fldmger.o Ptclmger.o $(FFT_OBJ2) Func
 	cp  NumConst.o PhysConst.o Data.o Pgrid.o DataStruct 
 #***********************************************************************
 clean:
