@@ -1,11 +1,16 @@
 !----------------------------------------------------------------
 ! (c) Copyright, 2018 by the Regents of the University of California.
 ! FFTclass: Fourier function class in Math Function module of FUNCTION layer.
-! Version: 2.0
-! Author: Ji Qiang 
-! Description: This class defines the 3d FFT transformation subject to
-!              open or periodic conditions, Fourier Sine transformation,
-!              Complex-Complex, Complex-Real, and Real-Complex FFT.
+! 
+! MODULE  : ... FFTclass
+! VERSION : ... 2.0
+!> @author
+!> Ji Qiang 
+! 
+! DESCRIPTION: 
+!> This class defines the 3d FFT transformation subject to
+!> open or periodic conditions, Fourier Sine transformation,
+!> Complex-Complex, Complex-Real, and Real-Complex FFT.
 ! Comments:
 !----------------------------------------------------------------
       module FFTclass
@@ -723,8 +728,7 @@ do i= 2,ny-1
 enddo
 y(ny)=r(ny)*dble(ny-1)
 return
-end subroutine Rvec_pack2nr_cosft1
-
+end
 !transfer real vector from nr style to fftpack style for (forward) sint1D
 subroutine Rvec_nr2pack_sint1f(r,n,y)
 integer n
@@ -736,8 +740,7 @@ do i= 1, n
   r(i)= y(i+1)
 enddo
 return
-end subroutine Rvec_nr2pack_sint1f
-
+end
 !transfer real vector from fftpack style to nr style for (forward) sint 1D
 subroutine Rvec_pack2nr_sint1f (r,n,y)
 integer n, ny
@@ -751,8 +754,7 @@ y(i)= r(i-1)*dble(ny/2)
 enddo
 !y(1)=0.0!
 return
-end subroutine Rvec_pack2nr_sint1f
-
+end
 !transfer real vector from nr style to fftpack style for forward real fft 1D
 subroutine Rvec_nr2pack_rfft1f(r,n,data)
 integer n
@@ -763,8 +765,7 @@ do i= 1, n
 r(i)= data(i)
 enddo
 return
-end subroutine Rvec_nr2pack_rfft1f
-
+end
 !transfer real vector from pack style to nr style for forward real fft 1D
 subroutine Rvec_pack2nr_rfft1f (r,n,data)
 integer n
@@ -777,8 +778,7 @@ do i= 3,n
 data(i)= r(i-1)*dble(n)/dble(2)
 enddo
 return
-end subroutine Rvec_pack2nr_rfft1f
-
+end
 !transfer real vector from nr style to fftpack style for backward real fft 1D
 subroutine Rvec_nr2pack_rfft1b(r,n,data)
 integer n
@@ -791,8 +791,7 @@ do i= 2, n-1
 r(i)= data(i+1)*dble(2)/dble(n)
 enddo
 return
-end subroutine Rvec_nr2pack_rfft1b
-
+end
 !transfer real vector from pack style to nr style for backward real fft 1D
 subroutine Rvec_pack2nr_rfft1b (r,n,data)
 integer n
@@ -804,7 +803,7 @@ do i= 1,n
 data(i)= r(i)*dble(n)/dble(2)
 enddo
 return
-end subroutine Rvec_pack2nr_rfft1b
+end
 
 !transfer real vector from nr style to fftpack style generally 
 subroutine Rvec_nr2pack_gnl(r,n,data)
@@ -816,8 +815,7 @@ do i= 1, n
 r(i)= data(i)
 enddo
 return
-end subroutine Rvec_nr2pack_gnl
-
+end
 !tansfer real vector from fftpack style to nr style generally 
 subroutine Rvec_pack2nr_gnl (r,n,data)
 integer n
@@ -828,7 +826,7 @@ do i= 1,n
 data(i)= r(i)
 enddo
 return
-end subroutine Rvec_pack2nr_gnl
+end
 
 subroutine c1f2kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
@@ -919,8 +917,7 @@ subroutine c1f2kb ( ido, l1, na, cc, in1, ch, in2, wa )
   end do
 
   return
-end subroutine c1f2kb
-
+end
 subroutine c1f2kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
@@ -1020,7 +1017,7 @@ subroutine c1f2kf ( ido, l1, na, cc, in1, ch, in2, wa )
       end do
 
   return
-end subroutine c1f2kf
+end
 subroutine c1f3kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
@@ -1076,8 +1073,8 @@ subroutine c1f3kb ( ido, l1, na, cc, in1, ch, in2, wa )
   integer ( kind = 4 ) i
   integer ( kind = 4 ) k
   integer ( kind = 4 ) na
-  real ( kind = 8 ), parameter :: taui =  0.866025403784439E+00
-  real ( kind = 8 ), parameter :: taur = -0.5E+00
+  real ( kind = 8 ), parameter :: taui =  0.8660254037844386D+00
+  real ( kind = 8 ), parameter :: taur = -0.5D+00
   real ( kind = 8 ) ti2
   real ( kind = 8 ) tr2
   real ( kind = 8 ) wa(ido,2,2)
@@ -1140,7 +1137,7 @@ subroutine c1f3kb ( ido, l1, na, cc, in1, ch, in2, wa )
        end do
 
   return
-end subroutine c1f3kb
+end
 subroutine c1f3kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
@@ -1197,8 +1194,8 @@ subroutine c1f3kf ( ido, l1, na, cc, in1, ch, in2, wa )
   integer ( kind = 4 ) k
   integer ( kind = 4 ) na
   real ( kind = 8 ) sn
-  real ( kind = 8 ), parameter :: taui = -0.866025403784439E+00
-  real ( kind = 8 ), parameter :: taur = -0.5E+00
+  real ( kind = 8 ), parameter :: taui = -0.8660254037844386D+00
+  real ( kind = 8 ), parameter :: taur = -0.5D+00
   real ( kind = 8 ) ti2
   real ( kind = 8 ) tr2
   real ( kind = 8 ) wa(ido,2,2)
@@ -1278,7 +1275,7 @@ subroutine c1f3kf ( ido, l1, na, cc, in1, ch, in2, wa )
   105 continue
 
   return
-end subroutine c1f3kf
+end
 subroutine c1f4kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
@@ -1412,7 +1409,7 @@ subroutine c1f4kb ( ido, l1, na, cc, in1, ch, in2, wa )
   105 continue
 
   return
-end subroutine  c1f4kb
+end
 subroutine c1f4kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
@@ -1569,7 +1566,7 @@ subroutine c1f4kf ( ido, l1, na, cc, in1, ch, in2, wa )
   105 continue
 
   return
-end subroutine c1f4kf
+end
 subroutine c1f5kb ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
@@ -1639,14 +1636,14 @@ subroutine c1f5kb ( ido, l1, na, cc, in1, ch, in2, wa )
   real ( kind = 8 ) ti3
   real ( kind = 8 ) ti4
   real ( kind = 8 ) ti5
-  real ( kind = 8 ), parameter :: ti11 =  0.9510565162951536E+00
-  real ( kind = 8 ), parameter :: ti12 =  0.5877852522924731E+00
+  real ( kind = 8 ), parameter :: ti11 =  0.9510565162951535D+00
+  real ( kind = 8 ), parameter :: ti12 =  0.5877852522924732D+00
   real ( kind = 8 ) tr2
   real ( kind = 8 ) tr3
   real ( kind = 8 ) tr4
   real ( kind = 8 ) tr5
-  real ( kind = 8 ), parameter :: tr11 =  0.3090169943749474E+00
-  real ( kind = 8 ), parameter :: tr12 = -0.8090169943749474E+00
+  real ( kind = 8 ), parameter :: tr11 =  0.30901699437494745D+00
+  real ( kind = 8 ), parameter :: tr12 = -0.8090169943749473D+00
   real ( kind = 8 ) wa(ido,4,2)
 
       if ( 1 < ido .or. na == 1) go to 102
@@ -1753,7 +1750,7 @@ subroutine c1f5kb ( ido, l1, na, cc, in1, ch, in2, wa )
   105 continue
 
   return
-end subroutine c1f5kb
+end
 subroutine c1f5kf ( ido, l1, na, cc, in1, ch, in2, wa )
 
 !*****************************************************************************80
@@ -1824,14 +1821,14 @@ subroutine c1f5kf ( ido, l1, na, cc, in1, ch, in2, wa )
   real ( kind = 8 ) ti3
   real ( kind = 8 ) ti4
   real ( kind = 8 ) ti5
-  real ( kind = 8 ), parameter :: ti11 = -0.9510565162951536E+00
-  real ( kind = 8 ), parameter :: ti12 = -0.5877852522924731E+00
+  real ( kind = 8 ), parameter :: ti11 = -0.9510565162951535D+00
+  real ( kind = 8 ), parameter :: ti12 = -0.5877852522924732D+00
   real ( kind = 8 ) tr2
   real ( kind = 8 ) tr3
   real ( kind = 8 ) tr4
   real ( kind = 8 ) tr5
-  real ( kind = 8 ), parameter :: tr11 =  0.3090169943749474E+00
-  real ( kind = 8 ), parameter :: tr12 = -0.8090169943749474E+00
+  real ( kind = 8 ), parameter :: tr11 =  0.30901699437494745D+00
+  real ( kind = 8 ), parameter :: tr12 = -0.8090169943749473D+00
   real ( kind = 8 ) wa(ido,4,2)
 
       if ( 1 < ido ) go to 102
@@ -1971,7 +1968,7 @@ subroutine c1f5kf ( ido, l1, na, cc, in1, ch, in2, wa )
   105 continue
 
   return
-end subroutine c1f5kf
+end
 subroutine c1fgkb ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
 
 !*****************************************************************************80
@@ -2144,7 +2141,7 @@ subroutine c1fgkb ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
   126 continue
 
   return
-end subroutine c1fgkb 
+end
 subroutine c1fgkf ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
 
 !*****************************************************************************80
@@ -2180,7 +2177,7 @@ subroutine c1fgkf ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
 !
 !  Parameters:
 !
-!  implicit none
+  implicit none
 
   integer ( kind = 4 ) ido
   integer ( kind = 4 ) in1
@@ -2329,7 +2326,7 @@ subroutine c1fgkf ( ido, ip, l1, lid, na, cc, cc1, in1, ch, ch1, in2, wa )
   126 continue
 
   return
-end subroutine c1fgkf
+end
 subroutine c1fm1b ( n, inc, c, ch, wa, fnf, fac )
 
 !*****************************************************************************80
@@ -2426,7 +2423,7 @@ subroutine c1fm1b ( n, inc, c, ch, wa, fnf, fac )
       end do
 
   return
-end subroutine c1fm1b
+end
 subroutine c1fm1f ( n, inc, c, ch, wa, fnf, fac )
 
 !*****************************************************************************80
@@ -2523,7 +2520,7 @@ subroutine c1fm1f ( n, inc, c, ch, wa, fnf, fac )
       end do
 
   return
-end subroutine c1fm1f
+end
 subroutine cfft1b ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -2641,7 +2638,7 @@ subroutine cfft1b ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
   call c1fm1b ( n, inc, c, work, wsave, wsave(iw1), wsave(iw1+1) )
 
   return
-end subroutine cfft1b 
+end
 subroutine cfft1f ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -2758,7 +2755,7 @@ subroutine cfft1f ( n, inc, c, lenc, wsave, lensav, work, lenwrk, ier )
   call c1fm1f (n,inc,c,work,wsave,wsave(iw1),wsave(iw1+1))
 
   return
-end subroutine cfft1f
+end
 subroutine cfft1i ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -2841,7 +2838,7 @@ subroutine cfft1i ( n, wsave, lensav, ier )
   call r4_mcfti1 (n,wsave,wsave(iw1),wsave(iw1+1))
 
   return
-end subroutine cfft1i
+end
 
 
 
@@ -2952,7 +2949,7 @@ subroutine cmf2kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   end do
 
   return
-end subroutine cmf2kb
+end
 subroutine cmf2kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
@@ -3074,7 +3071,7 @@ subroutine cmf2kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   end do
 
   return
-end subroutine cmf2kf
+end
 subroutine cmf3kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
@@ -3137,8 +3134,8 @@ subroutine cmf3kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   integer ( kind = 4 ) m2
   integer ( kind = 4 ) m2s
   integer ( kind = 4 ) na
-  real ( kind = 8 ), parameter :: taui =  0.866025403784439E+00
-  real ( kind = 8 ), parameter :: taur = -0.5E+00
+  real ( kind = 8 ), parameter :: taui =  0.8660254037844386D+00
+  real ( kind = 8 ), parameter :: taur = -0.5D+00
   real ( kind = 8 ) ti2
   real ( kind = 8 ) tr2
   real ( kind = 8 ) wa(ido,2,2)
@@ -3210,7 +3207,7 @@ subroutine cmf3kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   105 continue
 
   return
-end subroutine cmf3kb
+end
 subroutine cmf3kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
@@ -3274,8 +3271,8 @@ subroutine cmf3kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   integer ( kind = 4 ) m2s
   integer ( kind = 4 ) na
   real ( kind = 8 ) sn
-  real ( kind = 8 ), parameter :: taui = -0.866025403784439E+00
-  real ( kind = 8 ), parameter :: taur = -0.5E+00
+  real ( kind = 8 ), parameter :: taui = -0.8660254037844386D+00
+  real ( kind = 8 ), parameter :: taur = -0.5D+00
   real ( kind = 8 ) ti2
   real ( kind = 8 ) tr2
   real ( kind = 8 ) wa(ido,2,2)
@@ -3366,7 +3363,7 @@ subroutine cmf3kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   105 continue
 
   return
-end subroutine cmf3kf
+end
 subroutine cmf4kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
@@ -3520,7 +3517,7 @@ subroutine cmf4kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   105 continue
 
   return
-end subroutine cmf4kb 
+end
 subroutine cmf4kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
@@ -3696,7 +3693,7 @@ subroutine cmf4kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   105 continue
 
   return
-end subroutine cmf4kf
+end
 subroutine cmf5kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
@@ -3773,14 +3770,14 @@ subroutine cmf5kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   real ( kind = 8 ) ti3
   real ( kind = 8 ) ti4
   real ( kind = 8 ) ti5
-  real ( kind = 8 ), parameter :: ti11 =  0.9510565162951536E+00
-  real ( kind = 8 ), parameter :: ti12 =  0.5877852522924731E+00
+  real ( kind = 8 ), parameter :: ti11 =  0.9510565162951535D+00
+  real ( kind = 8 ), parameter :: ti12 =  0.5877852522924732D+00
   real ( kind = 8 ) tr2
   real ( kind = 8 ) tr3
   real ( kind = 8 ) tr4
   real ( kind = 8 ) tr5
-  real ( kind = 8 ), parameter :: tr11 =  0.3090169943749474E+00
-  real ( kind = 8 ), parameter :: tr12 = -0.8090169943749474E+00
+  real ( kind = 8 ), parameter :: tr11 =  0.30901699437494745D+00
+  real ( kind = 8 ), parameter :: tr12 = -0.8090169943749473D+00
   real ( kind = 8 ) wa(ido,4,2)
 
   m1d = (lot-1)*im1+1
@@ -3896,7 +3893,7 @@ subroutine cmf5kb ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   105 continue
 
   return
-end subroutine cmf5kb
+end
 subroutine cmf5kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
 
 !*****************************************************************************80
@@ -3974,14 +3971,14 @@ subroutine cmf5kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   real ( kind = 8 ) ti3
   real ( kind = 8 ) ti4
   real ( kind = 8 ) ti5
-  real ( kind = 8 ), parameter :: ti11 = -0.9510565162951536E+00
-  real ( kind = 8 ), parameter :: ti12 = -0.5877852522924731E+00
+  real ( kind = 8 ), parameter :: ti11 = -0.9510565162951535D+00
+  real ( kind = 8 ), parameter :: ti12 = -0.5877852522924732D+00
   real ( kind = 8 ) tr2
   real ( kind = 8 ) tr3
   real ( kind = 8 ) tr4
   real ( kind = 8 ) tr5
-  real ( kind = 8 ), parameter :: tr11 =  0.3090169943749474E+00
-  real ( kind = 8 ), parameter :: tr12 = -0.8090169943749474E+00
+  real ( kind = 8 ), parameter :: tr11 =  0.30901699437494745D+00
+  real ( kind = 8 ), parameter :: tr12 = -0.8090169943749473D+00
   real ( kind = 8 ) wa(ido,4,2)
 
   m1d = (lot-1)*im1+1
@@ -4132,7 +4129,7 @@ subroutine cmf5kf ( lot, ido, l1, na, cc, im1, in1, ch, im2, in2, wa )
   105 continue
 
   return
-end subroutine cmf5kf
+end
 subroutine cmfgkb ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
   ch, ch1, im2, in2, wa )
 
@@ -4351,7 +4348,7 @@ subroutine cmfgkb ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
   126 continue
 
   return
-end subroutine cmfgkb
+end
 subroutine cmfgkf ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
   ch, ch1, im2, in2, wa )
 
@@ -4585,7 +4582,7 @@ subroutine cmfgkf ( lot, ido, ip, l1, lid, na, cc, cc1, im1, in1, &
   126 continue
 
   return
-end subroutine cmfgkf
+end
 
 subroutine cosq1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
@@ -4717,7 +4714,7 @@ subroutine cosq1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   300 continue
 
   return
-end subroutine cosq1b
+end
 subroutine cosq1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -4844,7 +4841,7 @@ subroutine cosq1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   end if
 
   return
-end subroutine cosq1f
+end
 subroutine cosq1i ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -4945,7 +4942,7 @@ subroutine cosq1i ( n, wsave, lensav, ier )
   end if
 
   return
-end subroutine cosq1i
+end
 subroutine cosqb1 ( n, inc, x, wsave, work, ier )
 
 !*****************************************************************************80
@@ -5050,7 +5047,7 @@ subroutine cosqb1 ( n, inc, x, wsave, work, ier )
   x(1,1) = x(1,1)+x(1,1)
 
   return
-end subroutine cosqb1
+end
 subroutine cosqf1 ( n, inc, x, wsave, work, ier )
 
 !*****************************************************************************80
@@ -5152,7 +5149,7 @@ subroutine cosqf1 ( n, inc, x, wsave, work, ier )
   end do
 
   return
-end subroutine cosqf1
+end
 subroutine cosqmb ( lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, &
   ier )
 
@@ -5307,7 +5304,7 @@ subroutine cosqmb ( lot, jump, n, inc, x, lenx, wsave, lensav, work, lenwrk, &
       end if
 
   return
-end subroutine cosqmb 
+end
 subroutine cosqmf ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
   lenwrk, ier )
 
@@ -5462,7 +5459,7 @@ subroutine cosqmf ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
       end if
 
   return
-end subroutine cosqmf
+end
 subroutine cosqmi ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -5564,7 +5561,7 @@ subroutine cosqmi ( n, wsave, lensav, ier )
   end if
 
   return
-end subroutine cosqmi
+end
 subroutine cost1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -5687,7 +5684,7 @@ subroutine cost1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   end if
 
   return
-end subroutine cost1b
+end
 subroutine cost1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -5810,7 +5807,7 @@ subroutine cost1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   end if
 
   return
-end subroutine cost1f
+end
 subroutine cost1i ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -5925,7 +5922,7 @@ subroutine cost1i ( n, wsave, lensav, ier )
   end if
 
   return
-end subroutine cost1i 
+end
 subroutine costb1 ( n, inc, x, wsave, work, ier )
 
 !*****************************************************************************80
@@ -6058,7 +6055,7 @@ subroutine costb1 ( n, inc, x, wsave, work, ier )
   106 continue
 
   return
-end subroutine costb1
+end
 subroutine costf1 ( n, inc, x, wsave, work, ier )
 
 !*****************************************************************************80
@@ -6184,7 +6181,7 @@ subroutine costf1 ( n, inc, x, wsave, work, ier )
   200 continue
 
   return
-end subroutine costf1
+end
 subroutine costmb ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
   lenwrk, ier )
 
@@ -6323,7 +6320,7 @@ subroutine costmb ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
   end if
 
   return
-end subroutine costmb
+end
 subroutine costmf ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
   lenwrk, ier )
 
@@ -6463,7 +6460,7 @@ subroutine costmf ( lot, jump, n, inc, x, lenx, wsave, lensav, work, &
   end if
 
   return
-end subroutine costmf
+end
 subroutine costmi ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -6578,7 +6575,7 @@ subroutine costmi ( n, wsave, lensav, ier )
       end if
 
   return
-end subroutine costmi
+end
 subroutine mcsqb1 (lot,jump,n,inc,x,wsave,work,ier)
 
 !*****************************************************************************80
@@ -6707,7 +6704,7 @@ subroutine mcsqb1 (lot,jump,n,inc,x,wsave,work,ier)
   end do
 
   return
-end subroutine mcsqb1 
+end
 subroutine mcsqf1 (lot,jump,n,inc,x,wsave,work,ier)
 
 !*****************************************************************************80
@@ -6835,7 +6832,7 @@ subroutine mcsqf1 (lot,jump,n,inc,x,wsave,work,ier)
   400 continue
 
   return
-end subroutine mcsqf1 
+end
 subroutine mcstb1(lot,jump,n,inc,x,wsave,dsum,work,ier)
 
 !*****************************************************************************80
@@ -7009,7 +7006,7 @@ subroutine mcstb1(lot,jump,n,inc,x,wsave,dsum,work,ier)
   106 continue
 
   return
-end subroutine mcstb1
+end
 subroutine mcstf1(lot,jump,n,inc,x,wsave,dsum,work,ier)
 
 !*****************************************************************************80
@@ -7175,7 +7172,7 @@ subroutine mcstf1(lot,jump,n,inc,x,wsave,dsum,work,ier)
  200  continue
 
   return
-end subroutine mcstf1
+end
 subroutine mradb2 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1)
 
 !*****************************************************************************80
@@ -7276,7 +7273,7 @@ subroutine mradb2 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1)
   107 continue
 
   return
-end subroutine mradb2
+end
 subroutine mradb3 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2)
 
 !*****************************************************************************80
@@ -7405,7 +7402,7 @@ subroutine mradb3 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2)
   103 continue
 
   return
-end subroutine mradb3
+end
 subroutine mradb4 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2,wa3)
 
 !*****************************************************************************80
@@ -7536,7 +7533,7 @@ subroutine mradb4 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2,wa3)
   107 continue
 
   return
-end subroutine mradb4 
+end
 subroutine mradb5 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2,wa3,wa4)
 
 !*****************************************************************************80
@@ -7723,7 +7720,7 @@ subroutine mradb5 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2,wa3,wa4)
   103 continue
 
   return
-end subroutine mradb5
+end
 subroutine mradbg (m,ido,ip,l1,idl1,cc,c1,c2,im1,in1,ch,ch2,im2,in2,wa)
 
 !*****************************************************************************80
@@ -8033,7 +8030,7 @@ subroutine mradbg (m,ido,ip,l1,idl1,cc,c1,c2,im1,in1,ch,ch2,im2,in2,wa)
   143 continue
 
   return
-end subroutine mradbg
+end
 subroutine mradf2 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1)
 
 !*****************************************************************************80
@@ -8134,7 +8131,7 @@ subroutine mradf2 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1)
   107 continue
 
   return
-end subroutine mradf2
+end
 subroutine mradf3 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2)
 
 !*****************************************************************************80
@@ -8260,7 +8257,7 @@ subroutine mradf3 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2)
   103 continue
 
   return
-end subroutine mradf3
+end
 subroutine mradf4 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2,wa3)
 
 !*****************************************************************************80
@@ -8408,7 +8405,7 @@ subroutine mradf4 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2,wa3)
   107 continue
 
   return
-end subroutine mradf4
+end
 subroutine mradf5 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2,wa3,wa4)
 
 !*****************************************************************************80
@@ -8605,7 +8602,7 @@ subroutine mradf5 (m,ido,l1,cc,im1,in1,ch,im2,in2,wa1,wa2,wa3,wa4)
   103 continue
 
   return
-end subroutine mradf5
+end
 subroutine mradfg (m,ido,ip,l1,idl1,cc,c1,c2,im1,in1,ch,ch2,im2,in2,wa)
 
 !*****************************************************************************80
@@ -8923,7 +8920,7 @@ subroutine mradfg (m,ido,ip,l1,idl1,cc,c1,c2,im1,in1,ch,ch2,im2,in2,wa)
   144 continue
 
   return
-end subroutine mradfg 
+end
 subroutine mrftb1 (m,im,n,in,c,ch,wa,fac)
 
 !*****************************************************************************80
@@ -9081,7 +9078,7 @@ subroutine mrftb1 (m,im,n,in,c,ch,wa,fac)
   116 continue
 
   return
-end subroutine mrftb1
+end
 subroutine mrftf1 (m,im,n,in,c,ch,wa,fac)
 
 !*****************************************************************************80
@@ -9253,7 +9250,7 @@ subroutine mrftf1 (m,im,n,in,c,ch,wa,fac)
       end do
 
   return
-end subroutine mrftf1
+end
 subroutine mrfti1 (n,wa,fac)
 
 !*****************************************************************************80
@@ -9387,7 +9384,7 @@ subroutine mrfti1 (n,wa,fac)
       end do
 
   return
-end subroutine mrfti1
+end
 subroutine msntb1(lot,jump,n,inc,x,wsave,dsum,xh,work,ier)
 
 !*****************************************************************************80
@@ -9534,7 +9531,7 @@ subroutine msntb1(lot,jump,n,inc,x,wsave,dsum,xh,work,ier)
   200 continue
 
   return
-end subroutine msntb1
+end
 subroutine msntf1(lot,jump,n,inc,x,wsave,dsum,xh,work,ier)
 
 !*****************************************************************************80
@@ -9680,7 +9677,7 @@ subroutine msntf1(lot,jump,n,inc,x,wsave,dsum,xh,work,ier)
   200 continue
 
   return
-end subroutine msntf1
+end
 subroutine r1f2kb (ido,l1,cc,in1,ch,in2,wa1)
 
 !*****************************************************************************80
@@ -9760,7 +9757,7 @@ subroutine r1f2kb (ido,l1,cc,in1,ch,in2,wa1)
  107  continue
 
   return
-end subroutine r1f2kb
+end
 subroutine r1f2kf (ido,l1,cc,in1,ch,in2,wa1)
 
 !*****************************************************************************80
@@ -9839,7 +9836,7 @@ subroutine r1f2kf (ido,l1,cc,in1,ch,in2,wa1)
   107 continue
 
   return
-end subroutine r1f2kf
+end
 subroutine r1f3kb (ido,l1,cc,in1,ch,in2,wa1,wa2)
 
 !*****************************************************************************80
@@ -9951,7 +9948,7 @@ subroutine r1f3kb (ido,l1,cc,in1,ch,in2,wa1,wa2)
   103 continue
 
   return
-end subroutine r1f3kb
+end
 subroutine r1f3kf (ido,l1,cc,in1,ch,in2,wa1,wa2)
 
 !*****************************************************************************80
@@ -10061,7 +10058,7 @@ subroutine r1f3kf (ido,l1,cc,in1,ch,in2,wa1,wa2)
   103 continue
 
   return
-end subroutine r1f3kf
+end
 subroutine r1f4kb (ido,l1,cc,in1,ch,in2,wa1,wa2,wa3)
 
 !*****************************************************************************80
@@ -10174,7 +10171,7 @@ subroutine r1f4kb (ido,l1,cc,in1,ch,in2,wa1,wa2,wa3)
   107 continue
 
   return
-end subroutine r1f4kb
+end
 subroutine r1f4kf (ido,l1,cc,in1,ch,in2,wa1,wa2,wa3)
 
 !*****************************************************************************80
@@ -10287,7 +10284,7 @@ subroutine r1f4kf (ido,l1,cc,in1,ch,in2,wa1,wa2,wa3)
   107 continue
 
   return
-end subroutine r1f4kf
+end
 subroutine r1f5kb (ido,l1,cc,in1,ch,in2,wa1,wa2,wa3,wa4)
 
 !*****************************************************************************80
@@ -10458,7 +10455,7 @@ subroutine r1f5kb (ido,l1,cc,in1,ch,in2,wa1,wa2,wa3,wa4)
   103 continue
 
   return
-end subroutine r1f5kb
+end
 subroutine r1f5kf (ido,l1,cc,in1,ch,in2,wa1,wa2,wa3,wa4)
 
 !*****************************************************************************80
@@ -10640,7 +10637,7 @@ subroutine r1f5kf (ido,l1,cc,in1,ch,in2,wa1,wa2,wa3,wa4)
   103 continue
 
   return
-end subroutine r1f5kf
+end
 subroutine r1fgkb (ido,ip,l1,idl1,cc,c1,c2,in1,ch,ch2,in2,wa)
 
 !*****************************************************************************80
@@ -10885,7 +10882,7 @@ subroutine r1fgkb (ido,ip,l1,idl1,cc,c1,c2,in1,ch,ch2,in2,wa)
   143 continue
 
   return
-end subroutine r1fgkb
+end
 subroutine r1fgkf (ido,ip,l1,idl1,cc,c1,c2,in1,ch,ch2,in2,wa)
 
 !*****************************************************************************80
@@ -11131,7 +11128,7 @@ subroutine r1fgkf (ido,ip,l1,idl1,cc,c1,c2,in1,ch,ch2,in2,wa)
   144 continue
 
   return
-end subroutine r1fgkf
+end
 subroutine r2w ( ldr, ldw, l, m, r, w )
 
 !*****************************************************************************80
@@ -11180,7 +11177,7 @@ subroutine r2w ( ldr, ldw, l, m, r, w )
   w(1:l,1:m) = r(1:l,1:m)
 
   return
-end subroutine r2w
+end
 subroutine r4_factor ( n, nf, fac )
 
 !*****************************************************************************80
@@ -11272,7 +11269,7 @@ subroutine r4_factor ( n, nf, fac )
   end do
 
   return
-end subroutine r4_factor
+end
 subroutine r4_mcfti1 ( n, wa, fnf, fac )
 
 !*****************************************************************************80
@@ -11341,7 +11338,7 @@ subroutine r4_mcfti1 ( n, wa, fnf, fac )
   end do
 
   return
-end subroutine r4_mcfti1
+end
 subroutine r4_tables ( ido, ip, wa )
 
 !*****************************************************************************80
@@ -11416,7 +11413,7 @@ subroutine r4_tables ( ido, ip, wa )
   end do
 
   return
-end subroutine r4_tables
+end
 subroutine r8_factor ( n, nf, fac )
 
 !*****************************************************************************80
@@ -11506,7 +11503,7 @@ subroutine r8_factor ( n, nf, fac )
   end do
 
   return
-end subroutine r8_factor
+end
 subroutine r8_mcfti1 ( n, wa, fnf, fac )
 
 !*****************************************************************************80
@@ -11573,7 +11570,7 @@ subroutine r8_mcfti1 ( n, wa, fnf, fac )
   end do
 
   return
-end subroutine r8_mcfti1
+end
 subroutine r8_tables ( ido, ip, wa )
 
 !*****************************************************************************80
@@ -11646,7 +11643,7 @@ subroutine r8_tables ( ido, ip, wa )
   end do
 
   return
-end subroutine r8_tables
+end
 subroutine rfft1b ( n, inc, r, lenr, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -11755,7 +11752,7 @@ subroutine rfft1b ( n, inc, r, lenr, wsave, lensav, work, lenwrk, ier )
   call rfftb1 (n,inc,r,work,wsave,wsave(n+1))
 
   return
-end subroutine rfft1b
+end
 subroutine rfft1f ( n, inc, r, lenr, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -11864,7 +11861,7 @@ subroutine rfft1f ( n, inc, r, lenr, wsave, lensav, work, lenwrk, ier )
   call rfftf1 (n,inc,r,work,wsave,wsave(n+1))
 
   return
-end subroutine rfft1f
+end
 subroutine rfft1i ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -11945,7 +11942,7 @@ subroutine rfft1i ( n, wsave, lensav, ier )
   call rffti1 (n,wsave(1),wsave(n+1))
 
   return
-end subroutine rfft1i
+end
 
 subroutine rfftb1 ( n, in, c, ch, wa, fac )
 
@@ -12088,7 +12085,7 @@ subroutine rfftb1 ( n, in, c, ch, wa, fac )
   116 continue
 
   return
-end subroutine rfftb1
+end
 subroutine rfftf1 ( n, in, c, ch, wa, fac )
 
 !*****************************************************************************80
@@ -12230,7 +12227,7 @@ subroutine rfftf1 ( n, in, c, ch, wa, fac )
       c(1,n) = sn*c(1,n)
 
   return
-end subroutine rfftf1
+end
 subroutine rffti1 ( n, wa, fac )
 
 !*****************************************************************************80
@@ -12365,7 +12362,7 @@ subroutine rffti1 ( n, wa, fac )
   110 continue
 
   return
-end subroutine rffti1
+end
 subroutine rfftmb ( lot, jump, n, inc, r, lenr, wsave, lensav, work, lenwrk, &
   ier )
 
@@ -12497,7 +12494,7 @@ subroutine rfftmb ( lot, jump, n, inc, r, lenr, wsave, lensav, work, lenwrk, &
   call mrftb1 (lot,jump,n,inc,r,work,wsave,wsave(n+1))
 
   return
-end subroutine rfftmb
+end
 subroutine rfftmf ( lot, jump, n, inc, r, lenr, wsave, lensav, &
   work, lenwrk, ier )
 
@@ -12629,7 +12626,7 @@ subroutine rfftmf ( lot, jump, n, inc, r, lenr, wsave, lensav, &
   call mrftf1 (lot,jump,n,inc,r,work,wsave,wsave(n+1))
 
   return
-end subroutine rfftmf
+end
 subroutine rfftmi ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -12711,7 +12708,7 @@ subroutine rfftmi ( n, wsave, lensav, ier )
   call mrfti1 (n,wsave(1),wsave(n+1))
 
   return
-end subroutine rfftmi
+end
 subroutine sinq1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -12848,7 +12845,7 @@ subroutine sinq1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   103 continue
 
   return
-end subroutine sinq1b
+end
 subroutine sinq1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -12983,7 +12980,7 @@ subroutine sinq1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   300 continue
 
   return
-end subroutine sinq1f
+end
 subroutine sinq1i ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -13069,7 +13066,7 @@ subroutine sinq1i ( n, wsave, lensav, ier )
   300 continue
 
   return
-end subroutine sinq1i
+end
 subroutine sinqmb ( lot, jump, n, inc, x, lenx, wsave, lensav, &
   work, lenwrk, ier )
 
@@ -13234,7 +13231,7 @@ subroutine sinqmb ( lot, jump, n, inc, x, lenx, wsave, lensav, &
   300 continue
 
   return
-end subroutine sinqmb
+end
 subroutine sinqmf ( lot, jump, n, inc, x, lenx, wsave, lensav, &
   work, lenwrk, ier )
 
@@ -13401,7 +13398,7 @@ subroutine sinqmf ( lot, jump, n, inc, x, lenx, wsave, lensav, &
   300 continue
 
   return
-end subroutine sinqmf
+end
 subroutine sinqmi ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -13486,7 +13483,7 @@ subroutine sinqmi ( n, wsave, lensav, ier )
   end if
 
   return
-end subroutine sinqmi
+end
 subroutine sint1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -13605,7 +13602,7 @@ subroutine sint1b ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   end if
 
   return
-end subroutine sint1b
+end
 subroutine sint1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
 
 !*****************************************************************************80
@@ -13724,7 +13721,7 @@ subroutine sint1f ( n, inc, x, lenx, wsave, lensav, work, lenwrk, ier )
   end if
 
   return
-end subroutine sint1f 
+end
 subroutine sint1i ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -13832,7 +13829,7 @@ subroutine sint1i ( n, wsave, lensav, ier )
   end if
 
   return
-end subroutine sint1i
+end
 subroutine sintb1 ( n, inc, x, wsave, xh, work, ier )
 
 !*****************************************************************************80
@@ -13946,7 +13943,7 @@ subroutine sintb1 ( n, inc, x, wsave, xh, work, ier )
   200 continue
 
   return
-end subroutine sintb1
+end
 subroutine sintf1 ( n, inc, x, wsave, xh, work, ier )
 
 !*****************************************************************************80
@@ -14058,7 +14055,7 @@ subroutine sintf1 ( n, inc, x, wsave, xh, work, ier )
   200 continue
 
   return
-end subroutine sintf1
+end
 subroutine sintmb ( lot, jump, n, inc, x, lenx, wsave, lensav, &
   work, lenwrk, ier )
 
@@ -14200,7 +14197,7 @@ subroutine sintmb ( lot, jump, n, inc, x, lenx, wsave, lensav, &
   end if
 
   return
-end subroutine sintmb
+end
 subroutine sintmf ( lot, jump, n, inc, x, lenx, wsave, lensav, &
   work, lenwrk, ier )
 
@@ -14340,7 +14337,7 @@ subroutine sintmf ( lot, jump, n, inc, x, lenx, wsave, lensav, &
   end if
 
   return
-end subroutine sintmf
+end
 subroutine sintmi ( n, wsave, lensav, ier )
 
 !*****************************************************************************80
@@ -14447,7 +14444,7 @@ subroutine sintmi ( n, wsave, lensav, ier )
   end if
 
   return
-end subroutine sintmi
+end
 subroutine w2r ( ldr, ldw, l, m, r, w )
 
 !*****************************************************************************80
@@ -14502,7 +14499,7 @@ subroutine w2r ( ldr, ldw, l, m, r, w )
   end do
 
   return
-end subroutine w2r
+end
 
 function xercon( inc, jump, n, lot )
 
@@ -14671,7 +14668,7 @@ subroutine xerfft ( srname, info )
   end if
 
   stop
-end subroutine xerfft
+end
 
 
     end module FFTclass
