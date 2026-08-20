@@ -11,6 +11,9 @@ brightness electron linac, beam dynamics in SNS linac, JARPC linac, RIA driver
 linac, CERN superconducting linac, LEDA halo experiment, Proton Synchrotron at 
 CERN, etc.
 
+This code can be integrated together with a parallel multi-objective optimizer: (https://github.com/qianglbl/PVPmoo) for beam dynamics optimization.
+
+There is a sister parallel beam dynamics tracking code, IMPACT-Z, (https://github.com/impact-lbl/IMPACT-T) using longitudinal distance "s" as independent variable.
 
 The ImpactZexeMac, ImpactZexeUbuntu, and ImpactZexeWin.exe are old executables.
 
