@@ -13,7 +13,7 @@ CERN, etc.
 
 This code can be integrated together with a parallel multi-objective optimizer: (https://github.com/qianglbl/PVPmoo) for beam dynamics optimization.
 
-There is a sister parallel beam dynamics tracking code, IMPACT-Z, (https://github.com/impact-lbl/IMPACT-T) using longitudinal distance "s" as independent variable.
+There is a sister parallel beam dynamics tracking code, IMPACT-T, (https://github.com/impact-lbl/IMPACT-T) using time "t" as independent variable.
 
 The ImpactZexeMac, ImpactZexeUbuntu, and ImpactZexeWin.exe are old executables.
 
