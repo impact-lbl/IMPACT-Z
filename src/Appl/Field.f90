@@ -799,6 +799,9 @@
 
        pilc = 2*dasin(1.0d0)
   
+       if((Nz-1)*hz.gt.zdatwk(Ndatawk)) then
+         print*,"warning: bunch length is over the readin wake function range!"
+       endif
 
        if(flagbtw.eq.4) then !skip longitudinal wake
          ezwake = 0.0d0
@@ -824,7 +827,10 @@
          zwk = zz - zdatwk(1)
          iwk = zwk/hwk + 1
          iwk1 = iwk+1
-         if(iwk1 > Ndataini) print*, "bunch length is over the readin wake function range!"
+         if(iwk1.gt.Ndatawk) then
+           iwk = Ndatawk-1
+           iwk1 = Ndatawk
+         endif
          ab = (iwk*hwk-zwk)/hwk
          if(kz.eq.1) then
            greenwake(kz,1) = 0.5d0*(edatwk(iwk)*ab + edatwk(iwk1)*(1.0d0-ab))
@@ -896,7 +902,11 @@
          zwk = zz - zdatwk(1)
          iwk = zwk/hwk + 1
          iwk1 = iwk+1
-         ab = iwk*hwk-zwk
+         if(iwk1.gt.Ndatawk) then
+           iwk = Ndatawk-1
+           iwk1 = Ndatawk
+         endif
+         ab = (iwk*hwk-zwk)/hwk
          if(kz.eq.1) then
            greenwake(kz,1) = 0.5d0*(epdatwk(iwk)*ab + epdatwk(iwk1)*(1.0d0-ab))
          else
@@ -957,7 +967,11 @@
          zwk = zz - zdatwk(1)
          iwk = zwk/hwk + 1
          iwk1 = iwk+1
-         ab = iwk*hwk-zwk
+         if(iwk1.gt.Ndatawk) then
+           iwk = Ndatawk-1
+           iwk1 = Ndatawk
+         endif
+         ab = (iwk*hwk-zwk)/hwk
          if(kz.eq.1) then
            greenwake(kz,1) = 0.5d0*(eppdatwk(iwk)*ab + eppdatwk(iwk1)*(1.0d0-ab))
          else
