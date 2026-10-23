@@ -824,7 +824,7 @@
          zwk = zz - zdatwk(1)
          iwk = zwk/hwk + 1
          iwk1 = iwk+1
-         ab = iwk*hwk-zwk
+         ab = (iwk*hwk-zwk)/hwk
          if(kz.eq.1) then
            greenwake(kz,1) = 0.5d0*(edatwk(iwk)*ab + edatwk(iwk1)*(1.0d0-ab))
          else

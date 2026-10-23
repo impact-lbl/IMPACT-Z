@@ -367,8 +367,8 @@
         double precision:: zz,zedge,z1,z2,z3,z4,xx1,zz1,ss,k1,lengfrg,alpha
         integer :: faceid
  
-        !zz = pos(3) - this%Param(1)
-        zz = pos(3)
+        zz = pos(3) - this%Param(1)
+        !zz = pos(3)
 !        print*,"inside Dipole: ",pos(1),pos(2),pos(3),Fcoef(1),&
 !                  Fcoef(2),Fcoef(3),Fcoef(4),Fcoef(5),Fcoef(6),zz
  
