@@ -265,7 +265,7 @@
         integer :: idealrf
         real*8 :: vtmp,vtmpgrad,phi0lc,phi,gam,gambet,gambeto,&
                   gambetz,invfocus,dgam,fact,harm,dgambet,cosphi
-        real*8, dimension(12) :: drange
+        real*8, dimension(25) :: drange
         real*8 :: gami_1,gambeti_1,gambetzi_1,dgami,gami_2,gambeti_2
 
 
