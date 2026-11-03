@@ -827,7 +827,10 @@
          zwk = zz - zdatwk(1)
          iwk = zwk/hwk + 1
          iwk1 = iwk+1
-         if(iwk1.gt.Ndatawk) then
+         if(iwk.lt.1) then
+           iwk = 1
+           iwk1 = 2
+         else if(iwk1.gt.Ndatawk) then
            iwk = Ndatawk-1
            iwk1 = Ndatawk
          endif
@@ -902,7 +905,10 @@
          zwk = zz - zdatwk(1)
          iwk = zwk/hwk + 1
          iwk1 = iwk+1
-         if(iwk1.gt.Ndatawk) then
+         if(iwk.lt.1) then
+           iwk = 1
+           iwk1 = 2
+         else if(iwk1.gt.Ndatawk) then
            iwk = Ndatawk-1
            iwk1 = Ndatawk
          endif
@@ -967,7 +973,10 @@
          zwk = zz - zdatwk(1)
          iwk = zwk/hwk + 1
          iwk1 = iwk+1
-         if(iwk1.gt.Ndatawk) then
+         if(iwk.lt.1) then
+           iwk = 1
+           iwk1 = 2
+         else if(iwk1.gt.Ndatawk) then
            iwk = Ndatawk-1
            iwk1 = Ndatawk
          endif
